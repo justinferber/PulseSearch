@@ -20,11 +20,11 @@ still missing before the first external GET.
 | Gate | City Hall | London Parade | Lord Mayor's Show |
 | --- | --- | --- | --- |
 | Robots reviewed (dated) | ✅ 200, allows `/events`, no Crawl-delay | ✅ 200, `Crawl-delay: 10`, search signalled yes / AI-train no | ⚠️ 404 — no robots.txt |
-| Terms reviewed | ⚠️ re-use basis not recorded | ⚠️ no terms page; all rights reserved | ❌ terms forbid deep links and reserve all rights |
+| Terms reviewed | ⚠️ re-use basis not recorded | ✅ Existing Destination Events approval confirmed by owner; exact data-use scope to document | ❌ terms forbid deep links and reserve all rights |
 | Proposed path scope | `/events` only | none admitted; 5 review paths | none admitted; `RIGHTS_HOLD` |
-| Owner authorisation | ❌ not written | ❌ not written | ❌ not written |
+| Owner authorisation | ❌ not recorded | ⚠️ owner attestation received; specific crawler/indexer scope not recorded | ❌ not recorded |
 | Technical gates (offline) | ✅ | ✅ | ✅ |
-| Ready for a first GET | **No** — needs rights basis + written admission | **No** — needs organiser permission | **No** — needs licence or link-only arrangement |
+| Ready for a first GET | **No** — needs rights basis + written admission | **No** — existing approval's precise crawl/indexing scope and explicit pilot admission to be recorded | **No** — needs licence or link-only arrangement |
 
 Technical gates are shared and already demonstrated offline: depth 3, zero probes, one in-flight,
 persisted 300 attempts / 20 accepted / 30 minutes per day, per-hop redirect authority, robots and
@@ -34,8 +34,7 @@ admin exclusions, pinned novelty, per-source dashboard and JSON export.
 
 **Why first if permission arrives:** the highest event value of the three, a public 2027 edition,
 a 10s Crawl-delay that is already respected, and no competing rights claim beyond the organiser's.
-**Why not without permission:** Mine Media's commercial relationship is not a crawler, indexing,
-snippet or link-retention licence, and the site carries an “All Rights Reserved” notice.
+**Owner correction (11 Nov):** The project owner confirms that Destination Events has already granted approval and Mine Media is the official London Parade partner. Do not ask for redundant new organiser permission. Record the existing approval's actual data-use scope, source reference and signed owner admission before activating the crawler. The site carries an “All Rights Reserved” notice; do not presume unrestricted snippet rights without checking the existing arrangement.
 
 ### 3.1 The exact permissions to obtain (written, signatory, dated)
 
@@ -89,8 +88,7 @@ organiser-supplied rather than independently discovered.
 and takedown recipient; write the owner admission with `owner_authorisation`. The 107-page baseline
 is expected overlap and must not be reported as novelty.
 
-**London Parade** — items 1–8 above; canonical host; 2027 path architecture; written permission or a
-licensed feed. Until then `approved=false`, `index_allowed=false`.
+**London Parade** — the owner has confirmed existing Destination Events approval and Mine Media's official partnership. Capture the scope of this existing authorisation against items 1–8 above (plus canonical host and 2027 paths), or identify a licensed organiser feed covered by it. Do not treat the owner as lacking organiser approval. Until a documented crawl/index scope and a separate pilot go/no-go are recorded, `approved=false`, `index_allowed=false`.
 
 **Lord Mayor's Show** — the published terms permit linking only to the home page and forbid deep
 links, framing and links from non-owned sites, and no robots.txt exists. Either obtain explicit
@@ -113,3 +111,7 @@ record stays `RIGHTS_HOLD`.
 Live robots, latency and rate-limit behaviour are untested; signed human grading is pending; there is
 no scheduler and no production deployment. The first live GET requires the written permissions above,
 a recorded `owner_authorisation`, and a separate explicit authorisation to start.
+
+## 7. Owner correction — Destination Events approval confirmed (11 November 2026)
+
+The project owner personally confirms **existing Destination Events approval for London Parade** and that **Mine Media is the official event partner**. That is an owner attestation of an existing approval, not a newly requested licence. The project should NOT repeatedly require the owner to seek approval from Destination Events as if it did not exist. The current conversation does not itself specify whether the previous approval explicitly covers automated website crawling, storing and publicly displaying excerpts, or the permitted paths/retention terms; these items must be recorded from the existing agreement or confirmed through a clear owner scope statement. This is an evidence-recording step, not a demand for redundant consent. See `docs/FB2_R3A3F_LONDON_PARADE_EXISTING_APPROVAL_20261111.md` and the updated three-source admission register. No flags were switched and no live crawler was started.

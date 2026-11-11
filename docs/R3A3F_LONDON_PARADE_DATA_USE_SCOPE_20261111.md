@@ -1,6 +1,6 @@
 # R3-A3F — London Parade existing-authorisation scope record
 
-**Date:** 11 November 2026. **Status:** `OWNER_ATTESTED_EXISTING_APPROVAL_SCOPE_TO_RECORD` ·
+**Date:** 11 November 2026. **Status:** `OWNER_CONFIRMED_LONDON_PARADE_CONTENT_RIGHTS_P1_SCOPE_READY` ·
 **`approved=false` · `index_allowed=false` · `REAL_SOURCES_ADMITTED=0` · F3 = HOLD · Production HOLD.**
 
 This is **not** a fresh permission request. The owner has confirmed that **Destination Events Ltd
@@ -9,9 +9,7 @@ The purpose of this record is to capture what that existing authorisation covers
 crawler does not act beyond it and the owner is not asked for duplicate approval.
 
 Source: owner attestation in the FB2 thread, 11 November 2026 (quoted in
-`docs/FB2_R3A3F_LONDON_PARADE_EXISTING_APPROVAL_20261111.md`). The attestation did **not** include a
-letter, email or contract reference, signer, validity dates, or page-level scope. Those fields are
-left explicitly blank rather than invented.
+`docs/FB2_R3A3F_LONDON_PARADE_EXISTING_APPROVAL_20261111.md`). The latest owner confirmation states: **“London Parade is just One of 100s of Mine Media clients. Yes we are approved to use any text or imagery we want.”** The owner answered yes to the proposed internal Pulse Search test that includes event metadata and ≤320-character excerpts. This establishes owner-attested content-use rights for London Parade and the proposed internal test; do not keep requesting additional Destination Events approval. The owner did not supply a letter, separate contract reference, signer or validity date in this conversation, so those remain unverified supporting metadata, not blockers to re-ask an already answered permissions question.
 
 ## 1. Recorded fields
 
@@ -19,40 +17,31 @@ left explicitly blank rather than invented.
 | --- | --- | --- |
 | Organiser | Destination Events Ltd | attested |
 | Authorised partner | Mine Media (official London Parade partner) | attested |
-| What has already been approved | Event partnership plus approval for London Parade work; precise crawler/indexing/redisplay scope not stated in the message | attested, scope pending |
-| Existing letter / email / agreement reference | **not provided** | to record from existing paperwork |
+| What has already been approved | Mine Media official partnership and use of London Parade text and imagery, including internal Pulse Search title/date/category/link/≤320-character excerpt test | **owner confirmed 11 November 2026** |
+| Existing letter / email / agreement reference | **not provided**; owner direct attestation `OWNER_DIRECT_ATTESTATION_2026-11-11_LONDON_PARADE` | optional supplementary evidence; do not require duplicate approval |
 | Named source host | `https://londonparade.com` (apex used by all internal links) | verified read-only |
-| Canonical host / `www` behaviour | apex `londonparade.com` serves the site; one read-only check of `https://www.londonparade.com/` returned the same home page. The redirect chain was not observable from that fetch — confirm with the organiser before the first live run | partially verified |
+| Canonical host / `www` behaviour | apex `londonparade.com` serves the site; `www` is outside the proposed P1 scope and must remain unadmitted | apex-only scope is sufficient; no need for organiser to verify www |
 | Reviewed public pages | `/about/`, `/parade-location-timing/`, `/londonparade-participants/`, `/news-archive`, `/festivals/concerts/` | prepared |
 | Reviewed seeds | `/about/`, `/parade-location-timing/` | prepared |
 | Machine-readable feed available | **unknown** — ask whether the existing arrangement includes an authorised JSON/CSV/API feed | open |
 | Ingestion route | public-page crawl by Pulse Search; publisher-supplied feed **only if** the existing arrangement covers it | open |
-| Title, date, route, category, canonical link | proposed for storage and display | coverage to confirm against agreement |
-| Short excerpt | ≤320 characters, no page body | proposed; snippet/redisplay right to confirm |
-| Audience | internal Mine Media/Pulse Search review by default | public display not assumed |
-| Media rights (images, video, audio) | **not claimed** | excluded |
+| Title, date, route, category, canonical link | approved for proposed internal search test | confirmed by owner |
+| Short excerpt | ≤320 characters, no page body in P1 by engineering choice | approved for internal pilot by owner |
+| Audience | internal Mine Media/Pulse Search review for P1 | confirmed as proposed test; production publishing separate decision |
+| Media rights (images) | use of London Parade imagery approved by owner attestation | confirmed; images still not ingested in P1 by design |
 | Recheck cadence | 24h conditional revalidation, 168h for 404 rechecks | proposed |
 | Crawl-delay | **10 seconds**, as published in `robots.txt` | observed and enforced |
 | Effective date / review date | **not stated** | to record from existing paperwork |
 | Takedown / withdrawal contact | `contact@londonparade.com` (general); named contact to confirm | provisional |
 | Owner attestation date | 11 November 2026 | recorded |
 
-## 2. What the approval is taken to cover — and not cover
+## 2. Owner-confirmed permission scope and pilot limits
 
-**Taken to cover:** that Mine Media may work with London Parade as official partner, and that using
-London Parade's public event information for Pulse Search is not an unauthorised partnership use.
+**Owner confirmed:** Destination Events has approved Mine Media to use London Parade text and imagery, and Mine Media is the official event partner. This expressly answers the prior question about an **internal-only Pulse Search test** using event titles, edition dates, categories, URLs and short text excerpts of up to 320 characters. A separate letter or contract identifier was not supplied in the conversation; do not invent one or repeatedly request a new organiser approval.
 
-**Not established by the attestation, and therefore not assumed:** permission to crawl at unlimited
-depth or rate; permission to store page bodies; permission to display excerpts publicly; permission
-for images, video or audio; permission covering third-party content embedded on the site; permission
-for ticketing hosts; permission lasting beyond an unstated term; permission for other organisers'
-events.
+**P1 technical limits, not contractual denials:** We will initially ingest only public event metadata and ≤320-character excerpts, with no page-body storage, image copying or media downloads. The broader text and image permission need not be exercised during this bounded crawler test. Public production release, third-party works, participant personal information, external ticketing domains and other Mine Media clients are outside P1, and would require separate source-policy decisions.
 
-The site's “All Rights Reserved” footer is noted but does not override an actual agreement; equally,
-the partnership is not extrapolated into unrestricted automated collection or a public snippet
-licence. If the existing paperwork is silent on crawl/snippet/redisplay, the owner decides the
-narrowest safe scope (metadata plus ≤320-character excerpt, internal review) rather than expanding it
-by inference.
+The content-use approval is now **recorded**. The remaining step is the owner's separate decision to **activate one first live crawler run**, with source scope and budget logged at activation.
 
 ## 3. Scope actually prepared for the pilot
 
@@ -72,11 +61,9 @@ by inference.
 
 ## 4. Evidence status
 
-- Owner attestation: recorded (`owner_attestation` in the three-source register).
+- Owner attestation: recorded and expanded to confirm London Parade text and imagery rights, including the internal metadata/snippet pilot (`owner_attestation` in the three-source register).
 - Scope record: this document plus `docs/evidence/r3a3f_london_parade_scope.json`.
-- Admission: **not recorded** — `owner_authorisation` stays null, `approved=false`,
-  `index_allowed=false`.
-- First live request: **not authorised**. It requires the owner to confirm this scope and give a
-  separate go/no-go after the activation checklist is complete.
-- No redundant permission request is to be sent to Destination Events for the partnership itself; the
-  only open question is the technical scope and feed availability.
+- Content-use rights: **owner-confirmed**; no additional Destination Events approval required. 
+- Operational admission: **not yet enacted** — `owner_authorisation` stays null, `approved=false`, `index_allowed=false` until the separate first-live authorisation is recorded.
+- First live request: **not yet authorised**. The content-use scope is confirmed; obtain only a distinct live-pilot go/no-go from the owner and log the narrow source configuration.
+- No redundant permission request or contract-signature chase is necessary for the confirmed content-use rights. Feed availability is optional and not a precondition to the small P1 webpage test.

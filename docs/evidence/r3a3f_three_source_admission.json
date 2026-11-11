@@ -66,7 +66,7 @@
       "state": "robots_reviewed",
       "approved": false,
       "index_allowed": false,
-      "rights_status": "OWNER_ATTESTED_ORGANISER_APPROVAL_SCOPE_TO_DOCUMENT",
+      "rights_status": "OWNER_CONFIRMED_DESTINATION_EVENTS_APPROVAL_TEXT_AND_IMAGERY",
       "owner_authorisation": null,
       "allowed_paths": [],
       "proposed_seeds": [
@@ -86,7 +86,7 @@
       ],
       "crawl_delay_floor_s": 10,
       "pilot_plan": {
-        "state": "PREPARED_AWAITING_SCOPE_RECORD_AND_FIRST_LIVE_AUTHORISATION",
+        "state": "OWNER_CONTENT_RIGHTS_CONFIRMED_AWAITING_FIRST_LIVE_RUN_DECISION",
         "canonical_host": "https://londonparade.com",
         "canonical_host_status": "apex confirmed by internal links; www served the same home page in a read-only check; redirect chain to confirm",
         "reviewed_paths": [
@@ -110,28 +110,68 @@
         "snippet_chars_max": 320,
         "store_body": false,
         "metadata_coverage": {
-          "title": "PROPOSED_CONFIRM_AGAINST_AGREEMENT",
-          "canonical_url_and_link_back": "PROPOSED_CONFIRM_AGAINST_AGREEMENT",
-          "edition_date_and_year": "PROPOSED_CONFIRM_AGAINST_AGREEMENT",
-          "route_and_landmarks": "PROPOSED_CONFIRM_AGAINST_AGREEMENT",
-          "category": "PROPOSED_CONFIRM_AGAINST_AGREEMENT",
-          "short_excerpt": "PROPOSED_MAX_320_CHARS_CONFIRM_SNIPPET_RIGHT",
-          "page_body": "NOT_STORED",
-          "images_video_audio": "NOT_CLAIMED"
+          "title": "OWNER_CONFIRMED_CONTENT_USE",
+          "canonical_url_and_link_back": "OWNER_CONFIRMED_CONTENT_USE",
+          "edition_date_and_year": "OWNER_CONFIRMED_CONTENT_USE",
+          "route_and_landmarks": "OWNER_CONFIRMED_CONTENT_USE",
+          "category": "OWNER_CONFIRMED_CONTENT_USE",
+          "short_excerpt": "OWNER_CONFIRMED_PILOT_LIMIT_320_CHARACTERS",
+          "page_body": "PILOT_NOT_STORED",
+          "images_video_audio": "IMAGERY_USE_RIGHTS_OWNER_CONFIRMED; MEDIA_NOT_INGESTED_IN_P1"
         },
         "scope_record": "docs/R3A3F_LONDON_PARADE_DATA_USE_SCOPE_20261111.md",
         "activation_checklist": "docs/R3A3F_LONDON_PARADE_PILOT_ACTIVATION_CHECKLIST_20261111.md",
         "checklist": [
-          {"id": "A1", "item": "owner attestation of existing approval", "status": "RECORDED"},
-          {"id": "A2", "item": "data-use scope completed from agreement", "status": "PENDING"},
-          {"id": "A3", "item": "canonical host and www redirects confirmed", "status": "PENDING"},
-          {"id": "A4", "item": "seeds and permitted paths signed off", "status": "PREPARED"},
-          {"id": "A5", "item": "admission with owner_authorisation", "status": "PENDING"},
-          {"id": "A6", "item": "first-live-request authorisation", "status": "PENDING"},
-          {"id": "B1", "item": "10s crawl delay floor enforced", "status": "PASS"},
-          {"id": "B3", "item": "persisted daily caps", "status": "PASS"},
-          {"id": "B5", "item": "forms, commerce and admin routes excluded", "status": "PASS"},
-          {"id": "B6", "item": "robots redirects gated including admin", "status": "PASS"}
+          {
+            "id": "A1",
+            "item": "owner attestation of existing approval",
+            "status": "RECORDED"
+          },
+          {
+            "id": "A2",
+            "item": "data-use scope completed from agreement",
+            "status": "OWNER_CONFIRMED; CONTRACT_REF_OPTIONAL"
+          },
+          {
+            "id": "A3",
+            "item": "canonical host and www redirects confirmed",
+            "status": "OUT_OF_SCOPE_APEX_ONLY"
+          },
+          {
+            "id": "A4",
+            "item": "seeds and permitted paths signed off",
+            "status": "PREPARED_PENDING_ACTIVATION_SCOPE_SIGNOFF"
+          },
+          {
+            "id": "A5",
+            "item": "admission with owner_authorisation",
+            "status": "PENDING"
+          },
+          {
+            "id": "A6",
+            "item": "first-live-request authorisation",
+            "status": "PENDING"
+          },
+          {
+            "id": "B1",
+            "item": "10s crawl delay floor enforced",
+            "status": "PASS"
+          },
+          {
+            "id": "B3",
+            "item": "persisted daily caps",
+            "status": "PASS"
+          },
+          {
+            "id": "B5",
+            "item": "forms, commerce and admin routes excluded",
+            "status": "PASS"
+          },
+          {
+            "id": "B6",
+            "item": "robots redirects gated including admin",
+            "status": "PASS"
+          }
         ]
       },
       "path_review_candidates": [
@@ -174,15 +214,16 @@
       "terms_observed": "No dedicated terms-of-use page found; footer states 'Londonparade.com 2025 | All Rights Reserved' and links privacy at lnydp.com/privacy-policy/",
       "contact": "contact@londonparade.com",
       "organiser": "Destination Events Ltd",
-      "relationship_note": "Owner confirms Destination Events' existing approval and Mine Media's official partnership. Record and validate the relevant scope of that existing approval for the crawler; do not describe approval as absent, but do not assume it includes automated extraction, public snippets, all editions or all pages.",
+      "relationship_note": "Project owner confirms Mine Media is official London Parade partner among many clients and holds Destination Events approval to use London Parade text and imagery. Internal Pulse Search metadata/snippets test consent directly confirmed. No new organiser agreement is required for content rights. The first live crawler run is a separate operational action.",
       "event_name": "London Parade (formerly London's New Year's Day Parade / LNYDP)",
       "event_year_and_date": "2027 edition, 1 January 2027, 1pm",
       "historical_index_pages": 0,
       "pending": [
-        "Locate or record the existing Destination Events approval/contract/communications and specify whether it covers Pulse Search: public-page crawling, short snippet indexing and display, link retention, recrawls, historical/current editions, rights withdrawal and feed option. Do not solicit redundant new approval if already covered.",
-        "Confirm canonical host and reviewed exact paths and seeds, excluding forms, accounts and private participant data.",
-        "Record the permission evidence reference, the authorised owner's scope decision, reviewer/date, contact and takedown channel. Keep approved=false and index_allowed=false pending explicit scope recording.",
-        "Complete a separate owner go/no-go for first live third-party GET after technical pilot gates."
+        "Activate neither crawler nor source in this recording step; owner must separately give first-live-P1 go/no-go.",
+        "Use owner attestation reference for content rights; do not request additional Destination Events approval or a signed agreement for the same rights.",
+        "Keep reviewed apex-host paths and seeds; www hostname excluded unless approved separately; 10-second host spacing and hard daily limits retained.",
+        "Keep the P1 internal test metadata and snippet-only by product design, despite broader attested image and text permissions; no forms, account areas, participant PII or unapproved ticketing hosts.",
+        "At activation record source admission and the explicit first-live authorisation as separate auditable actions."
       ],
       "owner_attestation": {
         "date": "2026-11-11",
@@ -191,10 +232,13 @@
         "approval_claim": "Destination Events has already provided approval",
         "evidence_type": "owner_attestation",
         "documentation_reference": null,
-        "scope_expressly_stated": false,
-        "interpretation": "Acknowledge existing approval; do not demand a new organiser permission request. Record what the prior authorisation covers before enabling public-site crawling or indexing."
+        "scope_expressly_stated": true,
+        "interpretation": "Acknowledge existing approval; do not demand a new organiser permission request. Record what the prior authorisation covers before enabling public-site crawling or indexing.",
+        "latest_confirmation": "London Parade is just One of 100s of Mine Media clients. Yes we are approved to use any text or imagery we want.",
+        "rights_scope": "London Parade text and imagery use approved by Destination Events, as attested by Mine Media owner; includes proposed internal Pulse Search metadata/snippet test",
+        "reference": "OWNER_DIRECT_ATTESTATION_2026-11-11_LONDON_PARADE"
       },
-      "organiser_approval_status": "OWNER_ATTESTED_EXISTING_APPROVAL_SCOPE_RECORDED_PENDING_REFERENCE_AND_SIGNATURE"
+      "organiser_approval_status": "OWNER_CONFIRMED_CONTENT_RIGHTS_AND_INTERNAL_TEST"
     },
     {
       "source_id": "lord-mayors-show-official",

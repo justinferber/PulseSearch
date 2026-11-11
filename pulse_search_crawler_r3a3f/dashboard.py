@@ -19,6 +19,8 @@ from .crawler import build_report
 from .staging import StagingIndex
 from .store import Store
 
+from pulse_search_broad_r3a3g.search import search_staging
+
 CSS = """
 :root{--bg:#0b1020;--panel:#141b2d;--line:#26304a;--ink:#e8ecf7;--muted:#95a2bd;
 --accent:#6ea8fe;--good:#4ade80;--warn:#fbbf24;--bad:#f87171}
@@ -70,6 +72,20 @@ def render_html(report: dict, staging: StagingIndex, query: str = "", category: 
     categories = report["categories"]
     peak = max(categories["counts"].values() or [1])
     results = staging.search(query, category or None, 20) if query.strip() else []
+    # R3-A3G: natural-language ranking over existing permissioned staging pages.
+    # This is offline retrieval, not a web search or live-provider claim.
+    broad = search_staging(staging, query, 12) if query.strip() else None
+    broad_rows = "".join(
+        f"<tr><td><a href='{html.escape(r['url'])}' rel='noopener noreferrer'>"
+        f"{html.escape(str(r.get('title') or '')[:100])}</a></td>"
+        f"<td>{html.escape(str(r.get('document_type') or 'official_navigation'))}</td>"
+        f"<td>{html.escape(str(r.get('snippet') or 'Trusted navigation link')[:220])}</td>"
+        f"<td>{html.escape(str(r.get('source_id') or r.get('source_kind') or ''))}</td></tr>"
+        for r in (broad or {}).get("results", [])
+    )
+    broad_status = html.escape(str((broad or {}).get("status", "NO_QUERY")))
+    broad_intent = html.escape(str(((broad or {}).get("intent") or {}).get("kind", "n/a")))
+    broad_note = html.escape(str((broad or {}).get("note", "Enter a search query above.")))
     run = report.get("run") or {}
     counters = {}
     if run.get("counters"):
@@ -322,6 +338,16 @@ off-origin redirects are refused even to public hosts.</div>
 <tr><td>Off-domain hosts seen</td><td>{html.escape(external)}</td></tr>
 <tr><td>Body storage</td><td>{html.escape(safety['body_storage'])}</td></tr>
 <tr><td>Events Engine writes</td><td>{safety['events_engine_writes']}</td></tr>
+</table></section>
+
+<section><h2>Broad search results — R3-A3G</h2>
+<div class="sub">What does the person want? Query intent: <code>{broad_intent}</code> ·
+Evidence state: <code>{broad_status}</code>. {broad_note}</div>
+<div class="sub">These are ranked pages in the existing local staging index or manually curated
+official-site navigation links. Weather, translation, live sport, prices and availability
+require approved fresh providers; synthetic fixtures are never presented as live evidence.</div>
+<table><tr><th>Result</th><th>Page type</th><th>Relevant information</th><th>Source</th></tr>
+{broad_rows or "<tr><td colspan='4'>No supported local evidence yet. The source catalogue and fresh-provider connections must grow.</td></tr>"}
 </table></section>
 
 <section><h2>Search the staging index</h2>

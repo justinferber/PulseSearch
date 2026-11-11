@@ -20,12 +20,24 @@
       "index_allowed": false,
       "rights_status": "PENDING_TERMS_REVIEW",
       "owner_authorisation": null,
-      "allowed_paths": ["/events"],
-      "proposed_seeds": ["https://www.london.gov.uk/events"],
-      "path_review_candidates": ["/events"],
+      "allowed_paths": [
+        "/events"
+      ],
+      "proposed_seeds": [
+        "https://www.london.gov.uk/events"
+      ],
+      "path_review_candidates": [
+        "/events"
+      ],
       "excluded_paths": [
-        {"path": "/whats-on", "reason": "unverified; must not be proposed until existence, stability and the same rights/robots coverage are confirmed"},
-        {"path": "/search", "reason": "robots-disallowed search endpoint"}
+        {
+          "path": "/whats-on",
+          "reason": "unverified; must not be proposed until existence, stability and the same rights/robots coverage are confirmed"
+        },
+        {
+          "path": "/search",
+          "reason": "robots-disallowed search endpoint"
+        }
       ],
       "robots": {
         "url": "https://www.london.gov.uk/robots.txt",
@@ -51,10 +63,10 @@
       "host": "londonparade.com",
       "origin": "https://londonparade.com",
       "role": "candidate_B_london_parade",
-      "state": "robots_reviewed",
+      "state": "owner_approval_attested_scope_pending",
       "approved": false,
       "index_allowed": false,
-      "rights_status": "PENDING_ORGANISER_AND_TERMS_REVIEW",
+      "rights_status": "OWNER_ATTESTED_ORGANISER_APPROVAL_SCOPE_TO_DOCUMENT",
       "owner_authorisation": null,
       "allowed_paths": [],
       "proposed_seeds": [
@@ -69,11 +81,26 @@
         "/festivals/concerts/"
       ],
       "excluded_paths": [
-        {"path": "/shop/", "reason": "commerce; not event discovery"},
-        {"path": "/takepart/", "reason": "participant application form; no personal data"},
-        {"path": "/account/", "reason": "account portal"},
-        {"path": "/contact/", "reason": "contact form; no personal data"},
-        {"path": "https://www.ticketmaster.co.uk/*", "reason": "third-party ticketing host, never admitted"}
+        {
+          "path": "/shop/",
+          "reason": "commerce; not event discovery"
+        },
+        {
+          "path": "/takepart/",
+          "reason": "participant application form; no personal data"
+        },
+        {
+          "path": "/account/",
+          "reason": "account portal"
+        },
+        {
+          "path": "/contact/",
+          "reason": "contact form; no personal data"
+        },
+        {
+          "path": "https://www.ticketmaster.co.uk/*",
+          "reason": "third-party ticketing host, never admitted"
+        }
       ],
       "robots": {
         "url": "https://londonparade.com/robots.txt",
@@ -86,17 +113,26 @@
       "terms_observed": "No dedicated terms-of-use page found; footer states 'Londonparade.com 2025 | All Rights Reserved' and links privacy at lnydp.com/privacy-policy/",
       "contact": "contact@londonparade.com",
       "organiser": "Destination Events Ltd",
-      "relationship_note": "Mine Media works commercially with this event. Commercial representation does not grant crawler, link-retention or content-reuse permission; written organiser approval is required.",
+      "relationship_note": "Owner confirms Destination Events' existing approval and Mine Media's official partnership. Record and validate the relevant scope of that existing approval for the crawler; do not describe approval as absent, but do not assume it includes automated extraction, public snippets, all editions or all pages.",
       "event_name": "London Parade (formerly London's New Year's Day Parade / LNYDP)",
       "event_year_and_date": "2027 edition, 1 January 2027, 1pm",
       "historical_index_pages": 0,
       "pending": [
-        "obtain written organiser permission for crawling, indexing/snippets, link retention, recrawling and takedown",
-        "confirm the canonical hostname (apex vs www) and redirect behaviour",
-        "confirm current path architecture for the 2027 edition and which pages link which",
-        "prefer an organiser-supplied structured public feed if one can be licensed",
-        "record reviewer, permission evidence and takedown contact before changing flags"
-      ]
+        "Locate or record the existing Destination Events approval/contract/communications and specify whether it covers Pulse Search: public-page crawling, short snippet indexing and display, link retention, recrawls, historical/current editions, rights withdrawal and feed option. Do not solicit redundant new approval if already covered.",
+        "Confirm canonical host and reviewed exact paths and seeds, excluding forms, accounts and private participant data.",
+        "Record the permission evidence reference, the authorised owner's scope decision, reviewer/date, contact and takedown channel. Keep approved=false and index_allowed=false pending explicit scope recording.",
+        "Complete a separate owner go/no-go for first live third-party GET after technical pilot gates."
+      ],
+      "owner_attestation": {
+        "date": "2026-11-11",
+        "source": "project owner direct confirmation in ChatGPT",
+        "relationship": "Mine Media is an official London Parade partner",
+        "approval_claim": "Destination Events has already provided approval",
+        "evidence_type": "owner_attestation",
+        "documentation_reference": null,
+        "scope_expressly_stated": false,
+        "interpretation": "Acknowledge existing approval; do not demand a new organiser permission request. Record what the prior authorisation covers before enabling public-site crawling or indexing."
+      }
     },
     {
       "source_id": "lord-mayors-show-official",
@@ -110,7 +146,9 @@
       "rights_status": "PENDING_RESTRICTIVE_TERMS_AND_PERMISSION",
       "owner_authorisation": null,
       "allowed_paths": [],
-      "proposed_seeds": ["https://www.lordmayorsshow.london/"],
+      "proposed_seeds": [
+        "https://www.lordmayorsshow.london/"
+      ],
       "path_review_candidates": [
         "/history/",
         "/programme/",
@@ -120,10 +158,22 @@
         "/closures/"
       ],
       "excluded_paths": [
-        {"path": "/terms-of-use/", "reason": "terms text itself; no discovery value and restrictive"},
-        {"path": "/book/", "reason": "commerce"},
-        {"path": "https://procession.lordmayorsshow.london/*", "reason": "separate host; not admitted by this record"},
-        {"path": "https://api.lordmayorsshow.london/*", "reason": "separate API host; not admitted"}
+        {
+          "path": "/terms-of-use/",
+          "reason": "terms text itself; no discovery value and restrictive"
+        },
+        {
+          "path": "/book/",
+          "reason": "commerce"
+        },
+        {
+          "path": "https://procession.lordmayorsshow.london/*",
+          "reason": "separate host; not admitted by this record"
+        },
+        {
+          "path": "https://api.lordmayorsshow.london/*",
+          "reason": "separate API host; not admitted"
+        }
       ],
       "robots": {
         "url": "https://www.lordmayorsshow.london/robots.txt",
@@ -158,6 +208,9 @@
     "MAX_HOPS": 3,
     "ORIGINAL_INDEX_UNTOUCHED": "PASS",
     "SIGNED_HUMAN_GRADING": "PENDING",
-    "PRODUCTION": "HOLD"
-  }
+    "PRODUCTION": "HOLD",
+    "DESTINATION_EVENTS_APPROVAL_OWNER_ATTESTED": "YES_SCOPE_TO_RECORD"
+  },
+  "updated_at": "2026-11-11",
+  "owner_attestation_received": "The project owner confirms Destination Events' approval for London Parade and that Mine Media is an official partner. The exact crawler/indexing/snippet scope and evidence reference have not been supplied in this conversation."
 }

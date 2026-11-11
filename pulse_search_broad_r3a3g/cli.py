@@ -16,6 +16,7 @@ from pathlib import Path
 from urllib.parse import quote
 
 from .search import search_staging
+from .providers import ProviderError, SearxNG
 
 
 class ReadOnlyStaging:
@@ -41,14 +42,31 @@ class ReadOnlyStaging:
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description="Read-only broad staging search")
     parser.add_argument("query", help="Natural language search query")
-    parser.add_argument("--staging", required=True, help="Existing staging.sqlite file")
+    parser.add_argument("--staging", help="Existing staging.sqlite file (read only)")
+    parser.add_argument("--searxng", help="Explicit local SearXNG base URL, e.g. http://127.0.0.1:8080")
+    parser.add_argument("--allow-remote-provider", action="store_true",
+                        help="Explicitly allow an operator-trusted HTTPS SearXNG provider")
     parser.add_argument("--limit", type=int, default=10)
     args = parser.parse_args(argv)
-    with_path = ReadOnlyStaging(args.staging)
-    try:
-        result = search_staging(with_path, args.query, args.limit)
-    finally:
-        with_path.close()
+    if not args.staging and not args.searxng:
+        parser.error("provide --staging and/or --searxng")
+    result = {}
+    if args.staging:
+        staging = ReadOnlyStaging(args.staging)
+        try:
+            result["local_index"] = search_staging(staging, args.query, args.limit)
+        finally:
+            staging.close()
+    if args.searxng:
+        try:
+            result["web_discovery"] = SearxNG(
+                args.searxng, allow_remote=args.allow_remote_provider).search(
+                    args.query, limit=args.limit)
+        except ProviderError as exc:
+            result["web_discovery"] = {
+                "status": "provider_unavailable", "reason": str(exc),
+                "results": [], "answer": None,
+            }
     print(json.dumps(result, indent=2, ensure_ascii=False))
     return 0
 

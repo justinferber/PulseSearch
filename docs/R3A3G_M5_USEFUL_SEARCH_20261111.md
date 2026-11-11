@@ -13,7 +13,7 @@ irrelevant admission:
 | Case | Response | Top result |
 | --- | --- | --- |
 | Berlin concert tickets | `official_links` | Eventim Berlin, `/city/berlin-8/` |
-| Berlin venue accessibility and bag rules | `official_links` | Mercedes-Benz Arena Berlin |
+| Berlin venue accessibility and bag rules | `official_links` | Official venue page (Huxley's Neue Welt at last run) |
 | Berlin Christmas-market transport | `official_links` | BVG Berlin |
 | London New Year's Eve fireworks tickets | `official_links` | Mayor of London |
 | Berlin CSD 2027 dates | `official_links` | CSD Berlin |

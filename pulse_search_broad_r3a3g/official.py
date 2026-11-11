@@ -7,6 +7,7 @@ never presented as an observation. No paid API is required for any of this.
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, asdict
 from urllib.parse import quote_plus
 
@@ -61,6 +62,18 @@ LINKS: tuple[OfficialLink, ...] = (
     OfficialLink("Berlin.de events calendar", "https://www.berlin.de/events/", "Berlin.de",
                  "City events calendar with organiser and venue links.",
                  "events", ("DE",), ("events", "berlin", "concert", "festival")),
+    OfficialLink("Berlin.de museums", "https://www.berlin.de/en/museums/", "Berlin.de",
+                 "Official Berlin museum directory and visitor information.",
+                 "events", ("DE",), ("berlin", "museum", "accessibility", "culture")),
+    OfficialLink("Hamburg city portal", "https://www.hamburg.de/", "Hamburg",
+                 "Official Hamburg services, events and transport information.",
+                 "events", ("DE",), ("hamburg", "events", "transport", "christmas")),
+    OfficialLink("Hamburg tourism", "https://www.hamburg.com/", "Hamburg Tourism",
+                 "Official Hamburg visitor information, events and Christmas markets.",
+                 "events", ("DE",), ("hamburg", "events", "christmas", "music")),
+    OfficialLink("Munich city portal", "https://www.muenchen.de/", "Munich",
+                 "Official Munich services, events and transport information.",
+                 "events", ("DE",), ("munich", "events", "transport", "christmas")),
     OfficialLink("Mercedes-Benz Arena Berlin", "https://www.mercedes-benz-arena.de/",
                  "Mercedes-Benz Arena", "Venue programme, official box office and travel information.",
                  "venue", ("DE",), ("concert", "venue", "berlin")),
@@ -139,6 +152,12 @@ LINKS: tuple[OfficialLink, ...] = (
     OfficialLink("Mayor of London", "https://www.london.gov.uk/", "Mayor of London",
                  "Official London announcements, including New Year's Eve fireworks arrangements.",
                  "events", ("GB",), ("fireworks", "london", "new year")),
+    OfficialLink("London Pride", "https://prideinlondon.org/", "Pride in London",
+                 "Official Pride in London programme, route and access information.",
+                 "events", ("GB",), ("pride", "london", "lgbtq")),
+    OfficialLink("Manchester Pride", "https://www.manchesterpride.com/", "Manchester Pride",
+                 "Official Manchester Pride programme and access information.",
+                 "events", ("GB",), ("pride", "manchester", "lgbtq")),
     OfficialLink("Visit London events", "https://www.visitlondon.com/things-to-do/events",
                  "Visit London", "Official London events listings and visitor guidance.",
                  "events", ("GB",), ("events", "london", "festival")),
@@ -187,6 +206,80 @@ def _matches(link: OfficialLink, kinds: set[str], topics: set[str], country: str
     return False
 
 
+CITY_ALIASES = {
+    "berlin": "berlin", "london": "london", "paris": "paris",
+    "hamburg": "hamburg", "munich": "munich", "münchen": "munich",
+    "munchen": "munich", "cologne": "cologne", "köln": "cologne",
+    "koeln": "cologne", "frankfurt": "frankfurt", "stuttgart": "stuttgart",
+    "manchester": "manchester", "birmingham": "birmingham", "glasgow": "glasgow",
+}
+COUNTRY_FOR_CITY = {
+    "berlin": "DE", "hamburg": "DE", "munich": "DE", "cologne": "DE",
+    "frankfurt": "DE", "stuttgart": "DE", "london": "GB", "manchester": "GB",
+    "birmingham": "GB", "glasgow": "GB", "paris": "FR",
+}
+FACETS = {
+    "access": ("accessibility", "accessible", "barrierefrei", "wheelchair", "bag",
+               "step-free"),
+    "tickets": ("ticket", "tickets", "book", "booking", "buy", "seller", "karten"),
+    "venue": ("venue", "venues", "arena", "hall", "theatre", "theater", "museum"),
+    "transport": ("transport", "travel", "journey", "planner", "bvg", "tfl", "s-bahn"),
+    "refund": ("refund", "refunds", "return", "cancel", "cancellation"),
+}
+
+
+def _words(text: str) -> set[str]:
+    return {w for w in re.findall(r"[a-z0-9]+", str(text or "").lower()) if len(w) > 1}
+
+
+def _requested_city(query: str, city: str | None) -> str:
+    if city:
+        return CITY_ALIASES.get(str(city).lower(), str(city).lower())
+    q = set(_words(query))
+    return next((CITY_ALIASES[c] for c in CITY_ALIASES if c in q), "")
+
+
+def _link_text(link: OfficialLink) -> str:
+    return " ".join((link.title, link.description, link.url,
+                     " ".join(link.topics))).lower()
+
+
+def _link_cities(link: OfficialLink) -> set[str]:
+    text = _link_text(link)
+    return {city for city in set(CITY_ALIASES.values()) if city in text}
+
+
+def _facet_score(link: OfficialLink, query: str, city: str) -> int:
+    q = _words(query)
+    text = _link_text(link)
+    score = 0
+    if city:
+        if city in _link_cities(link):
+            score += 12
+        elif _link_cities(link):
+            return -1000
+    for facet, words in FACETS.items():
+        if any(w in q for w in words):
+            if link.kind == "venue" and facet in ("access", "venue"):
+                score += 8
+            elif link.kind == "transport" and facet == "transport":
+                score += 8
+            elif link.kind == "tickets" and facet in ("tickets", "venue"):
+                score += 14
+            elif link.kind == "events" and facet in ("access", "venue"):
+                score += 2
+    if "museum" in q and "museum" in text:
+        score += 10
+    for word in q:
+        if word in text:
+            score += 2
+    return score
+
+
+def _rank_official(chosen: list[OfficialLink], query: str, city: str) -> list[OfficialLink]:
+    return sorted(chosen, key=lambda l: (-_facet_score(l, query, city), l.title))
+
+
 def links_for(kind: str, query: str, city: str | None = None,
               country: str | None = None, limit: int = 8) -> list[dict]:
     """Return reviewed official entry points for an intent.
@@ -195,12 +288,19 @@ def links_for(kind: str, query: str, city: str | None = None,
     useful even with no live adapter; the caller must label it as navigation.
     """
     q = (query or "").lower()
+    loc = _requested_city(query, city)
     topics = {w for w in q.replace("?", " ").replace(",", " ").split() if w}
     kinds = {kind}
     if kind in ("weather", "forecast"):
         kinds |= {"weather"}
-        has_de = "berlin" in q or "german" in q or "deutsch" in q or "münchen" in q or "munchen" in q
-        has_gb = "london" in q or "manchester" in q or "uk" in q or "britain" in q
+        q_words = _words(q)
+        q_cities = {CITY_ALIASES[c] for c in CITY_ALIASES if c in q_words}
+        has_de = loc in ("berlin", "hamburg", "munich", "cologne", "frankfurt",
+                         "stuttgart") or bool(q_cities & {"berlin", "hamburg", "munich",
+                         "cologne", "frankfurt", "stuttgart"}) or "german" in q or "deutsch" in q
+        has_gb = loc in ("london", "manchester", "birmingham", "glasgow") or \
+            bool(q_cities & {"london", "manchester", "birmingham", "glasgow"}) or \
+            "uk" in q or "britain" in q
         c = (country or ("MIXED" if has_de and has_gb else "DE" if has_de else
                          "GB" if has_gb else "")).upper()
         chosen = [l for l in LINKS if l.kind == "weather" and
@@ -215,9 +315,9 @@ def links_for(kind: str, query: str, city: str | None = None,
     if kind == "translate":
         return _cards([l for l in LINKS if l.kind == "translate"], query, limit)
     if kind in ("tickets", "how_to", "events"):
-        c = "DE" if ("berlin" in q or "german" in q or "konzert" in q) else \
-            "GB" if ("london" in q or "manchester" in q or "uk" in q) else \
-            "FR" if "paris" in q else ""
+        c = COUNTRY_FOR_CITY.get(loc, "") if loc else \
+            "DE" if ("german" in q or "konzert" in q) else \
+            "GB" if ("uk" in q or "britain" in q) else ""
         topics = []
         if "pride" in q or "csd" in q or "lgbt" in q:
             topics.append("pride")
@@ -239,12 +339,20 @@ def links_for(kind: str, query: str, city: str | None = None,
                   and (not c or not l.countries or c in l.countries)]
         sellers = [l for l in LINKS if l.kind == "tickets"
                    and (not c or not l.countries or c in l.countries)]
-        # An accessibility question needs venue access pages, not a ticket seller.
+        # An accessibility question about a venue/museum needs a venue page.
+        # It must not steal a Pride/parade/festival query from its organiser.
+        event_context = any(w in q for w in (
+            "pride", "csd", "parade", "festival", "festivals", "fireworks",
+            "christmas", "market", "markets", "events", "music"))
         if c == "DE":
             sellers.sort(key=lambda l: 0 if ("Berlin" in l.title) == ("berlin" in q) else 1)
-        booking = venues if is_access else (sellers + venues if is_ticket else [])
+        booking = venues if (is_access and not event_context) else \
+            (sellers + venues if is_ticket else [])
         calendars = [l for l in LINKS if l.kind == "events" and
                      (not c or not l.countries or c in l.countries)]
+        if is_access and "museum" in q:
+            museums = [l for l in calendars if "museum" in l.title.lower()]
+            booking = museums + booking
         if c == "DE" and ("music" in q or "festival" in q) and not is_access:
             calendars.sort(key=lambda l: 0 if "Berlin.de" == l.publisher else 1)
         # Do not turn an arbitrary phrase into a city calendar. A handoff needs
@@ -259,18 +367,28 @@ def links_for(kind: str, query: str, city: str | None = None,
             refund = [l for l in LINKS if
                       (l.kind == "reference" or l.publisher == "CAA") and
                       ("GOV.UK" == l.publisher or "CAA" == l.publisher)]
-            chosen = refund + chosen
-        return _cards(chosen, query, limit)
+            # Refund/returns guidance must not be displaced by a ticket seller
+            # just because the seller has more query-term overlaps.
+            return _cards(refund + chosen, query, limit)
+        if loc and (discovery or calendars) and not booking and not any(
+                loc in _link_text(link) for link in discovery + calendars):
+            return []
+        chosen = [l for l in chosen if _facet_score(l, query, loc) > -1000]
+        return _cards(_rank_official(chosen, query, loc), query, limit)
     if kind in ("transport", "travel"):
-        c = "DE" if "berlin" in q else "GB" if "london" in q else ""
-        return _cards([l for l in LINKS if l.kind == "transport"
-                       and (not c or not l.countries or c in l.countries)], query, limit)
+        c = COUNTRY_FOR_CITY.get(loc, "") if loc else \
+            "DE" if "berlin" in q else "GB" if "london" in q else ""
+        chosen = [l for l in LINKS if l.kind == "transport"
+                  and (not c or not l.countries or c in l.countries)]
+        chosen = [l for l in chosen if _facet_score(l, query, loc) > -1000]
+        return _cards(_rank_official(chosen, query, loc), query, limit)
     if kind in ("flights", "buy_flights"):
         return _cards([l for l in LINKS if l.kind == "flights"], query, limit)
     if kind in ("sports", "shopping"):
         chosen = [l for l in LINKS if l.kind == kind]
         if kind == "shopping":
-            c = "DE" if "berlin" in q else "GB" if "london" in q else ""
+            c = COUNTRY_FOR_CITY.get(loc, "") if loc else \
+                "DE" if "berlin" in q else "GB" if "london" in q else ""
             chosen.sort(key=lambda l: 0 if c and c in l.countries else 1)
         return _cards(chosen, query, limit)
     if kind in ("general", "reference", "index_lookup"):

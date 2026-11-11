@@ -79,6 +79,8 @@ WEATHER = re.compile(r"\b(weather|forecast|temperature|rainfall|wetter|vorhersag
 NEGATION = re.compile(r"\b(?:excluding|without|except|nicht|ohne|ausser|außer)\b\s+(.+)$", re.I)
 SPORTS = re.compile(r"\b(fifa|world cup|football score|match result|live score)\b", re.I)
 TRANSLATE = re.compile(r"\b(translate|translation|übersetz\w*|translate into)\b", re.I)
+ACCESS = re.compile(r"\b(accessibility|accessible|barrierefrei|wheelchair|bag policy|"
+                    r"bag rules|step-free)\b", re.I)
 FLIGHTS = re.compile(r"\b(flights?|airfare|airline|flug|flüge)\b", re.I)
 TRANSPORT = re.compile(r"\b(public transport|transport|tfl|bvg|s-bahn|s bahn|sbahn|"
                        r"get to|journey|journey planner|fahrplan|wie komme|anfahrt|verkehr)\b", re.I)
@@ -138,6 +140,8 @@ def classify_query(query: str) -> SearchIntent:
     elif (HOWTO.search(q) and (BOOKING.search(q) or any(k in q for k in
                             ("how do", "how to", "wie kann", "how can")))) or \
             (BOOKING.search(q) and (EVENTS.search(q) or "ticket" in q)) or REFUND.search(q):
+        kind = "how_to"
+    elif ACCESS.search(q):
         kind = "how_to"
     elif SPORTS.search(q):
         kind = "sports"

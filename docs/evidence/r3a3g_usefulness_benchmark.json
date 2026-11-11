@@ -36,8 +36,8 @@
           "kind": "official_directory"
         },
         {
-          "title": "Mercedes-Benz Arena Berlin",
-          "url": "https://www.mercedes-benz-arena.de/",
+          "title": "Berlin.de events calendar",
+          "url": "https://www.berlin.de/events/",
           "kind": "official_directory"
         },
         {
@@ -65,8 +65,8 @@
       "response_mode": "OFFICIAL_LINKS",
       "passed": true,
       "top_result": {
-        "title": "Mercedes-Benz Arena Berlin",
-        "url": "https://www.mercedes-benz-arena.de/"
+        "title": "Huxley's Neue Welt",
+        "url": "https://www.huxleys-neue-welt.de/"
       },
       "top_result_matches_expected": true,
       "matching_official_domains": [
@@ -76,8 +76,8 @@
       ],
       "results": [
         {
-          "title": "Mercedes-Benz Arena Berlin",
-          "url": "https://www.mercedes-benz-arena.de/",
+          "title": "Huxley's Neue Welt",
+          "url": "https://www.huxleys-neue-welt.de/",
           "kind": "official_directory"
         },
         {
@@ -86,8 +86,8 @@
           "kind": "official_directory"
         },
         {
-          "title": "Huxley's Neue Welt",
-          "url": "https://www.huxleys-neue-welt.de/",
+          "title": "Mercedes-Benz Arena Berlin",
+          "url": "https://www.mercedes-benz-arena.de/",
           "kind": "official_directory"
         },
         {
@@ -161,23 +161,23 @@
           "kind": "official_directory"
         },
         {
-          "title": "The O2",
-          "url": "https://www.theo2.co.uk/",
-          "kind": "official_directory"
-        },
-        {
           "title": "Roundhouse",
           "url": "https://www.roundhouse.org.uk/",
           "kind": "official_directory"
         },
         {
-          "title": "Southbank Centre",
-          "url": "https://www.southbankcentre.co.uk/",
+          "title": "Visit London events",
+          "url": "https://www.visitlondon.com/things-to-do/events",
           "kind": "official_directory"
         },
         {
-          "title": "Visit London events",
-          "url": "https://www.visitlondon.com/things-to-do/events",
+          "title": "London Pride",
+          "url": "https://prideinlondon.org/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "Southbank Centre",
+          "url": "https://www.southbankcentre.co.uk/",
           "kind": "official_directory"
         }
       ],
@@ -209,6 +209,11 @@
         {
           "title": "Berlin.de events calendar",
           "url": "https://www.berlin.de/events/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "Berlin.de museums",
+          "url": "https://www.berlin.de/en/museums/",
           "kind": "official_directory"
         },
         {
@@ -248,23 +253,23 @@
           "kind": "official_directory"
         },
         {
-          "title": "Mercedes-Benz Arena Berlin",
-          "url": "https://www.mercedes-benz-arena.de/",
+          "title": "Berlin.de museums",
+          "url": "https://www.berlin.de/en/museums/",
           "kind": "official_directory"
         },
         {
-          "title": "Columbiahalle Berlin",
-          "url": "https://www.columbiahalle.de/",
+          "title": "Berlin.de events calendar",
+          "url": "https://www.berlin.de/events/",
           "kind": "official_directory"
         },
         {
-          "title": "Huxley's Neue Welt",
-          "url": "https://www.huxleys-neue-welt.de/",
+          "title": "visitBerlin Christmas markets",
+          "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
           "kind": "official_directory"
         },
         {
-          "title": "Verti Music Hall",
-          "url": "https://www.verti-music-hall.de/",
+          "title": "European Festivals Association",
+          "url": "https://www.efa-aef.eu/",
           "kind": "official_directory"
         }
       ],
@@ -331,23 +336,23 @@
           "kind": "official_directory"
         },
         {
-          "title": "Visit London events",
-          "url": "https://www.visitlondon.com/things-to-do/events",
-          "kind": "official_directory"
-        },
-        {
-          "title": "European Festivals Association",
-          "url": "https://www.efa-aef.eu/",
-          "kind": "official_directory"
-        },
-        {
-          "title": "Glastonbury Festival",
-          "url": "https://www.glastonburyfestivals.co.uk/",
+          "title": "Berlin.de museums",
+          "url": "https://www.berlin.de/en/museums/",
           "kind": "official_directory"
         },
         {
           "title": "CSD Berlin",
           "url": "https://www.csd-berlin.de/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "visitBerlin Christmas markets",
+          "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+          "kind": "official_directory"
+        },
+        {
+          "title": "European Festivals Association",
+          "url": "https://www.efa-aef.eu/",
           "kind": "official_directory"
         }
       ],

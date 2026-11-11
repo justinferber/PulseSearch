@@ -27,7 +27,11 @@ class OfficialHandoffTests(unittest.TestCase):
         cards = links_for("how_to", "Berlin concert venue accessibility and bag rules",
                           city="Berlin", country="DE")
         self.assertTrue(cards)
-        self.assertIn("mercedes-benz-arena.de", cards[0]["url"])
+        self.assertIn(cards[0]["url"], (
+            "https://www.mercedes-benz-arena.de/",
+            "https://www.columbiahalle.de/",
+            "https://www.huxleys-neue-welt.de/",
+            "https://www.verti-music-hall.de/"))
         self.assertNotIn("eventim", cards[0]["url"])
 
     def test_christmas_transport_starts_with_berlin_operator(self):

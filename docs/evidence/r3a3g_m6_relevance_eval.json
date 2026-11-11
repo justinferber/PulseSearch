@@ -1,0 +1,376 @@
+{
+  "kind": "R3A3G_M6_GRADED_RELEVANCE",
+  "reviewer": "FB2 internal relevance review",
+  "reviewed_at": "2026-11-11",
+  "cases": [
+    {
+      "id": "berlin-concert-tickets",
+      "query": "Berlin concert tickets",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Eventim Berlin",
+          "url": "https://www.eventim.de/city/berlin-8/",
+          "grade": 3
+        },
+        {
+          "title": "Eventim Germany",
+          "url": "https://www.eventim.de/",
+          "grade": 0
+        },
+        {
+          "title": "Berlin.de events calendar",
+          "url": "https://www.berlin.de/events/",
+          "grade": 2
+        },
+        {
+          "title": "Columbiahalle Berlin",
+          "url": "https://www.columbiahalle.de/",
+          "grade": 2
+        },
+        {
+          "title": "Huxley's Neue Welt",
+          "url": "https://www.huxleys-neue-welt.de/",
+          "grade": 2
+        }
+      ],
+      "precision_at_3": 0.667,
+      "helpful_top1": true,
+      "ndcg_at_5": 0.853,
+      "judged_at_5": 4
+    },
+    {
+      "id": "berlin-venue-accessibility",
+      "query": "Berlin concert venue accessibility and bag rules",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Huxley's Neue Welt",
+          "url": "https://www.huxleys-neue-welt.de/",
+          "grade": 3
+        },
+        {
+          "title": "Columbiahalle Berlin",
+          "url": "https://www.columbiahalle.de/",
+          "grade": 2
+        },
+        {
+          "title": "Mercedes-Benz Arena Berlin",
+          "url": "https://www.mercedes-benz-arena.de/",
+          "grade": 2
+        },
+        {
+          "title": "Verti Music Hall",
+          "url": "https://www.verti-music-hall.de/",
+          "grade": 2
+        },
+        {
+          "title": "Berlin.de events calendar",
+          "url": "https://www.berlin.de/events/",
+          "grade": 0
+        }
+      ],
+      "precision_at_3": 1.0,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 4
+    },
+    {
+      "id": "berlin-museum-accessibility",
+      "query": "Berlin museum accessibility",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Berlin.de museums",
+          "url": "https://www.berlin.de/en/museums/",
+          "grade": 3
+        },
+        {
+          "title": "Huxley's Neue Welt",
+          "url": "https://www.huxleys-neue-welt.de/",
+          "grade": 1
+        },
+        {
+          "title": "Columbiahalle Berlin",
+          "url": "https://www.columbiahalle.de/",
+          "grade": 1
+        },
+        {
+          "title": "Mercedes-Benz Arena Berlin",
+          "url": "https://www.mercedes-benz-arena.de/",
+          "grade": 1
+        },
+        {
+          "title": "Verti Music Hall",
+          "url": "https://www.verti-music-hall.de/",
+          "grade": 1
+        }
+      ],
+      "precision_at_3": 0.333,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 5
+    },
+    {
+      "id": "london-theatre-tickets",
+      "query": "London theatre tickets",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Roundhouse",
+          "url": "https://www.roundhouse.org.uk/",
+          "grade": 2
+        },
+        {
+          "title": "Southbank Centre",
+          "url": "https://www.southbankcentre.co.uk/",
+          "grade": 2
+        },
+        {
+          "title": "The O2",
+          "url": "https://www.theo2.co.uk/",
+          "grade": 2
+        },
+        {
+          "title": "London Pride",
+          "url": "https://prideinlondon.org/",
+          "grade": 0
+        },
+        {
+          "title": "Mayor of London",
+          "url": "https://www.london.gov.uk/",
+          "grade": 0
+        }
+      ],
+      "precision_at_3": 1.0,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 3
+    },
+    {
+      "id": "manchester-pride",
+      "query": "Manchester Pride",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Manchester Pride",
+          "url": "https://www.manchesterpride.com/",
+          "grade": 3
+        },
+        {
+          "title": "European Festivals Association",
+          "url": "https://www.efa-aef.eu/",
+          "grade": 1
+        },
+        {
+          "title": "Glastonbury Festival",
+          "url": "https://www.glastonburyfestivals.co.uk/",
+          "grade": 0
+        }
+      ],
+      "precision_at_3": 0.333,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 3
+    },
+    {
+      "id": "london-pride",
+      "query": "London Pride",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "London Pride",
+          "url": "https://prideinlondon.org/",
+          "grade": 3
+        },
+        {
+          "title": "Mayor of London",
+          "url": "https://www.london.gov.uk/",
+          "grade": 2
+        },
+        {
+          "title": "Visit London events",
+          "url": "https://www.visitlondon.com/things-to-do/events",
+          "grade": 1
+        },
+        {
+          "title": "European Festivals Association",
+          "url": "https://www.efa-aef.eu/",
+          "grade": 0
+        },
+        {
+          "title": "Glastonbury Festival",
+          "url": "https://www.glastonburyfestivals.co.uk/",
+          "grade": 0
+        }
+      ],
+      "precision_at_3": 0.667,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 3
+    },
+    {
+      "id": "paris-events",
+      "query": "Paris events this weekend",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Paris.fr events",
+          "url": "https://www.paris.fr/",
+          "grade": 3
+        },
+        {
+          "title": "Visit Paris Region",
+          "url": "https://www.visitparisregion.com/",
+          "grade": 2
+        },
+        {
+          "title": "European Festivals Association",
+          "url": "https://www.efa-aef.eu/",
+          "grade": 1
+        }
+      ],
+      "precision_at_3": 0.667,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 3
+    },
+    {
+      "id": "munich-concert-tickets",
+      "query": "Munich concert tickets",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Eventim Germany",
+          "url": "https://www.eventim.de/",
+          "grade": 3
+        },
+        {
+          "title": "Munich city portal",
+          "url": "https://www.muenchen.de/",
+          "grade": 2
+        },
+        {
+          "title": "European Festivals Association",
+          "url": "https://www.efa-aef.eu/",
+          "grade": 0
+        }
+      ],
+      "precision_at_3": 0.667,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 3
+    },
+    {
+      "id": "hamburg-christmas-markets",
+      "query": "Hamburg Christmas markets",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Hamburg tourism",
+          "url": "https://www.hamburg.com/",
+          "grade": 3
+        },
+        {
+          "title": "Hamburg city portal",
+          "url": "https://www.hamburg.de/",
+          "grade": 2
+        },
+        {
+          "title": "European Festivals Association",
+          "url": "https://www.efa-aef.eu/",
+          "grade": 0
+        }
+      ],
+      "precision_at_3": 0.667,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 3
+    },
+    {
+      "id": "london-transport",
+      "query": "London public transport",
+      "status": "staging_results",
+      "top": [
+        {
+          "title": "Keeping London moving - Transport for London",
+          "url": "https://tfl.gov.uk/",
+          "grade": 3
+        }
+      ],
+      "precision_at_3": 1.0,
+      "helpful_top1": true,
+      "ndcg_at_5": 0.787,
+      "judged_at_5": 1
+    },
+    {
+      "id": "berlin-christmas-transport",
+      "query": "Berlin Christmas market public transport",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "BVG Berlin",
+          "url": "https://www.bvg.de/",
+          "grade": 3
+        },
+        {
+          "title": "S-Bahn Berlin",
+          "url": "https://www.s-bahn-berlin.de/",
+          "grade": 2
+        }
+      ],
+      "precision_at_3": 1.0,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 2
+    },
+    {
+      "id": "uk-ticket-refunds",
+      "query": "UK ticket refund rights",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "UK Civil Aviation Authority (ATOL)",
+          "url": "https://www.caa.co.uk/",
+          "grade": 2
+        },
+        {
+          "title": "GOV.UK",
+          "url": "https://www.gov.uk/search/all?keywords=UK+ticket+refund+rights",
+          "grade": 3
+        },
+        {
+          "title": "The O2",
+          "url": "https://www.theo2.co.uk/",
+          "grade": 0
+        },
+        {
+          "title": "Roundhouse",
+          "url": "https://www.roundhouse.org.uk/",
+          "grade": 0
+        },
+        {
+          "title": "Southbank Centre",
+          "url": "https://www.southbankcentre.co.uk/",
+          "grade": 0
+        }
+      ],
+      "precision_at_3": 0.667,
+      "helpful_top1": true,
+      "ndcg_at_5": 0.834,
+      "judged_at_5": 2
+    }
+  ],
+  "summary": {
+    "queries": 12,
+    "mean_ndcg_at_5": 0.956,
+    "mean_precision_at_3": 0.722,
+    "helpful_top1_rate": 1.0,
+    "judged_at_5": 36
+  },
+  "limitations": [
+    "Internal first-pass grades; not an external reviewer.",
+    "Captured pages only; unjudged results score zero.",
+    "No live dates, prices or availability are asserted."
+  ]
+}

@@ -109,6 +109,19 @@ class PulseSearchClient:
     def ask(self, question: str) -> QueryResult:
         return self.answer(question)
 
+    def research(self, question: str) -> QueryResult:
+        """Ask the dynamic discovery pipeline, preserving its evidence labels."""
+        body = self._call("/v1/research", privacy.public_answer({"question": question}))
+        citations = tuple(body.get("citations") or ())
+        links = tuple(body.get("candidates") or ())
+        return QueryResult(
+            status=str(body.get("status") or "NO_EVIDENCE"),
+            response_mode=str(body.get("response_mode") or "NO_EVIDENCE"),
+            answer=str(body.get("answer") or ""),
+            links=links, citations=citations,
+            claim_evidence=tuple(body.get("claims") or ()),
+            request_id=str(body.get("request_id") or ""), raw=body)
+
     def wiki_candidate(self, article: dict) -> dict:
         body = self._call("/v1/wiki-candidates",
                           {"article": privacy.public_article(article)})

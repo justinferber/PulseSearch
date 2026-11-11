@@ -27,6 +27,7 @@ from urllib.parse import quote, urlsplit
 from . import privacy
 from .answers import AnswerService, load_pack
 from .discovery import SearxngDiscovery
+from .m12_research import ResearchEngine
 from .search import search_staging
 from .wiki import WikiError, WikiPolicy, WikiService, WikiStore
 
@@ -36,13 +37,14 @@ READ_TIMEOUT = 10.0
 VERSION = "1.2"
 
 SCOPES = {
-    "health:read", "search:read", "answer:read", "wiki:propose",
+    "health:read", "search:read", "answer:read", "research:read", "wiki:propose",
 }
 PATH_SCOPES = {
     "/v1/health": "health:read",
     "/v1/capabilities": "health:read",
     "/v1/search": "search:read",
     "/v1/answer": "answer:read",
+    "/v1/research": "research:read",
     "/v1/wiki-candidates": "wiki:propose",
 }
 
@@ -228,10 +230,12 @@ class _Handler(BaseHTTPRequestHandler):
                                  "provider_leads_separate": True,
                                  "live_weather": False,
                                  "wiki_candidates": self.server.wiki is not None,
+                                 "dynamic_research": self.server.research is not None,
                                  "languages": ["en", "de"], "max_results": 20},
                 "endpoints": ["POST /v1/search", "POST /v1/answer",
-                              "POST /v1/wiki-candidates"],
+                              "POST /v1/research", "POST /v1/wiki-candidates"],
                 "notices": ["Read-only local index. Temporary provider leads are separate and unverified.",
+                            "Dynamic research only fetches canonical URLs in the operator source policy.",
                             "Wiki candidates are drafts only; this service has no publish endpoint."],
             })
             return
@@ -274,6 +278,8 @@ class _Handler(BaseHTTPRequestHandler):
                 response = self._search(payload, request_id)
             elif path == "/v1/answer":
                 response = self._answer(payload, request_id)
+            elif path == "/v1/research":
+                response = self._research(payload, request_id)
             elif path == "/v1/wiki-candidates":
                 response = self._wiki(payload, request_id, consumer)
             else:
@@ -334,6 +340,21 @@ class _Handler(BaseHTTPRequestHandler):
                 "confidence": answer["confidence"], "limits": answer["limits"],
                 "notices": answer["limits"], "request_id": request_id,
                 "retrieved_at": now_iso()}
+
+    def _research(self, payload: dict, request_id: str) -> dict:
+        question = privacy.public_answer(payload)["question"].strip()
+        if not question or len(question) > MAX_QUERY:
+            raise ValueError(f"question must be 1..{MAX_QUERY} characters")
+        if self.server.research is None:
+            return {"status": "NOT_CONFIGURED", "response_mode": "NO_EVIDENCE",
+                    "question": question, "request_id": request_id,
+                    "notices": ["Dynamic research is not configured on this API process."]}
+        result = self.server.research.answer(question).as_dict()
+        for citation in result.get("citations") or []:
+            citation["evidence_id"] = "ev-" + hashlib.sha256(
+                str(citation.get("url") or "").encode()).hexdigest()[:12]
+        result.update({"request_id": request_id, "retrieved_at": now_iso()})
+        return result
 
     def _wiki(self, payload: dict, request_id: str, consumer: Consumer) -> dict:
         if self.server.wiki is None:
@@ -462,7 +483,8 @@ def build_server(staging_path: str, tokens: dict, port: int = 8788,
                  host: str = "127.0.0.1", pack_path: str = "config/knowledge_pack.json",
                  wiki_path: str | None = None,
                  wiki_evidence_path: str | None = None,
-                 discovery: SearxngDiscovery | None = None) -> ThreadingHTTPServer:
+                 discovery: SearxngDiscovery | None = None,
+                 research: ResearchEngine | None = None) -> ThreadingHTTPServer:
     consumers = normalise_consumers(tokens)
     if host not in ("127.0.0.1", "::1", "localhost"):
         raise ValueError("refusing a non-loopback bind; public exposure needs a separate review")
@@ -479,6 +501,7 @@ def build_server(staging_path: str, tokens: dict, port: int = 8788,
     server.wiki = wiki
     server.pack = pack
     server.discovery = discovery or SearxngDiscovery(None)
+    server.research = research
     server.staging_path = staging_path
     server.open_index = lambda: ReadOnlyIndex(staging_path)
     return server
@@ -492,10 +515,14 @@ def main(argv: list[str] | None = None) -> int:
                         help="bearer token; prefer PULSE_API_TOKEN over argv")
     parser.add_argument("--consumer", default="puke")
     parser.add_argument("--scopes", default="health:read,search:read,answer:read",
-                        help="comma-separated scopes; add wiki:propose for draft creation")
+                        help="comma-separated scopes; add research:read for /v1/research, "
+                             "or wiki:propose for draft creation")
     parser.add_argument("--wiki", default=None,
                         help="local Wiki workflow database (draft-only API)")
     parser.add_argument("--knowledge", default="config/knowledge_pack.json")
+    parser.add_argument("--sources", default=None,
+                        help="approved M12 JSON source policy; dynamic research stays disabled without it")
+    parser.add_argument("--max-research-pages", type=int, default=4)
     args = parser.parse_args(argv)
     if not args.token:
         parser.error("set PULSE_API_TOKEN or pass --token; unauthenticated mode is not supported")
@@ -504,13 +531,29 @@ def main(argv: list[str] | None = None) -> int:
     if unknown:
         parser.error(f"unknown scopes: {', '.join(sorted(unknown))}")
     discovery = None
+    research = None
     if os.environ.get("PULSE_SEARXNG_URL"):
         discovery = SearxngDiscovery(os.environ["PULSE_SEARXNG_URL"])
+    if args.sources:
+        from pulse_search_crawler_r3a3f.config import CrawlConfig
+        from pulse_search_crawler_r3a3f.robots import RobotsCache
+        from pulse_search_crawler_r3a3f.safe_fetch import Fetcher
+        from .providers import SearxNG
+        from .m12_research import SourcePolicy
+        if not os.environ.get("PULSE_SEARXNG_URL"):
+            parser.error("--sources requires PULSE_SEARXNG_URL for live discovery")
+        policy = SourcePolicy.from_file(args.sources)
+        fetcher = Fetcher(CrawlConfig(min_interval_s=1.0, timeout_s=20.0,
+                                      max_bytes=1_500_000))
+        research = ResearchEngine(
+            provider=SearxNG(os.environ["PULSE_SEARXNG_URL"]), policy=policy,
+            fetcher=fetcher, robots=RobotsCache(fetcher),
+            max_pages=args.max_research_pages)
     server = build_server(
         args.staging,
         {args.consumer: Consumer(args.consumer, args.token, scopes)},
         args.port, pack_path=args.knowledge, wiki_path=args.wiki,
-        discovery=discovery)
+        discovery=discovery, research=research)
     print(f"pulse-search api: http://127.0.0.1:{args.port}/v1/health (consumer={args.consumer})",
           flush=True)
     try:

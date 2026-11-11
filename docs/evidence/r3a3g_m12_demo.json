@@ -1,0 +1,1593 @@
+{
+  "source_policy": "config/m12_sources.json",
+  "discovery_note": "Recorded live local-SearXNG leads; upstream engines were rate-limited at evidence time.",
+  "cases": {
+    "list": {
+      "status": "ANSWERED",
+      "response_mode": "CITED_LIST",
+      "question": "What are the top ten Christmas markets in the UK for 2026?",
+      "answer": "Pulse Search found 10 supported entries for “What are the top ten Christmas markets in the UK for 2026?”. The order follows the cited publisher's feature order, not an independent ranking.\n\n1. Newcastle Christmas Market (Newcastle upon Tyne, England) — 19th - 23rd December 2026. Expect to find around 40 stalls selling everything from food and drinks to gifts and decorations, from local North East traders.\n\n2. Frankfurt Christmas Market, Birmingham (Birmingham, England) — 5th November - 24th December 2026. With street food, craft stalls, twinkling lights and live music, this is a little slice of festive Frankfurt.\n\n3. Edinburgh Christmas Markets (Edinburgh, Scotland) — 14th November 2026 - 3rd January 2027. Fill up with arts and crafts, foodie treats and traditional Christmas products as you get into the festive spirit in Edinburgh.\n\n4. Manchester Christmas Markets (Manchester, England) — 6th November - 22nd December 2026. The Manchester Christmas Markets are filled with festive gifts and delicious food and drink stalls.\n\n5. Cardiff Christmas Market (Cardiff, Wales) — 12th November - 23rd December 2026. Discover original, hand-made products crafted by artists, and plenty of festive food to fill yourself with.\n\n6. York Christmas Market (York, England) — 12th November - 21st December 2026. Expect twinkling lights through the streets and wooden chalets decked out with gifts, snacks and plenty of festive cheer.\n\n7. Bath Christmas Market (Bath, England) — 26th November - 13th December 2026. Expect a real treasure trove of gifts for an eco-savvy shopping experience at one of Britain’s most sustainable Christmas markets.\n\n8. Bristol Christmas Market (Bristol, England) — 2026 dates not confirmed in the extracted text. November - December 2026 Found in the heart of Bristol city centre, this Christmas market boasts unique stalls, live entertainment and Santa himself.\n\n9. Glasgow Christmas Market (Glasgow, Scotland) — 2026 dates not confirmed in the extracted text. Glasgow’s Christmas markets bring the best of traditional festive fun, from a Victorian carousel and fairground rides to Christmas-themed entertainment and more.\n\n10. Hyde Park Winter Wonderland (London, England) — 19th November 2026 - 3rd January 2027. Transforming one of London’s spectacular parks, Hyde Park Winter Wonderland offers a festive paradise in the heart of the city.",
+      "plan": {
+        "answer_type": "list",
+        "count": 10,
+        "year": 2026,
+        "location": "UK",
+        "language": "en",
+        "queries": [
+          "What are the top ten Christmas markets in the UK for 2026?",
+          "christmas markets uk",
+          "christmas markets uk 2026",
+          "best christmas markets uk 2026 official"
+        ]
+      },
+      "claims": [
+        {
+          "claim": "Newcastle Christmas Market in Newcastle upon Tyne, England is listed for 19th - 23rd December 2026.",
+          "evidence": [
+            {
+              "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+              "publisher": "VisitBritain",
+              "source_id": "visitbritain-christmas-2026",
+              "excerpt": "Top Christmas markets in Britain Press Escape while tabbing through the list to skip to the next section Newcastle Christmas Market 19th - 23rd December 2026 Expect to find around 40 stalls selling everything from food and drinks to gifts and decorations, from local North East traders. Head to the Newcastle Christmas Market (opens in a new tab) Photo by: Get",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "support": "confirmed_2026",
+          "confidence": 0.85
+        },
+        {
+          "claim": "Frankfurt Christmas Market, Birmingham in Birmingham, England is listed for 5th November - 24th December 2026.",
+          "evidence": [
+            {
+              "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+              "publisher": "VisitBritain",
+              "source_id": "visitbritain-christmas-2026",
+              "excerpt": "n a new tab) Photo by: Getty Images/SolStock Location: Newcastle upon Tyne, England Newcastle Christmas Market Frankfurt Christmas Market, Birmingham 5th November - 24th December 2026 With street food, craft stalls, twinkling lights and live music, this is a little slice of festive Frankfurt. Discover the Frankfurt Christmas Market, Birmingham (opens in a ne",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "support": "confirmed_2026",
+          "confidence": 0.85
+        },
+        {
+          "claim": "Edinburgh Christmas Markets in Edinburgh, Scotland is listed for 14th November 2026 - 3rd January 2027.",
+          "evidence": [
+            {
+              "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+              "publisher": "VisitBritain",
+              "source_id": "visitbritain-christmas-2026",
+              "excerpt": "gham (opens in a new tab) Photo by: visit_birmingham Location: Birmingham, England Frankfurt Christmas Market, Birmingham Edinburgh Christmas Markets 14th November 2026 - 3rd January 2027 Fill up with arts and crafts, foodie treats and traditional Christmas products as you get into the festive spirit in Edinburgh. Enjoy the festivities at Edinburgh Christmas",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "support": "confirmed_2026",
+          "confidence": 0.85
+        },
+        {
+          "claim": "Manchester Christmas Markets in Manchester, England is listed for 6th November - 22nd December 2026.",
+          "evidence": [
+            {
+              "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+              "publisher": "VisitBritain",
+              "source_id": "visitbritain-christmas-2026",
+              "excerpt": "ts (opens in a new tab) Photo by: Shutterstock/Stephen Bridger Location: Edinburgh, Scotland Edinburgh Christmas Markets Manchester Christmas Markets 6th November - 22nd December 2026 The Manchester Christmas Markets are filled with festive gifts and delicious food and drink stalls. Discover the magic of Manchester Christmas Markets (opens in a new tab) Phot",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "support": "confirmed_2026",
+          "confidence": 0.85
+        },
+        {
+          "claim": "Cardiff Christmas Market in Cardiff, Wales is listed for 12th November - 23rd December 2026.",
+          "evidence": [
+            {
+              "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+              "publisher": "VisitBritain",
+              "source_id": "visitbritain-christmas-2026",
+              "excerpt": "Christmas Markets (opens in a new tab) Photo by: VisitManchester Location: Manchester, England Manchester Christmas Markets Cardiff Christmas Market 12th November - 23rd December 2026 Discover original, hand-made products crafted by artists, and plenty of festive food to fill yourself with. Follow the festive lights at Cardiff Christmas Market (opens in a ne",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "support": "confirmed_2026",
+          "confidence": 0.85
+        },
+        {
+          "claim": "York Christmas Market in York, England is listed for 12th November - 21st December 2026.",
+          "evidence": [
+            {
+              "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+              "publisher": "VisitBritain",
+              "source_id": "visitbritain-christmas-2026",
+              "excerpt": "f Christmas Market (opens in a new tab) Photo by: VisitBritain/Andrew Pickett Location: Cardiff, Wales Cardiff Christmas Market York Christmas Market 12th November - 21st December 2026 Expect twinkling lights through the streets and wooden chalets decked out with gifts, snacks and plenty of festive cheer. Enjoy a mulled wine and snap a picture with the Chris",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "support": "confirmed_2026",
+          "confidence": 0.85
+        },
+        {
+          "claim": "Bath Christmas Market in Bath, England is listed for 26th November - 13th December 2026.",
+          "evidence": [
+            {
+              "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+              "publisher": "VisitBritain",
+              "source_id": "visitbritain-christmas-2026",
+              "excerpt": "at York Christmas Market (opens in a new tab) Photo by: VisitBritain/Rama Knight Location: York, England York Christmas Market Bath Christmas Market 26th November - 13th December 2026 Expect a real treasure trove of gifts for an eco-savvy shopping experience at one of Britain’s most sustainable Christmas markets. Find out more about Bath’s Christmas market (",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "support": "confirmed_2026",
+          "confidence": 0.85
+        },
+        {
+          "claim": "Bristol Christmas Market in Bristol, England is listed for dates not confirmed.",
+          "evidence": [
+            {
+              "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+              "publisher": "VisitBritain",
+              "source_id": "visitbritain-christmas-2026",
+              "excerpt": "out more about Bath’s Christmas market (opens in a new tab) Photo by: Bath BID Location: Bath, England Bath Christmas Market Bristol Christmas Market November - December 2026 Found in the heart of Bristol city centre, this Christmas market boasts unique stalls, live entertainment and Santa himself. Enjoy festivities galore at Bristol Christmas Market (opens",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "support": "unconfirmed",
+          "confidence": 0.5
+        },
+        {
+          "claim": "Glasgow Christmas Market in Glasgow, Scotland is listed for dates not confirmed.",
+          "evidence": [
+            {
+              "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+              "publisher": "VisitBritain",
+              "source_id": "visitbritain-christmas-2026",
+              "excerpt": "stol Christmas Market (opens in a new tab) Photo by: Destination Bristol Location: Bristol, England Bristol Christmas Market Glasgow Christmas Market Glasgow’s Christmas markets bring the best of traditional festive fun, from a Victorian carousel and fairground rides to Christmas-themed entertainment and more. Enjoy Glasgow’s Christmas markets (opens in a ne",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "support": "unconfirmed",
+          "confidence": 0.5
+        },
+        {
+          "claim": "Hyde Park Winter Wonderland in London, England is listed for 19th November 2026 - 3rd January 2027.",
+          "evidence": [
+            {
+              "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+              "publisher": "VisitBritain",
+              "source_id": "visitbritain-christmas-2026",
+              "excerpt": "stmas markets (opens in a new tab) Photo by: VisitBritain/Scott Salt Location: Glasgow, Scotland Glasgow Christmas Market Hyde Park Winter Wonderland 19th November 2026 - 3rd January 2027 Transforming one of London’s spectacular parks, Hyde Park Winter Wonderland offers a festive paradise in the heart of the city. Discover the festive spirit at Winter Wonder",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "support": "confirmed_2026",
+          "confidence": 0.85
+        }
+      ],
+      "citations": [
+        {
+          "title": "Newcastle Christmas Market",
+          "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+          "publisher": "VisitBritain",
+          "kind": "approved_source"
+        },
+        {
+          "title": "Newcastle Christmas Market",
+          "url": "https://newcastlegateshead.com/events/newcastle-christmas-market-2026",
+          "publisher": "official organiser",
+          "kind": "official_link"
+        },
+        {
+          "title": "Frankfurt Christmas Market, Birmingham",
+          "url": "https://www.thebfcm.co.uk/",
+          "publisher": "official organiser",
+          "kind": "official_link"
+        },
+        {
+          "title": "Edinburgh Christmas Markets",
+          "url": "https://www.edinburgh-christmas.com/",
+          "publisher": "official organiser",
+          "kind": "official_link"
+        },
+        {
+          "title": "Manchester Christmas Markets",
+          "url": "https://www.visitmanchester.com/shopping/manchester-christmas-markets-p327351",
+          "publisher": "official organiser",
+          "kind": "official_link"
+        },
+        {
+          "title": "Cardiff Christmas Market",
+          "url": "http://www.cardiffchristmasmarket.com/",
+          "publisher": "official organiser",
+          "kind": "official_link"
+        },
+        {
+          "title": "York Christmas Market",
+          "url": "https://www.visityork.org/christmas",
+          "publisher": "official organiser",
+          "kind": "official_link"
+        },
+        {
+          "title": "Bath Christmas Market",
+          "url": "https://bathchristmasmarket.co.uk/",
+          "publisher": "official organiser",
+          "kind": "official_link"
+        },
+        {
+          "title": "Bristol Christmas Market",
+          "url": "https://bristolchristmasmarket.com/",
+          "publisher": "official organiser",
+          "kind": "official_link"
+        },
+        {
+          "title": "Glasgow Christmas Market",
+          "url": "https://www.whatsonglasgow.co.uk/events/christmas-and-new-year/",
+          "publisher": "official organiser",
+          "kind": "official_link"
+        },
+        {
+          "title": "Hyde Park Winter Wonderland",
+          "url": "https://www.southbankcentre.co.uk/whats-on/festivals-series/winter-festival",
+          "publisher": "official organiser",
+          "kind": "official_link"
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Newcastle Christmas Market",
+          "location": "Newcastle upon Tyne, England",
+          "dates": "19th - 23rd December 2026",
+          "description": "Expect to find around 40 stalls selling everything from food and drinks to gifts and decorations, from local North East traders.",
+          "source_url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+          "publisher": "VisitBritain",
+          "source_id": "visitbritain-christmas-2026",
+          "authority": "official",
+          "official_url": "https://newcastlegateshead.com/events/newcastle-christmas-market-2026",
+          "evidence_status": "confirmed_2026",
+          "date_variants": [],
+          "presentation_order": 0,
+          "evidence_excerpt": "Top Christmas markets in Britain Press Escape while tabbing through the list to skip to the next section Newcastle Christmas Market 19th - 23rd December 2026 Expect to find around 40 stalls selling everything from food and drinks to gifts and decorations, from local North East traders. Head to the Newcastle Christmas Market (opens in a new tab) Photo by: Get",
+          "sources": [
+            {
+              "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+              "publisher": "VisitBritain",
+              "source_id": "visitbritain-christmas-2026",
+              "date_text": "19th - 23rd December 2026",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "score": 16.5
+        },
+        {
+          "name": "Frankfurt Christmas Market, Birmingham",
+          "location": "Birmingham, England",
+          "dates": "5th November - 24th December 2026",
+          "description": "With street food, craft stalls, twinkling lights and live music, this is a little slice of festive Frankfurt.",
+          "source_url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+          "publisher": "VisitBritain",
+          "source_id": "visitbritain-christmas-2026",
+          "authority": "official",
+          "official_url": "https://www.thebfcm.co.uk/",
+          "evidence_status": "confirmed_2026",
+          "date_variants": [],
+          "presentation_order": 1,
+          "evidence_excerpt": "n a new tab) Photo by: Getty Images/SolStock Location: Newcastle upon Tyne, England Newcastle Christmas Market Frankfurt Christmas Market, Birmingham 5th November - 24th December 2026 With street food, craft stalls, twinkling lights and live music, this is a little slice of festive Frankfurt. Discover the Frankfurt Christmas Market, Birmingham (opens in a ne",
+          "sources": [
+            {
+              "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+              "publisher": "VisitBritain",
+              "source_id": "visitbritain-christmas-2026",
+              "date_text": "5th November - 24th December 2026",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "score": 16.5
+        },
+        {
+          "name": "Edinburgh Christmas Markets",
+          "location": "Edinburgh, Scotland",
+          "dates": "14th November 2026 - 3rd January 2027",
+          "description": "Fill up with arts and crafts, foodie treats and traditional Christmas products as you get into the festive spirit in Edinburgh.",
+          "source_url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+          "publisher": "VisitBritain",
+          "source_id": "visitbritain-christmas-2026",
+          "authority": "official",
+          "official_url": "https://www.edinburgh-christmas.com/",
+          "evidence_status": "confirmed_2026",
+          "date_variants": [],
+          "presentation_order": 2,
+          "evidence_excerpt": "gham (opens in a new tab) Photo by: visit_birmingham Location: Birmingham, England Frankfurt Christmas Market, Birmingham Edinburgh Christmas Markets 14th November 2026 - 3rd January 2027 Fill up with arts and crafts, foodie treats and traditional Christmas products as you get into the festive spirit in Edinburgh. Enjoy the festivities at Edinburgh Christmas",
+          "sources": [
+            {
+              "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+              "publisher": "VisitBritain",
+              "source_id": "visitbritain-christmas-2026",
+              "date_text": "14th November 2026 - 3rd January 2027",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "score": 16.5
+        },
+        {
+          "name": "Manchester Christmas Markets",
+          "location": "Manchester, England",
+          "dates": "6th November - 22nd December 2026",
+          "description": "The Manchester Christmas Markets are filled with festive gifts and delicious food and drink stalls.",
+          "source_url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+          "publisher": "VisitBritain",
+          "source_id": "visitbritain-christmas-2026",
+          "authority": "official",
+          "official_url": "https://www.visitmanchester.com/shopping/manchester-christmas-markets-p327351",
+          "evidence_status": "confirmed_2026",
+          "date_variants": [],
+          "presentation_order": 3,
+          "evidence_excerpt": "ts (opens in a new tab) Photo by: Shutterstock/Stephen Bridger Location: Edinburgh, Scotland Edinburgh Christmas Markets Manchester Christmas Markets 6th November - 22nd December 2026 The Manchester Christmas Markets are filled with festive gifts and delicious food and drink stalls. Discover the magic of Manchester Christmas Markets (opens in a new tab) Phot",
+          "sources": [
+            {
+              "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+              "publisher": "VisitBritain",
+              "source_id": "visitbritain-christmas-2026",
+              "date_text": "6th November - 22nd December 2026",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "score": 16.5
+        },
+        {
+          "name": "Cardiff Christmas Market",
+          "location": "Cardiff, Wales",
+          "dates": "12th November - 23rd December 2026",
+          "description": "Discover original, hand-made products crafted by artists, and plenty of festive food to fill yourself with.",
+          "source_url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+          "publisher": "VisitBritain",
+          "source_id": "visitbritain-christmas-2026",
+          "authority": "official",
+          "official_url": "http://www.cardiffchristmasmarket.com/",
+          "evidence_status": "confirmed_2026",
+          "date_variants": [],
+          "presentation_order": 4,
+          "evidence_excerpt": "Christmas Markets (opens in a new tab) Photo by: VisitManchester Location: Manchester, England Manchester Christmas Markets Cardiff Christmas Market 12th November - 23rd December 2026 Discover original, hand-made products crafted by artists, and plenty of festive food to fill yourself with. Follow the festive lights at Cardiff Christmas Market (opens in a ne",
+          "sources": [
+            {
+              "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+              "publisher": "VisitBritain",
+              "source_id": "visitbritain-christmas-2026",
+              "date_text": "12th November - 23rd December 2026",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "score": 16.5
+        },
+        {
+          "name": "York Christmas Market",
+          "location": "York, England",
+          "dates": "12th November - 21st December 2026",
+          "description": "Expect twinkling lights through the streets and wooden chalets decked out with gifts, snacks and plenty of festive cheer.",
+          "source_url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+          "publisher": "VisitBritain",
+          "source_id": "visitbritain-christmas-2026",
+          "authority": "official",
+          "official_url": "https://www.visityork.org/christmas",
+          "evidence_status": "confirmed_2026",
+          "date_variants": [],
+          "presentation_order": 5,
+          "evidence_excerpt": "f Christmas Market (opens in a new tab) Photo by: VisitBritain/Andrew Pickett Location: Cardiff, Wales Cardiff Christmas Market York Christmas Market 12th November - 21st December 2026 Expect twinkling lights through the streets and wooden chalets decked out with gifts, snacks and plenty of festive cheer. Enjoy a mulled wine and snap a picture with the Chris",
+          "sources": [
+            {
+              "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+              "publisher": "VisitBritain",
+              "source_id": "visitbritain-christmas-2026",
+              "date_text": "12th November - 21st December 2026",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "score": 16.5
+        },
+        {
+          "name": "Bath Christmas Market",
+          "location": "Bath, England",
+          "dates": "26th November - 13th December 2026",
+          "description": "Expect a real treasure trove of gifts for an eco-savvy shopping experience at one of Britain’s most sustainable Christmas markets.",
+          "source_url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+          "publisher": "VisitBritain",
+          "source_id": "visitbritain-christmas-2026",
+          "authority": "official",
+          "official_url": "https://bathchristmasmarket.co.uk/",
+          "evidence_status": "confirmed_2026",
+          "date_variants": [],
+          "presentation_order": 6,
+          "evidence_excerpt": "at York Christmas Market (opens in a new tab) Photo by: VisitBritain/Rama Knight Location: York, England York Christmas Market Bath Christmas Market 26th November - 13th December 2026 Expect a real treasure trove of gifts for an eco-savvy shopping experience at one of Britain’s most sustainable Christmas markets. Find out more about Bath’s Christmas market (",
+          "sources": [
+            {
+              "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+              "publisher": "VisitBritain",
+              "source_id": "visitbritain-christmas-2026",
+              "date_text": "26th November - 13th December 2026",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "score": 16.5
+        },
+        {
+          "name": "Bristol Christmas Market",
+          "location": "Bristol, England",
+          "dates": "",
+          "description": "November - December 2026 Found in the heart of Bristol city centre, this Christmas market boasts unique stalls, live entertainment and Santa himself.",
+          "source_url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+          "publisher": "VisitBritain",
+          "source_id": "visitbritain-christmas-2026",
+          "authority": "official",
+          "official_url": "https://bristolchristmasmarket.com/",
+          "evidence_status": "unconfirmed",
+          "date_variants": [],
+          "presentation_order": 7,
+          "evidence_excerpt": "out more about Bath’s Christmas market (opens in a new tab) Photo by: Bath BID Location: Bath, England Bath Christmas Market Bristol Christmas Market November - December 2026 Found in the heart of Bristol city centre, this Christmas market boasts unique stalls, live entertainment and Santa himself. Enjoy festivities galore at Bristol Christmas Market (opens",
+          "sources": [
+            {
+              "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+              "publisher": "VisitBritain",
+              "source_id": "visitbritain-christmas-2026",
+              "date_text": "",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "score": 12.5
+        },
+        {
+          "name": "Glasgow Christmas Market",
+          "location": "Glasgow, Scotland",
+          "dates": "",
+          "description": "Glasgow’s Christmas markets bring the best of traditional festive fun, from a Victorian carousel and fairground rides to Christmas-themed entertainment and more.",
+          "source_url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+          "publisher": "VisitBritain",
+          "source_id": "visitbritain-christmas-2026",
+          "authority": "official",
+          "official_url": "https://www.whatsonglasgow.co.uk/events/christmas-and-new-year/",
+          "evidence_status": "unconfirmed",
+          "date_variants": [],
+          "presentation_order": 8,
+          "evidence_excerpt": "stol Christmas Market (opens in a new tab) Photo by: Destination Bristol Location: Bristol, England Bristol Christmas Market Glasgow Christmas Market Glasgow’s Christmas markets bring the best of traditional festive fun, from a Victorian carousel and fairground rides to Christmas-themed entertainment and more. Enjoy Glasgow’s Christmas markets (opens in a ne",
+          "sources": [
+            {
+              "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+              "publisher": "VisitBritain",
+              "source_id": "visitbritain-christmas-2026",
+              "date_text": "",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "score": 12.5
+        },
+        {
+          "name": "Hyde Park Winter Wonderland",
+          "location": "London, England",
+          "dates": "19th November 2026 - 3rd January 2027",
+          "description": "Transforming one of London’s spectacular parks, Hyde Park Winter Wonderland offers a festive paradise in the heart of the city.",
+          "source_url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+          "publisher": "VisitBritain",
+          "source_id": "visitbritain-christmas-2026",
+          "authority": "official",
+          "official_url": "https://www.southbankcentre.co.uk/whats-on/festivals-series/winter-festival",
+          "evidence_status": "confirmed_2026",
+          "date_variants": [],
+          "presentation_order": 9,
+          "evidence_excerpt": "stmas markets (opens in a new tab) Photo by: VisitBritain/Scott Salt Location: Glasgow, Scotland Glasgow Christmas Market Hyde Park Winter Wonderland 19th November 2026 - 3rd January 2027 Transforming one of London’s spectacular parks, Hyde Park Winter Wonderland offers a festive paradise in the heart of the city. Discover the festive spirit at Winter Wonder",
+          "sources": [
+            {
+              "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+              "publisher": "VisitBritain",
+              "source_id": "visitbritain-christmas-2026",
+              "date_text": "19th November 2026 - 3rd January 2027",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "score": 16.5
+        }
+      ],
+      "discovery": {
+        "status": "provider_results",
+        "queries": [
+          "What are the top ten Christmas markets in the UK for 2026?",
+          "christmas markets uk",
+          "christmas markets uk 2026",
+          "best christmas markets uk 2026 official"
+        ],
+        "leads": [
+          {
+            "title": "",
+            "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+            "snippet": "",
+            "publisher": "visitbritain.com",
+            "admitted": true,
+            "source_id": "visitbritain-christmas-2026",
+            "source_kind": "approved_source",
+            "verified": false,
+            "query": "What are the top ten Christmas markets in the UK for 2026?"
+          }
+        ],
+        "admitted_leads": 1,
+        "notices": [
+          "Provider output is unverified; only approved canonical URLs may be fetched."
+        ],
+        "mode": "recorded_local_searxng_lead"
+      },
+      "retrieval": {
+        "attempted": 1,
+        "fetched": 1,
+        "denied": 0,
+        "errors": [],
+        "pages": [
+          {
+            "source_id": "visitbritain-christmas-2026",
+            "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+            "title": "Best Christmas markets in Britain & the UK | VisitBritain Instagram Facebook X YouTube TikTok",
+            "bytes_text": 27174
+          }
+        ]
+      },
+      "limitations": [
+        "Each entry is limited to the cited page; descriptions are short attributed excerpts or faithful summaries of them.",
+        "Dates and availability must be checked with the organiser before travel."
+      ],
+      "shortfall": 0
+    },
+    "bath": {
+      "status": "ANSWERED",
+      "response_mode": "CITED_ANSWER",
+      "question": "When does Bath Christmas Market open in 2026?",
+      "answer": "Bath Christmas Market in Bath: 26 November 2026 – 13 December 2026. Event Information Bath Christmas Market is an open-air, free event situated right in the heart of the World Heritage City of Bath.",
+      "plan": {
+        "answer_type": "factual",
+        "count": 0,
+        "year": 2026,
+        "location": "",
+        "language": "en",
+        "queries": [
+          "When does Bath Christmas Market open in 2026?",
+          "bath christmas market open",
+          "bath christmas market open 2026"
+        ]
+      },
+      "claims": [
+        {
+          "claim": "Bath Christmas Market has the published date span 26 November 2026 – 13 December 2026.",
+          "evidence": [
+            {
+              "url": "https://www.bathchristmasmarket.co.uk/event-information",
+              "publisher": "Bath Christmas Market",
+              "source_id": "bath-christmas-market",
+              "excerpt": "26 November 2026 – 13 December 2026 Event Information Bath Christmas Market is an open-air, free event situated right in the heart of the World Heritage City of Bath.",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "support": "confirmed_2026",
+          "confidence": 0.85
+        }
+      ],
+      "citations": [
+        {
+          "title": "Bath Christmas Market",
+          "url": "https://www.bathchristmasmarket.co.uk/event-information",
+          "publisher": "Bath Christmas Market",
+          "kind": "approved_source"
+        },
+        {
+          "title": "Bath Christmas Market",
+          "url": "https://www.visitbath.co.uk/whats-on/bath-christmas-market-p2988783",
+          "publisher": "Visit Bath",
+          "kind": "approved_source"
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Bath Christmas Market",
+          "location": "Bath",
+          "dates": "26 November 2026 – 13 December 2026",
+          "description": "Event Information Bath Christmas Market is an open-air, free event situated right in the heart of the World Heritage City of Bath.",
+          "source_url": "https://www.bathchristmasmarket.co.uk/event-information",
+          "publisher": "Bath Christmas Market",
+          "source_id": "bath-christmas-market",
+          "authority": "official",
+          "official_url": "",
+          "evidence_status": "confirmed_2026",
+          "date_variants": [],
+          "presentation_order": 0,
+          "evidence_excerpt": "26 November 2026 – 13 December 2026 Event Information Bath Christmas Market is an open-air, free event situated right in the heart of the World Heritage City of Bath.",
+          "sources": [
+            {
+              "url": "https://www.bathchristmasmarket.co.uk/event-information",
+              "publisher": "Bath Christmas Market",
+              "source_id": "bath-christmas-market",
+              "date_text": "26 November 2026 – 13 December 2026",
+              "verified_at": "2026-11-11"
+            },
+            {
+              "url": "https://www.visitbath.co.uk/whats-on/bath-christmas-market-p2988783",
+              "publisher": "Visit Bath",
+              "source_id": "visitbath-bath-christmas-2026",
+              "date_text": "26 November 2026 – 13 December 2026",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "score": 17.0
+        }
+      ],
+      "discovery": {
+        "status": "provider_results",
+        "queries": [
+          "When does Bath Christmas Market open in 2026?",
+          "bath christmas market open",
+          "bath christmas market open 2026"
+        ],
+        "leads": [
+          {
+            "title": "",
+            "url": "https://www.bathchristmasmarket.co.uk/event-information",
+            "snippet": "",
+            "publisher": "bathchristmasmarket.co.uk",
+            "admitted": true,
+            "source_id": "bath-christmas-market",
+            "source_kind": "approved_source",
+            "verified": false,
+            "query": "When does Bath Christmas Market open in 2026?"
+          },
+          {
+            "title": "",
+            "url": "https://www.visitbath.co.uk/whats-on/bath-christmas-market-p2988783",
+            "snippet": "",
+            "publisher": "visitbath.co.uk",
+            "admitted": true,
+            "source_id": "visitbath-bath-christmas-2026",
+            "source_kind": "approved_source",
+            "verified": false,
+            "query": "When does Bath Christmas Market open in 2026?"
+          }
+        ],
+        "admitted_leads": 2,
+        "notices": [
+          "Provider output is unverified; only approved canonical URLs may be fetched."
+        ],
+        "mode": "recorded_local_searxng_lead"
+      },
+      "retrieval": {
+        "attempted": 2,
+        "fetched": 2,
+        "denied": 0,
+        "errors": [],
+        "pages": [
+          {
+            "source_id": "bath-christmas-market",
+            "url": "https://www.bathchristmasmarket.co.uk/event-information",
+            "title": "Event Information | Bath Christmas Market",
+            "bytes_text": 1577
+          },
+          {
+            "source_id": "visitbath-bath-christmas-2026",
+            "url": "https://www.visitbath.co.uk/whats-on/bath-christmas-market-p2988783",
+            "title": "Bath Christmas Market - Visit Bath",
+            "bytes_text": 15173
+          }
+        ]
+      },
+      "limitations": [
+        "Date and opening details are as published on the cited page; verify before travelling."
+      ],
+      "shortfall": 0
+    },
+    "passport": {
+      "status": "ANSWERED",
+      "response_mode": "CITED_ANSWER",
+      "question": "How do I renew my British passport?",
+      "answer": "Use this service to apply for, renew, replace or update your passport and pay for it online.",
+      "plan": {
+        "answer_type": "how_to",
+        "count": 0,
+        "year": 2026,
+        "location": "UK",
+        "language": "en",
+        "queries": [
+          "How do I renew my British passport?",
+          "renew british passport",
+          "renew british passport 2026"
+        ]
+      },
+      "claims": [
+        {
+          "claim": "Use this service to apply for, renew, replace or update your passport and pay for it online.",
+          "evidence": [
+            {
+              "url": "https://www.gov.uk/apply-renew-passport",
+              "publisher": "GOV.UK",
+              "source_id": "uk-passport-renewal",
+              "excerpt": "Use this service to apply for, renew, replace or update your passport and pay for it online.",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "support": "content",
+          "confidence": 0.55
+        }
+      ],
+      "citations": [
+        {
+          "title": "Apply online for a UK passport - GOV.UK GOV.UK",
+          "url": "https://www.gov.uk/apply-renew-passport",
+          "publisher": "GOV.UK",
+          "kind": "approved_source"
+        }
+      ],
+      "candidates": [],
+      "discovery": {
+        "status": "provider_results",
+        "queries": [
+          "How do I renew my British passport?",
+          "renew british passport",
+          "renew british passport 2026"
+        ],
+        "leads": [
+          {
+            "title": "",
+            "url": "https://www.gov.uk/apply-renew-passport",
+            "snippet": "",
+            "publisher": "gov.uk",
+            "admitted": true,
+            "source_id": "uk-passport-renewal",
+            "source_kind": "approved_source",
+            "verified": false,
+            "query": "How do I renew my British passport?"
+          }
+        ],
+        "admitted_leads": 1,
+        "notices": [
+          "Provider output is unverified; only approved canonical URLs may be fetched."
+        ],
+        "mode": "recorded_local_searxng_lead"
+      },
+      "retrieval": {
+        "attempted": 1,
+        "fetched": 1,
+        "denied": 0,
+        "errors": [],
+        "pages": [
+          {
+            "source_id": "uk-passport-renewal",
+            "url": "https://www.gov.uk/apply-renew-passport",
+            "title": "Apply online for a UK passport - GOV.UK GOV.UK",
+            "bytes_text": 2509
+          }
+        ]
+      },
+      "limitations": [
+        "Extractive answer from an approved page; no additional fact was inferred."
+      ],
+      "shortfall": 0
+    },
+    "local": {
+      "status": "ANSWERED",
+      "response_mode": "CITED_ANSWER",
+      "question": "Which museums in London have wheelchair access?",
+      "answer": "Information includes accessible car parking, entrances, wheelchair and mobility scooter provision, facilities, quiet room, and assistance dogs.",
+      "plan": {
+        "answer_type": "local",
+        "count": 10,
+        "year": 2026,
+        "location": "London",
+        "language": "en",
+        "queries": [
+          "Which museums in London have wheelchair access?",
+          "museums london have wheelchair access",
+          "museums london have wheelchair access 2026",
+          "best museums london have wheelchair access 2026 official"
+        ]
+      },
+      "claims": [
+        {
+          "claim": "Information includes accessible car parking, entrances, wheelchair and mobility scooter provision, facilities, quiet room, and assistance dogs.",
+          "evidence": [
+            {
+              "url": "https://www.tate.org.uk/visit/accessibility",
+              "publisher": "Tate",
+              "source_id": "tate-accessibility",
+              "excerpt": "Information includes accessible car parking, entrances, wheelchair and mobility scooter provision, facilities, quiet room, and assistance dogs.",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "support": "content",
+          "confidence": 0.55
+        }
+      ],
+      "citations": [
+        {
+          "title": "Accessibility | Tate",
+          "url": "https://www.tate.org.uk/visit/accessibility",
+          "publisher": "Tate",
+          "kind": "approved_source"
+        }
+      ],
+      "candidates": [],
+      "discovery": {
+        "status": "provider_results",
+        "queries": [
+          "Which museums in London have wheelchair access?",
+          "museums london have wheelchair access",
+          "museums london have wheelchair access 2026",
+          "best museums london have wheelchair access 2026 official"
+        ],
+        "leads": [
+          {
+            "title": "",
+            "url": "https://www.tate.org.uk/visit/accessibility",
+            "snippet": "",
+            "publisher": "tate.org.uk",
+            "admitted": true,
+            "source_id": "tate-accessibility",
+            "source_kind": "approved_source",
+            "verified": false,
+            "query": "Which museums in London have wheelchair access?"
+          }
+        ],
+        "admitted_leads": 1,
+        "notices": [
+          "Provider output is unverified; only approved canonical URLs may be fetched."
+        ],
+        "mode": "recorded_local_searxng_lead"
+      },
+      "retrieval": {
+        "attempted": 1,
+        "fetched": 1,
+        "denied": 0,
+        "errors": [],
+        "pages": [
+          {
+            "source_id": "tate-accessibility",
+            "url": "https://www.tate.org.uk/visit/accessibility",
+            "title": "Accessibility | Tate",
+            "bytes_text": 5767
+          }
+        ]
+      },
+      "limitations": [
+        "Extractive answer from an approved page; no additional fact was inferred."
+      ],
+      "shortfall": 0
+    },
+    "general": {
+      "status": "ANSWERED",
+      "response_mode": "CITED_ANSWER",
+      "question": "What is the capital of France?",
+      "answer": "Paris is the capital and largest city of France , with an estimated city population of 2.04 million in an area of 105.4 km 2 (40.7 sq mi) , as of January 2026 , and a metropolitan population of 13.3 million (2023).",
+      "plan": {
+        "answer_type": "general",
+        "count": 0,
+        "year": 2026,
+        "location": "",
+        "language": "en",
+        "queries": [
+          "What is the capital of France?",
+          "capital france",
+          "capital france 2026"
+        ]
+      },
+      "claims": [
+        {
+          "claim": "Paris is the capital and largest city of France , with an estimated city population of 2.04 million in an area of 105.4 km 2 (40.7 sq mi) , as of January 2026 , and a metropolitan population of 13.3 million (2023).",
+          "evidence": [
+            {
+              "url": "https://en.wikipedia.org/wiki/Paris",
+              "publisher": "Wikipedia",
+              "source_id": "wikipedia-paris",
+              "excerpt": "Paris is the capital and largest city of France , with an estimated city population of 2.04 million in an area of 105.4 km 2 (40.7 sq mi) , as of January 2026 , and a metropolitan population of 13.3 million (2023).",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "support": "content",
+          "confidence": 0.55
+        }
+      ],
+      "citations": [
+        {
+          "title": "Paris - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Paris",
+          "publisher": "Wikipedia",
+          "kind": "approved_source"
+        }
+      ],
+      "candidates": [],
+      "discovery": {
+        "status": "provider_results",
+        "queries": [
+          "What is the capital of France?",
+          "capital france",
+          "capital france 2026"
+        ],
+        "leads": [
+          {
+            "title": "",
+            "url": "https://en.wikipedia.org/wiki/Paris",
+            "snippet": "",
+            "publisher": "en.wikipedia.org",
+            "admitted": true,
+            "source_id": "wikipedia-paris",
+            "source_kind": "approved_source",
+            "verified": false,
+            "query": "What is the capital of France?"
+          }
+        ],
+        "admitted_leads": 1,
+        "notices": [
+          "Provider output is unverified; only approved canonical URLs may be fetched."
+        ],
+        "mode": "recorded_local_searxng_lead"
+      },
+      "retrieval": {
+        "attempted": 1,
+        "fetched": 1,
+        "denied": 0,
+        "errors": [],
+        "pages": [
+          {
+            "source_id": "wikipedia-paris",
+            "url": "https://en.wikipedia.org/wiki/Paris",
+            "title": "Paris - Wikipedia",
+            "bytes_text": 147152
+          }
+        ]
+      },
+      "limitations": [
+        "Extractive answer from an approved page; no additional fact was inferred."
+      ],
+      "shortfall": 0
+    },
+    "comparison": {
+      "status": "ANSWERED",
+      "response_mode": "CITED_ANSWER",
+      "question": "Which Christmas markets are easiest to reach by train?",
+      "answer": "Supported comparisons mentioning “train”:\n- Bath Christmas Market: Great Western Railway is running extra trains on each Saturday of the market.\n- Best Christmas Markets in Europe by train: Go direct to London , Brussels , Paris , Amsterdam , Cologne or Lille or take a connecting train to Bruges or Strasbourg .",
+      "plan": {
+        "answer_type": "comparison",
+        "count": 10,
+        "year": 2026,
+        "location": "",
+        "language": "en",
+        "queries": [
+          "Which Christmas markets are easiest to reach by train?",
+          "christmas markets easiest reach by train",
+          "christmas markets easiest reach by train 2026",
+          "best christmas markets easiest reach by train 2026 official"
+        ]
+      },
+      "claims": [
+        {
+          "claim": "Great Western Railway is running extra trains on each Saturday of the market.",
+          "evidence": [
+            {
+              "url": "https://www.visitbath.co.uk/whats-on/bath-christmas-market-p2988783",
+              "publisher": "Visit Bath",
+              "source_id": "visitbath-bath-christmas-2026",
+              "excerpt": "Great Western Railway is running extra trains on each Saturday of the market.",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "support": "content",
+          "confidence": 0.7
+        },
+        {
+          "claim": "Go direct to London , Brussels , Paris , Amsterdam , Cologne or Lille or take a connecting train to Bruges or Strasbourg .",
+          "evidence": [
+            {
+              "url": "https://www.eurostar.com/us-en/destinations/christmas-markets",
+              "publisher": "Eurostar",
+              "source_id": "eurostar-christmas-markets",
+              "excerpt": "Go direct to London , Brussels , Paris , Amsterdam , Cologne or Lille or take a connecting train to Bruges or Strasbourg .",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "support": "content",
+          "confidence": 0.7
+        }
+      ],
+      "citations": [
+        {
+          "title": "Bath Christmas Market",
+          "url": "https://www.visitbath.co.uk/whats-on/bath-christmas-market-p2988783",
+          "publisher": "Visit Bath",
+          "kind": "approved_source"
+        },
+        {
+          "title": "Best Christmas Markets in Europe by train",
+          "url": "https://www.eurostar.com/us-en/destinations/christmas-markets",
+          "publisher": "Eurostar",
+          "kind": "approved_source"
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Bath Christmas Market",
+          "location": "Bath",
+          "dates": "26 November 2026 – 13 December 2026",
+          "description": "Discover the magic of Bath at Christmas at the Bath Christmas Market.",
+          "source_url": "https://www.visitbath.co.uk/whats-on/bath-christmas-market-p2988783",
+          "publisher": "Visit Bath",
+          "source_id": "visitbath-bath-christmas-2026",
+          "authority": "official",
+          "official_url": "",
+          "evidence_status": "confirmed_2026",
+          "date_variants": [],
+          "presentation_order": 0,
+          "evidence_excerpt": "26 November 2026 – 13 December 2026 Discover the magic of Bath at Christmas at the Bath Christmas Market.",
+          "sources": [
+            {
+              "url": "https://www.visitbath.co.uk/whats-on/bath-christmas-market-p2988783",
+              "publisher": "Visit Bath",
+              "source_id": "visitbath-bath-christmas-2026",
+              "date_text": "26 November 2026 – 13 December 2026",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "score": 15.5
+        },
+        {
+          "name": "Best Christmas Markets in Europe by train",
+          "location": "",
+          "dates": "27 November 2026 – 3 January 2027",
+          "description": "Discover Europe’s most enchanting Christmas markets in 2025 with Eurostar’s travel experts. Embrace the festive spirit and experience the magic of a European holiday like never before.",
+          "source_url": "https://www.eurostar.com/us-en/destinations/christmas-markets",
+          "publisher": "Eurostar",
+          "source_id": "eurostar-christmas-markets",
+          "authority": "official",
+          "official_url": "",
+          "evidence_status": "confirmed_2026",
+          "date_variants": [],
+          "presentation_order": 0,
+          "evidence_excerpt": "27 November 2026 – 3 January 2027 Discover Europe’s most enchanting Christmas markets in 2025 with Eurostar’s travel experts. Embrace the festive spirit and experience the magic of a European holiday like never before.",
+          "sources": [
+            {
+              "url": "https://www.eurostar.com/us-en/destinations/christmas-markets",
+              "publisher": "Eurostar",
+              "source_id": "eurostar-christmas-markets",
+              "date_text": "27 November 2026 – 3 January 2027",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "score": 15.5
+        }
+      ],
+      "discovery": {
+        "status": "provider_results",
+        "queries": [
+          "Which Christmas markets are easiest to reach by train?",
+          "christmas markets easiest reach by train",
+          "christmas markets easiest reach by train 2026",
+          "best christmas markets easiest reach by train 2026 official"
+        ],
+        "leads": [
+          {
+            "title": "",
+            "url": "https://www.eurostar.com/us-en/destinations/christmas-markets",
+            "snippet": "",
+            "publisher": "eurostar.com",
+            "admitted": true,
+            "source_id": "eurostar-christmas-markets",
+            "source_kind": "approved_source",
+            "verified": false,
+            "query": "Which Christmas markets are easiest to reach by train?"
+          },
+          {
+            "title": "",
+            "url": "https://www.visitbath.co.uk/whats-on/bath-christmas-market-p2988783",
+            "snippet": "",
+            "publisher": "visitbath.co.uk",
+            "admitted": true,
+            "source_id": "visitbath-bath-christmas-2026",
+            "source_kind": "approved_source",
+            "verified": false,
+            "query": "Which Christmas markets are easiest to reach by train?"
+          }
+        ],
+        "admitted_leads": 2,
+        "notices": [
+          "Provider output is unverified; only approved canonical URLs may be fetched."
+        ],
+        "mode": "recorded_local_searxng_lead"
+      },
+      "retrieval": {
+        "attempted": 2,
+        "fetched": 2,
+        "denied": 0,
+        "errors": [],
+        "pages": [
+          {
+            "source_id": "eurostar-christmas-markets",
+            "url": "https://www.eurostar.com/us-en/destinations/christmas-markets",
+            "title": "Best Christmas Markets in Europe by train | Eurostar Rounded edges",
+            "bytes_text": 10727
+          },
+          {
+            "source_id": "visitbath-bath-christmas-2026",
+            "url": "https://www.visitbath.co.uk/whats-on/bath-christmas-market-p2988783",
+            "title": "Bath Christmas Market - Visit Bath",
+            "bytes_text": 15173
+          }
+        ]
+      },
+      "limitations": [
+        "This is a comparison of the cited statements, not a measured journey-time ranking."
+      ],
+      "shortfall": 0
+    },
+    "german": {
+      "status": "ANSWERED",
+      "response_mode": "CITED_ANSWER",
+      "question": "Wann öffnet der Bath Christmas Market 2026?",
+      "answer": "Bath Christmas Market in Bath: 26 November 2026 – 13 December 2026. Event Information Bath Christmas Market is an open-air, free event situated right in the heart of the World Heritage City of Bath.",
+      "plan": {
+        "answer_type": "factual",
+        "count": 0,
+        "year": 2026,
+        "location": "",
+        "language": "de",
+        "queries": [
+          "Wann öffnet der Bath Christmas Market 2026?",
+          "bath christmas market",
+          "bath christmas market 2026"
+        ]
+      },
+      "claims": [
+        {
+          "claim": "Bath Christmas Market has the published date span 26 November 2026 – 13 December 2026.",
+          "evidence": [
+            {
+              "url": "https://www.bathchristmasmarket.co.uk/event-information",
+              "publisher": "Bath Christmas Market",
+              "source_id": "bath-christmas-market",
+              "excerpt": "26 November 2026 – 13 December 2026 Event Information Bath Christmas Market is an open-air, free event situated right in the heart of the World Heritage City of Bath.",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "support": "confirmed_2026",
+          "confidence": 0.85
+        }
+      ],
+      "citations": [
+        {
+          "title": "Bath Christmas Market",
+          "url": "https://www.bathchristmasmarket.co.uk/event-information",
+          "publisher": "Bath Christmas Market",
+          "kind": "approved_source"
+        },
+        {
+          "title": "Bath Christmas Market",
+          "url": "https://www.visitbath.co.uk/whats-on/bath-christmas-market-p2988783",
+          "publisher": "Visit Bath",
+          "kind": "approved_source"
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Bath Christmas Market",
+          "location": "Bath",
+          "dates": "26 November 2026 – 13 December 2026",
+          "description": "Event Information Bath Christmas Market is an open-air, free event situated right in the heart of the World Heritage City of Bath.",
+          "source_url": "https://www.bathchristmasmarket.co.uk/event-information",
+          "publisher": "Bath Christmas Market",
+          "source_id": "bath-christmas-market",
+          "authority": "official",
+          "official_url": "",
+          "evidence_status": "confirmed_2026",
+          "date_variants": [],
+          "presentation_order": 0,
+          "evidence_excerpt": "26 November 2026 – 13 December 2026 Event Information Bath Christmas Market is an open-air, free event situated right in the heart of the World Heritage City of Bath.",
+          "sources": [
+            {
+              "url": "https://www.bathchristmasmarket.co.uk/event-information",
+              "publisher": "Bath Christmas Market",
+              "source_id": "bath-christmas-market",
+              "date_text": "26 November 2026 – 13 December 2026",
+              "verified_at": "2026-11-11"
+            },
+            {
+              "url": "https://www.visitbath.co.uk/whats-on/bath-christmas-market-p2988783",
+              "publisher": "Visit Bath",
+              "source_id": "visitbath-bath-christmas-2026",
+              "date_text": "26 November 2026 – 13 December 2026",
+              "verified_at": "2026-11-11"
+            }
+          ],
+          "score": 17.0
+        }
+      ],
+      "discovery": {
+        "status": "provider_results",
+        "queries": [
+          "Wann öffnet der Bath Christmas Market 2026?",
+          "bath christmas market",
+          "bath christmas market 2026"
+        ],
+        "leads": [
+          {
+            "title": "",
+            "url": "https://www.bathchristmasmarket.co.uk/event-information",
+            "snippet": "",
+            "publisher": "bathchristmasmarket.co.uk",
+            "admitted": true,
+            "source_id": "bath-christmas-market",
+            "source_kind": "approved_source",
+            "verified": false,
+            "query": "Wann öffnet der Bath Christmas Market 2026?"
+          },
+          {
+            "title": "",
+            "url": "https://www.visitbath.co.uk/whats-on/bath-christmas-market-p2988783",
+            "snippet": "",
+            "publisher": "visitbath.co.uk",
+            "admitted": true,
+            "source_id": "visitbath-bath-christmas-2026",
+            "source_kind": "approved_source",
+            "verified": false,
+            "query": "Wann öffnet der Bath Christmas Market 2026?"
+          }
+        ],
+        "admitted_leads": 2,
+        "notices": [
+          "Provider output is unverified; only approved canonical URLs may be fetched."
+        ],
+        "mode": "recorded_local_searxng_lead"
+      },
+      "retrieval": {
+        "attempted": 2,
+        "fetched": 2,
+        "denied": 0,
+        "errors": [],
+        "pages": [
+          {
+            "source_id": "bath-christmas-market",
+            "url": "https://www.bathchristmasmarket.co.uk/event-information",
+            "title": "Event Information | Bath Christmas Market",
+            "bytes_text": 1577
+          },
+          {
+            "source_id": "visitbath-bath-christmas-2026",
+            "url": "https://www.visitbath.co.uk/whats-on/bath-christmas-market-p2988783",
+            "title": "Bath Christmas Market - Visit Bath",
+            "bytes_text": 15173
+          }
+        ]
+      },
+      "limitations": [
+        "Date and opening details are as published on the cited page; verify before travelling."
+      ],
+      "shortfall": 0
+    }
+  },
+  "follow_up": {
+    "status": "ANSWERED",
+    "response_mode": "CITED_ANSWER",
+    "question": "Which one starts earliest?",
+    "answer": "From the previously retrieved list, Frankfurt Christmas Market, Birmingham has the earliest published start: 5th November - 24th December 2026.",
+    "plan": {
+      "answer_type": "general",
+      "count": 1,
+      "year": 2026,
+      "location": "",
+      "language": "en",
+      "queries": [
+        "Which one starts earliest?",
+        "one starts earliest",
+        "one starts earliest 2026"
+      ]
+    },
+    "claims": [
+      {
+        "claim": "From the previously retrieved list, Frankfurt Christmas Market, Birmingham has the earliest published start: 5th November - 24th December 2026.",
+        "evidence": [
+          {
+            "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+            "publisher": "VisitBritain",
+            "source_id": "visitbritain-christmas-2026",
+            "excerpt": "n a new tab) Photo by: Getty Images/SolStock Location: Newcastle upon Tyne, England Newcastle Christmas Market Frankfurt Christmas Market, Birmingham 5th November - 24th December 2026 With street food, craft stalls, twinkling lights and live music, this is a little slice of festive Frankfurt. Discover the Frankfurt Christmas Market, Birmingham (opens in a ne",
+            "verified_at": "2026-11-11"
+          }
+        ],
+        "support": "content",
+        "confidence": 0.75
+      }
+    ],
+    "citations": [
+      {
+        "title": "Frankfurt Christmas Market, Birmingham",
+        "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+        "publisher": "VisitBritain",
+        "kind": "approved_source"
+      },
+      {
+        "title": "Frankfurt Christmas Market, Birmingham",
+        "url": "https://www.thebfcm.co.uk/",
+        "publisher": "official organiser",
+        "kind": "official_link"
+      }
+    ],
+    "candidates": [
+      {
+        "name": "Frankfurt Christmas Market, Birmingham",
+        "location": "Birmingham, England",
+        "dates": "5th November - 24th December 2026",
+        "description": "With street food, craft stalls, twinkling lights and live music, this is a little slice of festive Frankfurt.",
+        "source_url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+        "publisher": "VisitBritain",
+        "source_id": "visitbritain-christmas-2026",
+        "authority": "official",
+        "official_url": "https://www.thebfcm.co.uk/",
+        "evidence_status": "confirmed_2026",
+        "date_variants": [],
+        "presentation_order": 1,
+        "evidence_excerpt": "n a new tab) Photo by: Getty Images/SolStock Location: Newcastle upon Tyne, England Newcastle Christmas Market Frankfurt Christmas Market, Birmingham 5th November - 24th December 2026 With street food, craft stalls, twinkling lights and live music, this is a little slice of festive Frankfurt. Discover the Frankfurt Christmas Market, Birmingham (opens in a ne",
+        "sources": [
+          {
+            "url": "https://www.visitbritain.com/en/things-to-do/christmas-markets-britain",
+            "publisher": "VisitBritain",
+            "source_id": "visitbritain-christmas-2026",
+            "date_text": "5th November - 24th December 2026",
+            "verified_at": "2026-11-11"
+          }
+        ],
+        "score": 16.5
+      }
+    ],
+    "discovery": {
+      "mode": "recorded_local_searxng_lead"
+    },
+    "retrieval": {},
+    "limitations": [
+      "Follow-up uses the evidence retained from the previous answer; re-check the cited source."
+    ],
+    "shortfall": 0
+  },
+  "conflict_fixture": {
+    "status": "CONFLICTING_EVIDENCE",
+    "response_mode": "UNCERTAIN",
+    "question": "When does Bath Christmas Market open in 2026?",
+    "answer": "Sources disagree about the published dates for Bath Christmas Market. Pulse Search is not selecting one as fact.\n- Publisher A (https://fixture.example/bath-a): 26 November 2026 – 13 December 2026\n- Publisher B (https://fixture.example/bath-b): 27 November 2026 – 14 December 2026",
+    "plan": {
+      "answer_type": "factual",
+      "count": 0,
+      "year": 2026,
+      "location": "",
+      "language": "en",
+      "queries": [
+        "When does Bath Christmas Market open in 2026?",
+        "bath christmas market open",
+        "bath christmas market open 2026"
+      ]
+    },
+    "claims": [
+      {
+        "claim": "Bath Christmas Market has conflicting published date evidence.",
+        "evidence": [
+          {
+            "url": "https://fixture.example/bath-a",
+            "publisher": "Publisher A",
+            "source_id": "bath-a",
+            "excerpt": "26 November 2026 – 13 December 2026",
+            "verified_at": ""
+          },
+          {
+            "url": "https://fixture.example/bath-b",
+            "publisher": "Publisher B",
+            "source_id": "bath-b",
+            "excerpt": "27 November 2026 – 14 December 2026",
+            "verified_at": ""
+          }
+        ],
+        "support": "conflicting_evidence",
+        "confidence": 0.0
+      }
+    ],
+    "citations": [
+      {
+        "title": "Bath Christmas Market",
+        "url": "https://fixture.example/bath-a",
+        "publisher": "Publisher A",
+        "kind": "approved_source"
+      },
+      {
+        "title": "Bath Christmas Market",
+        "url": "https://fixture.example/bath-b",
+        "publisher": "Publisher B",
+        "kind": "approved_source"
+      }
+    ],
+    "candidates": [
+      {
+        "name": "Bath Christmas Market",
+        "location": "Bath",
+        "dates": "26 November 2026 – 13 December 2026",
+        "description": "Bath Christmas Market | A Bath Christmas Market runs from 26 November 2026 to 13 December 2026.",
+        "source_url": "https://fixture.example/bath-a",
+        "publisher": "Publisher A",
+        "source_id": "bath-a",
+        "authority": "official",
+        "official_url": "",
+        "evidence_status": "conflicting_evidence",
+        "date_variants": [
+          {
+            "source_id": "bath-a",
+            "source_url": "https://fixture.example/bath-a",
+            "publisher": "Publisher A",
+            "date_text": "26 November 2026 – 13 December 2026"
+          },
+          {
+            "source_id": "bath-b",
+            "source_url": "https://fixture.example/bath-b",
+            "publisher": "Publisher B",
+            "date_text": "27 November 2026 – 14 December 2026"
+          }
+        ],
+        "presentation_order": 0,
+        "evidence_excerpt": "26 November 2026 – 13 December 2026 Bath Christmas Market | A Bath Christmas Market runs from 26 November 2026 to 13 December 2026.",
+        "sources": [
+          {
+            "url": "https://fixture.example/bath-a",
+            "publisher": "Publisher A",
+            "source_id": "bath-a",
+            "date_text": "26 November 2026 – 13 December 2026",
+            "verified_at": "2026-11-11"
+          },
+          {
+            "url": "https://fixture.example/bath-b",
+            "publisher": "Publisher B",
+            "source_id": "bath-b",
+            "date_text": "27 November 2026 – 14 December 2026",
+            "verified_at": "2026-11-11"
+          }
+        ],
+        "score": 13.0
+      }
+    ],
+    "discovery": {
+      "status": "provider_results",
+      "queries": [
+        "When does Bath Christmas Market open in 2026?",
+        "bath christmas market open",
+        "bath christmas market open 2026"
+      ],
+      "leads": [
+        {
+          "title": "",
+          "url": "https://fixture.example/bath-a",
+          "snippet": "",
+          "publisher": "fixture.example",
+          "admitted": true,
+          "source_id": "bath-a",
+          "source_kind": "approved_source",
+          "verified": false,
+          "query": "When does Bath Christmas Market open in 2026?"
+        },
+        {
+          "title": "",
+          "url": "https://fixture.example/bath-b",
+          "snippet": "",
+          "publisher": "fixture.example",
+          "admitted": true,
+          "source_id": "bath-b",
+          "source_kind": "approved_source",
+          "verified": false,
+          "query": "When does Bath Christmas Market open in 2026?"
+        }
+      ],
+      "admitted_leads": 2,
+      "notices": [
+        "Provider output is unverified; only approved canonical URLs may be fetched."
+      ],
+      "mode": "recorded_local_searxng_lead"
+    },
+    "retrieval": {
+      "attempted": 2,
+      "fetched": 2,
+      "denied": 0,
+      "errors": [],
+      "pages": [
+        {
+          "source_id": "bath-a",
+          "url": "https://fixture.example/bath-a",
+          "title": "Bath Christmas Market | A",
+          "bytes_text": 95
+        },
+        {
+          "source_id": "bath-b",
+          "url": "https://fixture.example/bath-b",
+          "title": "Bath Christmas Market | B",
+          "bytes_text": 95
+        }
+      ]
+    },
+    "limitations": [
+      "The conflicting statements are retained; an operator must resolve the edition before it is treated as a confirmed date."
+    ],
+    "shortfall": 0
+  },
+  "no_evidence": {
+    "status": "NO_EVIDENCE",
+    "response_mode": "NO_EVIDENCE",
+    "question": "What is the population of the fictional town of Nowhere?",
+    "answer": "",
+    "plan": {
+      "answer_type": "general",
+      "count": 0,
+      "year": 2026,
+      "location": "",
+      "language": "en",
+      "queries": [
+        "What is the population of the fictional town of Nowhere?",
+        "population fictional town nowhere",
+        "population fictional town nowhere 2026"
+      ]
+    },
+    "claims": [],
+    "citations": [],
+    "candidates": [],
+    "discovery": {
+      "status": "provider_results",
+      "queries": [
+        "What is the population of the fictional town of Nowhere?",
+        "population fictional town nowhere",
+        "population fictional town nowhere 2026"
+      ],
+      "leads": [],
+      "admitted_leads": 0,
+      "notices": [
+        "Provider output is unverified; only approved canonical URLs may be fetched."
+      ],
+      "mode": "recorded_local_searxng_lead"
+    },
+    "retrieval": {
+      "attempted": 0,
+      "fetched": 0,
+      "denied": 0,
+      "errors": [],
+      "pages": []
+    },
+    "limitations": [
+      "No approved source produced a supported answer."
+    ],
+    "shortfall": 0
+  },
+  "feedback": {
+    "before": [
+      {
+        "name": "VisitBritain list",
+        "score": 10.0
+      },
+      {
+        "name": "Spam result",
+        "score": 4.0
+      }
+    ],
+    "after": [
+      {
+        "name": "VisitBritain list",
+        "score": 12.0
+      },
+      {
+        "name": "Spam result",
+        "score": 2.0
+      }
+    ],
+    "proposal": {
+      "generated_at": "2026-11-11T21:25:43+00:00",
+      "automatic_apply": false,
+      "requires": "operator_review",
+      "sources": [
+        {
+          "source_domain": "visitbritain.com",
+          "helpful": 1,
+          "negative": 0,
+          "reviews": 1
+        },
+        {
+          "source_domain": "spam.example",
+          "helpful": 0,
+          "negative": 1,
+          "reviews": 1
+        }
+      ]
+    },
+    "raw_question_stored": false
+  }
+}

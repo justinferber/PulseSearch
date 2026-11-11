@@ -1,6 +1,6 @@
 {
   "kind": "R3A3F_PILOT_SOURCE_PROPOSAL",
-  "schema": "pulse-search-r3a3f-pilot-proposal/v2",
+  "schema": "pulse-search-r3a3f-pilot-proposal/v3",
   "status": "PROPOSAL_ONLY_NOT_ADMITTED",
   "generated_at": "2026-11-11",
   "live_third_party_requests": 0,
@@ -16,7 +16,7 @@
     "accepted_documents_per_day": 100,
     "novel_documents_tracked_separately": true,
     "gross_fetches_per_day": 300,
-    "min_interval_s": 3.0,
+    "min_interval_s": 3,
     "max_inflight_per_host": 1,
     "max_depth": 3,
     "redirect_hops_per_url": 5,
@@ -28,21 +28,45 @@
     "snippet_chars_max": 320
   },
   "phases": [
-    {"id": "P0", "name": "compliance review", "fetching": false, "exit": "written admission of the source record"},
-    {"id": "P1", "name": "/events, 20 accepted pages/day, 3 days", "fetching": true, "probes": false, "exit": "zero robots violations, zero off-origin requests, novelty recorded, acceptance >= 15%"},
-    {"id": "P2", "name": "/events, 100 accepted pages/day, 7 days", "fetching": true, "probes": false, "exit": "acceptance >= 20%, no 429 storm, one recheck outcome recorded"},
-    {"id": "P3", "name": "second path or second host", "fetching": true, "exit": "separate owner decision and admission record"}
+    {
+      "id": "P0",
+      "name": "compliance review",
+      "fetching": false,
+      "exit": "written admission of the source record"
+    },
+    {
+      "id": "P1",
+      "name": "/events, 20 accepted pages/day, 3 days",
+      "fetching": true,
+      "probes": false,
+      "exit": "zero robots violations, zero off-origin requests, novelty recorded, acceptance >= 15%"
+    },
+    {
+      "id": "P2",
+      "name": "/events, 100 accepted pages/day, 7 days",
+      "fetching": true,
+      "probes": false,
+      "exit": "acceptance >= 20%, no 429 storm, one recheck outcome recorded"
+    },
+    {
+      "id": "P3",
+      "name": "second path or second host",
+      "fetching": true,
+      "exit": "separate owner decision and admission record"
+    }
   ],
   "sources": [
     {
       "host": "www.london.gov.uk",
       "pages_in_index": 107,
       "event_relevance": "high",
-      "role": "phase_1_candidate",
+      "role": "candidate_A_city_hall_existing_scope",
       "admission_template": {
         "source_id": "london-gov-uk-events",
         "origin": "https://www.london.gov.uk",
-        "allowed_paths": ["/events"],
+        "allowed_paths": [
+          "/events"
+        ],
         "rights_status": "PENDING_TERMS_REVIEW",
         "approved": false,
         "index_allowed": false,
@@ -53,7 +77,10 @@
         "contact": "OWNER_TO_CONFIRM"
       },
       "removed_from_proposal": [
-        {"path": "/whats-on", "reason": "unverified path; must not be proposed until its existence, stability and coverage by the same terms/robots rules are confirmed"}
+        {
+          "path": "/whats-on",
+          "reason": "unverified path; must not be proposed until its existence, stability and coverage by the same terms/robots rules are confirmed"
+        }
       ],
       "pending": [
         "owner reads robots.txt manually and records agent rules, Crawl-delay and sitemaps",
@@ -61,27 +88,168 @@
         "owner confirms /events exists as a listing section and whether it paginates or uses filter parameters",
         "owner confirms the user-agent contact address and takedown recipient",
         "owner records an approve/deny/change-scope decision with date and reviewer"
+      ],
+      "owner_requested_keep": true
+    },
+    {
+      "host": "londonparade.com",
+      "event_name": "London Parade (formerly London's New Year's Day Parade / LNYDP)",
+      "official_source_url": "https://londonparade.com/",
+      "organiser": "Destination Events Ltd",
+      "relationship_note": "Mine Media works commercially on this event. Commercial representation does not itself grant search crawler or content reuse permission; obtain written approval from the authorised organiser.",
+      "event_year_and_date": "2027 edition, 1 January 2027",
+      "role": "candidate_B_london_parade",
+      "owner_requested_add": true,
+      "historical_index_pages": 0,
+      "admission_template": {
+        "source_id": "london-parade-official",
+        "origin": "https://londonparade.com",
+        "allowed_paths": [],
+        "path_review_candidates": [
+          "/news/",
+          "/about/",
+          "/parade-location-timing/"
+        ],
+        "seed_review_candidates": [
+          "https://londonparade.com/parade-location-timing/",
+          "https://londonparade.com/about/"
+        ],
+        "rights_status": "PENDING_ORGANISER_AND_TERMS_REVIEW",
+        "approved": false,
+        "index_allowed": false,
+        "store_body": false,
+        "probe_policy": [],
+        "probe_budget_per_run": 0,
+        "contact": "ORGANISER_TO_CONFIRM"
+      },
+      "pending": [
+        "Confirm canonical host, redirects and current page path tree; internet lookup of www host was unavailable, and robots status could not be verified via tool",
+        "Obtain written organiser-authorised crawling and metadata/snippet indexing agreement (Destination Events Ltd) despite commercial partnership",
+        "Review robots.txt, site terms, allowed child paths and form/login exclusions; never harvest participant form submissions or personal information",
+        "Agree seed URLs, max-depth=3, category facets and independent host budget",
+        "Record reviewer, approval date, permission evidence and takedown contact before changing flags"
+      ],
+      "discovery_themes": [
+        "Parades & Processions",
+        "Music & Performance",
+        "Arts & Culture",
+        "Fundraiser",
+        "Festival"
       ]
     },
-    {"host": "www.gov.uk", "pages_in_index": 4, "event_relevance": "none", "role": "excluded", "reason": "service pages, not event discovery"},
-    {"host": "www.nhs.uk", "pages_in_index": 4, "event_relevance": "none", "role": "excluded", "reason": "health service pages"},
-    {"host": "developer.mozilla.org", "pages_in_index": 2, "event_relevance": "none", "role": "excluded", "reason": "technical reference"},
-    {"host": "docs.python.org", "pages_in_index": 1, "event_relevance": "none", "role": "excluded", "reason": "technical reference"},
-    {"host": "www.rfc-editor.org", "pages_in_index": 1, "event_relevance": "none", "role": "excluded", "reason": "technical reference"},
-    {"host": "www.sqlite.org", "pages_in_index": 1, "event_relevance": "none", "role": "excluded", "reason": "technical reference"}
+    {
+      "host": "www.lordmayorsshow.london",
+      "event_name": "The Lord Mayor's Show",
+      "official_source_url": "https://www.lordmayorsshow.london/",
+      "official_corroboration_url": "https://www.cityoflondon.gov.uk/events/lord-mayors-show",
+      "organiser": "Lord Mayor's Show organisers / City of London (exact rights controller to confirm)",
+      "event_year_and_date": "2026 edition, 14 November 2026",
+      "role": "candidate_C_lord_mayors_show",
+      "owner_requested_add": true,
+      "historical_index_pages": 0,
+      "admission_template": {
+        "source_id": "lord-mayors-show-official",
+        "origin": "https://www.lordmayorsshow.london",
+        "allowed_paths": [],
+        "path_review_candidates": [
+          "/",
+          "/history/",
+          "/where-to-go/",
+          "/access/"
+        ],
+        "seed_review_candidates": [
+          "https://www.lordmayorsshow.london/"
+        ],
+        "rights_status": "PENDING_RESTRICTIVE_TERMS_AND_PERMISSION",
+        "approved": false,
+        "index_allowed": false,
+        "store_body": false,
+        "probe_policy": [],
+        "probe_budget_per_run": 0,
+        "contact": "ORGANISER_TO_CONFIRM"
+      },
+      "rights_caution": "Website terms reserve content copyright and expressly restrict deep linking and linking from third-party websites. Do not assume permission to crawl, index/store snippets, or deep-link; seek an organiser licence/consent or limit to permitted official homepage linking and separately authorised metadata. Official City of London page is distinct host and requires its own review.",
+      "pending": [
+        "Obtain explicit permission for automated discovery, metadata/snippet indexing and deep links; the site's existing terms do not grant these automatically",
+        "Validate robots.txt and permitted paths; website has linked subdomains such as procession.lordmayorsshow.london which are NOT automatically admitted",
+        "Confirm approved seed and scope, event edition, source data rights, takedown contact and review signature",
+        "Do not treat cityoflondon.gov.uk cross-link as approval to crawl that distinct host"
+      ],
+      "discovery_themes": [
+        "Parades & Processions",
+        "Arts & Culture",
+        "Festival",
+        "Music & Performance",
+        "Tour"
+      ]
+    },
+    {
+      "host": "www.gov.uk",
+      "pages_in_index": 4,
+      "event_relevance": "none",
+      "role": "excluded",
+      "reason": "service pages, not event discovery"
+    },
+    {
+      "host": "www.nhs.uk",
+      "pages_in_index": 4,
+      "event_relevance": "none",
+      "role": "excluded",
+      "reason": "health service pages"
+    },
+    {
+      "host": "developer.mozilla.org",
+      "pages_in_index": 2,
+      "event_relevance": "none",
+      "role": "excluded",
+      "reason": "technical reference"
+    },
+    {
+      "host": "docs.python.org",
+      "pages_in_index": 1,
+      "event_relevance": "none",
+      "role": "excluded",
+      "reason": "technical reference"
+    },
+    {
+      "host": "www.rfc-editor.org",
+      "pages_in_index": 1,
+      "event_relevance": "none",
+      "role": "excluded",
+      "reason": "technical reference"
+    },
+    {
+      "host": "www.sqlite.org",
+      "pages_in_index": 1,
+      "event_relevance": "none",
+      "role": "excluded",
+      "reason": "technical reference"
+    }
   ],
   "novelty": {
     "baseline_pages_on_candidate_host": 107,
     "method": "read-only comparison of canonical staging URLs against the pinned index pages table (SQLite mode=ro)",
     "report_field": "novelty",
-    "fields": ["historical_index_pages", "staged_documents", "already_in_historical_index", "novel_documents", "novel_sample"],
+    "fields": [
+      "historical_index_pages",
+      "staged_documents",
+      "already_in_historical_index",
+      "novel_documents",
+      "novel_sample"
+    ],
     "reporting_rule": "daily acceptance is reported as novel_documents with the overlap stated alongside; the 107-page baseline is expected overlap from day one",
     "command": "python -m pulse_search_crawler_r3a3f.cli report --db <db> --staging <staging> --out <json> --historical-index <pinned index>"
   },
   "redirect_policy": {
     "reauthorise_every_hop": true,
     "same_origin_only": true,
-    "checks": ["approved_source", "path_scope", "robots", "request_budget", "host_pacing"],
+    "checks": [
+      "approved_source",
+      "path_scope",
+      "robots",
+      "request_budget",
+      "host_pacing"
+    ],
     "off_origin": "refused even for public or separately admitted hosts",
     "logging": "redirect_log rows plus report.redirects.by_decision and report.redirects.log"
   },
@@ -114,11 +282,34 @@
     "admin_authorised": false
   },
   "owner_decisions_required": [
-    "confirm www.london.gov.uk and only the /events path (or substitute a host/path)",
-    "complete the manual robots and terms review and state the rights basis, including snippet indexing",
-    "confirm the contact address in the user agent and the takedown recipient",
-    "confirm 100 accepted pages/day, 300 fetches/day and zero probes in Phase 1",
-    "confirm retention (metadata plus snippet, no body)",
-    "authorise the first live request in writing"
+    "Retain City Hall /events and add London Parade and Lord Mayor's Show as candidates (scope selection only; not live approval)",
+    "Obtain written source-specific authorisation including crawling, indexing/snippet/deep-link rights and retention",
+    "Confirm canonical hosts, reviewed exact path scopes, approved seeds and robots decisions independently for each candidate",
+    "Confirm per-host user-agent contact, owner reviewer, permission date, takedown path and host budgets",
+    "Choose the single first live pilot source; retain 20 accepted pages/day for P1, total-request ceiling 300/day and zero probes",
+    "Provide separate written first-live-request authorisation only after engineering F3 gates clear"
+  ],
+  "updated_at": "2026-11-11",
+  "owner_scope_decision": "RETAIN_CITY_HALL_ADD_LONDON_PARADE_AND_LORD_MAYORS_SHOW_AS_CANDIDATES_ONLY",
+  "owner_scope_not_authorisation": "User approved adding two source candidates to discovery planning; this does not admit the hosts, grant third-party content rights or authorise any live request.",
+  "candidate_rollout": [
+    {
+      "sequence": 1,
+      "candidate": "www.london.gov.uk/events",
+      "status": "HOLD_RIGHTS_AND_FIRST_LIVE_APPROVAL",
+      "note": "Keep existing narrowed City Hall proposal"
+    },
+    {
+      "sequence": 2,
+      "candidate": "londonparade.com",
+      "status": "PENDING_DESTINATION_EVENTS_PERMISSION",
+      "note": "Use as controlled first pilot alternative if written organiser permission available"
+    },
+    {
+      "sequence": 3,
+      "candidate": "www.lordmayorsshow.london",
+      "status": "PENDING_RESTRICTIVE_TERMS_AND_ROBOTS",
+      "note": "Potential high-value historical event site; consider link/metadata-only arrangement if no snippet licence"
+    }
   ]
 }

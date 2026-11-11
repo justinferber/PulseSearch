@@ -37,6 +37,10 @@ SOURCE_PREFIXES = (
     "Pulse_Search_R3A2R2_20261026/",
 )
 ALLOWED_SUFFIXES = {".py", ".md"}
+# Original regression modules read frozen JSON fixtures and one shell runner by
+# relative path; --include-fixtures stages those too, under the same pinned-hash,
+# size and credential gates. Off by default so a plain run stays source-only.
+FIXTURE_SUFFIXES = {".json", ".sh"}
 MAX_FILE_BYTES = 1_000_000
 MAX_TOTAL_BYTES = 15_000_000
 SENSITIVE = (
@@ -68,7 +72,10 @@ def main(argv: list[str]) -> int:
     p.add_argument("--root", required=True, type=Path)
     p.add_argument("--repo", required=True, type=Path)
     p.add_argument("--apply", action="store_true")
+    p.add_argument("--include-fixtures", action="store_true",
+                   help="also stage frozen .json/.sh fixtures required by the original tests")
     args = p.parse_args(argv)
+    suffixes = ALLOWED_SUFFIXES | (FIXTURE_SUFFIXES if args.include_fixtures else set())
 
     root, repo = args.root.resolve(), args.repo.resolve()
     if not root.is_dir() or not repo.is_dir():
@@ -87,7 +94,7 @@ def main(argv: list[str]) -> int:
         (rel, record)
         for rel, record in inventory["files"].items()
         if rel.startswith(SOURCE_PREFIXES)
-        and Path(rel).suffix.lower() in ALLOWED_SUFFIXES
+        and Path(rel).suffix.lower() in suffixes
         and record.get("publish") is True
     ]
     if not candidates:
@@ -126,6 +133,8 @@ def main(argv: list[str]) -> int:
         "kind": "PulseSearch historical snapshot import; NOT original Git ancestry",
         "source": "owner Windows ChatGPTCode folder (read-only)",
         "pinned_evidence": "docs/evidence_inventory.json @ recovery commit 608cfd679b564f69af81d0f80229c2375f37ef7e",
+        "includes_fixtures": args.include_fixtures,
+        "suffixes": sorted(suffixes),
         "file_count": len(files),
         "total_bytes": sizes,
         "files": files,

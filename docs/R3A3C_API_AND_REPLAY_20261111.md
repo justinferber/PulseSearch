@@ -46,3 +46,5 @@ These counts describe an 8-page synthetic lab corpus and **must not** be read as
 2. The pinned local BGE model directory with `PULSE_APPROVED_MODEL.sha256`, `PULSE_LICENSE_REVIEW_ACCEPTED.txt`, manifest SHA-256 `3955a9a2…c3c437`, plus a `sentence-transformers` runtime installed in an isolated venv — an explicitly reviewed dependency decision, not an automatic download.
 
 **Result: OPERATIONAL_API = PASS (lab index; accepted index absent). REPLAY_54x2 = HOLD / REPLAY_NOT_RUN.**
+
+> **R3-A3D correction (11 Nov 2026):** the accepted owner index `bb8e5202…` and the pinned BGE stage were subsequently located and verified — see `docs/R3A3D_ARTIFACT_RECOVERY_20261111.md` and `docs/R3A3D_REPLAY_20261111.md`. Statements in this file that either artifact was absent describe the R3-A3C search scope only, and are superseded.

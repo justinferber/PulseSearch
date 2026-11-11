@@ -1,0 +1,190 @@
+{
+  "generated": "2026-11-11",
+  "environment": {
+    "interpreter": "CPython 3.12.15",
+    "runner": "provisioning venv (pinned stage)",
+    "platform": "linux (WSL2 Ubuntu), POSIX",
+    "network": "offline"
+  },
+  "modules": 25,
+  "passed_modules": 21,
+  "tests_executed": 419,
+  "tests_in_passing_modules": 362,
+  "classification": "Remaining failures assert byte identity of archived October evidence/report files; no behavioural divergence. Resolving them needs the original October reports, not a test or engine change.",
+  "resolved_since_r3a3c_windows": [
+    "test_p10",
+    "test_p11",
+    "test_p15",
+    "test_p17",
+    "test_p18",
+    "test_r3a2r2",
+    "test_r3a2",
+    "test_r2p32",
+    "test_r2p33",
+    "test_r2p34"
+  ],
+  "results": [
+    {
+      "module": "test_r3a2",
+      "status": "PASS",
+      "tests": 17,
+      "snapshot_dir": "PulseSearch_FB2_R3A3D_20261111/historical/local_snapshot/Pulse_Search_R3A2R2_20261026"
+    },
+    {
+      "module": "test_r3a2r1",
+      "status": "PASS",
+      "tests": 3,
+      "snapshot_dir": "PulseSearch_FB2_R3A3D_20261111/historical/local_snapshot/Pulse_Search_R3A2R2_20261026"
+    },
+    {
+      "module": "test_r3a2r2",
+      "status": "PASS",
+      "tests": 8,
+      "snapshot_dir": "PulseSearch_FB2_R3A3D_20261111/historical/local_snapshot/Pulse_Search_R3A2R2_20261026"
+    },
+    {
+      "module": "test_engine",
+      "status": "PASS",
+      "tests": 54,
+      "snapshot_dir": "PulseSearch_FB2_R3A3D_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_p10",
+      "status": "PASS",
+      "tests": 6,
+      "snapshot_dir": "PulseSearch_FB2_R3A3D_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_p11",
+      "status": "PASS",
+      "tests": 6,
+      "snapshot_dir": "PulseSearch_FB2_R3A3D_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_p11_extra",
+      "status": "PASS",
+      "tests": 1,
+      "snapshot_dir": "PulseSearch_FB2_R3A3D_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_p12",
+      "status": "PASS",
+      "tests": 15,
+      "snapshot_dir": "PulseSearch_FB2_R3A3D_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_p14",
+      "status": "PASS",
+      "tests": 32,
+      "snapshot_dir": "PulseSearch_FB2_R3A3D_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_p15",
+      "status": "PASS",
+      "tests": 18,
+      "snapshot_dir": "PulseSearch_FB2_R3A3D_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_p16",
+      "status": "PASS",
+      "tests": 21,
+      "snapshot_dir": "PulseSearch_FB2_R3A3D_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_p17",
+      "status": "PASS",
+      "tests": 16,
+      "snapshot_dir": "PulseSearch_FB2_R3A3D_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_p18",
+      "status": "PASS",
+      "tests": 16,
+      "snapshot_dir": "PulseSearch_FB2_R3A3D_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_p19",
+      "status": "PASS",
+      "tests": 24,
+      "snapshot_dir": "PulseSearch_FB2_R3A3D_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_p21",
+      "status": "FAIL",
+      "tests": 16,
+      "snapshot_dir": "PulseSearch_FB2_R3A3D_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests",
+      "cause": [
+        "pulse_search_p21.Hold: human_review_sha256_mismatch - recovered review fixture bytes differ from pinned REVIEW_SHA (5 errors + 1 assertion)"
+      ]
+    },
+    {
+      "module": "test_quality",
+      "status": "PASS",
+      "tests": 20,
+      "snapshot_dir": "PulseSearch_FB2_R3A3D_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_real_questions",
+      "status": "PASS",
+      "tests": 12,
+      "snapshot_dir": "PulseSearch_FB2_R3A3D_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_scheduler",
+      "status": "PASS",
+      "tests": 28,
+      "snapshot_dir": "PulseSearch_FB2_R3A3D_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_r2p29",
+      "status": "PASS",
+      "tests": 20,
+      "snapshot_dir": "PulseSearch_FB2_R3A3D_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_p29/Pulse_Search_R2P29_20261025"
+    },
+    {
+      "module": "test_r2p31",
+      "status": "PASS",
+      "tests": 10,
+      "snapshot_dir": "PulseSearch_FB2_R3A3D_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025"
+    },
+    {
+      "module": "test_r2p32",
+      "status": "FAIL",
+      "tests": 12,
+      "snapshot_dir": "PulseSearch_FB2_R3A3D_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_p32/Pulse_Search_R2P32_20261025",
+      "cause": [
+        "owner_R2P31_report.json observed 4ab1724b... != pinned 3d86e678..."
+      ]
+    },
+    {
+      "module": "test_r2p33",
+      "status": "FAIL",
+      "tests": 15,
+      "snapshot_dir": "PulseSearch_FB2_R3A3D_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_p33/Pulse_Search_R2P33_20261025",
+      "cause": [
+        "owner_R2P32_report.json observed 822214e4... != pinned 2414d557..."
+      ]
+    },
+    {
+      "module": "test_r2p34",
+      "status": "FAIL",
+      "tests": 14,
+      "snapshot_dir": "PulseSearch_FB2_R3A3D_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_p34/Pulse_Search_R2P34_20261025",
+      "cause": [
+        "owner_R2P31/P32 report hashes differ from pinned provenance values"
+      ]
+    },
+    {
+      "module": "test_r2p35",
+      "status": "PASS",
+      "tests": 20,
+      "snapshot_dir": "PulseSearch_FB2_R3A3D_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025"
+    },
+    {
+      "module": "test_r3a",
+      "status": "PASS",
+      "tests": 15,
+      "snapshot_dir": "PulseSearch_FB2_R3A3D_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_r3a1/Pulse_Search_R3A1_20261026"
+    }
+  ]
+}

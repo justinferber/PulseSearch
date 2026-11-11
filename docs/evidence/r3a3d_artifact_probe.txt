@@ -1,0 +1,16 @@
+PULSE_SEARCH_REPLAY_ARTIFACT_RECOVERY_READ_ONLY=YES
+INDEX_EXPECTED_RELATIVE=Pulse_Search_R2P27C_Run_gURzKuV2/live/expanded_live_100_research_index.sqlite
+MODEL_STAGE_EXPECTED_NAME=.pulse-search-r3a2-research-v1.provisioning
+INDEX=PASS_SHA256
+INDEX_PATH=/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/Pulse_Search_R2P27C_Run_gURzKuV2/live/expanded_live_100_research_index.sqlite
+SQLITE_QUICK_CHECK=ok
+SQLITE_COUNT_PAGES=120
+SQLITE_COUNT_SOURCES=7
+MODEL_STAGE_CANDIDATE=/home/pulse/.pulse-search-r3a2-research-v1.provisioning
+MODEL=PASS_PINNED_FILES_NO_INFERENCE
+MODEL_PATH=/home/pulse/.pulse-search-r3a2-research-v1.provisioning/model
+MODEL_FILES_VERIFIED=12
+MODEL_VENV=PRESENT_NOT_EXECUTED
+INDEX_STATUS=PASS
+MODEL_STATUS=PASS_FILES_ONLY
+RESULT=ARTIFACTS_FOUND_NOT_REPLAYED

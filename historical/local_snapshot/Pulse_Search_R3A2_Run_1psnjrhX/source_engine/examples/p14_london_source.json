@@ -1,0 +1,10 @@
+[
+  {
+    "source_id": "london_events_p14",
+    "origin": "https://www.london.gov.uk",
+    "allowed_paths": ["/events/"],
+    "collection_approved": true,
+    "display_mode": "metadata_only",
+    "rights_basis": "Internal, limited technical research of public event URL metadata. The publisher's copyright, robots restrictions, any contractual limits, and commercial-use rights must be independently reviewed; approval here does not authorise commercial redistribution."
+  }
+]

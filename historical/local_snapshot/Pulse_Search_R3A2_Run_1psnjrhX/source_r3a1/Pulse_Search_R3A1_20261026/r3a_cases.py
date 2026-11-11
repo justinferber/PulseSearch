@@ -1,0 +1,36 @@
+"""R3-A1 engineer-authored adversarial expectations: separate from ranker.
+Link retrieval only. These are NOT independent human judgments or verified facts.
+No URL shortcuts from this file may enter the search engine.
+"""
+CASES=[
+ ('new_patient_doctor','Where can a new NHS patient sign up to see a doctor?','top','/how-to-register-with-a-gp-surgery/'),
+ ('learner_motorist','What should a UK learner motorist apply for?','top','/apply-first-provisional-driving-licence'),
+ ('registration','Where can I register to vote?','top','/register-to-vote'),
+ ('blood_screening','How do I arrange laboratory blood screening?','top','/blood-tests/'),
+ ('javascript','What is JavaScript programming?','top','/What_is_JavaScript'),
+ ('http','Explain HTTP protocol','top','/Web/HTTP'),
+ ('event_year','Armed Forces Day 2027','top','/events/armed-forces-day-2027'),
+ ('event_precise','Eid on the Square 2027','top','/events/eid'),
+ ('event_precise_2025','Diwali on the Square 2025','top','/events/diwali-square-2025'),
+ ('event_series_2','What are the 2024 and 2025 London Open House editions?','all','/events/london-open-house-2024|/events/london-open-house-2025'),
+ ('event_series_3','London Open House editions from 2023, 2024 and 2025','all','/events/london-open-house-2023|/events/london-open-house-2024|/events/london-open-house-2025'),
+ ('series_specific','City Hall Open House 2026','top','/events/city-hall-open-house-2026'),
+ ('exclude_eid','London events 2027 excluding Eid','exclude_nonempty','/events/eid'),
+ ('exclude_patrick','London festivals in 2026 excluding St Patrick\'s Festival','exclude_nonempty','/events/st-patricks-festival-2026'),
+ ('exclude_games','London festival events 2026 without London Games Festival','exclude_nonempty','/events/london-games-festival-2026'),
+ ('exclude_diwali','Find London events in 2025 other than Diwali on the Square','exclude_nonempty','/events/diwali-square-2025'),
+ ('catalog_2027','Find London events planned for 2027','year_many','2027'),
+ ('catalog_2025','Find London celebrations from 2025','year_many','2025'),
+ ('catalog_history','Historical editions of London Open House','series_many','london open house'),
+ ('negative_future','Diwali on the Square 2040','no_result',''),
+ ('negative_geography','Which Paris festivals were on in 2027?','no_result',''),
+ ('negative_conflict','London events 2027 only in Edinburgh','no_result',''),
+ ('negative_weather','Will it rain in Oxford tomorrow?','no_result',''),
+ ('negative_stock','Which new laptop is in stock today?','no_result',''),
+ ('negative_contradiction','Eid on the Square 2027 excluding Eid','no_result',''),
+ ('fact_fee','How much is adult UK passport renewal today?','fact_unverified',''),
+ ('fact_start','What time does Eid on the Square 2027 start?','fact_unverified',''),
+ ('fact_access','Is the entrance wheelchair accessible for Black on the Square 2027?','fact_unverified',''),
+ ('fact_ticket','Are London New Year\'s Eve 2026 tickets sold out?','fact_unverified',''),
+ ('fact_cancellation','Was Armed Forces Day 2027 cancelled?','fact_unverified',''),
+]

@@ -1,0 +1,188 @@
+{
+  "generated": "2026-11-11",
+  "environment": {
+    "python": "3.13.16",
+    "platform": "win32",
+    "sqlite_fts5": true
+  },
+  "modules": 25,
+  "passed": 14,
+  "tests_executed": 361,
+  "tests_in_passing_modules": 275,
+  "note": "Failures are Windows teardown locks, symlink privilege, interpreter allowlist and cross-package imports; no hash or behaviour divergence.",
+  "results": [
+    {
+      "module": "test_engine",
+      "tests": 54,
+      "status": "PASS",
+      "causes": []
+    },
+    {
+      "module": "test_p10",
+      "tests": 6,
+      "status": "HOLD",
+      "causes": [
+        "WinError 32"
+      ]
+    },
+    {
+      "module": "test_p11",
+      "tests": 6,
+      "status": "HOLD",
+      "causes": [
+        "WinError 32"
+      ]
+    },
+    {
+      "module": "test_p11_extra",
+      "tests": 1,
+      "status": "PASS",
+      "causes": []
+    },
+    {
+      "module": "test_p12",
+      "tests": 15,
+      "status": "PASS",
+      "causes": []
+    },
+    {
+      "module": "test_p14",
+      "tests": 32,
+      "status": "PASS",
+      "causes": []
+    },
+    {
+      "module": "test_p15",
+      "tests": 18,
+      "status": "HOLD",
+      "causes": [
+        "WinError 32"
+      ]
+    },
+    {
+      "module": "test_p16",
+      "tests": 21,
+      "status": "PASS",
+      "causes": []
+    },
+    {
+      "module": "test_p17",
+      "tests": 16,
+      "status": "HOLD",
+      "causes": [
+        "WinError 32"
+      ]
+    },
+    {
+      "module": "test_p18",
+      "tests": 16,
+      "status": "HOLD",
+      "causes": [
+        "WinError 1314"
+      ]
+    },
+    {
+      "module": "test_p19",
+      "tests": 24,
+      "status": "PASS",
+      "causes": []
+    },
+    {
+      "module": "test_p21",
+      "tests": 16,
+      "status": "HOLD",
+      "causes": [
+        "WinError 32"
+      ]
+    },
+    {
+      "module": "test_quality",
+      "tests": 20,
+      "status": "PASS",
+      "causes": []
+    },
+    {
+      "module": "test_r2p29",
+      "tests": 20,
+      "status": "PASS",
+      "causes": []
+    },
+    {
+      "module": "test_r2p31",
+      "tests": 10,
+      "status": "PASS",
+      "causes": []
+    },
+    {
+      "module": "test_r2p32",
+      "tests": 0,
+      "status": "HOLD",
+      "causes": [
+        "ModuleNotFoundError: No module named 'pulse_search_r2p31'"
+      ]
+    },
+    {
+      "module": "test_r2p33",
+      "tests": 0,
+      "status": "HOLD",
+      "causes": [
+        "ModuleNotFoundError: No module named 'r2p32_candidate'"
+      ]
+    },
+    {
+      "module": "test_r2p34",
+      "tests": 0,
+      "status": "HOLD",
+      "causes": [
+        "ModuleNotFoundError: No module named 'r2p33_candidate'"
+      ]
+    },
+    {
+      "module": "test_r2p35",
+      "tests": 20,
+      "status": "PASS",
+      "causes": []
+    },
+    {
+      "module": "test_r3a",
+      "tests": 15,
+      "status": "PASS",
+      "causes": []
+    },
+    {
+      "module": "test_r3a2",
+      "tests": 0,
+      "status": "HOLD",
+      "causes": [
+        "ModuleNotFoundError: No module named 'hybrid_core'"
+      ]
+    },
+    {
+      "module": "test_r3a2r1",
+      "tests": 3,
+      "status": "PASS",
+      "causes": []
+    },
+    {
+      "module": "test_r3a2r2",
+      "tests": 8,
+      "status": "HOLD",
+      "causes": [
+        "unsupported interpreter: 3.13 win32",
+        "unsupported interpreter: {major}.{minor} {platform}"
+      ]
+    },
+    {
+      "module": "test_real_questions",
+      "tests": 12,
+      "status": "PASS",
+      "causes": []
+    },
+    {
+      "module": "test_scheduler",
+      "tests": 28,
+      "status": "PASS",
+      "causes": []
+    }
+  ]
+}

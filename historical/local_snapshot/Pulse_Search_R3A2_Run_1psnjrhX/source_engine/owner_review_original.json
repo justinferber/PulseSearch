@@ -1,0 +1,214 @@
+{
+  "version": "r2p9-human-review",
+  "results_sha256": "438f410d2aa43645482f38886520bcb58c30ab1ed5b35945a99f07a15ac5b668",
+  "index_fingerprint": "f54f7946abf2413c2897ecff5aea6d0b5194e5d4c75300eb7f29f7e013698af7",
+  "questions": [
+    {
+      "id": "q01",
+      "judgements": [
+        {
+          "url": "https://www.london.gov.uk/media-centre/mayors-press-release/Mayor-announces-tickets-for-London%E2%80%99s-world-famous-New-Year%E2%80%99s-Eve-fireworks-go-on-sale-next-week",
+          "position": 1,
+          "grade": 1,
+          "answered": true
+        },
+        {
+          "url": "https://docs.python.org/3/tutorial/index.html",
+          "position": 2,
+          "grade": 0,
+          "answered": true
+        },
+        {
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP",
+          "position": 3,
+          "grade": 0,
+          "answered": true
+        }
+      ]
+    },
+    {
+      "id": "q02",
+      "judgements": [
+        {
+          "url": "https://www.london.gov.uk/media-centre/mayors-press-release/Mayor-announces-tickets-for-London%E2%80%99s-world-famous-New-Year%E2%80%99s-Eve-fireworks-go-on-sale-next-week",
+          "position": 1,
+          "grade": 3,
+          "answered": true
+        },
+        {
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP",
+          "position": 2,
+          "grade": 0,
+          "answered": true
+        },
+        {
+          "url": "https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/",
+          "position": 3,
+          "grade": 0,
+          "answered": true
+        }
+      ]
+    },
+    {
+      "id": "q03",
+      "judgements": [
+        {
+          "url": "https://www.gov.uk/renew-adult-passport/renew",
+          "position": 1,
+          "grade": 3,
+          "answered": true
+        },
+        {
+          "url": "https://www.london.gov.uk/media-centre/mayors-press-release/Mayor-announces-tickets-for-London%E2%80%99s-world-famous-New-Year%E2%80%99s-Eve-fireworks-go-on-sale-next-week",
+          "position": 2,
+          "grade": 0,
+          "answered": true
+        },
+        {
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP",
+          "position": 3,
+          "grade": 0,
+          "answered": true
+        }
+      ]
+    },
+    {
+      "id": "q04",
+      "judgements": [
+        {
+          "url": "https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/",
+          "position": 1,
+          "grade": 3,
+          "answered": true
+        },
+        {
+          "url": "https://www.london.gov.uk/media-centre/mayors-press-release/Mayor-announces-tickets-for-London%E2%80%99s-world-famous-New-Year%E2%80%99s-Eve-fireworks-go-on-sale-next-week",
+          "position": 2,
+          "grade": 0,
+          "answered": true
+        },
+        {
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP",
+          "position": 3,
+          "grade": 0,
+          "answered": true
+        }
+      ]
+    },
+    {
+      "id": "q05",
+      "judgements": [
+        {
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP",
+          "position": 1,
+          "grade": 3,
+          "answered": true
+        },
+        {
+          "url": "https://www.rfc-editor.org/rfc/rfc9309.html",
+          "position": 2,
+          "grade": 1,
+          "answered": true
+        },
+        {
+          "url": "https://www.london.gov.uk/media-centre/mayors-press-release/Mayor-announces-tickets-for-London%E2%80%99s-world-famous-New-Year%E2%80%99s-Eve-fireworks-go-on-sale-next-week",
+          "position": 3,
+          "grade": 0,
+          "answered": true
+        }
+      ]
+    },
+    {
+      "id": "q06",
+      "judgements": [
+        {
+          "url": "https://docs.python.org/3/tutorial/index.html",
+          "position": 1,
+          "grade": 2,
+          "answered": true
+        },
+        {
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP",
+          "position": 2,
+          "grade": 0,
+          "answered": true
+        },
+        {
+          "url": "https://www.london.gov.uk/media-centre/mayors-press-release/Mayor-announces-tickets-for-London%E2%80%99s-world-famous-New-Year%E2%80%99s-Eve-fireworks-go-on-sale-next-week",
+          "position": 3,
+          "grade": 0,
+          "answered": true
+        }
+      ]
+    },
+    {
+      "id": "q07",
+      "judgements": [
+        {
+          "url": "https://www.sqlite.org/lang.html",
+          "position": 1,
+          "grade": 3,
+          "answered": true
+        },
+        {
+          "url": "https://docs.python.org/3/tutorial/index.html",
+          "position": 2,
+          "grade": 1,
+          "answered": true
+        },
+        {
+          "url": "https://www.rfc-editor.org/rfc/rfc9309.html",
+          "position": 3,
+          "grade": 0,
+          "answered": true
+        }
+      ]
+    },
+    {
+      "id": "q08",
+      "judgements": [
+        {
+          "url": "https://www.rfc-editor.org/rfc/rfc9309.html",
+          "position": 1,
+          "grade": 3,
+          "answered": true
+        },
+        {
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP",
+          "position": 2,
+          "grade": 1,
+          "answered": true
+        },
+        {
+          "url": "https://www.gov.uk/renew-adult-passport/renew",
+          "position": 3,
+          "grade": 0,
+          "answered": true
+        }
+      ]
+    },
+    {
+      "id": "q09",
+      "judgements": [
+        {
+          "url": "https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/",
+          "position": 1,
+          "grade": 0,
+          "answered": true
+        },
+        {
+          "url": "https://docs.python.org/3/tutorial/index.html",
+          "position": 2,
+          "grade": 0,
+          "answered": true
+        },
+        {
+          "url": "https://www.gov.uk/renew-adult-passport/renew",
+          "position": 3,
+          "grade": 0,
+          "answered": true
+        }
+      ]
+    }
+  ]
+}

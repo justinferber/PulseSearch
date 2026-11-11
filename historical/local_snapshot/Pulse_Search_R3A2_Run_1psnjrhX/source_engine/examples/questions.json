@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q01",
+    "q": "What events are happening in London for New Year's Eve 2026?",
+    "expected_answer": "London activities in 2026, current event listing, not just ticket press release",
+    "cohort": "coverage_gap"
+  },
+  {
+    "id": "q02",
+    "q": "When do London New Year's Eve fireworks tickets go on sale?",
+    "expected_answer": "official tickets announcement",
+    "cohort": "known"
+  },
+  {
+    "id": "q03",
+    "q": "How do I renew my UK adult passport online?",
+    "expected_answer": "official renewal instructions",
+    "cohort": "known"
+  },
+  {
+    "id": "q04",
+    "q": "How can I register with an NHS GP surgery in England?",
+    "expected_answer": "official registration directions",
+    "cohort": "known"
+  },
+  {
+    "id": "q05",
+    "q": "What is HTTP?",
+    "expected_answer": "clear explanation of HTTP",
+    "cohort": "known"
+  },
+  {
+    "id": "q06",
+    "q": "Where can I learn Python programming?",
+    "expected_answer": "introduction/tutorial",
+    "cohort": "known"
+  },
+  {
+    "id": "q07",
+    "q": "Where is SQLite SQL syntax documented?",
+    "expected_answer": "official SQL reference",
+    "cohort": "known"
+  },
+  {
+    "id": "q08",
+    "q": "What is the robots exclusion protocol?",
+    "expected_answer": "RFC standard",
+    "cohort": "known"
+  },
+  {
+    "id": "q09",
+    "q": "Which restaurants near me are open now?",
+    "expected_answer": "requires local current business coverage, not available",
+    "cohort": "negative"
+  },
+  {
+    "id": "q10",
+    "q": "How do I register to vote online in Britain?",
+    "expected_answer": "GOV.UK electoral register guidance",
+    "cohort": "heldout"
+  },
+  {
+    "id": "q11",
+    "q": "Can I apply for a provisional driving licence online in the UK?",
+    "expected_answer": "GOV.UK DVLA first provisional licence page",
+    "cohort": "heldout"
+  },
+  {
+    "id": "q12",
+    "q": "How do I order a repeat prescription using NHS online services?",
+    "expected_answer": "NHS repeat prescription official instructions",
+    "cohort": "heldout"
+  },
+  {
+    "id": "q13",
+    "q": "How can I find an NHS dentist?",
+    "expected_answer": "NHS dental finding guidance",
+    "cohort": "heldout"
+  },
+  {
+    "id": "q14",
+    "q": "What is the weather in Berlin right now?",
+    "expected_answer": "live weather; static index cannot demonstrate real-time answer",
+    "cohort": "negative"
+  },
+  {
+    "id": "q15",
+    "q": "Where can I buy vegan boots in Manchester today?",
+    "expected_answer": "live retail availability, unsupported in limited corpus",
+    "cohort": "negative"
+  }
+]

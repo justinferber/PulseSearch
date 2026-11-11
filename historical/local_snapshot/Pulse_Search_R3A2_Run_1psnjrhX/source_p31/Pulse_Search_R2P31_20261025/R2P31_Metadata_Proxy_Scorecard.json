@@ -1,0 +1,276 @@
+{
+  "status": "LOCAL_METADATA_PROXY_ONLY_NOT_OWNER",
+  "proxy_pages": 118,
+  "expected_owner_pages": 120,
+  "prior_12_questions": 12,
+  "r2p30_24_questions": 24,
+  "r2p31_additional_language_probes": 20,
+  "findings": {
+    "named_editions": 8,
+    "paraphrases": 6,
+    "broad_facet_nonempty": 5,
+    "negative_abstentions": 5,
+    "prior_12_preserved": 12,
+    "additional_test_variations": 20
+  },
+  "results": [
+    {
+      "group": "prior_12",
+      "query": "How can I book an NHS blood test in England?",
+      "top_url": "https://www.nhs.uk/tests-and-treatments/blood-tests/",
+      "result_count": 1,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "prior_12",
+      "query": "How can I register with a GP surgery?",
+      "top_url": "https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/",
+      "result_count": 1,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "prior_12",
+      "query": "What council tax band is my property in?",
+      "top_url": "https://www.gov.uk/council-tax-bands",
+      "result_count": 1,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "prior_12",
+      "query": "Where can I register to vote?",
+      "top_url": "https://www.gov.uk/register-to-vote",
+      "result_count": 1,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "prior_12",
+      "query": "Where can I learn JavaScript programming?",
+      "top_url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript",
+      "result_count": 1,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "prior_12",
+      "query": "What is HTTP?",
+      "top_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP",
+      "result_count": 1,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "prior_12",
+      "query": "What events are happening in London for New Year's Eve 2026?",
+      "top_url": "https://www.london.gov.uk/events/london-new-years-eve-2026",
+      "result_count": 2,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "prior_12",
+      "query": "What is Diwali on the Square in London 2026?",
+      "top_url": "https://www.london.gov.uk/events/diwali-square-2026",
+      "result_count": 1,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "prior_12",
+      "query": "How do I renew my UK adult passport online?",
+      "top_url": "https://www.gov.uk/renew-adult-passport/renew",
+      "result_count": 1,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "prior_12",
+      "query": "How do I apply for a first provisional driving licence?",
+      "top_url": "https://www.gov.uk/apply-first-provisional-driving-licence",
+      "result_count": 1,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "prior_12",
+      "query": "Which vegan shoe shops in Manchester are open now?",
+      "top_url": null,
+      "result_count": 0,
+      "status": "WITHHELD_UNVERIFIED_LIVE_DATA"
+    },
+    {
+      "group": "prior_12",
+      "query": "Will it rain in Newbury tomorrow?",
+      "top_url": null,
+      "result_count": 0,
+      "status": "WITHHELD_UNVERIFIED_LIVE_DATA"
+    },
+    {
+      "group": "named_edition",
+      "query": "Black on the Square 2027",
+      "top_url": "https://www.london.gov.uk/events/black-square-2027",
+      "result_count": 1,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "named_edition",
+      "query": "Armed Forces Day 2027",
+      "top_url": "https://www.london.gov.uk/events/armed-forces-day-2027",
+      "result_count": 1,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "named_edition",
+      "query": "Eid on the Square 2027",
+      "top_url": "https://www.london.gov.uk/events/eid",
+      "result_count": 1,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "named_edition",
+      "query": "St Patrick's Festival 2027",
+      "top_url": "https://www.london.gov.uk/events/st-patricks-day",
+      "result_count": 1,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "named_edition",
+      "query": "Diwali on the Square 2025",
+      "top_url": "https://www.london.gov.uk/events/diwali-square-2025",
+      "result_count": 1,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "named_edition",
+      "query": "UK Black Pride 2025",
+      "top_url": "https://www.london.gov.uk/events/uk-black-pride-2025",
+      "result_count": 1,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "named_edition",
+      "query": "London Data Week 2025",
+      "top_url": "https://www.london.gov.uk/events/london-data-week-2025",
+      "result_count": 1,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "named_edition",
+      "query": "7/7 Memorial Service 2027",
+      "top_url": "https://www.london.gov.uk/events/77-memorial-service-2027",
+      "result_count": 1,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "paraphrase",
+      "query": "How do I get an NHS blood test?",
+      "top_url": "https://www.nhs.uk/tests-and-treatments/blood-tests/",
+      "result_count": 1,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "paraphrase",
+      "query": "How to sign up with a family doctor surgery?",
+      "top_url": "https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/",
+      "result_count": 1,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "paraphrase",
+      "query": "Check the property tax band of my home",
+      "top_url": "https://www.gov.uk/council-tax-bands",
+      "result_count": 1,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "paraphrase",
+      "query": "Getting started learning JS coding",
+      "top_url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript",
+      "result_count": 1,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "paraphrase",
+      "query": "How can I apply for a learner driver permit in Britain?",
+      "top_url": "https://www.gov.uk/apply-first-provisional-driving-licence",
+      "result_count": 1,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "paraphrase",
+      "query": "Tell me about London City Hall New Year fireworks 2026",
+      "top_url": "https://www.london.gov.uk/events/london-new-years-eve-2026",
+      "result_count": 2,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "broad_discovery",
+      "query": "London events 2027",
+      "top_url": "https://www.london.gov.uk/events/eid",
+      "result_count": 5,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "broad_discovery",
+      "query": "Which festivals are happening in London in 2026?",
+      "top_url": "https://www.london.gov.uk/events/london-games-festival-2026",
+      "result_count": 3,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "broad_discovery",
+      "query": "What happened during London Open House over the years?",
+      "top_url": "https://www.london.gov.uk/events/london-open-house-2025",
+      "result_count": 3,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "broad_discovery",
+      "query": "What London celebrations were held in 2025?",
+      "top_url": "https://www.london.gov.uk/events/diwali-square-2025",
+      "result_count": 5,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "broad_discovery",
+      "query": "What online government services can I use?",
+      "top_url": "https://www.gov.uk/apply-first-provisional-driving-licence",
+      "result_count": 4,
+      "status": "MATCHES_UNVERIFIED"
+    },
+    {
+      "group": "negative_control",
+      "query": "Diwali on the Square 2031",
+      "top_url": null,
+      "result_count": 0,
+      "status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH"
+    },
+    {
+      "group": "negative_control",
+      "query": "Armed Forces Day 2031",
+      "top_url": null,
+      "result_count": 0,
+      "status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH"
+    },
+    {
+      "group": "negative_control",
+      "query": "Which Manchester shops sell vegan shoes and are open now?",
+      "top_url": null,
+      "result_count": 0,
+      "status": "WITHHELD_UNVERIFIED_LIVE_DATA"
+    },
+    {
+      "group": "negative_control",
+      "query": "Is Newbury expecting rain tomorrow?",
+      "top_url": null,
+      "result_count": 0,
+      "status": "WITHHELD_UNVERIFIED_LIVE_DATA"
+    },
+    {
+      "group": "negative_control",
+      "query": "Which new laptop is in stock today?",
+      "top_url": null,
+      "result_count": 0,
+      "status": "WITHHELD_UNVERIFIED_LIVE_DATA"
+    }
+  ],
+  "limitations": [
+    "Metadata titles/URLs do not prove exact factual answer accuracy",
+    "All testing question sets are known during current development and results can overfit",
+    "2 of 120 index titles unavailable to local fixture",
+    "Owner read-only 120 page comparison pending"
+  ]
+}

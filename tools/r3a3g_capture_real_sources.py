@@ -25,7 +25,7 @@ from pulse_search_crawler_r3a3f.config import CrawlConfig  # noqa: E402
 from pulse_search_crawler_r3a3f.robots import (  # noqa: E402
     MAX_ROBOTS_BYTES, decision_for_status,
 )
-from pulse_search_crawler_r3a3f.safe_fetch import Fetcher  # noqa: E402
+from pulse_search_crawler_r3a3f.safe_fetch import Fetcher, FetchResult  # noqa: E402
 from pulse_search_broad_r3a3g.evidence import registrable_domain  # noqa: E402
 
 CONFIG = ROOT / "config/real_sources.json"
@@ -91,6 +91,11 @@ class CapturePolicy:
 
     def paced_fetch(self, fetcher: Fetcher, url: str, *, max_bytes: int,
                     user_agent: str):
+        # The ceiling covers robots and every actual page request, not just
+        # configured sources. A denied attempt must issue no network request.
+        denial = self.attempt_denial()
+        if denial:
+            return FetchResult(url, url, error=denial)
         host = (urllib.parse.urlsplit(url).hostname or "").lower()
         wait = max(0.0, 3.0 - (time.monotonic() - self.last_request.get(host, 0.0)))
         if wait:

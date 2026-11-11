@@ -61,14 +61,15 @@ def load_pages() -> list[dict]:
 def build_index(path: Path) -> None:
     index = StagingIndex(path)
     for page in load_pages():
-        # The page's own metadata plus its reviewed subject tags are searchable;
-        # this is metadata, not invented page copy.
-        body = " ".join(part for part in (
-            page.get("description") or "",
-            " ".join(page.get("topics") or []),
-            page.get("jurisdiction") or "",
-            page.get("document_type") or "",
-        ) if part)
+        # Page text and curator tags are separate fields. Tags may rank a
+        # candidate, but must never be rendered as if the page said them.
+        body = page.get("description") or page.get("title") or ""
+        metadata = {
+            "topics": page.get("topics") or [],
+            "jurisdiction": page.get("jurisdiction"),
+            "document_type": page.get("document_type"),
+            "source_authority": page.get("authority"),
+        }
         provenance = {
             "source_id": page.get("id"), "final_url": page.get("final_url"),
             "captured_at": page.get("_captured_at"),
@@ -80,6 +81,7 @@ def build_index(path: Path) -> None:
             "url": page.get("final_url") or page["url"],
             "source_id": page.get("id"),
             "title": page["title"], "snippet": body,
+            "metadata": json.dumps(metadata, ensure_ascii=False),
             "category": "Other", "category_confidence": 0.9,
             "categories": ["Other"], "depth": 1,
             "fetched_at": page.get("_captured_at"),

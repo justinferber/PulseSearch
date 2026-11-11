@@ -53,13 +53,13 @@
           "grade": 3
         },
         {
-          "title": "Upcoming events | London City Hall",
-          "url": "https://www.london.gov.uk/events",
+          "title": "Official London Theatre | Buy London Theatre Tickets",
+          "url": "https://officiallondontheatre.com/",
           "grade": 0
         },
         {
-          "title": "Official London Theatre | Buy London Theatre Tickets",
-          "url": "https://officiallondontheatre.com/",
+          "title": "Upcoming events | London City Hall",
+          "url": "https://www.london.gov.uk/events",
           "grade": 0
         }
       ],
@@ -80,13 +80,13 @@
           "grade": 3
         },
         {
-          "title": "Upcoming events | London City Hall",
-          "url": "https://www.london.gov.uk/events",
+          "title": "Official London Theatre | Buy London Theatre Tickets",
+          "url": "https://officiallondontheatre.com/",
           "grade": 0
         },
         {
-          "title": "Official London Theatre | Buy London Theatre Tickets",
-          "url": "https://officiallondontheatre.com/",
+          "title": "Upcoming events | London City Hall",
+          "url": "https://www.london.gov.uk/events",
           "grade": 0
         }
       ],
@@ -99,38 +99,16 @@
     {
       "id": "german-concert-refund",
       "query": "Can I refund concert tickets in Germany?",
-      "status": "official_links",
+      "status": "staging_results",
       "top": [
         {
-          "title": "Verbraucherzentrale",
+          "title": "Verträge & Reklamation | Verbraucherzentrale.de",
           "url": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation",
           "grade": 3
         },
         {
-          "title": "GOV.UK",
-          "url": "https://www.gov.uk/search/all?keywords=Can+I+refund+concert+tickets+in+Germany%3F",
-          "grade": 0
-        }
-      ],
-      "precision_at_3": 0.5,
-      "relevant_at_3": 1,
-      "helpful_top1": true,
-      "ndcg_at_5": 1.0,
-      "judged_at_5": 2
-    },
-    {
-      "id": "german-consumer",
-      "query": "German consumer cancellation rights",
-      "status": "official_links",
-      "top": [
-        {
-          "title": "Verbraucherzentrale",
-          "url": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation",
-          "grade": 2
-        },
-        {
-          "title": "GOV.UK",
-          "url": "https://www.gov.uk/search/all?keywords=German+consumer+cancellation+rights",
+          "title": "Consumer rights - GOV.UK",
+          "url": "https://www.gov.uk/consumer-protection-rights",
           "grade": 0
         }
       ],
@@ -141,20 +119,42 @@
       "judged_at_5": 1
     },
     {
-      "id": "paris-pride-dates",
-      "query": "Paris Pride dates 2027",
-      "status": "official_links",
+      "id": "german-consumer",
+      "query": "German consumer cancellation rights",
+      "status": "staging_results",
       "top": [
         {
-          "title": "Paris.fr events",
-          "url": "https://www.paris.fr/",
-          "grade": 1
+          "title": "Consumer rights - GOV.UK",
+          "url": "https://www.gov.uk/consumer-protection-rights",
+          "grade": 0
+        },
+        {
+          "title": "Verträge & Reklamation | Verbraucherzentrale.de",
+          "url": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation",
+          "grade": 2
         }
       ],
-      "precision_at_3": 0.0,
-      "relevant_at_3": 0,
+      "precision_at_3": 0.5,
+      "relevant_at_3": 1,
       "helpful_top1": false,
-      "ndcg_at_5": 0.275,
+      "ndcg_at_5": 0.631,
+      "judged_at_5": 1
+    },
+    {
+      "id": "paris-pride-dates",
+      "query": "Paris Pride dates 2027",
+      "status": "staging_results",
+      "top": [
+        {
+          "title": "Que faire à Paris - Ville de Paris",
+          "url": "https://www.paris.fr/quefaire",
+          "grade": 2
+        }
+      ],
+      "precision_at_3": 1.0,
+      "relevant_at_3": 1,
+      "helpful_top1": true,
+      "ndcg_at_5": 0.826,
       "judged_at_5": 1
     },
     {
@@ -209,35 +209,75 @@
     {
       "id": "uk-consumer-refund",
       "query": "UK consumer refund rights",
-      "status": "official_links",
+      "status": "staging_results",
       "top": [
         {
-          "title": "GOV.UK",
-          "url": "https://www.gov.uk/search/all?keywords=UK+consumer+refund+rights",
+          "title": "Consumer rights - GOV.UK",
+          "url": "https://www.gov.uk/consumer-protection-rights",
+          "grade": 3
+        },
+        {
+          "title": "Apply online for a UK passport - GOV.UK",
+          "url": "https://www.gov.uk/apply-renew-passport",
+          "grade": 0
+        },
+        {
+          "title": "Accessibility | Tate",
+          "url": "https://www.tate.org.uk/visit/accessibility",
+          "grade": 0
+        },
+        {
+          "title": "NHS website for England - NHS",
+          "url": "https://www.nhs.uk/",
+          "grade": 0
+        },
+        {
+          "title": "Verträge & Reklamation | Verbraucherzentrale.de",
+          "url": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation",
           "grade": 0
         }
       ],
-      "precision_at_3": 0.0,
-      "relevant_at_3": 0,
-      "helpful_top1": false,
-      "ndcg_at_5": 0.0,
-      "judged_at_5": 0
+      "precision_at_3": 0.333,
+      "relevant_at_3": 1,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 1
     },
     {
       "id": "london-theatre-refund",
       "query": "London theatre refund policy",
-      "status": "official_links",
+      "status": "staging_results",
       "top": [
         {
-          "title": "GOV.UK",
-          "url": "https://www.gov.uk/search/all?keywords=London+theatre+refund+policy",
-          "grade": 1
+          "title": "Official London Theatre | Buy London Theatre Tickets",
+          "url": "https://officiallondontheatre.com/",
+          "grade": 2
+        },
+        {
+          "title": "Consumer rights - GOV.UK",
+          "url": "https://www.gov.uk/consumer-protection-rights",
+          "grade": 0
+        },
+        {
+          "title": "Accessibility | Tate",
+          "url": "https://www.tate.org.uk/visit/accessibility",
+          "grade": 0
+        },
+        {
+          "title": "Upcoming events | London City Hall",
+          "url": "https://www.london.gov.uk/events",
+          "grade": 0
+        },
+        {
+          "title": "Verträge & Reklamation | Verbraucherzentrale.de",
+          "url": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation",
+          "grade": 0
         }
       ],
-      "precision_at_3": 0.0,
-      "relevant_at_3": 0,
-      "helpful_top1": false,
-      "ndcg_at_5": 0.275,
+      "precision_at_3": 0.333,
+      "relevant_at_3": 1,
+      "helpful_top1": true,
+      "ndcg_at_5": 0.826,
       "judged_at_5": 1
     },
     {
@@ -275,19 +315,19 @@
     {
       "id": "berlin-museum-hours",
       "query": "Berlin museum opening hours",
-      "status": "official_links",
+      "status": "staging_results",
       "top": [
         {
-          "title": "Berlin.de museums",
-          "url": "https://www.berlin.de/en/museums/",
-          "grade": 2
+          "title": "Christmas markets in Berlin | visitBerlin.de",
+          "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+          "grade": 0
         }
       ],
-      "precision_at_3": 1.0,
-      "relevant_at_3": 1,
-      "helpful_top1": true,
-      "ndcg_at_5": 1.0,
-      "judged_at_5": 1
+      "precision_at_3": 0.0,
+      "relevant_at_3": 0,
+      "helpful_top1": false,
+      "ndcg_at_5": 0.0,
+      "judged_at_5": 0
     },
     {
       "id": "berlin-christmas-travel",
@@ -461,19 +501,39 @@
     {
       "id": "uk-train-refund",
       "query": "How do I claim a UK rail ticket refund?",
-      "status": "official_links",
+      "status": "staging_results",
       "top": [
         {
-          "title": "GOV.UK",
-          "url": "https://www.gov.uk/search/all?keywords=How+do+I+claim+a+UK+rail+ticket+refund%3F",
-          "grade": 2
+          "title": "Apply online for a UK passport - GOV.UK",
+          "url": "https://www.gov.uk/apply-renew-passport",
+          "grade": 0
+        },
+        {
+          "title": "Consumer rights - GOV.UK",
+          "url": "https://www.gov.uk/consumer-protection-rights",
+          "grade": 0
+        },
+        {
+          "title": "Accessibility | Tate",
+          "url": "https://www.tate.org.uk/visit/accessibility",
+          "grade": 0
+        },
+        {
+          "title": "NHS website for England - NHS",
+          "url": "https://www.nhs.uk/",
+          "grade": 0
+        },
+        {
+          "title": "Verträge & Reklamation | Verbraucherzentrale.de",
+          "url": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation",
+          "grade": 0
         }
       ],
-      "precision_at_3": 1.0,
-      "relevant_at_3": 1,
-      "helpful_top1": true,
-      "ndcg_at_5": 1.0,
-      "judged_at_5": 1
+      "precision_at_3": 0.0,
+      "relevant_at_3": 0,
+      "helpful_top1": false,
+      "ndcg_at_5": 0.0,
+      "judged_at_5": 0
     },
     {
       "id": "paris-nye",
@@ -510,11 +570,11 @@
   ],
   "summary": {
     "queries": 22,
-    "mean_ndcg_at_5": 0.62,
-    "mean_precision_at_3": 0.409,
-    "mean_fixed_precision_at_3": 0.197,
+    "mean_ndcg_at_5": 0.608,
+    "mean_precision_at_3": 0.394,
+    "mean_fixed_precision_at_3": 0.212,
     "helpful_top1_rate": 0.591,
-    "judged_at_5": 17
+    "judged_at_5": 15
   },
   "limitations": [
     "Internal first-pass grades; not an external reviewer.",

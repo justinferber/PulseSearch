@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS docs(
   fetch_status INTEGER, mime TEXT, intent TEXT, indexed_at TEXT NOT NULL,
   revoked INTEGER NOT NULL DEFAULT 0, revoked_reason TEXT,
   source_authority TEXT, document_type TEXT, language TEXT,
-  jurisdiction TEXT, specificity TEXT, provenance TEXT);
+  jurisdiction TEXT, specificity TEXT, provenance TEXT, metadata TEXT);
 CREATE INDEX IF NOT EXISTS idx_docs_category ON docs(category, revoked);
 CREATE INDEX IF NOT EXISTS idx_docs_source ON docs(source_id, revoked);
 CREATE TABLE IF NOT EXISTS doc_shingles(
@@ -72,7 +72,7 @@ class StagingIndex:
             self.conn.execute("ALTER TABLE docs ADD COLUMN intent TEXT")
             self.conn.commit()
         for name in ("source_authority", "document_type", "language",
-                     "jurisdiction", "specificity", "provenance"):
+                     "jurisdiction", "specificity", "provenance", "metadata"):
             if columns and name not in columns:
                 self.conn.execute(f"ALTER TABLE docs ADD COLUMN {name} TEXT")
                 self.conn.commit()
@@ -146,22 +146,24 @@ class StagingIndex:
         ).fetchone()
         if existing:
             self.conn.execute(
-                """UPDATE docs SET title=?, snippet=?, category=?, category_confidence=?,
-                     category_uncertain=?, categories=?, depth=?, fetched_at=?,
-                     content_hash=?, shingle_count=?, etag=?, last_modified=?, lang=?,
-                     dates=?, source_authority=?, document_type=?, language=?,
-                     jurisdiction=?, specificity=?, provenance=?, indexed_at=?, revoked=0
+                """UPDATE docs SET source_id=?, title=?, snippet=?, category=?,
+                     category_confidence=?, category_uncertain=?, categories=?, depth=?,
+                     fetched_at=?, content_hash=?, shingle_count=?, etag=?, last_modified=?,
+                     lang=?, dates=?, rights_mode=?, source_authority=?, document_type=?,
+                     language=?, jurisdiction=?, specificity=?, provenance=?, metadata=?,
+                     indexed_at=?, revoked=0
                    WHERE doc_id=?""",
-                (record["title"], record["snippet"], record["category"],
+                (record["source_id"], record["title"], record["snippet"], record["category"],
                  record["category_confidence"], int(record.get("category_uncertain", 0)),
                  json.dumps(record["categories"]),
                  record["depth"], record["fetched_at"], record["content_hash"],
                  len(shingle_list), record.get("etag"), record.get("last_modified"),
                  record.get("lang", ""), json.dumps(record.get("dates", [])),
+                 record.get("rights_mode", "metadata_and_short_snippet"),
                  record.get("source_authority"), record.get("document_type"),
                  record.get("language"), record.get("jurisdiction"),
                  record.get("specificity"), record.get("provenance"),
-                 utc_now(), existing["doc_id"]),
+                 record.get("metadata"), utc_now(), existing["doc_id"]),
             )
             self.conn.execute("DELETE FROM doc_shingles WHERE doc_id=?", (existing["doc_id"],))
             doc_id = existing["doc_id"]
@@ -172,8 +174,8 @@ class StagingIndex:
                      snippet,category,category_confidence,category_uncertain,categories,
                      depth,fetched_at,content_hash,shingle_count,etag,last_modified,lang,
                      dates,rights_mode,fetch_status,mime,source_authority,
-                     document_type,language,jurisdiction,specificity,provenance,indexed_at)
-                   VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                     document_type,language,jurisdiction,specificity,provenance,metadata,indexed_at)
+                   VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
                 (record["url"], record.get("canonical_url", record["url"]),
                  record["source_id"], record.get("seed_id"), record.get("parent_url"),
                  record["title"], record["snippet"], record["category"],
@@ -186,7 +188,8 @@ class StagingIndex:
                  record.get("fetch_status"), record.get("mime", ""),
                  record.get("source_authority"), record.get("document_type"),
                  record.get("language"), record.get("jurisdiction"),
-                 record.get("specificity"), record.get("provenance"), utc_now()),
+                 record.get("specificity"), record.get("provenance"),
+                 record.get("metadata"), utc_now()),
             )
             doc_id = cursor.lastrowid
             outcome = "indexed"

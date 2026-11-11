@@ -184,6 +184,19 @@ class AcceptancePatternTests(unittest.TestCase):
         result = search_documents(DOCS, "Pride festivals Germany excluding Christmas markets")
         self.assertTrue(any("Excluded terms" in n for n in result["notices"]))
 
+    def test_refund_uses_admitted_consumer_guidance_before_official_links(self):
+        docs = [doc("uk-refund", "UK consumer refund rights",
+                    "If a concert is cancelled, UK consumer guidance explains your refund options.",
+                    "how_to")]
+        result = search_documents(docs, "UK ticket refund rights")
+        self.assertEqual(result["status"], "staging_results")
+        self.assertIn("uk-refund", result["results"][0]["url"])
+
+    def test_refund_without_a_supporting_page_still_uses_official_links(self):
+        result = search_documents(DOCS, "refund policy for a cancelled concert")
+        self.assertEqual(result["status"], "official_links")
+        self.assertIn("gov.uk", result["results"][0]["url"])
+
 
 if __name__ == "__main__":
     unittest.main()

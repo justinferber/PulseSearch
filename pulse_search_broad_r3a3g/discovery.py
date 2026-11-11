@@ -20,6 +20,20 @@ MAX_TITLE = 200
 MAX_SNIPPET = 320
 
 
+class _NoRedirect(urllib.request.HTTPRedirectHandler):
+    """A provider redirect is not followed, even to another loopback port."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        return None
+
+
+def _loopback_host(host: str) -> bool:
+    try:
+        return ipaddress.ip_address(host).is_loopback
+    except ValueError:
+        return host.lower() in ("localhost", "::1")
+
+
 def _now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
@@ -37,11 +51,7 @@ class SearxngDiscovery:
             if parts.username or parts.password:
                 raise ValueError("credentials are not accepted in the provider URL")
             host = parts.hostname.lower()
-            try:
-                loopback = ipaddress.ip_address(host).is_loopback
-            except ValueError:
-                loopback = host in ("localhost", "::1")
-            if not loopback:
+            if not _loopback_host(host):
                 raise ValueError("only a locally configured loopback SearXNG is accepted")
 
     @property
@@ -62,9 +72,14 @@ class SearxngDiscovery:
             "User-Agent": "PulseSearchFB2-M8/0.1 (research; local provider)",
         })
         try:
-            with urllib.request.urlopen(request, timeout=self.timeout_s) as response:
+            opener = urllib.request.build_opener(_NoRedirect())
+            with opener.open(request, timeout=self.timeout_s) as response:
                 if response.status != 200:
                     raise ValueError("provider status")
+                final = urlsplit(response.geturl())
+                if final.scheme not in ("http", "https") or not final.hostname \
+                        or not _loopback_host(final.hostname):
+                    raise ValueError("provider left the loopback boundary")
                 raw = response.read(512_000)
                 data = json.loads(raw.decode("utf-8"))
         except Exception:

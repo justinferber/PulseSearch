@@ -5,6 +5,7 @@ Weather, stock and live sports cannot be presented as current without providers.
 """
 from __future__ import annotations
 
+import json
 import re
 import unicodedata
 from dataclasses import dataclass, asdict
@@ -200,6 +201,20 @@ def document_type(doc: dict) -> str:
     return "general_reference"
 
 
+def _metadata(doc: dict) -> dict:
+    """Curator-assigned search metadata, kept out of the page excerpt."""
+    value = doc.get("metadata")
+    if isinstance(value, dict):
+        return value
+    if isinstance(value, str) and value.strip():
+        try:
+            parsed = json.loads(value)
+            return parsed if isinstance(parsed, dict) else {}
+        except (TypeError, ValueError):
+            return {}
+    return {}
+
+
 def _doc_jurisdiction(doc: dict) -> str:
     explicit = str(doc.get("jurisdiction") or "").upper()
     if explicit:
@@ -220,11 +235,14 @@ def _score(doc: dict, intent: SearchIntent) -> tuple[float, list[str]]:
     title = normal(str(doc.get("title") or ""))
     snippet = normal(str(doc.get("snippet") or ""))
     url = normal(str(doc.get("url") or ""))
+    # Curator tags may help rank a candidate, but they are not page content.
+    metadata = normal(json.dumps(_metadata(doc), ensure_ascii=False))
     t = set(tokenize(title))
     s = set(tokenize(snippet))
     u = set(tokenize(url))
+    m = set(tokenize(metadata))
     core = set(intent.tokens)
-    matched_core = core & (t | s | u)
+    matched_core = core & (t | s | u | m)
     # At least one true query term must match; synonym-only is not sufficient.
     if core and not matched_core:
         return (0.0, [])
@@ -239,11 +257,15 @@ def _score(doc: dict, intent: SearchIntent) -> tuple[float, list[str]]:
             score += 1.6
         if word in u:
             score += 0.8
+        if word in m:
+            score += 0.9
     for word in set(intent.expanded) - core:
         if word in t:
             score += 1.1
         elif word in s:
             score += 0.45
+        elif word in m:
+            score += 0.2
     bm25 = doc.get("bm25")
     if isinstance(bm25, (int, float)) and bm25 < 0:
         # SQLite bm25() returns a negative value: closer to zero is better.
@@ -276,7 +298,7 @@ def _score(doc: dict, intent: SearchIntent) -> tuple[float, list[str]]:
         reasons.append("wrong_jurisdiction")
     specificity = str(doc.get("specificity") or "").lower()
     if specificity == "specific":
-        score += 2.5
+        score += 4.0
         reasons.append("specific_page")
     elif specificity == "category":
         score += 0.8
@@ -290,6 +312,12 @@ def _score(doc: dict, intent: SearchIntent) -> tuple[float, list[str]]:
         score *= 0.5
     typ = document_type(doc)
     if intent.kind == "how_to":
+        if typ in ("event_directory", "event_listing"):
+            score *= 0.20
+            reasons.append("not_instruction_page")
+        if ACCESS.search(intent.query) and typ == "accessibility_guide":
+            score += 10.0
+            reasons.append("accessibility_page")
         if typ in ("booking_guide", "how_to"):
             score += 8.0
             reasons.append("instruction_page")
@@ -372,23 +400,52 @@ def _specific_terms(intent: SearchIntent) -> set[str]:
             if term not in QUERY_STOP and term not in GEOGRAPHIES}
 
 
-def _sufficient(intent: SearchIntent, hits: list[dict]) -> bool:
-    """Do the admitted pages actually cover the question's specific terms?
+def _term_present(term: str, tokens: set[str]) -> bool:
+    return (term in tokens or term + "s" in tokens or
+            (term.endswith("s") and term[:-1] in tokens))
 
-    A domain match, a city word or one incidental phrase is not enough. When
-    this returns False the caller offers reviewed official navigation instead
-    of ranking an unrelated page.
-    """
+
+def _enough_terms(intent: SearchIntent, text: str) -> bool:
     terms = _specific_terms(intent)
     if not terms:
         return True
-    need = max(1, (len(terms) * 3 + 3) // 4)  # ceil(0.75 * terms)
-    for hit in hits[:8]:
-        text = normal(" ".join(str(hit.get(k) or "") for k in
-                               ("title", "snippet", "url")))
-        if len(terms & set(tokenize(text))) >= need:
-            return True
-    return False
+    tokens = set(tokenize(text))
+    matched = sum(1 for term in terms if _term_present(term, tokens))
+    # Two thirds is enough for a short English/German query; a single
+    # incidental city or brand token is still not enough.
+    need = max(1, (len(terms) * 2 + 2) // 3)
+    return matched >= need
+
+
+def _support_basis(intent: SearchIntent, doc: dict) -> str | None:
+    """Classify support without conflating page text and curator metadata."""
+    content = normal(" ".join(str(doc.get(k) or "") for k in
+                              ("title", "snippet", "url")))
+    if _enough_terms(intent, content):
+        return "content"
+    # Tags may admit a specific official page when the captured description
+    # is empty or terse. The card reports this separately as metadata support.
+    meta = _metadata(doc)
+    if (str(doc.get("source_authority") or "").lower() in ("official", "primary")
+            and str(doc.get("specificity") or "").lower() in ("specific", "category")
+            and _enough_terms(intent, json.dumps(meta, ensure_ascii=False))):
+        return "metadata_assisted"
+    # A general consumer-advice page is a legitimate fallback for a refund
+    # question even when its curated tag is "cancellation" rather than
+    # "concert". It is still disclosed as metadata-assisted, not quoted.
+    if (document_type(doc) == "consumer_guidance" and REFUND.search(intent.query)
+            and str(doc.get("source_authority") or "").lower() in ("official", "primary")
+            and set(tokenize(json.dumps(meta, ensure_ascii=False))) & {
+                "refund", "refunds", "cancellation", "return", "returns", "erstattung"}):
+        return "metadata_assisted"
+    return None
+
+
+def _sufficient(intent: SearchIntent, hits: list[dict]) -> bool:
+    """Do the admitted pages actually cover the question's specific terms?"""
+    if not _specific_terms(intent):
+        return True
+    return any(_support_basis(intent, hit) for hit in hits[:8])
 
 
 def _official_response(query: str, intent: SearchIntent, mode: str, note: str) -> dict:
@@ -439,10 +496,17 @@ def search_documents(documents: list[dict], query: str, limit: int = 10,
                 "response_mode": "NO_EVIDENCE", "results": [], "official_links": [],
                 "answer": None, "notices": ["No reviewed accessible destination matched this question."],
                 "note": "No reviewed accessible destination matched this question."}
-    if intent.kind == "flights" or (REFUND.search(query) and intent.kind == "how_to"):
+    if intent.kind == "flights":
         return _official_response(
             query, intent, "OFFICIAL_LINKS",
-            "No live fares, stock or refund decision is claimed; use the official channels.")
+            "No live fares or stock is claimed; use the official airline channels.")
+    # Refund questions are not short-circuited. Search admitted consumer guidance
+    # first and fall back to reviewed official links only when no page supports it.
+    # Refund guidance must be an admitted consumer page before the generic
+    # official handoff. If no admitted page supports the specific question,
+    # retain the safe official fallback rather than ranking a booking page.
+    if intent.kind == "how_to" and REFUND.search(query):
+        enforce_support = True
     excluded = _excluded_terms(query)
     scored = []
     seen_urls, seen_titles = set(), set()
@@ -451,7 +515,12 @@ def search_documents(documents: list[dict], query: str, limit: int = 10,
             continue
         if str(doc.get("source_id") or "").lower() in ("untrusted", "blocked", "phish"):
             continue
+        host = (urlsplit(str(doc.get("url") or "")).hostname or "").lower()
+        if host.endswith(".example") or "untrusted" in host:
+            continue
+        metadata = _metadata(doc)
         text = " ".join(str(doc.get(k) or "") for k in ("title", "snippet", "url")).lower()
+        text += " " + json.dumps(metadata, ensure_ascii=False).lower()
         if excluded and any(term in text for term in excluded):
             continue
         if intent.kind == "events" and not excluded:
@@ -473,7 +542,7 @@ def search_documents(documents: list[dict], query: str, limit: int = 10,
         coverage = len(core & set(tokenize(str(doc.get("title") or "") + " " +
                                          str(doc.get("snippet") or ""))))
         if intent.kind in ("general", "factual", "transport") and core and \
-                coverage / len(core) <= 0.5:
+                coverage / len(core) <= 0.5 and _support_basis(intent, doc) != "metadata_assisted":
             continue
         if intent.location and intent.kind == "events":
             haystack = (str(doc.get("title") or "") + " " + str(doc.get("snippet") or "") +
@@ -499,6 +568,10 @@ def search_documents(documents: list[dict], query: str, limit: int = 10,
                        "jurisdiction": _doc_jurisdiction(doc),
                        "specificity": doc.get("specificity"),
                        "provenance": doc.get("provenance"),
+                       "metadata": metadata,
+                       "metadata_source": "curator_assigned" if metadata else None,
+                       "support_basis": _support_basis(intent, doc) or "content",
+                       "snippet_source": "captured_page_description",
                        "location": intent.location,
                        "score": score, "ranking_reasons": reasons,
                        "source_kind": "permissioned_staging_document",
@@ -527,6 +600,9 @@ def search_documents(documents: list[dict], query: str, limit: int = 10,
         if related and intent.kind == "how_to":
             notices.append("Reviewed official entry points are listed separately; they are "
                            "navigation, not admitted page content.")
+        if any(hit.get("support_basis") == "metadata_assisted" for hit in hits):
+            notices.append("Some matches use curator-assigned topics or document type; "
+                           "they are not quoted as page content.")
         if excluded:
             notices.append("Excluded terms: " + ", ".join(excluded))
         return {"query": query, "intent": intent.as_dict(), "status": status,
@@ -591,6 +667,15 @@ def search_staging(staging, query: str, limit: int = 10, scan_limit: int = 5000,
                 mode = "fts_error_bounded_scan"
     if docs is None:
         docs = staging.all_documents(scan_limit)
+    else:
+        # FTS indexes page text only. Curator metadata can admit a specific
+        # page with a terse description, so merge those rows as candidates;
+        # the result still labels metadata-assisted support separately.
+        by_url = {str(doc.get("url") or ""): doc for doc in docs}
+        for doc in staging.all_documents(scan_limit):
+            if doc.get("metadata") and str(doc.get("url") or "") not in by_url:
+                by_url[str(doc.get("url") or "")] = doc
+        docs = list(by_url.values())
     response = search_documents(docs, query, limit, enforce_support=enforce_support)
     response["retrieval_mode"] = mode
     return response

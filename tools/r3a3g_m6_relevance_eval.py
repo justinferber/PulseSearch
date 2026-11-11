@@ -51,18 +51,25 @@ def evaluate(config: dict, pages: list[dict], snapshot_path: Path = SNAPSHOT) ->
     tmp = Path(tempfile.mkdtemp(prefix="r3a3g-m6-relevance-"))
     index = StagingIndex(tmp / "staging.sqlite")
     for page in usable:
+        metadata = {
+            "topics": page.get("topics") or [],
+            "document_type": page.get("document_type"),
+            "jurisdiction": page.get("jurisdiction"),
+        }
         index.add_document({
             "url": page["url"], "source_id": page["id"], "title": page["title"],
-            "snippet": " ".join(part for part in (
-                page.get("description") or "",
-                " ".join(page.get("topics") or []),
-                page.get("document_type") or "",
-                page.get("jurisdiction") or "",
-            ) if part), "category": "Other",
+            "snippet": page.get("description") or page.get("title") or "",
+            "metadata": json.dumps(metadata, ensure_ascii=False),
+            "category": "Other",
             "category_confidence": 0.9, "categories": ["Other"], "depth": 1,
             "fetched_at": captured_at,
             "content_hash": "m6-" + page["id"],
             "source_authority": page.get("authority", "official"),
+            "document_type": page.get("document_type"),
+            "language": page.get("language"),
+            "jurisdiction": page.get("jurisdiction"),
+            "specificity": page.get("specificity"),
+            "rights_mode": page.get("rights", "metadata_and_short_snippet"),
         }, [], index_allowed=True)
     index.close()
     cases = []

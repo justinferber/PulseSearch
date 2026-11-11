@@ -16,20 +16,24 @@
           "source_id": "hvv-deutschlandticket",
           "publisher": "hvv.de",
           "source_kind": "permissioned_staging_document",
+          "support_basis": "metadata_assisted",
+          "metadata_source": "curator_assigned",
           "rights_mode": "public_metadata_and_short_snippet",
           "fetched_at": "2026-11-11T18:10:08+00:00",
           "verified_live": false,
           "provenance": "{\"source_id\": \"hvv-deutschlandticket\", \"final_url\": \"https://www.hvv.de/en/deutschlandticket-en\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
         },
         {
-          "url": "https://www.bvg.de/en",
-          "source_id": "bvg",
-          "publisher": "bvg.de",
+          "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+          "source_id": "berlin-christmas",
+          "publisher": "visitberlin.de",
           "source_kind": "permissioned_staging_document",
-          "rights_mode": "evaluation_metadata_only",
-          "fetched_at": "2026-11-11T15:41:23+00:00",
+          "support_basis": "metadata_assisted",
+          "metadata_source": "curator_assigned",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
           "verified_live": false,
-          "provenance": "{\"source_id\": \"bvg\", \"final_url\": \"https://www.bvg.de/en\", \"captured_at\": \"2026-11-11T15:41:23+00:00\", \"approval_ref\": \"FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111\", \"rights\": \"evaluation_metadata_only\", \"snapshot\": \"r3a3g\"}"
+          "provenance": "{\"source_id\": \"berlin-christmas\", \"final_url\": \"https://www.visitberlin.de/en/christmas-markets-berlin\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
         }
       ],
       "unverified_leads": {
@@ -55,26 +59,20 @@
           "source_id": "tate-accessibility",
           "publisher": "tate.org.uk",
           "source_kind": "permissioned_staging_document",
+          "support_basis": "metadata_assisted",
+          "metadata_source": "curator_assigned",
           "rights_mode": "public_metadata_and_short_snippet",
           "fetched_at": "2026-11-11T18:10:08+00:00",
           "verified_live": false,
           "provenance": "{\"source_id\": \"tate-accessibility\", \"final_url\": \"https://www.tate.org.uk/visit/accessibility\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
         },
         {
-          "url": "https://www.london.gov.uk/events",
-          "source_id": "london-events",
-          "publisher": "london.gov.uk",
-          "source_kind": "permissioned_staging_document",
-          "rights_mode": "public_metadata_and_short_snippet",
-          "fetched_at": "2026-11-11T18:10:08+00:00",
-          "verified_live": false,
-          "provenance": "{\"source_id\": \"london-events\", \"final_url\": \"https://www.london.gov.uk/events\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
-        },
-        {
           "url": "https://officiallondontheatre.com/",
           "source_id": "official-london-theatre",
           "publisher": "officiallondontheatre.com",
           "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "metadata_source": "curator_assigned",
           "rights_mode": "public_metadata_and_short_snippet",
           "fetched_at": "2026-11-11T18:10:08+00:00",
           "verified_live": false,
@@ -85,10 +83,24 @@
           "source_id": "tfl",
           "publisher": "tfl.gov.uk",
           "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "metadata_source": "curator_assigned",
           "rights_mode": "evaluation_metadata_only",
           "fetched_at": "2026-11-11T15:41:23+00:00",
           "verified_live": false,
           "provenance": "{\"source_id\": \"tfl\", \"final_url\": \"https://tfl.gov.uk/\", \"captured_at\": \"2026-11-11T15:41:23+00:00\", \"approval_ref\": \"FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111\", \"rights\": \"evaluation_metadata_only\", \"snapshot\": \"r3a3g\"}"
+        },
+        {
+          "url": "https://www.london.gov.uk/events",
+          "source_id": "london-events",
+          "publisher": "london.gov.uk",
+          "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "metadata_source": "curator_assigned",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"london-events\", \"final_url\": \"https://www.london.gov.uk/events\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
         }
       ],
       "unverified_leads": {
@@ -103,31 +115,35 @@
     },
     {
       "question": "Can I refund concert tickets in Germany?",
-      "status": "official_links",
+      "status": "staging_results",
       "result_types": [
-        "official_directory"
+        "permissioned_staging_document"
       ],
       "top": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation",
       "source_receipts": [
         {
           "url": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation",
-          "source_id": null,
-          "publisher": "Verbraucherzentrale",
-          "source_kind": "official_directory",
-          "rights_mode": null,
-          "fetched_at": null,
+          "source_id": "german-consumer-advice",
+          "publisher": "verbraucherzentrale.de",
+          "source_kind": "permissioned_staging_document",
+          "support_basis": "metadata_assisted",
+          "metadata_source": "curator_assigned",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
           "verified_live": false,
-          "provenance": null
+          "provenance": "{\"source_id\": \"german-consumer-advice\", \"final_url\": \"https://www.verbraucherzentrale.de/wissen/vertraege-reklamation\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
         },
         {
-          "url": "https://www.gov.uk/search/all?keywords=Can+I+refund+concert+tickets+in+Germany%3F",
-          "source_id": null,
-          "publisher": "GOV.UK",
-          "source_kind": "official_directory",
-          "rights_mode": null,
-          "fetched_at": null,
+          "url": "https://www.gov.uk/consumer-protection-rights",
+          "source_id": "uk-consumer-rights",
+          "publisher": "gov.uk",
+          "source_kind": "permissioned_staging_document",
+          "support_basis": "metadata_assisted",
+          "metadata_source": "curator_assigned",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
           "verified_live": false,
-          "provenance": null
+          "provenance": "{\"source_id\": \"uk-consumer-rights\", \"final_url\": \"https://www.gov.uk/consumer-protection-rights\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
         }
       ],
       "unverified_leads": {
@@ -153,6 +169,8 @@
           "source_id": "paris-events",
           "publisher": "paris.fr",
           "source_kind": "permissioned_staging_document",
+          "support_basis": "metadata_assisted",
+          "metadata_source": "curator_assigned",
           "rights_mode": "public_metadata_and_short_snippet",
           "fetched_at": "2026-11-11T18:10:08+00:00",
           "verified_live": false,
@@ -182,6 +200,8 @@
           "source_id": "uk-passport",
           "publisher": "gov.uk",
           "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "metadata_source": "curator_assigned",
           "rights_mode": "public_metadata_and_short_snippet",
           "fetched_at": "2026-11-11T18:10:08+00:00",
           "verified_live": false,
@@ -192,6 +212,8 @@
           "source_id": "uk-consumer-rights",
           "publisher": "gov.uk",
           "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "metadata_source": "curator_assigned",
           "rights_mode": "public_metadata_and_short_snippet",
           "fetched_at": "2026-11-11T18:10:08+00:00",
           "verified_live": false,
@@ -202,30 +224,36 @@
           "source_id": "tate-accessibility",
           "publisher": "tate.org.uk",
           "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "metadata_source": "curator_assigned",
           "rights_mode": "public_metadata_and_short_snippet",
           "fetched_at": "2026-11-11T18:10:08+00:00",
           "verified_live": false,
           "provenance": "{\"source_id\": \"tate-accessibility\", \"final_url\": \"https://www.tate.org.uk/visit/accessibility\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
         },
         {
-          "url": "https://www.london.gov.uk/events",
-          "source_id": "london-events",
-          "publisher": "london.gov.uk",
+          "url": "https://tfl.gov.uk/",
+          "source_id": "tfl",
+          "publisher": "tfl.gov.uk",
           "source_kind": "permissioned_staging_document",
-          "rights_mode": "public_metadata_and_short_snippet",
-          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "support_basis": "content",
+          "metadata_source": "curator_assigned",
+          "rights_mode": "evaluation_metadata_only",
+          "fetched_at": "2026-11-11T15:41:23+00:00",
           "verified_live": false,
-          "provenance": "{\"source_id\": \"london-events\", \"final_url\": \"https://www.london.gov.uk/events\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+          "provenance": "{\"source_id\": \"tfl\", \"final_url\": \"https://tfl.gov.uk/\", \"captured_at\": \"2026-11-11T15:41:23+00:00\", \"approval_ref\": \"FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111\", \"rights\": \"evaluation_metadata_only\", \"snapshot\": \"r3a3g\"}"
         },
         {
-          "url": "https://www.nhs.uk/",
-          "source_id": "nhs-urgent-care",
-          "publisher": "nhs.uk",
+          "url": "https://www.glastonburyfestivals.co.uk/",
+          "source_id": "glastonbury",
+          "publisher": "glastonburyfestivals.co.uk",
           "source_kind": "permissioned_staging_document",
-          "rights_mode": "public_metadata_and_short_snippet",
-          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "support_basis": "content",
+          "metadata_source": "curator_assigned",
+          "rights_mode": "evaluation_metadata_only",
+          "fetched_at": "2026-11-11T15:41:23+00:00",
           "verified_live": false,
-          "provenance": "{\"source_id\": \"nhs-urgent-care\", \"final_url\": \"https://www.nhs.uk/\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+          "provenance": "{\"source_id\": \"glastonbury\", \"final_url\": \"https://www.glastonburyfestivals.co.uk/\", \"captured_at\": \"2026-11-11T15:41:23+00:00\", \"approval_ref\": \"FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111\", \"rights\": \"evaluation_metadata_only\", \"snapshot\": \"r3a3g\"}"
         }
       ],
       "unverified_leads": {
@@ -251,6 +279,8 @@
           "source_id": null,
           "publisher": "Wikimedia",
           "source_kind": "official_directory",
+          "support_basis": null,
+          "metadata_source": null,
           "rights_mode": null,
           "fetched_at": null,
           "verified_live": false,
@@ -261,6 +291,8 @@
           "source_id": null,
           "publisher": "GOV.UK",
           "source_kind": "official_directory",
+          "support_basis": null,
+          "metadata_source": null,
           "rights_mode": null,
           "fetched_at": null,
           "verified_live": false,
@@ -271,6 +303,8 @@
           "source_id": null,
           "publisher": "Verbraucherzentrale",
           "source_kind": "official_directory",
+          "support_basis": null,
+          "metadata_source": null,
           "rights_mode": null,
           "fetched_at": null,
           "verified_live": false,
@@ -281,6 +315,8 @@
           "source_id": null,
           "publisher": "Berlin.de",
           "source_kind": "official_directory",
+          "support_basis": null,
+          "metadata_source": null,
           "rights_mode": null,
           "fetched_at": null,
           "verified_live": false,
@@ -299,21 +335,59 @@
     },
     {
       "question": "Berlin museum opening hours",
-      "status": "official_links",
+      "status": "staging_results",
       "result_types": [
-        "official_directory"
+        "permissioned_staging_document"
       ],
-      "top": "https://www.berlin.de/en/museums/",
+      "top": "https://www.visitberlin.de/en/christmas-markets-berlin",
       "source_receipts": [
         {
-          "url": "https://www.berlin.de/en/museums/",
-          "source_id": null,
-          "publisher": "Berlin.de",
-          "source_kind": "official_directory",
-          "rights_mode": null,
-          "fetched_at": null,
+          "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+          "source_id": "berlin-christmas",
+          "publisher": "visitberlin.de",
+          "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "metadata_source": "curator_assigned",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
           "verified_live": false,
-          "provenance": null
+          "provenance": "{\"source_id\": \"berlin-christmas\", \"final_url\": \"https://www.visitberlin.de/en/christmas-markets-berlin\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        },
+        {
+          "url": "https://csd-berlin.de/",
+          "source_id": "csd-berlin",
+          "publisher": "csd-berlin.de",
+          "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "metadata_source": "curator_assigned",
+          "rights_mode": "evaluation_metadata_only",
+          "fetched_at": "2026-11-11T15:41:23+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"csd-berlin\", \"final_url\": \"https://csd-berlin.de/\", \"captured_at\": \"2026-11-11T15:41:23+00:00\", \"approval_ref\": \"FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111\", \"rights\": \"evaluation_metadata_only\", \"snapshot\": \"r3a3g\"}"
+        },
+        {
+          "url": "https://www.visitberlin.de/en",
+          "source_id": "visitberlin",
+          "publisher": "visitberlin.de",
+          "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "metadata_source": "curator_assigned",
+          "rights_mode": "evaluation_metadata_only",
+          "fetched_at": "2026-11-11T15:41:23+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"visitberlin\", \"final_url\": \"https://www.visitberlin.de/en\", \"captured_at\": \"2026-11-11T15:41:23+00:00\", \"approval_ref\": \"FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111\", \"rights\": \"evaluation_metadata_only\", \"snapshot\": \"r3a3g\"}"
+        },
+        {
+          "url": "https://www.bvg.de/en",
+          "source_id": "bvg",
+          "publisher": "bvg.de",
+          "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "metadata_source": "curator_assigned",
+          "rights_mode": "evaluation_metadata_only",
+          "fetched_at": "2026-11-11T15:41:23+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"bvg\", \"final_url\": \"https://www.bvg.de/en\", \"captured_at\": \"2026-11-11T15:41:23+00:00\", \"approval_ref\": \"FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111\", \"rights\": \"evaluation_metadata_only\", \"snapshot\": \"r3a3g\"}"
         }
       ],
       "unverified_leads": {
@@ -336,23 +410,15 @@
       "source_receipts": [
         {
           "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
-          "source_id": "visitberlin-christmas",
+          "source_id": "berlin-christmas",
           "publisher": "visitberlin.de",
           "source_kind": "permissioned_staging_document",
-          "rights_mode": "evaluation_metadata_only",
+          "support_basis": "content",
+          "metadata_source": "curator_assigned",
+          "rights_mode": "public_metadata_and_short_snippet",
           "fetched_at": "2026-11-11T18:10:08+00:00",
           "verified_live": false,
           "provenance": "{\"source_id\": \"berlin-christmas\", \"final_url\": \"https://www.visitberlin.de/en/christmas-markets-berlin\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
-        },
-        {
-          "url": "https://www.bvg.de/en",
-          "source_id": "bvg",
-          "publisher": "bvg.de",
-          "source_kind": "permissioned_staging_document",
-          "rights_mode": "evaluation_metadata_only",
-          "fetched_at": "2026-11-11T15:41:23+00:00",
-          "verified_live": false,
-          "provenance": "{\"source_id\": \"bvg\", \"final_url\": \"https://www.bvg.de/en\", \"captured_at\": \"2026-11-11T15:41:23+00:00\", \"approval_ref\": \"FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111\", \"rights\": \"evaluation_metadata_only\", \"snapshot\": \"r3a3g\"}"
         }
       ],
       "unverified_leads": {
@@ -378,6 +444,8 @@
           "source_id": null,
           "publisher": "Uber Arena",
           "source_kind": "official_directory",
+          "support_basis": null,
+          "metadata_source": null,
           "rights_mode": null,
           "fetched_at": null,
           "verified_live": false,
@@ -415,8 +483,8 @@
   ],
   "summary": {
     "questions": 10,
-    "with_indexed_result": 5,
-    "with_official_navigation": 4,
+    "with_indexed_result": 7,
+    "with_official_navigation": 2,
     "no_evidence": 1
   },
   "notes": [

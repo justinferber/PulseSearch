@@ -31,7 +31,7 @@ TOKEN = "lab-readonly-token-0123456789abcdef"
 
 FIXTURES = {
     "/": ("Pulse Search lab index home", "Locally generated laboratory index used only for a read-only API smoke test."),
-    "/gp-registration": ("Register with a GP surgery", "A new patient asks a local practice to accept them; the practice checks eligibility and address."),
+    "/gp-registration": ("Register with a GP surgery", "A new patient asks a local practice to accept them; the practice checks eligibility and address. The doctor at the surgery confirms registration for the patient."),
     "/driving-licence": ("Apply for a first provisional driving licence", "A learner motorist applies for a provisional licence before driving lessons begin."),
     "/register-to-vote": ("Register to vote in UK elections", "The electoral register records eligible residents so they can vote."),
     "/blood-tests": ("Laboratory blood tests", "A clinician requests blood screening and the laboratory reports results."),
@@ -140,7 +140,10 @@ def main(argv):
 
     e.initdb(db)
     t0 = time.perf_counter()
-    crawl = e.crawl(db, sources, [base + "/"], max_pages=8, max_depth=1, min_delay=0.01, allow_local=True)
+    # R3-A3E: the fixture defines ten pages; the previous cap of eight silently
+    # dropped /register-to-vote and /library-membership from the FTS table, which
+    # is what made the voting query return the GP page. Index the whole fixture.
+    crawl = e.crawl(db, sources, [base + "/"], max_pages=12, max_depth=1, min_delay=0.01, allow_local=True)
     crawl_ms = (time.perf_counter() - t0) * 1000
     index_sha = hashlib.sha256(db.read_bytes()).hexdigest()
 

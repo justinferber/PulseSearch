@@ -1,0 +1,516 @@
+{
+  "kind": "R3A3E_CONSTRAINT_LAYER_MEASUREMENT_NOT_ACCEPTED_ENGINE",
+  "engine": "HYBRID_LEXICAL",
+  "engine_snapshots_modified": false,
+  "probe_count": 10,
+  "before_distribution": {
+    "FAIL_MISSING_EDITION": 3,
+    "PASS_RETRIEVAL": 1,
+    "FAIL_EMPTY_DISCOVERY": 2,
+    "FAIL_EXCLUSION_LEAK": 1,
+    "FAIL_SERIES_RECALL": 2,
+    "PASS_SAFETY": 1
+  },
+  "after_distribution": {
+    "PASS_RETRIEVAL": 9,
+    "PASS_SAFETY": 1
+  },
+  "newly_passing": [
+    "event_series_2",
+    "event_series_3",
+    "exclude_games",
+    "exclude_diwali",
+    "catalog_history",
+    "x09",
+    "x10",
+    "x14"
+  ],
+  "regressions": [],
+  "changed": [
+    {
+      "probe_id": "event_series_2",
+      "before": "FAIL_MISSING_EDITION",
+      "after": "PASS_RETRIEVAL"
+    },
+    {
+      "probe_id": "event_series_3",
+      "before": "FAIL_MISSING_EDITION",
+      "after": "PASS_RETRIEVAL"
+    },
+    {
+      "probe_id": "exclude_games",
+      "before": "FAIL_EMPTY_DISCOVERY",
+      "after": "PASS_RETRIEVAL"
+    },
+    {
+      "probe_id": "exclude_diwali",
+      "before": "FAIL_EXCLUSION_LEAK",
+      "after": "PASS_RETRIEVAL"
+    },
+    {
+      "probe_id": "catalog_history",
+      "before": "FAIL_SERIES_RECALL",
+      "after": "PASS_RETRIEVAL"
+    },
+    {
+      "probe_id": "x09",
+      "before": "FAIL_MISSING_EDITION",
+      "after": "PASS_RETRIEVAL"
+    },
+    {
+      "probe_id": "x10",
+      "before": "FAIL_EMPTY_DISCOVERY",
+      "after": "PASS_RETRIEVAL"
+    },
+    {
+      "probe_id": "x14",
+      "before": "FAIL_SERIES_RECALL",
+      "after": "PASS_RETRIEVAL"
+    }
+  ],
+  "probes": [
+    {
+      "probe_id": "event_series_2",
+      "question": "What are the 2024 and 2025 London Open House editions?",
+      "expected_kind": "all",
+      "expected_value": "/events/london-open-house-2024|/events/london-open-house-2025",
+      "before": {
+        "verdict": "FAIL_MISSING_EDITION",
+        "note": "Required distinct editions: /events/london-open-house-2024",
+        "count": 1,
+        "urls": [
+          "https://www.london.gov.uk/events/london-open-house-2025"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Required distinct editions: all found",
+        "count": 2,
+        "urls": [
+          "https://www.london.gov.uk/events/london-open-house-2025",
+          "https://www.london.gov.uk/events/london-open-house-2024"
+        ]
+      },
+      "decomposition": {
+        "query": "What are the 2024 and 2025 London Open House editions?",
+        "clean_query": "What are the 2024 and 2025 London Open House editions",
+        "exclusions": [],
+        "years": [
+          "2024",
+          "2025"
+        ],
+        "subject_phrase": "london open house",
+        "series_like": true
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "dropped": [
+        {
+          "url": "https://www.london.gov.uk/events/open-iftar-2025",
+          "title": "Open Iftar 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        }
+      ]
+    },
+    {
+      "probe_id": "event_series_3",
+      "question": "London Open House editions from 2023, 2024 and 2025",
+      "expected_kind": "all",
+      "expected_value": "/events/london-open-house-2023|/events/london-open-house-2024|/events/london-open-house-2025",
+      "before": {
+        "verdict": "FAIL_MISSING_EDITION",
+        "note": "Required distinct editions: /events/london-open-house-2023, /events/london-open-house-2024",
+        "count": 1,
+        "urls": [
+          "https://www.london.gov.uk/events/london-open-house-2025"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Required distinct editions: all found",
+        "count": 3,
+        "urls": [
+          "https://www.london.gov.uk/events/london-open-house-2025",
+          "https://www.london.gov.uk/events/london-open-house-2023",
+          "https://www.london.gov.uk/events/london-open-house-2024"
+        ]
+      },
+      "decomposition": {
+        "query": "London Open House editions from 2023, 2024 and 2025",
+        "clean_query": "London Open House editions from 2023, 2024 and 2025",
+        "exclusions": [],
+        "years": [
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "subject_phrase": "london open house",
+        "series_like": true
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "dropped": [
+        {
+          "url": "https://www.london.gov.uk/events/open-iftar-2025",
+          "title": "Open Iftar 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        }
+      ]
+    },
+    {
+      "probe_id": "exclude_patrick",
+      "question": "London festivals in 2026 excluding St Patrick's Festival",
+      "expected_kind": "exclude_nonempty",
+      "expected_value": "/events/st-patricks-festival-2026",
+      "before": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Non-excluded alternative returned",
+        "count": 2,
+        "urls": [
+          "https://www.london.gov.uk/events/london-games-festival-2026",
+          "https://www.london.gov.uk/events/lunar-new-year-festival-spring-2026"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Non-excluded alternative returned",
+        "count": 2,
+        "urls": [
+          "https://www.london.gov.uk/events/london-games-festival-2026",
+          "https://www.london.gov.uk/events/lunar-new-year-festival-spring-2026"
+        ]
+      },
+      "decomposition": {
+        "query": "London festivals in 2026 excluding St Patrick's Festival",
+        "clean_query": "London festivals in 2026",
+        "exclusions": [
+          "St Patrick's Festival"
+        ],
+        "years": [
+          "2026"
+        ],
+        "subject_phrase": "london celebration",
+        "series_like": false
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "dropped": [
+        {
+          "url": "https://www.london.gov.uk/events/st-patricks-festival-2026",
+          "title": "St Patrick’s Festival 2026 | London City Hall",
+          "violations": [
+            "EXCLUDED_ENTITY_PRESENT"
+          ]
+        }
+      ]
+    },
+    {
+      "probe_id": "exclude_games",
+      "question": "London festival events 2026 without London Games Festival",
+      "expected_kind": "exclude_nonempty",
+      "expected_value": "/events/london-games-festival-2026",
+      "before": {
+        "verdict": "FAIL_EMPTY_DISCOVERY",
+        "note": "Other known indexed alternatives must be returned",
+        "count": 0,
+        "urls": []
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Non-excluded alternative returned",
+        "count": 2,
+        "urls": [
+          "https://www.london.gov.uk/events/st-patricks-festival-2026",
+          "https://www.london.gov.uk/events/lunar-new-year-festival-spring-2026"
+        ]
+      },
+      "decomposition": {
+        "query": "London festival events 2026 without London Games Festival",
+        "clean_query": "London festival events 2026",
+        "exclusions": [
+          "London Games Festival"
+        ],
+        "years": [
+          "2026"
+        ],
+        "subject_phrase": "london celebration",
+        "series_like": false
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "dropped": [
+        {
+          "url": "https://www.london.gov.uk/events/london-games-festival-2026",
+          "title": "London Games Festival 2026 | London City Hall",
+          "violations": [
+            "EXCLUDED_ENTITY_PRESENT"
+          ]
+        }
+      ]
+    },
+    {
+      "probe_id": "exclude_diwali",
+      "question": "Find London events in 2025 other than Diwali on the Square",
+      "expected_kind": "exclude_nonempty",
+      "expected_value": "/events/diwali-square-2025",
+      "before": {
+        "verdict": "FAIL_EXCLUSION_LEAK",
+        "note": "Excluded source appeared in results",
+        "count": 1,
+        "urls": [
+          "https://www.london.gov.uk/events/diwali-square-2025"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Non-excluded alternative returned",
+        "count": 10,
+        "urls": [
+          "https://www.london.gov.uk/events/london-data-week-2025",
+          "https://www.london.gov.uk/events/london-open-house-2025",
+          "https://www.london.gov.uk/events/towards-new-london-plan-online-event-13-may-2025",
+          "https://www.london.gov.uk/events/towards-new-london-plan-online-event-29-may-2025",
+          "https://www.london.gov.uk/events/towards-new-london-plan-online-event-6-june-2025",
+          "https://www.london.gov.uk/events/london-games-festival-2025",
+          "https://www.london.gov.uk/events/state-london-debate-2025",
+          "https://www.london.gov.uk/events/docks-2025",
+          "https://www.london.gov.uk/events/eid-square-2025",
+          "https://www.london.gov.uk/events/st-georges-day-2025"
+        ]
+      },
+      "decomposition": {
+        "query": "Find London events in 2025 other than Diwali on the Square",
+        "clean_query": "Find London events in 2025",
+        "exclusions": [
+          "Diwali on the Square"
+        ],
+        "years": [
+          "2025"
+        ],
+        "subject_phrase": "",
+        "series_like": false
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "dropped": []
+    },
+    {
+      "probe_id": "catalog_history",
+      "question": "Historical editions of London Open House",
+      "expected_kind": "series_many",
+      "expected_value": "london open house",
+      "before": {
+        "verdict": "FAIL_SERIES_RECALL",
+        "note": "At least two exact series editions required",
+        "count": 4,
+        "urls": [
+          "https://www.london.gov.uk/events/london-open-house-2025",
+          "https://www.london.gov.uk/events/london-open-house-2024",
+          "https://www.london.gov.uk/events/london-open-house-2023",
+          "https://www.london.gov.uk/events/city-hall-open-house-2026"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "At least two exact series editions required",
+        "count": 3,
+        "urls": [
+          "https://www.london.gov.uk/events/london-open-house-2025",
+          "https://www.london.gov.uk/events/london-open-house-2024",
+          "https://www.london.gov.uk/events/london-open-house-2023"
+        ]
+      },
+      "decomposition": {
+        "query": "Historical editions of London Open House",
+        "clean_query": "Historical editions of London Open House",
+        "exclusions": [],
+        "years": [],
+        "subject_phrase": "london open house",
+        "series_like": true
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "dropped": [
+        {
+          "url": "https://www.london.gov.uk/events/city-hall-open-house-2026",
+          "title": "City Hall Open House 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        }
+      ]
+    },
+    {
+      "probe_id": "negative_contradiction",
+      "question": "Eid on the Square 2027 excluding Eid",
+      "expected_kind": "no_result",
+      "expected_value": "",
+      "before": {
+        "verdict": "PASS_SAFETY",
+        "note": "No supported link expected",
+        "count": 0,
+        "urls": []
+      },
+      "after": {
+        "verdict": "PASS_SAFETY",
+        "note": "No supported link expected",
+        "count": 0,
+        "urls": []
+      },
+      "decomposition": {
+        "query": "Eid on the Square 2027 excluding Eid",
+        "clean_query": "Eid on the Square 2027",
+        "exclusions": [
+          "Eid"
+        ],
+        "years": [
+          "2027"
+        ],
+        "subject_phrase": "",
+        "series_like": false
+      },
+      "constraint_compliance": "WITHHELD_CONTRADICTION",
+      "dropped": []
+    },
+    {
+      "probe_id": "x09",
+      "question": "London Open House 2024 and London Open House 2025",
+      "expected_kind": "all",
+      "expected_value": "/events/london-open-house-2024|/events/london-open-house-2025",
+      "before": {
+        "verdict": "FAIL_MISSING_EDITION",
+        "note": "Required distinct editions: /events/london-open-house-2024",
+        "count": 2,
+        "urls": [
+          "https://www.london.gov.uk/events/london-open-house-2025",
+          "https://www.london.gov.uk/events/open-iftar-2025"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Required distinct editions: all found",
+        "count": 2,
+        "urls": [
+          "https://www.london.gov.uk/events/london-open-house-2025",
+          "https://www.london.gov.uk/events/london-open-house-2024"
+        ]
+      },
+      "decomposition": {
+        "query": "London Open House 2024 and London Open House 2025",
+        "clean_query": "London Open House 2024 and London Open House 2025",
+        "exclusions": [],
+        "years": [
+          "2024",
+          "2025"
+        ],
+        "subject_phrase": "london open house",
+        "series_like": true
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "dropped": [
+        {
+          "url": "https://www.london.gov.uk/events/open-iftar-2025",
+          "title": "Open Iftar 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        }
+      ]
+    },
+    {
+      "probe_id": "x10",
+      "question": "London 2027 public events excluding Eid",
+      "expected_kind": "exclude_nonempty",
+      "expected_value": "/events/eid",
+      "before": {
+        "verdict": "FAIL_EMPTY_DISCOVERY",
+        "note": "Other known indexed alternatives must be returned",
+        "count": 0,
+        "urls": []
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Non-excluded alternative returned",
+        "count": 6,
+        "urls": [
+          "https://www.london.gov.uk/events/armed-forces-day-2027",
+          "https://www.london.gov.uk/events/black-square-2027",
+          "https://www.london.gov.uk/events/77-memorial-service-2027",
+          "https://www.london.gov.uk/events/st-patricks-day",
+          "https://www.london.gov.uk/events/gypsy-roma-and-traveller-history-month-2027",
+          "https://www.london.gov.uk/events/unesco-day-remembering-transatlantic-slave-trade-and-its-abolition-2027"
+        ]
+      },
+      "decomposition": {
+        "query": "London 2027 public events excluding Eid",
+        "clean_query": "London 2027 public events",
+        "exclusions": [
+          "Eid"
+        ],
+        "years": [
+          "2027"
+        ],
+        "subject_phrase": "",
+        "series_like": false
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "dropped": [
+        {
+          "url": "https://www.london.gov.uk/events/eid",
+          "title": "Eid on the Square 2027 | London City Hall",
+          "violations": [
+            "EXCLUDED_ENTITY_PRESENT"
+          ]
+        }
+      ]
+    },
+    {
+      "probe_id": "x14",
+      "question": "Past editions of London Open House",
+      "expected_kind": "series_many",
+      "expected_value": "london open house",
+      "before": {
+        "verdict": "FAIL_SERIES_RECALL",
+        "note": "At least two exact series editions required",
+        "count": 4,
+        "urls": [
+          "https://www.london.gov.uk/events/london-open-house-2025",
+          "https://www.london.gov.uk/events/london-open-house-2024",
+          "https://www.london.gov.uk/events/london-open-house-2023",
+          "https://www.london.gov.uk/events/city-hall-open-house-2026"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "At least two exact series editions required",
+        "count": 3,
+        "urls": [
+          "https://www.london.gov.uk/events/london-open-house-2025",
+          "https://www.london.gov.uk/events/london-open-house-2024",
+          "https://www.london.gov.uk/events/london-open-house-2023"
+        ]
+      },
+      "decomposition": {
+        "query": "Past editions of London Open House",
+        "clean_query": "Past editions of London Open House",
+        "exclusions": [],
+        "years": [],
+        "subject_phrase": "london open house",
+        "series_like": true
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "dropped": [
+        {
+          "url": "https://www.london.gov.uk/events/city-hall-open-house-2026",
+          "title": "City Hall Open House 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Hybrid lexical path only in this file; dense path measured separately.",
+    "Engineer-authored expectations are not independent human relevance labels.",
+    "Constraint compliance is a rule check, not proof of user-visible quality."
+  ]
+}

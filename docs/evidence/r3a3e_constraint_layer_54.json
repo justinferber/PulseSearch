@@ -1,0 +1,3170 @@
+{
+  "kind": "R3A3E_CONSTRAINT_LAYER_MEASUREMENT_NOT_ACCEPTED_ENGINE",
+  "engine": "HYBRID_LEXICAL",
+  "engine_snapshots_modified": false,
+  "index_integrity": {
+    "sha256_before": "bb8e52025a1a25f55141507a02621db190e54bf1fc4d4da8db4248357368c35d",
+    "sha256_after": "bb8e52025a1a25f55141507a02621db190e54bf1fc4d4da8db4248357368c35d",
+    "pin_enforced": true,
+    "approved_rows": 120
+  },
+  "model_integrity": null,
+  "exclusion_semantics": "QUERY_LOCAL_NEGATION_ONLY",
+  "probe_count": 54,
+  "before_distribution": {
+    "FAIL_WRONG_TOP1": 4,
+    "PASS_RETRIEVAL": 19,
+    "FAIL_MISSING_EDITION": 3,
+    "FAIL_EMPTY_DISCOVERY": 4,
+    "FAIL_EXCLUSION_LEAK": 1,
+    "FAIL_SERIES_RECALL": 2,
+    "PASS_SAFETY": 10,
+    "ABSTAIN_FACT_UNVERIFIED": 11
+  },
+  "after_distribution": {
+    "FAIL_WRONG_TOP1": 4,
+    "PASS_RETRIEVAL": 29,
+    "PASS_SAFETY": 10,
+    "ABSTAIN_FACT_UNVERIFIED": 11
+  },
+  "newly_passing": [
+    "event_series_2",
+    "event_series_3",
+    "exclude_eid",
+    "exclude_games",
+    "exclude_diwali",
+    "catalog_history",
+    "x09",
+    "x10",
+    "x12",
+    "x14"
+  ],
+  "regressions": [],
+  "partial_retrieval_probes": [],
+  "metrics_scope": {
+    "exclusion_semantics": "QUERY_LOCAL_NEGATION_ONLY",
+    "global_event_suppression": false,
+    "persisted_state": false,
+    "index_or_source_mutation": false,
+    "retrieval_metric": "ENGINE_RANKING_WITH_CONSTRAINTS",
+    "relevance_metric": "ENGINEER_AUTHORED_URL_EXPECTATION_NOT_HUMAN_GRADE",
+    "human_signed_grades": 0
+  },
+  "changed": [
+    {
+      "probe_id": "event_series_2",
+      "before": "FAIL_MISSING_EDITION",
+      "after": "PASS_RETRIEVAL"
+    },
+    {
+      "probe_id": "event_series_3",
+      "before": "FAIL_MISSING_EDITION",
+      "after": "PASS_RETRIEVAL"
+    },
+    {
+      "probe_id": "exclude_eid",
+      "before": "FAIL_EMPTY_DISCOVERY",
+      "after": "PASS_RETRIEVAL"
+    },
+    {
+      "probe_id": "exclude_games",
+      "before": "FAIL_EMPTY_DISCOVERY",
+      "after": "PASS_RETRIEVAL"
+    },
+    {
+      "probe_id": "exclude_diwali",
+      "before": "FAIL_EXCLUSION_LEAK",
+      "after": "PASS_RETRIEVAL"
+    },
+    {
+      "probe_id": "catalog_history",
+      "before": "FAIL_SERIES_RECALL",
+      "after": "PASS_RETRIEVAL"
+    },
+    {
+      "probe_id": "x09",
+      "before": "FAIL_MISSING_EDITION",
+      "after": "PASS_RETRIEVAL"
+    },
+    {
+      "probe_id": "x10",
+      "before": "FAIL_EMPTY_DISCOVERY",
+      "after": "PASS_RETRIEVAL"
+    },
+    {
+      "probe_id": "x12",
+      "before": "FAIL_EMPTY_DISCOVERY",
+      "after": "PASS_RETRIEVAL"
+    },
+    {
+      "probe_id": "x14",
+      "before": "FAIL_SERIES_RECALL",
+      "after": "PASS_RETRIEVAL"
+    }
+  ],
+  "probes": [
+    {
+      "probe_id": "new_patient_doctor",
+      "question": "Where can a new NHS patient sign up to see a doctor?",
+      "expected_kind": "top",
+      "expected_value": "/how-to-register-with-a-gp-surgery/",
+      "before": {
+        "verdict": "FAIL_WRONG_TOP1",
+        "note": "Expected exact page at top",
+        "count": 0,
+        "urls": []
+      },
+      "after": {
+        "verdict": "FAIL_WRONG_TOP1",
+        "note": "Expected exact page at top",
+        "count": 0,
+        "urls": []
+      },
+      "decomposition": {
+        "query": "Where can a new NHS patient sign up to see a doctor?",
+        "clean_query": "Where can a new NHS patient sign up to see a doctor",
+        "exclusions": [],
+        "years": [],
+        "subject_phrase": "new nhs patient sign up",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "learner_motorist",
+      "question": "What should a UK learner motorist apply for?",
+      "expected_kind": "top",
+      "expected_value": "/apply-first-provisional-driving-licence",
+      "before": {
+        "verdict": "FAIL_WRONG_TOP1",
+        "note": "Expected exact page at top",
+        "count": 0,
+        "urls": []
+      },
+      "after": {
+        "verdict": "FAIL_WRONG_TOP1",
+        "note": "Expected exact page at top",
+        "count": 0,
+        "urls": []
+      },
+      "decomposition": {
+        "query": "What should a UK learner motorist apply for?",
+        "clean_query": "What should a UK learner motorist apply for",
+        "exclusions": [],
+        "years": [],
+        "subject_phrase": "uk provisional motorist",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "registration",
+      "question": "Where can I register to vote?",
+      "expected_kind": "top",
+      "expected_value": "/register-to-vote",
+      "before": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 2,
+        "urls": [
+          "https://www.gov.uk/register-to-vote",
+          "https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 2,
+        "urls": [
+          "https://www.gov.uk/register-to-vote",
+          "https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/"
+        ]
+      },
+      "decomposition": {
+        "query": "Where can I register to vote?",
+        "clean_query": "Where can I register to vote",
+        "exclusions": [],
+        "years": [],
+        "subject_phrase": "",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 2,
+          "eligible": 2
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 2,
+          "eligible": 2
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 2,
+          "eligible": 2
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "blood_screening",
+      "question": "How do I arrange laboratory blood screening?",
+      "expected_kind": "top",
+      "expected_value": "/blood-tests/",
+      "before": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 1,
+        "urls": [
+          "https://www.nhs.uk/tests-and-treatments/blood-tests/"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 1,
+        "urls": [
+          "https://www.nhs.uk/tests-and-treatments/blood-tests/"
+        ]
+      },
+      "decomposition": {
+        "query": "How do I arrange laboratory blood screening?",
+        "clean_query": "How do I arrange laboratory blood screening",
+        "exclusions": [],
+        "years": [],
+        "subject_phrase": "arrange laboratory blood test",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "javascript",
+      "question": "What is JavaScript programming?",
+      "expected_kind": "top",
+      "expected_value": "/What_is_JavaScript",
+      "before": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 1,
+        "urls": [
+          "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 1,
+        "urls": [
+          "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript"
+        ]
+      },
+      "decomposition": {
+        "query": "What is JavaScript programming?",
+        "clean_query": "What is JavaScript programming",
+        "exclusions": [],
+        "years": [],
+        "subject_phrase": "javascript programming",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "http",
+      "question": "Explain HTTP protocol",
+      "expected_kind": "top",
+      "expected_value": "/Web/HTTP",
+      "before": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 2,
+        "urls": [
+          "https://developer.mozilla.org/en-US/docs/Web/HTTP",
+          "https://www.rfc-editor.org/rfc/rfc9309.html"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 2,
+        "urls": [
+          "https://developer.mozilla.org/en-US/docs/Web/HTTP",
+          "https://www.rfc-editor.org/rfc/rfc9309.html"
+        ]
+      },
+      "decomposition": {
+        "query": "Explain HTTP protocol",
+        "clean_query": "Explain HTTP protocol",
+        "exclusions": [],
+        "years": [],
+        "subject_phrase": "explain http protocol",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 2,
+          "eligible": 2
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 2,
+          "eligible": 2
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 2,
+          "eligible": 2
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "event_year",
+      "question": "Armed Forces Day 2027",
+      "expected_kind": "top",
+      "expected_value": "/events/armed-forces-day-2027",
+      "before": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 1,
+        "urls": [
+          "https://www.london.gov.uk/events/armed-forces-day-2027"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 1,
+        "urls": [
+          "https://www.london.gov.uk/events/armed-forces-day-2027"
+        ]
+      },
+      "decomposition": {
+        "query": "Armed Forces Day 2027",
+        "clean_query": "Armed Forces Day 2027",
+        "exclusions": [],
+        "years": [
+          "2027"
+        ],
+        "subject_phrase": "armed force day",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "event_precise",
+      "question": "Eid on the Square 2027",
+      "expected_kind": "top",
+      "expected_value": "/events/eid",
+      "before": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 2,
+        "urls": [
+          "https://www.london.gov.uk/events/eid",
+          "https://www.london.gov.uk/events/black-square-2027"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 2,
+        "urls": [
+          "https://www.london.gov.uk/events/eid",
+          "https://www.london.gov.uk/events/black-square-2027"
+        ]
+      },
+      "decomposition": {
+        "query": "Eid on the Square 2027",
+        "clean_query": "Eid on the Square 2027",
+        "exclusions": [],
+        "years": [
+          "2027"
+        ],
+        "subject_phrase": "",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 2,
+          "eligible": 2
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 2,
+          "eligible": 2
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 2,
+          "eligible": 2
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "event_precise_2025",
+      "question": "Diwali on the Square 2025",
+      "expected_kind": "top",
+      "expected_value": "/events/diwali-square-2025",
+      "before": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 6,
+        "urls": [
+          "https://www.london.gov.uk/events/diwali-square-2025",
+          "https://www.london.gov.uk/events/eid-square-2025",
+          "https://www.london.gov.uk/events/black-square-2025",
+          "https://www.london.gov.uk/events/chanukah-square-2025",
+          "https://www.london.gov.uk/events/vaisakhi-square-2025",
+          "https://www.london.gov.uk/events/passion-jesus-trafalgar-square-2025"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 6,
+        "urls": [
+          "https://www.london.gov.uk/events/diwali-square-2025",
+          "https://www.london.gov.uk/events/eid-square-2025",
+          "https://www.london.gov.uk/events/black-square-2025",
+          "https://www.london.gov.uk/events/chanukah-square-2025",
+          "https://www.london.gov.uk/events/vaisakhi-square-2025",
+          "https://www.london.gov.uk/events/passion-jesus-trafalgar-square-2025"
+        ]
+      },
+      "decomposition": {
+        "query": "Diwali on the Square 2025",
+        "clean_query": "Diwali on the Square 2025",
+        "exclusions": [],
+        "years": [
+          "2025"
+        ],
+        "subject_phrase": "",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 6,
+          "eligible": 6
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 6,
+          "eligible": 6
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 6,
+          "eligible": 6
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "event_series_2",
+      "question": "What are the 2024 and 2025 London Open House editions?",
+      "expected_kind": "all",
+      "expected_value": "/events/london-open-house-2024|/events/london-open-house-2025",
+      "before": {
+        "verdict": "FAIL_MISSING_EDITION",
+        "note": "Required distinct editions: /events/london-open-house-2024",
+        "count": 1,
+        "urls": [
+          "https://www.london.gov.uk/events/london-open-house-2025"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Required distinct editions: all found",
+        "count": 2,
+        "urls": [
+          "https://www.london.gov.uk/events/london-open-house-2025",
+          "https://www.london.gov.uk/events/london-open-house-2024"
+        ]
+      },
+      "decomposition": {
+        "query": "What are the 2024 and 2025 London Open House editions?",
+        "clean_query": "What are the 2024 and 2025 London Open House editions",
+        "exclusions": [],
+        "years": [
+          "2024",
+          "2025"
+        ],
+        "subject_phrase": "london open house",
+        "series_like": true,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {
+        "2024": {
+          "status": "RETRIEVED",
+          "returned": 1,
+          "depth": 120
+        },
+        "2025": {
+          "status": "RETRIEVED",
+          "returned": 2,
+          "depth": 120
+        }
+      },
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 3,
+          "eligible": 2
+        }
+      ],
+      "dropped": [
+        {
+          "url": "https://www.london.gov.uk/events/open-iftar-2025",
+          "title": "Open Iftar 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        }
+      ]
+    },
+    {
+      "probe_id": "event_series_3",
+      "question": "London Open House editions from 2023, 2024 and 2025",
+      "expected_kind": "all",
+      "expected_value": "/events/london-open-house-2023|/events/london-open-house-2024|/events/london-open-house-2025",
+      "before": {
+        "verdict": "FAIL_MISSING_EDITION",
+        "note": "Required distinct editions: /events/london-open-house-2023, /events/london-open-house-2024",
+        "count": 1,
+        "urls": [
+          "https://www.london.gov.uk/events/london-open-house-2025"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Required distinct editions: all found",
+        "count": 3,
+        "urls": [
+          "https://www.london.gov.uk/events/london-open-house-2025",
+          "https://www.london.gov.uk/events/london-open-house-2023",
+          "https://www.london.gov.uk/events/london-open-house-2024"
+        ]
+      },
+      "decomposition": {
+        "query": "London Open House editions from 2023, 2024 and 2025",
+        "clean_query": "London Open House editions from 2023, 2024 and 2025",
+        "exclusions": [],
+        "years": [
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "subject_phrase": "london open house",
+        "series_like": true,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {
+        "2023": {
+          "status": "RETRIEVED",
+          "returned": 1,
+          "depth": 120
+        },
+        "2024": {
+          "status": "RETRIEVED",
+          "returned": 1,
+          "depth": 120
+        },
+        "2025": {
+          "status": "RETRIEVED",
+          "returned": 2,
+          "depth": 120
+        }
+      },
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 4,
+          "eligible": 3
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 4,
+          "eligible": 3
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 4,
+          "eligible": 3
+        }
+      ],
+      "dropped": [
+        {
+          "url": "https://www.london.gov.uk/events/open-iftar-2025",
+          "title": "Open Iftar 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        }
+      ]
+    },
+    {
+      "probe_id": "series_specific",
+      "question": "City Hall Open House 2026",
+      "expected_kind": "top",
+      "expected_value": "/events/city-hall-open-house-2026",
+      "before": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 1,
+        "urls": [
+          "https://www.london.gov.uk/events/city-hall-open-house-2026"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 1,
+        "urls": [
+          "https://www.london.gov.uk/events/city-hall-open-house-2026"
+        ]
+      },
+      "decomposition": {
+        "query": "City Hall Open House 2026",
+        "clean_query": "City Hall Open House 2026",
+        "exclusions": [],
+        "years": [
+          "2026"
+        ],
+        "subject_phrase": "open house",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "exclude_eid",
+      "question": "London events 2027 excluding Eid",
+      "expected_kind": "exclude_nonempty",
+      "expected_value": "/events/eid",
+      "before": {
+        "verdict": "FAIL_EMPTY_DISCOVERY",
+        "note": "Other known indexed alternatives must be returned",
+        "count": 0,
+        "urls": []
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Non-excluded alternative returned",
+        "count": 4,
+        "urls": [
+          "https://www.london.gov.uk/events/armed-forces-day-2027",
+          "https://www.london.gov.uk/events/black-square-2027",
+          "https://www.london.gov.uk/events/77-memorial-service-2027",
+          "https://www.london.gov.uk/events/st-patricks-day"
+        ]
+      },
+      "decomposition": {
+        "query": "London events 2027 excluding Eid",
+        "clean_query": "London events 2027",
+        "exclusions": [
+          "Eid"
+        ],
+        "years": [
+          "2027"
+        ],
+        "subject_phrase": "",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 5,
+          "eligible": 4
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 5,
+          "eligible": 4
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 5,
+          "eligible": 4
+        }
+      ],
+      "dropped": [
+        {
+          "url": "https://www.london.gov.uk/events/eid",
+          "title": "Eid on the Square 2027 | London City Hall",
+          "violations": [
+            "EXCLUDED_ENTITY_PRESENT"
+          ]
+        }
+      ]
+    },
+    {
+      "probe_id": "exclude_patrick",
+      "question": "London festivals in 2026 excluding St Patrick's Festival",
+      "expected_kind": "exclude_nonempty",
+      "expected_value": "/events/st-patricks-festival-2026",
+      "before": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Non-excluded alternative returned",
+        "count": 2,
+        "urls": [
+          "https://www.london.gov.uk/events/london-games-festival-2026",
+          "https://www.london.gov.uk/events/lunar-new-year-festival-spring-2026"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Non-excluded alternative returned",
+        "count": 2,
+        "urls": [
+          "https://www.london.gov.uk/events/london-games-festival-2026",
+          "https://www.london.gov.uk/events/lunar-new-year-festival-spring-2026"
+        ]
+      },
+      "decomposition": {
+        "query": "London festivals in 2026 excluding St Patrick's Festival",
+        "clean_query": "London festivals in 2026",
+        "exclusions": [
+          "St Patrick's Festival"
+        ],
+        "years": [
+          "2026"
+        ],
+        "subject_phrase": "london celebration",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 3,
+          "eligible": 2
+        }
+      ],
+      "dropped": [
+        {
+          "url": "https://www.london.gov.uk/events/st-patricks-festival-2026",
+          "title": "St Patrick’s Festival 2026 | London City Hall",
+          "violations": [
+            "EXCLUDED_ENTITY_PRESENT"
+          ]
+        }
+      ]
+    },
+    {
+      "probe_id": "exclude_games",
+      "question": "London festival events 2026 without London Games Festival",
+      "expected_kind": "exclude_nonempty",
+      "expected_value": "/events/london-games-festival-2026",
+      "before": {
+        "verdict": "FAIL_EMPTY_DISCOVERY",
+        "note": "Other known indexed alternatives must be returned",
+        "count": 0,
+        "urls": []
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Non-excluded alternative returned",
+        "count": 2,
+        "urls": [
+          "https://www.london.gov.uk/events/st-patricks-festival-2026",
+          "https://www.london.gov.uk/events/lunar-new-year-festival-spring-2026"
+        ]
+      },
+      "decomposition": {
+        "query": "London festival events 2026 without London Games Festival",
+        "clean_query": "London festival events 2026",
+        "exclusions": [
+          "London Games Festival"
+        ],
+        "years": [
+          "2026"
+        ],
+        "subject_phrase": "london celebration",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 3,
+          "eligible": 2
+        }
+      ],
+      "dropped": [
+        {
+          "url": "https://www.london.gov.uk/events/london-games-festival-2026",
+          "title": "London Games Festival 2026 | London City Hall",
+          "violations": [
+            "EXCLUDED_ENTITY_PRESENT"
+          ]
+        }
+      ]
+    },
+    {
+      "probe_id": "exclude_diwali",
+      "question": "Find London events in 2025 other than Diwali on the Square",
+      "expected_kind": "exclude_nonempty",
+      "expected_value": "/events/diwali-square-2025",
+      "before": {
+        "verdict": "FAIL_EXCLUSION_LEAK",
+        "note": "Excluded source appeared in results",
+        "count": 1,
+        "urls": [
+          "https://www.london.gov.uk/events/diwali-square-2025"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Non-excluded alternative returned",
+        "count": 10,
+        "urls": [
+          "https://www.london.gov.uk/events/london-data-week-2025",
+          "https://www.london.gov.uk/events/london-open-house-2025",
+          "https://www.london.gov.uk/events/towards-new-london-plan-online-event-13-may-2025",
+          "https://www.london.gov.uk/events/towards-new-london-plan-online-event-29-may-2025",
+          "https://www.london.gov.uk/events/towards-new-london-plan-online-event-6-june-2025",
+          "https://www.london.gov.uk/events/london-games-festival-2025",
+          "https://www.london.gov.uk/events/state-london-debate-2025",
+          "https://www.london.gov.uk/events/docks-2025",
+          "https://www.london.gov.uk/events/eid-square-2025",
+          "https://www.london.gov.uk/events/st-georges-day-2025"
+        ]
+      },
+      "decomposition": {
+        "query": "Find London events in 2025 other than Diwali on the Square",
+        "clean_query": "Find London events in 2025",
+        "exclusions": [
+          "Diwali on the Square"
+        ],
+        "years": [
+          "2025"
+        ],
+        "subject_phrase": "",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 10
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "catalog_2027",
+      "question": "Find London events planned for 2027",
+      "expected_kind": "year_many",
+      "expected_value": "2027",
+      "before": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "At least two matching event editions required",
+        "count": 7,
+        "urls": [
+          "https://www.london.gov.uk/events/eid",
+          "https://www.london.gov.uk/events/armed-forces-day-2027",
+          "https://www.london.gov.uk/events/black-square-2027",
+          "https://www.london.gov.uk/events/77-memorial-service-2027",
+          "https://www.london.gov.uk/events/st-patricks-day",
+          "https://www.london.gov.uk/events/gypsy-roma-and-traveller-history-month-2027",
+          "https://www.london.gov.uk/events/unesco-day-remembering-transatlantic-slave-trade-and-its-abolition-2027"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "At least two matching event editions required",
+        "count": 7,
+        "urls": [
+          "https://www.london.gov.uk/events/eid",
+          "https://www.london.gov.uk/events/armed-forces-day-2027",
+          "https://www.london.gov.uk/events/black-square-2027",
+          "https://www.london.gov.uk/events/77-memorial-service-2027",
+          "https://www.london.gov.uk/events/st-patricks-day",
+          "https://www.london.gov.uk/events/gypsy-roma-and-traveller-history-month-2027",
+          "https://www.london.gov.uk/events/unesco-day-remembering-transatlantic-slave-trade-and-its-abolition-2027"
+        ]
+      },
+      "decomposition": {
+        "query": "Find London events planned for 2027",
+        "clean_query": "Find London events planned for 2027",
+        "exclusions": [],
+        "years": [
+          "2027"
+        ],
+        "subject_phrase": "",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 7,
+          "eligible": 7
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "catalog_2025",
+      "question": "Find London celebrations from 2025",
+      "expected_kind": "year_many",
+      "expected_value": "2025",
+      "before": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "At least two matching event editions required",
+        "count": 10,
+        "urls": [
+          "https://www.london.gov.uk/events/london-data-week-2025",
+          "https://www.london.gov.uk/events/london-open-house-2025",
+          "https://www.london.gov.uk/events/london-games-festival-2025",
+          "https://www.london.gov.uk/events/state-london-debate-2025",
+          "https://www.london.gov.uk/events/towards-new-london-plan-online-event-13-may-2025",
+          "https://www.london.gov.uk/events/towards-new-london-plan-online-event-29-may-2025",
+          "https://www.london.gov.uk/events/docks-2025",
+          "https://www.london.gov.uk/events/towards-new-london-plan-online-event-6-june-2025",
+          "https://www.london.gov.uk/events/eid-square-2025",
+          "https://www.london.gov.uk/events/st-georges-day-2025"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "At least two matching event editions required",
+        "count": 10,
+        "urls": [
+          "https://www.london.gov.uk/events/london-data-week-2025",
+          "https://www.london.gov.uk/events/london-open-house-2025",
+          "https://www.london.gov.uk/events/london-games-festival-2025",
+          "https://www.london.gov.uk/events/state-london-debate-2025",
+          "https://www.london.gov.uk/events/towards-new-london-plan-online-event-13-may-2025",
+          "https://www.london.gov.uk/events/towards-new-london-plan-online-event-29-may-2025",
+          "https://www.london.gov.uk/events/docks-2025",
+          "https://www.london.gov.uk/events/towards-new-london-plan-online-event-6-june-2025",
+          "https://www.london.gov.uk/events/eid-square-2025",
+          "https://www.london.gov.uk/events/st-georges-day-2025"
+        ]
+      },
+      "decomposition": {
+        "query": "Find London celebrations from 2025",
+        "clean_query": "Find London celebrations from 2025",
+        "exclusions": [],
+        "years": [
+          "2025"
+        ],
+        "subject_phrase": "london celebration",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 10
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "catalog_history",
+      "question": "Historical editions of London Open House",
+      "expected_kind": "series_many",
+      "expected_value": "london open house",
+      "before": {
+        "verdict": "FAIL_SERIES_RECALL",
+        "note": "At least two exact series editions required",
+        "count": 4,
+        "urls": [
+          "https://www.london.gov.uk/events/london-open-house-2025",
+          "https://www.london.gov.uk/events/london-open-house-2024",
+          "https://www.london.gov.uk/events/london-open-house-2023",
+          "https://www.london.gov.uk/events/city-hall-open-house-2026"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "At least two exact series editions required",
+        "count": 3,
+        "urls": [
+          "https://www.london.gov.uk/events/london-open-house-2025",
+          "https://www.london.gov.uk/events/london-open-house-2024",
+          "https://www.london.gov.uk/events/london-open-house-2023"
+        ]
+      },
+      "decomposition": {
+        "query": "Historical editions of London Open House",
+        "clean_query": "Historical editions of London Open House",
+        "exclusions": [],
+        "years": [],
+        "subject_phrase": "london open house",
+        "series_like": true,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 4,
+          "eligible": 3
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 4,
+          "eligible": 3
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 4,
+          "eligible": 3
+        }
+      ],
+      "dropped": [
+        {
+          "url": "https://www.london.gov.uk/events/city-hall-open-house-2026",
+          "title": "City Hall Open House 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        }
+      ]
+    },
+    {
+      "probe_id": "negative_future",
+      "question": "Diwali on the Square 2040",
+      "expected_kind": "no_result",
+      "expected_value": "",
+      "before": {
+        "verdict": "PASS_SAFETY",
+        "note": "No supported link expected",
+        "count": 0,
+        "urls": []
+      },
+      "after": {
+        "verdict": "PASS_SAFETY",
+        "note": "No supported link expected",
+        "count": 0,
+        "urls": []
+      },
+      "decomposition": {
+        "query": "Diwali on the Square 2040",
+        "clean_query": "Diwali on the Square 2040",
+        "exclusions": [],
+        "years": [
+          "2040"
+        ],
+        "subject_phrase": "",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "negative_geography",
+      "question": "Which Paris festivals were on in 2027?",
+      "expected_kind": "no_result",
+      "expected_value": "",
+      "before": {
+        "verdict": "PASS_SAFETY",
+        "note": "No supported link expected",
+        "count": 0,
+        "urls": []
+      },
+      "after": {
+        "verdict": "PASS_SAFETY",
+        "note": "No supported link expected",
+        "count": 0,
+        "urls": []
+      },
+      "decomposition": {
+        "query": "Which Paris festivals were on in 2027?",
+        "clean_query": "Which Paris festivals were on in 2027",
+        "exclusions": [],
+        "years": [
+          "2027"
+        ],
+        "subject_phrase": "pari celebration",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "negative_conflict",
+      "question": "London events 2027 only in Edinburgh",
+      "expected_kind": "no_result",
+      "expected_value": "",
+      "before": {
+        "verdict": "PASS_SAFETY",
+        "note": "No supported link expected",
+        "count": 0,
+        "urls": []
+      },
+      "after": {
+        "verdict": "PASS_SAFETY",
+        "note": "No supported link expected",
+        "count": 0,
+        "urls": []
+      },
+      "decomposition": {
+        "query": "London events 2027 only in Edinburgh",
+        "clean_query": "London events 2027 only in Edinburgh",
+        "exclusions": [],
+        "years": [
+          "2027"
+        ],
+        "subject_phrase": "",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "negative_weather",
+      "question": "Will it rain in Oxford tomorrow?",
+      "expected_kind": "no_result",
+      "expected_value": "",
+      "before": {
+        "verdict": "PASS_SAFETY",
+        "note": "No supported link expected",
+        "count": 0,
+        "urls": []
+      },
+      "after": {
+        "verdict": "PASS_SAFETY",
+        "note": "No supported link expected",
+        "count": 0,
+        "urls": []
+      },
+      "decomposition": {
+        "query": "Will it rain in Oxford tomorrow?",
+        "clean_query": "Will it rain in Oxford tomorrow",
+        "exclusions": [],
+        "years": [],
+        "subject_phrase": "oxford tomorrow",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "negative_stock",
+      "question": "Which new laptop is in stock today?",
+      "expected_kind": "no_result",
+      "expected_value": "",
+      "before": {
+        "verdict": "PASS_SAFETY",
+        "note": "No supported link expected",
+        "count": 0,
+        "urls": []
+      },
+      "after": {
+        "verdict": "PASS_SAFETY",
+        "note": "No supported link expected",
+        "count": 0,
+        "urls": []
+      },
+      "decomposition": {
+        "query": "Which new laptop is in stock today?",
+        "clean_query": "Which new laptop is in stock today",
+        "exclusions": [],
+        "years": [],
+        "subject_phrase": "new laptop",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "negative_contradiction",
+      "question": "Eid on the Square 2027 excluding Eid",
+      "expected_kind": "no_result",
+      "expected_value": "",
+      "before": {
+        "verdict": "PASS_SAFETY",
+        "note": "No supported link expected",
+        "count": 0,
+        "urls": []
+      },
+      "after": {
+        "verdict": "PASS_SAFETY",
+        "note": "No supported link expected",
+        "count": 0,
+        "urls": []
+      },
+      "decomposition": {
+        "query": "Eid on the Square 2027 excluding Eid",
+        "clean_query": "Eid on the Square 2027",
+        "exclusions": [
+          "Eid"
+        ],
+        "years": [
+          "2027"
+        ],
+        "subject_phrase": "",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "WITHHELD_CONTRADICTION",
+      "retrieval_status": "WITHHELD",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [],
+      "dropped": []
+    },
+    {
+      "probe_id": "fact_fee",
+      "question": "How much is adult UK passport renewal today?",
+      "expected_kind": "fact_unverified",
+      "expected_value": "",
+      "before": {
+        "verdict": "ABSTAIN_FACT_UNVERIFIED",
+        "note": "Factual claim not independently verified; no answer generated",
+        "count": 1,
+        "urls": [
+          "https://www.gov.uk/renew-adult-passport/renew"
+        ]
+      },
+      "after": {
+        "verdict": "ABSTAIN_FACT_UNVERIFIED",
+        "note": "Factual claim not independently verified; no answer generated",
+        "count": 1,
+        "urls": [
+          "https://www.gov.uk/renew-adult-passport/renew"
+        ]
+      },
+      "decomposition": {
+        "query": "How much is adult UK passport renewal today?",
+        "clean_query": "How much is adult UK passport renewal today",
+        "exclusions": [],
+        "years": [],
+        "subject_phrase": "adult uk passport renew today",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "fact_start",
+      "question": "What time does Eid on the Square 2027 start?",
+      "expected_kind": "fact_unverified",
+      "expected_value": "",
+      "before": {
+        "verdict": "ABSTAIN_FACT_UNVERIFIED",
+        "note": "Factual claim not independently verified; no answer generated",
+        "count": 1,
+        "urls": [
+          "https://www.london.gov.uk/events/eid"
+        ]
+      },
+      "after": {
+        "verdict": "ABSTAIN_FACT_UNVERIFIED",
+        "note": "Factual claim not independently verified; no answer generated",
+        "count": 1,
+        "urls": [
+          "https://www.london.gov.uk/events/eid"
+        ]
+      },
+      "decomposition": {
+        "query": "What time does Eid on the Square 2027 start?",
+        "clean_query": "What time does Eid on the Square 2027 start",
+        "exclusions": [],
+        "years": [
+          "2027"
+        ],
+        "subject_phrase": "",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "fact_access",
+      "question": "Is the entrance wheelchair accessible for Black on the Square 2027?",
+      "expected_kind": "fact_unverified",
+      "expected_value": "",
+      "before": {
+        "verdict": "ABSTAIN_FACT_UNVERIFIED",
+        "note": "Factual claim not independently verified; no answer generated",
+        "count": 0,
+        "urls": []
+      },
+      "after": {
+        "verdict": "ABSTAIN_FACT_UNVERIFIED",
+        "note": "Factual claim not independently verified; no answer generated",
+        "count": 0,
+        "urls": []
+      },
+      "decomposition": {
+        "query": "Is the entrance wheelchair accessible for Black on the Square 2027?",
+        "clean_query": "Is the entrance wheelchair accessible for Black on the Square 2027",
+        "exclusions": [],
+        "years": [
+          "2027"
+        ],
+        "subject_phrase": "entrance wheelchair accessible",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "fact_ticket",
+      "question": "Are London New Year's Eve 2026 tickets sold out?",
+      "expected_kind": "fact_unverified",
+      "expected_value": "",
+      "before": {
+        "verdict": "ABSTAIN_FACT_UNVERIFIED",
+        "note": "Factual claim not independently verified; no answer generated",
+        "count": 0,
+        "urls": []
+      },
+      "after": {
+        "verdict": "ABSTAIN_FACT_UNVERIFIED",
+        "note": "Factual claim not independently verified; no answer generated",
+        "count": 0,
+        "urls": []
+      },
+      "decomposition": {
+        "query": "Are London New Year's Eve 2026 tickets sold out?",
+        "clean_query": "Are London New Year's Eve 2026 tickets sold out",
+        "exclusions": [],
+        "years": [
+          "2026"
+        ],
+        "subject_phrase": "ticket sold out",
+        "series_like": true,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "fact_cancellation",
+      "question": "Was Armed Forces Day 2027 cancelled?",
+      "expected_kind": "fact_unverified",
+      "expected_value": "",
+      "before": {
+        "verdict": "ABSTAIN_FACT_UNVERIFIED",
+        "note": "Factual claim not independently verified; no answer generated",
+        "count": 1,
+        "urls": [
+          "https://www.london.gov.uk/events/armed-forces-day-2027"
+        ]
+      },
+      "after": {
+        "verdict": "ABSTAIN_FACT_UNVERIFIED",
+        "note": "Factual claim not independently verified; no answer generated",
+        "count": 1,
+        "urls": [
+          "https://www.london.gov.uk/events/armed-forces-day-2027"
+        ]
+      },
+      "decomposition": {
+        "query": "Was Armed Forces Day 2027 cancelled?",
+        "clean_query": "Was Armed Forces Day 2027 cancelled",
+        "exclusions": [],
+        "years": [
+          "2027"
+        ],
+        "subject_phrase": "armed force day",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "x01",
+      "question": "How do I join a family physician practice?",
+      "expected_kind": "top",
+      "expected_value": "/nhs-services/gps/how-to-register-with-a-gp-surgery/",
+      "before": {
+        "verdict": "FAIL_WRONG_TOP1",
+        "note": "Expected exact page at top",
+        "count": 0,
+        "urls": []
+      },
+      "after": {
+        "verdict": "FAIL_WRONG_TOP1",
+        "note": "Expected exact page at top",
+        "count": 0,
+        "urls": []
+      },
+      "decomposition": {
+        "query": "How do I join a family physician practice?",
+        "clean_query": "How do I join a family physician practice",
+        "exclusions": [],
+        "years": [],
+        "subject_phrase": "family doctor practice",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "x02",
+      "question": "Where do you apply for a learner motorists licence?",
+      "expected_kind": "top",
+      "expected_value": "/apply-first-provisional-driving-licence",
+      "before": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 1,
+        "urls": [
+          "https://www.gov.uk/apply-first-provisional-driving-licence"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 1,
+        "urls": [
+          "https://www.gov.uk/apply-first-provisional-driving-licence"
+        ]
+      },
+      "decomposition": {
+        "query": "Where do you apply for a learner motorists licence?",
+        "clean_query": "Where do you apply for a learner motorists licence",
+        "exclusions": [],
+        "years": [],
+        "subject_phrase": "provisional motorist licence",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "x03",
+      "question": "How do I join the electoral register?",
+      "expected_kind": "top",
+      "expected_value": "/register-to-vote",
+      "before": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 1,
+        "urls": [
+          "https://www.gov.uk/register-to-vote"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 1,
+        "urls": [
+          "https://www.gov.uk/register-to-vote"
+        ]
+      },
+      "decomposition": {
+        "query": "How do I join the electoral register?",
+        "clean_query": "How do I join the electoral register",
+        "exclusions": [],
+        "years": [],
+        "subject_phrase": "vote enrol",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "x04",
+      "question": "Rules for checking the local property rates valuation band",
+      "expected_kind": "top",
+      "expected_value": "/council-tax-bands",
+      "before": {
+        "verdict": "FAIL_WRONG_TOP1",
+        "note": "Expected exact page at top",
+        "count": 0,
+        "urls": []
+      },
+      "after": {
+        "verdict": "FAIL_WRONG_TOP1",
+        "note": "Expected exact page at top",
+        "count": 0,
+        "urls": []
+      },
+      "decomposition": {
+        "query": "Rules for checking the local property rates valuation band",
+        "clean_query": "Rules for checking the local property rates valuation band",
+        "exclusions": [],
+        "years": [],
+        "subject_phrase": "local property rate valuation band",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "x05",
+      "question": "Explain the basics of JS scripting",
+      "expected_kind": "top",
+      "expected_value": "/What_is_JavaScript",
+      "before": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 1,
+        "urls": [
+          "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 1,
+        "urls": [
+          "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript"
+        ]
+      },
+      "decomposition": {
+        "query": "Explain the basics of JS scripting",
+        "clean_query": "Explain the basics of JS scripting",
+        "exclusions": [],
+        "years": [],
+        "subject_phrase": "javascript script",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "x06",
+      "question": "Tutorial about the HTTP protocol",
+      "expected_kind": "top",
+      "expected_value": "/Web/HTTP",
+      "before": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 1,
+        "urls": [
+          "https://developer.mozilla.org/en-US/docs/Web/HTTP"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 1,
+        "urls": [
+          "https://developer.mozilla.org/en-US/docs/Web/HTTP"
+        ]
+      },
+      "decomposition": {
+        "query": "Tutorial about the HTTP protocol",
+        "clean_query": "Tutorial about the HTTP protocol",
+        "exclusions": [],
+        "years": [],
+        "subject_phrase": "http protocol",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "x07",
+      "question": "Online steps to replace a British passport",
+      "expected_kind": "top",
+      "expected_value": "/renew-adult-passport/renew",
+      "before": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 1,
+        "urls": [
+          "https://www.gov.uk/renew-adult-passport/renew"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 1,
+        "urls": [
+          "https://www.gov.uk/renew-adult-passport/renew"
+        ]
+      },
+      "decomposition": {
+        "query": "Online steps to replace a British passport",
+        "clean_query": "Online steps to replace a British passport",
+        "exclusions": [],
+        "years": [],
+        "subject_phrase": "online step",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "x08",
+      "question": "Where do I arrange an NHS blood sample test?",
+      "expected_kind": "top",
+      "expected_value": "/tests-and-treatments/blood-tests/",
+      "before": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 1,
+        "urls": [
+          "https://www.nhs.uk/tests-and-treatments/blood-tests/"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Expected exact page at top",
+        "count": 1,
+        "urls": [
+          "https://www.nhs.uk/tests-and-treatments/blood-tests/"
+        ]
+      },
+      "decomposition": {
+        "query": "Where do I arrange an NHS blood sample test?",
+        "clean_query": "Where do I arrange an NHS blood sample test",
+        "exclusions": [],
+        "years": [],
+        "subject_phrase": "nhs blood sample test",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "x09",
+      "question": "London Open House 2024 and London Open House 2025",
+      "expected_kind": "all",
+      "expected_value": "/events/london-open-house-2024|/events/london-open-house-2025",
+      "before": {
+        "verdict": "FAIL_MISSING_EDITION",
+        "note": "Required distinct editions: /events/london-open-house-2024",
+        "count": 2,
+        "urls": [
+          "https://www.london.gov.uk/events/london-open-house-2025",
+          "https://www.london.gov.uk/events/open-iftar-2025"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Required distinct editions: all found",
+        "count": 2,
+        "urls": [
+          "https://www.london.gov.uk/events/london-open-house-2025",
+          "https://www.london.gov.uk/events/london-open-house-2024"
+        ]
+      },
+      "decomposition": {
+        "query": "London Open House 2024 and London Open House 2025",
+        "clean_query": "London Open House 2024 and London Open House 2025",
+        "exclusions": [],
+        "years": [
+          "2024",
+          "2025"
+        ],
+        "subject_phrase": "london open house",
+        "series_like": true,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {
+        "2024": {
+          "status": "RETRIEVED",
+          "returned": 1,
+          "depth": 120
+        },
+        "2025": {
+          "status": "RETRIEVED",
+          "returned": 2,
+          "depth": 120
+        }
+      },
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 3,
+          "eligible": 2
+        }
+      ],
+      "dropped": [
+        {
+          "url": "https://www.london.gov.uk/events/open-iftar-2025",
+          "title": "Open Iftar 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        }
+      ]
+    },
+    {
+      "probe_id": "x10",
+      "question": "London 2027 public events excluding Eid",
+      "expected_kind": "exclude_nonempty",
+      "expected_value": "/events/eid",
+      "before": {
+        "verdict": "FAIL_EMPTY_DISCOVERY",
+        "note": "Other known indexed alternatives must be returned",
+        "count": 0,
+        "urls": []
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Non-excluded alternative returned",
+        "count": 6,
+        "urls": [
+          "https://www.london.gov.uk/events/armed-forces-day-2027",
+          "https://www.london.gov.uk/events/black-square-2027",
+          "https://www.london.gov.uk/events/77-memorial-service-2027",
+          "https://www.london.gov.uk/events/st-patricks-day",
+          "https://www.london.gov.uk/events/gypsy-roma-and-traveller-history-month-2027",
+          "https://www.london.gov.uk/events/unesco-day-remembering-transatlantic-slave-trade-and-its-abolition-2027"
+        ]
+      },
+      "decomposition": {
+        "query": "London 2027 public events excluding Eid",
+        "clean_query": "London 2027 public events",
+        "exclusions": [
+          "Eid"
+        ],
+        "years": [
+          "2027"
+        ],
+        "subject_phrase": "",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 7,
+          "eligible": 6
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 7,
+          "eligible": 6
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 7,
+          "eligible": 6
+        }
+      ],
+      "dropped": [
+        {
+          "url": "https://www.london.gov.uk/events/eid",
+          "title": "Eid on the Square 2027 | London City Hall",
+          "violations": [
+            "EXCLUDED_ENTITY_PRESENT"
+          ]
+        }
+      ]
+    },
+    {
+      "probe_id": "x11",
+      "question": "London festivals 2026 except St Patrick’s Festival",
+      "expected_kind": "exclude_nonempty",
+      "expected_value": "/events/st-patricks-festival-2026",
+      "before": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Non-excluded alternative returned",
+        "count": 2,
+        "urls": [
+          "https://www.london.gov.uk/events/london-games-festival-2026",
+          "https://www.london.gov.uk/events/lunar-new-year-festival-spring-2026"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Non-excluded alternative returned",
+        "count": 2,
+        "urls": [
+          "https://www.london.gov.uk/events/london-games-festival-2026",
+          "https://www.london.gov.uk/events/lunar-new-year-festival-spring-2026"
+        ]
+      },
+      "decomposition": {
+        "query": "London festivals 2026 except St Patrick’s Festival",
+        "clean_query": "London festivals 2026",
+        "exclusions": [
+          "St Patrick’s Festival"
+        ],
+        "years": [
+          "2026"
+        ],
+        "subject_phrase": "london celebration",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 3,
+          "eligible": 2
+        }
+      ],
+      "dropped": [
+        {
+          "url": "https://www.london.gov.uk/events/st-patricks-festival-2026",
+          "title": "St Patrick’s Festival 2026 | London City Hall",
+          "violations": [
+            "EXCLUDED_ENTITY_PRESENT"
+          ]
+        }
+      ]
+    },
+    {
+      "probe_id": "x12",
+      "question": "London festivals 2026 excluding London Games Festival",
+      "expected_kind": "exclude_nonempty",
+      "expected_value": "/events/london-games-festival-2026",
+      "before": {
+        "verdict": "FAIL_EMPTY_DISCOVERY",
+        "note": "Other known indexed alternatives must be returned",
+        "count": 0,
+        "urls": []
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "Non-excluded alternative returned",
+        "count": 2,
+        "urls": [
+          "https://www.london.gov.uk/events/st-patricks-festival-2026",
+          "https://www.london.gov.uk/events/lunar-new-year-festival-spring-2026"
+        ]
+      },
+      "decomposition": {
+        "query": "London festivals 2026 excluding London Games Festival",
+        "clean_query": "London festivals 2026",
+        "exclusions": [
+          "London Games Festival"
+        ],
+        "years": [
+          "2026"
+        ],
+        "subject_phrase": "london celebration",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 3,
+          "eligible": 2
+        }
+      ],
+      "dropped": [
+        {
+          "url": "https://www.london.gov.uk/events/london-games-festival-2026",
+          "title": "London Games Festival 2026 | London City Hall",
+          "violations": [
+            "EXCLUDED_ENTITY_PRESENT"
+          ]
+        }
+      ]
+    },
+    {
+      "probe_id": "x13",
+      "question": "Events listed for London in 2027",
+      "expected_kind": "year_many",
+      "expected_value": "2027",
+      "before": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "At least two matching event editions required",
+        "count": 7,
+        "urls": [
+          "https://www.london.gov.uk/events/black-square-2027",
+          "https://www.london.gov.uk/events/eid",
+          "https://www.london.gov.uk/events/armed-forces-day-2027",
+          "https://www.london.gov.uk/events/gypsy-roma-and-traveller-history-month-2027",
+          "https://www.london.gov.uk/events/st-patricks-day",
+          "https://www.london.gov.uk/events/unesco-day-remembering-transatlantic-slave-trade-and-its-abolition-2027",
+          "https://www.london.gov.uk/events/77-memorial-service-2027"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "At least two matching event editions required",
+        "count": 7,
+        "urls": [
+          "https://www.london.gov.uk/events/black-square-2027",
+          "https://www.london.gov.uk/events/eid",
+          "https://www.london.gov.uk/events/armed-forces-day-2027",
+          "https://www.london.gov.uk/events/gypsy-roma-and-traveller-history-month-2027",
+          "https://www.london.gov.uk/events/st-patricks-day",
+          "https://www.london.gov.uk/events/unesco-day-remembering-transatlantic-slave-trade-and-its-abolition-2027",
+          "https://www.london.gov.uk/events/77-memorial-service-2027"
+        ]
+      },
+      "decomposition": {
+        "query": "Events listed for London in 2027",
+        "clean_query": "Events listed for London in 2027",
+        "exclusions": [],
+        "years": [
+          "2027"
+        ],
+        "subject_phrase": "",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 7,
+          "eligible": 7
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "x14",
+      "question": "Past editions of London Open House",
+      "expected_kind": "series_many",
+      "expected_value": "london open house",
+      "before": {
+        "verdict": "FAIL_SERIES_RECALL",
+        "note": "At least two exact series editions required",
+        "count": 4,
+        "urls": [
+          "https://www.london.gov.uk/events/london-open-house-2025",
+          "https://www.london.gov.uk/events/london-open-house-2024",
+          "https://www.london.gov.uk/events/london-open-house-2023",
+          "https://www.london.gov.uk/events/city-hall-open-house-2026"
+        ]
+      },
+      "after": {
+        "verdict": "PASS_RETRIEVAL",
+        "note": "At least two exact series editions required",
+        "count": 3,
+        "urls": [
+          "https://www.london.gov.uk/events/london-open-house-2025",
+          "https://www.london.gov.uk/events/london-open-house-2024",
+          "https://www.london.gov.uk/events/london-open-house-2023"
+        ]
+      },
+      "decomposition": {
+        "query": "Past editions of London Open House",
+        "clean_query": "Past editions of London Open House",
+        "exclusions": [],
+        "years": [],
+        "subject_phrase": "london open house",
+        "series_like": true,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 4,
+          "eligible": 3
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 4,
+          "eligible": 3
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 4,
+          "eligible": 3
+        }
+      ],
+      "dropped": [
+        {
+          "url": "https://www.london.gov.uk/events/city-hall-open-house-2026",
+          "title": "City Hall Open House 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        }
+      ]
+    },
+    {
+      "probe_id": "x15",
+      "question": "Diwali on the Square 2038",
+      "expected_kind": "no_result",
+      "expected_value": "",
+      "before": {
+        "verdict": "PASS_SAFETY",
+        "note": "No supported link expected",
+        "count": 0,
+        "urls": []
+      },
+      "after": {
+        "verdict": "PASS_SAFETY",
+        "note": "No supported link expected",
+        "count": 0,
+        "urls": []
+      },
+      "decomposition": {
+        "query": "Diwali on the Square 2038",
+        "clean_query": "Diwali on the Square 2038",
+        "exclusions": [],
+        "years": [
+          "2038"
+        ],
+        "subject_phrase": "",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "x16",
+      "question": "Which 2027 Edinburgh concerts were announced?",
+      "expected_kind": "no_result",
+      "expected_value": "",
+      "before": {
+        "verdict": "PASS_SAFETY",
+        "note": "No supported link expected",
+        "count": 0,
+        "urls": []
+      },
+      "after": {
+        "verdict": "PASS_SAFETY",
+        "note": "No supported link expected",
+        "count": 0,
+        "urls": []
+      },
+      "decomposition": {
+        "query": "Which 2027 Edinburgh concerts were announced?",
+        "clean_query": "Which 2027 Edinburgh concerts were announced",
+        "exclusions": [],
+        "years": [
+          "2027"
+        ],
+        "subject_phrase": "edinburgh concert",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "x17",
+      "question": "London Pride events 2025 but only in Manchester",
+      "expected_kind": "no_result",
+      "expected_value": "",
+      "before": {
+        "verdict": "PASS_SAFETY",
+        "note": "No supported link expected",
+        "count": 0,
+        "urls": []
+      },
+      "after": {
+        "verdict": "PASS_SAFETY",
+        "note": "No supported link expected",
+        "count": 0,
+        "urls": []
+      },
+      "decomposition": {
+        "query": "London Pride events 2025 but only in Manchester",
+        "clean_query": "London Pride events 2025 but only in Manchester",
+        "exclusions": [],
+        "years": [
+          "2025"
+        ],
+        "subject_phrase": "london pride",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "x18",
+      "question": "Show the weather in Newbury tomorrow",
+      "expected_kind": "no_result",
+      "expected_value": "",
+      "before": {
+        "verdict": "PASS_SAFETY",
+        "note": "No supported link expected",
+        "count": 0,
+        "urls": []
+      },
+      "after": {
+        "verdict": "PASS_SAFETY",
+        "note": "No supported link expected",
+        "count": 0,
+        "urls": []
+      },
+      "decomposition": {
+        "query": "Show the weather in Newbury tomorrow",
+        "clean_query": "Show the weather in Newbury tomorrow",
+        "exclusions": [],
+        "years": [],
+        "subject_phrase": "newbury tomorrow",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "x19",
+      "question": "What time does Eid on the Square 2027 open?",
+      "expected_kind": "fact_unverified",
+      "expected_value": "",
+      "before": {
+        "verdict": "ABSTAIN_FACT_UNVERIFIED",
+        "note": "Factual claim not independently verified; no answer generated",
+        "count": 1,
+        "urls": [
+          "https://www.london.gov.uk/events/eid"
+        ]
+      },
+      "after": {
+        "verdict": "ABSTAIN_FACT_UNVERIFIED",
+        "note": "Factual claim not independently verified; no answer generated",
+        "count": 1,
+        "urls": [
+          "https://www.london.gov.uk/events/eid"
+        ]
+      },
+      "decomposition": {
+        "query": "What time does Eid on the Square 2027 open?",
+        "clean_query": "What time does Eid on the Square 2027 open",
+        "exclusions": [],
+        "years": [
+          "2027"
+        ],
+        "subject_phrase": "",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "x20",
+      "question": "Are tickets for New Year’s Eve 2026 sold out?",
+      "expected_kind": "fact_unverified",
+      "expected_value": "",
+      "before": {
+        "verdict": "ABSTAIN_FACT_UNVERIFIED",
+        "note": "Factual claim not independently verified; no answer generated",
+        "count": 0,
+        "urls": []
+      },
+      "after": {
+        "verdict": "ABSTAIN_FACT_UNVERIFIED",
+        "note": "Factual claim not independently verified; no answer generated",
+        "count": 0,
+        "urls": []
+      },
+      "decomposition": {
+        "query": "Are tickets for New Year’s Eve 2026 sold out?",
+        "clean_query": "Are tickets for New Year’s Eve 2026 sold out",
+        "exclusions": [],
+        "years": [
+          "2026"
+        ],
+        "subject_phrase": "sold out",
+        "series_like": true,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "x21",
+      "question": "Which 2027 London festivals are free?",
+      "expected_kind": "fact_unverified",
+      "expected_value": "",
+      "before": {
+        "verdict": "ABSTAIN_FACT_UNVERIFIED",
+        "note": "Factual claim not independently verified; no answer generated",
+        "count": 1,
+        "urls": [
+          "https://www.london.gov.uk/events/st-patricks-day"
+        ]
+      },
+      "after": {
+        "verdict": "ABSTAIN_FACT_UNVERIFIED",
+        "note": "Factual claim not independently verified; no answer generated",
+        "count": 1,
+        "urls": [
+          "https://www.london.gov.uk/events/st-patricks-day"
+        ]
+      },
+      "decomposition": {
+        "query": "Which 2027 London festivals are free?",
+        "clean_query": "Which 2027 London festivals are free",
+        "exclusions": [],
+        "years": [
+          "2027"
+        ],
+        "subject_phrase": "london celebration",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "x22",
+      "question": "Does Black on the Square 2027 have wheelchair accessibility?",
+      "expected_kind": "fact_unverified",
+      "expected_value": "",
+      "before": {
+        "verdict": "ABSTAIN_FACT_UNVERIFIED",
+        "note": "Factual claim not independently verified; no answer generated",
+        "count": 1,
+        "urls": [
+          "https://www.london.gov.uk/events/black-square-2027"
+        ]
+      },
+      "after": {
+        "verdict": "ABSTAIN_FACT_UNVERIFIED",
+        "note": "Factual claim not independently verified; no answer generated",
+        "count": 1,
+        "urls": [
+          "https://www.london.gov.uk/events/black-square-2027"
+        ]
+      },
+      "decomposition": {
+        "query": "Does Black on the Square 2027 have wheelchair accessibility?",
+        "clean_query": "Does Black on the Square 2027 have wheelchair accessibility",
+        "exclusions": [],
+        "years": [
+          "2027"
+        ],
+        "subject_phrase": "wheelchair accessibility",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "x23",
+      "question": "What is the cost of a new UK passport now?",
+      "expected_kind": "fact_unverified",
+      "expected_value": "",
+      "before": {
+        "verdict": "ABSTAIN_FACT_UNVERIFIED",
+        "note": "Factual claim not independently verified; no answer generated",
+        "count": 0,
+        "urls": []
+      },
+      "after": {
+        "verdict": "ABSTAIN_FACT_UNVERIFIED",
+        "note": "Factual claim not independently verified; no answer generated",
+        "count": 0,
+        "urls": []
+      },
+      "decomposition": {
+        "query": "What is the cost of a new UK passport now?",
+        "clean_query": "What is the cost of a new UK passport now",
+        "exclusions": [],
+        "years": [],
+        "subject_phrase": "new uk passport now",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "probe_id": "x24",
+      "question": "Which London festivals in 2026 were cancelled?",
+      "expected_kind": "fact_unverified",
+      "expected_value": "",
+      "before": {
+        "verdict": "ABSTAIN_FACT_UNVERIFIED",
+        "note": "Factual claim not independently verified; no answer generated",
+        "count": 3,
+        "urls": [
+          "https://www.london.gov.uk/events/london-games-festival-2026",
+          "https://www.london.gov.uk/events/st-patricks-festival-2026",
+          "https://www.london.gov.uk/events/lunar-new-year-festival-spring-2026"
+        ]
+      },
+      "after": {
+        "verdict": "ABSTAIN_FACT_UNVERIFIED",
+        "note": "Factual claim not independently verified; no answer generated",
+        "count": 3,
+        "urls": [
+          "https://www.london.gov.uk/events/london-games-festival-2026",
+          "https://www.london.gov.uk/events/st-patricks-festival-2026",
+          "https://www.london.gov.uk/events/lunar-new-year-festival-spring-2026"
+        ]
+      },
+      "decomposition": {
+        "query": "Which London festivals in 2026 were cancelled?",
+        "clean_query": "Which London festivals in 2026 were cancelled",
+        "exclusions": [],
+        "years": [
+          "2026"
+        ],
+        "subject_phrase": "london celebration",
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
+      },
+      "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 3,
+          "eligible": 3
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 3,
+          "eligible": 3
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 3,
+          "eligible": 3
+        }
+      ],
+      "dropped": []
+    }
+  ],
+  "limitations": [
+    "Engineer-authored URL expectations are not independent human relevance labels.",
+    "Constraint compliance is a rule check, not proof of user-visible quality.",
+    "No metric in this file may be reported as a relevance score."
+  ]
+}

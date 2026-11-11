@@ -1,0 +1,22 @@
+{
+  "kind": "R3A3E_TOP1_AGREEMENT_CORRECTION",
+  "supersedes": "the '44/54' statement in docs/R3A3D_REPLAY_20261111.md and the issue #5 report",
+  "source": "docs/evidence/r3a3d_frozen54_replay.json (immutable; not rewritten)",
+  "denominator_rule": {
+    "questions": 54,
+    "bge_combinations_with_a_result": 44,
+    "bge_combinations_with_no_result": 10,
+    "top1_agreement": "44/44",
+    "comparison": "Only a nonempty result list has a top-1 URL. A zero-result query cannot disagree about its top URL."
+  },
+  "finding": "All 44 comparable nonempty BGE top-1 URLs equal the historical October BGE top-1 URLs. There is no observed top-URL divergence, and no tie-ordering speculation is warranted.",
+  "verdict_agreement_unchanged": {
+    "baseline": "54/54",
+    "bge_dense": "54/54"
+  },
+  "code_changes": [
+    "tools/frozen54_replay.py now reports bge_top1_url_matches_comparable and bge_no_result_combinations alongside the legacy 54-denominator key.",
+    "tools/verify_blind_grading_input.py asserts 44/44 comparable and reports the 10 no-result combinations."
+  ],
+  "not_changed": "The committed R3-A3D replay JSON retains the string it produced at execution time; historical evidence is not retro-edited."
+}

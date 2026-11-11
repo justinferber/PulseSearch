@@ -263,7 +263,13 @@ def main(args):
         "replay_agreement": {
             "baseline_verdict_matches": f"{baseline_match}/{len(probes)}",
             "bge_verdict_matches": f"{bge_match}/{len(probes)}",
+            # Legacy 54-denominator key kept so older reports stay readable; the
+            # correct measure is comparable-nonempty, since a query with no BGE
+            # result has no top URL to agree or disagree with.
             "bge_top1_url_matches": f"{bge_top1_match}/{len(probes)}",
+            "bge_top1_url_matches_comparable":
+                f"{bge_top1_match}/{sum(1 for p in probes if p['bge_dense']['top'])}",
+            "bge_no_result_combinations": sum(1 for p in probes if not p["bge_dense"]["top"]),
             "baseline_pass_retrieval": f"{baseline_pass}/{len(probes)}",
             "bge_pass_retrieval": f"{bge_pass}/{len(probes)}",
         },

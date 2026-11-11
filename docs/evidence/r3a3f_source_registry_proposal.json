@@ -1,0 +1,88 @@
+{
+  "kind": "R3A3F_SOURCE_REGISTRY_PROPOSAL",
+  "status": "PROPOSAL_ONLY_NOT_ADMITTED",
+  "index_path": "C:\\Users\\justi\\Desktop\\pulseunity\\ChatGPTCode\\Pulse_Search_R2P27C_Run_gURzKuV2\\live\\expanded_live_100_research_index.sqlite",
+  "index_sha256": "bb8e52025a1a25f55141507a02621db190e54bf1fc4d4da8db4248357368c35d",
+  "index_pin": "bb8e52025a1a25f55141507a02621db190e54bf1fc4d4da8db4248357368c35d",
+  "index_pin_match": true,
+  "read_only": true,
+  "tables": [
+    "audit",
+    "external_candidates",
+    "fetch_validators",
+    "frontier",
+    "page_fts",
+    "page_fts_config",
+    "page_fts_content",
+    "page_fts_data",
+    "page_fts_docsize",
+    "page_fts_idx",
+    "pages",
+    "sitemap_candidates",
+    "sources"
+  ],
+  "page_count": 120,
+  "distinct_hosts": 7,
+  "schemes": {
+    "https": 120
+  },
+  "hosts": [
+    {
+      "host": "www.london.gov.uk",
+      "pages": 107,
+      "example_url": "https://www.london.gov.uk/events/london-new-years-eve-2026",
+      "rights_status": "NOT_ASSESSED",
+      "index_allowed": null,
+      "note": "Presence in the accepted index is not permission to crawl. Each host needs an explicit owner admission, robots review and rights/terms basis before any live fetch."
+    },
+    {
+      "host": "www.gov.uk",
+      "pages": 4,
+      "example_url": "https://www.gov.uk/apply-first-provisional-driving-licence",
+      "rights_status": "NOT_ASSESSED",
+      "index_allowed": null,
+      "note": "Presence in the accepted index is not permission to crawl. Each host needs an explicit owner admission, robots review and rights/terms basis before any live fetch."
+    },
+    {
+      "host": "www.nhs.uk",
+      "pages": 4,
+      "example_url": "https://www.nhs.uk/nhs-services/dentists/how-to-find-an-nhs-dentist/",
+      "rights_status": "NOT_ASSESSED",
+      "index_allowed": null,
+      "note": "Presence in the accepted index is not permission to crawl. Each host needs an explicit owner admission, robots review and rights/terms basis before any live fetch."
+    },
+    {
+      "host": "developer.mozilla.org",
+      "pages": 2,
+      "example_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP",
+      "rights_status": "NOT_ASSESSED",
+      "index_allowed": null,
+      "note": "Presence in the accepted index is not permission to crawl. Each host needs an explicit owner admission, robots review and rights/terms basis before any live fetch."
+    },
+    {
+      "host": "docs.python.org",
+      "pages": 1,
+      "example_url": "https://docs.python.org/3/tutorial/index.html",
+      "rights_status": "NOT_ASSESSED",
+      "index_allowed": null,
+      "note": "Presence in the accepted index is not permission to crawl. Each host needs an explicit owner admission, robots review and rights/terms basis before any live fetch."
+    },
+    {
+      "host": "www.rfc-editor.org",
+      "pages": 1,
+      "example_url": "https://www.rfc-editor.org/rfc/rfc9309.html",
+      "rights_status": "NOT_ASSESSED",
+      "index_allowed": null,
+      "note": "Presence in the accepted index is not permission to crawl. Each host needs an explicit owner admission, robots review and rights/terms basis before any live fetch."
+    },
+    {
+      "host": "www.sqlite.org",
+      "pages": 1,
+      "example_url": "https://www.sqlite.org/lang.html",
+      "rights_status": "NOT_ASSESSED",
+      "index_allowed": null,
+      "note": "Presence in the accepted index is not permission to crawl. Each host needs an explicit owner admission, robots review and rights/terms basis before any live fetch."
+    }
+  ],
+  "reminder": "bytebytego.com and nginx.org appear as technical references, not event sources."
+}

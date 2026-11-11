@@ -253,10 +253,43 @@ def search_documents(documents: list[dict], query: str, limit: int = 10) -> dict
 
 
 def search_staging(staging, query: str, limit: int = 10, scan_limit: int = 5000) -> dict:
-    """Work with the existing StagingIndex without changing its schema.
+    """Rank candidates from the existing staging index, without schema changes.
 
-    R3-A3G's first bounded implementation uses a read-only capped scan for
-    offline evaluation. Before high-volume release replace this with indexed
-    candidate generation and measure recall over larger collections.
+    Prefer indexed FTS5 OR candidate generation so relevant pages outside the
+    first 5,000 document IDs are still findable. Reranking remains intent-aware.
+    For databases without FTS, use a bounded read-only scan and report its
+    limitation rather than pretending it exhaustively searched all pages.
     """
-    return search_documents(staging.all_documents(scan_limit), query, limit)
+    intent = classify_query(query)
+    if intent.kind in ("navigate", "weather"):
+        response = search_documents([], query, limit)
+        response["retrieval_mode"] = "navigation_or_live_provider"
+        return response
+    conn = getattr(staging, "conn", None)
+    docs = None
+    mode = "bounded_scan"
+    if conn is not None and getattr(staging, "fts", False):
+        # FTS5 phrase-prefix terms are bound through a query parameter and
+        # cannot change SQL structure. Unicode words only, never raw user SQL.
+        terms = [t for t in intent.expanded[:24] if t.isalnum()]
+        if terms:
+            expression = " OR ".join('"' + t + '"*' for t in terms)
+            try:
+                rows = conn.execute(
+                    """SELECT d.* FROM doc_fts f
+                       JOIN docs d ON d.doc_id=f.rowid
+                       WHERE doc_fts MATCH ? AND d.revoked=0
+                       ORDER BY bm25(doc_fts) LIMIT ?""",
+                    (expression, max(100, min(scan_limit, 1000))),
+                ).fetchall()
+                docs = [dict(r) for r in rows]
+                mode = "fts_candidates"
+            except Exception:
+                # Operational fallback should be visible to the caller. Do
+                # not misrepresent a failed index query as an exhaustive result.
+                mode = "fts_error_bounded_scan"
+    if docs is None:
+        docs = staging.all_documents(scan_limit)
+    response = search_documents(docs, query, limit)
+    response["retrieval_mode"] = mode
+    return response

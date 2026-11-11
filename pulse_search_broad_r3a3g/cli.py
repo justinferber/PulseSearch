@@ -27,6 +27,9 @@ class ReadOnlyStaging:
         self.conn = sqlite3.connect("file:" + quote(str(target), safe="/:") +
                                     "?mode=ro", uri=True)
         self.conn.row_factory = sqlite3.Row
+        self.fts = bool(self.conn.execute(
+            "SELECT 1 FROM sqlite_master WHERE type='table' AND name='doc_fts'"
+        ).fetchone())
 
     def all_documents(self, limit: int = 5000) -> list[dict]:
         rows = self.conn.execute(

@@ -28,10 +28,10 @@ class OfficialHandoffTests(unittest.TestCase):
                           city="Berlin", country="DE")
         self.assertTrue(cards)
         self.assertIn(cards[0]["url"], (
-            "https://www.mercedes-benz-arena.de/",
+            "https://www.uber-arena.de/",
             "https://www.columbiahalle.de/",
             "https://www.huxleys-neue-welt.de/",
-            "https://www.verti-music-hall.de/"))
+            "https://www.uber-eats-music-hall.de/"))
         self.assertNotIn("eventim", cards[0]["url"])
 
     def test_christmas_transport_starts_with_berlin_operator(self):

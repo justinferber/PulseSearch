@@ -8,7 +8,7 @@
       "query": "How do I book concert tickets in Berlin?",
       "expected_domains": [
         "eventim.de",
-        "mercedes-benz-arena.de",
+        "uber-arena.de",
         "columbiahalle.de"
       ],
       "status": "official_links",
@@ -22,7 +22,7 @@
       "matching_official_domains": [
         "columbiahalle.de",
         "eventim.de",
-        "mercedes-benz-arena.de"
+        "uber-arena.de"
       ],
       "results": [
         {
@@ -36,11 +36,6 @@
           "kind": "official_directory"
         },
         {
-          "title": "Berlin.de events calendar",
-          "url": "https://www.berlin.de/events/",
-          "kind": "official_directory"
-        },
-        {
           "title": "Columbiahalle Berlin",
           "url": "https://www.columbiahalle.de/",
           "kind": "official_directory"
@@ -48,6 +43,11 @@
         {
           "title": "Huxley's Neue Welt",
           "url": "https://www.huxleys-neue-welt.de/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "Uber Arena Berlin",
+          "url": "https://www.uber-arena.de/",
           "kind": "official_directory"
         }
       ],
@@ -57,9 +57,9 @@
       "case_id": "berlin-venue-accessibility",
       "query": "Berlin concert venue accessibility and bag rules",
       "expected_domains": [
-        "mercedes-benz-arena.de",
+        "uber-arena.de",
         "huxleys-neue-welt.de",
-        "verti-music-hall.de"
+        "uber-eats-music-hall.de"
       ],
       "status": "official_links",
       "response_mode": "OFFICIAL_LINKS",
@@ -71,8 +71,8 @@
       "top_result_matches_expected": true,
       "matching_official_domains": [
         "huxleys-neue-welt.de",
-        "mercedes-benz-arena.de",
-        "verti-music-hall.de"
+        "uber-arena.de",
+        "uber-eats-music-hall.de"
       ],
       "results": [
         {
@@ -81,27 +81,22 @@
           "kind": "official_directory"
         },
         {
+          "title": "Uber Eats Music Hall Berlin",
+          "url": "https://www.uber-eats-music-hall.de/",
+          "kind": "official_directory"
+        },
+        {
           "title": "Columbiahalle Berlin",
           "url": "https://www.columbiahalle.de/",
           "kind": "official_directory"
         },
         {
-          "title": "Mercedes-Benz Arena Berlin",
-          "url": "https://www.mercedes-benz-arena.de/",
-          "kind": "official_directory"
-        },
-        {
-          "title": "Verti Music Hall",
-          "url": "https://www.verti-music-hall.de/",
-          "kind": "official_directory"
-        },
-        {
-          "title": "Berlin.de events calendar",
-          "url": "https://www.berlin.de/events/",
+          "title": "Uber Arena Berlin",
+          "url": "https://www.uber-arena.de/",
           "kind": "official_directory"
         }
       ],
-      "notice": "No admitted page covered the question's specific need; these are reviewed official entry points, not live values."
+      "notice": "Official accessibility or venue information; verify current access arrangements directly."
     },
     {
       "case_id": "berlin-christmas-transport",
@@ -161,23 +156,8 @@
           "kind": "official_directory"
         },
         {
-          "title": "Roundhouse",
-          "url": "https://www.roundhouse.org.uk/",
-          "kind": "official_directory"
-        },
-        {
           "title": "Visit London events",
           "url": "https://www.visitlondon.com/things-to-do/events",
-          "kind": "official_directory"
-        },
-        {
-          "title": "London Pride",
-          "url": "https://prideinlondon.org/",
-          "kind": "official_directory"
-        },
-        {
-          "title": "Southbank Centre",
-          "url": "https://www.southbankcentre.co.uk/",
           "kind": "official_directory"
         }
       ],
@@ -210,21 +190,6 @@
           "title": "Berlin.de events calendar",
           "url": "https://www.berlin.de/events/",
           "kind": "official_directory"
-        },
-        {
-          "title": "Berlin.de museums",
-          "url": "https://www.berlin.de/en/museums/",
-          "kind": "official_directory"
-        },
-        {
-          "title": "visitBerlin Christmas markets",
-          "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
-          "kind": "official_directory"
-        },
-        {
-          "title": "European Festivals Association",
-          "url": "https://www.efa-aef.eu/",
-          "kind": "official_directory"
         }
       ],
       "notice": "No admitted page covered the question's specific need; these are reviewed official entry points, not live values."
@@ -251,29 +216,9 @@
           "title": "CSD Berlin",
           "url": "https://www.csd-berlin.de/",
           "kind": "official_directory"
-        },
-        {
-          "title": "Berlin.de museums",
-          "url": "https://www.berlin.de/en/museums/",
-          "kind": "official_directory"
-        },
-        {
-          "title": "Berlin.de events calendar",
-          "url": "https://www.berlin.de/events/",
-          "kind": "official_directory"
-        },
-        {
-          "title": "visitBerlin Christmas markets",
-          "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
-          "kind": "official_directory"
-        },
-        {
-          "title": "European Festivals Association",
-          "url": "https://www.efa-aef.eu/",
-          "kind": "official_directory"
         }
       ],
-      "notice": "No admitted page covered the question's specific need; these are reviewed official entry points, not live values."
+      "notice": "Official accessibility or venue information; verify current access arrangements directly."
     },
     {
       "case_id": "glastonbury-2027",
@@ -325,38 +270,16 @@
       },
       "top_result_matches_expected": true,
       "matching_official_domains": [
-        "berlin.de",
-        "efa-aef.eu",
-        "glastonburyfestivals.co.uk"
+        "berlin.de"
       ],
       "results": [
         {
           "title": "Berlin.de events calendar",
           "url": "https://www.berlin.de/events/",
           "kind": "official_directory"
-        },
-        {
-          "title": "Berlin.de museums",
-          "url": "https://www.berlin.de/en/museums/",
-          "kind": "official_directory"
-        },
-        {
-          "title": "CSD Berlin",
-          "url": "https://www.csd-berlin.de/",
-          "kind": "official_directory"
-        },
-        {
-          "title": "visitBerlin Christmas markets",
-          "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
-          "kind": "official_directory"
-        },
-        {
-          "title": "European Festivals Association",
-          "url": "https://www.efa-aef.eu/",
-          "kind": "official_directory"
         }
       ],
-      "notice": "No admitted page covered the question's specific need; these are reviewed official entry points, not live values."
+      "notice": "No admitted page answered this; these are reviewed official entry points. They are navigation, not a live value or a content licence."
     }
   ],
   "summary": {

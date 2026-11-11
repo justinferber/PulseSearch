@@ -26,8 +26,8 @@
         "status": "OK",
         "service": "pulse-search",
         "api_version": "1.1",
-        "request_id": "6fe13d006f4e472c92b174219a194408",
-        "time_utc": "2026-11-11T17:13:41+00:00",
+        "request_id": "ccaae8dd22634375b7a5cbe437b14a86",
+        "time_utc": "2026-11-11T17:31:59+00:00",
         "consumer": "puke"
       }
     },
@@ -41,7 +41,7 @@
       "response": {
         "status": "OK",
         "api_version": "1.1",
-        "request_id": "fd357a9f8a334c2da46e929bab4d7ab9",
+        "request_id": "c335f5333957437bbf92e042d9593d5a",
         "consumer": "puke",
         "scopes": [
           "answer:read",
@@ -126,8 +126,8 @@
         ],
         "note": "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately.",
         "retrieval_mode": "fts_candidates",
-        "request_id": "9c898a0743b24bbdb72a1287abf013ae",
-        "retrieved_at": "2026-11-11T17:13:41+00:00",
+        "request_id": "3dc4e26c19af495290c2faa3b8bc7211",
+        "retrieved_at": "2026-11-11T17:31:59+00:00",
         "source_ids": [
           "demo"
         ],
@@ -150,7 +150,7 @@
             "verified_live": false
           }
         ],
-        "latency_ms": 6.6
+        "latency_ms": 4.1
       }
     },
     {
@@ -217,8 +217,8 @@
         "confidence": 0.95,
         "limits": [],
         "notices": [],
-        "request_id": "1e1ee290928140bb8593b16136b1bdf4",
-        "retrieved_at": "2026-11-11T17:13:41+00:00",
+        "request_id": "ae14076fe6f74d128b741944c413d527",
+        "retrieved_at": "2026-11-11T17:31:59+00:00",
         "latency_ms": 4.5
       }
     },
@@ -343,9 +343,9 @@
           "Links only; no temperature or forecast value was fetched.",
           "A current observation is not a forecast for tomorrow."
         ],
-        "request_id": "1edbfead2fe74da89badc7bbfe6c6aa3",
-        "retrieved_at": "2026-11-11T17:13:41+00:00",
-        "latency_ms": 2.7
+        "request_id": "e2419569ac2349a18cc0d4695fcbd02c",
+        "retrieved_at": "2026-11-11T17:31:59+00:00",
+        "latency_ms": 1.8
       }
     },
     {
@@ -381,9 +381,9 @@
         "confidence": 0.0,
         "limits": [],
         "notices": [],
-        "request_id": "021f695600d440baa04dbc86f5e7aa64",
-        "retrieved_at": "2026-11-11T17:13:41+00:00",
-        "latency_ms": 3.9
+        "request_id": "a5a8be9ad8784e1c9e888fb5182bfed7",
+        "retrieved_at": "2026-11-11T17:31:59+00:00",
+        "latency_ms": 2.1
       }
     },
     {
@@ -419,14 +419,14 @@
         "previous_version": 1,
         "pending_version": 2,
         "status": "update_draft",
-        "request_id": "ca4fe6542f1d4d948c34b16bd4c38d75",
+        "request_id": "a10d801797b741eeb0821200244340f4",
         "consumer": "puke",
         "publication": "DRAFT_ONLY",
         "notices": [
           "Draft proposal only. No Wiki page was published.",
           "Evidence must already be admitted in the source registry."
         ],
-        "latency_ms": 6.2
+        "latency_ms": 5.9
       }
     },
     {

@@ -27,7 +27,7 @@ Examples from the live local index:
 | Munich concert tickets | Eventim Germany |
 | Manchester Pride | Manchester Pride |
 | London Pride | Pride in London |
-| Berlin live music venues | Verti Music Hall |
+| Berlin live music venues | Uber Eats Music Hall |
 | Berlin concert venue accessibility | Huxley's Neue Welt |
 | London theatre tickets | Roundhouse |
 
@@ -49,10 +49,10 @@ Current result:
 | Metric | Result |
 | --- | ---: |
 | Queries | 12 |
-| Mean nDCG@5 | **0.956** |
-| Mean precision@3 | **0.722** |
+| Mean nDCG@5 | **0.889** |
+| Mean precision@3 | **0.931** |
 | Helpful top-1 | **1.0** (12/12) |
-| Judged top-five results | 36 |
+| Judged top-five results | 24 |
 
 Evidence: `docs/evidence/r3a3g_m6_relevance_eval.json`.
 
@@ -68,16 +68,19 @@ The Pulse UNITY adapter now has a fail-closed `StagingGuard`:
 - writes require both an explicit write switch and a guard;
 - the guard reads `SELECT DATABASE()` from UNA;
 - only names containing `staging`, `pre_verify` or `test` are accepted;
-- `una`, `production` and `prod` are rejected;
-- an empty authorisation identity is rejected.
+- production/live/public markers are rejected even inside a test name
+  (`production_test` cannot pass);
+- a named operator email and a `STAGING-...` approval reference are required;
+- the staging test deletes only its own revision and note, and restores the
+  original block only when no later editor revision exists.
 
 Real validation against the mounted UNA application and isolated
 `una_pre_verify` database:
 
-- `tests/una_safety_test.php`: **6/6** guard checks passed;
+- `tests/una_safety_test.php`: **9/9** guard checks passed;
 - `tests/una_staging_test.php`: **10/10** checks passed, including real ACL,
-  revision write/read-back, denied write, retraction and cleanup;
-- original staging block activation, text and revision history restored.
+  revision write/read-back, denied write, retraction and scoped cleanup;
+- the cleanup no longer deletes every revision above its starting revision.
 
 Page creation remains deliberately blocked because UNA’s `addPage()` needs
 operator-UI language-catalogue and page-builder side effects. The guard does not

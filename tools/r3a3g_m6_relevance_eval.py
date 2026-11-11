@@ -7,6 +7,7 @@ match. Metrics are nDCG@5, precision@3 and helpful top-1.
 """
 from __future__ import annotations
 
+import argparse
 import json
 import math
 import shutil
@@ -101,18 +102,22 @@ def evaluate(config: dict, pages: list[dict]) -> dict:
                             "No live dates, prices or availability are asserted."]}
 
 
-def main() -> int:
-    config = json.loads(CONFIG.read_text(encoding="utf-8"))
+def main(config_path: Path = CONFIG, out_path: Path = OUT) -> int:
+    config = json.loads(config_path.read_text(encoding="utf-8"))
     pages = json.loads(SNAPSHOT.read_text(encoding="utf-8"))["pages"]
     result = evaluate(config, pages)
-    OUT.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
+    out_path.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
     print(json.dumps(result["summary"], indent=2))
     for case in result["cases"]:
         print(case["id"], case["status"], "ndcg", case["ndcg_at_5"],
               "top", (case["top"][0]["url"] if case["top"] else "none"))
-    print("wrote", OUT)
+    print("wrote", out_path)
     return 0
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--config", type=Path, default=CONFIG)
+    parser.add_argument("--output", type=Path, default=OUT)
+    args = parser.parse_args()
+    raise SystemExit(main(args.config, args.output))

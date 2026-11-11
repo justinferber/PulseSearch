@@ -23,9 +23,9 @@ SNAPSHOT = ROOT / "docs/evidence/r3a3g_real_source_snapshot.json"
 OUT = ROOT / "docs/evidence/r3a3g_usefulness_benchmark.json"
 CASES = [
     ("berlin-concert-tickets", "How do I book concert tickets in Berlin?",
-     ["eventim.de", "mercedes-benz-arena.de", "columbiahalle.de"]),
+     ["eventim.de", "uber-arena.de", "columbiahalle.de"]),
     ("berlin-venue-accessibility", "Berlin concert venue accessibility and bag rules",
-     ["mercedes-benz-arena.de", "huxleys-neue-welt.de", "verti-music-hall.de"]),
+     ["uber-arena.de", "huxleys-neue-welt.de", "uber-eats-music-hall.de"]),
     ("berlin-christmas-transport", "Berlin Christmas market public transport",
      ["bvg.de", "s-bahn-berlin.de"]),
     ("london-fireworks", "London New Year's Eve fireworks tickets",

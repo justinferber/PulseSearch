@@ -8,10 +8,10 @@
       "grades": {
         "https://www.eventim.de/city/berlin-8/": 3,
         "https://www.berlin.de/events/": 2,
-        "https://www.mercedes-benz-arena.de/": 2,
+        "https://www.uber-arena.de/": 2,
         "https://www.columbiahalle.de/": 2,
         "https://www.huxleys-neue-welt.de/": 2,
-        "https://www.verti-music-hall.de/": 2,
+        "https://www.uber-eats-music-hall.de/": 2,
         "https://www.efa-aef.eu/": 0
       }
     },
@@ -20,9 +20,9 @@
       "query": "Berlin concert venue accessibility and bag rules",
       "grades": {
         "https://www.huxleys-neue-welt.de/": 3,
-        "https://www.mercedes-benz-arena.de/": 2,
+        "https://www.uber-arena.de/": 2,
         "https://www.columbiahalle.de/": 2,
-        "https://www.verti-music-hall.de/": 2,
+        "https://www.uber-eats-music-hall.de/": 2,
         "https://www.eventim.de/city/berlin-8/": 0
       }
     },
@@ -32,9 +32,9 @@
       "grades": {
         "https://www.berlin.de/en/museums/": 3,
         "https://www.huxleys-neue-welt.de/": 1,
-        "https://www.mercedes-benz-arena.de/": 1,
+        "https://www.uber-arena.de/": 1,
         "https://www.columbiahalle.de/": 1,
-        "https://www.verti-music-hall.de/": 1
+        "https://www.uber-eats-music-hall.de/": 1
       }
     },
     {

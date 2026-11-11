@@ -23,11 +23,13 @@ class OfficialLink:
     kind: str
     countries: tuple[str, ...] = ()
     topics: tuple[str, ...] = ()
+    aliases: tuple[str, ...] = ()
 
     def card(self) -> dict:
         data = asdict(self)
         data["countries"] = list(self.countries)
         data["topics"] = list(self.topics)
+        data["aliases"] = list(self.aliases)
         data["source_kind"] = "official_directory"
         data["verified_live"] = False
         data["verified_at"] = VERIFIED_AT
@@ -74,18 +76,21 @@ LINKS: tuple[OfficialLink, ...] = (
     OfficialLink("Munich city portal", "https://www.muenchen.de/", "Munich",
                  "Official Munich services, events and transport information.",
                  "events", ("DE",), ("munich", "events", "transport", "christmas")),
-    OfficialLink("Mercedes-Benz Arena Berlin", "https://www.mercedes-benz-arena.de/",
-                 "Mercedes-Benz Arena", "Venue programme, official box office and travel information.",
-                 "venue", ("DE",), ("concert", "venue", "berlin")),
+    OfficialLink("Uber Arena Berlin", "https://www.uber-arena.de/",
+                 "Uber Arena", "Venue programme, official box office and travel information.",
+                 "venue", ("DE",), ("concert", "venue", "berlin"),
+                 ("Mercedes-Benz Arena Berlin", "Mercedes-Benz Arena")),
     OfficialLink("Columbiahalle Berlin", "https://www.columbiahalle.de/", "Columbiahalle",
                  "Venue programme and official ticket information.",
                  "venue", ("DE",), ("concert", "venue", "berlin")),
     OfficialLink("Huxley's Neue Welt", "https://www.huxleys-neue-welt.de/", "Huxley's",
                  "Venue programme, box office and accessibility information.",
                  "venue", ("DE",), ("concert", "venue", "berlin")),
-    OfficialLink("Verti Music Hall", "https://www.verti-music-hall.de/", "Verti Music Hall",
-                 "Venue programme and official ticketing links.",
-                 "venue", ("DE",), ("concert", "venue", "berlin")),
+    OfficialLink("Uber Eats Music Hall Berlin", "https://www.uber-eats-music-hall.de/",
+                 "Uber Eats Music Hall",
+                 "Venue programme, accessibility information and official ticketing links.",
+                 "venue", ("DE",), ("concert", "venue", "berlin"),
+                 ("Verti Music Hall", "Verti Music Hall Berlin")),
     # London venues.
     OfficialLink("The O2", "https://www.theo2.co.uk/", "The O2",
                  "Official venue programme, ticketing and travel guidance.",
@@ -241,12 +246,22 @@ def _requested_city(query: str, city: str | None) -> str:
 
 def _link_text(link: OfficialLink) -> str:
     return " ".join((link.title, link.description, link.url,
-                     " ".join(link.topics))).lower()
+                     " ".join(link.topics), " ".join(link.aliases))).lower()
 
 
 def _link_cities(link: OfficialLink) -> set[str]:
     text = _link_text(link)
     return {city for city in set(CITY_ALIASES.values()) if city in text}
+
+
+def _names_venue(link: OfficialLink, q: str) -> bool:
+    """True when the query names this venue (including its old name)."""
+    for name in (link.title,) + link.aliases:
+        words = [w for w in name.lower().replace("'", "").split()
+                 if w not in ("the", "berlin")]
+        if words and all(w in q for w in words):
+            return True
+    return False
 
 
 def _facet_score(link: OfficialLink, query: str, city: str) -> int:
@@ -335,26 +350,77 @@ def links_for(kind: str, query: str, city: str | None = None,
                                          "concert", "venue", "karten"))
         is_access = any(w in q for w in ("accessibility", "accessible", "bag",
                                          "barrierefrei", "wheelchair"))
+        venue_access = is_access and any(w in q for w in (
+            "venue", "arena", "hall", "theatre", "theater", "club", "stadium",
+            "museum"))
         venues = [l for l in LINKS if l.kind == "venue"
                   and (not c or not l.countries or c in l.countries)]
         sellers = [l for l in LINKS if l.kind == "tickets"
                    and (not c or not l.countries or c in l.countries)]
-        # An accessibility question about a venue/museum needs a venue page.
-        # It must not steal a Pride/parade/festival query from its organiser.
+        # An accessibility question about a venue/museum needs that venue or
+        # museum page. It must not steal a Pride/parade/festival query from its
+        # organiser, and "music hall" is a venue, not an event topic.
         event_context = any(w in q for w in (
             "pride", "csd", "parade", "festival", "festivals", "fireworks",
-            "christmas", "market", "markets", "events", "music"))
+            "christmas", "market", "markets", "events", "music")) and not venue_access
         if c == "DE":
             sellers.sort(key=lambda l: 0 if ("Berlin" in l.title) == ("berlin" in q) else 1)
-        booking = venues if (is_access and not event_context) else \
-            (sellers + venues if is_ticket else [])
+        named_venues = [l for l in LINKS if l.kind == "venue" and _names_venue(l, q)]
+        if named_venues:
+            return _cards(_rank_official(named_venues, query, loc), query, limit)
+        if not c:
+            # A ticket query without a city must not fan out to every venue in
+            # the directory. Use a named discovery result or return no evidence.
+            sellers = []
+            venues = []
+        if is_ticket and topics:
+            # Tickets for a named event belong to its organiser or an authorised
+            # seller, not to every venue that happens to be in the city.
+            booking = sellers
+        else:
+            booking = venues if (is_access and not event_context) else \
+                (sellers + venues if is_ticket else [])
         calendars = [l for l in LINKS if l.kind == "events" and
                      (not c or not l.countries or c in l.countries)]
-        if is_access and "museum" in q:
+        if loc:
+            discovery = [l for l in discovery if loc in _link_cities(l)]
+            calendars = [l for l in calendars if loc in _link_cities(l)]
+        if "museum" in q:
             museums = [l for l in calendars if "museum" in l.title.lower()]
-            booking = museums + booking
+            return _cards(_rank_official(museums, query, loc), query, limit)
+        if is_access:
+            # No calendar padding: an access question gets the venue or the
+            # organiser it names, and nothing else. If it names a venue, do not
+            # list every other venue in the same city.
+            chosen = discovery
+            if venue_access:
+                named = []
+                for link in venues:
+                    names = (link.title,) + link.aliases
+                    if any(all(word in q for word in name.lower().split()
+                               if word not in ("the", "berlin")) for name in names):
+                        named.append(link)
+                chosen = named or venues
+            return _cards(_rank_official(chosen, query, loc), query, limit)
+        if is_ticket and not topics:
+            # A ticket/venue query must not be padded with generic city, Pride
+            # or festival calendars that do not sell the requested tickets.
+            calendars = []
+        if topics:
+            topical = [l for l in calendars if any(t in l.topics for t in topics)]
+            generic = [l for l in calendars if "events" in l.title.lower()]
+            calendars = topical + [l for l in generic if l not in topical]
+        calendars = [l for l in calendars if "museum" not in l.title.lower()]
         if c == "DE" and ("music" in q or "festival" in q) and not is_access:
             calendars.sort(key=lambda l: 0 if "Berlin.de" == l.publisher else 1)
+        if "refund" in q or "return" in q or "cancel" in q:
+            gov = [l for l in LINKS if l.publisher == "GOV.UK"]
+            caa = [l for l in LINKS if l.publisher == "CAA"]
+            # General ticket/refund queries go to consumer guidance first;
+            # aviation advice only leads when the query is about flights.
+            refund = gov + (caa if any(w in q for w in
+                                        ("flight", "airline", "airfare")) else [])
+            return _cards(refund, query, limit)
         # Do not turn an arbitrary phrase into a city calendar. A handoff needs
         # either a recognised topic, a known city/country, or a booking intent.
         if kind in ("events", "how_to") and not discovery and not booking and not c:
@@ -363,13 +429,6 @@ def links_for(kind: str, query: str, city: str | None = None,
         for link in discovery + booking + calendars:
             if link not in chosen:
                 chosen.append(link)
-        if "refund" in q or "return" in q or "cancel" in q:
-            refund = [l for l in LINKS if
-                      (l.kind == "reference" or l.publisher == "CAA") and
-                      ("GOV.UK" == l.publisher or "CAA" == l.publisher)]
-            # Refund/returns guidance must not be displaced by a ticket seller
-            # just because the seller has more query-term overlaps.
-            return _cards(refund + chosen, query, limit)
         if loc and (discovery or calendars) and not booking and not any(
                 loc in _link_text(link) for link in discovery + calendars):
             return []

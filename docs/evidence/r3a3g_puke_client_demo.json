@@ -6,8 +6,8 @@
     "status": "OK",
     "service": "pulse-search",
     "api_version": "1.1",
-    "request_id": "b4fa15fae5e244bf95e6dfb9262eee0b",
-    "time_utc": "2026-11-11T17:13:42+00:00",
+    "request_id": "d7789c56955943fb909f9285dbf7489f",
+    "time_utc": "2026-11-11T17:32:00+00:00",
     "consumer": "puke"
   },
   "cases": [
@@ -19,7 +19,7 @@
       "links": 0,
       "citations": 2,
       "claim_evidence": 4,
-      "request_id": "79723356f69a4ec1a83bbc03f70eb26a",
+      "request_id": "99fb5a30ebc449c6925c43a529796eba",
       "has_evidence": true,
       "search_status": "official_links",
       "search_results": [
@@ -39,11 +39,11 @@
       "question": "When is CSD Berlin 2027?",
       "status": "OFFICIAL_LINKS",
       "response_mode": "OFFICIAL_LINKS",
-      "answer": "I don't have an admitted page that answers this. Use the reviewed official service below; no live value was fetched.\n- CSD Berlin: https://www.csd-berlin.de/\n- Berlin.de events calendar: https://www.berlin.de/events/\n- Berlin.de museums: https://www.berlin.de/en/museums/\n- visitBerlin Christmas markets: https://www.visitberlin.de/en/christmas-markets-berlin\n- European Festivals Association: https://www.efa-aef.eu/",
+      "answer": "I don't have an admitted page that answers this. Use the reviewed official service below; no live value was fetched.\n- CSD Berlin: https://www.csd-berlin.de/\n- Berlin.de events calendar: https://www.berlin.de/events/",
       "links": 0,
-      "citations": 5,
-      "claim_evidence": 7,
-      "request_id": "9024e6ef094d4c61b7b53bac970731e5",
+      "citations": 2,
+      "claim_evidence": 4,
+      "request_id": "abb8af2c0175497fb7f45e36240ab1a3",
       "has_evidence": true,
       "search_status": "official_links",
       "search_results": [
@@ -56,11 +56,6 @@
           "title": "Berlin.de events calendar",
           "url": "https://www.berlin.de/events/",
           "source_kind": "official_directory"
-        },
-        {
-          "title": "Berlin.de museums",
-          "url": "https://www.berlin.de/en/museums/",
-          "source_kind": "official_directory"
         }
       ]
     },
@@ -72,7 +67,7 @@
       "links": 0,
       "citations": 1,
       "claim_evidence": 2,
-      "request_id": "80a851a8bc7e4fbab4b5adb2f2eb3f6f",
+      "request_id": "41011e28a41647db878199434ed56b38",
       "has_evidence": true,
       "search_status": "staging_results",
       "search_results": [
@@ -92,22 +87,17 @@
       "question": "London New Year's Eve fireworks tickets",
       "status": "OFFICIAL_LINKS",
       "response_mode": "OFFICIAL_LINKS",
-      "answer": "I don't have an admitted page that answers this. Use the reviewed official service below; no live value was fetched.\n- Mayor of London: https://www.london.gov.uk/\n- Roundhouse: https://www.roundhouse.org.uk/\n- Visit London events: https://www.visitlondon.com/things-to-do/events\n- London Pride: https://prideinlondon.org/\n- Southbank Centre: https://www.southbankcentre.co.uk/\n- The O2: https://www.theo2.co.uk/\n- European Festivals Association: https://www.efa-aef.eu/\n- Glastonbury Festival: https://www.glastonburyfestivals.co.uk/",
+      "answer": "I don't have an admitted page that answers this. Use the reviewed official service below; no live value was fetched.\n- Mayor of London: https://www.london.gov.uk/\n- Visit London events: https://www.visitlondon.com/things-to-do/events",
       "links": 0,
-      "citations": 8,
-      "claim_evidence": 10,
-      "request_id": "30f25373599045b492b64d836fc6404f",
+      "citations": 2,
+      "claim_evidence": 4,
+      "request_id": "b254a547d456414e8a42ae6b39a0237d",
       "has_evidence": true,
       "search_status": "official_links",
       "search_results": [
         {
           "title": "Mayor of London",
           "url": "https://www.london.gov.uk/",
-          "source_kind": "official_directory"
-        },
-        {
-          "title": "Roundhouse",
-          "url": "https://www.roundhouse.org.uk/",
           "source_kind": "official_directory"
         },
         {
@@ -125,7 +115,7 @@
       "links": 0,
       "citations": 2,
       "claim_evidence": 4,
-      "request_id": "5e6563631aa64208bbcd36e912e72e58",
+      "request_id": "7e449c1b261245b99bdffe4cd28e28db",
       "has_evidence": true,
       "search_status": "official_links",
       "search_results": [
@@ -149,7 +139,7 @@
       "links": 0,
       "citations": 0,
       "claim_evidence": 2,
-      "request_id": "8a74f9fc940849f9824cc900188e2c6a",
+      "request_id": "08777ee2256f4600be564d824f134d50",
       "has_evidence": false,
       "search_status": "no_staging_evidence",
       "search_results": []
@@ -160,8 +150,8 @@
     "search_status": "official_links",
     "search_top": "https://www.eventim.de/city/berlin-8/",
     "answer_status": "OFFICIAL_LINKS",
-    "answer_citations": 8,
-    "claim_evidence": 10
+    "answer_citations": 6,
+    "claim_evidence": 8
   },
   "wiki_candidate": {
     "status": "draft_created",

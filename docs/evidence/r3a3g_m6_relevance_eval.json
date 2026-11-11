@@ -19,11 +19,6 @@
           "grade": 0
         },
         {
-          "title": "Berlin.de events calendar",
-          "url": "https://www.berlin.de/events/",
-          "grade": 2
-        },
-        {
           "title": "Columbiahalle Berlin",
           "url": "https://www.columbiahalle.de/",
           "grade": 2
@@ -31,6 +26,11 @@
         {
           "title": "Huxley's Neue Welt",
           "url": "https://www.huxleys-neue-welt.de/",
+          "grade": 2
+        },
+        {
+          "title": "Uber Arena Berlin",
+          "url": "https://www.uber-arena.de/",
           "grade": 2
         }
       ],
@@ -50,24 +50,19 @@
           "grade": 3
         },
         {
+          "title": "Uber Eats Music Hall Berlin",
+          "url": "https://www.uber-eats-music-hall.de/",
+          "grade": 2
+        },
+        {
           "title": "Columbiahalle Berlin",
           "url": "https://www.columbiahalle.de/",
           "grade": 2
         },
         {
-          "title": "Mercedes-Benz Arena Berlin",
-          "url": "https://www.mercedes-benz-arena.de/",
+          "title": "Uber Arena Berlin",
+          "url": "https://www.uber-arena.de/",
           "grade": 2
-        },
-        {
-          "title": "Verti Music Hall",
-          "url": "https://www.verti-music-hall.de/",
-          "grade": 2
-        },
-        {
-          "title": "Berlin.de events calendar",
-          "url": "https://www.berlin.de/events/",
-          "grade": 0
         }
       ],
       "precision_at_3": 1.0,
@@ -84,32 +79,12 @@
           "title": "Berlin.de museums",
           "url": "https://www.berlin.de/en/museums/",
           "grade": 3
-        },
-        {
-          "title": "Huxley's Neue Welt",
-          "url": "https://www.huxleys-neue-welt.de/",
-          "grade": 1
-        },
-        {
-          "title": "Columbiahalle Berlin",
-          "url": "https://www.columbiahalle.de/",
-          "grade": 1
-        },
-        {
-          "title": "Mercedes-Benz Arena Berlin",
-          "url": "https://www.mercedes-benz-arena.de/",
-          "grade": 1
-        },
-        {
-          "title": "Verti Music Hall",
-          "url": "https://www.verti-music-hall.de/",
-          "grade": 1
         }
       ],
-      "precision_at_3": 0.333,
+      "precision_at_3": 1.0,
       "helpful_top1": true,
-      "ndcg_at_5": 1.0,
-      "judged_at_5": 5
+      "ndcg_at_5": 0.782,
+      "judged_at_5": 1
     },
     {
       "id": "london-theatre-tickets",
@@ -130,16 +105,6 @@
           "title": "The O2",
           "url": "https://www.theo2.co.uk/",
           "grade": 2
-        },
-        {
-          "title": "London Pride",
-          "url": "https://prideinlondon.org/",
-          "grade": 0
-        },
-        {
-          "title": "Mayor of London",
-          "url": "https://www.london.gov.uk/",
-          "grade": 0
         }
       ],
       "precision_at_3": 1.0,
@@ -156,22 +121,12 @@
           "title": "Manchester Pride",
           "url": "https://www.manchesterpride.com/",
           "grade": 3
-        },
-        {
-          "title": "European Festivals Association",
-          "url": "https://www.efa-aef.eu/",
-          "grade": 1
-        },
-        {
-          "title": "Glastonbury Festival",
-          "url": "https://www.glastonburyfestivals.co.uk/",
-          "grade": 0
         }
       ],
-      "precision_at_3": 0.333,
+      "precision_at_3": 1.0,
       "helpful_top1": true,
-      "ndcg_at_5": 1.0,
-      "judged_at_5": 3
+      "ndcg_at_5": 0.917,
+      "judged_at_5": 1
     },
     {
       "id": "london-pride",
@@ -184,30 +139,15 @@
           "grade": 3
         },
         {
-          "title": "Mayor of London",
-          "url": "https://www.london.gov.uk/",
-          "grade": 2
-        },
-        {
           "title": "Visit London events",
           "url": "https://www.visitlondon.com/things-to-do/events",
           "grade": 1
-        },
-        {
-          "title": "European Festivals Association",
-          "url": "https://www.efa-aef.eu/",
-          "grade": 0
-        },
-        {
-          "title": "Glastonbury Festival",
-          "url": "https://www.glastonburyfestivals.co.uk/",
-          "grade": 0
         }
       ],
-      "precision_at_3": 0.667,
+      "precision_at_3": 0.5,
       "helpful_top1": true,
-      "ndcg_at_5": 1.0,
-      "judged_at_5": 3
+      "ndcg_at_5": 0.812,
+      "judged_at_5": 2
     },
     {
       "id": "paris-events",
@@ -223,17 +163,12 @@
           "title": "Visit Paris Region",
           "url": "https://www.visitparisregion.com/",
           "grade": 2
-        },
-        {
-          "title": "European Festivals Association",
-          "url": "https://www.efa-aef.eu/",
-          "grade": 1
         }
       ],
-      "precision_at_3": 0.667,
+      "precision_at_3": 1.0,
       "helpful_top1": true,
-      "ndcg_at_5": 1.0,
-      "judged_at_5": 3
+      "ndcg_at_5": 0.947,
+      "judged_at_5": 2
     },
     {
       "id": "munich-concert-tickets",
@@ -244,22 +179,12 @@
           "title": "Eventim Germany",
           "url": "https://www.eventim.de/",
           "grade": 3
-        },
-        {
-          "title": "Munich city portal",
-          "url": "https://www.muenchen.de/",
-          "grade": 2
-        },
-        {
-          "title": "European Festivals Association",
-          "url": "https://www.efa-aef.eu/",
-          "grade": 0
         }
       ],
-      "precision_at_3": 0.667,
+      "precision_at_3": 1.0,
       "helpful_top1": true,
-      "ndcg_at_5": 1.0,
-      "judged_at_5": 3
+      "ndcg_at_5": 0.787,
+      "judged_at_5": 1
     },
     {
       "id": "hamburg-christmas-markets",
@@ -275,17 +200,12 @@
           "title": "Hamburg city portal",
           "url": "https://www.hamburg.de/",
           "grade": 2
-        },
-        {
-          "title": "European Festivals Association",
-          "url": "https://www.efa-aef.eu/",
-          "grade": 0
         }
       ],
-      "precision_at_3": 0.667,
+      "precision_at_3": 1.0,
       "helpful_top1": true,
       "ndcg_at_5": 1.0,
-      "judged_at_5": 3
+      "judged_at_5": 2
     },
     {
       "id": "london-transport",
@@ -330,43 +250,23 @@
       "status": "official_links",
       "top": [
         {
-          "title": "UK Civil Aviation Authority (ATOL)",
-          "url": "https://www.caa.co.uk/",
-          "grade": 2
-        },
-        {
           "title": "GOV.UK",
           "url": "https://www.gov.uk/search/all?keywords=UK+ticket+refund+rights",
           "grade": 3
-        },
-        {
-          "title": "The O2",
-          "url": "https://www.theo2.co.uk/",
-          "grade": 0
-        },
-        {
-          "title": "Roundhouse",
-          "url": "https://www.roundhouse.org.uk/",
-          "grade": 0
-        },
-        {
-          "title": "Southbank Centre",
-          "url": "https://www.southbankcentre.co.uk/",
-          "grade": 0
         }
       ],
-      "precision_at_3": 0.667,
+      "precision_at_3": 1.0,
       "helpful_top1": true,
-      "ndcg_at_5": 0.834,
-      "judged_at_5": 2
+      "ndcg_at_5": 0.787,
+      "judged_at_5": 1
     }
   ],
   "summary": {
     "queries": 12,
-    "mean_ndcg_at_5": 0.956,
-    "mean_precision_at_3": 0.722,
+    "mean_ndcg_at_5": 0.889,
+    "mean_precision_at_3": 0.931,
     "helpful_top1_rate": 1.0,
-    "judged_at_5": 36
+    "judged_at_5": 24
   },
   "limitations": [
     "Internal first-pass grades; not an external reviewer.",

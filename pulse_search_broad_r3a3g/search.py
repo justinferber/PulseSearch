@@ -81,6 +81,9 @@ SPORTS = re.compile(r"\b(fifa|world cup|football score|match result|live score)\
 TRANSLATE = re.compile(r"\b(translate|translation|übersetz\w*|translate into)\b", re.I)
 ACCESS = re.compile(r"\b(accessibility|accessible|barrierefrei|wheelchair|bag policy|"
                     r"bag rules|step-free)\b", re.I)
+MUSEUM = re.compile(r"\b(museum|museums|museen|galerie|gallery)\b", re.I)
+MUSEUM_INFO = re.compile(r"\b(opening|open|hours|times|visit|visitor|guide|ticket|entry|"
+                         r"price|access|wheelchair|ausstellung|öffnungszeiten)\b", re.I)
 FLIGHTS = re.compile(r"\b(flights?|airfare|airline|flug|flüge)\b", re.I)
 TRANSPORT = re.compile(r"\b(public transport|transport|tfl|bvg|s-bahn|s bahn|sbahn|"
                        r"get to|journey|journey planner|fahrplan|wie komme|anfahrt|verkehr)\b", re.I)
@@ -89,6 +92,9 @@ REFUND = re.compile(r"\b(refund|refunds|return|returns|cancel|cancellation|ersta
 FRESH = re.compile(r"\b(today|tomorrow|now|live|currently|this evening|this weekend|"
                    r"heute|morgen|jetzt|aktuell|tonight)\b", re.I)
 FAKE_NAV = re.compile(r"\b(login|sign in|official|website|site)\b", re.I)
+EVENT_TOPICS = frozenset("""pride csd christmas weihnacht weihnachtsmarkt market
+markets fireworks feuerwerk silvester festival festivals parade concert konzert
+veranstaltung""".split())
 
 
 def normal(text: str) -> str:
@@ -145,6 +151,8 @@ def classify_query(query: str) -> SearchIntent:
         kind = "how_to"
     elif SPORTS.search(q):
         kind = "sports"
+    elif MUSEUM.search(q) and MUSEUM_INFO.search(q):
+        kind = "events"
     elif EVENTS.search(q):
         kind = "events"
     elif re.search(r"\b(shop|shopping|price|buy|product|store)\b", q):
@@ -381,6 +389,16 @@ def search_documents(documents: list[dict], query: str, limit: int = 10,
         return _official_response(
             query, intent, "CURRENT_SERVICE_HANDOFF",
             "Use an authorised translator; Pulse Search did not perform or claim a translation.")
+    if intent.kind == "how_to" and ACCESS.search(query):
+        cards = links_for(intent.kind, query, intent.location)
+        if cards:
+            return _official_response(
+                query, intent, "OFFICIAL_LINKS",
+                "Official accessibility or venue information; verify current access arrangements directly.")
+        return {"query": query, "intent": intent.as_dict(), "status": "no_staging_evidence",
+                "response_mode": "NO_EVIDENCE", "results": [], "official_links": [],
+                "answer": None, "notices": ["No reviewed accessible destination matched this question."],
+                "note": "No reviewed accessible destination matched this question."}
     if intent.kind == "flights" or (REFUND.search(query) and intent.kind == "how_to"):
         return _official_response(
             query, intent, "OFFICIAL_LINKS",
@@ -396,6 +414,10 @@ def search_documents(documents: list[dict], query: str, limit: int = 10,
         text = " ".join(str(doc.get(k) or "") for k in ("title", "snippet", "url")).lower()
         if excluded and any(term in text for term in excluded):
             continue
+        if intent.kind == "events" and not excluded:
+            event_terms = set(intent.expanded) & EVENT_TOPICS
+            if event_terms and not any(term in text for term in event_terms):
+                continue
         score, reasons = _score(doc, intent)
         if score <= 0:
             continue

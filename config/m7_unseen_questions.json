@@ -1,0 +1,259 @@
+{
+  "reviewer": "FB2 M7 internal open-set relevance review",
+  "reviewed_at": "2026-11-11",
+  "queries": [
+    {
+      "id": "uber-arena-access",
+      "query": "Berlin Uber Arena accessibility and bag policy",
+      "grades": {
+        "https://www.uber-arena.de/": 3,
+        "https://www.uber-eats-music-hall.de/": 0
+      }
+    },
+    {
+      "id": "uber-eats-access",
+      "query": "Uber Eats Music Hall Berlin accessible seating",
+      "grades": {
+        "https://www.uber-eats-music-hall.de/": 3,
+        "https://www.uber-arena.de/": 0
+      }
+    },
+    {
+      "id": "o2-access",
+      "query": "London O2 accessible seating and bag rules",
+      "grades": {
+        "https://www.theo2.co.uk/": 3,
+        "https://www.roundhouse.org.uk/": 0,
+        "https://www.southbankcentre.co.uk/": 0
+      }
+    },
+    {
+      "id": "berlin-christmas-hours",
+      "query": "Berlin Christmas market opening hours",
+      "grades": {
+        "https://www.visitberlin.de/en/christmas-markets-berlin": 3,
+        "https://www.visitberlin.de/en": 1,
+        "https://www.csd-berlin.de/": 0,
+        "https://www.bvg.de/en": 0
+      }
+    },
+    {
+      "id": "london-nye-closures",
+      "query": "London New Year Eve fireworks road closures",
+      "grades": {
+        "https://www.london.gov.uk/": 2,
+        "https://www.visitlondon.com/things-to-do/events": 1,
+        "https://prideinlondon.org/": 0,
+        "https://www.efa-aef.eu/": 0,
+        "https://www.glastonburyfestivals.co.uk/": 0
+      }
+    },
+    {
+      "id": "berlin-bvg-day-ticket",
+      "query": "Berlin BVG day ticket price",
+      "grades": {
+        "https://www.bvg.de/": 2,
+        "https://www.s-bahn-berlin.de/": 1
+      }
+    },
+    {
+      "id": "munich-christmas",
+      "query": "Munich Christmas markets 2026",
+      "grades": {
+        "https://www.muenchen.de/": 1,
+        "https://www.efa-aef.eu/": 0
+      }
+    },
+    {
+      "id": "hamburg-transport",
+      "query": "Hamburg public transport day ticket",
+      "grades": {
+        "https://www.hamburg.com/": 1
+      }
+    },
+    {
+      "id": "paris-pride",
+      "query": "Paris Pride 2027 dates",
+      "grades": {
+        "https://www.paris.fr/": 1,
+        "https://www.visitparisregion.com/": 1,
+        "https://www.efa-aef.eu/": 0
+      }
+    },
+    {
+      "id": "berlin-museum-hours",
+      "query": "Berlin museum opening hours Sunday",
+      "grades": {
+        "https://www.berlin.de/en/museums/": 2,
+        "https://www.berlin.de/en/": 1,
+        "https://en.wikipedia.org/wiki/Special:Search?search=Berlin+museum+opening+hours+Sunday": 0,
+        "https://www.gov.uk/search/all?keywords=Berlin+museum+opening+hours+Sunday": 0
+      }
+    },
+    {
+      "id": "london-museum-access",
+      "query": "London museum wheelchair access",
+      "grades": {
+        "https://tfl.gov.uk/": 0
+      }
+    },
+    {
+      "id": "uk-train-refund",
+      "query": "UK train ticket refund rules",
+      "grades": {
+        "https://www.gov.uk/search/all?keywords=UK+train+ticket+refund+rules": 2,
+        "https://www.theo2.co.uk/": 0,
+        "https://www.roundhouse.org.uk/": 0,
+        "https://www.southbankcentre.co.uk/": 0
+      }
+    },
+    {
+      "id": "glastonbury-resale",
+      "query": "Glastonbury ticket resale 2027",
+      "grades": {
+        "https://www.glastonburyfestivals.co.uk/": 2,
+        "https://www.bbc.co.uk/news/articles/cv62kp9enz08o": 1
+      }
+    },
+    {
+      "id": "berlin-festival-program",
+      "query": "Berlin festival programme 2027",
+      "grades": {
+        "https://www.berlin.de/events/": 3,
+        "https://www.csd-berlin.de/": 1,
+        "https://www.berlin.de/en/museums/": 0
+      }
+    },
+    {
+      "id": "manchester-pride-tickets",
+      "query": "Manchester Pride tickets 2027",
+      "grades": {
+        "https://www.manchesterpride.com/": 2,
+        "https://www.efa-aef.eu/": 0,
+        "https://www.glastonburyfestivals.co.uk/": 0
+      }
+    },
+    {
+      "id": "london-theatre-access",
+      "query": "London theatre accessible tickets",
+      "grades": {
+        "https://www.roundhouse.org.uk/": 2,
+        "https://www.southbankcentre.co.uk/": 2,
+        "https://www.theo2.co.uk/": 2
+      }
+    },
+    {
+      "id": "berlin-csd-route",
+      "query": "Berlin CSD parade route 2027",
+      "grades": {
+        "https://www.csd-berlin.de/": 3,
+        "https://www.berlin.de/events/": 1,
+        "https://www.berlin.de/en/museums/": 0
+      }
+    },
+    {
+      "id": "berlin-concert-calendar",
+      "query": "Berlin concert calendar this month",
+      "grades": {
+        "https://www.columbiahalle.de/": 2,
+        "https://www.eventim.de/city/berlin-8/": 2,
+        "https://www.huxleys-neue-welt.de/": 1,
+        "https://www.uber-arena.de/": 1,
+        "https://www.uber-eats-music-hall.de/": 1,
+        "https://www.eventim.de/": 1
+      }
+    },
+    {
+      "id": "munich-venues",
+      "query": "Munich live music venues",
+      "grades": {
+        "https://www.eventim.de/": 2,
+        "https://www.muenchen.de/": 1,
+        "https://www.efa-aef.eu/": 0,
+        "https://www.glastonburyfestivals.co.uk/": 0
+      }
+    },
+    {
+      "id": "hamburg-christmas-transport",
+      "query": "Hamburg Christmas market transport",
+      "grades": {
+        "https://www.hamburg.com/": 1
+      }
+    },
+    {
+      "id": "paris-nye",
+      "query": "Paris New Year fireworks 2027",
+      "grades": {
+        "https://www.paris.fr/": 1,
+        "https://www.visitparisregion.com/": 1,
+        "https://www.efa-aef.eu/": 0
+      }
+    },
+    {
+      "id": "berlin-cancel",
+      "query": "Berlin concert ticket cancellation rules",
+      "grades": {
+        "https://www.gov.uk/search/all?keywords=Berlin+concert+ticket+cancellation+rules": 0,
+        "https://www.eventim.de/city/berlin-8/": 0
+      }
+    },
+    {
+      "id": "london-festival-access",
+      "query": "London festival accessibility information",
+      "grades": {
+        "https://www.visitlondon.com/things-to-do/events": 1,
+        "https://www.london.gov.uk/": 1,
+        "https://www.efa-aef.eu/": 0,
+        "https://www.glastonburyfestivals.co.uk/": 0
+      }
+    },
+    {
+      "id": "berlin-weihnachtsmaerkte",
+      "query": "Berlin Weihnachtsmärkte Öffnungszeiten",
+      "grades": {
+        "https://www.visitberlin.de/en/christmas-markets-berlin": 3,
+        "https://www.berlin.de/events/": 2,
+        "https://www.csd-berlin.de/": 0,
+        "https://www.efa-aef.eu/": 0
+      }
+    },
+    {
+      "id": "muenchen-konzertkarten",
+      "query": "München Konzertkarten kaufen",
+      "grades": {
+        "https://www.eventim.de/": 2,
+        "https://www.muenchen.de/": 1,
+        "https://www.efa-aef.eu/": 0
+      }
+    },
+    {
+      "id": "london-silvester",
+      "query": "London Silvester Feuerwerk Tickets",
+      "grades": {
+        "https://www.london.gov.uk/": 2,
+        "https://www.visitlondon.com/things-to-do/events": 1,
+        "https://www.roundhouse.org.uk/": 0,
+        "https://www.theo2.co.uk/": 0,
+        "https://www.southbankcentre.co.uk/": 0
+      }
+    },
+    {
+      "id": "berlin-uber-eats",
+      "query": "Uber Eats Music Hall Programm",
+      "grades": {
+        "https://www.uber-eats-music-hall.de/": 3,
+        "https://www.efa-aef.eu/": 0,
+        "https://www.glastonburyfestivals.co.uk/": 0
+      }
+    },
+    {
+      "id": "london-refunds",
+      "query": "London theatre ticket refund policy",
+      "grades": {
+        "https://www.gov.uk/search/all?keywords=London+theatre+ticket+refund+policy": 0,
+        "https://www.theo2.co.uk/": 0,
+        "https://www.roundhouse.org.uk/": 0
+      }
+    }
+  ]
+}

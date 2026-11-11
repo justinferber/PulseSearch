@@ -14,7 +14,7 @@ scope, not permission. Every record below keeps `approved=false`, `index_allowed
 | # | Candidate | Origin & proposed scope | Controller | Robots (11 Nov 2026) | Rights state | Owner state |
 | --- | --- | --- | --- | --- | --- | --- |
 | A | **London City Hall** | `https://www.london.gov.uk`, `/events` only | GLA | 200; allows `/events`; no Crawl-delay; sitemap present | `PENDING_TERMS_REVIEW` | `robots_reviewed` |
-| B | **London Parade** | `https://londonparade.com`, no path admitted; 5 pages reviewed | Destination Events Ltd — **approval confirmed by owner; scope to record** | 200; `Allow: /`, **Crawl-delay 10**, search yes / AI-train no, no sitemap | `OWNER_ATTESTED_ORGANISER_APPROVAL_SCOPE_TO_RECORD` | `robots_reviewed` |
+| B | **London Parade** | `https://londonparade.com`, no path admitted; 5 pages reviewed | Destination Events Ltd — **text and imagery rights confirmed by owner, including internal Pulse Search test** | 200; `Allow: /`, **Crawl-delay 10**, search yes / AI-train no, no sitemap | `OWNER_CONFIRMED_DESTINATION_EVENTS_TEXT_AND_IMAGERY` | `robots_reviewed` |
 | C | **Lord Mayor's Show** | `https://www.lordmayorsshow.london`, no path admitted | Show organisers (to confirm) | **404 — no robots.txt** | `PENDING_RESTRICTIVE_TERMS_AND_PERMISSION` | `rights_hold` |
 
 `/whats-on` stays excluded from A. Cross-links to `cityoflondon.gov.uk`, `procession.`/`api.`
@@ -53,13 +53,11 @@ subdomains, `lnydp.com` and Ticketmaster convey no admission.
 | Contact | `contact@londonparade.com`; named scope and takedown contact to confirm |
 | Event basis | 2027 edition, 1 January 2027, 1pm |
 | Excluded | `/shop/`, `/takepart/`, `/account/`, `/contact/`, Ticketmaster |
-| Pending | **record the existing Destination Events approval's data-use scope and document reference** (no new organiser request); canonical host and `www` redirects; 2027 path architecture; feed availability |
+| Outstanding | Content-use rights confirmed by owner. First-live-run go/no-go and owner-authorised source admission remain pending. Apex host only; no need to admit `www`. Feed availability optional. |
 
-Destination Events' approval and Mine Media's official partnership are **confirmed by owner
-attestation**, and are not to be re-requested. The precise technical scope — crawl, snippet storage,
+Destination Events' approval, Mine Media's official partnership and London Parade **text and imagery use rights** are **confirmed by owner**, including the proposed internal Pulse Search metadata and short-snippet test. Do not ask for another organiser permission. The pilot stays technically narrow; no public production switch is implied.
 redisplay, retention, dates and reference — is recorded in
-`docs/R3A3F_LONDON_PARADE_DATA_USE_SCOPE_20261111.md` and remains **unconfirmed from paperwork**
-until the owner supplies it. If a structured public feed is available it becomes a separate input
+The confirmed scope is recorded in `docs/R3A3F_LONDON_PARADE_DATA_USE_SCOPE_20261111.md`. The first live crawler run still needs a distinct operational owner decision. If a structured public feed is available it becomes a separate input
 connector with its own provenance, not a crawler depth shortcut.
 
 ## 4. Source C — Lord Mayor's Show (proposed record, not applied)
@@ -124,10 +122,13 @@ owner kill switch.
 ## 9. F3 decision
 
 **F3 = HOLD.** Recommended first live source: **City Hall `/events`**, provided its terms/re-use basis
-is recorded and `/events` is confirmed as the listing. London Parade is the alternative once the existing
-Destination Events approval's data-use scope is recorded (or a licensed feed is confirmed). The Lord Mayor's Show stays
+is recorded and `/events` is confirmed as the listing. London Parade now has an owner-confirmed rights basis and is the preferred first live pilot candidate, subject only to separate operational admission and a bounded first-live decision. The Lord Mayor's Show stays
 `RIGHTS_HOLD` until its restrictive terms are addressed.
 
 The first external GET, the merge of PR #10 and any production promotion each require separate owner
 authorisation. Until then the code refuses to run with no admitted source, and this document admits
 nothing.
+
+## Owner permission update — 11 November 2026
+
+The owner confirms Mine Media is Destination Events' official London Parade partner and is authorised to use London Parade **text and imagery**, expressly confirming the proposed internal Pulse Search test with event information and ≤320-character excerpts. This **closes the organiser content-use rights question** for the limited P1 test; no fresh organiser permission is required. The P1 design still excludes image downloading, page bodies, login/application areas, personal participant information, other hosts and production publishing. Treat the attestation as an owner statement, not an invented signed contract. The source remains `approved=false`, `index_allowed=false` until the owner separately authorises the actual first live crawler run; keep City Hall as fallback and Lord Mayor's Show on rights HOLD.

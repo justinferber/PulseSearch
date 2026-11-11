@@ -15,3 +15,5 @@ data/r3a3f_offline/
 *.sqlite-shm
 *.sqlite-journal
 data/*/
+
+data/*.log

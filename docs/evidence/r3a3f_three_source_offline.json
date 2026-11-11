@@ -1,7 +1,7 @@
 {
   "kind": "R3A3F_THREE_SOURCE_OFFLINE_EVIDENCE",
   "schema": "pulse-search-r3a3f-evidence/v2",
-  "generated_at": "2026-11-11T10:43:16+00:00",
+  "generated_at": "2026-11-11T11:16:31+00:00",
   "mode": "offline_loopback_simulator",
   "third_party_requests": 0,
   "registry": {
@@ -27,34 +27,35 @@
   },
   "runs": {
     "first": {
-      "discovered": 115,
+      "discovered": 114,
       "admit_new": 3,
       "probe_policy_absent": 3,
       "discovery_probes_admitted": 0,
       "robots_requests": 3,
       "sitemap_candidates_recorded": 13,
-      "indexed_new": 41,
-      "links_seen": 131,
+      "indexed_new": 40,
+      "links_seen": 130,
       "out_of_scope": 15,
       "intent_discovered_diwali": 4,
-      "admitted": 42,
+      "admitted": 41,
       "intent_discovered_parades": 14,
       "intent_indexed_parades": 14,
       "intent_discovered_music_festivals": 4,
+      "trap_refused": 1,
       "intent_indexed_diwali": 3,
       "off_domain_proposed": 4,
       "intent_indexed_music_festivals": 2,
       "redirect_blocked": 1,
       "redirect_blocked_off_origin": 1,
-      "uncertain_category": 9,
+      "uncertain_category": 8,
       "redirect_hops": 1,
       "duplicate_exact": 2,
       "depth_refused": 10,
       "duplicate_near": 1,
-      "fetched": 45,
-      "http_requests": 49,
+      "fetched": 44,
+      "http_requests": 48,
       "stop_reason": "queue_empty",
-      "run_id": "3ebc3fb12157",
+      "run_id": "174adb3566fe",
       "deepest_fetched": 3
     },
     "restart": {
@@ -65,13 +66,13 @@
       "fetched": 1,
       "http_requests": 2,
       "stop_reason": "queue_empty",
-      "run_id": "547d63fd448f",
+      "run_id": "aee1d886589a",
       "deepest_fetched": 3
     }
   },
   "restart": {
-    "http_attempts_after_first": 49,
-    "http_attempts_after_second": 51
+    "http_attempts_after_first": 48,
+    "http_attempts_after_second": 50
   },
   "per_source": {
     "city-hall": {
@@ -86,7 +87,7 @@
       "deepest": 3
     },
     "london-parade": {
-      "documents": 15,
+      "documents": 14,
       "categories": [
         "Arts & Culture",
         "Music & Performance",
@@ -168,7 +169,7 @@
   },
   "network_hits": {
     "city-hall": 14,
-    "london-parade": 21,
+    "london-parade": 20,
     "lord-mayors-show": 16
   },
   "budget": {
@@ -180,10 +181,10 @@
     },
     "today": {
       "day": "2026-11-11",
-      "http_attempts": 51,
-      "accepted_documents": 41,
-      "run_seconds": 1.5106511998455971,
-      "updated_at": "2026-11-11T10:43:16+00:00"
+      "http_attempts": 50,
+      "accepted_documents": 40,
+      "run_seconds": 1.388558099977672,
+      "updated_at": "2026-11-11T11:16:31+00:00"
     },
     "persisted_in_store": true,
     "note": "counters survive a restart; a fresh process cannot reset the day"
@@ -195,30 +196,30 @@
     "expected_index_sha256": "bb8e52025a1a25f55141507a02621db190e54bf1fc4d4da8db4248357368c35d",
     "pin_match": true,
     "historical_index_pages": 120,
-    "staged_documents": 41,
+    "staged_documents": 40,
     "already_in_historical_index": 0,
-    "novel_documents": 41,
+    "novel_documents": 40,
     "novel_sample": [
-      "http://127.0.0.1:51886/events",
-      "http://127.0.0.1:51886/events/diwali-city-hall",
-      "http://127.0.0.1:51886/events/diwali-city-hall/programme",
-      "http://127.0.0.1:51886/events/diwali-city-hall/programme/access",
-      "http://127.0.0.1:51886/events/london-parade-viewing",
-      "http://127.0.0.1:51886/events/london-parade-viewing/programme",
-      "http://127.0.0.1:51886/events/london-parade-viewing/programme/access",
-      "http://127.0.0.1:51886/events/lord-mayors-show-screening",
-      "http://127.0.0.1:51886/events/lord-mayors-show-screening/programme",
-      "http://127.0.0.1:51886/events/lord-mayors-show-screening/programme/access",
-      "http://127.0.0.1:51886/events/open-house",
-      "http://127.0.0.1:51886/events/open-house/programme",
-      "http://127.0.0.1:51886/events/open-house/programme/access",
-      "http://127.0.0.1:51887/",
-      "http://127.0.0.1:51887/about",
-      "http://127.0.0.1:51887/admin",
-      "http://127.0.0.1:51887/festivals/concerts",
-      "http://127.0.0.1:51887/londonparade-participants",
-      "http://127.0.0.1:51887/news-archive",
-      "http://127.0.0.1:51887/news/2021-parade-cancelled"
+      "http://127.0.0.1:62839/events",
+      "http://127.0.0.1:62839/events/diwali-city-hall",
+      "http://127.0.0.1:62839/events/diwali-city-hall/programme",
+      "http://127.0.0.1:62839/events/diwali-city-hall/programme/access",
+      "http://127.0.0.1:62839/events/london-parade-viewing",
+      "http://127.0.0.1:62839/events/london-parade-viewing/programme",
+      "http://127.0.0.1:62839/events/london-parade-viewing/programme/access",
+      "http://127.0.0.1:62839/events/lord-mayors-show-screening",
+      "http://127.0.0.1:62839/events/lord-mayors-show-screening/programme",
+      "http://127.0.0.1:62839/events/lord-mayors-show-screening/programme/access",
+      "http://127.0.0.1:62839/events/open-house",
+      "http://127.0.0.1:62839/events/open-house/programme",
+      "http://127.0.0.1:62839/events/open-house/programme/access",
+      "http://127.0.0.1:62840/",
+      "http://127.0.0.1:62840/about",
+      "http://127.0.0.1:62840/festivals/concerts",
+      "http://127.0.0.1:62840/londonparade-participants",
+      "http://127.0.0.1:62840/news-archive",
+      "http://127.0.0.1:62840/news/2021-parade-cancelled",
+      "http://127.0.0.1:62840/news/2027-bands"
     ]
   },
   "checks": {
@@ -259,13 +260,13 @@
   "report": {
     "schema": "pulse-search-r3a3f-run-report/v1",
     "version": "r3a3f-0.1-offline",
-    "generated_at": "2026-11-11T10:43:16+00:00",
+    "generated_at": "2026-11-11T11:16:31+00:00",
     "run": {
-      "run_id": "547d63fd448f",
-      "started_at": "2026-11-11T10:43:16+00:00",
-      "finished_at": "2026-11-11T10:43:16+00:00",
-      "config": "{\"user_agent\": \"PulseSearchFB2/0.1 (+https://github.com/justinferber/PulseSearch; research crawler; contact=owner)\", \"max_depth\": 3, \"max_fetches_per_day\": 5000, \"target_new_pages_per_day\": 1000, \"min_interval_s\": 0.0, \"max_inflight_per_host\": 1, \"timeout_s\": 10.0, \"max_bytes\": 2000000, \"max_redirects\": 5, \"max_links_per_page\": 200, \"min_text_chars\": 250, \"near_dup_threshold\": 0.9, \"category_min_confidence\": 0.18, \"recrawl_after_hours\": 24, \"allow_loopback\": true, \"loopback_hosts\": [\"127.0.0.1:51886\", \"127.0.0.1:51887\", \"127.0.0.1:51888\"], \"sitemap_policy\": \"candidate_only\", \"discovery_probes\": true, \"focus_month\": null, \"require_source_admission\": true, \"require_index_approval\": true, \"max_rechecks\": 2, \"recheck_after_hours\": 24.0, \"recheck_listing_hours\": 168.0, \"max_host_share\": 0.7, \"rights_default\": \"metadata_and_short_snippet\", \"pilot_http_attempts_per_day\": 5000, \"pilot_accepted_documents_per_day\": 5000, \"pilot_run_minutes_max\": 180.0}",
-      "counters": "{\"probe_policy_absent\": 3, \"discovery_probes_admitted\": 0, \"robots_requests\": 1, \"duplicate_exact\": 1, \"fetched\": 1, \"http_requests\": 2, \"stop_reason\": \"queue_empty\", \"run_id\": \"547d63fd448f\", \"deepest_fetched\": 3}"
+      "run_id": "aee1d886589a",
+      "started_at": "2026-11-11T11:16:31+00:00",
+      "finished_at": "2026-11-11T11:16:31+00:00",
+      "config": "{\"user_agent\": \"PulseSearchFB2/0.1 (+https://github.com/justinferber/PulseSearch; research crawler; contact=owner)\", \"max_depth\": 3, \"max_fetches_per_day\": 5000, \"target_new_pages_per_day\": 1000, \"min_interval_s\": 0.0, \"max_inflight_per_host\": 1, \"timeout_s\": 10.0, \"max_bytes\": 2000000, \"max_redirects\": 5, \"max_links_per_page\": 200, \"min_text_chars\": 250, \"near_dup_threshold\": 0.9, \"category_min_confidence\": 0.18, \"recrawl_after_hours\": 24, \"allow_loopback\": true, \"loopback_hosts\": [\"127.0.0.1:62839\", \"127.0.0.1:62840\", \"127.0.0.1:62841\"], \"sitemap_policy\": \"candidate_only\", \"discovery_probes\": true, \"focus_month\": null, \"require_source_admission\": true, \"require_index_approval\": true, \"max_rechecks\": 2, \"recheck_after_hours\": 24.0, \"recheck_listing_hours\": 168.0, \"max_host_share\": 0.7, \"rights_default\": \"metadata_and_short_snippet\", \"pilot_http_attempts_per_day\": 5000, \"pilot_accepted_documents_per_day\": 5000, \"pilot_run_minutes_max\": 180.0}",
+      "counters": "{\"probe_policy_absent\": 3, \"discovery_probes_admitted\": 0, \"robots_requests\": 1, \"duplicate_exact\": 1, \"fetched\": 1, \"http_requests\": 2, \"stop_reason\": \"queue_empty\", \"run_id\": \"aee1d886589a\", \"deepest_fetched\": 3}"
     },
     "config": {
       "user_agent": "PulseSearchFB2/0.1 (+https://github.com/justinferber/PulseSearch; research crawler; contact=owner)",
@@ -284,9 +285,9 @@
       "recrawl_after_hours": 24,
       "allow_loopback": true,
       "loopback_hosts": [
-        "127.0.0.1:51886",
-        "127.0.0.1:51887",
-        "127.0.0.1:51888"
+        "127.0.0.1:62839",
+        "127.0.0.1:62840",
+        "127.0.0.1:62841"
       ],
       "sitemap_policy": "candidate_only",
       "discovery_probes": true,
@@ -303,20 +304,20 @@
       "pilot_run_minutes_max": 180.0
     },
     "funnel": {
-      "discovered": 45,
+      "discovered": 44,
       "queue": {
         "blocked": 1,
-        "done": 44
+        "done": 43
       },
-      "fetched": 50,
-      "accepted": 41,
-      "acceptance_rate": 0.82,
-      "indexed_searchable": 41,
+      "fetched": 49,
+      "accepted": 40,
+      "acceptance_rate": 0.8163,
+      "indexed_searchable": 40,
       "rejected": 5,
       "off_domain_proposed": 4
     },
     "outcomes": {
-      "indexed": 41,
+      "indexed": 40,
       "robots": 4,
       "duplicate": 3,
       "redirect_blocked": 1,
@@ -330,7 +331,7 @@
     "depth": {
       "histogram": {
         "0": 3,
-        "1": 23,
+        "1": 22,
         "2": 14,
         "3": 5
       },
@@ -370,7 +371,7 @@
         "Tour": 4,
         "Volunteering": 0,
         "Workshop": 0,
-        "Other": 9,
+        "Other": 8,
         "Horticulture & Flower Shows": 0,
         "Music & Performance": 4,
         "Sport & Fitness": 0,
@@ -530,10 +531,10 @@
       ],
       "semantics": "priority_hint_only_no_topic_blocking",
       "by_method": {
-        "link": 42,
+        "link": 41,
         "seed": 3
       },
-      "genuine_link_discoveries": 42,
+      "genuine_link_discoveries": 41,
       "seed_admissions": 3,
       "guessed_path_probes": 0,
       "probes_total": 0,
@@ -541,70 +542,70 @@
       "rechecks_waiting": 0,
       "prioritised": [
         {
-          "url": "http://127.0.0.1:51886/events/diwali-city-hall",
+          "url": "http://127.0.0.1:62839/events/diwali-city-hall",
           "priority": 131,
           "min_depth": 1,
           "category_hint": "diwali",
           "discovery_method": "link"
         },
         {
-          "url": "http://127.0.0.1:51886/events/london-parade-viewing",
+          "url": "http://127.0.0.1:62839/events/london-parade-viewing",
           "priority": 131,
           "min_depth": 1,
           "category_hint": "parades",
           "discovery_method": "link"
         },
         {
-          "url": "http://127.0.0.1:51888/lord-mayors-procession",
+          "url": "http://127.0.0.1:62841/lord-mayors-procession",
           "priority": 131,
           "min_depth": 1,
           "category_hint": "parades",
           "discovery_method": "link"
         },
         {
-          "url": "http://127.0.0.1:51887/parade-location-timing",
+          "url": "http://127.0.0.1:62840/parade-location-timing",
           "priority": 115,
           "min_depth": 1,
           "category_hint": "parades",
           "discovery_method": "link"
         },
         {
-          "url": "http://127.0.0.1:51887/news/london-parade-2027-celebrate-new-years-day-the-london-way",
+          "url": "http://127.0.0.1:62840/news/london-parade-2027-celebrate-new-years-day-the-london-way",
           "priority": 115,
           "min_depth": 1,
           "category_hint": "parades",
           "discovery_method": "link"
         },
         {
-          "url": "http://127.0.0.1:51887/news/london-parade-2026-review",
+          "url": "http://127.0.0.1:62840/news/london-parade-2026-review",
           "priority": 115,
           "min_depth": 1,
           "category_hint": "parades",
           "discovery_method": "link"
         },
         {
-          "url": "http://127.0.0.1:51888/route",
+          "url": "http://127.0.0.1:62841/route",
           "priority": 115,
           "min_depth": 1,
           "category_hint": "parades",
           "discovery_method": "link"
         },
         {
-          "url": "http://127.0.0.1:51887/festivals/concerts",
+          "url": "http://127.0.0.1:62840/festivals/concerts",
           "priority": 109,
           "min_depth": 1,
           "category_hint": "music_festivals",
           "discovery_method": "link"
         },
         {
-          "url": "http://127.0.0.1:51886/events/diwali-city-hall/programme",
+          "url": "http://127.0.0.1:62839/events/diwali-city-hall/programme",
           "priority": 105,
           "min_depth": 2,
           "category_hint": "diwali",
           "discovery_method": "link"
         },
         {
-          "url": "http://127.0.0.1:51886/events/london-parade-viewing/programme",
+          "url": "http://127.0.0.1:62839/events/london-parade-viewing/programme",
           "priority": 105,
           "min_depth": 2,
           "category_hint": "parades",
@@ -612,7 +613,7 @@
         }
       ],
       "useful_discoveries": 19,
-      "useful_per_100_fetches": 41.3,
+      "useful_per_100_fetches": 42.2,
       "note": "Probes are reviewed guesses, never links. Intent only reorders discovery and labels documents; it never restricts a topic, host or category."
     },
     "fairness": {
@@ -620,31 +621,31 @@
       "per_source_budget_cap": 3500,
       "fetches_by_source": {
         "city-hall": 13,
-        "london-parade": 18,
+        "london-parade": 17,
         "lord-mayors-show": 15
       },
       "share_by_source": {
-        "city-hall": 0.283,
-        "london-parade": 0.391,
-        "lord-mayors-show": 0.326
+        "city-hall": 0.289,
+        "london-parade": 0.378,
+        "lord-mayors-show": 0.333
       },
-      "max_source_share": 0.391,
+      "max_source_share": 0.378,
       "max_source_share_allowed": 0.7,
       "documents_by_category": {
         "Parades & Processions": 16,
-        "Other": 9,
+        "Other": 8,
         "Arts & Culture": 4,
         "Festival": 4,
         "Music & Performance": 4,
         "Tour": 4
       },
       "category_share": {
-        "Parades & Processions": 0.39,
-        "Other": 0.22,
-        "Arts & Culture": 0.098,
-        "Festival": 0.098,
-        "Music & Performance": 0.098,
-        "Tour": 0.098
+        "Parades & Processions": 0.4,
+        "Other": 0.2,
+        "Arts & Culture": 0.1,
+        "Festival": 0.1,
+        "Music & Performance": 0.1,
+        "Tour": 0.1
       },
       "budget": 5000
     },
@@ -660,25 +661,25 @@
           "id": 2,
           "source_id": "london-parade",
           "depth": 1,
-          "from_url": "http://127.0.0.1:51887/redirect/route",
-          "to_url": "http://127.0.0.1:51887/parade-location-timing",
+          "from_url": "http://127.0.0.1:62840/redirect/route",
+          "to_url": "http://127.0.0.1:62840/parade-location-timing",
           "hop": 1,
           "status": 200,
           "decision": "followed",
           "reason": "",
-          "at_utc": "2026-11-11T10:43:15+00:00"
+          "at_utc": "2026-11-11T11:16:30+00:00"
         },
         {
           "id": 1,
           "source_id": "lord-mayors-show",
           "depth": 1,
-          "from_url": "http://127.0.0.1:51888/route",
-          "to_url": "http://127.0.0.1:51889/events",
+          "from_url": "http://127.0.0.1:62841/route",
+          "to_url": "http://127.0.0.1:62842/events",
           "hop": 1,
           "status": null,
           "decision": "blocked",
           "reason": "off_origin",
-          "at_utc": "2026-11-11T10:43:15+00:00"
+          "at_utc": "2026-11-11T11:16:30+00:00"
         }
       ],
       "policy": "every redirect destination is re-checked for approved source, path scope, robots, request budget and host pacing before its request is issued"
@@ -690,36 +691,36 @@
       "expected_index_sha256": "bb8e52025a1a25f55141507a02621db190e54bf1fc4d4da8db4248357368c35d",
       "pin_match": true,
       "historical_index_pages": 120,
-      "staged_documents": 41,
+      "staged_documents": 40,
       "already_in_historical_index": 0,
-      "novel_documents": 41,
+      "novel_documents": 40,
       "novel_sample": [
-        "http://127.0.0.1:51886/events",
-        "http://127.0.0.1:51886/events/diwali-city-hall",
-        "http://127.0.0.1:51886/events/diwali-city-hall/programme",
-        "http://127.0.0.1:51886/events/diwali-city-hall/programme/access",
-        "http://127.0.0.1:51886/events/london-parade-viewing",
-        "http://127.0.0.1:51886/events/london-parade-viewing/programme",
-        "http://127.0.0.1:51886/events/london-parade-viewing/programme/access",
-        "http://127.0.0.1:51886/events/lord-mayors-show-screening",
-        "http://127.0.0.1:51886/events/lord-mayors-show-screening/programme",
-        "http://127.0.0.1:51886/events/lord-mayors-show-screening/programme/access",
-        "http://127.0.0.1:51886/events/open-house",
-        "http://127.0.0.1:51886/events/open-house/programme",
-        "http://127.0.0.1:51886/events/open-house/programme/access",
-        "http://127.0.0.1:51887/",
-        "http://127.0.0.1:51887/about",
-        "http://127.0.0.1:51887/admin",
-        "http://127.0.0.1:51887/festivals/concerts",
-        "http://127.0.0.1:51887/londonparade-participants",
-        "http://127.0.0.1:51887/news-archive",
-        "http://127.0.0.1:51887/news/2021-parade-cancelled"
+        "http://127.0.0.1:62839/events",
+        "http://127.0.0.1:62839/events/diwali-city-hall",
+        "http://127.0.0.1:62839/events/diwali-city-hall/programme",
+        "http://127.0.0.1:62839/events/diwali-city-hall/programme/access",
+        "http://127.0.0.1:62839/events/london-parade-viewing",
+        "http://127.0.0.1:62839/events/london-parade-viewing/programme",
+        "http://127.0.0.1:62839/events/london-parade-viewing/programme/access",
+        "http://127.0.0.1:62839/events/lord-mayors-show-screening",
+        "http://127.0.0.1:62839/events/lord-mayors-show-screening/programme",
+        "http://127.0.0.1:62839/events/lord-mayors-show-screening/programme/access",
+        "http://127.0.0.1:62839/events/open-house",
+        "http://127.0.0.1:62839/events/open-house/programme",
+        "http://127.0.0.1:62839/events/open-house/programme/access",
+        "http://127.0.0.1:62840/",
+        "http://127.0.0.1:62840/about",
+        "http://127.0.0.1:62840/festivals/concerts",
+        "http://127.0.0.1:62840/londonparade-participants",
+        "http://127.0.0.1:62840/news-archive",
+        "http://127.0.0.1:62840/news/2021-parade-cancelled",
+        "http://127.0.0.1:62840/news/2027-bands"
       ]
     },
     "sources": [
       {
         "source_id": "city-hall",
-        "origin": "http://127.0.0.1:51886",
+        "origin": "http://127.0.0.1:62839",
         "rights_status": "SYNTHETIC_FIXTURE_NOT_A_REAL_PUBLISHER",
         "owner_authorisation": "OFFLINE_SIMULATION_ONLY",
         "index_allowed": true,
@@ -742,29 +743,29 @@
       },
       {
         "source_id": "london-parade",
-        "origin": "http://127.0.0.1:51887",
+        "origin": "http://127.0.0.1:62840",
         "rights_status": "SYNTHETIC_FIXTURE_NOT_A_REAL_PUBLISHER",
         "owner_authorisation": "OFFLINE_SIMULATION_ONLY",
         "index_allowed": true,
         "store_body": false,
         "approved": true,
         "state": "offline_synthetic_admitted",
-        "documents": 15,
+        "documents": 14,
         "categories": {
           "Arts & Culture": 1,
           "Music & Performance": 3,
-          "Other": 2,
+          "Other": 1,
           "Parades & Processions": 9
         },
         "categories_covered": 4,
-        "discovered_links": 17,
+        "discovered_links": 16,
         "deepest_depth": 3,
         "duplicates": 3,
         "enabled": true
       },
       {
         "source_id": "lord-mayors-show",
-        "origin": "http://127.0.0.1:51888",
+        "origin": "http://127.0.0.1:62841",
         "rights_status": "SYNTHETIC_FIXTURE_NOT_A_REAL_PUBLISHER",
         "owner_authorisation": "OFFLINE_SIMULATION_ONLY",
         "index_allowed": true,
@@ -840,19 +841,19 @@
             "already_in_historical_index": 0,
             "novel_documents": 13,
             "novel_sample": [
-              "http://127.0.0.1:51886/events",
-              "http://127.0.0.1:51886/events/diwali-city-hall",
-              "http://127.0.0.1:51886/events/diwali-city-hall/programme",
-              "http://127.0.0.1:51886/events/diwali-city-hall/programme/access",
-              "http://127.0.0.1:51886/events/london-parade-viewing",
-              "http://127.0.0.1:51886/events/london-parade-viewing/programme",
-              "http://127.0.0.1:51886/events/london-parade-viewing/programme/access",
-              "http://127.0.0.1:51886/events/lord-mayors-show-screening",
-              "http://127.0.0.1:51886/events/lord-mayors-show-screening/programme",
-              "http://127.0.0.1:51886/events/lord-mayors-show-screening/programme/access",
-              "http://127.0.0.1:51886/events/open-house",
-              "http://127.0.0.1:51886/events/open-house/programme",
-              "http://127.0.0.1:51886/events/open-house/programme/access"
+              "http://127.0.0.1:62839/events",
+              "http://127.0.0.1:62839/events/diwali-city-hall",
+              "http://127.0.0.1:62839/events/diwali-city-hall/programme",
+              "http://127.0.0.1:62839/events/diwali-city-hall/programme/access",
+              "http://127.0.0.1:62839/events/london-parade-viewing",
+              "http://127.0.0.1:62839/events/london-parade-viewing/programme",
+              "http://127.0.0.1:62839/events/london-parade-viewing/programme/access",
+              "http://127.0.0.1:62839/events/lord-mayors-show-screening",
+              "http://127.0.0.1:62839/events/lord-mayors-show-screening/programme",
+              "http://127.0.0.1:62839/events/lord-mayors-show-screening/programme/access",
+              "http://127.0.0.1:62839/events/open-house",
+              "http://127.0.0.1:62839/events/open-house/programme",
+              "http://127.0.0.1:62839/events/open-house/programme/access"
             ]
           },
           "simulation_source_id": "city-hall"
@@ -882,11 +883,11 @@
             "prefer an organiser-supplied structured public feed if one can be licensed",
             "record reviewer, permission evidence and takedown contact before changing flags"
           ],
-          "staged_documents": 15,
+          "staged_documents": 14,
           "categories": {
             "Arts & Culture": 1,
             "Music & Performance": 3,
-            "Other": 2,
+            "Other": 1,
             "Parades & Processions": 9
           },
           "categories_covered": 4,
@@ -900,25 +901,24 @@
             "expected_index_sha256": "bb8e52025a1a25f55141507a02621db190e54bf1fc4d4da8db4248357368c35d",
             "pin_match": true,
             "historical_index_pages": 120,
-            "staged_documents": 15,
+            "staged_documents": 14,
             "already_in_historical_index": 0,
-            "novel_documents": 15,
+            "novel_documents": 14,
             "novel_sample": [
-              "http://127.0.0.1:51887/",
-              "http://127.0.0.1:51887/about",
-              "http://127.0.0.1:51887/admin",
-              "http://127.0.0.1:51887/festivals/concerts",
-              "http://127.0.0.1:51887/londonparade-participants",
-              "http://127.0.0.1:51887/news-archive",
-              "http://127.0.0.1:51887/news/2021-parade-cancelled",
-              "http://127.0.0.1:51887/news/2027-bands",
-              "http://127.0.0.1:51887/news/2027-bands/lineup",
-              "http://127.0.0.1:51887/news/london-parade-2026-review",
-              "http://127.0.0.1:51887/news/london-parade-2027-celebrate-new-years-day-the-london-way",
-              "http://127.0.0.1:51887/news/route-2026",
-              "http://127.0.0.1:51887/parade-location-timing",
-              "http://127.0.0.1:51887/shop",
-              "http://127.0.0.1:51887/takepart"
+              "http://127.0.0.1:62840/",
+              "http://127.0.0.1:62840/about",
+              "http://127.0.0.1:62840/festivals/concerts",
+              "http://127.0.0.1:62840/londonparade-participants",
+              "http://127.0.0.1:62840/news-archive",
+              "http://127.0.0.1:62840/news/2021-parade-cancelled",
+              "http://127.0.0.1:62840/news/2027-bands",
+              "http://127.0.0.1:62840/news/2027-bands/lineup",
+              "http://127.0.0.1:62840/news/london-parade-2026-review",
+              "http://127.0.0.1:62840/news/london-parade-2027-celebrate-new-years-day-the-london-way",
+              "http://127.0.0.1:62840/news/route-2026",
+              "http://127.0.0.1:62840/parade-location-timing",
+              "http://127.0.0.1:62840/shop",
+              "http://127.0.0.1:62840/takepart"
             ]
           },
           "simulation_source_id": "london-parade"
@@ -969,19 +969,19 @@
             "already_in_historical_index": 0,
             "novel_documents": 13,
             "novel_sample": [
-              "http://127.0.0.1:51888/",
-              "http://127.0.0.1:51888/book",
-              "http://127.0.0.1:51888/closures",
-              "http://127.0.0.1:51888/history",
-              "http://127.0.0.1:51888/history/dates-and-routes",
-              "http://127.0.0.1:51888/history/obstacles",
-              "http://127.0.0.1:51888/history/ww1",
-              "http://127.0.0.1:51888/lord-mayors-procession",
-              "http://127.0.0.1:51888/practicalities/access",
-              "http://127.0.0.1:51888/practicalities/where-to-go",
-              "http://127.0.0.1:51888/programme",
-              "http://127.0.0.1:51888/programme/timetable",
-              "http://127.0.0.1:51888/terms-of-use"
+              "http://127.0.0.1:62841/",
+              "http://127.0.0.1:62841/book",
+              "http://127.0.0.1:62841/closures",
+              "http://127.0.0.1:62841/history",
+              "http://127.0.0.1:62841/history/dates-and-routes",
+              "http://127.0.0.1:62841/history/obstacles",
+              "http://127.0.0.1:62841/history/ww1",
+              "http://127.0.0.1:62841/lord-mayors-procession",
+              "http://127.0.0.1:62841/practicalities/access",
+              "http://127.0.0.1:62841/practicalities/where-to-go",
+              "http://127.0.0.1:62841/programme",
+              "http://127.0.0.1:62841/programme/timetable",
+              "http://127.0.0.1:62841/terms-of-use"
             ]
           },
           "simulation_source_id": "lord-mayors-show"
@@ -997,31 +997,31 @@
       },
       "today": {
         "day": "2026-11-11",
-        "http_attempts": 51,
-        "accepted_documents": 41,
-        "run_seconds": 1.5106511998455971,
-        "updated_at": "2026-11-11T10:43:16+00:00"
+        "http_attempts": 50,
+        "accepted_documents": 40,
+        "run_seconds": 1.388558099977672,
+        "updated_at": "2026-11-11T11:16:31+00:00"
       },
       "persisted_in_store": true,
       "note": "counters survive a restart; a fresh process cannot reset the day"
     },
     "url_admission": {
       "by_decision": {
-        "allowed:": 46
+        "allowed:": 45
       },
       "policy": "origin, exact path scope and indexing permission are checked before robots.txt or any content request is issued"
     },
     "index": {
-      "documents": 41,
+      "documents": 40,
       "revoked": 0,
       "by_depth": {
         "0": 3,
-        "1": 21,
+        "1": 20,
         "2": 12,
         "3": 5
       },
       "by_source": {
-        "london-parade": 15,
+        "london-parade": 14,
         "city-hall": 13,
         "lord-mayors-show": 13
       },
@@ -1043,9 +1043,9 @@
       "removed_or_denied": 0
     },
     "latency": {
-      "mean_ms": 9.1,
+      "mean_ms": 8.5,
       "p95_ms": 22,
-      "samples": 50
+      "samples": 49
     },
     "politeness": {
       "min_interval_s": 0.0,
@@ -1054,40 +1054,40 @@
     },
     "daily_target_model": {
       "target_new_pages_per_day": 1000,
-      "observed_acceptance_rate": 0.82,
-      "gross_fetches_needed_at_observed_yield": 1220,
+      "observed_acceptance_rate": 0.8163,
+      "gross_fetches_needed_at_observed_yield": 1225,
       "gross_fetch_ceiling": 5000,
       "status": "SIMULATION_ONLY_NOT_A_PRODUCTION_CLAIM"
     },
     "external_candidates": [
       {
         "origin": "https://londonparade.com",
-        "referrer_url": "http://127.0.0.1:51886/events/diwali-city-hall",
-        "first_seen": "2026-11-11T10:43:14+00:00",
+        "referrer_url": "http://127.0.0.1:62839/events/diwali-city-hall",
+        "first_seen": "2026-11-11T11:16:29+00:00",
         "sightings": 1
       },
       {
         "origin": "https://londonparade.com",
-        "referrer_url": "http://127.0.0.1:51886/events/london-parade-viewing",
-        "first_seen": "2026-11-11T10:43:15+00:00",
+        "referrer_url": "http://127.0.0.1:62839/events/london-parade-viewing",
+        "first_seen": "2026-11-11T11:16:29+00:00",
         "sightings": 1
       },
       {
         "origin": "https://londonparade.com",
-        "referrer_url": "http://127.0.0.1:51886/events/lord-mayors-show-screening",
-        "first_seen": "2026-11-11T10:43:15+00:00",
+        "referrer_url": "http://127.0.0.1:62839/events/lord-mayors-show-screening",
+        "first_seen": "2026-11-11T11:16:30+00:00",
         "sightings": 1
       },
       {
         "origin": "https://londonparade.com",
-        "referrer_url": "http://127.0.0.1:51886/events/open-house",
-        "first_seen": "2026-11-11T10:43:15+00:00",
+        "referrer_url": "http://127.0.0.1:62839/events/open-house",
+        "first_seen": "2026-11-11T11:16:30+00:00",
         "sightings": 1
       }
     ],
     "sitemap_candidates": [
       {
-        "url": "http://127.0.0.1:51886/sitemap.xml",
+        "url": "http://127.0.0.1:62839/sitemap.xml",
         "source_id": "city-hall",
         "policy": "candidate_only_requires_review"
       }
@@ -1102,373 +1102,364 @@
     },
     "documents": [
       {
-        "url": "http://127.0.0.1:51886/events",
+        "url": "http://127.0.0.1:62839/events",
         "title": "City Hall events listing",
         "category": "Festival",
         "depth": 0,
         "source_id": "city-hall",
         "confidence": 0.3027,
-        "indexed_at": "2026-11-11T10:43:14+00:00"
+        "indexed_at": "2026-11-11T11:16:29+00:00"
       },
       {
-        "url": "http://127.0.0.1:51887/",
+        "url": "http://127.0.0.1:62840/",
         "title": "London Parade",
         "category": "Parades & Processions",
         "depth": 0,
         "source_id": "london-parade",
         "confidence": 0.8022,
-        "indexed_at": "2026-11-11T10:43:14+00:00"
+        "indexed_at": "2026-11-11T11:16:29+00:00"
       },
       {
-        "url": "http://127.0.0.1:51886/events/diwali-city-hall",
+        "url": "http://127.0.0.1:62839/events/diwali-city-hall",
         "title": "Diwali at City Hall",
         "category": "Festival",
         "depth": 1,
         "source_id": "city-hall",
         "confidence": 0.8934,
-        "indexed_at": "2026-11-11T10:43:14+00:00"
+        "indexed_at": "2026-11-11T11:16:29+00:00"
       },
       {
-        "url": "http://127.0.0.1:51887/parade-location-timing",
+        "url": "http://127.0.0.1:62840/parade-location-timing",
         "title": "London Parade 2027 — when and where",
         "category": "Parades & Processions",
         "depth": 1,
         "source_id": "london-parade",
         "confidence": 0.8768,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:29+00:00"
       },
       {
-        "url": "http://127.0.0.1:51886/events/london-parade-viewing",
+        "url": "http://127.0.0.1:62839/events/london-parade-viewing",
         "title": "London Parade viewing at City Hall",
         "category": "Parades & Processions",
         "depth": 1,
         "source_id": "city-hall",
         "confidence": 0.9547,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:29+00:00"
       },
       {
-        "url": "http://127.0.0.1:51887/news/london-parade-2027-celebrate-new-years-day-the-london-way",
+        "url": "http://127.0.0.1:62840/news/london-parade-2027-celebrate-new-years-day-the-london-way",
         "title": "London Parade 2027 — celebrate New Year's Day the London way",
         "category": "Parades & Processions",
         "depth": 1,
         "source_id": "london-parade",
         "confidence": 0.9111,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:29+00:00"
       },
       {
-        "url": "http://127.0.0.1:51886/events/diwali-city-hall/programme",
+        "url": "http://127.0.0.1:62839/events/diwali-city-hall/programme",
         "title": "Diwali at City Hall programme and times",
         "category": "Festival",
         "depth": 2,
         "source_id": "city-hall",
         "confidence": 0.9111,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:29+00:00"
       },
       {
-        "url": "http://127.0.0.1:51887/news/london-parade-2026-review",
+        "url": "http://127.0.0.1:62840/news/london-parade-2026-review",
         "title": "London Parade 2026 review",
         "category": "Parades & Processions",
         "depth": 1,
         "source_id": "london-parade",
         "confidence": 0.8768,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:29+00:00"
       },
       {
-        "url": "http://127.0.0.1:51886/events/london-parade-viewing/programme",
+        "url": "http://127.0.0.1:62839/events/london-parade-viewing/programme",
         "title": "London Parade viewing at City Hall programme and times",
         "category": "Parades & Processions",
         "depth": 2,
         "source_id": "city-hall",
         "confidence": 0.9111,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:29+00:00"
       },
       {
-        "url": "http://127.0.0.1:51887/festivals/concerts",
+        "url": "http://127.0.0.1:62840/festivals/concerts",
         "title": "London Parade concert series",
         "category": "Music & Performance",
         "depth": 1,
         "source_id": "london-parade",
         "confidence": 0.7128,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51888/",
+        "url": "http://127.0.0.1:62841/",
         "title": "The Lord Mayor's Show",
         "category": "Parades & Processions",
         "depth": 0,
         "source_id": "lord-mayors-show",
         "confidence": 0.5187,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51886/events/lord-mayors-show-screening",
+        "url": "http://127.0.0.1:62839/events/lord-mayors-show-screening",
         "title": "Lord Mayor's Show screening",
         "category": "Arts & Culture",
         "depth": 1,
         "source_id": "city-hall",
         "confidence": 0.6706,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51888/lord-mayors-procession",
+        "url": "http://127.0.0.1:62841/lord-mayors-procession",
         "title": "The Lord Mayor's Procession",
         "category": "Parades & Processions",
         "depth": 1,
         "source_id": "lord-mayors-show",
         "confidence": 0.925,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51886/events/open-house",
+        "url": "http://127.0.0.1:62839/events/open-house",
         "title": "City Hall open house",
         "category": "Tour",
         "depth": 1,
         "source_id": "city-hall",
         "confidence": 0.9719,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51887/about",
+        "url": "http://127.0.0.1:62840/about",
         "title": "About London Parade",
         "category": "Parades & Processions",
         "depth": 1,
         "source_id": "london-parade",
         "confidence": 0.7629,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51888/history",
+        "url": "http://127.0.0.1:62841/history",
         "title": "History of the Lord Mayor's Show",
         "category": "Arts & Culture",
         "depth": 1,
         "source_id": "lord-mayors-show",
         "confidence": 0.7329,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51887/londonparade-participants",
+        "url": "http://127.0.0.1:62840/londonparade-participants",
         "title": "London Parade participants",
         "category": "Parades & Processions",
         "depth": 1,
         "source_id": "london-parade",
         "confidence": 0.8067,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51888/programme",
+        "url": "http://127.0.0.1:62841/programme",
         "title": "Lord Mayor's Show programme",
         "category": "Music & Performance",
         "depth": 1,
         "source_id": "lord-mayors-show",
         "confidence": 0.6107,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51887/news-archive",
+        "url": "http://127.0.0.1:62840/news-archive",
         "title": "London Parade news archive",
         "category": "Parades & Processions",
         "depth": 1,
         "source_id": "london-parade",
         "confidence": 0.8259,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51888/practicalities/where-to-go",
+        "url": "http://127.0.0.1:62841/practicalities/where-to-go",
         "title": "Where to watch the Show",
         "category": "Tour",
         "depth": 1,
         "source_id": "lord-mayors-show",
         "confidence": 0.6107,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51887/news/2021-parade-cancelled",
+        "url": "http://127.0.0.1:62840/news/2021-parade-cancelled",
         "title": "London Parade 2021 cancelled",
         "category": "Parades & Processions",
         "depth": 2,
         "source_id": "london-parade",
         "confidence": 0.8768,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51888/closures",
+        "url": "http://127.0.0.1:62841/closures",
         "title": "Road closures on Show day",
         "category": "Other",
         "depth": 1,
         "source_id": "lord-mayors-show",
         "confidence": 0.05,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51888/terms-of-use",
+        "url": "http://127.0.0.1:62841/terms-of-use",
         "title": "Terms of use",
         "category": "Other",
         "depth": 1,
         "source_id": "lord-mayors-show",
         "confidence": 0.05,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51887/shop",
+        "url": "http://127.0.0.1:62840/shop",
         "title": "Shop",
         "category": "Other",
         "depth": 1,
         "source_id": "london-parade",
         "confidence": 0.05,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51888/book",
+        "url": "http://127.0.0.1:62841/book",
         "title": "Book",
         "category": "Other",
         "depth": 1,
         "source_id": "lord-mayors-show",
         "confidence": 0.05,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51887/takepart",
+        "url": "http://127.0.0.1:62840/takepart",
         "title": "Take part",
         "category": "Arts & Culture",
         "depth": 1,
         "source_id": "london-parade",
         "confidence": 0.3057,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51886/events/diwali-city-hall/programme/access",
+        "url": "http://127.0.0.1:62839/events/diwali-city-hall/programme/access",
         "title": "Diwali at City Hall access and travel",
         "category": "Festival",
         "depth": 3,
         "source_id": "city-hall",
         "confidence": 0.8393,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51887/admin",
-        "title": "Admin",
-        "category": "Other",
-        "depth": 1,
-        "source_id": "london-parade",
-        "confidence": 0.05,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
-      },
-      {
-        "url": "http://127.0.0.1:51886/events/london-parade-viewing/programme/access",
-        "title": "London Parade viewing at City Hall access and travel",
-        "category": "Parades & Processions",
-        "depth": 3,
-        "source_id": "city-hall",
-        "confidence": 0.8393,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
-      },
-      {
-        "url": "http://127.0.0.1:51887/news/2027-bands",
+        "url": "http://127.0.0.1:62840/news/2027-bands",
         "title": "Three bands announced for London Parade 2027",
         "category": "Music & Performance",
         "depth": 2,
         "source_id": "london-parade",
         "confidence": 0.5487,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51886/events/lord-mayors-show-screening/programme",
-        "title": "Lord Mayor's Show screening programme and times",
+        "url": "http://127.0.0.1:62839/events/london-parade-viewing/programme/access",
+        "title": "London Parade viewing at City Hall access and travel",
         "category": "Parades & Processions",
-        "depth": 2,
+        "depth": 3,
         "source_id": "city-hall",
-        "confidence": 0.2458,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "confidence": 0.8393,
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51887/news/2027-bands/lineup",
+        "url": "http://127.0.0.1:62840/news/2027-bands/lineup",
         "title": "London Parade 2027 full lineup",
         "category": "Music & Performance",
         "depth": 3,
         "source_id": "london-parade",
         "confidence": 0.6448,
-        "indexed_at": "2026-11-11T10:43:15+00:00"
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51886/events/open-house/programme",
-        "title": "City Hall open house programme and times",
-        "category": "Tour",
+        "url": "http://127.0.0.1:62839/events/lord-mayors-show-screening/programme",
+        "title": "Lord Mayor's Show screening programme and times",
+        "category": "Parades & Processions",
         "depth": 2,
         "source_id": "city-hall",
-        "confidence": 0.8934,
-        "indexed_at": "2026-11-11T10:43:16+00:00"
+        "confidence": 0.2458,
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51888/history/obstacles",
+        "url": "http://127.0.0.1:62841/history/obstacles",
         "title": "Calamities and obstructions",
         "category": "Other",
         "depth": 2,
         "source_id": "lord-mayors-show",
         "confidence": 0.05,
-        "indexed_at": "2026-11-11T10:43:16+00:00"
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51887/news/route-2026",
-        "title": "London Parade 2026 route",
-        "category": "Parades & Processions",
+        "url": "http://127.0.0.1:62839/events/open-house/programme",
+        "title": "City Hall open house programme and times",
+        "category": "Tour",
         "depth": 2,
-        "source_id": "london-parade",
-        "confidence": 0.8259,
-        "indexed_at": "2026-11-11T10:43:16+00:00"
+        "source_id": "city-hall",
+        "confidence": 0.8934,
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51888/history/dates-and-routes",
+        "url": "http://127.0.0.1:62841/history/dates-and-routes",
         "title": "Dates and routes through history",
         "category": "Other",
         "depth": 2,
         "source_id": "lord-mayors-show",
         "confidence": 0.05,
-        "indexed_at": "2026-11-11T10:43:16+00:00"
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51888/history/ww1",
+        "url": "http://127.0.0.1:62840/news/route-2026",
+        "title": "London Parade 2026 route",
+        "category": "Parades & Processions",
+        "depth": 2,
+        "source_id": "london-parade",
+        "confidence": 0.8259,
+        "indexed_at": "2026-11-11T11:16:30+00:00"
+      },
+      {
+        "url": "http://127.0.0.1:62841/history/ww1",
         "title": "The wartime shows",
         "category": "Arts & Culture",
         "depth": 2,
         "source_id": "lord-mayors-show",
         "confidence": 0.7329,
-        "indexed_at": "2026-11-11T10:43:16+00:00"
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51886/events/lord-mayors-show-screening/programme/access",
-        "title": "Lord Mayor's Show screening access and travel",
-        "category": "Other",
-        "depth": 3,
-        "source_id": "city-hall",
-        "confidence": 0.05,
-        "indexed_at": "2026-11-11T10:43:16+00:00"
-      },
-      {
-        "url": "http://127.0.0.1:51888/programme/timetable",
+        "url": "http://127.0.0.1:62841/programme/timetable",
         "title": "Show day timetable",
         "category": "Parades & Processions",
         "depth": 2,
         "source_id": "lord-mayors-show",
         "confidence": 0.2458,
-        "indexed_at": "2026-11-11T10:43:16+00:00"
+        "indexed_at": "2026-11-11T11:16:30+00:00"
       },
       {
-        "url": "http://127.0.0.1:51886/events/open-house/programme/access",
+        "url": "http://127.0.0.1:62839/events/lord-mayors-show-screening/programme/access",
+        "title": "Lord Mayor's Show screening access and travel",
+        "category": "Other",
+        "depth": 3,
+        "source_id": "city-hall",
+        "confidence": 0.05,
+        "indexed_at": "2026-11-11T11:16:30+00:00"
+      },
+      {
+        "url": "http://127.0.0.1:62839/events/open-house/programme/access",
         "title": "City Hall open house access and travel",
         "category": "Tour",
         "depth": 3,
         "source_id": "city-hall",
         "confidence": 0.8393,
-        "indexed_at": "2026-11-11T10:43:16+00:00"
+        "indexed_at": "2026-11-11T11:16:31+00:00"
       },
       {
-        "url": "http://127.0.0.1:51888/practicalities/access",
+        "url": "http://127.0.0.1:62841/practicalities/access",
         "title": "Access at the Show",
         "category": "Other",
         "depth": 2,
         "source_id": "lord-mayors-show",
         "confidence": 0.05,
-        "indexed_at": "2026-11-11T10:43:16+00:00"
+        "indexed_at": "2026-11-11T11:16:31+00:00"
       }
     ]
   },

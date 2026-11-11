@@ -9,3 +9,9 @@
 __pycache__/
 .env
 data/r3a3f_offline/
+
+# Crawl run artefacts are reproducible from the JSON evidence, never committed.
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite-journal
+data/*/

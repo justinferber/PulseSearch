@@ -1,7 +1,7 @@
 {
   "kind": "R3A3F_OFFLINE_DEMO_EVIDENCE",
   "schema": "pulse-search-r3a3f-evidence/v1",
-  "generated_at": "2026-11-11T10:43:11+00:00",
+  "generated_at": "2026-11-11T11:16:27+00:00",
   "mode": "offline_loopback_simulator",
   "third_party_requests": 0,
   "network_pages": 110,
@@ -60,7 +60,7 @@
       "fetched": 93,
       "http_requests": 102,
       "stop_reason": "host_deferred",
-      "run_id": "de71aba327a7",
+      "run_id": "12900ce24de3",
       "deepest_fetched": 3
     },
     "restart": {
@@ -73,7 +73,7 @@
       "fetched": 1,
       "http_requests": 2,
       "stop_reason": "host_deferred",
-      "run_id": "148b54c8e78b",
+      "run_id": "54c919f12501",
       "deepest_fetched": 3
     },
     "recheck": {
@@ -89,7 +89,7 @@
       "fetched": 1,
       "http_requests": 2,
       "stop_reason": "host_deferred",
-      "run_id": "147e74c5a46d",
+      "run_id": "897f9ed706e4",
       "deepest_fetched": 3
     },
     "recrawl": {
@@ -103,7 +103,7 @@
       "fetched": 40,
       "http_requests": 44,
       "stop_reason": "host_deferred",
-      "run_id": "66664e325b20",
+      "run_id": "5d1d35a2e54e",
       "deepest_fetched": 3
     }
   },
@@ -111,7 +111,7 @@
     "requeued": 40
   },
   "restart": {
-    "interrupted_url": "http://127.0.0.1:54152/",
+    "interrupted_url": "http://127.0.0.1:62675/",
     "state_after_restart": "done",
     "queue_before": {
       "blocked": 5,
@@ -148,73 +148,73 @@
         "id": 6,
         "source_id": "berlin-events",
         "depth": 2,
-        "from_url": "http://127.0.0.1:54152/redirect/offsite",
-        "to_url": "http://127.0.0.1:54158/events",
+        "from_url": "http://127.0.0.1:62675/redirect/offsite",
+        "to_url": "http://127.0.0.1:62681/events",
         "hop": 1,
         "status": null,
         "decision": "blocked",
         "reason": "off_origin",
-        "at_utc": "2026-11-11T10:43:09+00:00"
+        "at_utc": "2026-11-11T11:16:25+00:00"
       },
       {
         "id": 5,
         "source_id": "berlin-events",
         "depth": 2,
-        "from_url": "http://127.0.0.1:54152/redirect/private",
-        "to_url": "http://127.0.0.1:54152/private/secret",
+        "from_url": "http://127.0.0.1:62675/redirect/private",
+        "to_url": "http://127.0.0.1:62675/private/secret",
         "hop": 1,
         "status": null,
         "decision": "blocked",
         "reason": "robots_denied",
-        "at_utc": "2026-11-11T10:43:09+00:00"
+        "at_utc": "2026-11-11T11:16:25+00:00"
       },
       {
         "id": 4,
         "source_id": "berlin-events",
         "depth": 2,
-        "from_url": "http://127.0.0.1:54152/redirect/final",
-        "to_url": "http://127.0.0.1:54152/events/workshop",
+        "from_url": "http://127.0.0.1:62675/redirect/final",
+        "to_url": "http://127.0.0.1:62675/events/workshop",
         "hop": 4,
         "status": 200,
         "decision": "followed",
         "reason": "",
-        "at_utc": "2026-11-11T10:43:09+00:00"
+        "at_utc": "2026-11-11T11:16:25+00:00"
       },
       {
         "id": 3,
         "source_id": "berlin-events",
         "depth": 2,
-        "from_url": "http://127.0.0.1:54152/redirect/deep",
-        "to_url": "http://127.0.0.1:54152/redirect/final",
+        "from_url": "http://127.0.0.1:62675/redirect/deep",
+        "to_url": "http://127.0.0.1:62675/redirect/final",
         "hop": 3,
         "status": 308,
         "decision": "followed",
         "reason": "",
-        "at_utc": "2026-11-11T10:43:09+00:00"
+        "at_utc": "2026-11-11T11:16:25+00:00"
       },
       {
         "id": 2,
         "source_id": "berlin-events",
         "depth": 2,
-        "from_url": "http://127.0.0.1:54152/redirect/step",
-        "to_url": "http://127.0.0.1:54152/redirect/deep",
+        "from_url": "http://127.0.0.1:62675/redirect/step",
+        "to_url": "http://127.0.0.1:62675/redirect/deep",
         "hop": 2,
         "status": 307,
         "decision": "followed",
         "reason": "",
-        "at_utc": "2026-11-11T10:43:09+00:00"
+        "at_utc": "2026-11-11T11:16:25+00:00"
       },
       {
         "id": 1,
         "source_id": "berlin-events",
         "depth": 2,
-        "from_url": "http://127.0.0.1:54152/redirect/start",
-        "to_url": "http://127.0.0.1:54152/redirect/step",
+        "from_url": "http://127.0.0.1:62675/redirect/start",
+        "to_url": "http://127.0.0.1:62675/redirect/step",
         "hop": 1,
         "status": 302,
         "decision": "followed",
         "reason": "",
-        "at_utc": "2026-11-11T10:43:09+00:00"
+        "at_utc": "2026-11-11T11:16:25+00:00"
       }
     ],
     "unadmitted_target_hits": []
@@ -230,26 +230,26 @@
     "already_in_historical_index": 0,
     "novel_documents": 69,
     "novel_sample": [
-      "http://127.0.0.1:54152/",
-      "http://127.0.0.1:54152/deep/0",
-      "http://127.0.0.1:54152/dup/a",
-      "http://127.0.0.1:54152/events/arts",
-      "http://127.0.0.1:54152/events/arts/details",
-      "http://127.0.0.1:54152/events/christmas",
-      "http://127.0.0.1:54152/events/conference",
-      "http://127.0.0.1:54152/events/conference/details",
-      "http://127.0.0.1:54152/events/csd-berlin",
-      "http://127.0.0.1:54152/events/csd-berlin/route",
-      "http://127.0.0.1:54152/events/diwali",
-      "http://127.0.0.1:54152/events/diwali/programme",
-      "http://127.0.0.1:54152/events/exhibition",
-      "http://127.0.0.1:54152/events/exhibition/details",
-      "http://127.0.0.1:54152/events/festival",
-      "http://127.0.0.1:54152/events/festival/details",
-      "http://127.0.0.1:54152/events/flower-show",
-      "http://127.0.0.1:54152/events/flower-show/details",
-      "http://127.0.0.1:54152/events/fundraiser",
-      "http://127.0.0.1:54152/events/fundraiser/details"
+      "http://127.0.0.1:62675/",
+      "http://127.0.0.1:62675/deep/0",
+      "http://127.0.0.1:62675/dup/a",
+      "http://127.0.0.1:62675/events/arts",
+      "http://127.0.0.1:62675/events/arts/details",
+      "http://127.0.0.1:62675/events/christmas",
+      "http://127.0.0.1:62675/events/conference",
+      "http://127.0.0.1:62675/events/conference/details",
+      "http://127.0.0.1:62675/events/csd-berlin",
+      "http://127.0.0.1:62675/events/csd-berlin/route",
+      "http://127.0.0.1:62675/events/diwali",
+      "http://127.0.0.1:62675/events/diwali/programme",
+      "http://127.0.0.1:62675/events/exhibition",
+      "http://127.0.0.1:62675/events/exhibition/details",
+      "http://127.0.0.1:62675/events/festival",
+      "http://127.0.0.1:62675/events/festival/details",
+      "http://127.0.0.1:62675/events/flower-show",
+      "http://127.0.0.1:62675/events/flower-show/details",
+      "http://127.0.0.1:62675/events/fundraiser",
+      "http://127.0.0.1:62675/events/fundraiser/details"
     ]
   },
   "recheck": {
@@ -258,13 +258,13 @@
     "seasonal_listing_indexed": true,
     "probe_provenance": [
       {
-        "url": "http://127.0.0.1:54152/events/christmas",
+        "url": "http://127.0.0.1:62675/events/christmas",
         "parent_url": null,
         "approval_ref": "source:berlin-events:probe_policy",
         "discovery_method": "guessed_path_probe"
       },
       {
-        "url": "http://127.0.0.1:54152/whats-on",
+        "url": "http://127.0.0.1:62675/whats-on",
         "parent_url": null,
         "approval_ref": "source:berlin-events:probe_policy",
         "discovery_method": "guessed_path_probe"
@@ -337,13 +337,13 @@
   "report": {
     "schema": "pulse-search-r3a3f-run-report/v1",
     "version": "r3a3f-0.1-offline",
-    "generated_at": "2026-11-11T10:43:11+00:00",
+    "generated_at": "2026-11-11T11:16:27+00:00",
     "run": {
-      "run_id": "148b54c8e78b",
-      "started_at": "2026-11-11T10:43:10+00:00",
-      "finished_at": "2026-11-11T10:43:10+00:00",
-      "config": "{\"user_agent\": \"PulseSearchFB2/0.1 (+https://github.com/justinferber/PulseSearch; research crawler; contact=owner)\", \"max_depth\": 3, \"max_fetches_per_day\": 5000, \"target_new_pages_per_day\": 1000, \"min_interval_s\": 0.0, \"max_inflight_per_host\": 1, \"timeout_s\": 10.0, \"max_bytes\": 2000000, \"max_redirects\": 5, \"max_links_per_page\": 200, \"min_text_chars\": 250, \"near_dup_threshold\": 0.9, \"category_min_confidence\": 0.18, \"recrawl_after_hours\": 24, \"allow_loopback\": true, \"loopback_hosts\": [\"127.0.0.1:54152\", \"127.0.0.1:54153\", \"127.0.0.1:54154\", \"127.0.0.1:54155\", \"127.0.0.1:54156\", \"127.0.0.1:54157\"], \"sitemap_policy\": \"candidate_only\", \"discovery_probes\": true, \"focus_month\": null, \"require_source_admission\": true, \"require_index_approval\": true, \"max_rechecks\": 2, \"recheck_after_hours\": 24.0, \"recheck_listing_hours\": 168.0, \"max_host_share\": 0.7, \"rights_default\": \"metadata_and_short_snippet\", \"pilot_http_attempts_per_day\": 5000, \"pilot_accepted_documents_per_day\": 5000, \"pilot_run_minutes_max\": 180.0}",
-      "counters": "{\"probe_policy_absent\": 5, \"discovery_probes_admitted\": 0, \"robots_requests\": 1, \"sitemap_candidates_recorded\": 1, \"uncertain_category\": 1, \"duplicate_exact\": 1, \"fetched\": 1, \"http_requests\": 2, \"stop_reason\": \"host_deferred\", \"run_id\": \"148b54c8e78b\", \"deepest_fetched\": 3}"
+      "run_id": "54c919f12501",
+      "started_at": "2026-11-11T11:16:26+00:00",
+      "finished_at": "2026-11-11T11:16:26+00:00",
+      "config": "{\"user_agent\": \"PulseSearchFB2/0.1 (+https://github.com/justinferber/PulseSearch; research crawler; contact=owner)\", \"max_depth\": 3, \"max_fetches_per_day\": 5000, \"target_new_pages_per_day\": 1000, \"min_interval_s\": 0.0, \"max_inflight_per_host\": 1, \"timeout_s\": 10.0, \"max_bytes\": 2000000, \"max_redirects\": 5, \"max_links_per_page\": 200, \"min_text_chars\": 250, \"near_dup_threshold\": 0.9, \"category_min_confidence\": 0.18, \"recrawl_after_hours\": 24, \"allow_loopback\": true, \"loopback_hosts\": [\"127.0.0.1:62675\", \"127.0.0.1:62676\", \"127.0.0.1:62677\", \"127.0.0.1:62678\", \"127.0.0.1:62679\", \"127.0.0.1:62680\"], \"sitemap_policy\": \"candidate_only\", \"discovery_probes\": true, \"focus_month\": null, \"require_source_admission\": true, \"require_index_approval\": true, \"max_rechecks\": 2, \"recheck_after_hours\": 24.0, \"recheck_listing_hours\": 168.0, \"max_host_share\": 0.7, \"rights_default\": \"metadata_and_short_snippet\", \"pilot_http_attempts_per_day\": 5000, \"pilot_accepted_documents_per_day\": 5000, \"pilot_run_minutes_max\": 180.0}",
+      "counters": "{\"probe_policy_absent\": 5, \"discovery_probes_admitted\": 0, \"robots_requests\": 1, \"sitemap_candidates_recorded\": 1, \"uncertain_category\": 1, \"duplicate_exact\": 1, \"fetched\": 1, \"http_requests\": 2, \"stop_reason\": \"host_deferred\", \"run_id\": \"54c919f12501\", \"deepest_fetched\": 3}"
     },
     "config": {
       "user_agent": "PulseSearchFB2/0.1 (+https://github.com/justinferber/PulseSearch; research crawler; contact=owner)",
@@ -362,12 +362,12 @@
       "recrawl_after_hours": 24,
       "allow_loopback": true,
       "loopback_hosts": [
-        "127.0.0.1:54152",
-        "127.0.0.1:54153",
-        "127.0.0.1:54154",
-        "127.0.0.1:54155",
-        "127.0.0.1:54156",
-        "127.0.0.1:54157"
+        "127.0.0.1:62675",
+        "127.0.0.1:62676",
+        "127.0.0.1:62677",
+        "127.0.0.1:62678",
+        "127.0.0.1:62679",
+        "127.0.0.1:62680"
       ],
       "sitemap_policy": "candidate_only",
       "discovery_probes": true,
@@ -622,70 +622,70 @@
       "rechecks_waiting": 4,
       "prioritised": [
         {
-          "url": "http://127.0.0.1:54152/events/karneval-umzug",
+          "url": "http://127.0.0.1:62675/events/karneval-umzug",
           "priority": 167,
           "min_depth": 2,
           "category_hint": "parades",
           "discovery_method": "link"
         },
         {
-          "url": "http://127.0.0.1:54152/events/christmas",
+          "url": "http://127.0.0.1:62675/events/christmas",
           "priority": 150,
           "min_depth": 1,
           "category_hint": "guessed_path_probe",
           "discovery_method": "guessed_path_probe"
         },
         {
-          "url": "http://127.0.0.1:54152/whats-on",
+          "url": "http://127.0.0.1:62675/whats-on",
           "priority": 150,
           "min_depth": 1,
           "category_hint": "guessed_path_probe",
           "discovery_method": "guessed_path_probe"
         },
         {
-          "url": "http://127.0.0.1:54152/events/diwali",
+          "url": "http://127.0.0.1:62675/events/diwali",
           "priority": 136,
           "min_depth": 2,
           "category_hint": "diwali",
           "discovery_method": "link"
         },
         {
-          "url": "http://127.0.0.1:54152/events/weihnachtsmarkt",
+          "url": "http://127.0.0.1:62675/events/weihnachtsmarkt",
           "priority": 124,
           "min_depth": 2,
           "category_hint": "christmas_markets",
           "discovery_method": "link"
         },
         {
-          "url": "http://127.0.0.1:54152/events/open-air-festival",
+          "url": "http://127.0.0.1:62675/events/open-air-festival",
           "priority": 118,
           "min_depth": 2,
           "category_hint": "music_festivals",
           "discovery_method": "link"
         },
         {
-          "url": "http://127.0.0.1:54152/events/stadtfest-berlin",
+          "url": "http://127.0.0.1:62675/events/stadtfest-berlin",
           "priority": 118,
           "min_depth": 2,
           "category_hint": "outdoor_festivals",
           "discovery_method": "link"
         },
         {
-          "url": "http://127.0.0.1:54152/events/parade",
+          "url": "http://127.0.0.1:62675/events/parade",
           "priority": 115,
           "min_depth": 1,
           "category_hint": "parades",
           "discovery_method": "link"
         },
         {
-          "url": "http://127.0.0.1:54152/events/pride-berlin",
+          "url": "http://127.0.0.1:62675/events/pride-berlin",
           "priority": 110,
           "min_depth": 2,
           "category_hint": "pride",
           "discovery_method": "link"
         },
         {
-          "url": "http://127.0.0.1:54152/events/pride",
+          "url": "http://127.0.0.1:62675/events/pride",
           "priority": 110,
           "min_depth": 1,
           "category_hint": "pride",
@@ -772,73 +772,73 @@
           "id": 6,
           "source_id": "berlin-events",
           "depth": 2,
-          "from_url": "http://127.0.0.1:54152/redirect/offsite",
-          "to_url": "http://127.0.0.1:54158/events",
+          "from_url": "http://127.0.0.1:62675/redirect/offsite",
+          "to_url": "http://127.0.0.1:62681/events",
           "hop": 1,
           "status": null,
           "decision": "blocked",
           "reason": "off_origin",
-          "at_utc": "2026-11-11T10:43:09+00:00"
+          "at_utc": "2026-11-11T11:16:25+00:00"
         },
         {
           "id": 5,
           "source_id": "berlin-events",
           "depth": 2,
-          "from_url": "http://127.0.0.1:54152/redirect/private",
-          "to_url": "http://127.0.0.1:54152/private/secret",
+          "from_url": "http://127.0.0.1:62675/redirect/private",
+          "to_url": "http://127.0.0.1:62675/private/secret",
           "hop": 1,
           "status": null,
           "decision": "blocked",
           "reason": "robots_denied",
-          "at_utc": "2026-11-11T10:43:09+00:00"
+          "at_utc": "2026-11-11T11:16:25+00:00"
         },
         {
           "id": 4,
           "source_id": "berlin-events",
           "depth": 2,
-          "from_url": "http://127.0.0.1:54152/redirect/final",
-          "to_url": "http://127.0.0.1:54152/events/workshop",
+          "from_url": "http://127.0.0.1:62675/redirect/final",
+          "to_url": "http://127.0.0.1:62675/events/workshop",
           "hop": 4,
           "status": 200,
           "decision": "followed",
           "reason": "",
-          "at_utc": "2026-11-11T10:43:09+00:00"
+          "at_utc": "2026-11-11T11:16:25+00:00"
         },
         {
           "id": 3,
           "source_id": "berlin-events",
           "depth": 2,
-          "from_url": "http://127.0.0.1:54152/redirect/deep",
-          "to_url": "http://127.0.0.1:54152/redirect/final",
+          "from_url": "http://127.0.0.1:62675/redirect/deep",
+          "to_url": "http://127.0.0.1:62675/redirect/final",
           "hop": 3,
           "status": 308,
           "decision": "followed",
           "reason": "",
-          "at_utc": "2026-11-11T10:43:09+00:00"
+          "at_utc": "2026-11-11T11:16:25+00:00"
         },
         {
           "id": 2,
           "source_id": "berlin-events",
           "depth": 2,
-          "from_url": "http://127.0.0.1:54152/redirect/step",
-          "to_url": "http://127.0.0.1:54152/redirect/deep",
+          "from_url": "http://127.0.0.1:62675/redirect/step",
+          "to_url": "http://127.0.0.1:62675/redirect/deep",
           "hop": 2,
           "status": 307,
           "decision": "followed",
           "reason": "",
-          "at_utc": "2026-11-11T10:43:09+00:00"
+          "at_utc": "2026-11-11T11:16:25+00:00"
         },
         {
           "id": 1,
           "source_id": "berlin-events",
           "depth": 2,
-          "from_url": "http://127.0.0.1:54152/redirect/start",
-          "to_url": "http://127.0.0.1:54152/redirect/step",
+          "from_url": "http://127.0.0.1:62675/redirect/start",
+          "to_url": "http://127.0.0.1:62675/redirect/step",
           "hop": 1,
           "status": 302,
           "decision": "followed",
           "reason": "",
-          "at_utc": "2026-11-11T10:43:09+00:00"
+          "at_utc": "2026-11-11T11:16:25+00:00"
         }
       ],
       "policy": "every redirect destination is re-checked for approved source, path scope, robots, request budget and host pacing before its request is issued"
@@ -854,32 +854,32 @@
       "already_in_historical_index": 0,
       "novel_documents": 69,
       "novel_sample": [
-        "http://127.0.0.1:54152/",
-        "http://127.0.0.1:54152/deep/0",
-        "http://127.0.0.1:54152/dup/a",
-        "http://127.0.0.1:54152/events/arts",
-        "http://127.0.0.1:54152/events/arts/details",
-        "http://127.0.0.1:54152/events/christmas",
-        "http://127.0.0.1:54152/events/conference",
-        "http://127.0.0.1:54152/events/conference/details",
-        "http://127.0.0.1:54152/events/csd-berlin",
-        "http://127.0.0.1:54152/events/csd-berlin/route",
-        "http://127.0.0.1:54152/events/diwali",
-        "http://127.0.0.1:54152/events/diwali/programme",
-        "http://127.0.0.1:54152/events/exhibition",
-        "http://127.0.0.1:54152/events/exhibition/details",
-        "http://127.0.0.1:54152/events/festival",
-        "http://127.0.0.1:54152/events/festival/details",
-        "http://127.0.0.1:54152/events/flower-show",
-        "http://127.0.0.1:54152/events/flower-show/details",
-        "http://127.0.0.1:54152/events/fundraiser",
-        "http://127.0.0.1:54152/events/fundraiser/details"
+        "http://127.0.0.1:62675/",
+        "http://127.0.0.1:62675/deep/0",
+        "http://127.0.0.1:62675/dup/a",
+        "http://127.0.0.1:62675/events/arts",
+        "http://127.0.0.1:62675/events/arts/details",
+        "http://127.0.0.1:62675/events/christmas",
+        "http://127.0.0.1:62675/events/conference",
+        "http://127.0.0.1:62675/events/conference/details",
+        "http://127.0.0.1:62675/events/csd-berlin",
+        "http://127.0.0.1:62675/events/csd-berlin/route",
+        "http://127.0.0.1:62675/events/diwali",
+        "http://127.0.0.1:62675/events/diwali/programme",
+        "http://127.0.0.1:62675/events/exhibition",
+        "http://127.0.0.1:62675/events/exhibition/details",
+        "http://127.0.0.1:62675/events/festival",
+        "http://127.0.0.1:62675/events/festival/details",
+        "http://127.0.0.1:62675/events/flower-show",
+        "http://127.0.0.1:62675/events/flower-show/details",
+        "http://127.0.0.1:62675/events/fundraiser",
+        "http://127.0.0.1:62675/events/fundraiser/details"
       ]
     },
     "sources": [
       {
         "source_id": "berlin-events",
-        "origin": "http://127.0.0.1:54152",
+        "origin": "http://127.0.0.1:62675",
         "rights_status": "SYNTHETIC_FIXTURE_NOT_A_REAL_PUBLISHER",
         "owner_authorisation": "",
         "index_allowed": true,
@@ -915,7 +915,7 @@
       },
       {
         "source_id": "community-hub",
-        "origin": "http://127.0.0.1:54154",
+        "origin": "http://127.0.0.1:62677",
         "rights_status": "SYNTHETIC_FIXTURE_NOT_A_REAL_PUBLISHER",
         "owner_authorisation": "",
         "index_allowed": true,
@@ -932,7 +932,7 @@
       },
       {
         "source_id": "london-venue",
-        "origin": "http://127.0.0.1:54153",
+        "origin": "http://127.0.0.1:62676",
         "rights_status": "SYNTHETIC_FIXTURE_NOT_A_REAL_PUBLISHER",
         "owner_authorisation": "",
         "index_allowed": true,
@@ -953,7 +953,7 @@
       },
       {
         "source_id": "noindex-site",
-        "origin": "http://127.0.0.1:54155",
+        "origin": "http://127.0.0.1:62678",
         "rights_status": "SYNTHETIC_FIXTURE_NOT_A_REAL_PUBLISHER",
         "owner_authorisation": "",
         "index_allowed": true,
@@ -970,7 +970,7 @@
       },
       {
         "source_id": "rate-limited",
-        "origin": "http://127.0.0.1:54157",
+        "origin": "http://127.0.0.1:62680",
         "rights_status": "SYNTHETIC_FIXTURE_NOT_A_REAL_PUBLISHER",
         "owner_authorisation": "",
         "index_allowed": true,
@@ -989,7 +989,7 @@
       },
       {
         "source_id": "robots-broken",
-        "origin": "http://127.0.0.1:54156",
+        "origin": "http://127.0.0.1:62679",
         "rights_status": "SYNTHETIC_FIXTURE_NOT_A_REAL_PUBLISHER",
         "owner_authorisation": "",
         "index_allowed": true,
@@ -1037,8 +1037,8 @@
         "day": "2026-11-11",
         "http_attempts": 150,
         "accepted_documents": 70,
-        "run_seconds": 3.766117200255394,
-        "updated_at": "2026-11-11T10:43:11+00:00"
+        "run_seconds": 3.6441025000531226,
+        "updated_at": "2026-11-11T11:16:27+00:00"
       },
       "persisted_in_store": true,
       "note": "counters survive a restart; a fresh process cannot reset the day"
@@ -1081,8 +1081,8 @@
       "removed_or_denied": 5
     },
     "latency": {
-      "mean_ms": 7.9,
-      "p95_ms": 25,
+      "mean_ms": 7.5,
+      "p95_ms": 22,
       "samples": 147
     },
     "politeness": {
@@ -1100,7 +1100,7 @@
     "external_candidates": [],
     "sitemap_candidates": [
       {
-        "url": "http://127.0.0.1:54152/sitemap.xml",
+        "url": "http://127.0.0.1:62675/sitemap.xml",
         "source_id": "berlin-events",
         "policy": "candidate_only_requires_review"
       }
@@ -1115,625 +1115,625 @@
     },
     "documents": [
       {
-        "url": "http://127.0.0.1:54153/events",
+        "url": "http://127.0.0.1:62676/events",
         "title": "London venue events",
         "category": "Lecture",
         "depth": 0,
         "source_id": "london-venue",
         "confidence": 0.2025,
-        "indexed_at": "2026-11-11T10:43:07+00:00"
+        "indexed_at": "2026-11-11T11:16:23+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/whats-on",
+        "url": "http://127.0.0.1:62675/whats-on",
         "title": "What's on in Berlin",
         "category": "Festival",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.5088,
-        "indexed_at": "2026-11-11T10:43:07+00:00"
+        "indexed_at": "2026-11-11T11:16:23+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/karneval-umzug",
+        "url": "http://127.0.0.1:62675/events/karneval-umzug",
         "title": "Karneval Umzug Berlin",
         "category": "Parades & Processions",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 1.0,
-        "indexed_at": "2026-11-11T10:43:07+00:00"
+        "indexed_at": "2026-11-11T11:16:23+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/diwali",
+        "url": "http://127.0.0.1:62675/events/diwali",
         "title": "Diwali celebration Berlin 2026",
         "category": "Festival",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 0.9199,
-        "indexed_at": "2026-11-11T10:43:07+00:00"
+        "indexed_at": "2026-11-11T11:16:23+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/weihnachtsmarkt",
+        "url": "http://127.0.0.1:62675/events/weihnachtsmarkt",
         "title": "Weihnachtsmarkt Berlin 2026",
         "category": "Market",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 0.9722,
-        "indexed_at": "2026-11-11T10:43:08+00:00"
+        "indexed_at": "2026-11-11T11:16:24+00:00"
       },
       {
-        "url": "http://127.0.0.1:54157/events/festival",
+        "url": "http://127.0.0.1:62680/events/festival",
         "title": "Rate limited festival",
         "category": "Festival",
         "depth": 0,
         "source_id": "rate-limited",
         "confidence": 0.8229,
-        "indexed_at": "2026-11-11T10:43:08+00:00"
+        "indexed_at": "2026-11-11T11:16:24+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/open-air-festival",
+        "url": "http://127.0.0.1:62675/events/open-air-festival",
         "title": "Open air music festival 2026",
         "category": "Music & Performance",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 0.6594,
-        "indexed_at": "2026-11-11T10:43:08+00:00"
+        "indexed_at": "2026-11-11T11:16:24+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/stadtfest-berlin",
+        "url": "http://127.0.0.1:62675/events/stadtfest-berlin",
         "title": "Stadtfest Berlin 2026",
         "category": "Festival",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 0.775,
-        "indexed_at": "2026-11-11T10:43:08+00:00"
+        "indexed_at": "2026-11-11T11:16:24+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/parade",
+        "url": "http://127.0.0.1:62675/events/parade",
         "title": "Parades & Processions in Berlin",
         "category": "Parades & Processions",
         "depth": 3,
         "source_id": "berlin-events",
         "confidence": 0.565,
-        "indexed_at": "2026-11-11T10:43:08+00:00"
+        "indexed_at": "2026-11-11T11:16:24+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/pride-berlin",
+        "url": "http://127.0.0.1:62675/events/pride-berlin",
         "title": "Pride Berlin community events",
         "category": "Pride & Community",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 0.8831,
-        "indexed_at": "2026-11-11T10:43:08+00:00"
+        "indexed_at": "2026-11-11T11:16:24+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/",
+        "url": "http://127.0.0.1:62675/",
         "title": "Berlin events guide",
         "category": "Other",
         "depth": 0,
         "source_id": "berlin-events",
         "confidence": 0.05,
-        "indexed_at": "2026-11-11T10:43:08+00:00"
+        "indexed_at": "2026-11-11T11:16:24+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/pride",
+        "url": "http://127.0.0.1:62675/events/pride",
         "title": "Pride in Berlin",
         "category": "Pride & Community",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.9722,
-        "indexed_at": "2026-11-11T10:43:08+00:00"
+        "indexed_at": "2026-11-11T11:16:24+00:00"
       },
       {
-        "url": "http://127.0.0.1:54153/events/exhibition",
+        "url": "http://127.0.0.1:62676/events/exhibition",
         "title": "Riverside exhibition",
         "category": "Exhibitions & Trade Shows",
         "depth": 1,
         "source_id": "london-venue",
         "confidence": 1.0,
-        "indexed_at": "2026-11-11T10:43:08+00:00"
+        "indexed_at": "2026-11-11T11:16:24+00:00"
       },
       {
-        "url": "http://127.0.0.1:54153/events/lecture",
+        "url": "http://127.0.0.1:62676/events/lecture",
         "title": "Riverside public lecture",
         "category": "Lecture",
         "depth": 1,
         "source_id": "london-venue",
         "confidence": 0.9722,
-        "indexed_at": "2026-11-11T10:43:08+00:00"
+        "indexed_at": "2026-11-11T11:16:24+00:00"
       },
       {
-        "url": "http://127.0.0.1:54153/events/tour",
+        "url": "http://127.0.0.1:62676/events/tour",
         "title": "Riverside guided tour",
         "category": "Tour",
         "depth": 1,
         "source_id": "london-venue",
         "confidence": 0.8824,
-        "indexed_at": "2026-11-11T10:43:08+00:00"
+        "indexed_at": "2026-11-11T11:16:24+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/festival",
+        "url": "http://127.0.0.1:62675/events/festival",
         "title": "Festival in Berlin",
         "category": "Festival",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.8229,
-        "indexed_at": "2026-11-11T10:43:08+00:00"
+        "indexed_at": "2026-11-11T11:16:24+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/market",
+        "url": "http://127.0.0.1:62675/events/market",
         "title": "Market in Berlin",
         "category": "Market",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.9722,
-        "indexed_at": "2026-11-11T10:43:08+00:00"
+        "indexed_at": "2026-11-11T11:16:24+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/music",
+        "url": "http://127.0.0.1:62675/events/music",
         "title": "Music & Performance in Berlin",
         "category": "Music & Performance",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.675,
-        "indexed_at": "2026-11-11T10:43:08+00:00"
+        "indexed_at": "2026-11-11T11:16:24+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/conference",
+        "url": "http://127.0.0.1:62675/events/conference",
         "title": "Conference in Berlin",
         "category": "Conference",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 1.0,
-        "indexed_at": "2026-11-11T10:43:08+00:00"
+        "indexed_at": "2026-11-11T11:16:24+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/fundraiser",
+        "url": "http://127.0.0.1:62675/events/fundraiser",
         "title": "Fundraiser in Berlin",
         "category": "Fundraiser",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.9111,
-        "indexed_at": "2026-11-11T10:43:08+00:00"
+        "indexed_at": "2026-11-11T11:16:24+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/lecture",
+        "url": "http://127.0.0.1:62675/events/lecture",
         "title": "Lecture in Berlin",
         "category": "Lecture",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.9427,
-        "indexed_at": "2026-11-11T10:43:08+00:00"
+        "indexed_at": "2026-11-11T11:16:24+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/meal",
+        "url": "http://127.0.0.1:62675/events/meal",
         "title": "Meal in Berlin",
         "category": "Meal",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.5187,
-        "indexed_at": "2026-11-11T10:43:08+00:00"
+        "indexed_at": "2026-11-11T11:16:24+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/social-mixer",
+        "url": "http://127.0.0.1:62675/events/social-mixer",
         "title": "Social Mixer in Berlin",
         "category": "Social Mixer",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.9427,
-        "indexed_at": "2026-11-11T10:43:08+00:00"
+        "indexed_at": "2026-11-11T11:16:24+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/tour",
+        "url": "http://127.0.0.1:62675/events/tour",
         "title": "Tour in Berlin",
         "category": "Tour",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.54,
-        "indexed_at": "2026-11-11T10:43:08+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/volunteering",
+        "url": "http://127.0.0.1:62675/events/volunteering",
         "title": "Volunteering in Berlin",
         "category": "Volunteering",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 1.0,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/workshop",
+        "url": "http://127.0.0.1:62675/events/workshop",
         "title": "Workshop in Berlin",
         "category": "Workshop",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.9427,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/other",
+        "url": "http://127.0.0.1:62675/events/other",
         "title": "Other in Berlin",
         "category": "Other",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.05,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/flower-show",
+        "url": "http://127.0.0.1:62675/events/flower-show",
         "title": "Horticulture & Flower Shows in Berlin",
         "category": "Horticulture & Flower Shows",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 1.0,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/sport",
+        "url": "http://127.0.0.1:62675/events/sport",
         "title": "Sport & Fitness in Berlin",
         "category": "Sport & Fitness",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.9909,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/exhibition",
+        "url": "http://127.0.0.1:62675/events/exhibition",
         "title": "Exhibitions & Trade Shows in Berlin",
         "category": "Exhibitions & Trade Shows",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.9547,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/arts",
+        "url": "http://127.0.0.1:62675/events/arts",
         "title": "Arts & Culture in Berlin",
         "category": "Arts & Culture",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 1.0,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/guides/1",
+        "url": "http://127.0.0.1:62675/guides/1",
         "title": "Berlin guide 1: Festival",
         "category": "Festival",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.7686,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/guides/2",
+        "url": "http://127.0.0.1:62675/guides/2",
         "title": "Berlin guide 2: Fundraiser",
         "category": "Fundraiser",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.8647,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/guides/3",
+        "url": "http://127.0.0.1:62675/guides/3",
         "title": "Berlin guide 3: Lecture",
         "category": "Lecture",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.9,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/guides/4",
+        "url": "http://127.0.0.1:62675/guides/4",
         "title": "Berlin guide 4: Market",
         "category": "Market",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.9,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/guides/5",
+        "url": "http://127.0.0.1:62675/guides/5",
         "title": "Berlin guide 5: Meal",
         "category": "Meal",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.5187,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/guides/6",
+        "url": "http://127.0.0.1:62675/guides/6",
         "title": "Berlin guide 6: Social Mixer",
         "category": "Social Mixer",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.9,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/guides/7",
+        "url": "http://127.0.0.1:62675/guides/7",
         "title": "Berlin guide 7: Tour",
         "category": "Tour",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.54,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/guides/8",
+        "url": "http://127.0.0.1:62675/guides/8",
         "title": "Berlin guide 8: Volunteering",
         "category": "Volunteering",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.9324,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/guides/9",
+        "url": "http://127.0.0.1:62675/guides/9",
         "title": "Berlin guide 9: Workshop",
         "category": "Workshop",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.9,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/guides/10",
+        "url": "http://127.0.0.1:62675/guides/10",
         "title": "Berlin guide 10: Other",
         "category": "Other",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.05,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/guides/11",
+        "url": "http://127.0.0.1:62675/guides/11",
         "title": "Berlin guide 11: Horticulture & Flower Shows",
         "category": "Horticulture & Flower Shows",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 1.0,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/guides/12",
+        "url": "http://127.0.0.1:62675/guides/12",
         "title": "Berlin guide 12: Music & Performance",
         "category": "Music & Performance",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.675,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/csd-berlin",
+        "url": "http://127.0.0.1:62675/events/csd-berlin",
         "title": "CSD Berlin pride 2026",
         "category": "Pride & Community",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 0.9942,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/pride/details",
+        "url": "http://127.0.0.1:62675/events/pride/details",
         "title": "Pride & Community Berlin details and programme",
         "category": "Pride & Community",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 0.9722,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/diwali/programme",
+        "url": "http://127.0.0.1:62675/events/diwali/programme",
         "title": "Diwali programme and timings",
         "category": "Festival",
         "depth": 3,
         "source_id": "berlin-events",
         "confidence": 0.8595,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/festival/details",
+        "url": "http://127.0.0.1:62675/events/festival/details",
         "title": "Festival Berlin details and programme",
         "category": "Festival",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 0.8229,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/venue/hall",
+        "url": "http://127.0.0.1:62675/venue/hall",
         "title": "Community hall venue",
         "category": "Meal",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 0.2458,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/dup/a",
+        "url": "http://127.0.0.1:62675/dup/a",
         "title": "Duplicate listing",
         "category": "Meal",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 0.2458,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/market/details",
+        "url": "http://127.0.0.1:62675/events/market/details",
         "title": "Market Berlin details and programme",
         "category": "Market",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 0.9427,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/music/details",
+        "url": "http://127.0.0.1:62675/events/music/details",
         "title": "Music & Performance Berlin details and programme",
         "category": "Music & Performance",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 0.675,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/deep/0",
+        "url": "http://127.0.0.1:62675/deep/0",
         "title": "Depth zero hub",
         "category": "Market",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 0.2025,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/conference/details",
+        "url": "http://127.0.0.1:62675/events/conference/details",
         "title": "Conference Berlin details and programme",
         "category": "Conference",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 1.0,
-        "indexed_at": "2026-11-11T10:43:09+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/fundraiser/details",
+        "url": "http://127.0.0.1:62675/events/fundraiser/details",
         "title": "Fundraiser Berlin details and programme",
         "category": "Fundraiser",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 0.9111,
-        "indexed_at": "2026-11-11T10:43:10+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/lecture/details",
+        "url": "http://127.0.0.1:62675/events/lecture/details",
         "title": "Lecture Berlin details and programme",
         "category": "Lecture",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 0.9427,
-        "indexed_at": "2026-11-11T10:43:10+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/meal/details",
+        "url": "http://127.0.0.1:62675/events/meal/details",
         "title": "Meal Berlin details and programme",
         "category": "Meal",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 0.5187,
-        "indexed_at": "2026-11-11T10:43:10+00:00"
+        "indexed_at": "2026-11-11T11:16:25+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/social-mixer/details",
+        "url": "http://127.0.0.1:62675/events/social-mixer/details",
         "title": "Social Mixer Berlin details and programme",
         "category": "Social Mixer",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 0.9427,
-        "indexed_at": "2026-11-11T10:43:10+00:00"
+        "indexed_at": "2026-11-11T11:16:26+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/tour/details",
+        "url": "http://127.0.0.1:62675/events/tour/details",
         "title": "Tour Berlin details and programme",
         "category": "Tour",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 0.54,
-        "indexed_at": "2026-11-11T10:43:10+00:00"
+        "indexed_at": "2026-11-11T11:16:26+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/volunteering/details",
+        "url": "http://127.0.0.1:62675/events/volunteering/details",
         "title": "Volunteering Berlin details and programme",
         "category": "Volunteering",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 1.0,
-        "indexed_at": "2026-11-11T10:43:10+00:00"
+        "indexed_at": "2026-11-11T11:16:26+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/workshop/details",
+        "url": "http://127.0.0.1:62675/events/workshop/details",
         "title": "Workshop Berlin details and programme",
         "category": "Workshop",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 0.9427,
-        "indexed_at": "2026-11-11T10:43:10+00:00"
+        "indexed_at": "2026-11-11T11:16:26+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/other/details",
+        "url": "http://127.0.0.1:62675/events/other/details",
         "title": "Other Berlin details and programme",
         "category": "Other",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 0.05,
-        "indexed_at": "2026-11-11T10:43:10+00:00"
+        "indexed_at": "2026-11-11T11:16:26+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/flower-show/details",
+        "url": "http://127.0.0.1:62675/events/flower-show/details",
         "title": "Horticulture & Flower Shows Berlin details and programme",
         "category": "Horticulture & Flower Shows",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 1.0,
-        "indexed_at": "2026-11-11T10:43:10+00:00"
+        "indexed_at": "2026-11-11T11:16:26+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/sport/details",
+        "url": "http://127.0.0.1:62675/events/sport/details",
         "title": "Sport & Fitness Berlin details and programme",
         "category": "Sport & Fitness",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 0.9909,
-        "indexed_at": "2026-11-11T10:43:10+00:00"
+        "indexed_at": "2026-11-11T11:16:26+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/exhibition/details",
+        "url": "http://127.0.0.1:62675/events/exhibition/details",
         "title": "Exhibitions & Trade Shows Berlin details and programme",
         "category": "Exhibitions & Trade Shows",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 0.9547,
-        "indexed_at": "2026-11-11T10:43:10+00:00"
+        "indexed_at": "2026-11-11T11:16:26+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/arts/details",
+        "url": "http://127.0.0.1:62675/events/arts/details",
         "title": "Arts & Culture Berlin details and programme",
         "category": "Arts & Culture",
         "depth": 2,
         "source_id": "berlin-events",
         "confidence": 1.0,
-        "indexed_at": "2026-11-11T10:43:10+00:00"
+        "indexed_at": "2026-11-11T11:16:26+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/csd-berlin/route",
+        "url": "http://127.0.0.1:62675/events/csd-berlin/route",
         "title": "CSD Berlin route and accessibility",
         "category": "Pride & Community",
         "depth": 3,
         "source_id": "berlin-events",
         "confidence": 0.8934,
-        "indexed_at": "2026-11-11T10:43:10+00:00"
+        "indexed_at": "2026-11-11T11:16:26+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/stadtfest-berlin/stage",
+        "url": "http://127.0.0.1:62675/events/stadtfest-berlin/stage",
         "title": "Stadtfest Berlin stage programme",
         "category": "Festival",
         "depth": 3,
         "source_id": "berlin-events",
         "confidence": 0.775,
-        "indexed_at": "2026-11-11T10:43:10+00:00"
+        "indexed_at": "2026-11-11T11:16:26+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/venue/hall/rooms",
+        "url": "http://127.0.0.1:62675/venue/hall/rooms",
         "title": "Community hall rooms",
         "category": "Meal",
         "depth": 3,
         "source_id": "berlin-events",
         "confidence": 0.2025,
-        "indexed_at": "2026-11-11T10:43:10+00:00"
+        "indexed_at": "2026-11-11T11:16:26+00:00"
       },
       {
-        "url": "http://127.0.0.1:54152/events/christmas",
+        "url": "http://127.0.0.1:62675/events/christmas",
         "title": "Christmas markets in Berlin 2026",
         "category": "Market",
         "depth": 1,
         "source_id": "berlin-events",
         "confidence": 0.8477,
-        "indexed_at": "2026-11-11T10:43:10+00:00"
+        "indexed_at": "2026-11-11T11:16:26+00:00"
       }
     ]
   },

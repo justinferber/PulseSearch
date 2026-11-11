@@ -111,9 +111,24 @@ def is_loopback_host(hostport: str) -> bool:
     return host in {"localhost", "127.0.0.1", "::1"} or host.startswith("127.")
 
 
+ADMIN_PATH_RE = re.compile(
+    r"(?:^|/)(?:admin|administrator|adminpanel|wp-admin|wp-login\.php|phpmyadmin|"
+    r"cpanel|backend|login|logout|signin|sign-in|signup|sign-up|register|"
+    r"account/login|account/register|user/login|user/register)(?:/|$)",
+    re.IGNORECASE,
+)
+
+
+def is_administrative_path(url: str) -> bool:
+    """Administrative, authentication and account routes are never searchable."""
+    return bool(ADMIN_PATH_RE.search(_split(url).path or "/"))
+
+
 def is_indexable_shape(url: str) -> tuple[bool, str]:
     """Reject shapes that are common crawl traps or non-pages."""
     parts = _split(url)
+    if is_administrative_path(url):
+        return False, "administrative_path"
     path = parts.path.lower()
     if len(url) > 2000:
         return False, "url_too_long"

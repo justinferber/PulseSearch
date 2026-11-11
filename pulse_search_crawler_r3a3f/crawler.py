@@ -589,22 +589,59 @@ class Crawler:
         return None
 
     def _log_redirects(self, row, source, result, depth: int) -> None:
-        for hop in getattr(result, "hops", []):
+        self._log_redirect_hops(source["source_id"], depth, getattr(result, "hops", []))
+
+    def _log_redirect_hops(self, source_id: str, depth: int, hops) -> None:
+        for hop in hops or []:
             if not hop.get("redirect_from"):
                 continue
             self.store.log_redirect(
-                source_id=source["source_id"], depth=depth,
+                source_id=source_id, depth=depth,
                 from_url=hop["redirect_from"], to_url=hop["url"],
                 hop=int(hop["hop"]), status=hop.get("status"),
                 decision=hop.get("decision", "followed"), reason=hop.get("reason", ""),
             )
+
+    def _robots_redirect_gate(self, target: str) -> str | None:
+        """Authorise a robots.txt redirect before its request is issued.
+
+        robots.txt is fetched early, before the per-URL redirect gate has an
+        active row, so it needs its own gate. A redirect here is still a new
+        URL: it must stay on the admitted origin, wait its pacing slot and
+        count against the run's request ceiling. The daily attempt ledger is
+        enforced by the fetcher's attempt gate for the same request. Without
+        this, robots.txt would be a route to an unapproved host that bypasses
+        source admission.
+        """
+        source = self._active_source
+        if source is None or not source["approved"] or not source["enabled"]:
+            return "unapproved_source"
+        try:
+            canonical = canonicalize(target)
+        except (UrlError, ValueError):
+            return "bad_url"
+        if origin_of(canonical) != source["origin"]:
+            return "off_origin"
+        if self.fetcher.requests >= self._request_ceiling:
+            return "request_budget_exhausted"
+        host = host_port(canonical)
+        self.pacer.wait(host, self.config.min_interval_s)
+        self.pacer.record(host, self.config.min_interval_s)
+        self.counters["robots_redirect_hops"] += 1
+        return None
 
     def _robots_for(self, host: str, origin: str):
         """Fetch robots through the same host schedule as content."""
         def loader(origin_url: str):
             robots_url = origin_url.rstrip("/") + "/robots.txt"
             self.pacer.wait(host, self.config.min_interval_s)
-            result = self.fetcher.fetch(robots_url, max_bytes=MAX_ROBOTS_BYTES)
+            # Record the request that is about to be issued *before* it is
+            # sent. Otherwise a redirect hop inside this fetch would see no
+            # previous request and could be issued with no pacing gap.
+            self.pacer.record(host, self.config.min_interval_s)
+            result = self.fetcher.fetch(robots_url, max_bytes=MAX_ROBOTS_BYTES,
+                                        redirect_gate=self._robots_redirect_gate)
+            self._log_redirect_hops(self._active_source["source_id"], 0, result.hops)
             if result.error:
                 rules = RobotsRules(deny_all=True, source=f"error:{result.error}")
             else:

@@ -14,6 +14,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from . import quality
+from .urls import is_administrative_path
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS docs(
@@ -126,6 +127,13 @@ class StagingIndex:
                                   int(record.get("depth", 0)), "rights_denied_index",
                                   "index_allowed=False")
             return False, "rights_denied_index"
+        # Defence in depth: even if an administrative URL reached staging, it
+        # must never become searchable.
+        if is_administrative_path(record.get("url", "")):
+            self.record_rejection(record.get("url", ""), record.get("source_id", ""),
+                                  int(record.get("depth", 0)), "administrative_path",
+                                  "admin or authentication route")
+            return False, "administrative_path"
         existing = self.conn.execute(
             "SELECT doc_id FROM docs WHERE url=?", (record["url"],)
         ).fetchone()

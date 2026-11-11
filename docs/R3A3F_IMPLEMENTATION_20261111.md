@@ -157,3 +157,23 @@ Evidence: **118 tests**, six-origin demo **28/28**, three-source demo **30/30** 
 off-origin redirect refused, no `/whats-on`, `/shop/`, `/takepart/`, `/terms-of-use/` or `/book/`
 request, 2027 and 2026 editions separate, duplicate syndication rejected, novelty pin matched, owner
 index byte-identical), archived matrix **25/25 modules, 419 tests**.
+
+## Closeout corrections (final review, 11 November 2026)
+
+1. **robots.txt redirects are now gated.** The robots fetch passes `_robots_redirect_gate`: the
+   destination must be on the admitted source's origin, the host pacing slot is waited for and
+   recorded *before* the hop, and the run ceiling plus the persisted daily attempt ledger apply.
+   The robots request itself is recorded before it is sent, so the first hop cannot be issued with
+   no pacing gap. Every hop lands in `redirect_log`; a refusal fails closed and no content request
+   follows.
+2. **Run artefacts are no longer tracked.** The committed WAL/SHM files were removed with
+   `git rm --cached`; `.gitignore` now covers `*.sqlite-wal`, `*.sqlite-shm`, `*.sqlite-journal`
+   and `data/*/`. Reproducible evidence remains in `docs/evidence/*.json`.
+3. **Administrative routes are excluded from search.** `urls.is_administrative_path` refuses admin,
+   authentication, account and registration paths at admission, and `StagingIndex.add_document`
+   refuses them again, so they can never become searchable even if inserted directly.
+
+Closeout evidence: **123 tests**, six-origin demo 28/28, three-source demo 30/30 (40 documents,
+13/14/13 per source), archived matrix 25/25 modules and 419 tests, pinned index and frozen replay
+unchanged. See `docs/R3A3F_PILOT_READINESS_20261111.md` for the per-source readiness report and the
+London Parade permission checklist.

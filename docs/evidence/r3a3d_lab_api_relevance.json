@@ -1,0 +1,1365 @@
+{
+  "kind": "LAB_API_SMOKE_AND_QUERY_PATH_PROBE_NOT_FROZEN_REPLAY",
+  "warning": "Accepted owner index and BGE weights absent; these counts carry no retrieval-quality meaning.",
+  "environment": {
+    "python": "3.12.15",
+    "platform": "linux",
+    "engine_version": "0.6.0-r2p4-growth"
+  },
+  "engine_source_sha256": "3b8af8e571d1c0ff037799d8f3b4d8d2e56eea7a878a28f596e34210d7bdd3a3",
+  "lab_index": {
+    "sha256": "4b1c3e748df8a3ff1e725e34d884185840d66b754dbdb6524e452ddca2c64e17",
+    "indexed_pages": 8,
+    "crawl_outcomes": {
+      "indexed": 8
+    },
+    "crawl_ms": 254.12,
+    "fetch_requests": 9,
+    "network_scope": "127.0.0.1 loopback fixture only"
+  },
+  "accepted_owner_index_present": true,
+  "accepted_owner_index_sha256": "bb8e52025a1a25f55141507a02621db190e54bf1fc4d4da8db4248357368c35d",
+  "accepted_owner_index_expected_sha256": "bb8e52025a1a25f55141507a02621db190e54bf1fc4d4da8db4248357368c35d",
+  "bge_weights_present": true,
+  "api_checks": [
+    {
+      "check": "unauth_search",
+      "status": 401,
+      "expected": 401,
+      "pass": true,
+      "latency_ms": 4.48,
+      "count": null,
+      "titles": [],
+      "urls": [],
+      "indexed_pages": null
+    },
+    {
+      "check": "wrong_token",
+      "status": 401,
+      "expected": 401,
+      "pass": true,
+      "latency_ms": 1.35,
+      "count": null,
+      "titles": [],
+      "urls": [],
+      "indexed_pages": null
+    },
+    {
+      "check": "health",
+      "status": 200,
+      "expected": 200,
+      "pass": true,
+      "latency_ms": 14.66,
+      "count": null,
+      "titles": [],
+      "urls": [],
+      "indexed_pages": null
+    },
+    {
+      "check": "stats",
+      "status": 200,
+      "expected": 200,
+      "pass": true,
+      "latency_ms": 42.83,
+      "count": null,
+      "titles": [],
+      "urls": [],
+      "indexed_pages": 8
+    },
+    {
+      "check": "search_doctor",
+      "status": 200,
+      "expected": 200,
+      "pass": true,
+      "latency_ms": 56.2,
+      "count": 0,
+      "titles": [],
+      "urls": [],
+      "indexed_pages": null
+    },
+    {
+      "check": "search_javascript",
+      "status": 200,
+      "expected": 200,
+      "pass": true,
+      "latency_ms": 48.5,
+      "count": 8,
+      "titles": [
+        "What is JavaScript",
+        "Laboratory blood tests",
+        "Join a public library"
+      ],
+      "urls": [
+        "http://127.0.0.1:33009/javascript",
+        "http://127.0.0.1:33009/blood-tests",
+        "http://127.0.0.1:33009/library-membership",
+        "http://127.0.0.1:33009/http-protocol",
+        "http://127.0.0.1:33009/events/armed-forces-day-2027",
+        "http://127.0.0.1:33009/",
+        "http://127.0.0.1:33009/gp-registration",
+        "http://127.0.0.1:33009/driving-licence"
+      ],
+      "indexed_pages": null
+    },
+    {
+      "check": "search_vote",
+      "status": 200,
+      "expected": 200,
+      "pass": true,
+      "latency_ms": 48.85,
+      "count": 8,
+      "titles": [
+        "Register with a GP surgery",
+        "Hypertext Transfer Protocol",
+        "Laboratory blood tests"
+      ],
+      "urls": [
+        "http://127.0.0.1:33009/gp-registration",
+        "http://127.0.0.1:33009/http-protocol",
+        "http://127.0.0.1:33009/blood-tests",
+        "http://127.0.0.1:33009/library-membership",
+        "http://127.0.0.1:33009/javascript",
+        "http://127.0.0.1:33009/events/armed-forces-day-2027",
+        "http://127.0.0.1:33009/",
+        "http://127.0.0.1:33009/driving-licence"
+      ],
+      "indexed_pages": null
+    },
+    {
+      "check": "search_blood",
+      "status": 200,
+      "expected": 200,
+      "pass": true,
+      "latency_ms": 43.29,
+      "count": 8,
+      "titles": [
+        "Laboratory blood tests",
+        "Join a public library",
+        "Hypertext Transfer Protocol"
+      ],
+      "urls": [
+        "http://127.0.0.1:33009/blood-tests",
+        "http://127.0.0.1:33009/library-membership",
+        "http://127.0.0.1:33009/http-protocol",
+        "http://127.0.0.1:33009/javascript",
+        "http://127.0.0.1:33009/events/armed-forces-day-2027",
+        "http://127.0.0.1:33009/",
+        "http://127.0.0.1:33009/gp-registration",
+        "http://127.0.0.1:33009/driving-licence"
+      ],
+      "indexed_pages": null
+    },
+    {
+      "check": "search_licence",
+      "status": 200,
+      "expected": 200,
+      "pass": true,
+      "latency_ms": 53.71,
+      "count": 8,
+      "titles": [
+        "Apply for a first provisional driving licence",
+        "Laboratory blood tests",
+        "Join a public library"
+      ],
+      "urls": [
+        "http://127.0.0.1:33009/driving-licence",
+        "http://127.0.0.1:33009/blood-tests",
+        "http://127.0.0.1:33009/library-membership",
+        "http://127.0.0.1:33009/http-protocol",
+        "http://127.0.0.1:33009/javascript",
+        "http://127.0.0.1:33009/events/armed-forces-day-2027",
+        "http://127.0.0.1:33009/",
+        "http://127.0.0.1:33009/gp-registration"
+      ],
+      "indexed_pages": null
+    },
+    {
+      "check": "limit_out_of_range",
+      "status": 400,
+      "expected": 400,
+      "pass": true,
+      "latency_ms": 14.51,
+      "count": null,
+      "titles": [],
+      "urls": [],
+      "indexed_pages": null
+    },
+    {
+      "check": "unknown_route",
+      "status": 404,
+      "expected": 404,
+      "pass": true,
+      "latency_ms": 13.44,
+      "count": null,
+      "titles": [],
+      "urls": [],
+      "indexed_pages": null
+    }
+  ],
+  "api_checks_passed": "11/11",
+  "relevance_assertions": [
+    {
+      "check": "search_doctor",
+      "intent": "new patient asks to see a doctor",
+      "expected_path_suffix": "/gp-registration",
+      "top1_url": "",
+      "expected_rank": null,
+      "result_count": 0,
+      "assertion": "EXPECTED_ABSENT",
+      "pass": false
+    },
+    {
+      "check": "search_javascript",
+      "intent": "what JavaScript programming is",
+      "expected_path_suffix": "/javascript",
+      "top1_url": "http://127.0.0.1:33009/javascript",
+      "expected_rank": 1,
+      "result_count": 8,
+      "assertion": "TOP1_IS_EXPECTED",
+      "pass": true
+    },
+    {
+      "check": "search_vote",
+      "intent": "register to vote",
+      "expected_path_suffix": "/register-to-vote",
+      "top1_url": "http://127.0.0.1:33009/gp-registration",
+      "expected_rank": null,
+      "result_count": 8,
+      "assertion": "EXPECTED_ABSENT",
+      "pass": false
+    },
+    {
+      "check": "search_blood",
+      "intent": "arrange blood screening",
+      "expected_path_suffix": "/blood-tests",
+      "top1_url": "http://127.0.0.1:33009/blood-tests",
+      "expected_rank": 1,
+      "result_count": 8,
+      "assertion": "TOP1_IS_EXPECTED",
+      "pass": true
+    },
+    {
+      "check": "search_licence",
+      "intent": "learner motorist provisional licence",
+      "expected_path_suffix": "/driving-licence",
+      "top1_url": "http://127.0.0.1:33009/driving-licence",
+      "expected_rank": 1,
+      "result_count": 8,
+      "assertion": "TOP1_IS_EXPECTED",
+      "pass": true
+    }
+  ],
+  "relevance_assertions_passed": "3/5",
+  "hybrid": {
+    "available": true,
+    "capabilities": {
+      "lexical": "BM25F-inspired term scoring, title/path boosted",
+      "similarity": "offline corpus-derived co-occurrence vectors + subword cosine (NOT pretrained contextual embeddings)",
+      "dense_model": "DISABLED_UNLESS_LOCAL_PINNED_BACKEND_PROVIDED",
+      "factual_answers": "NONE_VERIFIED_METADATA_ONLY",
+      "calibration": "HEURISTIC_ABSTENTION_NOT_STATISTICALLY_CALIBRATED"
+    },
+    "indexed_rows": 8
+  },
+  "probe_summary": {
+    "A_engine_fts": {
+      "queries": 54,
+      "with_results": 48,
+      "explicit_zero_or_unrun": 6,
+      "errors": 0,
+      "latency_ms_p50": 1.13,
+      "latency_ms_p95": 1.94
+    },
+    "H_hybrid_lexical": {
+      "queries": 54,
+      "with_results": 8,
+      "explicit_zero_or_unrun": 46,
+      "errors": 0,
+      "latency_ms_p50": 0.2,
+      "latency_ms_p95": 0.48
+    }
+  },
+  "frozen_queries_probed": 54,
+  "probe_rows": [
+    {
+      "probe_id": "new_patient_doctor",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 22.18,
+      "top_titles": "Register with a GP surgery | Join a public library | Apply for a first provisional driving licence | Hypertext Transfer Protocol | Laboratory blood tests | What is JavaScript | Armed Forces Day 2027 | Pulse Search lab index home",
+      "top_urls": "http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/driving-licence | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/",
+      "error": ""
+    },
+    {
+      "probe_id": "new_patient_doctor",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 1.43,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "learner_motorist",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 1.55,
+      "top_titles": "Apply for a first provisional driving licence | What is JavaScript | Armed Forces Day 2027 | Join a public library | Register with a GP surgery | Pulse Search lab index home | Laboratory blood tests | Hypertext Transfer Protocol",
+      "top_urls": "http://127.0.0.1:33009/driving-licence | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/ | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/http-protocol",
+      "error": ""
+    },
+    {
+      "probe_id": "learner_motorist",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.39,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "registration",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 1.13,
+      "top_titles": "Register with a GP surgery | Hypertext Transfer Protocol | Laboratory blood tests | Join a public library | What is JavaScript | Armed Forces Day 2027 | Pulse Search lab index home | Apply for a first provisional driving licence",
+      "top_urls": "http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/ | http://127.0.0.1:33009/driving-licence",
+      "error": ""
+    },
+    {
+      "probe_id": "registration",
+      "mode": "H_hybrid_lexical",
+      "status": "RESULTS",
+      "count": 1,
+      "latency_ms": 0.34,
+      "top_titles": "Register with a GP surgery",
+      "top_urls": "http://127.0.0.1:33009/gp-registration",
+      "error": ""
+    },
+    {
+      "probe_id": "blood_screening",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 1.44,
+      "top_titles": "Laboratory blood tests | Pulse Search lab index home | Join a public library | Hypertext Transfer Protocol | What is JavaScript | Armed Forces Day 2027 | Register with a GP surgery | Apply for a first provisional driving licence",
+      "top_urls": "http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/ | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/driving-licence",
+      "error": ""
+    },
+    {
+      "probe_id": "blood_screening",
+      "mode": "H_hybrid_lexical",
+      "status": "RESULTS",
+      "count": 1,
+      "latency_ms": 0.38,
+      "top_titles": "Laboratory blood tests",
+      "top_urls": "http://127.0.0.1:33009/blood-tests",
+      "error": ""
+    },
+    {
+      "probe_id": "javascript",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 0.9,
+      "top_titles": "What is JavaScript | Hypertext Transfer Protocol | Laboratory blood tests | Join a public library | Armed Forces Day 2027 | Pulse Search lab index home | Register with a GP surgery | Apply for a first provisional driving licence",
+      "top_urls": "http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/ | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/driving-licence",
+      "error": ""
+    },
+    {
+      "probe_id": "javascript",
+      "mode": "H_hybrid_lexical",
+      "status": "RESULTS",
+      "count": 1,
+      "latency_ms": 0.3,
+      "top_titles": "What is JavaScript",
+      "top_urls": "http://127.0.0.1:33009/javascript",
+      "error": ""
+    },
+    {
+      "probe_id": "http",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 1.51,
+      "top_titles": "Hypertext Transfer Protocol | Laboratory blood tests | Join a public library | What is JavaScript | Armed Forces Day 2027 | Pulse Search lab index home | Register with a GP surgery | Apply for a first provisional driving licence",
+      "top_urls": "http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/ | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/driving-licence",
+      "error": ""
+    },
+    {
+      "probe_id": "http",
+      "mode": "H_hybrid_lexical",
+      "status": "RESULTS",
+      "count": 1,
+      "latency_ms": 0.3,
+      "top_titles": "Hypertext Transfer Protocol",
+      "top_urls": "http://127.0.0.1:33009/http-protocol",
+      "error": ""
+    },
+    {
+      "probe_id": "event_year",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 1.16,
+      "top_titles": "Armed Forces Day 2027 | Laboratory blood tests | Join a public library | Hypertext Transfer Protocol | What is JavaScript | Pulse Search lab index home | Register with a GP surgery | Apply for a first provisional driving licence",
+      "top_urls": "http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/ | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/driving-licence",
+      "error": ""
+    },
+    {
+      "probe_id": "event_year",
+      "mode": "H_hybrid_lexical",
+      "status": "RESULTS",
+      "count": 1,
+      "latency_ms": 0.19,
+      "top_titles": "Armed Forces Day 2027",
+      "top_urls": "http://127.0.0.1:33009/events/armed-forces-day-2027",
+      "error": ""
+    },
+    {
+      "probe_id": "event_precise",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 1.02,
+      "top_titles": "Laboratory blood tests | Register with a GP surgery | Armed Forces Day 2027 | Join a public library | Hypertext Transfer Protocol | What is JavaScript | Pulse Search lab index home | Apply for a first provisional driving licence",
+      "top_urls": "http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/ | http://127.0.0.1:33009/driving-licence",
+      "error": ""
+    },
+    {
+      "probe_id": "event_precise",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.15,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "event_precise_2025",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 2,
+      "latency_ms": 1.15,
+      "top_titles": "Laboratory blood tests | Register with a GP surgery",
+      "top_urls": "http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/gp-registration",
+      "error": ""
+    },
+    {
+      "probe_id": "event_precise_2025",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.15,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "event_series_2",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 5,
+      "latency_ms": 0.85,
+      "top_titles": "What is JavaScript | Laboratory blood tests | Register with a GP surgery | Join a public library | Hypertext Transfer Protocol",
+      "top_urls": "http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/http-protocol",
+      "error": ""
+    },
+    {
+      "probe_id": "event_series_2",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.14,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "event_series_3",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 4,
+      "latency_ms": 1.02,
+      "top_titles": "Laboratory blood tests | Join a public library | Hypertext Transfer Protocol | Register with a GP surgery",
+      "top_urls": "http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/gp-registration",
+      "error": ""
+    },
+    {
+      "probe_id": "event_series_3",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.2,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "series_specific",
+      "mode": "A_engine_fts",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 1.59,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "series_specific",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.18,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "exclude_eid",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 1.34,
+      "top_titles": "Armed Forces Day 2027 | Laboratory blood tests | Join a public library | Hypertext Transfer Protocol | What is JavaScript | Pulse Search lab index home | Register with a GP surgery | Apply for a first provisional driving licence",
+      "top_urls": "http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/ | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/driving-licence",
+      "error": ""
+    },
+    {
+      "probe_id": "exclude_eid",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.43,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "exclude_patrick",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 2,
+      "latency_ms": 1.16,
+      "top_titles": "What is JavaScript | Armed Forces Day 2027",
+      "top_urls": "http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/events/armed-forces-day-2027",
+      "error": ""
+    },
+    {
+      "probe_id": "exclude_patrick",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.23,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "exclude_games",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 0.84,
+      "top_titles": "Laboratory blood tests | Join a public library | Hypertext Transfer Protocol | What is JavaScript | Armed Forces Day 2027 | Pulse Search lab index home | Register with a GP surgery | Apply for a first provisional driving licence",
+      "top_urls": "http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/ | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/driving-licence",
+      "error": ""
+    },
+    {
+      "probe_id": "exclude_games",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.16,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "exclude_diwali",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 0.76,
+      "top_titles": "Laboratory blood tests | What is JavaScript | Armed Forces Day 2027 | Register with a GP surgery | Join a public library | Hypertext Transfer Protocol | Pulse Search lab index home | Apply for a first provisional driving licence",
+      "top_urls": "http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/ | http://127.0.0.1:33009/driving-licence",
+      "error": ""
+    },
+    {
+      "probe_id": "exclude_diwali",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.14,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "catalog_2027",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 0.75,
+      "top_titles": "Armed Forces Day 2027 | Apply for a first provisional driving licence | What is JavaScript | Pulse Search lab index home | Laboratory blood tests | Join a public library | Hypertext Transfer Protocol | Register with a GP surgery",
+      "top_urls": "http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/driving-licence | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/ | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/gp-registration",
+      "error": ""
+    },
+    {
+      "probe_id": "catalog_2027",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.1,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "catalog_2025",
+      "mode": "A_engine_fts",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.88,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "catalog_2025",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.48,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "catalog_history",
+      "mode": "A_engine_fts",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 1.4,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "catalog_history",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.13,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "negative_future",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 2,
+      "latency_ms": 1.19,
+      "top_titles": "Laboratory blood tests | Register with a GP surgery",
+      "top_urls": "http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/gp-registration",
+      "error": ""
+    },
+    {
+      "probe_id": "negative_future",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.1,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "negative_geography",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 0.67,
+      "top_titles": "What is JavaScript | Armed Forces Day 2027 | Laboratory blood tests | Join a public library | Hypertext Transfer Protocol | Pulse Search lab index home | Register with a GP surgery | Apply for a first provisional driving licence",
+      "top_urls": "http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/ | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/driving-licence",
+      "error": ""
+    },
+    {
+      "probe_id": "negative_geography",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.1,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "negative_conflict",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 0.63,
+      "top_titles": "Pulse Search lab index home | What is JavaScript | Armed Forces Day 2027 | Laboratory blood tests | Join a public library | Hypertext Transfer Protocol | Register with a GP surgery | Apply for a first provisional driving licence",
+      "top_urls": "http://127.0.0.1:33009/ | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/driving-licence",
+      "error": ""
+    },
+    {
+      "probe_id": "negative_conflict",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.06,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "negative_weather",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 2,
+      "latency_ms": 0.51,
+      "top_titles": "What is JavaScript | Armed Forces Day 2027",
+      "top_urls": "http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/events/armed-forces-day-2027",
+      "error": ""
+    },
+    {
+      "probe_id": "negative_weather",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.05,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "negative_stock",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 4,
+      "latency_ms": 0.49,
+      "top_titles": "What is JavaScript | Register with a GP surgery | Hypertext Transfer Protocol | Armed Forces Day 2027",
+      "top_urls": "http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/events/armed-forces-day-2027",
+      "error": ""
+    },
+    {
+      "probe_id": "negative_stock",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.04,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "negative_contradiction",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 0.79,
+      "top_titles": "Laboratory blood tests | Register with a GP surgery | Armed Forces Day 2027 | Join a public library | Hypertext Transfer Protocol | What is JavaScript | Pulse Search lab index home | Apply for a first provisional driving licence",
+      "top_urls": "http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/ | http://127.0.0.1:33009/driving-licence",
+      "error": ""
+    },
+    {
+      "probe_id": "negative_contradiction",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.08,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "fact_fee",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 1.01,
+      "top_titles": "What is JavaScript | Hypertext Transfer Protocol | Laboratory blood tests | Join a public library | Armed Forces Day 2027 | Pulse Search lab index home | Register with a GP surgery | Apply for a first provisional driving licence",
+      "top_urls": "http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/ | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/driving-licence",
+      "error": ""
+    },
+    {
+      "probe_id": "fact_fee",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.43,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "fact_start",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 1.65,
+      "top_titles": "What is JavaScript | Laboratory blood tests | Register with a GP surgery | Armed Forces Day 2027 | Join a public library | Hypertext Transfer Protocol | Pulse Search lab index home | Apply for a first provisional driving licence",
+      "top_urls": "http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/ | http://127.0.0.1:33009/driving-licence",
+      "error": ""
+    },
+    {
+      "probe_id": "fact_start",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.18,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "fact_access",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 1.27,
+      "top_titles": "Laboratory blood tests | What is JavaScript | Register with a GP surgery | Hypertext Transfer Protocol | Armed Forces Day 2027 | Apply for a first provisional driving licence | Pulse Search lab index home | Join a public library",
+      "top_urls": "http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/driving-licence | http://127.0.0.1:33009/ | http://127.0.0.1:33009/library-membership",
+      "error": ""
+    },
+    {
+      "probe_id": "fact_access",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.19,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "fact_ticket",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 1,
+      "latency_ms": 1.11,
+      "top_titles": "Register with a GP surgery",
+      "top_urls": "http://127.0.0.1:33009/gp-registration",
+      "error": ""
+    },
+    {
+      "probe_id": "fact_ticket",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.17,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "fact_cancellation",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 1.16,
+      "top_titles": "Armed Forces Day 2027 | Laboratory blood tests | Join a public library | Hypertext Transfer Protocol | What is JavaScript | Pulse Search lab index home | Register with a GP surgery | Apply for a first provisional driving licence",
+      "top_urls": "http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/ | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/driving-licence",
+      "error": ""
+    },
+    {
+      "probe_id": "fact_cancellation",
+      "mode": "H_hybrid_lexical",
+      "status": "RESULTS",
+      "count": 1,
+      "latency_ms": 0.17,
+      "top_titles": "Armed Forces Day 2027",
+      "top_urls": "http://127.0.0.1:33009/events/armed-forces-day-2027",
+      "error": ""
+    },
+    {
+      "probe_id": "x01",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 1.01,
+      "top_titles": "Join a public library | Register with a GP surgery | Apply for a first provisional driving licence | Laboratory blood tests | Hypertext Transfer Protocol | What is JavaScript | Armed Forces Day 2027 | Pulse Search lab index home",
+      "top_urls": "http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/driving-licence | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/",
+      "error": ""
+    },
+    {
+      "probe_id": "x01",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.34,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "x02",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 2.83,
+      "top_titles": "Apply for a first provisional driving licence | What is JavaScript | Armed Forces Day 2027 | Join a public library | Pulse Search lab index home | Register with a GP surgery | Laboratory blood tests | Hypertext Transfer Protocol",
+      "top_urls": "http://127.0.0.1:33009/driving-licence | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/ | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/http-protocol",
+      "error": ""
+    },
+    {
+      "probe_id": "x02",
+      "mode": "H_hybrid_lexical",
+      "status": "RESULTS",
+      "count": 1,
+      "latency_ms": 0.51,
+      "top_titles": "Apply for a first provisional driving licence",
+      "top_urls": "http://127.0.0.1:33009/driving-licence",
+      "error": ""
+    },
+    {
+      "probe_id": "x03",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 1.2,
+      "top_titles": "Join a public library | Laboratory blood tests | Register with a GP surgery | Hypertext Transfer Protocol | What is JavaScript | Armed Forces Day 2027 | Pulse Search lab index home | Apply for a first provisional driving licence",
+      "top_urls": "http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/ | http://127.0.0.1:33009/driving-licence",
+      "error": ""
+    },
+    {
+      "probe_id": "x03",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.36,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "x04",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 6,
+      "latency_ms": 1.19,
+      "top_titles": "Register with a GP surgery | Laboratory blood tests | Apply for a first provisional driving licence | What is JavaScript | Armed Forces Day 2027 | Pulse Search lab index home",
+      "top_urls": "http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/driving-licence | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/",
+      "error": ""
+    },
+    {
+      "probe_id": "x04",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.31,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "x05",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 2,
+      "latency_ms": 0.94,
+      "top_titles": "Laboratory blood tests | Register with a GP surgery",
+      "top_urls": "http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/gp-registration",
+      "error": ""
+    },
+    {
+      "probe_id": "x05",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.25,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "x06",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 0.9,
+      "top_titles": "Laboratory blood tests | Register with a GP surgery | Hypertext Transfer Protocol | Join a public library | What is JavaScript | Armed Forces Day 2027 | Pulse Search lab index home | Apply for a first provisional driving licence",
+      "top_urls": "http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/ | http://127.0.0.1:33009/driving-licence",
+      "error": ""
+    },
+    {
+      "probe_id": "x06",
+      "mode": "H_hybrid_lexical",
+      "status": "RESULTS",
+      "count": 1,
+      "latency_ms": 0.42,
+      "top_titles": "Hypertext Transfer Protocol",
+      "top_urls": "http://127.0.0.1:33009/http-protocol",
+      "error": ""
+    },
+    {
+      "probe_id": "x07",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 1.56,
+      "top_titles": "Register with a GP surgery | Join a public library | Apply for a first provisional driving licence | Hypertext Transfer Protocol | Laboratory blood tests | What is JavaScript | Armed Forces Day 2027 | Pulse Search lab index home",
+      "top_urls": "http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/driving-licence | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/",
+      "error": ""
+    },
+    {
+      "probe_id": "x07",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.34,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "x08",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 1.12,
+      "top_titles": "Pulse Search lab index home | Laboratory blood tests | Join a public library | Hypertext Transfer Protocol | What is JavaScript | Armed Forces Day 2027 | Register with a GP surgery | Apply for a first provisional driving licence",
+      "top_urls": "http://127.0.0.1:33009/ | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/driving-licence",
+      "error": ""
+    },
+    {
+      "probe_id": "x08",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.3,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "x09",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 4,
+      "latency_ms": 1.69,
+      "top_titles": "Laboratory blood tests | Join a public library | Hypertext Transfer Protocol | Register with a GP surgery",
+      "top_urls": "http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/gp-registration",
+      "error": ""
+    },
+    {
+      "probe_id": "x09",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.27,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "x10",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 1.48,
+      "top_titles": "Join a public library | Armed Forces Day 2027 | Laboratory blood tests | Hypertext Transfer Protocol | What is JavaScript | Pulse Search lab index home | Register with a GP surgery | Apply for a first provisional driving licence",
+      "top_urls": "http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/ | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/driving-licence",
+      "error": ""
+    },
+    {
+      "probe_id": "x10",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.21,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "x11",
+      "mode": "A_engine_fts",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 1.23,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "x11",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.23,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "x12",
+      "mode": "A_engine_fts",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 1.05,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "x12",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.17,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "x13",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 0.98,
+      "top_titles": "What is JavaScript | Armed Forces Day 2027 | Apply for a first provisional driving licence | Pulse Search lab index home | Laboratory blood tests | Join a public library | Hypertext Transfer Protocol | Register with a GP surgery",
+      "top_urls": "http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/driving-licence | http://127.0.0.1:33009/ | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/gp-registration",
+      "error": ""
+    },
+    {
+      "probe_id": "x13",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.12,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "x14",
+      "mode": "A_engine_fts",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.63,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "x14",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.14,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "x15",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 2,
+      "latency_ms": 0.81,
+      "top_titles": "Laboratory blood tests | Register with a GP surgery",
+      "top_urls": "http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/gp-registration",
+      "error": ""
+    },
+    {
+      "probe_id": "x15",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.1,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "x16",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 0.78,
+      "top_titles": "Armed Forces Day 2027 | Laboratory blood tests | Join a public library | Hypertext Transfer Protocol | What is JavaScript | Pulse Search lab index home | Register with a GP surgery | Apply for a first provisional driving licence",
+      "top_urls": "http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/ | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/driving-licence",
+      "error": ""
+    },
+    {
+      "probe_id": "x16",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.36,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "x17",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 0.92,
+      "top_titles": "Pulse Search lab index home | What is JavaScript | Armed Forces Day 2027 | Laboratory blood tests | Join a public library | Hypertext Transfer Protocol | Register with a GP surgery | Apply for a first provisional driving licence",
+      "top_urls": "http://127.0.0.1:33009/ | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/driving-licence",
+      "error": ""
+    },
+    {
+      "probe_id": "x17",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.09,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "x18",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 4,
+      "latency_ms": 0.92,
+      "top_titles": "Laboratory blood tests | What is JavaScript | Armed Forces Day 2027 | Register with a GP surgery",
+      "top_urls": "http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/gp-registration",
+      "error": ""
+    },
+    {
+      "probe_id": "x18",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.08,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "x19",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 1.28,
+      "top_titles": "What is JavaScript | Laboratory blood tests | Register with a GP surgery | Armed Forces Day 2027 | Join a public library | Hypertext Transfer Protocol | Pulse Search lab index home | Apply for a first provisional driving licence",
+      "top_urls": "http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/ | http://127.0.0.1:33009/driving-licence",
+      "error": ""
+    },
+    {
+      "probe_id": "x19",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.22,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "x20",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 5,
+      "latency_ms": 1.39,
+      "top_titles": "Register with a GP surgery | Apply for a first provisional driving licence | What is JavaScript | Armed Forces Day 2027 | Pulse Search lab index home",
+      "top_urls": "http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/driving-licence | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/",
+      "error": ""
+    },
+    {
+      "probe_id": "x20",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.2,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "x21",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 1.94,
+      "top_titles": "Armed Forces Day 2027 | Laboratory blood tests | Join a public library | Hypertext Transfer Protocol | What is JavaScript | Pulse Search lab index home | Register with a GP surgery | Apply for a first provisional driving licence",
+      "top_urls": "http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/ | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/driving-licence",
+      "error": ""
+    },
+    {
+      "probe_id": "x21",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.32,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "x22",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 1.52,
+      "top_titles": "Laboratory blood tests | Register with a GP surgery | Armed Forces Day 2027 | Join a public library | Hypertext Transfer Protocol | What is JavaScript | Pulse Search lab index home | Apply for a first provisional driving licence",
+      "top_urls": "http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/ | http://127.0.0.1:33009/driving-licence",
+      "error": ""
+    },
+    {
+      "probe_id": "x22",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.25,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "x23",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 8,
+      "latency_ms": 1.22,
+      "top_titles": "What is JavaScript | Register with a GP surgery | Laboratory blood tests | Hypertext Transfer Protocol | Join a public library | Apply for a first provisional driving licence | Armed Forces Day 2027 | Pulse Search lab index home",
+      "top_urls": "http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/gp-registration | http://127.0.0.1:33009/blood-tests | http://127.0.0.1:33009/http-protocol | http://127.0.0.1:33009/library-membership | http://127.0.0.1:33009/driving-licence | http://127.0.0.1:33009/events/armed-forces-day-2027 | http://127.0.0.1:33009/",
+      "error": ""
+    },
+    {
+      "probe_id": "x23",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.25,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    },
+    {
+      "probe_id": "x24",
+      "mode": "A_engine_fts",
+      "status": "RESULTS",
+      "count": 2,
+      "latency_ms": 1.09,
+      "top_titles": "What is JavaScript | Armed Forces Day 2027",
+      "top_urls": "http://127.0.0.1:33009/javascript | http://127.0.0.1:33009/events/armed-forces-day-2027",
+      "error": ""
+    },
+    {
+      "probe_id": "x24",
+      "mode": "H_hybrid_lexical",
+      "status": "EXPLICIT_ZERO_RESULT",
+      "count": 0,
+      "latency_ms": 0.18,
+      "top_titles": "",
+      "top_urls": "",
+      "error": ""
+    }
+  ]
+}

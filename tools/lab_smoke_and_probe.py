@@ -7,9 +7,10 @@ answer with real indexed rows.
 Phase 2 (probe): send all 54 frozen questions through the accepted lexical search
 path and the recovered hybrid ranker, recording an explicit receipt per query.
 
-This is NOT the frozen R3-A2/R3-A3 replay: the accepted owner index
-(bb8e5202...) and the BGE weights are absent, so retrieval quality cannot be
-compared with October. Every row here is labelled LAB_QUERY_PATH_ONLY.
+This is NOT the frozen R3-A2/R3-A3 replay: it scores an 8-page synthetic corpus,
+so its counts establish the query path only and are labelled
+LAB_QUERY_PATH_ONLY. Relevance assertions here test ranking on pages this
+harness authored; they are never combined with October scoring.
 Nothing is written outside --work; no network egress beyond 127.0.0.1.
 """
 from __future__ import annotations
@@ -40,6 +41,17 @@ FIXTURES = {
     "/passport-renewal": ("Renew a passport", "A passport holder renews an expiring passport before travel."),
     "/library-membership": ("Join a public library", "A resident joins a library and borrows books."),
 }
+
+# Exact-answer relevance expectations for the lab corpus ONLY: which authored page
+# must be the top hit for a real question. These are genuine ranking assertions
+# (not HTTP status checks), kept separate from the frozen October verdicts.
+RELEVANCE = (
+    ("search_doctor", "/gp-registration", "new patient asks to see a doctor"),
+    ("search_javascript", "/javascript", "what JavaScript programming is"),
+    ("search_vote", "/register-to-vote", "register to vote"),
+    ("search_blood", "/blood-tests", "arrange blood screening"),
+    ("search_licence", "/driving-licence", "learner motorist provisional licence"),
+)
 
 
 class Fixture(http.server.BaseHTTPRequestHandler):
@@ -93,7 +105,15 @@ def main(argv):
     ap.add_argument("--frozen", required=True, type=Path)
     ap.add_argument("--work", required=True, type=Path)
     ap.add_argument("--out", required=True, type=Path)
+    ap.add_argument("--accepted-index", type=Path, help="optional: record the accepted owner index hash")
+    ap.add_argument("--model-dir", type=Path, help="optional: record pinned BGE weight presence")
     args = ap.parse_args(argv)
+
+    accepted_index_sha = None
+    if args.accepted_index is not None and args.accepted_index.is_file():
+        accepted_index_sha = hashlib.sha256(args.accepted_index.read_bytes()).hexdigest()
+    else:
+        args.accepted_index = None
 
     sys.path.insert(0, str(args.engine_dir.resolve()))
     import pulse_search_engine as e  # noqa: E402
@@ -138,6 +158,8 @@ def main(argv):
             ("search_doctor", "/v1/search?q=doctor&limit=10", TOKEN, 200),
             ("search_javascript", "/v1/search?q=javascript+programming&limit=10", TOKEN, 200),
             ("search_vote", "/v1/search?q=register+to+vote", TOKEN, 200),
+            ("search_blood", "/v1/search?q=blood+screening&limit=10", TOKEN, 200),
+            ("search_licence", "/v1/search?q=provisional+driving+licence&limit=10", TOKEN, 200),
             ("limit_out_of_range", "/v1/search?q=doctor&limit=999", TOKEN, 400),
             ("unknown_route", "/v1/nope", TOKEN, 404),
         ):
@@ -146,6 +168,7 @@ def main(argv):
                            "pass": status == expect, "latency_ms": round(ms, 2),
                            "count": payload.get("count"),
                            "titles": [r["title"] for r in payload.get("results", [])][:3],
+                           "urls": [r["url"] for r in payload.get("results", [])][:10],
                            "indexed_pages": payload.get("indexed_pages")})
 
         import sqlite3
@@ -162,6 +185,30 @@ def main(argv):
         fixture.shutdown()
         ft.join()
         fixture.server_close()
+
+    def search_payload(name):
+        for c in checks:
+            if c["check"] == name:
+                return c
+        return {"urls": [], "count": None}
+
+    relevance = []
+    for name, suffix, intent in RELEVANCE:
+        row = search_payload(name)
+        urls = row.get("urls") or []
+        rank = next((i + 1 for i, u in enumerate(urls) if u.endswith(suffix)), None)
+        relevance.append({
+            "check": name,
+            "intent": intent,
+            "expected_path_suffix": suffix,
+            "top1_url": urls[0] if urls else "",
+            "expected_rank": rank,
+            "result_count": row.get("count"),
+            "assertion": ("TOP1_IS_EXPECTED" if rank == 1
+                          else "EXPECTED_IN_TOP10" if rank else "EXPECTED_ABSENT"),
+            "pass": rank == 1,
+        })
+    relevance_passed = sum(1 for r in relevance if r["pass"])
 
     hybrid = {"available": False}
     try:
@@ -225,11 +272,14 @@ def main(argv):
                       "crawl_outcomes": crawl["outcomes"], "crawl_ms": round(crawl_ms, 2),
                       "fetch_requests": crawl["fetch_requests"],
                       "network_scope": "127.0.0.1 loopback fixture only"},
-        "accepted_owner_index_present": False,
+        "accepted_owner_index_present": accepted_index_sha is not None,
+        "accepted_owner_index_sha256": accepted_index_sha,
         "accepted_owner_index_expected_sha256": "bb8e52025a1a25f55141507a02621db190e54bf1fc4d4da8db4248357368c35d",
-        "bge_weights_present": False,
+        "bge_weights_present": bool(args.model_dir and (args.model_dir / "model.safetensors").is_file()),
         "api_checks": checks,
         "api_checks_passed": f"{sum(c['pass'] for c in checks)}/{len(checks)}",
+        "relevance_assertions": relevance,
+        "relevance_assertions_passed": f"{relevance_passed}/{len(relevance)}",
         "hybrid": hybrid,
         "probe_summary": {m: summarise(m) for m in ("A_engine_fts", "H_hybrid_lexical")},
         "frozen_queries_probed": len(frozen),
@@ -238,8 +288,9 @@ def main(argv):
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(json.dumps({k: report[k] for k in
-                      ("api_checks_passed", "probe_summary", "hybrid", "lab_index")},
-                     indent=2)[:2600])
+                      ("api_checks_passed", "relevance_assertions_passed",
+                       "relevance_assertions", "probe_summary", "hybrid", "lab_index")},
+                     indent=2)[:3600])
     print(f"WROTE {args.out}")
     return 0
 

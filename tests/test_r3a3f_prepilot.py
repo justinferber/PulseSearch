@@ -69,6 +69,9 @@ class Env:
             min_interval_s=0.0,
             loopback_hosts=tuple(s.base.replace("http://", "") for s in servers),
             max_depth=3,
+            pilot_http_attempts_per_day=5000,
+            pilot_accepted_documents_per_day=5000,
+            pilot_run_minutes_max=180.0,
             **config_kwargs,
         )
 

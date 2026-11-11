@@ -79,8 +79,12 @@ def parse_retry_after(value: str | None) -> float | None:
 
 
 class Fetcher:
-    def __init__(self, config: CrawlConfig):
+    def __init__(self, config: CrawlConfig, attempt_gate=None):
         self.config = config
+        # Called immediately before each request is issued, including robots
+        # and every redirect hop. It is where a persisted daily request ceiling
+        # is enforced; a refusal means no bytes leave the process.
+        self.attempt_gate = attempt_gate
         self.requests = 0
         self.bytes_received = 0
 
@@ -168,6 +172,10 @@ class Fetcher:
         path = parts.path or "/"
         if parts.query:
             path = f"{path}?{parts.query}"
+        if self.attempt_gate is not None:
+            denial = self.attempt_gate()
+            if denial:
+                return FetchResult(url, url, error=f"budget_blocked:{denial}", chain=chain)
         try:
             conn.request("GET", path, headers=headers)
             response = conn.getresponse()

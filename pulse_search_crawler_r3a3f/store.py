@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS sources(
   source_id TEXT PRIMARY KEY, origin TEXT NOT NULL UNIQUE, host TEXT NOT NULL,
   allowed_paths TEXT NOT NULL, rights_status TEXT NOT NULL,
   index_allowed INTEGER NOT NULL DEFAULT 0, store_body INTEGER NOT NULL DEFAULT 0,
-  contact TEXT, notes TEXT, approved INTEGER NOT NULL DEFAULT 0,
+  contact TEXT, owner_authorisation TEXT, notes TEXT, approved INTEGER NOT NULL DEFAULT 0,
   probe_policy TEXT NOT NULL DEFAULT '[]', probe_budget_per_run INTEGER NOT NULL DEFAULT 0,
   enabled INTEGER NOT NULL DEFAULT 1, admitted_at TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS seeds(
@@ -66,6 +66,13 @@ CREATE TABLE IF NOT EXISTS redirect_log(
   id INTEGER PRIMARY KEY AUTOINCREMENT, source_id TEXT, depth INTEGER,
   from_url TEXT, to_url TEXT, hop INTEGER, status INTEGER, decision TEXT,
   reason TEXT, at_utc TEXT);
+CREATE TABLE IF NOT EXISTS pilot_budget(
+  day TEXT PRIMARY KEY, http_attempts INTEGER NOT NULL DEFAULT 0,
+  accepted_documents INTEGER NOT NULL DEFAULT 0,
+  run_seconds REAL NOT NULL DEFAULT 0, updated_at TEXT);
+CREATE TABLE IF NOT EXISTS url_admission_log(
+  id INTEGER PRIMARY KEY AUTOINCREMENT, url TEXT, source_id TEXT, depth INTEGER,
+  decision TEXT, reason TEXT, at_utc TEXT);
 """
 
 
@@ -106,7 +113,8 @@ class Store:
             if name not in columns("frontier"):
                 self.conn.execute(f"ALTER TABLE frontier ADD COLUMN {name} {ddl}")
         for name, ddl in (("probe_policy", "TEXT NOT NULL DEFAULT '[]'"),
-                          ("probe_budget_per_run", "INTEGER NOT NULL DEFAULT 0")):
+                          ("probe_budget_per_run", "INTEGER NOT NULL DEFAULT 0"),
+                          ("owner_authorisation", "TEXT")):
             if name not in columns("sources"):
                 self.conn.execute(f"ALTER TABLE sources ADD COLUMN {name} {ddl}")
 
@@ -132,6 +140,7 @@ class Store:
         contact: str = "",
         notes: str = "",
         approved: bool = False,
+        owner_authorisation: str = "",
         probe_policy: list[str] | None = None,
         probe_budget_per_run: int = 0,
     ) -> dict:
@@ -148,6 +157,20 @@ class Store:
         paths = sorted(set(allowed_paths or []))
         if approved and not paths:
             raise ValueError("an admitted source needs at least one reviewed path")
+        # A distinct written authorisation is required for a real host. A
+        # manifest's approved=true flag cannot authorise itself, and the
+        # rights status is not an authorisation reference.
+        authorisation = (owner_authorisation or "").strip()
+        synthetic = str(rights_status).upper().startswith("SYNTHETIC")
+        if approved and not synthetic:
+            if not authorisation:
+                raise ValueError(
+                    f"source {source_id}: admitting a real host needs a documented "
+                    "owner authorisation reference")
+            if authorisation.upper() == str(rights_status).strip().upper():
+                raise ValueError(
+                    f"source {source_id}: owner authorisation must be a distinct "
+                    "decision reference, not a copy of the rights status")
         existing = self.conn.execute(
             "SELECT * FROM sources WHERE source_id=?", (source_id,)
         ).fetchone()
@@ -168,18 +191,19 @@ class Store:
                 )
         self.conn.execute(
             """INSERT INTO sources(source_id,origin,host,allowed_paths,rights_status,
-                 index_allowed,store_body,contact,notes,approved,probe_policy,
-                 probe_budget_per_run,enabled,admitted_at)
-               VALUES(?,?,?,?,?,?,?,?,?,?,?,?,1,?)
+                 index_allowed,store_body,contact,owner_authorisation,notes,approved,
+                 probe_policy,probe_budget_per_run,enabled,admitted_at)
+               VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,1,?)
                ON CONFLICT(source_id) DO UPDATE SET
                  allowed_paths=excluded.allowed_paths, rights_status=excluded.rights_status,
                  index_allowed=excluded.index_allowed, store_body=excluded.store_body,
-                 contact=excluded.contact, notes=excluded.notes, approved=excluded.approved,
+                 contact=excluded.contact, owner_authorisation=excluded.owner_authorisation,
+                 notes=excluded.notes, approved=excluded.approved,
                  probe_policy=excluded.probe_policy,
                  probe_budget_per_run=excluded.probe_budget_per_run""",
             (source_id, origin, host_port(origin + "/"), json.dumps(paths),
-             rights_status, int(index_allowed), int(store_body), contact, notes,
-             int(approved), json.dumps(sorted(set(probe_policy or []))),
+             rights_status, int(index_allowed), int(store_body), contact, authorisation,
+             notes, int(approved), json.dumps(sorted(set(probe_policy or []))),
              int(probe_budget_per_run), utc_now()),
         )
         self.conn.commit()
@@ -609,6 +633,52 @@ class Store:
             "SELECT COUNT(*) n FROM fetch_log WHERE substr(at_utc,1,10)=?", (today,)
         ).fetchone()
         return int(row["n"])
+
+    # ------------------------------------------------------------ pilot budget
+    def _budget_day(self, day: str | None = None) -> str:
+        return day or datetime.now(timezone.utc).date().isoformat()
+
+    def budget_snapshot(self, day: str | None = None) -> dict:
+        """Durable per-day counters. A restart reads the same row, never zero."""
+        key = self._budget_day(day)
+        self.conn.execute(
+            "INSERT OR IGNORE INTO pilot_budget(day,updated_at) VALUES(?,?)",
+            (key, utc_now()),
+        )
+        self.conn.commit()
+        row = self.conn.execute("SELECT * FROM pilot_budget WHERE day=?", (key,)).fetchone()
+        return dict(row)
+
+    def budget_add(self, *, http_attempts: int = 0, accepted_documents: int = 0,
+                   run_seconds: float = 0.0, day: str | None = None) -> dict:
+        key = self._budget_day(day)
+        self.budget_snapshot(key)
+        self.conn.execute(
+            """UPDATE pilot_budget SET http_attempts=http_attempts+?,
+                 accepted_documents=accepted_documents+?, run_seconds=run_seconds+?,
+                 updated_at=? WHERE day=?""",
+            (http_attempts, accepted_documents, run_seconds, utc_now(), key),
+        )
+        self.conn.commit()
+        return self.budget_snapshot(key)
+
+    def log_url_admission(self, *, url: str, source_id: str, depth: int,
+                          decision: str, reason: str = "") -> None:
+        """Record the pre-network check for a queued URL, allowed or refused."""
+        self.conn.execute(
+            """INSERT INTO url_admission_log(url,source_id,depth,decision,reason,at_utc)
+               VALUES(?,?,?,?,?,?)""",
+            (url, source_id, depth, decision, reason, utc_now()),
+        )
+        self.conn.commit()
+
+    def url_admission_counts(self) -> dict[str, int]:
+        return {
+            f"{row['decision']}:{row['reason']}": row["n"]
+            for row in self.conn.execute(
+                "SELECT decision, reason, COUNT(*) n FROM url_admission_log "
+                "GROUP BY decision, reason ORDER BY n DESC")
+        }
 
     def outcome_counts(self) -> dict[str, int]:
         return {

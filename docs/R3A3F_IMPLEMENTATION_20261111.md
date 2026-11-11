@@ -124,3 +124,36 @@ The run report and console now include a redirect section (followed and blocked 
 5. **Rights model is metadata-level.** `index_allowed`/`store_body` are assertions from the source registry, not a licence.
 6. **Uncertain/Other acceptance** widens recall; a pilot must measure its precision before scaling.
 7. **Single-machine scheduler.** No distributed locking; two crawler processes on one database would duplicate work.
+
+## Three-candidate expansion (second owner directive, 11 November 2026)
+
+The owner selected three candidates and the crawler was prepared without admitting any of them.
+`registry.py` and `docs/evidence/r3a3f_three_source_admission.json` hold the register with four
+auditable states (`candidate`, `robots_reviewed`, `rights_hold`, `owner_approved`); every record is
+`approved=false`, `index_allowed=false`, `owner_authorisation=null`.
+
+Five pending operational gates were implemented:
+
+1. **Pre-network URL admission.** `Crawler._precheck` verifies origin, exact path scope and
+   `index_allowed` *before* robots.txt or content is requested, and writes every decision to
+   `url_admission_log`. An out-of-scope or unindexable URL produces zero requests.
+2. **Persisted pilot limits.** `pilot_budget` stores `http_attempts`, `accepted_documents` and
+   `run_seconds` per UTC day. Every attempt — robots, content hop, redirect hop, retry — passes the
+   fetcher's attempt gate. A restart reads the same row: it cannot reset the allowance.
+3. **Run-duration and acceptance caps.** The loop stops at `run_minutes_cap_reached`,
+   `accepted_documents_cap_reached` or `http_attempts_cap_reached`; the caps are reported in
+   `report.pilot_budget`.
+4. **Novelty SHA-256 pin.** `novelty.overlap` verifies the index hash before reading it, exposes
+   `index_sha256`/`pin_match`, and raises `NoveltyPinMismatch` for any other file.
+5. **Distinct owner authorisation.** A real host cannot be admitted by `approved=true` alone; the
+   store, CLI import and run preflight require a documented `owner_authorisation` reference that is
+   not a copy of the rights status. Synthetic fixtures keep an explicit exemption.
+
+Offline fixtures (`sitesim.build_three_source_network`) mirror the audited shapes of the three
+candidates, and `tools/r3a3f_three_source_demo.py` runs two phases: the unadmitted register (import
+and run refused, zero requests) and the synthetic simulation (41 documents, 13/15/13 per source).
+
+Evidence: **118 tests**, six-origin demo **28/28**, three-source demo **30/30** (depth 3, depth-4 0,
+off-origin redirect refused, no `/whats-on`, `/shop/`, `/takepart/`, `/terms-of-use/` or `/book/`
+request, 2027 and 2026 editions separate, duplicate syndication rejected, novelty pin matched, owner
+index byte-identical), archived matrix **25/25 modules, 419 tests**.

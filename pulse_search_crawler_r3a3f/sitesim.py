@@ -136,7 +136,11 @@ class RouteServer(ThreadingHTTPServer):
             self.hits.append(path)
 
     def set(self, path: str, route: Route) -> None:
+        # Canonicalisation drops a trailing slash, so a route registered as
+        # /about/ must also answer /about, exactly as a real server would.
         self.routes[path] = route
+        if path != "/" and path.endswith("/"):
+            self.routes[path.rstrip("/")] = route
 
     def hits_for(self, prefix: str) -> int:
         with self._lock:
@@ -448,5 +452,238 @@ def build_network() -> SyntheticNetwork:
         "rate-limited": [limited.base + "/events/festival",
                          limited.base + "/events/market",
                          limited.base + "/events/workshop"],
+    }
+    return SyntheticNetwork(servers=servers, seeds=seeds)
+
+
+def build_three_source_network() -> SyntheticNetwork:
+    """Offline fixtures for the three owner-selected candidates.
+
+    These are synthetic pages on loopback, not copies of the real sites. Each
+    origin mirrors the *shape* the F0 audits found (listing hub, edition
+    pages, history/programme, restrictive paths) plus the traps the gates must
+    survive: robots denials, off-origin redirects, duplicate syndication, a
+    cancelled edition, old and new editions side by side and depth-4 sentinels.
+    Nothing here is fetched from a third party.
+    """
+    names = ("city-hall", "london-parade", "lord-mayors-show")
+    servers = {name: RouteServer().start() for name in names}
+    city, parade, show = (servers[name] for name in names)
+
+    # ---- City Hall: /events only, robots allows the section ----------------
+    city.set("/robots.txt", Route(
+        body=b"User-agent: *\nDisallow: /search\nDisallow: /admin\nAllow: /\n"
+             b"Crawl-delay: 3\nSitemap: " + f"{city.base}/sitemap.xml\n".encode(),
+        mime="text/plain; charset=utf-8"))
+    city_events = [
+        ("diwali-city-hall", "Diwali at City Hall", "Festival",
+         "Diwali festival of lights with music, lanterns and a community celebration."),
+        ("london-parade-viewing", "London Parade viewing at City Hall", "Parades & Processions",
+         "Watch the London Parade procession pass City Hall on New Year's Day."),
+        ("lord-mayors-show-screening", "Lord Mayor's Show screening", "Arts & Culture",
+         "Live screening of the Lord Mayor's Show civic procession and programme."),
+        ("open-house", "City Hall open house", "Tour",
+         "Guided tour of City Hall with a heritage trail and open house access."),
+    ]
+    city.set("/events", Route(body=page_html(
+        "City Hall events listing",
+        "London City Hall events listing: festivals, parades, tours and civic "
+        "celebrations across the city, with dates, access notes and booking details.",
+        links=[("/events/" + slug, title) for slug, title, _, _ in city_events]
+        + [("/whats-on", "What's on"), ("/search?q=events", "Search events")])))
+    for slug, title, category, text in city_events:
+        city.set(f"/events/{slug}", Route(body=page_html(
+            title, CATEGORY_TEXT[category] + " " + text,
+            links=[(f"/events/{slug}/programme", "Programme"), ("/events", "All events"),
+                   ("https://londonparade.com/", "Organiser website")])))
+        city.set(f"/events/{slug}/programme", Route(body=page_html(
+            f"{title} programme and times",
+            text + " The programme lists times, access information, transport advice "
+            "and the contact details for the organising team.",
+            links=[(f"/events/{slug}/programme/access", "Access details"),
+                   ("/events", "All events")])))
+        city.set(f"/events/{slug}/programme/access", Route(body=page_html(
+            f"{title} access and travel",
+            "Access, step-free routes, transport and contact information for visitors "
+            "attending this City Hall event.",
+            links=[(f"/events/{slug}/programme/access/map", "Map"),
+                   ("/events", "All events")])))
+        city.set(f"/events/{slug}/programme/access/map", Route(body=page_html(
+            "Depth four map", "Fourth-hop page that must never be fetched.")))
+    city.set("/whats-on", Route(body=page_html(
+        "What's on in London", "Unverified path that is outside the approved /events scope.")))
+    city.set("/search", Route(body=page_html(
+        "Search", "Search page disallowed by robots.txt.")))
+    city.set("/admin", Route(body=page_html("Admin", "Admin page disallowed by robots.txt.")))
+
+    # ---- London Parade: public pages, forms excluded by robots -------------
+    parade.set("/robots.txt", Route(
+        body=b"# Content-Signal: search=yes, ai-train=no, use=reference\n"
+             b"User-agent: *\nAllow: /\nCrawl-delay: 10\n"
+             b"Disallow: /shop/\nDisallow: /takepart/\nDisallow: /account/\n"
+             b"Disallow: /admin/\n",
+        mime="text/plain; charset=utf-8"))
+    parade_2027 = "London Parade 2027 starts at 1pm on 1 January 2027."
+    parade_2026 = "The 2026 London Parade took place on 1 January 2026 for its 40th edition."
+    parade.set("/", Route(body=page_html(
+        "London Parade",
+        "London Parade: the New Year's Day parade through central London with bands, "
+        "floats and a concert series. " + parade_2027,
+        links=[("/parade-location-timing/", "When and where"), ("/about/", "About"),
+               ("/londonparade-participants/", "Participants"),
+               ("/festivals/concerts/", "Concert series"),
+               ("/news-archive", "News archive"),
+               ("/news/london-parade-2027-celebrate-new-years-day-the-london-way/", "2027 news"),
+               ("/news/london-parade-2026-review/", "2026 review"),
+               ("/redirect/route", "Route"),
+               ("/shop/", "Shop"), ("/takepart/", "Take part"), ("/admin/", "Admin")])))
+    parade.set("/parade-location-timing/", Route(body=page_html(
+        "London Parade 2027 — when and where",
+        parade_2027 + " The route runs through central London with viewing points "
+        "along the way; grandstand tickets are sold separately.",
+        links=[("/about/", "About"), ("/news-archive", "News archive")])))
+    parade.set("/about/", Route(body=page_html(
+        "About London Parade",
+        "London Parade is an annual New Year's Day parade and festival series in "
+        "central London, organised by Destination Events Ltd.",
+        links=[("/londonparade-participants/", "Participants"),
+               ("/festivals/concerts/", "Concert series")])))
+    parade.set("/londonparade-participants/", Route(body=page_html(
+        "London Parade participants",
+        "Participating bands, marching groups and performance teams for the 2027 "
+        "parade, with public programme information only.",
+        links=[("/news/london-parade-2027-celebrate-new-years-day-the-london-way/", "2027 news"),
+               ("/takepart/", "Take part")])))
+    parade.set("/festivals/concerts/", Route(body=page_html(
+        "London Parade concert series",
+        CATEGORY_TEXT["Music & Performance"] + " Concerts run in the days before the parade.",
+        links=[("/about/", "About")])))
+    parade.set("/news-archive", Route(body=page_html(
+        "London Parade news archive",
+        "Archive of London Parade announcements across recent editions.",
+        links=[("/news/london-parade-2027-celebrate-new-years-day-the-london-way/", "2027"),
+               ("/news/london-parade-2026-review/", "2026 review"),
+               ("/news/route-2026/", "2026 route"),
+               ("/news/2021-parade-cancelled/", "2021 cancellation"),
+               ("/news/route-syndicated/", "Route syndicated copy")])))
+    parade.set("/news/london-parade-2027-celebrate-new-years-day-the-london-way/",
+               Route(body=page_html(
+                   "London Parade 2027 — celebrate New Year's Day the London way",
+                   parade_2027 + " Three bands have been announced for the 2027 parade, "
+                   "with the programme and route published on the official pages.",
+                   links=[("/news/2027-bands/", "2027 bands announcement"),
+                          ("/parade-location-timing/", "When and where")])))
+    parade.set("/news/2027-bands/", Route(body=page_html(
+        "Three bands announced for London Parade 2027",
+        CATEGORY_TEXT["Music & Performance"] + " The bands join the 2027 parade lineup.",
+        links=[("/news/2027-bands/lineup/", "Full lineup"), ("/news-archive", "Archive")])))
+    parade.set("/news/2027-bands/lineup/", Route(body=page_html(
+        "London Parade 2027 full lineup",
+        "Full lineup of bands and performance groups for the 2027 parade, with times "
+        "and route positions.",
+        links=[("/news/2027-bands/lineup/times/", "Times")])))
+    parade.set("/news/2027-bands/lineup/times/", Route(body=page_html(
+        "Depth four times", "Fourth-hop page that must never be fetched.")))
+    parade.set("/news/london-parade-2026-review/", Route(body=page_html(
+        "London Parade 2026 review",
+        parade_2026 + " The 40th edition featured bands and floats from across London.",
+        links=[("/news-archive", "Archive")])))
+    route_body = ("The parade route for the 2026 edition started in central London and "
+                  "finished near the river, with public viewing points along the way.")
+    parade.set("/news/route-2026/", Route(body=page_html(
+        "London Parade 2026 route", route_body, links=[("/news-archive", "Archive")])))
+    parade.set("/news/route-syndicated/", Route(body=page_html(
+        "London Parade 2026 route", route_body, links=[("/news-archive", "Archive")])))
+    parade.set("/news/2021-parade-cancelled/", Route(body=page_html(
+        "London Parade 2021 cancelled",
+        "The 2021 London Parade was cancelled; organisers published the decision and "
+        "the planned programme for that edition was not held.",
+        links=[("/news-archive", "Archive")])))
+    parade.set("/redirect/route", Route(status=301,
+                                        headers={"Location": "/parade-location-timing/"}))
+    parade.set("/shop/", Route(body=page_html("Shop", "Shop page disallowed by robots.txt.")))
+    parade.set("/takepart/", Route(body=page_html(
+        "Take part", "Participant application form; must never be fetched or indexed.")))
+    parade.set("/account/", Route(body=page_html(
+        "Account", "Account portal; must never be fetched.")))
+    parade.set("/admin/", Route(body=page_html("Admin", "Admin page disallowed by robots.txt.")))
+
+    # ---- Lord Mayor's Show: history, programme, procession, restrictions ---
+    # The real host serves no robots.txt (404). The fixture is deliberately
+    # stricter: it denies the restrictive terms page and the book page so the
+    # offline run proves those refusals instead of silently fetching them.
+    show.set("/robots.txt", Route(
+        body=b"User-agent: *\nAllow: /\nDisallow: /terms-of-use/\nDisallow: /book/\n",
+        mime="text/plain; charset=utf-8"))
+    show_2026 = "The 2026 Show sets off from Mansion House on Saturday 14 November 2026 at 11am."
+    show.set("/", Route(body=page_html(
+        "The Lord Mayor's Show",
+        "The Lord Mayor's Show is the oldest civic procession in the world. " + show_2026,
+        links=[("/history/", "History"), ("/programme/", "Programme"),
+               ("/route/", "Procession route"), ("/lord-mayors-procession/", "Procession"),
+               ("/practicalities/where-to-go/", "Where to go"),
+               ("/closures/", "Road closures"),
+               ("/terms-of-use/", "Terms of use"), ("/book/", "Book")])))
+    show.set("/history/", Route(body=page_html(
+        "History of the Lord Mayor's Show",
+        CATEGORY_TEXT["Arts & Culture"] + " The Show dates back to the early 13th century.",
+        links=[("/history/obstacles/", "Calamities"),
+               ("/history/dates-and-routes/", "Dates and routes"),
+               ("/history/ww1/", "Wartime shows")])))
+    show.set("/history/obstacles/", Route(body=page_html(
+        "Calamities and obstructions",
+        "The Show has been cancelled only twice in 200 years, despite war and weather.",
+        links=[("/history/", "History"), ("/history/ww1/", "Wartime shows")])))
+    show.set("/history/ww1/", Route(body=page_html(
+        "The wartime shows",
+        CATEGORY_TEXT["Arts & Culture"] + " Wartime editions continued the civic tradition.",
+        links=[("/history/dates-and-routes/", "Dates and routes")])))
+    show.set("/history/dates-and-routes/", Route(body=page_html(
+        "Dates and routes through history",
+        "The 2025 Show was held on 8 November 2025. " + show_2026 +
+        " Earlier editions followed the same processional route through the City.",
+        links=[("/history/", "History")])))
+    programme_body = (CATEGORY_TEXT["Music & Performance"] +
+                      " The Show programme lists the procession order, bands, floats and "
+                      "performance times for the day.")
+    show.set("/programme/", Route(body=page_html(
+        "Lord Mayor's Show programme", programme_body,
+        links=[("/programme/timetable/", "Timetable"), ("/route/", "Route"),
+               ("/programme/copy/", "Programme copy")])))
+    show.set("/programme/timetable/", Route(body=page_html(
+        "Show day timetable",
+        "Timetable for Show day: procession, flypast, programme and road reopening.",
+        links=[("/programme/", "Programme")])))
+    show.set("/programme/copy/", Route(body=page_html(
+        "Lord Mayor's Show programme", programme_body,
+        links=[("/programme/", "Programme")])))
+    show.set("/route/", Route(status=302, headers={
+        "Location": "https://procession.lordmayorsshow.london/"}))
+    show.set("/lord-mayors-procession/", Route(body=page_html(
+        "The Lord Mayor's Procession",
+        CATEGORY_TEXT["Parades & Processions"] + " The civic procession fills the City.",
+        links=[("/route/", "Route"), ("/history/", "History")])))
+    show.set("/practicalities/where-to-go/", Route(body=page_html(
+        "Where to watch the Show",
+        CATEGORY_TEXT["Tour"] + " Suggested viewing points and guided walks.",
+        links=[("/practicalities/access/", "Access"), ("/closures/", "Closures")])))
+    show.set("/practicalities/access/", Route(body=page_html(
+        "Access at the Show",
+        "Accessible viewing, step-free routes and assistance for disabled visitors.",
+        links=[("/practicalities/where-to-go/", "Where to go")])))
+    show.set("/closures/", Route(body=page_html(
+        "Road closures on Show day",
+        "Almost the whole City is closed on Show day, with buses diverted and parking "
+        "suspended from the Friday afternoon.",
+        links=[("/practicalities/where-to-go/", "Where to go")])))
+    show.set("/terms-of-use/", Route(body=page_html(
+        "Terms of use", "Restrictive terms page that must never be fetched.")))
+    show.set("/book/", Route(body=page_html(
+        "Book", "Book page disallowed by robots.txt.")))
+
+    seeds = {
+        "city-hall": [city.base + "/events"],
+        "london-parade": [parade.base + "/"],
+        "lord-mayors-show": [show.base + "/"],
     }
     return SyntheticNetwork(servers=servers, seeds=seeds)

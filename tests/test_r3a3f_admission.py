@@ -88,7 +88,8 @@ class CliAdmissionTests(unittest.TestCase):
             "sources": [{
                 "source_id": "x", "origin": "https://example.org",
                 "allowed_paths": ["/events"], "rights_status": "OWNER_APPROVED_RESEARCH",
-                "approved": True, "index_allowed": True}],
+                "approved": True, "index_allowed": True,
+                "owner_authorisation": "OWNER_DECISION_2026-11-11_TEST"}],
             "seeds": {"x": ["https://example.org/admin/panel"]}})
         self.assertEqual(code, 2)
         self.assertIn("outside", out)
@@ -99,7 +100,8 @@ class CliAdmissionTests(unittest.TestCase):
             "sources": [{
                 "source_id": "x", "origin": "https://example.org",
                 "allowed_paths": ["/events"], "rights_status": "OWNER_APPROVED_RESEARCH",
-                "approved": True, "index_allowed": True}],
+                "approved": True, "index_allowed": True,
+                "owner_authorisation": "OWNER_DECISION_2026-11-11_TEST"}],
             "seeds": {"x": ["https://example.org/events"]}})
         self.assertEqual(code, 0, out)
         rows = self.source_rows()
@@ -110,6 +112,19 @@ class CliAdmissionTests(unittest.TestCase):
             self.assertEqual(len(store.seeds("x")), 1)
         finally:
             store.close()
+
+    def test_approval_without_a_distinct_owner_authorisation_is_rejected(self):
+        for authorisation in ("", "OWNER_APPROVED_RESEARCH"):
+            payload = {"sources": [{
+                "source_id": "x", "origin": "https://example.org",
+                "allowed_paths": ["/events"], "rights_status": "OWNER_APPROVED_RESEARCH",
+                "approved": True, "index_allowed": True}]}
+            if authorisation:
+                payload["sources"][0]["owner_authorisation"] = authorisation
+            code, out = self.sources_cli(payload)
+            self.assertEqual(code, 2, out)
+            self.assertIn("owner_authorisation", out)
+            self.assertEqual(self.source_rows(), [])
 
     def test_run_refuses_when_no_source_is_admitted(self):
         code, out = self.run_cli(["run", "--db", self.db, "--staging", self.staging,
@@ -122,7 +137,8 @@ class CliAdmissionTests(unittest.TestCase):
         try:
             store.add_source(source_id="x", origin="https://example.org",
                              allowed_paths=["/events"], rights_status="NOT_ASSESSED",
-                             approved=True, index_allowed=True)
+                             approved=True, index_allowed=True,
+                             owner_authorisation="OWNER_DECISION_2026-11-11_TEST")
         finally:
             store.close()
         code, out = self.run_cli(["run", "--db", self.db, "--staging", self.staging,

@@ -52,6 +52,12 @@ class CrawlConfig:
     # per-run fetch budget while another approved host still has work.
     max_host_share: float = 0.7
     rights_default: str = "metadata_and_short_snippet"
+    # Hard pilot limits. They are persisted per UTC day in the store, so a
+    # crash and restart cannot reset the counter and spend the allowance
+    # twice. The offline simulator opts into larger numbers explicitly.
+    pilot_http_attempts_per_day: int = 300
+    pilot_accepted_documents_per_day: int = 20
+    pilot_run_minutes_max: float = 30.0
 
     def validate(self) -> None:
         if not 0 <= self.max_depth <= 3:
@@ -70,6 +76,12 @@ class CrawlConfig:
             raise ConfigError("recheck intervals must be positive")
         if self.focus_month is not None and not 1 <= self.focus_month <= 12:
             raise ConfigError("focus_month must be 1..12")
+        if self.pilot_http_attempts_per_day <= 0:
+            raise ConfigError("pilot_http_attempts_per_day must be positive")
+        if self.pilot_accepted_documents_per_day <= 0:
+            raise ConfigError("pilot_accepted_documents_per_day must be positive")
+        if self.pilot_run_minutes_max <= 0:
+            raise ConfigError("pilot_run_minutes_max must be positive")
         if self.sitemap_policy not in ("candidate_only", "deny"):
             raise ConfigError("sitemaps may only be recorded as candidates")
         if not self.allow_loopback and self.min_interval_s < 3.0:

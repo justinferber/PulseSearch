@@ -87,6 +87,11 @@ def main() -> int:
         loopback_hosts=tuple(server.base.replace("http://", "") for server in network.servers.values()),
         max_depth=3,
         max_fetches_per_day=5000,
+        # The six-origin simulator is a test rig, not a pilot: it explicitly
+        # raises the pilot caps rather than weakening the production defaults.
+        pilot_http_attempts_per_day=5000,
+        pilot_accepted_documents_per_day=5000,
+        pilot_run_minutes_max=180.0,
     )
     try:
         for name, server in network.servers.items():

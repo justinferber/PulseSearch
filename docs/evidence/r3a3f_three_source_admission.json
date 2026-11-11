@@ -1,0 +1,163 @@
+{
+  "kind": "R3A3F_THREE_SOURCE_ADMISSION_REGISTER",
+  "schema": "pulse-search-r3a3f-source-register/v1",
+  "status": "PROPOSAL_ONLY_NOT_ADMITTED",
+  "generated_at": "2026-11-11",
+  "audit_method": "read-only manual browser and public research; the Pulse Search crawler was never pointed at these hosts",
+  "live_third_party_requests": 0,
+  "production": "HOLD",
+  "owner_decision": "RETAIN_CITY_HALL_ADD_LONDON_PARADE_AND_LORD_MAYORS_SHOW_AS_CANDIDATES_ONLY",
+  "owner_scope_not_authorisation": "Adding a candidate to this register is scope selection. It does not admit the host, grant content rights or authorise any live request.",
+  "sources": [
+    {
+      "source_id": "london-gov-uk-events",
+      "simulation_source_id": "city-hall",
+      "host": "www.london.gov.uk",
+      "origin": "https://www.london.gov.uk",
+      "role": "candidate_A_city_hall",
+      "state": "robots_reviewed",
+      "approved": false,
+      "index_allowed": false,
+      "rights_status": "PENDING_TERMS_REVIEW",
+      "owner_authorisation": null,
+      "allowed_paths": ["/events"],
+      "proposed_seeds": ["https://www.london.gov.uk/events"],
+      "path_review_candidates": ["/events"],
+      "excluded_paths": [
+        {"path": "/whats-on", "reason": "unverified; must not be proposed until existence, stability and the same rights/robots coverage are confirmed"},
+        {"path": "/search", "reason": "robots-disallowed search endpoint"}
+      ],
+      "robots": {
+        "url": "https://www.london.gov.uk/robots.txt",
+        "status": 200,
+        "fetched_at": "2026-11-11",
+        "observed": "User-agent: * with Disallow /search, /print/, /entityprint/, /admin/, /user/* and query-filter parameters; Allow /events; no Crawl-delay; Sitemap https://www.london.gov.uk/sitemap.xml",
+        "note": "Robots permission is not content permission."
+      },
+      "terms_url": "https://www.london.gov.uk/about-us/website-privacy-and-accessibility",
+      "contact": "OWNER_TO_CONFIRM",
+      "historical_index_pages": 107,
+      "event_relevance": "high",
+      "pending": [
+        "record the terms/re-use basis for fetching /events and for indexing a title and short snippet",
+        "confirm /events is a listing that links eligible subpages, and whether it paginates",
+        "confirm the user-agent contact and takedown recipient",
+        "record an approve/deny/change-scope decision with date and reviewer"
+      ]
+    },
+    {
+      "source_id": "london-parade-official",
+      "simulation_source_id": "london-parade",
+      "host": "londonparade.com",
+      "origin": "https://londonparade.com",
+      "role": "candidate_B_london_parade",
+      "state": "robots_reviewed",
+      "approved": false,
+      "index_allowed": false,
+      "rights_status": "PENDING_ORGANISER_AND_TERMS_REVIEW",
+      "owner_authorisation": null,
+      "allowed_paths": [],
+      "proposed_seeds": [
+        "https://londonparade.com/parade-location-timing/",
+        "https://londonparade.com/about/"
+      ],
+      "path_review_candidates": [
+        "/about/",
+        "/parade-location-timing/",
+        "/londonparade-participants/",
+        "/news-archive",
+        "/festivals/concerts/"
+      ],
+      "excluded_paths": [
+        {"path": "/shop/", "reason": "commerce; not event discovery"},
+        {"path": "/takepart/", "reason": "participant application form; no personal data"},
+        {"path": "/account/", "reason": "account portal"},
+        {"path": "/contact/", "reason": "contact form; no personal data"},
+        {"path": "https://www.ticketmaster.co.uk/*", "reason": "third-party ticketing host, never admitted"}
+      ],
+      "robots": {
+        "url": "https://londonparade.com/robots.txt",
+        "status": 200,
+        "fetched_at": "2026-11-11",
+        "observed": "Cloudflare-managed block plus site rules: User-agent: * Allow / with Content-Signal search=yes, ai-train=no, use=reference; Crawl-delay: 10; many AI/training bots Disallow /; no Sitemap line",
+        "note": "Crawl-delay 10 would override the 3s floor for this host; search indexing is signalled yes, AI training no. Signals are not a licence for snippet storage or recrawling."
+      },
+      "terms_url": null,
+      "terms_observed": "No dedicated terms-of-use page found; footer states 'Londonparade.com 2025 | All Rights Reserved' and links privacy at lnydp.com/privacy-policy/",
+      "contact": "contact@londonparade.com",
+      "organiser": "Destination Events Ltd",
+      "relationship_note": "Mine Media works commercially with this event. Commercial representation does not grant crawler, link-retention or content-reuse permission; written organiser approval is required.",
+      "event_name": "London Parade (formerly London's New Year's Day Parade / LNYDP)",
+      "event_year_and_date": "2027 edition, 1 January 2027, 1pm",
+      "historical_index_pages": 0,
+      "pending": [
+        "obtain written organiser permission for crawling, indexing/snippets, link retention, recrawling and takedown",
+        "confirm the canonical hostname (apex vs www) and redirect behaviour",
+        "confirm current path architecture for the 2027 edition and which pages link which",
+        "prefer an organiser-supplied structured public feed if one can be licensed",
+        "record reviewer, permission evidence and takedown contact before changing flags"
+      ]
+    },
+    {
+      "source_id": "lord-mayors-show-official",
+      "simulation_source_id": "lord-mayors-show",
+      "host": "www.lordmayorsshow.london",
+      "origin": "https://www.lordmayorsshow.london",
+      "role": "candidate_C_lord_mayors_show",
+      "state": "rights_hold",
+      "approved": false,
+      "index_allowed": false,
+      "rights_status": "PENDING_RESTRICTIVE_TERMS_AND_PERMISSION",
+      "owner_authorisation": null,
+      "allowed_paths": [],
+      "proposed_seeds": ["https://www.lordmayorsshow.london/"],
+      "path_review_candidates": [
+        "/history/",
+        "/programme/",
+        "/route/",
+        "/lord-mayors-procession/",
+        "/practicalities/where-to-go/",
+        "/closures/"
+      ],
+      "excluded_paths": [
+        {"path": "/terms-of-use/", "reason": "terms text itself; no discovery value and restrictive"},
+        {"path": "/book/", "reason": "commerce"},
+        {"path": "https://procession.lordmayorsshow.london/*", "reason": "separate host; not admitted by this record"},
+        {"path": "https://api.lordmayorsshow.london/*", "reason": "separate API host; not admitted"}
+      ],
+      "robots": {
+        "url": "https://www.lordmayorsshow.london/robots.txt",
+        "status": 404,
+        "fetched_at": "2026-11-11",
+        "observed": "No robots.txt served (HTTP 404). Absence of rules is not permission and offers no crawl-delay guidance.",
+        "note": "The offline fixture deliberately serves a stricter robots file than the real host so the test exercises refusal paths."
+      },
+      "terms_url": "https://www.lordmayorsshow.london/terms-of-use/",
+      "terms_observed": "Terms reserve all intellectual property rights; permit linking only to the home page, forbid links to any other part of the site, forbid framing, and forbid links from websites not owned by the linker. No automated collection or snippet licence is granted.",
+      "contact": "enquiries@lordmayorsshow.london",
+      "organiser": "The Lord Mayor's Show (rights controller to confirm)",
+      "event_name": "The Lord Mayor's Show",
+      "event_year_and_date": "2026 edition, Saturday 14 November 2026, 11am",
+      "historical_index_pages": 0,
+      "corroboration": {
+        "url": "https://www.cityoflondon.gov.uk/events/lord-mayors-show",
+        "rule": "separate host; a cross-link is not admission"
+      },
+      "pending": [
+        "seek explicit permission for automated discovery, snippet indexing and deep links; current terms do not grant them",
+        "record a RIGHTS_HOLD decision or a licensed-feed/link-only arrangement",
+        "confirm the canonical host and whether procession./api. subdomains are in scope of any permission",
+        "record reviewer, permission evidence and takedown contact before changing flags"
+      ]
+    }
+  ],
+  "acceptance_labels": {
+    "THREE_CANDIDATES_REGISTERED_FOR_REVIEW": "PASS",
+    "REAL_SOURCES_ADMITTED": 0,
+    "THIRD_PARTY_CRAWLER_REQUESTS": 0,
+    "MAX_HOPS": 3,
+    "ORIGINAL_INDEX_UNTOUCHED": "PASS",
+    "SIGNED_HUMAN_GRADING": "PENDING",
+    "PRODUCTION": "HOLD"
+  }
+}

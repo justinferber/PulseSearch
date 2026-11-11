@@ -14,6 +14,8 @@ from pathlib import Path
 
 from .config import CrawlConfig
 from .crawler import Crawler, build_report
+from .novelty import PINNED_INDEX_SHA256
+from .registry import load_registry
 from .staging import StagingIndex
 from .store import Store
 from .urls import UrlError, canonicalize, in_scope
@@ -61,6 +63,20 @@ def load_sources(payload: dict) -> list[dict]:
             raise AdmissionError(
                 f"source {source_id}: an admitted source needs a reviewed rights basis, "
                 f"not {source['rights_status']!r}")
+        authorisation = str(source.get("owner_authorisation") or "").strip()
+        synthetic = str(source["rights_status"]).upper().startswith("SYNTHETIC")
+        if source["approved"] and not synthetic:
+            # The flag cannot authorise itself, and the rights status is a
+            # finding, not a decision: a distinct written owner decision is
+            # required before a real host may be admitted.
+            if not authorisation:
+                raise AdmissionError(
+                    f"source {source_id}: admitting a real host needs a documented "
+                    "owner_authorisation reference")
+            if authorisation.upper() == str(source["rights_status"]).strip().upper():
+                raise AdmissionError(
+                    f"source {source_id}: owner_authorisation must be a distinct "
+                    "decision reference, not a copy of the rights status")
         records.append(source)
     return records
 
@@ -96,6 +112,10 @@ def preflight(store: Store) -> list[str]:
                 f"{source['source_id']}: admitted without a reviewed rights basis")
         if not json.loads(source["allowed_paths"] or "[]"):
             problems.append(f"{source['source_id']}: no approved path")
+        synthetic = str(source["rights_status"]).upper().startswith("SYNTHETIC")
+        if not synthetic and not (source.get("owner_authorisation") or "").strip():
+            problems.append(
+                f"{source['source_id']}: admitted without a documented owner authorisation")
     return problems
 
 
@@ -121,6 +141,7 @@ def cmd_sources(args: argparse.Namespace) -> int:
                 index_allowed=source["index_allowed"],
                 store_body=bool(source.get("store_body", False)),
                 contact=source.get("contact", ""),
+                owner_authorisation=source.get("owner_authorisation", ""),
                 notes=source.get("notes", ""),
                 approved=source["approved"],
                 probe_policy=source.get("probe_policy", []),
@@ -172,8 +193,11 @@ def cmd_report(args: argparse.Namespace) -> int:
     store, staging = _open(args)
     try:
         config = CrawlConfig()
+        registry = load_registry(args.registry) if args.registry else None
         report = build_report(store, staging, config,
-                              historical_index=args.historical_index)
+                              historical_index=args.historical_index,
+                              expected_index_sha256=args.index_sha256,
+                              registry=registry)
         with open(args.out, "w", encoding="utf-8") as handle:
             json.dump(report, handle, indent=2)
         print(args.out)
@@ -186,7 +210,8 @@ def cmd_report(args: argparse.Namespace) -> int:
 def cmd_dashboard(args: argparse.Namespace) -> int:
     from .dashboard import serve
 
-    server = serve(args.db, args.staging, args.port, args.historical_index)
+    server = serve(args.db, args.staging, args.port, args.historical_index,
+                   registry_path=args.registry, index_sha256=args.index_sha256)
     print(f"dashboard: http://127.0.0.1:{args.port}/", flush=True)
     try:
         server.serve_forever()
@@ -220,6 +245,10 @@ def main(argv: list[str] | None = None) -> int:
     report.add_argument("--out", required=True)
     report.add_argument("--historical-index", default=None,
                         help="optional pinned index for read-only novelty comparison")
+    report.add_argument("--index-sha256", default=PINNED_INDEX_SHA256,
+                        help="expected SHA-256 of the historical index (pin check)")
+    report.add_argument("--registry", default=None,
+                        help="optional three-candidate source register JSON")
     report.set_defaults(func=cmd_report)
 
     dash = sub.add_parser("dashboard", help="serve the read-only console")
@@ -228,6 +257,10 @@ def main(argv: list[str] | None = None) -> int:
     dash.add_argument("--port", type=int, default=8787)
     dash.add_argument("--historical-index", default=None,
                       help="optional pinned index for read-only novelty comparison")
+    dash.add_argument("--index-sha256", default=PINNED_INDEX_SHA256,
+                      help="expected SHA-256 of the historical index (pin check)")
+    dash.add_argument("--registry", default=None,
+                      help="optional three-candidate source register JSON")
     dash.set_defaults(func=cmd_dashboard)
 
     args = parser.parse_args(argv)

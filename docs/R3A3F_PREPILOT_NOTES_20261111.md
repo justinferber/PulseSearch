@@ -113,3 +113,14 @@ document.
 No topic filtering, no scope expansion through probes, no sitemap auto-admission, no body storage
 without a licensing basis, no second crawler process, and no live crawling until the owner admits a
 specific host in writing.
+
+### Second directive (three candidates) — implemented
+
+`registry.py` records City Hall, London Parade and the Lord Mayor's Show as candidates with separate
+states; all remain unadmitted. The five operational gates from the F1 list are implemented and
+tested: pre-network URL admission, persisted HTTP/accepted/run-duration limits, SHA-256 pinning of
+the novelty index, and a distinct documented owner authorisation for any real host. Two offline
+demonstrations exist: the original six-origin rig (28/28) and the three-candidate rig (30/30), the
+latter also serving the console with per-source figures and novelty. The pace ledger (per-request
+wait rows) is still the next audit improvement: pacing is enforced and measured in memory, and its
+effect is visible in run duration, but individual waits are not yet persisted.

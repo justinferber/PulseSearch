@@ -32,6 +32,10 @@ class CrawlGateTests(unittest.TestCase):
             min_interval_s=0.0,
             loopback_hosts=tuple(s.base.replace("http://", "") for s in cls.network.servers.values()),
             max_depth=3,
+            # Simulator rigs opt out of the live pilot caps explicitly.
+            pilot_http_attempts_per_day=5000,
+            pilot_accepted_documents_per_day=5000,
+            pilot_run_minutes_max=180.0,
         )
         for name, server in cls.network.servers.items():
             cls.store.add_source(source_id=name, origin=server.base, allowed_paths=["/"],

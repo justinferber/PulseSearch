@@ -117,6 +117,21 @@ def render_html(report: dict, staging: StagingIndex, query: str = "", category: 
         f"<tr><td>{html.escape(str(decision))}</td><td>{count}</td></tr>"
         for decision, count in (redirects.get("by_decision") or {}).items()
     ) or "<tr><td colspan='2'>No redirects followed or blocked.</td></tr>"
+    register = report.get("source_register") or {}
+    candidates = register.get("candidates") or []
+    candidate_rows = "".join(
+        f"<tr><td>{html.escape(str(c['source_id']))}<div class='sub'>{html.escape(str(c['host']))}</div></td>"
+        f"<td><span class='pill {'good' if c['state'] == 'owner_approved' else 'warn'}'>"
+        f"{html.escape(str(c['state']))}</span></td>"
+        f"<td>{'yes' if c['approved'] else 'no'} / {'yes' if c['index_allowed'] else 'no'}</td>"
+        f"<td>{html.escape(str(c['rights_status']))}</td>"
+        f"<td>{html.escape(', '.join(c['allowed_paths']) or '—')}</td>"
+        f"<td>{c['staged_documents']} / {c['categories_covered']}</td>"
+        f"<td>{c['discovered_links']} / {c['deepest_depth']}</td>"
+        f"<td>{c['duplicates']}</td>"
+        f"<td>{html.escape(str((c.get('novelty') or {}).get('novel_documents', '—')))}</td></tr>"
+        for c in candidates
+    ) or "<tr><td colspan='9'>No candidate register supplied.</td></tr>"
     novelty_line = (
         "Novelty versus the pinned index: "
         f"{novelty.get('novel_documents')} new of {novelty.get('staged_documents')} staged · "
@@ -236,6 +251,15 @@ no topic, host or category is ever blocked.</div>
 <table style="margin-top:12px"><tr><th>Priority-raised URL</th><th>Priority</th><th>Hint</th></tr>
 {prioritised_rows}</table></section>
 
+<section><h2>Three proposed sources — candidate, not admitted</h2>
+<div class="sub">Owner scope decision: <code>{html.escape(str(register.get('owner_decision', 'n/a')))}</code>.
+Real sources admitted: <b>{register.get('real_sources_admitted', 0)}</b>. A candidate is never presented
+as crawled or indexed: the document, link and novelty figures below come only from the offline
+synthetic fixtures named in the register, never from the real hosts.</div>
+<table><tr><th>Candidate</th><th>State</th><th>Approved / index</th><th>Rights basis</th>
+<th>Proposed paths</th><th>Docs / categories</th><th>Links / depth</th><th>Duplicates</th><th>Novel</th></tr>
+{candidate_rows}</table></section>
+
 <section><h2>Sources and rights</h2>
 <div class="sub">{html.escape(novelty_line)}</div><table>
 <tr><th>Source</th><th>Origin</th><th>Rights basis</th><th>Docs</th><th>Index allowed</th></tr>
@@ -303,7 +327,9 @@ class _Handler(BaseHTTPRequestHandler):
             self._send(200, b'{"ok":true}', "application/json")
             return
         report = build_report(self.server.store, self.server.staging, self.server.config,
-                              historical_index=self.server.historical_index)
+                              historical_index=self.server.historical_index,
+                              expected_index_sha256=self.server.index_sha256,
+                              registry=self.server.registry)
         if parsed.path == "/api/report.json":
             self._send(200, json.dumps(report, indent=2).encode("utf-8"), "application/json")
             return
@@ -322,7 +348,8 @@ class _Handler(BaseHTTPRequestHandler):
 
 
 def serve(db_path: str, staging_path: str, port: int = 8787,
-          historical_index: str | None = None) -> HTTPServer:
+          historical_index: str | None = None, registry_path: str | None = None,
+          index_sha256: str | None = None) -> HTTPServer:
     # Single-threaded on purpose: the sqlite handles are opened once here and
     # must be used from the same thread. A local read-only console has no need
     # for concurrent request handling.
@@ -334,6 +361,12 @@ def serve(db_path: str, staging_path: str, port: int = 8787,
     server.config = CrawlConfig(allow_loopback=True, loopback_hosts=("127.0.0.1",),
                                 min_interval_s=0.0)
     server.historical_index = historical_index
+    server.index_sha256 = index_sha256
+    server.registry = None
+    if registry_path:
+        from .registry import load_registry
+
+        server.registry = load_registry(registry_path)
     return server
 
 
@@ -344,8 +377,13 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--port", type=int, default=8787)
     parser.add_argument("--historical-index", default=None,
                         help="optional pinned index for read-only novelty comparison")
+    parser.add_argument("--index-sha256", default=None,
+                        help="expected SHA-256 of the historical index (pin check)")
+    parser.add_argument("--registry", default=None,
+                        help="optional three-candidate source register JSON")
     args = parser.parse_args(argv)
-    server = serve(args.db, args.staging, args.port, args.historical_index)
+    server = serve(args.db, args.staging, args.port, args.historical_index,
+                   registry_path=args.registry, index_sha256=args.index_sha256)
     print(f"dashboard: http://127.0.0.1:{args.port}/", flush=True)
     try:
         server.serve_forever()

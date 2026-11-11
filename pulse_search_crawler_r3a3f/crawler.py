@@ -22,8 +22,9 @@ from . import quality, topics
 from .classify import CATEGORIES, category_coverage, classify
 from .config import CrawlConfig
 from .extract import extract_page
-from .novelty import overlap
+from .novelty import PINNED_INDEX_SHA256, NoveltyPinMismatch, overlap, overlap_by_source
 from .pacing import HostPacer
+from .registry import register_block
 from .robots import MAX_ROBOTS_BYTES, RobotsCache, RobotsRules, decision_for_status
 from .safe_fetch import Fetcher
 from .store import Store, utc_now
@@ -53,7 +54,7 @@ class Crawler:
         self.staging = staging
         self.config = config
         self.config.validate()
-        self.fetcher = Fetcher(config)
+        self.fetcher = Fetcher(config, attempt_gate=self._attempt_gate)
         self.robots = RobotsCache(self.fetcher)
         self.pacer = HostPacer(store, clock=clock, sleep=sleep)
         self._last_host: str | None = None
@@ -140,6 +141,7 @@ class Crawler:
         per_run = max_fetches if max_fetches is not None else budget
         consumed = store.fetches_today()
         fetched = 0
+        started_monotonic = time.monotonic()
         # Fairness guard: with more than one approved source, no host may
         # spend more than its share of the run budget. With a single source
         # there is nothing to be fair between, so the cap does not apply.
@@ -161,6 +163,21 @@ class Crawler:
             if stop_epoch is not None and time.time() >= stop_epoch:
                 stop_reason = "deadline_reached"
                 break
+            # Hard pilot limits live in the store, not in this process: a
+            # crash and restart reads the same counters instead of a fresh
+            # allowance.
+            pilot = store.budget_snapshot()
+            if pilot["http_attempts"] >= self.config.pilot_http_attempts_per_day:
+                stop_reason = "http_attempts_cap_reached"
+                break
+            if pilot["accepted_documents"] >= self.config.pilot_accepted_documents_per_day:
+                stop_reason = "accepted_documents_cap_reached"
+                break
+            elapsed_minutes = (pilot["run_seconds"]
+                               + time.monotonic() - started_monotonic) / 60.0
+            if elapsed_minutes >= self.config.pilot_run_minutes_max:
+                stop_reason = "run_minutes_cap_reached"
+                break
             blocked = self._blocked_hosts()
             row = store.claim_next(
                 max_depth=self.config.max_depth, now_ts=utc_now(),
@@ -178,6 +195,7 @@ class Crawler:
             self._process(row)
             host_fetches[self._last_host] += 1
             fetched += 1
+        store.budget_add(run_seconds=time.monotonic() - started_monotonic)
         counters = self._final_counters(stop_reason, fetched)
         store.finish_run(self.run_id, counters)
         return counters
@@ -206,6 +224,16 @@ class Crawler:
             return
         if depth > self.config.max_depth:
             self._reject(row, "depth_beyond_max", f"depth {depth}")
+            return
+        # Origin, exact path scope and indexing permission are checked before
+        # robots.txt or any content request. A queued URL is never a reason to
+        # contact a host: it is a request to justify contacting it.
+        reason = self._precheck(row, source, url)
+        self.store.log_url_admission(
+            url=url, source_id=source["source_id"], depth=depth,
+            decision="allowed" if reason is None else "refused", reason=reason or "")
+        if reason:
+            self._reject(row, reason, "pre-network admission check")
             return
         self._active_source = source
         origin = origin_of(url)
@@ -418,8 +446,15 @@ class Crawler:
             "fetch_status": 200,
             "mime": result.mime,
         }
+        if (self.store.budget_snapshot()["accepted_documents"]
+                >= self.config.pilot_accepted_documents_per_day):
+            self._reject(row, "accepted_documents_cap", "daily pilot cap reached",
+                         status=200, result=result)
+            return
         indexed, outcome = self.staging.add_document(
             record, shingle_list, index_allowed=bool(source["index_allowed"]))
+        if indexed:
+            self.store.budget_add(accepted_documents=1)
         self.store.upsert_page_state(
             canonicalize(url),
             source_id=source["source_id"],
@@ -488,6 +523,35 @@ class Crawler:
             if prior.get("last_modified"):
                 headers["If-Modified-Since"] = prior["last_modified"]
         return headers
+
+    def _attempt_gate(self) -> str | None:
+        """Count one network attempt, or refuse it at the persisted ceiling.
+
+        Robots fetches, redirect hops and retries all pass through here, so the
+        pilot's "total HTTP attempts" limit is a count of what the process
+        actually tried to send, not a count of pages it wanted.
+        """
+        snapshot = self.store.budget_snapshot()
+        if snapshot["http_attempts"] >= self.config.pilot_http_attempts_per_day:
+            return "http_attempts_cap"
+        self.store.budget_add(http_attempts=1)
+        return None
+
+    def _precheck(self, row, source, url: str) -> str | None:
+        """Admission of a queued URL before any network request."""
+        try:
+            canonical = canonicalize(url)
+        except (UrlError, ValueError):
+            return "bad_url"
+        if not source.get("approved") or not source.get("enabled"):
+            return "unapproved_source"
+        if origin_of(canonical) != source["origin"]:
+            return "off_origin"
+        if not in_scope(canonical, source["origin"], _paths(source["allowed_paths"])):
+            return "out_of_scope"
+        if self.config.require_index_approval and not source["index_allowed"]:
+            return "rights_denied_index"
+        return None
 
     def _redirect_gate(self, target: str) -> str | None:
         """Authorise one redirect destination before its request is issued.
@@ -692,18 +756,80 @@ def _redirect_block(store: Store) -> dict:
     }
 
 
-def _novelty_block(staging: StagingIndex, historical_index) -> dict:
+def _novelty_block(staging: StagingIndex, historical_index,
+                   expected_sha256: str | None = None) -> dict:
     if not historical_index:
         return {"status": "NOT_COMPUTED",
                 "note": "pass --historical-index to compare against the pinned index"}
     try:
-        return overlap(staging, historical_index)
+        return overlap(staging, historical_index, expected_sha256)
+    except NoveltyPinMismatch as exc:
+        return {"status": "PIN_MISMATCH", "detail": str(exc),
+                "expected_index_sha256": expected_sha256}
     except (OSError, sqlite3.Error, ValueError) as exc:
         return {"status": "UNAVAILABLE", "detail": str(exc)}
 
 
+def _staged_stats(staging: StagingIndex) -> dict:
+    """Per-source documents, categories, depth and duplicates for the console."""
+    stats: dict[str, dict] = {}
+    for row in staging.conn.execute(
+            "SELECT source_id, COUNT(*) docs, MAX(depth) deepest FROM docs "
+            "WHERE revoked=0 GROUP BY source_id"):
+        stats[row["source_id"]] = {
+            "documents": row["docs"], "deepest_depth": row["deepest"],
+            "categories": {}, "categories_covered": 0, "duplicates": 0}
+    for row in staging.conn.execute(
+            "SELECT source_id, category, COUNT(*) n FROM docs WHERE revoked=0 "
+            "GROUP BY source_id, category"):
+        entry = stats.setdefault(row["source_id"], {
+            "documents": 0, "deepest_depth": 0, "categories": {},
+            "categories_covered": 0, "duplicates": 0})
+        entry["categories"][row["category"]] = row["n"]
+        entry["categories_covered"] = len(entry["categories"])
+    for row in staging.conn.execute(
+            "SELECT source_id, COUNT(*) n FROM rejected_pages WHERE reason IN "
+            "('duplicate_exact','duplicate_near') GROUP BY source_id"):
+        stats.setdefault(row["source_id"], {
+            "documents": 0, "deepest_depth": 0, "categories": {},
+            "categories_covered": 0, "duplicates": 0})["duplicates"] = row["n"]
+    return stats
+
+
+def _sources_block(store: Store, staging: StagingIndex, sources: list[dict]) -> list[dict]:
+    staged = _staged_stats(staging)
+    discovered = {
+        row["source_id"]: row["n"] for row in store.conn.execute(
+            "SELECT source_id, COUNT(*) n FROM frontier GROUP BY source_id")
+    }
+    rows = []
+    for source in sources:
+        stats = staged.get(source["source_id"], {})
+        rows.append({
+            "source_id": source["source_id"],
+            "origin": source["origin"],
+            "rights_status": source["rights_status"],
+            "owner_authorisation": source.get("owner_authorisation") or "",
+            "index_allowed": bool(source["index_allowed"]),
+            "store_body": bool(source["store_body"]),
+            "approved": bool(source["approved"]),
+            "state": ("offline_synthetic_admitted"
+                      if source["approved"] and str(source["rights_status"]).upper().startswith("SYNTHETIC")
+                      else "owner_approved" if source["approved"] else "candidate"),
+            "documents": stats.get("documents", 0),
+            "categories": stats.get("categories", {}),
+            "categories_covered": stats.get("categories_covered", 0),
+            "discovered_links": discovered.get(source["source_id"], 0),
+            "deepest_depth": stats.get("deepest_depth", 0),
+            "duplicates": stats.get("duplicates", 0),
+            "enabled": bool(source["enabled"]),
+        })
+    return rows
+
+
 def build_report(store: Store, staging: StagingIndex, config: CrawlConfig,
-                 historical_index=None) -> dict:
+                 historical_index=None, expected_index_sha256: str | None = None,
+                 registry: dict | None = None) -> dict:
     stats = staging.stats()
     queue = store.queue_counts()
     outcomes = store.outcome_counts()
@@ -722,6 +848,15 @@ def build_report(store: Store, staging: StagingIndex, config: CrawlConfig,
     # A 1,000-page target is a hypothesis, never a claim: report what would be
     # needed at the observed yield rather than asserting the target was met.
     gross_needed = math.ceil(config.target_new_pages_per_day / acceptance) if acceptance else None
+    novelty = _novelty_block(staging, historical_index, expected_index_sha256)
+    staged_stats = _staged_stats(staging)
+    if historical_index and novelty.get("status") == "MEASURED_READ_ONLY":
+        try:
+            for source_id, block in overlap_by_source(
+                    staging, historical_index, expected_index_sha256).items():
+                staged_stats.setdefault(source_id, {})["novelty"] = block
+        except (OSError, sqlite3.Error, ValueError, NoveltyPinMismatch):
+            pass
     return {
         "schema": "pulse-search-r3a3f-run-report/v1",
         "version": "r3a3f-0.1-offline",
@@ -758,19 +893,25 @@ def build_report(store: Store, staging: StagingIndex, config: CrawlConfig,
         "discovery": _discovery_block(store, staging, config),
         "fairness": _fairness_block(store, staging, config),
         "redirects": _redirect_block(store),
-        "novelty": _novelty_block(staging, historical_index),
-        "sources": [
-            {
-                "source_id": s["source_id"],
-                "origin": s["origin"],
-                "rights_status": s["rights_status"],
-                "index_allowed": bool(s["index_allowed"]),
-                "store_body": bool(s["store_body"]),
-                "documents": stats["by_source"].get(s["source_id"], 0),
-                "enabled": bool(s["enabled"]),
-            }
-            for s in sources
-        ],
+        "novelty": novelty,
+        "sources": _sources_block(store, staging, sources),
+        "source_register": register_block(registry, staged_stats),
+        "pilot_budget": {
+            "caps": {
+                "http_attempts_per_day": config.pilot_http_attempts_per_day,
+                "accepted_documents_per_day": config.pilot_accepted_documents_per_day,
+                "run_minutes_max": config.pilot_run_minutes_max,
+                "max_depth": config.max_depth,
+            },
+            "today": store.budget_snapshot(),
+            "persisted_in_store": True,
+            "note": "counters survive a restart; a fresh process cannot reset the day",
+        },
+        "url_admission": {
+            "by_decision": store.url_admission_counts(),
+            "policy": "origin, exact path scope and indexing permission are checked "
+                      "before robots.txt or any content request is issued",
+        },
         "index": {
             "documents": stats["documents"],
             "revoked": stats["revoked"],

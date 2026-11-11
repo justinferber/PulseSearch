@@ -135,12 +135,15 @@ def document_type(doc: dict) -> str:
     if declared:
         return str(declared)
     t = normal(" ".join(str(doc.get(k) or "") for k in ("title", "snippet", "url")))
+    # Transport guidance often mentions tickets (machines, day passes), so it
+    # must be typed before the booking heuristic or a transit guide becomes a
+    # booking guide.
+    if "transport" in t or "public transit" in t or "getting there" in t or "ticket machine" in t:
+        return "transport_guide"
     if BOOKING.search(t) and (HOWTO.search(t) or "guide" in t):
         return "booking_guide"
     if "how to" in t or "faq" in t or "instructions" in t or "anleitung" in t:
         return "how_to"
-    if "transport" in t or "public transit" in t or "getting there" in t:
-        return "transport_guide"
     if "venue" in t or "arena" in t or "stadium" in t:
         return "venue"
     if "calendar" in t or "listings" in t or "whats on" in t:

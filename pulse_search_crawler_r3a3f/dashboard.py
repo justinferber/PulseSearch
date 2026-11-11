@@ -19,6 +19,8 @@ from .crawler import build_report
 from .staging import StagingIndex
 from .store import Store
 
+from pulse_search_broad_r3a3g.answers import (AnswerService, OpenMeteoProvider, load_pack,
+                                              render_answer_for_web)
 from pulse_search_broad_r3a3g.search import search_staging
 from pulse_search_broad_r3a3g.source_discovery import rank_external_candidates
 
@@ -58,6 +60,8 @@ button{background:#1b2a4a;cursor:pointer}
 button:hover{background:#24365e}
 code{background:#0f1729;padding:1px 6px;border-radius:6px;font-size:12px}
 .foot{margin-top:30px;color:var(--muted);font-size:12px}
+.answer{margin-top:14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+.answer p{margin:10px 0;line-height:1.6}
 ul.tight{margin:0;padding-left:18px}
 ul.tight li{margin:2px 0}
 """
@@ -68,7 +72,8 @@ def _bar(value: int, peak: int) -> str:
     return f"<div class='bar'><i style='width:{pct}%'></i></div>"
 
 
-def render_html(report: dict, staging: StagingIndex, query: str = "", category: str = "") -> str:
+def render_html(report: dict, staging: StagingIndex, query: str = "", category: str = "",
+                ask_html: str = "") -> str:
     funnel = report["funnel"]
     categories = report["categories"]
     peak = max(categories["counts"].values() or [1])
@@ -259,6 +264,17 @@ final status <span class="pill warn">PRODUCTION HOLD</span></div></header>
     <div class="n">must be zero · unapproved hosts {safety['unapproved_host_requests']}</div></div>
 </div>
 
+<section><h2>Ask Pulse UNITY — cited answers</h2>
+<div class="sub">Answers come only from the curated fact pack or an accepted staging page, with citations.
+If there is no trusted evidence, or live data is switched off, the answer says so instead of guessing.
+Try <code>When is Glastonbury on next year?</code>, <code>What is the weather in London or Berlin today?</code>,
+<code>Can you name place to buy flight tickets?</code> or <code>How do I book tickets for a concert in Berlin?</code>.</div>
+<form method="get" action="/ask">
+<input name="q" value="{html.escape(query)}" placeholder="Ask about an event, weather, how-to or where to buy" size="62">
+<button type="submit">Ask</button></form>
+{ask_html}
+</section>
+
 <section><h2>Progress towards 1,000 accepted pages/day</h2>
 <table><tr><th>Measure</th><th>Value</th><th>Note</th></tr>
 <tr><td>Target</td><td>{target['target_new_pages_per_day']}</td><td>aim, never a quota to fake</td></tr>
@@ -408,6 +424,12 @@ class _Handler(BaseHTTPRequestHandler):
         if parsed.path == "/health":
             self._send(200, b'{"ok":true}', "application/json")
             return
+        if parsed.path == "/api/ask":
+            question = (params.get("q") or [""])[0]
+            answer = self.server.answers.answer(question)
+            self._send(200, json.dumps(answer.as_dict(), indent=2).encode("utf-8"),
+                       "application/json")
+            return
         report = build_report(self.server.store, self.server.staging, self.server.config,
                               historical_index=self.server.historical_index,
                               expected_index_sha256=self.server.index_sha256,
@@ -427,13 +449,19 @@ class _Handler(BaseHTTPRequestHandler):
             return
         query = (params.get("q") or [""])[0]
         category = (params.get("category") or [""])[0]
-        body = render_html(report, self.server.staging, query, category).encode("utf-8")
+        ask_html = ""
+        if parsed.path == "/ask":
+            answer = self.server.answers.answer(query)
+            ask_html = render_answer_for_web(answer, html.escape)
+        body = render_html(report, self.server.staging, query, category,
+                           ask_html=ask_html).encode("utf-8")
         self._send(200, body, "text/html; charset=utf-8")
 
 
 def serve(db_path: str, staging_path: str, port: int = 8787,
           historical_index: str | None = None, registry_path: str | None = None,
-          index_sha256: str | None = None) -> HTTPServer:
+          index_sha256: str | None = None, knowledge_path: str | None = None,
+          live_weather: bool = False) -> HTTPServer:
     # Single-threaded on purpose: the sqlite handles are opened once here and
     # must be used from the same thread. A local read-only console has no need
     # for concurrent request handling.
@@ -451,6 +479,13 @@ def serve(db_path: str, staging_path: str, port: int = 8787,
         from .registry import load_registry
 
         server.registry = load_registry(registry_path)
+    pack_path = knowledge_path or "config/knowledge_pack.json"
+    try:
+        pack = load_pack(pack_path)
+    except (OSError, ValueError):
+        pack = {"policy": {"trusted_hosts": []}, "version": 0}
+    server.answers = AnswerService(
+        staging, pack, weather=OpenMeteoProvider() if live_weather else None)
     return server
 
 
@@ -465,9 +500,14 @@ def main(argv: list[str] | None = None) -> int:
                         help="expected SHA-256 of the historical index (pin check)")
     parser.add_argument("--registry", default=None,
                         help="optional three-candidate source register JSON")
+    parser.add_argument("--knowledge", default=None,
+                        help="knowledge pack JSON (default config/knowledge_pack.json)")
+    parser.add_argument("--live-weather", action="store_true",
+                        help="enable the keyless Open-Meteo live weather adapter")
     args = parser.parse_args(argv)
     server = serve(args.db, args.staging, args.port, args.historical_index,
-                   registry_path=args.registry, index_sha256=args.index_sha256)
+                   registry_path=args.registry, index_sha256=args.index_sha256,
+                   knowledge_path=args.knowledge, live_weather=args.live_weather)
     print(f"dashboard: http://127.0.0.1:{args.port}/", flush=True)
     try:
         server.serve_forever()

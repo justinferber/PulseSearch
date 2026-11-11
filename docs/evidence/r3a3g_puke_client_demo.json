@@ -6,8 +6,8 @@
     "status": "OK",
     "service": "pulse-search",
     "api_version": "1.1",
-    "request_id": "9969628390d14d68bc78597dd42fcff3",
-    "time_utc": "2026-11-11T16:28:33+00:00",
+    "request_id": "b4fa15fae5e244bf95e6dfb9262eee0b",
+    "time_utc": "2026-11-11T17:13:42+00:00",
     "consumer": "puke"
   },
   "cases": [
@@ -19,7 +19,7 @@
       "links": 0,
       "citations": 2,
       "claim_evidence": 4,
-      "request_id": "05173f769cd9495b9a0e892e1dd40514",
+      "request_id": "79723356f69a4ec1a83bbc03f70eb26a",
       "has_evidence": true,
       "search_status": "official_links",
       "search_results": [
@@ -39,11 +39,11 @@
       "question": "When is CSD Berlin 2027?",
       "status": "OFFICIAL_LINKS",
       "response_mode": "OFFICIAL_LINKS",
-      "answer": "I don't have an admitted page that answers this. Use the reviewed official service below; no live value was fetched.\n- CSD Berlin: https://www.csd-berlin.de/\n- Berlin.de events calendar: https://www.berlin.de/events/\n- visitBerlin Christmas markets: https://www.visitberlin.de/en/christmas-markets-berlin\n- European Festivals Association: https://www.efa-aef.eu/",
+      "answer": "I don't have an admitted page that answers this. Use the reviewed official service below; no live value was fetched.\n- CSD Berlin: https://www.csd-berlin.de/\n- Berlin.de events calendar: https://www.berlin.de/events/\n- Berlin.de museums: https://www.berlin.de/en/museums/\n- visitBerlin Christmas markets: https://www.visitberlin.de/en/christmas-markets-berlin\n- European Festivals Association: https://www.efa-aef.eu/",
       "links": 0,
-      "citations": 4,
-      "claim_evidence": 6,
-      "request_id": "e072167f62834e4682e825da909468b2",
+      "citations": 5,
+      "claim_evidence": 7,
+      "request_id": "9024e6ef094d4c61b7b53bac970731e5",
       "has_evidence": true,
       "search_status": "official_links",
       "search_results": [
@@ -58,8 +58,8 @@
           "source_kind": "official_directory"
         },
         {
-          "title": "visitBerlin Christmas markets",
-          "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+          "title": "Berlin.de museums",
+          "url": "https://www.berlin.de/en/museums/",
           "source_kind": "official_directory"
         }
       ]
@@ -72,7 +72,7 @@
       "links": 0,
       "citations": 1,
       "claim_evidence": 2,
-      "request_id": "044683e67ed34429bf2c5d877083f430",
+      "request_id": "80a851a8bc7e4fbab4b5adb2f2eb3f6f",
       "has_evidence": true,
       "search_status": "staging_results",
       "search_results": [
@@ -92,11 +92,11 @@
       "question": "London New Year's Eve fireworks tickets",
       "status": "OFFICIAL_LINKS",
       "response_mode": "OFFICIAL_LINKS",
-      "answer": "I don't have an admitted page that answers this. Use the reviewed official service below; no live value was fetched.\n- Mayor of London: https://www.london.gov.uk/\n- The O2: https://www.theo2.co.uk/\n- Roundhouse: https://www.roundhouse.org.uk/\n- Southbank Centre: https://www.southbankcentre.co.uk/\n- Visit London events: https://www.visitlondon.com/things-to-do/events\n- European Festivals Association: https://www.efa-aef.eu/\n- Glastonbury Festival: https://www.glastonburyfestivals.co.uk/",
+      "answer": "I don't have an admitted page that answers this. Use the reviewed official service below; no live value was fetched.\n- Mayor of London: https://www.london.gov.uk/\n- Roundhouse: https://www.roundhouse.org.uk/\n- Visit London events: https://www.visitlondon.com/things-to-do/events\n- London Pride: https://prideinlondon.org/\n- Southbank Centre: https://www.southbankcentre.co.uk/\n- The O2: https://www.theo2.co.uk/\n- European Festivals Association: https://www.efa-aef.eu/\n- Glastonbury Festival: https://www.glastonburyfestivals.co.uk/",
       "links": 0,
-      "citations": 7,
-      "claim_evidence": 9,
-      "request_id": "27681f015d3b42c1a6ccd178d98ac2ce",
+      "citations": 8,
+      "claim_evidence": 10,
+      "request_id": "30f25373599045b492b64d836fc6404f",
       "has_evidence": true,
       "search_status": "official_links",
       "search_results": [
@@ -106,13 +106,13 @@
           "source_kind": "official_directory"
         },
         {
-          "title": "The O2",
-          "url": "https://www.theo2.co.uk/",
+          "title": "Roundhouse",
+          "url": "https://www.roundhouse.org.uk/",
           "source_kind": "official_directory"
         },
         {
-          "title": "Roundhouse",
-          "url": "https://www.roundhouse.org.uk/",
+          "title": "Visit London events",
+          "url": "https://www.visitlondon.com/things-to-do/events",
           "source_kind": "official_directory"
         }
       ]
@@ -125,7 +125,7 @@
       "links": 0,
       "citations": 2,
       "claim_evidence": 4,
-      "request_id": "ffb5fed826fe4180a813266275fc6ec5",
+      "request_id": "5e6563631aa64208bbcd36e912e72e58",
       "has_evidence": true,
       "search_status": "official_links",
       "search_results": [
@@ -149,7 +149,7 @@
       "links": 0,
       "citations": 0,
       "claim_evidence": 2,
-      "request_id": "325ab3ef379143889cd61a3d8c3e32aa",
+      "request_id": "8a74f9fc940849f9824cc900188e2c6a",
       "has_evidence": false,
       "search_status": "no_staging_evidence",
       "search_results": []

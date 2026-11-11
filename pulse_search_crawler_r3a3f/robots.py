@@ -125,16 +125,25 @@ class RobotsCache:
         self._cache: dict[str, RobotsRules] = {}
         self._fetched_at: dict[str, float] = {}
 
-    def rules(self, origin: str, user_agent: str) -> RobotsRules:
+    def rules(self, origin: str, user_agent: str, loader=None) -> RobotsRules:
+        """Fetch robots through the caller's loader so host pacing covers it.
+
+        `loader(origin)` must perform the actual request (paced, logged) and
+        return RobotsRules. Without a loader the cache fetches directly, which
+        is only appropriate for tests.
+        """
         fresh = self._fresh(origin)
         if fresh is not None:
             return fresh
-        url = origin.rstrip("/") + "/robots.txt"
-        result = self.fetcher.fetch(url, max_bytes=MAX_ROBOTS_BYTES)
-        if result.error:
-            rules = RobotsRules(deny_all=True, source=f"error:{result.error}")
+        if loader is not None:
+            rules = loader(origin)
         else:
-            rules = decision_for_status(result.status, result.body, user_agent)
+            url = origin.rstrip("/") + "/robots.txt"
+            result = self.fetcher.fetch(url, max_bytes=MAX_ROBOTS_BYTES)
+            if result.error:
+                rules = RobotsRules(deny_all=True, source=f"error:{result.error}")
+            else:
+                rules = decision_for_status(result.status, result.body, user_agent)
         self._cache[origin] = rules
         self._fetched_at[origin] = time.time()
         return rules

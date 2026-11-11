@@ -5,5 +5,11 @@
   "tests_executed": 419,
   "tests_in_passing_modules": 419,
   "failed": [],
-  "causes": []
+  "causes": [],
+  "matrix": "tools/posix_regression_matrix.sh",
+  "evidence": "docs/evidence/r3a3f_regression_posix.txt",
+  "snapshot": "historical/local_snapshot",
+  "interpreter": "python 3.12.15 — original R3-A2 provisioning venv, WSL POSIX",
+  "reproduced_at": "2026-11-11",
+  "note": "Re-run after the pre-pilot corrections. The archived modules are unchanged; no archived test, index or replay was edited."
 }

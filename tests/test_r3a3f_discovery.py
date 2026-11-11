@@ -87,14 +87,15 @@ class DiscoveryCrawlTests(unittest.TestCase):
         )
         for name, server in cls.network.servers.items():
             cls.store.add_source(source_id=name, origin=server.base, allowed_paths=["/"],
-                                 rights_status="SYNTHETIC_FIXTURE")
+                                 rights_status="SYNTHETIC_FIXTURE",
+                                 approved=True, index_allowed=True,
+                                 probe_policy=["/whats-on", "/events/christmas"],
+                                 probe_budget_per_run=2)
             for seed in cls.network.seeds[name]:
                 cls.store.add_seed(name, seed)
-        for seed in cls.store.seeds():
-            cls.store.enqueue(seed["url"], source_id=seed["source_id"],
-                              seed_id=seed["seed_id"], parent_url=None, depth=0,
-                              max_depth=cls.config.max_depth)
         crawler = Crawler(cls.store, cls.staging, cls.config)
+        for seed in cls.store.seeds():
+            crawler.register_seed(seed["source_id"], seed["url"])
         cls.counters = crawler.run(max_fetches=260)
         cls.report = build_report(cls.store, cls.staging, cls.config)
         cls.urls = {d["url"] for d in cls.staging.all_documents(1000)}

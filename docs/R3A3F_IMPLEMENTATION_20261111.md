@@ -12,7 +12,8 @@
 | `urls.py` | Canonicalisation (tracking params, fragments, dot segments), trap detection (infinite pagination, repeated segments, session ids, assets), scope |
 | `netguard.py` | Per-hop DNS resolution and public-address enforcement; metadata hostnames always blocked |
 | `safe_fetch.py` | Pinned-IP HTTP(S), redirect chain re-validated hop by hop, response caps, gzip, `Retry-After` |
-| `robots.py` | RFC 9309-style parser (longest match wins, allow wins ties), agent groups, 24h cache, fail-closed 5xx/401/403 |
+| `robots.py` | RFC 9309-style parser (longest match wins, allow wins ties), agent groups, 24h cache, fail-closed 5xx/401/403, paced loader |
+| `pacing.py` | One host schedule shared by robots, content and redirects: uncapped waits, full `Retry-After`, injectable clock for tests |
 | `extract.py` | Title, main text, links (nofollow aware), canonical, `noindex`, JSON-LD, dates |
 | `classify.py` | One primary category + secondary labels + evidence, 18 fixed categories, explicit `uncertain` |
 | `quality.py` | Normalisation, SHA-256 content hash, 5-gram shingles, Jaccard, thin-content gate |
@@ -44,21 +45,25 @@ Run against six loopback origins, 103 routes, 18 categories:
 
 | Measure | Value |
 | --- | --- |
-| Fetched | 116 |
-| Accepted | 66 (65 searchable documents; 1 updated) |
-| Acceptance yield | 56.9% (synthetic — **not** a real-world yield) |
+| Fetched (four phases) | 144 |
+| Accepted | 70 (69 searchable documents; 1 updated) |
+| Acceptance yield | 48.6% (synthetic — **not** a real-world yield) |
 | Categories covered | **18/18** |
-| Depth histogram of fetched URLs | 0: 8, 1: 38, 2: 26, 3: 6 |
+| Depth histogram of fetched URLs | 0: 8, 1: 40, 2: 28, 3: 6 |
 | Deepest fetch | 3 |
 | Depth-4 sentinel hits | **0** |
+| Robots requests | logged `outcome="robots"` and paced on the same host schedule as content |
 | Robots-denied fetches | 0 (denied URLs never reached the network) |
 | Sites with broken robots (503) | 1 request total: `/robots.txt` only; content never fetched |
 | Duplicate rejections | 24 exact, 1 near |
-| Rate-limit responses handled | 1 (`Retry-After` honoured, host paused) |
-| Mean / p95 latency | 7.3 ms / 24 ms (loopback) |
+| Rate-limit responses handled | 10 across the four phases (`Retry-After` honoured, host paused) |
+| 404 rechecks scheduled / recovered | 5 scheduled, 1 recovered to 200 and indexed |
+| Discovery provenance | 8 seeds, 72 genuine link discoveries, 2 reviewed probes (no fabricated parent) |
+| Useful discoveries | 14 intent-bearing documents; 10.6 per 100 fetches |
+| Mean / p95 latency | 7.3 ms / 23 ms (loopback) |
 | Off-domain hosts proposed | recorded, none crawled |
 
-Gate checks: **15/15 PASS** — depth ≤3, robots denial, robots 5xx fail-closed, noindex exclusion, duplicate rejection, cultural events discoverable, 18/18 coverage, ≥100-page network, restart recovery, conditional recrawl, source revocation, rate-limit backoff, no unapproved hosts, owner index untouched, frozen 54 replay unchanged.
+Gate checks: **23/23 PASS** — the original 15 (depth ≤3, robots denial, robots 5xx fail-closed, noindex exclusion, duplicate rejection, cultural events discoverable, 18/18 coverage, ≥100-page network, restart recovery, conditional recrawl, source revocation, rate-limit backoff, no unapproved hosts, owner index untouched, frozen 54 replay unchanged) plus fail-closed admission by default, probe provenance without a fabricated parent, 404 recheck recovery, per-source fairness under budget, measured useful discoveries, separate genuine-link versus guessed-probe counts, and the out-of-season Christmas listing recovered after a 404.
 
 ### The 1,000/day question
 
@@ -78,9 +83,23 @@ Open http://127.0.0.1:8787/ — funnel, 18/18 coverage bars, target progress, sc
 
 Breadth-first discovery spent the 3-hop budget on navigation and missed seasonal content. `topics.py` adds seven discovery intents (Christmas/Advent markets, Pride/CSD, open-air music, parades/carnivals, street/summer festivals, Diwali, New Year) with local-language terms, anchor-text scoring, listing-section probes inside approved paths, hub detection and seasonality. Intent only changes **fetch order and labels**; it never blocks a topic, host or category. Full detail: `docs/R3A3F_DISCOVERY_PROFILES_20261111.md`.
 
+## Pre-pilot corrections (review of `e364304a`)
+
+Five findings were fixed without rebuilding the crawler; the suite was extended, not replaced.
+
+| Finding | Fix | Where |
+| --- | --- | --- |
+| Admission and indexing were effectively open | `add_source` defaults to `approved=False`, `index_allowed=False`, empty `probe_policy`; an admitted source cannot be silently de-approved or re-scoped on re-import; `add_seed` requires admission; `add_document` requires `index_allowed=True` | `store.py`, `staging.py`, `crawler.py` |
+| Guessed listing pages looked like real links | Probes are a reviewed per-source `probe_policy` with `probe_budget_per_run`; stored as `guessed_path_probe`, `parent_url=NULL`, `approval_ref=source:<id>:probe_policy`; genuine links keep their parent and `approval_ref=link:<parent>` | `store.py`, `crawler.py` |
+| Pacing could end early and skipped robots | `HostPacer` is the only path to the network: robots, content and redirects wait on one schedule; waits are never capped; `Retry-After` blocks the host for the full duration; robots fetch gets its own `fetch_log` row | `pacing.py`, `crawler.py`, `robots.py` |
+| 404 was permanent | 404 → `state='recheck'` with a long TTL (168h for probes, 24h otherwise), reactivated at run start and bounded by `max_rechecks`; 410/451/403 stay permanent with distinct counters | `store.py`, `crawler.py` |
+| Fairness and yield were asserted | `claim_next(avoid_host=…)`, a per-source share of the run budget with `host_deferred` as an explicit stop reason, per-source shares in the report, and `useful_discoveries` / `useful_per_100_fetches` | `store.py`, `crawler.py`, `dashboard.py` |
+
+Evidence now distinguishes **admitted seeds**, **genuine link discoveries**, **reviewed probes**, **successful pages** and **rejected pages**, and reports each source's share of the run's fetches. Improvement ideas for later: `docs/R3A3F_PREPILOT_NOTES_20261111.md`; the pilot proposal is `docs/R3A3F_PILOT_SOURCE_PROPOSAL_20261111.md` (`PROPOSAL_ONLY_NOT_ADMITTED`).
+
 ## Tests
 
-* `tests/test_r3a3f_units.py`, `test_r3a3f_safety.py`, `test_r3a3f_crawl.py` — **52 tests, all passing**.
+* `tests/test_r3a3f_units.py`, `test_r3a3f_safety.py`, `test_r3a3f_crawl.py`, `test_r3a3f_discovery.py`, `test_r3a3f_prepilot.py` — **83 tests, all passing**; `test_r3a3f_prepilot.py` is one class per review correction.
 * Archived POSIX matrix — **25/25 modules, 419 tests passing** (`docs/evidence/r3a3f_regression_posix.txt`), with `historical/local_snapshot` byte-clean.
 * Owner index SHA-256 `bb8e5202…7368c35d` unchanged before and after; frozen 54 replay `bf0bee88…` unchanged.
 

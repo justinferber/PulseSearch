@@ -110,6 +110,27 @@ def render_html(report: dict, staging: StagingIndex, query: str = "", category: 
         for reason, count in report["rejections"].items()
     ) or "<tr><td colspan='2'>none</td></tr>"
     discovery = report.get("discovery") or {}
+    fairness = report.get("fairness") or {}
+    provenance_rows = "".join(
+        f"<tr><td>{html.escape(label)}</td><td>{count}</td><td>{html.escape(note)}</td></tr>"
+        for label, count, note in (
+            ("Admitted seeds", discovery.get("seed_admissions", 0),
+             "owner-approved entry points"),
+            ("Genuine link discoveries", discovery.get("genuine_link_discoveries", 0),
+             "anchor on a fetched page; parent recorded"),
+            ("Approved guessed probes", discovery.get("guessed_path_probes", 0),
+             "reviewed listing paths; no link or parent claimed"),
+            ("Successful pages", funnel["accepted"], "indexed or updated in staging"),
+            ("Rejected pages", funnel["rejected"], "each with an explicit reason"),
+        )
+    )
+    fairness_shares = fairness.get("share_by_source", {})
+    fairness_fetches = fairness.get("fetches_by_source", {})
+    fairness_rows = "".join(
+        f"<tr><td>{html.escape(str(source))}</td><td>{count}</td>"
+        f"<td>{fairness_shares.get(source, 0):.1%}</td></tr>"
+        for source, count in sorted(fairness_fetches.items(), key=lambda kv: -kv[1])
+    ) or "<tr><td colspan='3'>No fetches recorded yet.</td></tr>"
     intent_rows = "".join(
         f"<tr><td>{html.escape(i['label'])}</td><td>{i['documents']}</td>"
         f"<td>{'in season' if i['in_season'] else ''}</td>"
@@ -176,10 +197,27 @@ final status <span class="pill warn">PRODUCTION HOLD</span></div></header>
 <tr><th>Reason</th><th>Count</th></tr>{rejection_rows}
 </table></div></section>
 
-<section><h2>Discovery focus — outdoor festivals, music, parades, seasonal markets</h2>
+<section><h2>Discovery provenance — links, reviewed probes, outcomes</h2>
+<div class="sub">Every URL records how it was admitted. A guessed listing path is never
+reported as a discovered hyperlink: it carries an approval reference and no parent page.
+In-season month: {discovery.get('seasonal_month', 'n/a')} · rechecks waiting:
+{discovery.get('rechecks_waiting', 0)}.</div>
+<table><tr><th>Origin of URL</th><th>Count</th><th>Meaning</th></tr>{provenance_rows}</table>
+<div class="sub" style="margin-top:10px">Useful discoveries (staged documents carrying an intent):
+{discovery.get('useful_discoveries', 0)} · {discovery.get('useful_per_100_fetches', 0)} per 100 fetches.</div>
+
+<h2 style="margin-top:22px">Crawl budget fairness by source</h2>
+<div class="sub">Fetches alternate between approved hosts, and no source may spend more than
+{fairness.get('max_source_share_allowed', 0):.0%} of a multi-source run budget; the run defers
+work instead. Largest share of this run's fetches
+{fairness.get('max_source_share', 0):.1%} · fairness mode
+<code>{html.escape(str(fairness.get('fairness_mode', 'n/a')))}</code>.</div>
+<table><tr><th>Source</th><th>Fetches</th><th>Share of fetches</th></tr>{fairness_rows}</table>
+
+<h2 style="margin-top:22px">Discovery focus — outdoor festivals, music, parades, seasonal markets</h2>
 <div class="sub">Listing probes within approved paths: {discovery.get('probes_completed', 0)}/
 {discovery.get('probes_total', 0)} completed. Intent reorders discovery and labels documents;
-no topic, host or category is ever blocked. In-season month: {discovery.get('seasonal_month', 'n/a')}.</div>
+no topic, host or category is ever blocked.</div>
 <table><tr><th>Intent</th><th>Documents</th><th>Season</th><th>Feeds categories</th></tr>{intent_rows}</table>
 <table style="margin-top:12px"><tr><th>Priority-raised URL</th><th>Priority</th><th>Hint</th></tr>
 {prioritised_rows}</table></section>

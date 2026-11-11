@@ -39,6 +39,18 @@ class CrawlConfig:
     sitemap_policy: str = "candidate_only"
     discovery_probes: bool = True
     focus_month: int | None = None
+    # Fail-closed operation: an unreviewed source may neither be fetched nor
+    # indexed. These exist so the intent is explicit at every call site.
+    require_source_admission: bool = True
+    require_index_approval: bool = True
+    # 404 is a lifecycle, not a permanent verdict: a seasonal listing can
+    # appear later. Rechecks are bounded and long-TTL; 410/451 stay permanent.
+    max_rechecks: int = 2
+    recheck_after_hours: float = 24.0
+    recheck_listing_hours: float = 168.0
+    # Fairness guard: no single host may consume more than this share of the
+    # per-run fetch budget while another approved host still has work.
+    max_host_share: float = 0.7
     rights_default: str = "metadata_and_short_snippet"
 
     def validate(self) -> None:
@@ -50,6 +62,12 @@ class CrawlConfig:
             raise ConfigError("only one in-flight request per host is approved")
         if not 0.0 <= self.near_dup_threshold <= 1.0:
             raise ConfigError("near_dup_threshold must be within 0..1")
+        if not 0.1 <= self.max_host_share <= 1.0:
+            raise ConfigError("max_host_share must be within 0.1..1.0")
+        if self.max_rechecks < 0 or self.max_rechecks > 10:
+            raise ConfigError("max_rechecks must be within 0..10")
+        if self.recheck_after_hours <= 0 or self.recheck_listing_hours <= 0:
+            raise ConfigError("recheck intervals must be positive")
         if self.focus_month is not None and not 1 <= self.focus_month <= 12:
             raise ConfigError("focus_month must be 1..12")
         if self.sitemap_policy not in ("candidate_only", "deny"):

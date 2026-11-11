@@ -161,6 +161,18 @@ class SyntheticNetwork:
     def hits(self) -> dict[str, int]:
         return {name: len(server.hits) for name, server in self.servers.items()}
 
+    def enable_seasonal_listing(self) -> None:
+        """Publish a listing that was 404 before its season.
+
+        A Christmas-market overview genuinely does not exist in July. The
+        crawler must recheck the 404 rather than treat the URL as gone forever.
+        """
+        self.servers["berlin-events"].set("/events/christmas", Route(body=page_html(
+            "Christmas markets in Berlin 2026",
+            "Christmas markets and Advent markets with Gluhwein, crafts and a winter "
+            "market programme for the whole family.",
+            links=[("/events/weihnachtsmarkt", "Weihnachtsmarkt stalls")])))
+
     def hits_forbidden(self) -> dict[str, int]:
         return {
             "private": self.servers["berlin-events"].hits_for("/private"),
@@ -307,6 +319,8 @@ def build_network() -> SyntheticNetwork:
         "Der Weihnachtsmarkt am Rathaus öffnet mit Adventsmarkt-Ständen, Glühwein und "
         "einem winterlichen Marktprogramm für die ganze Familie.",
         links=[("/events/market", "Christmas market stalls")])))
+    berlin.set("/events/christmas", Route(
+        status=404, body=b"<html><body>not found out of season</body></html>"))
     berlin.set("/events/open-air-festival", Route(body=page_html(
         "Open air music festival 2026",
         "Open air music festival with a lineup of live acts, a festival stage and "

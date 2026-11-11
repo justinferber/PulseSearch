@@ -1,0 +1,100 @@
+{
+  "kind": "R3A3F_PILOT_SOURCE_PROPOSAL",
+  "schema": "pulse-search-r3a3f-pilot-proposal/v1",
+  "status": "PROPOSAL_ONLY_NOT_ADMITTED",
+  "generated_at": "2026-11-11",
+  "live_third_party_requests": 0,
+  "production": "HOLD",
+  "basis": {
+    "source": "docs/evidence/r3a3f_source_registry_proposal.json",
+    "index_sha256": "bb8e52025a1a25f55141507a02621db190e54bf1fc4d4da8db4248357368c35d",
+    "index_pages": 120,
+    "index_hosts": 7,
+    "note": "Presence in the accepted index is not permission to crawl; each host still needs an explicit owner admission, robots review and rights basis."
+  },
+  "caps": {
+    "accepted_documents_per_day": 100,
+    "gross_fetches_per_day": 300,
+    "min_interval_s": 3.0,
+    "max_inflight_per_host": 1,
+    "max_depth": 3,
+    "probe_fetches_per_run": 2,
+    "recheck_max_per_url": 2,
+    "recheck_listing_hours": 168,
+    "recheck_default_hours": 24,
+    "run_minutes_max": 30,
+    "body_storage": false,
+    "snippet_chars_max": 320
+  },
+  "phases": [
+    {"id": "P0", "name": "compliance review", "fetching": false, "exit": "written admission of the source record"},
+    {"id": "P1", "name": "one host, 20 accepted pages/day, 3 days", "fetching": true, "exit": "zero robots violations, acceptance >= 15%, pacing log complete"},
+    {"id": "P2", "name": "one host, 100 accepted pages/day, 7 days", "fetching": true, "exit": "acceptance >= 20%, no 429 storm, one recheck outcome recorded"},
+    {"id": "P3", "name": "second host", "fetching": true, "exit": "separate owner decision and admission record"}
+  ],
+  "sources": [
+    {
+      "host": "www.london.gov.uk",
+      "pages_in_index": 107,
+      "event_relevance": "high",
+      "role": "phase_1_candidate",
+      "admission_template": {
+        "source_id": "london-gov-uk-events",
+        "origin": "https://www.london.gov.uk",
+        "allowed_paths": ["/events", "/whats-on"],
+        "rights_status": "PENDING_TERMS_REVIEW",
+        "approved": false,
+        "index_allowed": false,
+        "store_body": false,
+        "probe_policy": ["/whats-on", "/events"],
+        "probe_budget_per_run": 2,
+        "daily_page_cap": 100,
+        "contact": "OWNER_TO_CONFIRM"
+      },
+      "pending": [
+        "owner reads robots.txt and site terms manually (no automated fetch in this change)",
+        "owner states the rights basis and whether snippet indexing is permitted",
+        "owner confirms the user-agent contact address"
+      ]
+    },
+    {"host": "www.gov.uk", "pages_in_index": 4, "event_relevance": "none", "role": "excluded", "reason": "service/how-to pages, not event discovery"},
+    {"host": "www.nhs.uk", "pages_in_index": 4, "event_relevance": "none", "role": "excluded", "reason": "health service pages"},
+    {"host": "developer.mozilla.org", "pages_in_index": 2, "event_relevance": "none", "role": "excluded", "reason": "technical reference"},
+    {"host": "docs.python.org", "pages_in_index": 1, "event_relevance": "none", "role": "excluded", "reason": "technical reference"},
+    {"host": "www.rfc-editor.org", "pages_in_index": 1, "event_relevance": "none", "role": "excluded", "reason": "technical reference"},
+    {"host": "www.sqlite.org", "pages_in_index": 1, "event_relevance": "none", "role": "excluded", "reason": "technical reference"}
+  ],
+  "stop_conditions": [
+    "fetch to a host without an admitted source",
+    "any request inside a robots-disallowed path",
+    "robots 5xx or 403, or three consecutive 5xx from one host",
+    "429/503: honour full Retry-After, then stop the host for the run",
+    "acceptance below 10% after 100 fetches",
+    "any depth-4 request",
+    "any non-HTML response parsed or any body storage attempted",
+    "owner kill switch: set_source_enabled(source_id, false) and stop the scheduler"
+  ],
+  "evidence_per_run": [
+    "report JSON",
+    "per-source fetch shares",
+    "pacing log",
+    "robots fetch rows",
+    "rechecks scheduled / recovered / exhausted",
+    "probe versus link discovery counts",
+    "useful_per_100_fetches",
+    "config hash"
+  ],
+  "invariants": {
+    "owner_index_sha256": "bb8e52025a1a25f55141507a02621db190e54bf1fc4d4da8db4248357368c35d",
+    "frozen_54_replay_sha256": "bf0bee88909a537d10e7e7090c7f64fc8929981a862c06d36226ac801d3d2577",
+    "admin_authorised": false
+  },
+  "owner_decisions_required": [
+    "approve www.london.gov.uk /events and /whats-on for Phase 1 (or substitute a host)",
+    "state the rights basis and whether snippet indexing is permitted",
+    "confirm the contact address in the user agent",
+    "confirm 100 accepted pages/day and the 300-fetch gross ceiling",
+    "confirm retention (metadata plus snippet, no body) and the takedown contact",
+    "authorise the first live request"
+  ]
+}

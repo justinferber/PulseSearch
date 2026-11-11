@@ -9,6 +9,7 @@ crawled.
 
 from __future__ import annotations
 
+import json
 import math
 import time
 import uuid
@@ -20,7 +21,8 @@ from . import quality, topics
 from .classify import CATEGORIES, category_coverage, classify
 from .config import CrawlConfig
 from .extract import extract_page
-from .robots import RobotsCache
+from .pacing import HostPacer
+from .robots import MAX_ROBOTS_BYTES, RobotsCache, RobotsRules, decision_for_status
 from .safe_fetch import Fetcher
 from .store import Store, utc_now
 from .staging import StagingIndex
@@ -43,13 +45,16 @@ def _paths(value) -> list[str]:
 
 
 class Crawler:
-    def __init__(self, store: Store, staging: StagingIndex, config: CrawlConfig):
+    def __init__(self, store: Store, staging: StagingIndex, config: CrawlConfig,
+                 clock=time.time, sleep=time.sleep):
         self.store = store
         self.staging = staging
         self.config = config
         self.config.validate()
         self.fetcher = Fetcher(config)
         self.robots = RobotsCache(self.fetcher)
+        self.pacer = HostPacer(store, clock=clock, sleep=sleep)
+        self._last_host: str | None = None
         self.counters: Counter = Counter()
         self.latencies: list[int] = []
         self.run_id = uuid.uuid4().hex[:12]
@@ -67,23 +72,35 @@ class Crawler:
             parent_url=None,
             depth=0,
             max_depth=self.config.max_depth,
+            method="seed",
+            approval_ref=f"source:{source_id}:admitted_seed",
         )
         self.counters["discovered"] += 1
         self.counters[f"admit_{outcome}"] += 1
         return outcome
 
     def admit_discovery_probes(self) -> int:
-        """Queue listing-section probes inside already-approved source paths.
+        """Queue *reviewed* listing-path probes for an admitted source.
 
-        A homepage rarely links "Weihnachtsmarkt" or "CSD" directly; listing
-        sections do. These are ordinary same-origin URLs at depth 1, still
-        gated by robots, scope, depth and rights.
+        These are guesses, not links: no page contained these anchors, so they
+        are stored as `guessed_path_probe` with `parent_url=NULL` and an
+        explicit approval reference, never as a discovered hyperlink. They are
+        disabled unless the source registry carries a reviewed probe policy and
+        a per-run budget.
         """
         admitted = 0
         for source in self.store.sources():
-            if not source["index_allowed"]:
+            if not source["approved"] or not source["index_allowed"]:
                 continue
-            for path in topics.PROBE_PATHS:
+            try:
+                policy = json.loads(source.get("probe_policy") or "[]")
+            except ValueError:
+                policy = []
+            budget = int(source.get("probe_budget_per_run") or 0)
+            if not policy or budget <= 0:
+                self.counters["probe_policy_absent"] += 1
+                continue
+            for path in list(policy)[:budget]:
                 url = source["origin"].rstrip("/") + path
                 if not in_scope(url, source["origin"], _paths(source["allowed_paths"])):
                     continue
@@ -97,9 +114,10 @@ class Crawler:
                     continue
                 outcome = self.store.enqueue(
                     canonical, source_id=source["source_id"], seed_id=None,
-                    parent_url=source["origin"].rstrip("/") + "/", depth=1,
-                    max_depth=self.config.max_depth, priority=150,
-                    hint="discovery_probe",
+                    parent_url=None, depth=1, max_depth=self.config.max_depth,
+                    priority=150, hint="guessed_path_probe",
+                    method="guessed_path_probe",
+                    approval_ref=f"source:{source['source_id']}:probe_policy",
                 )
                 if outcome == "new":
                     admitted += 1
@@ -111,12 +129,20 @@ class Crawler:
         store = self.store
         store.start_run(self.run_id, self.config.as_dict())
         store.reset_inflight()
+        store.reactivate_rechecks(utc_now())
         if self.config.discovery_probes:
             self.admit_discovery_probes()
         budget = self.config.max_fetches_per_day
         per_run = max_fetches if max_fetches is not None else budget
         consumed = store.fetches_today()
         fetched = 0
+        # Fairness guard: with more than one approved source, no host may
+        # spend more than its share of the run budget. With a single source
+        # there is nothing to be fair between, so the cap does not apply.
+        approved_sources = len(store.sources())
+        per_host_cap = (max(1, math.ceil(per_run * self.config.max_host_share))
+                        if approved_sources > 1 else per_run)
+        host_fetches: Counter = Counter()
         stop_reason = "queue_empty"
         while True:
             if fetched >= per_run:
@@ -130,11 +156,20 @@ class Crawler:
                 break
             blocked = self._blocked_hosts()
             row = store.claim_next(
-                max_depth=self.config.max_depth, now_ts=utc_now(), blocked_hosts=blocked
+                max_depth=self.config.max_depth, now_ts=utc_now(),
+                blocked_hosts=blocked, avoid_host=self._last_host,
+                capped_hosts={host for host, n in host_fetches.items()
+                              if n >= per_host_cap},
             )
             if row is None:
+                waiting = store.conn.execute(
+                    "SELECT COUNT(*) n FROM frontier WHERE state IN ('queued','recheck')"
+                ).fetchone()["n"]
+                stop_reason = "host_deferred" if waiting else "queue_empty"
                 break
+            self._last_host = host_port(row["url"])
             self._process(row)
+            host_fetches[self._last_host] += 1
             fetched += 1
         counters = self._final_counters(stop_reason, fetched)
         store.finish_run(self.run_id, counters)
@@ -144,7 +179,7 @@ class Crawler:
         rows = self.store.conn.execute(
             "SELECT host, blocked_until, disabled FROM host_state"
         ).fetchall()
-        now = time.time()
+        now = self.pacer.clock()
         blocked = set()
         for row in rows:
             if row["disabled"]:
@@ -165,21 +200,26 @@ class Crawler:
         if depth > self.config.max_depth:
             self._reject(row, "depth_beyond_max", f"depth {depth}")
             return
-        self._wait_for_host(host)
-        allowed, rules = self.robots.path_allowed(url, self.config.user_agent)
+        origin = origin_of(url)
+        rules = self._robots_for(host, origin)
         self.store.note_robots(host, rules.source)
         for sitemap in rules.sitemaps:
-            if origin_of(sitemap) == origin_of(url):
+            if origin_of(sitemap) == origin:
                 self.store.record_sitemap(sitemap, source["source_id"], rules.source)
                 self.counters["sitemap_candidates_recorded"] += 1
-        if not allowed:
+        path = urlsplit(url).path or "/"
+        if urlsplit(url).query:
+            path = f"{path}?{urlsplit(url).query}"
+        if not rules.can_fetch(path):
             self._reject(row, "robots_denied", rules.source)
             self.staging.revoke(url, "robots_now_disallowed")
             return
-        interval = max(self.config.min_interval_s, rules.crawl_delay or 0.0)
+        interval = HostPacer.interval_for(self.config.min_interval_s, rules.crawl_delay)
+        self.pacer.wait(host, interval)
         conditional = self._conditional_headers(url)
         result = self.fetcher.fetch(url, extra_headers=conditional)
-        self.store.note_request(host, time.time(), interval)
+        retry_after = result.retry_after_s if result.status in (429, 503) else None
+        self.pacer.record(host, interval, retry_after_s=retry_after)
         self.latencies.append(result.latency_ms)
         status = result.status
         if result.error:
@@ -201,9 +241,8 @@ class Crawler:
             self.counters["revalidated_unchanged"] += 1
             return
         if status in (429, 503):
-            delay = result.retry_after_s
-            wait = max(delay if delay is not None else 30.0, 5.0)
-            self.store.note_retry_after(host, time.time() + wait)
+            wait = result.retry_after_s if result.retry_after_s is not None else 30.0
+            self.pacer.record_retry_after(host, wait)
             attempts = int(row["attempts"]) + 1
             self.staging.record_rejection(url, source["source_id"], depth, "rate_limited", f"http_{status}")
             self._log(row, status, result, "rate_limited", f"retry_after={wait:.0f}s")
@@ -215,10 +254,28 @@ class Crawler:
             return
         if status in (403, 404, 410, 451):
             self._log(row, status, result, "removed_or_denied", f"http_{status}")
-            self.store.finish(url, state="blocked", status=status, error=f"http_{status}")
             self.staging.revoke(url, f"http_{status}")
             self.store.mark_revoked(url, f"http_{status}")
-            self.counters["removed_or_denied"] += 1
+            if status == 404:
+                # A listing can appear later (Christmas markets in November).
+                # Recheck is bounded and long-TTL; 410/451 stay permanent.
+                rechecks = int(row.get("recheck_count") or 0)
+                if rechecks < self.config.max_rechecks:
+                    hours = (self.config.recheck_listing_hours
+                             if row.get("discovery_method") == "guessed_path_probe"
+                             else self.config.recheck_after_hours)
+                    self.store.schedule_recheck(url, hours, "http_404_awaiting_content")
+                    self.counters["recheck_scheduled"] += 1
+                else:
+                    self.store.finish(url, state="blocked", status=404,
+                                      error="http_404_rechecks_exhausted")
+                    self.counters["gone_after_rechecks"] += 1
+                return
+            self.store.finish(url, state="blocked", status=status, error=f"http_{status}")
+            if status in (410, 451):
+                self.counters["gone_permanent"] += 1
+            else:
+                self.counters["forbidden"] += 1
             return
         if 500 <= status < 600:
             attempts = int(row["attempts"]) + 1
@@ -240,6 +297,10 @@ class Crawler:
         if "noindex" in (result.headers.get("x-robots-tag") or "").lower():
             self._reject(row, "noindex", "x-robots-tag", status=status, result=result)
             self.staging.revoke(url, "noindex_header")
+            return
+        if self.config.require_index_approval and not source["index_allowed"]:
+            self._reject(row, "rights_denied_index", "source.index_allowed=0",
+                         status=status, result=result)
             return
         self._evaluate(row, source, result, depth, url)
 
@@ -338,7 +399,8 @@ class Crawler:
             "fetch_status": 200,
             "mime": result.mime,
         }
-        _, outcome = self.staging.add_document(record, shingle_list)
+        indexed, outcome = self.staging.add_document(
+            record, shingle_list, index_allowed=bool(source["index_allowed"]))
         self.store.upsert_page_state(
             canonicalize(url),
             source_id=source["source_id"],
@@ -384,6 +446,8 @@ class Crawler:
                 priority=100 - depth * 10 + int(round(boost * 40)),
                 hint=hint or ("hub" if topics.is_event_listing(
                     page.title, page.text, len(page.links), url) else None),
+                method="link",
+                approval_ref=f"link:{url}",
             )
             if hint:
                 self.counters[f"intent_discovered_{hint}"] += 1
@@ -406,14 +470,29 @@ class Crawler:
                 headers["If-Modified-Since"] = prior["last_modified"]
         return headers
 
-    def _wait_for_host(self, host: str) -> None:
-        state = self.store.host(host)
-        now = time.time()
-        if state.get("blocked_until") and state["blocked_until"] > now:
-            time.sleep(min(2.0, state["blocked_until"] - now))
-        next_allowed = state.get("next_allowed_at")
-        if next_allowed and next_allowed > now:
-            time.sleep(min(self.config.timeout_s, next_allowed - now))
+    def _robots_for(self, host: str, origin: str):
+        """Fetch robots through the same host schedule as content."""
+        def loader(origin_url: str):
+            robots_url = origin_url.rstrip("/") + "/robots.txt"
+            self.pacer.wait(host, self.config.min_interval_s)
+            result = self.fetcher.fetch(robots_url, max_bytes=MAX_ROBOTS_BYTES)
+            if result.error:
+                rules = RobotsRules(deny_all=True, source=f"error:{result.error}")
+            else:
+                rules = decision_for_status(result.status, result.body, self.config.user_agent)
+            interval = HostPacer.interval_for(self.config.min_interval_s, rules.crawl_delay)
+            self.pacer.record(host, interval,
+                              retry_after_s=(result.retry_after_s
+                                             if result.status in (429, 503) else None))
+            self.store.log_fetch(
+                url=robots_url, host=host, depth=0, status=result.status,
+                mime=result.mime, size=len(result.body), outcome="robots",
+                reason=result.error or "", latency_ms=result.latency_ms,
+                requests=self.fetcher.requests,
+            )
+            self.counters["robots_requests"] += 1
+            return rules
+        return self.robots.rules(origin, self.config.user_agent, loader=loader)
 
     def _handle_fetch_error(self, row, result) -> None:
         attempts = int(row["attempts"]) + 1
@@ -468,25 +547,69 @@ class Crawler:
 
 # -------------------------------------------------------------------- report
 def _discovery_block(store: Store, staging: StagingIndex, config: CrawlConfig) -> dict:
-    counts = staging.stats().get("by_intent", {})
-    probes_total = store.conn.execute(
-        "SELECT COUNT(*) n FROM frontier WHERE category_hint='discovery_probe'").fetchone()["n"]
+    stats = staging.stats()
+    counts = stats.get("by_intent", {})
+    methods = store.discovery_method_counts()
+    probes_total = methods.get("guessed_path_probe", 0)
     probes_done = store.conn.execute(
-        "SELECT COUNT(*) n FROM frontier WHERE category_hint='discovery_probe' AND state='done'"
+        "SELECT COUNT(*) n FROM frontier "
+        "WHERE discovery_method='guessed_path_probe' AND state='done'"
     ).fetchone()["n"]
+    rechecks = store.conn.execute(
+        "SELECT COUNT(*) n FROM frontier WHERE state='recheck'").fetchone()["n"]
     prioritised = [dict(r) for r in store.conn.execute(
-        "SELECT url, priority, min_depth, category_hint FROM frontier "
-        "WHERE priority>100 ORDER BY priority DESC LIMIT 10")]
+        "SELECT url, priority, min_depth, category_hint, discovery_method "
+        "FROM frontier WHERE priority>100 ORDER BY priority DESC LIMIT 10")]
     month = config.focus_month or datetime.now(timezone.utc).month
     block = topics.focus_report(month, counts)
+    useful = sum(counts.values())
+    fetched = store.conn.execute(
+        "SELECT COUNT(*) n FROM fetch_log WHERE outcome!='robots'").fetchone()["n"]
     block.update({
+        "by_method": methods,
+        "genuine_link_discoveries": methods.get("link", 0),
+        "seed_admissions": methods.get("seed", 0),
+        "guessed_path_probes": probes_total,
         "probes_total": probes_total,
         "probes_completed": probes_done,
+        "rechecks_waiting": rechecks,
         "prioritised": prioritised,
-        "note": "Intent only reorders discovery and labels documents; it never "
-                "restricts a topic, host or category.",
+        "useful_discoveries": useful,
+        "useful_per_100_fetches": round(100 * useful / fetched, 1) if fetched else 0.0,
+        "note": "Probes are reviewed guesses, never links. Intent only reorders "
+                "discovery and labels documents; it never restricts a topic, host "
+                "or category.",
     })
     return block
+
+
+def _fairness_block(store: Store, staging: StagingIndex, config: CrawlConfig) -> dict:
+    rows = store.conn.execute(
+        "SELECT host, COUNT(*) n FROM fetch_log WHERE outcome!='robots' GROUP BY host"
+    ).fetchall()
+    host_to_source = {s["host"]: s["source_id"] for s in store.sources(enabled_only=False)}
+    by_host: dict[str, int] = {}
+    for row in rows:
+        key = host_to_source.get(row["host"], row["host"])
+        by_host[key] = by_host.get(key, 0) + row["n"]
+    total = sum(by_host.values()) or 0
+    shares = {key: round(value / total, 3) for key, value in by_host.items()} if total else {}
+    stats = staging.stats()
+    categories = stats["by_category"]
+    cat_total = sum(categories.values()) or 0
+    return {
+        "fairness_mode": "avoid_same_host_then_budget_share_cap",
+        "per_source_budget_cap": (math.ceil(config.max_host_share
+                                            * config.max_fetches_per_day)),
+        "fetches_by_source": by_host,
+        "share_by_source": shares,
+        "max_source_share": max(shares.values()) if shares else 0.0,
+        "max_source_share_allowed": config.max_host_share,
+        "documents_by_category": categories,
+        "category_share": ({k: round(v / cat_total, 3) for k, v in categories.items()}
+                           if cat_total else {}),
+        "budget": config.max_fetches_per_day,
+    }
 
 
 def build_report(store: Store, staging: StagingIndex, config: CrawlConfig) -> dict:
@@ -542,6 +665,7 @@ def build_report(store: Store, staging: StagingIndex, config: CrawlConfig) -> di
             "uncovered": [name for name in CATEGORIES if not stats["by_category"].get(name, 0)],
         },
         "discovery": _discovery_block(store, staging, config),
+        "fairness": _fairness_block(store, staging, config),
         "sources": [
             {
                 "source_id": s["source_id"],

@@ -85,6 +85,9 @@ def main() -> int:
                 rights_status="SYNTHETIC_FIXTURE_NOT_A_REAL_PUBLISHER",
                 index_allowed=True,
                 store_body=False,
+                approved=True,
+                probe_policy=["/whats-on", "/events/christmas"] if name == "berlin-events" else [],
+                probe_budget_per_run=2 if name == "berlin-events" else 0,
                 notes="offline simulator source; no third-party content",
             )
             for seed in network.seeds[name]:
@@ -92,8 +95,7 @@ def main() -> int:
 
         crawler = Crawler(store, staging, config)
         for seed in store.seeds():
-            store.enqueue(seed["url"], source_id=seed["source_id"], seed_id=seed["seed_id"],
-                          parent_url=None, depth=0, max_depth=config.max_depth)
+            crawler.register_seed(seed["source_id"], seed["url"])
         first = crawler.run(max_fetches=args.max_fetches)
 
         # Restart recovery: a crash leaves one row 'fetching'; a fresh process
@@ -108,6 +110,32 @@ def main() -> int:
         before_queue = store.queue_counts()
         second = crawler2.run(max_fetches=50)
         after_queue = store.queue_counts()
+        interrupted_after = (store.conn.execute(
+            "SELECT state FROM frontier WHERE url=?", (interrupted["url"],)).fetchone()["state"]
+            if interrupted else None)
+
+        # Admission is a reviewed decision: an unreviewed source record must
+        # stay fetch-disabled and index-disabled by default.
+        unreviewed = store.add_source(
+            source_id="unreviewed-example", origin="https://unreviewed.example",
+            allowed_paths=["/"], rights_status="NOT_ASSESSED")
+        fail_closed_default = (not unreviewed["approved"]
+                               and not unreviewed["index_allowed"]
+                               and unreviewed["probe_policy"] == "[]")
+
+        # Temporary-absence recheck: the Christmas listing 404s out of season
+        # and appears later. It must be rechecked, not buried as gone.
+        network.enable_seasonal_listing()
+        store.conn.execute(
+            "UPDATE frontier SET recheck_at='2000-01-01T00:00:00+00:00', "
+            "next_retry='2000-01-01T00:00:00+00:00' "
+            "WHERE url LIKE '%/events/christmas' AND state='recheck'")
+        store.conn.commit()
+        rechecks_waiting = store.conn.execute(
+            "SELECT COUNT(*) n FROM frontier WHERE state='recheck'").fetchone()["n"]
+        reactivated = store.reactivate_rechecks(utc_now())
+        crawler_recheck = Crawler(store, staging, config)
+        recheck_run = crawler_recheck.run(max_fetches=25)
 
         # Conditional recrawl: make five pages due, then re-run.
         store.conn.execute(
@@ -130,6 +158,13 @@ def main() -> int:
             for name in ("diwali", "csd-berlin", "pride-berlin", "stadtfest-berlin")
         }
         categories_covered = {c: report["categories"]["counts"][c] for c in CATEGORIES}
+        probe_rows = [dict(r) for r in store.conn.execute(
+            "SELECT url, parent_url, approval_ref, discovery_method FROM frontier "
+            "WHERE discovery_method='guessed_path_probe'")]
+        link_rows = store.conn.execute(
+            "SELECT COUNT(*) n FROM frontier WHERE discovery_method='link' "
+            "AND parent_url IS NOT NULL").fetchone()["n"]
+        seasonal_indexed = any("/events/christmas" in url for url in urls)
         network_pages = sum(len(server.routes) for server in network.servers.values())
         forbidden_hits = network.hits_forbidden() if hasattr(network, "hits_forbidden") else {}
         checks = {
@@ -144,7 +179,10 @@ def main() -> int:
             "CULTURAL_EVENTS_DISCOVERABLE": all(cultural.values()),
             "CATEGORY_COVERAGE_18_OF_18": all(v for v in categories_covered.values()),
             "FIXTURE_NETWORK_100_PLUS": network_pages >= 100,
-            "RESTART_RECOVERY": second["fetched"] >= 0 and "queued" in after_queue,
+            "RESTART_RECOVERY": "fetching" not in after_queue
+            and interrupted_after not in (None, "fetching")
+            and sum(after_queue.values()) >= sum(before_queue.values()),
+            "SOURCE_ADMISSION_FAIL_CLOSED": fail_closed_default,
             "CONDITIONAL_RECRAWL": third.get("revalidated_unchanged", 0) > 0,
             "SOURCE_REVOCATION": revoked_docs > 0 and not any(
                 r["source_id"] == "community-hub" for r in search_after_revoke),
@@ -158,6 +196,14 @@ def main() -> int:
             "SEASONAL_EVENT_PAGES_DISCOVERED": all(
                 any(slug in url for url in urls)
                 for slug in ("weihnachtsmarkt", "open-air-festival", "karneval-umzug")),
+            "GENUINE_LINKS_SEPARATE_FROM_PROBES": link_rows > 0
+            and all(row["parent_url"] is None for row in probe_rows)
+            and all(row["approval_ref"] for row in probe_rows),
+            "RECHECK_RECOVERY": rechecks_waiting >= 1 and reactivated >= 1
+            and seasonal_indexed,
+            "HOST_FAIRNESS_UNDER_BUDGET": len(report["fairness"]["fetches_by_source"]) >= 4
+            and all(v > 0 for v in report["fairness"]["fetches_by_source"].values()),
+            "USEFUL_DISCOVERY_MEASURED": report["discovery"]["useful_per_100_fetches"] > 0,
         }
         evidence = {
             "kind": "R3A3F_OFFLINE_DEMO_EVIDENCE",
@@ -169,8 +215,21 @@ def main() -> int:
             "network_hits": network.hits(),
             "depth4_sentinel_hits": network.depth4_hits(),
             "forbidden_hits": forbidden_hits,
-            "runs": {"first": first, "restart": second, "recrawl": third},
+            "runs": {"first": first, "restart": second, "recheck": recheck_run,
+                     "recrawl": third},
             "recrawl": {"requeued": requeued},
+            "restart": {"interrupted_url": interrupted["url"] if interrupted else None,
+                        "state_after_restart": interrupted_after,
+                        "queue_before": before_queue, "queue_after": after_queue},
+            "admission_defaults": {"source_id": unreviewed["source_id"],
+                                   "approved": bool(unreviewed["approved"]),
+                                   "index_allowed": bool(unreviewed["index_allowed"]),
+                                   "probe_policy": unreviewed["probe_policy"]},
+            "recheck": {"waiting_before": rechecks_waiting,
+                        "reactivated": reactivated,
+                        "seasonal_listing_indexed": seasonal_indexed,
+                        "probe_provenance": probe_rows,
+                        "genuine_links_with_parent": link_rows},
             "revocation": {"revoked_documents": revoked_docs,
                            "remaining_hits": len(search_after_revoke)},
             "cultural_pages_present": cultural,

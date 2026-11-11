@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import json
 import sqlite3
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -20,8 +20,9 @@ SCHEMA = """
 CREATE TABLE IF NOT EXISTS sources(
   source_id TEXT PRIMARY KEY, origin TEXT NOT NULL UNIQUE, host TEXT NOT NULL,
   allowed_paths TEXT NOT NULL, rights_status TEXT NOT NULL,
-  index_allowed INTEGER NOT NULL DEFAULT 1, store_body INTEGER NOT NULL DEFAULT 0,
-  contact TEXT, notes TEXT, approved INTEGER NOT NULL DEFAULT 1,
+  index_allowed INTEGER NOT NULL DEFAULT 0, store_body INTEGER NOT NULL DEFAULT 0,
+  contact TEXT, notes TEXT, approved INTEGER NOT NULL DEFAULT 0,
+  probe_policy TEXT NOT NULL DEFAULT '[]', probe_budget_per_run INTEGER NOT NULL DEFAULT 0,
   enabled INTEGER NOT NULL DEFAULT 1, admitted_at TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS seeds(
   seed_id TEXT PRIMARY KEY, source_id TEXT NOT NULL, url TEXT NOT NULL UNIQUE,
@@ -31,7 +32,9 @@ CREATE TABLE IF NOT EXISTS frontier(
   min_depth INTEGER NOT NULL, state TEXT NOT NULL DEFAULT 'queued',
   priority INTEGER NOT NULL DEFAULT 100, discovered_at TEXT NOT NULL,
   last_fetch TEXT, next_retry TEXT, attempts INTEGER NOT NULL DEFAULT 0,
-  robots_decision TEXT, category_hint TEXT, last_status INTEGER, last_error TEXT);
+  robots_decision TEXT, category_hint TEXT, last_status INTEGER, last_error TEXT,
+  discovery_method TEXT NOT NULL DEFAULT 'link', approval_ref TEXT,
+  recheck_at TEXT, recheck_count INTEGER NOT NULL DEFAULT 0);
 CREATE INDEX IF NOT EXISTS idx_frontier_state ON frontier(state, min_depth, priority);
 CREATE TABLE IF NOT EXISTS page_state(
   url TEXT PRIMARY KEY, source_id TEXT, etag TEXT, last_modified TEXT,
@@ -84,7 +87,24 @@ class Store:
         self.conn.execute("PRAGMA journal_mode=WAL")
         self.conn.execute("PRAGMA foreign_keys=ON")
         self.conn.executescript(SCHEMA)
+        self._migrate()
         self.conn.commit()
+
+    def _migrate(self) -> None:
+        """Add pre-pilot columns to databases created by the first build."""
+        def columns(table: str) -> set[str]:
+            return {row["name"] for row in self.conn.execute(f"PRAGMA table_info({table})")}
+
+        for name, ddl in (("discovery_method", "TEXT NOT NULL DEFAULT 'link'"),
+                          ("approval_ref", "TEXT"),
+                          ("recheck_at", "TEXT"),
+                          ("recheck_count", "INTEGER NOT NULL DEFAULT 0")):
+            if name not in columns("frontier"):
+                self.conn.execute(f"ALTER TABLE frontier ADD COLUMN {name} {ddl}")
+        for name, ddl in (("probe_policy", "TEXT NOT NULL DEFAULT '[]'"),
+                          ("probe_budget_per_run", "INTEGER NOT NULL DEFAULT 0")):
+            if name not in columns("sources"):
+                self.conn.execute(f"ALTER TABLE sources ADD COLUMN {name} {ddl}")
 
     def close(self) -> None:
         self.conn.close()
@@ -102,32 +122,61 @@ class Store:
         source_id: str,
         origin: str,
         allowed_paths: list[str],
-        rights_status: str = "proposed_internal_research",
-        index_allowed: bool = True,
+        rights_status: str = "NOT_ASSESSED",
+        index_allowed: bool = False,
         store_body: bool = False,
         contact: str = "",
         notes: str = "",
-        approved: bool = True,
+        approved: bool = False,
+        probe_policy: list[str] | None = None,
+        probe_budget_per_run: int = 0,
     ) -> dict:
+        """Register a source. Defaults are fail-closed: no fetch, no indexing.
+
+        Admission is a reviewed decision per host and path. An unreviewed JSON
+        record can therefore never approve a whole host, and an already
+        admitted source cannot be silently de-approved or re-scoped by a later
+        import — that needs an explicit owner decision.
+        """
         origin = origin.rstrip("/")
         if urlsplit(origin).path not in ("", "/"):
             raise ValueError("source origin must be a root origin")
+        paths = sorted(set(allowed_paths or []))
+        if approved and not paths:
+            raise ValueError("an admitted source needs at least one reviewed path")
         existing = self.conn.execute(
             "SELECT * FROM sources WHERE source_id=?", (source_id,)
         ).fetchone()
-        if existing and existing["origin"] != origin:
-            raise ValueError(f"source {source_id} is already registered to {existing['origin']}")
+        if existing:
+            if existing["origin"] != origin:
+                raise ValueError(f"source {source_id} is already registered to {existing['origin']}")
+            was_admitted = bool(existing["approved"] or existing["index_allowed"])
+            if was_admitted and (not approved or not index_allowed):
+                raise ValueError(
+                    f"source {source_id} is already admitted; refusing to de-approve it "
+                    "through import. Retire it explicitly instead."
+                )
+            if was_admitted and (json.loads(existing["allowed_paths"]) != paths
+                                 or existing["rights_status"] != rights_status):
+                raise ValueError(
+                    f"admitted source {source_id} changed scope or rights basis; "
+                    "re-admission needs an explicit owner decision"
+                )
         self.conn.execute(
             """INSERT INTO sources(source_id,origin,host,allowed_paths,rights_status,
-                 index_allowed,store_body,contact,notes,approved,enabled,admitted_at)
-               VALUES(?,?,?,?,?,?,?,?,?,?,1,?)
+                 index_allowed,store_body,contact,notes,approved,probe_policy,
+                 probe_budget_per_run,enabled,admitted_at)
+               VALUES(?,?,?,?,?,?,?,?,?,?,?,?,1,?)
                ON CONFLICT(source_id) DO UPDATE SET
                  allowed_paths=excluded.allowed_paths, rights_status=excluded.rights_status,
                  index_allowed=excluded.index_allowed, store_body=excluded.store_body,
-                 contact=excluded.contact, notes=excluded.notes, approved=excluded.approved""",
-            (source_id, origin, host_port(origin + "/"), json.dumps(sorted(set(allowed_paths))),
+                 contact=excluded.contact, notes=excluded.notes, approved=excluded.approved,
+                 probe_policy=excluded.probe_policy,
+                 probe_budget_per_run=excluded.probe_budget_per_run""",
+            (source_id, origin, host_port(origin + "/"), json.dumps(paths),
              rights_status, int(index_allowed), int(store_body), contact, notes,
-             int(approved), utc_now()),
+             int(approved), json.dumps(sorted(set(probe_policy or []))),
+             int(probe_budget_per_run), utc_now()),
         )
         self.conn.commit()
         return dict(self.conn.execute("SELECT * FROM sources WHERE source_id=?", (source_id,)).fetchone())
@@ -162,6 +211,8 @@ class Store:
         source = self.source(source_id)
         if not source:
             raise ValueError(f"unknown source: {source_id}")
+        if not source["approved"]:
+            raise ValueError(f"source {source_id} is not admitted for crawling")
         canonical = canonicalize(url)
         if not in_scope(canonical, source["origin"], _paths(source["allowed_paths"])):
             raise ValueError(f"seed outside approved scope: {canonical}")
@@ -194,11 +245,15 @@ class Store:
         max_depth: int,
         priority: int | None = None,
         hint: str | None = None,
+        method: str = "link",
+        approval_ref: str | None = None,
     ) -> str:
         """Admit a URL. Returns new|promoted|duplicate|depth_refused|trap.
 
         `priority` and `hint` come from anchor-text discovery intent; they only
         change fetch order and labelling, never whether a URL may be crawled.
+        `method` records provenance: seed, link or guessed_path_probe. A guessed
+        probe never claims a parent page that did not actually link it.
         """
         try:
             canonical = canonicalize(url)
@@ -234,32 +289,86 @@ class Store:
             return "duplicate"
         self.conn.execute(
             """INSERT INTO frontier(url,source_id,seed_id,parent_url,min_depth,state,
-                 priority,category_hint,discovered_at)
-               VALUES(?,?,?,?,?,'queued',?,?,?)""",
+                 priority,category_hint,discovery_method,approval_ref,discovered_at)
+               VALUES(?,?,?,?,?,'queued',?,?,?,?,?)""",
             (canonical, source_id, seed_id, parent_url, depth,
-             priority if priority is not None else 100 - depth * 10, hint, utc_now()),
+             priority if priority is not None else 100 - depth * 10, hint,
+             method, approval_ref, utc_now()),
         )
         self.record_edge(parent_url, canonical, depth, True, "admitted")
         self.conn.commit()
         return "new"
 
-    def claim_next(self, *, max_depth: int, now_ts: str, blocked_hosts: set[str] | None = None) -> dict | None:
+    def claim_next(
+        self,
+        *,
+        max_depth: int,
+        now_ts: str,
+        blocked_hosts: set[str] | None = None,
+        avoid_host: str | None = None,
+        capped_hosts: set[str] | None = None,
+    ) -> dict | None:
+        """Claim one URL, preferring a different host from the last fetch.
+
+        Fairness matters under a fixed budget: without it a single host with
+        many high-priority URLs can consume the whole run and starve other
+        approved sources and categories.
+        """
         rows = self.conn.execute(
             """SELECT * FROM frontier
                WHERE state='queued' AND min_depth<=?
                  AND (next_retry IS NULL OR next_retry<=?)
                ORDER BY priority DESC, min_depth, discovered_at
-               LIMIT 400""",
+               LIMIT 500""",
             (max_depth, now_ts),
         ).fetchall()
+        fallback = None
         for row in rows:
             host = host_port(row["url"])
             if blocked_hosts and host in blocked_hosts:
                 continue
+            if capped_hosts and host in capped_hosts:
+                # A host that used its share is deferred even if its queue is
+                # long: the remaining budget belongs to the other sources.
+                continue
+            if avoid_host and host == avoid_host:
+                fallback = fallback or row
+                continue
             self.conn.execute("UPDATE frontier SET state='fetching' WHERE url=?", (row["url"],))
             self.conn.commit()
             return dict(row)
+        if fallback is not None:
+            self.conn.execute("UPDATE frontier SET state='fetching' WHERE url=?", (fallback["url"],))
+            self.conn.commit()
+            return dict(fallback)
         return None
+
+    def schedule_recheck(self, url: str, hours: float, reason: str) -> None:
+        """Recheck a temporary absence later without blocking the URL forever."""
+        until = (datetime.now(timezone.utc) + timedelta(hours=hours)).isoformat(timespec="seconds")
+        self.conn.execute(
+            """UPDATE frontier SET state='recheck', recheck_at=?, next_retry=?,
+                 recheck_count=recheck_count+1, last_error=? WHERE url=?""",
+            (until, until, reason, url),
+        )
+        self.conn.commit()
+
+    def reactivate_rechecks(self, now_ts: str) -> int:
+        cursor = self.conn.execute(
+            """UPDATE frontier SET state='queued', next_retry=NULL
+               WHERE state='recheck' AND recheck_at IS NOT NULL AND recheck_at<=?""",
+            (now_ts,),
+        )
+        self.conn.commit()
+        return cursor.rowcount
+
+    def discovery_method_counts(self) -> dict[str, int]:
+        return {
+            row["discovery_method"]: row["n"]
+            for row in self.conn.execute(
+                "SELECT discovery_method, COUNT(*) n FROM frontier GROUP BY discovery_method"
+            )
+        }
 
     def finish(
         self,

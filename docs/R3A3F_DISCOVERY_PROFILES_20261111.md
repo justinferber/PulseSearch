@@ -34,16 +34,16 @@ Terms are matched on word boundaries so `pride` does not fire inside `prideful`,
 
 Frontier priority is now `100 − 10·depth + intent boost` (boost capped at 2.0, scaled by seasonality), and `claim_next` orders by priority first. The effect is that the 3-hop budget is spent on plausible event content before generic navigation, while everything else still gets crawled.
 
-### 4. Listing-section probes
+### 4. Listing-section probes (reviewed, not automatic)
 
-Each approved source gets up to a dozen same-origin probes for paths that usually host listings (`/events`, `/whats-on`, `/calendar`, `/listings`, `/markets`, `/christmas`, `/pride`, `/festivals`, `/music`, `/veranstaltungen`). A probe:
+A listing section is often not linked from the homepage at all, so intent scoring alone cannot reach it. Probes handle that, but a guessed URL is a guess: after the pre-pilot review it is a **reviewed per-source policy**, not an automatic sweep. `source.probe_policy` lists the exact paths the owner approved and `source.probe_budget_per_run` caps how many may be admitted per run; an empty policy means no probes at all. A probe:
 
 * must fall inside the source's already-approved `allowed_paths`;
-* is admitted at depth 1, so two further hops remain;
-* still passes robots, scope, dedup and rights checks;
-* is recorded with the hint `discovery_probe` so the dashboard can show what was probed.
+* is stored as `discovery_method='guessed_path_probe'` with `parent_url=NULL` and `approval_ref='source:<id>:probe_policy'` — it never claims a hyperlink or a parent page it did not have;
+* is admitted at depth 1, so two further hops remain, and still passes robots, scope, dedup and rights checks;
+* is counted separately from genuine link discoveries in the run report and the dashboard.
 
-This is the single largest gain: a homepage that never links its own Christmas section is now reached anyway, without inventing a seed or bypassing the 3-hop rule.
+This remains the single largest discovery gain — a homepage that never links its own Christmas section is reached anyway — without inventing a seed, fabricating provenance or bypassing the 3-hop rule.
 
 ### 5. Seasonality
 
@@ -55,7 +55,7 @@ Pages that look like listings ("what's on", calendar, programme, many links) are
 
 ### 7. Document labels and reporting
 
-Accepted documents now carry the best-matching intent (score ≥ 0.4). The run report and dashboard show documents per intent, which intents are in season, how many probes completed, and the top priority-raised URLs. `discovery.semantics` is explicitly `priority_hint_only_no_topic_blocking`.
+Accepted documents now carry the best-matching intent (score ≥ 0.4). The run report and dashboard show documents per intent, which intents are in season, admitted seeds, genuine link discoveries, reviewed probes, successful and rejected pages, per-source budget fairness, `useful_discoveries` and `useful_per_100_fetches`, and the top priority-raised URLs. `discovery.semantics` is explicitly `priority_hint_only_no_topic_blocking`.
 
 ## What this deliberately does not do
 

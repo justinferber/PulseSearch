@@ -35,14 +35,12 @@ class CrawlGateTests(unittest.TestCase):
         )
         for name, server in cls.network.servers.items():
             cls.store.add_source(source_id=name, origin=server.base, allowed_paths=["/"],
-                                 rights_status="SYNTHETIC_FIXTURE")
+                                 rights_status="SYNTHETIC_FIXTURE", approved=True, index_allowed=True)
             for seed in cls.network.seeds[name]:
                 cls.store.add_seed(name, seed)
-        for seed in cls.store.seeds():
-            cls.store.enqueue(seed["url"], source_id=seed["source_id"],
-                              seed_id=seed["seed_id"], parent_url=None, depth=0,
-                              max_depth=cls.config.max_depth)
         cls.crawler = Crawler(cls.store, cls.staging, cls.config)
+        for seed in cls.store.seeds():
+            cls.crawler.register_seed(seed["source_id"], seed["url"])
         cls.counters = cls.crawler.run(max_fetches=250)
         cls.report = build_report(cls.store, cls.staging, cls.config)
         cls.docs = cls.staging.all_documents(1000)
@@ -129,7 +127,7 @@ class CrawlGateTests(unittest.TestCase):
                 "category": "Volunteering", "category_confidence": 0.8,
                 "categories": {}, "depth": 1, "fetched_at": utc_now(),
                 "content_hash": "abc",
-            }, [])
+            }, [], index_allowed=True)
             self.assertTrue(index.revoke_source("community-hub", "revoked"))
             self.assertFalse(index.search("volunteering", None, 5))
         finally:
@@ -142,13 +140,12 @@ class CrawlGateTests(unittest.TestCase):
         try:
             store.add_source(source_id="berlin-events",
                              origin=self.network.servers["berlin-events"].base,
-                             allowed_paths=["/"], rights_status="SYNTHETIC_FIXTURE")
+                             allowed_paths=["/"], rights_status="SYNTHETIC_FIXTURE", approved=True, index_allowed=True)
             store.add_seed("berlin-events", self.network.servers["berlin-events"].base + "/")
+            crawler = Crawler(store, staging, self.config)
             for seed in store.seeds():
-                store.enqueue(seed["url"], source_id=seed["source_id"],
-                              seed_id=seed["seed_id"], parent_url=None, depth=0,
-                              max_depth=self.config.max_depth)
-            counters = Crawler(store, staging, self.config).run(max_fetches=5)
+                crawler.register_seed(seed["source_id"], seed["url"])
+            counters = crawler.run(max_fetches=5)
             self.assertLessEqual(counters["fetched"], 5)
         finally:
             store.close()

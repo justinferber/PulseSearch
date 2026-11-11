@@ -114,8 +114,18 @@ class StagingIndex:
         return dict(row) if row else None
 
     # ------------------------------------------------------------------ write
-    def add_document(self, record: dict, shingle_list: list[int]) -> tuple[bool, str]:
-        """Insert an accepted page. Returns (indexed, reason)."""
+    def add_document(self, record: dict, shingle_list: list[int], *,
+                     index_allowed: bool = False) -> tuple[bool, str]:
+        """Insert an accepted page. Returns (indexed, reason).
+
+        Fail closed: indexing requires an explicit rights decision. A source
+        that may be fetched is not automatically a source that may be stored.
+        """
+        if not index_allowed:
+            self.record_rejection(record.get("url", ""), record.get("source_id", ""),
+                                  int(record.get("depth", 0)), "rights_denied_index",
+                                  "index_allowed=False")
+            return False, "rights_denied_index"
         existing = self.conn.execute(
             "SELECT doc_id FROM docs WHERE url=?", (record["url"],)
         ).fetchone()

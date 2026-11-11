@@ -38,9 +38,10 @@ approval remains evaluation approval only; no Wiki publication was performed.
 is still loopback. A provider redirect is reported as `UNAVAILABLE` and the
 destination is not fetched.
 
-`CapturePolicy.paced_fetch()` calls the per-source attempt ceiling before every
-robots or page request, so a denied attempt issues no network request. The
-existing pacing, redirect gate, robots and SSRF controls remain in place.
+`CapturePolicy.request_gate()` applies the per-source attempt ceiling and host
+pacing before every robots request, page request and redirect hop, so a denied
+attempt issues no network request. The existing redirect scope, robots and SSRF
+controls remain in place.
 
 ### 5. UNA transaction and test isolation
 

@@ -89,21 +89,30 @@ class CapturePolicy:
         self.attempts += 1
         return None
 
-    def paced_fetch(self, fetcher: Fetcher, url: str, *, max_bytes: int,
-                    user_agent: str):
-        # The ceiling covers robots and every actual page request, not just
-        # configured sources. A denied attempt must issue no network request.
+    def request_gate(self, url: str) -> str | None:
+        """Apply scope, attempt ceiling and pacing before any request."""
+        denial = self.target_denial(url)
+        if denial:
+            return denial
         denial = self.attempt_denial()
         if denial:
-            return FetchResult(url, url, error=denial)
+            return denial
         host = (urllib.parse.urlsplit(url).hostname or "").lower()
         wait = max(0.0, 3.0 - (time.monotonic() - self.last_request.get(host, 0.0)))
         if wait:
             time.sleep(wait)
         self.last_request[host] = time.monotonic()
+        return None
+
+    def paced_fetch(self, fetcher: Fetcher, url: str, *, max_bytes: int,
+                    user_agent: str):
+        # The gate covers robots, the initial request and every redirect hop.
+        denial = self.request_gate(url)
+        if denial:
+            return FetchResult(url, url, error=denial)
         return fetcher.fetch(
             url, max_bytes=max_bytes, extra_headers={"Accept": "text/html"},
-            redirect_gate=lambda target: self.target_denial(target))
+            redirect_gate=self.request_gate)
 
 
 def capture(source: dict, fetcher: Fetcher) -> dict:

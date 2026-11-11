@@ -1,0 +1,12 @@
+{
+  "frozen_query_count": 54,
+  "historic_labels_are_automated_not_human": true,
+  "candidate_rows_loaded": 0,
+  "blind_engines_seen": [],
+  "signed_candidate_judgements": 0,
+  "source_verified_judgements": 0,
+  "negative_abstention": "HOLD_REQUIRES_EXPLICIT_EMPTY_RESPONSE_RECEIPTS",
+  "recall_at_5": "HOLD_REQUIRES_KNOWN_COMPLETE_RELEVANCE_SET",
+  "by_engine": {},
+  "overall_decision": "HOLD_PENDING_FULL_REPLAY_AND_INDEPENDENT_EVIDENCE"
+}

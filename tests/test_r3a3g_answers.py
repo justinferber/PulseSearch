@@ -13,8 +13,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from pulse_search_broad_r3a3g.answers import (  # noqa: E402
-    ANSWERED, LIVE_SOURCE_REQUIRED, NEEDS_CLARIFICATION, NO_EVIDENCE, REFUSED,
-    AnswerService, load_pack, neutralise_snippet,
+    ANSWERED, LIVE_SOURCE_REQUIRED, NEEDS_CLARIFICATION, NO_EVIDENCE, OFFICIAL_LINKS,
+    REFUSED, AnswerService, load_pack, neutralise_snippet,
 )
 from pulse_search_crawler_r3a3f.staging import StagingIndex  # noqa: E402
 
@@ -97,12 +97,14 @@ class EventAnswerTests(unittest.TestCase):
 
 
 class WeatherAnswerTests(unittest.TestCase):
-    def test_without_a_provider_it_refuses_to_guess(self):
+    def test_without_a_provider_it_links_official_forecast_services(self):
         service = AnswerService(None, PACK)
         answer = service.answer("What is the weather in London or Berlin today?", now=NOW)
-        self.assertEqual(answer.status, LIVE_SOURCE_REQUIRED)
-        self.assertIn("won't guess", answer.answer)
-        self.assertEqual(answer.citations, [])
+        self.assertEqual(answer.status, OFFICIAL_LINKS)
+        self.assertIn("BBC Weather", answer.answer)
+        self.assertIn("Met Office", answer.answer)
+        self.assertTrue(all(c.kind == "official_service" for c in answer.citations))
+        self.assertNotIn("°C", answer.answer)
 
     def test_fresh_observation_answers_both_cities(self):
         service = AnswerService(None, PACK, weather=FixtureWeather(NOW - timedelta(minutes=5)))
@@ -112,11 +114,12 @@ class WeatherAnswerTests(unittest.TestCase):
         self.assertIn("Berlin: 12.0 °C", answer.answer)
         self.assertEqual(answer.citations[0].kind, "live_weather")
 
-    def test_stale_observation_is_not_presented_as_current(self):
+    def test_stale_observation_is_replaced_by_official_links(self):
         service = AnswerService(None, PACK, weather=FixtureWeather(NOW - timedelta(hours=2)))
         answer = service.answer("What is the weather in Berlin today?", now=NOW)
-        self.assertEqual(answer.status, LIVE_SOURCE_REQUIRED)
+        self.assertEqual(answer.status, OFFICIAL_LINKS)
         self.assertIn("freshness limit", answer.answer)
+        self.assertIn("dwd.de", answer.answer)
 
     def test_unknown_location_asks_which_place(self):
         service = AnswerService(None, PACK, weather=FixtureWeather(NOW))

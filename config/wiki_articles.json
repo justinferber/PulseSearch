@@ -1,0 +1,139 @@
+{
+  "schema": "pulse-unity-wiki-candidates/v1",
+  "generated_at": "2026-11-11",
+  "note": "Offline demonstration articles assembled from public official guidance links. Claims are generic and evergreen; no live prices, stock or member data.",
+  "articles": [
+    {
+      "topic_id": "guide-berlin-concert-tickets",
+      "slug": "how-to-book-concert-tickets-berlin",
+      "title": "How to book concert tickets in Berlin",
+      "summary": "Use the venue or an authorised agency, confirm the official seller on the event page, then check access and travel before paying.",
+      "rights_class": "public_guidance",
+      "verified_at": "2026-11-11",
+      "claims": [
+        {"text": "Start at the venue's own programme or the Berlin events calendar, then follow the official ticket link shown for that event.", "sources": ["https://www.berlin.de/events/", "https://www.mercedes-benz-arena.de/"]},
+        {"text": "Eventim is an authorised ticketing agency in Germany; check that the seller named on the event page matches the checkout before paying.", "sources": ["https://www.eventim.de/", "https://www.columbiahalle.de/"]},
+        {"text": "Check the venue page for doors, age limits, accessibility and bag rules, which vary by show.", "sources": ["https://www.huxleys-neue-welt.de/", "https://www.verti-music-hall.de/"]}
+      ]
+    },
+    {
+      "topic_id": "guide-berlin-venue-transport",
+      "slug": "getting-to-berlin-concert-venues",
+      "title": "Getting to Berlin concert venues by public transport",
+      "summary": "Plan the journey with BVG or S-Bahn Berlin and allow extra time for evening events.",
+      "rights_class": "public_guidance",
+      "verified_at": "2026-11-11",
+      "claims": [
+        {"text": "Use the BVG journey planner for U-Bahn, tram and bus connections to the venue.", "sources": ["https://www.bvg.de/", "https://www.berlin.de/en/"]},
+        {"text": "Check S-Bahn service updates before travelling; engineering works can change the last connection.", "sources": ["https://www.s-bahn-berlin.de/", "https://www.bvg.de/"]}
+      ]
+    },
+    {
+      "topic_id": "reference-uk-weather-sources",
+      "slug": "uk-weather-forecast-sources",
+      "title": "UK weather forecast sources",
+      "summary": "The BBC and the Met Office publish current conditions, forecasts and warnings; Pulse Search links to them rather than restating a live value.",
+      "rights_class": "official_reference",
+      "verified_at": "2026-11-11",
+      "claims": [
+        {"text": "Use BBC Weather for city forecasts and the Met Office for the official UK forecast and weather warnings.", "sources": ["https://www.bbc.co.uk/weather", "https://weather.metoffice.gov.uk/forecast/uk"]},
+        {"text": "Treat a forecast as guidance, not a guarantee; warnings and local conditions can change during the day.", "sources": ["https://weather.metoffice.gov.uk/forecast/uk"]}
+      ]
+    },
+    {
+      "topic_id": "reference-germany-weather-sources",
+      "slug": "germany-weather-forecast-sources",
+      "title": "Germany weather forecast sources",
+      "summary": "The Deutscher Wetterdienst is Germany's national weather service for forecasts, warnings and climate information.",
+      "rights_class": "official_reference",
+      "verified_at": "2026-11-11",
+      "claims": [
+        {"text": "Use the DWD for national warnings and forecasts, and the city or state service for local information.", "sources": ["https://www.dwd.de/", "https://www.berlin.de/en/"]}
+      ]
+    },
+    {
+      "topic_id": "guide-pride-festivals-germany",
+      "slug": "pride-festivals-germany",
+      "title": "Pride and CSD festivals in Germany",
+      "summary": "German Pride events are usually organised city by city as CSD or Christopher Street Day; use the city calendar and the local Pride organisation to confirm dates.",
+      "rights_class": "public_guidance",
+      "verified_at": "2026-11-11",
+      "claims": [
+        {"text": "Look for CSD or Christopher Street Day listings in each city; programmes and dates are published by local organisers.", "sources": ["https://www.berlin.de/events/", "https://www.csd-berlin.de/"]},
+        {"text": "Check the organiser's own page for route, accessibility and any changes before travelling.", "sources": ["https://www.csd-berlin.de/"]}
+      ]
+    },
+    {
+      "topic_id": "guide-london-new-year-fireworks",
+      "slug": "london-new-years-eve-fireworks",
+      "title": "London New Year's Eve fireworks",
+      "summary": "The Mayor of London publishes the official event and ticketing arrangements; check Transport for London before travelling.",
+      "rights_class": "public_guidance",
+      "verified_at": "2026-11-11",
+      "claims": [
+        {"text": "Check the Mayor of London's official page for the event announcement, viewing areas and ticket arrangements.", "sources": ["https://www.london.gov.uk/", "https://www.bbc.co.uk/weather"]},
+        {"text": "Plan travel with TfL and expect road closures and busy stations on the night.", "sources": ["https://tfl.gov.uk/", "https://www.london.gov.uk/"]}
+      ]
+    },
+    {
+      "topic_id": "guide-flight-booking-channels",
+      "slug": "where-to-buy-flight-tickets",
+      "title": "Where to buy flight tickets",
+      "summary": "Buy directly from the airline or a licensed agent so fare rules, baggage and changes are clear.",
+      "rights_class": "public_guidance",
+      "verified_at": "2026-11-11",
+      "claims": [
+        {"text": "Compare the airline's own site with a licensed agent, and check who the seller is before paying.", "sources": ["https://www.britishairways.com/", "https://www.lufthansa.com/"]},
+        {"text": "Check ATOL or ABTA protection where it applies, and read the fare rules for changes and refunds.", "sources": ["https://www.caa.co.uk/", "https://www.abta.com/"]}
+      ]
+    },
+    {
+      "topic_id": "guide-ticket-refunds",
+      "slug": "ticket-refunds-and-cancellations",
+      "title": "Ticket refunds and cancellations",
+      "summary": "Consumer rights and the seller's terms both matter; check official guidance and the terms shown at purchase.",
+      "rights_class": "official_reference",
+      "verified_at": "2026-11-11",
+      "claims": [
+        {"text": "Check the seller's terms and the official consumer guidance for the country of purchase before disputing a charge.", "sources": ["https://www.gov.uk/search/all?keywords=consumer%20rights%20tickets", "https://www.caa.co.uk/"]},
+        {"text": "For a cancelled event, contact the original seller; resale sites may not offer the same protection.", "sources": ["https://www.caa.co.uk/", "https://www.abta.com/"]}
+      ]
+    },
+    {
+      "topic_id": "event-glastonbury-2027",
+      "slug": "glastonbury-festival-2027",
+      "title": "Glastonbury Festival 2027",
+      "summary": "Glastonbury returns in 2027 after a fallow year, at Worthy Farm in Somerset.",
+      "rights_class": "event_announcement",
+      "verified_at": "2026-11-11",
+      "claims": [
+        {"text": "The 2027 festival is scheduled from Wednesday 23 to Sunday 27 June 2027.", "sources": ["https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed", "https://www.bbc.co.uk/news/articles/cv62kp9enz08o"]},
+        {"text": "The festival is held at Worthy Farm, Pilton, Somerset; use the organiser's travel guidance.", "sources": ["https://www.glastonburyfestivals.co.uk/"]}
+      ]
+    },
+    {
+      "topic_id": "event-london-parade-2027",
+      "slug": "london-parade-2027",
+      "title": "London Parade 2027",
+      "summary": "London Parade is the New Year's Day parade in central London; the organiser publishes the route, timing and participant information.",
+      "rights_class": "event_announcement",
+      "verified_at": "2026-11-11",
+      "claims": [
+        {"text": "Use the organiser's official site for the current route, start time and road closures.", "sources": ["https://londonparade.com/parade-location-timing/", "https://londonparade.com/about/"]},
+        {"text": "Check TfL for travel changes on the day and plan around central London closures.", "sources": ["https://tfl.gov.uk/"]}
+      ]
+    },
+    {
+      "topic_id": "guide-berlin-christmas-markets",
+      "slug": "berlin-christmas-markets",
+      "title": "Berlin Christmas markets",
+      "summary": "Berlin's Christmas markets usually run through Advent; the city calendar lists current markets and opening periods.",
+      "rights_class": "public_guidance",
+      "verified_at": "2026-11-11",
+      "claims": [
+        {"text": "Check the Berlin city calendar for current Christmas market listings and opening periods.", "sources": ["https://www.berlin.de/events/", "https://www.berlin.de/en/"]},
+        {"text": "Confirm opening times and any entry conditions on the organiser's page before travelling.", "sources": ["https://www.berlin.de/events/"]}
+      ]
+    }
+  ]
+}

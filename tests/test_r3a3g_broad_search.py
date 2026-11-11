@@ -86,15 +86,21 @@ class IntentTests(unittest.TestCase):
         self.assertEqual(classify_query("ChatGPT privacy policy").kind, "general")
         self.assertEqual(len(OFFICIAL_NAVIGATION), 10)
 
-    def test_live_weather_refuses_to_invent_a_forecast(self):
+    def test_weather_without_a_provider_returns_official_forecast_links(self):
         response = search_documents(DOCS, "weather tomorrow in Berlin")
-        self.assertEqual(response["status"], "live_provider_required")
-        self.assertEqual(response["results"], [])
+        self.assertEqual(response["status"], "official_links")
+        self.assertEqual(response["response_mode"], "CURRENT_SERVICE_HANDOFF")
+        urls = [r["url"] for r in response["results"]]
+        self.assertIn("https://www.dwd.de/", urls)
+        self.assertIn("https://www.bbc.co.uk/weather", urls)
         self.assertIsNone(response["answer"])
+        self.assertIn("did not fetch a live value", response["note"])
 
     def test_no_claimed_translation_without_a_provider(self):
         response = search_documents([], "translate good morning into German")
-        self.assertEqual(response["status"], "live_provider_required")
+        self.assertEqual(response["status"], "official_links")
+        self.assertIn("deepl.com", " ".join(r["url"] for r in response["results"]))
+        self.assertIsNone(response["answer"])
 
 
 class RelevanceTests(unittest.TestCase):
@@ -144,10 +150,11 @@ class RelevanceTests(unittest.TestCase):
         self.assertEqual(result["intent"]["location"], "berlin")
         self.assertTrue(result["results"])
 
-    def test_no_evidence_means_no_fabricated_answer(self):
+    def test_refund_without_index_evidence_returns_official_guidance(self):
         result = search_documents([], "How can I return concert tickets in Berlin?")
-        self.assertEqual(result["status"], "no_staging_evidence")
-        self.assertEqual(result["results"], [])
+        self.assertEqual(result["status"], "official_links")
+        urls = [r["url"] for r in result["results"]]
+        self.assertTrue(any("gov.uk" in u or "caa.co.uk" in u for u in urls))
         self.assertIsNone(result["answer"])
 
     def test_declared_type_wins_over_heuristic(self):

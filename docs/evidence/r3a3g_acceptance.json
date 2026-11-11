@@ -1,0 +1,818 @@
+{
+  "kind": "R3A3G_ACCEPTANCE_DEMO",
+  "generated_at": "2026-11-11",
+  "mode": "OFFLINE_LABELLED_FIXTURES",
+  "queries": 70,
+  "metrics": {
+    "recall_at_3": 0.986,
+    "mrr": 0.896,
+    "wrong_city_rate": 0.0,
+    "unsupported_result_rate": 0.0,
+    "no_evidence_cases": 0,
+    "source_diversity": 0.176,
+    "mean_latency_ms": 0.4
+  },
+  "failures": [],
+  "rows": [
+    {
+      "query": "ChatGPT",
+      "intent": "navigate",
+      "status": "official_navigation",
+      "response_mode": "OFFICIAL_LINK",
+      "top_urls": [
+        "https://chatgpt.com/"
+      ],
+      "latency_ms": 0.33
+    },
+    {
+      "query": "Amazon",
+      "intent": "navigate",
+      "status": "official_navigation",
+      "response_mode": "OFFICIAL_LINK",
+      "top_urls": [
+        "https://www.amazon.com/"
+      ],
+      "latency_ms": 0.04
+    },
+    {
+      "query": "YouTube",
+      "intent": "navigate",
+      "status": "official_navigation",
+      "response_mode": "OFFICIAL_LINK",
+      "top_urls": [
+        "https://www.youtube.com/"
+      ],
+      "latency_ms": 0.04
+    },
+    {
+      "query": "Gmail",
+      "intent": "navigate",
+      "status": "official_navigation",
+      "response_mode": "OFFICIAL_LINK",
+      "top_urls": [
+        "https://mail.google.com/"
+      ],
+      "latency_ms": 0.03
+    },
+    {
+      "query": "Wordle",
+      "intent": "navigate",
+      "status": "official_navigation",
+      "response_mode": "OFFICIAL_LINK",
+      "top_urls": [
+        "https://www.nytimes.com/games/wordle/index.html"
+      ],
+      "latency_ms": 0.03
+    },
+    {
+      "query": "Facebook",
+      "intent": "navigate",
+      "status": "official_navigation",
+      "response_mode": "OFFICIAL_LINK",
+      "top_urls": [
+        "https://www.facebook.com/"
+      ],
+      "latency_ms": 0.03
+    },
+    {
+      "query": "Google",
+      "intent": "navigate",
+      "status": "official_navigation",
+      "response_mode": "OFFICIAL_LINK",
+      "top_urls": [
+        "https://www.google.com/"
+      ],
+      "latency_ms": 0.03
+    },
+    {
+      "query": "Chat GPT",
+      "intent": "navigate",
+      "status": "official_navigation",
+      "response_mode": "OFFICIAL_LINK",
+      "top_urls": [
+        "https://chatgpt.com/"
+      ],
+      "latency_ms": 0.03
+    },
+    {
+      "query": "Canva",
+      "intent": "navigate",
+      "status": "official_navigation",
+      "response_mode": "OFFICIAL_LINK",
+      "top_urls": [
+        "https://www.canva.com/"
+      ],
+      "latency_ms": 0.03
+    },
+    {
+      "query": "Google Translate",
+      "intent": "navigate",
+      "status": "official_navigation",
+      "response_mode": "OFFICIAL_LINK",
+      "top_urls": [
+        "https://translate.google.com/"
+      ],
+      "latency_ms": 0.04
+    },
+    {
+      "query": "FIFA World Cup 2026",
+      "intent": "sports",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "top_urls": [
+        "https://example.test/world-cup"
+      ],
+      "latency_ms": 0.62
+    },
+    {
+      "query": "Weather",
+      "intent": "weather",
+      "status": "official_links",
+      "response_mode": "CURRENT_SERVICE_HANDOFF",
+      "top_urls": [
+        "https://www.bbc.co.uk/weather"
+      ],
+      "latency_ms": 0.06
+    },
+    {
+      "query": "Weather tomorrow in London",
+      "intent": "weather",
+      "status": "official_links",
+      "response_mode": "CURRENT_SERVICE_HANDOFF",
+      "top_urls": [
+        "https://www.bbc.co.uk/weather",
+        "https://weather.metoffice.gov.uk/forecast/uk"
+      ],
+      "latency_ms": 0.05
+    },
+    {
+      "query": "What is the weather in Berlin today?",
+      "intent": "weather",
+      "status": "official_links",
+      "response_mode": "CURRENT_SERVICE_HANDOFF",
+      "top_urls": [
+        "https://www.dwd.de/",
+        "https://www.bbc.co.uk/weather"
+      ],
+      "latency_ms": 0.06
+    },
+    {
+      "query": "Wetter Berlin morgen",
+      "intent": "weather",
+      "status": "official_links",
+      "response_mode": "CURRENT_SERVICE_HANDOFF",
+      "top_urls": [
+        "https://www.dwd.de/",
+        "https://www.bbc.co.uk/weather"
+      ],
+      "latency_ms": 0.04
+    },
+    {
+      "query": "Wie ist das Wetter in M\u00fcnchen?",
+      "intent": "weather",
+      "status": "official_links",
+      "response_mode": "CURRENT_SERVICE_HANDOFF",
+      "top_urls": [
+        "https://www.dwd.de/",
+        "https://www.bbc.co.uk/weather"
+      ],
+      "latency_ms": 0.06
+    },
+    {
+      "query": "London weather forecast this weekend",
+      "intent": "weather",
+      "status": "official_links",
+      "response_mode": "CURRENT_SERVICE_HANDOFF",
+      "top_urls": [
+        "https://www.bbc.co.uk/weather",
+        "https://weather.metoffice.gov.uk/forecast/uk"
+      ],
+      "latency_ms": 0.04
+    },
+    {
+      "query": "Translate English to German",
+      "intent": "translate",
+      "status": "official_links",
+      "response_mode": "CURRENT_SERVICE_HANDOFF",
+      "top_urls": [
+        "https://www.deepl.com/translator",
+        "https://translate.google.com/"
+      ],
+      "latency_ms": 0.06
+    },
+    {
+      "query": "\u00dcbersetze Guten Morgen ins Deutsche",
+      "intent": "translate",
+      "status": "official_links",
+      "response_mode": "CURRENT_SERVICE_HANDOFF",
+      "top_urls": [
+        "https://www.deepl.com/translator",
+        "https://translate.google.com/"
+      ],
+      "latency_ms": 0.07
+    },
+    {
+      "query": "How do I book concert tickets in Berlin?",
+      "intent": "how_to",
+      "status": "staging_results",
+      "response_mode": "EXTRACTIVE_ANSWER",
+      "top_urls": [
+        "https://example.test/berlin-tickets",
+        "https://example.test/berlin-concert",
+        "https://example.test/berlin-christmas"
+      ],
+      "latency_ms": 0.99
+    },
+    {
+      "query": "Konzertkarten Berlin kaufen",
+      "intent": "how_to",
+      "status": "staging_results",
+      "response_mode": "EXTRACTIVE_ANSWER",
+      "top_urls": [
+        "https://example.test/berlin-tickets",
+        "https://example.test/berlin-concert",
+        "https://example.test/berlin-christmas"
+      ],
+      "latency_ms": 0.65
+    },
+    {
+      "query": "book concert tickets in London",
+      "intent": "how_to",
+      "status": "staging_results",
+      "response_mode": "EXTRACTIVE_ANSWER",
+      "top_urls": [
+        "https://example.test/london-tickets",
+        "https://example.test/london-fireworks",
+        "https://example.test/parade"
+      ],
+      "latency_ms": 0.7
+    },
+    {
+      "query": "How do I get to the O2 by public transport?",
+      "intent": "transport",
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "top_urls": [
+        "https://tfl.gov.uk/",
+        "https://www.bvg.de/",
+        "https://www.s-bahn-berlin.de/"
+      ],
+      "latency_ms": 0.46
+    },
+    {
+      "query": "Wie komme ich zum Konzert in Berlin?",
+      "intent": "transport",
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "top_urls": [
+        "https://www.bvg.de/",
+        "https://www.s-bahn-berlin.de/"
+      ],
+      "latency_ms": 0.46
+    },
+    {
+      "query": "Can you name place to buy flight tickets?",
+      "intent": "flights",
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "top_urls": [
+        "https://www.britishairways.com/",
+        "https://www.lufthansa.com/",
+        "https://www.easyjet.com/"
+      ],
+      "latency_ms": 0.11
+    },
+    {
+      "query": "cheapest flights to Berlin",
+      "intent": "flights",
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "top_urls": [
+        "https://www.britishairways.com/",
+        "https://www.lufthansa.com/",
+        "https://www.easyjet.com/"
+      ],
+      "latency_ms": 0.06
+    },
+    {
+      "query": "Fl\u00fcge nach Berlin buchen",
+      "intent": "flights",
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "top_urls": [
+        "https://www.britishairways.com/",
+        "https://www.lufthansa.com/",
+        "https://www.easyjet.com/"
+      ],
+      "latency_ms": 0.07
+    },
+    {
+      "query": "How can I return concert tickets in Berlin?",
+      "intent": "how_to",
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "top_urls": [
+        "https://www.caa.co.uk/",
+        "https://www.gov.uk/search/all?keywords=How+can+I+return+concert+tickets+in+Berlin%3F",
+        "https://www.eventim.de/"
+      ],
+      "latency_ms": 0.13
+    },
+    {
+      "query": "UK ticket refund rights",
+      "intent": "how_to",
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "top_urls": [
+        "https://www.caa.co.uk/",
+        "https://www.gov.uk/search/all?keywords=UK+ticket+refund+rights",
+        "https://www.theo2.co.uk/"
+      ],
+      "latency_ms": 0.2
+    },
+    {
+      "query": "refund policy for a cancelled concert",
+      "intent": "how_to",
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "top_urls": [
+        "https://www.caa.co.uk/",
+        "https://www.gov.uk/search/all?keywords=refund+policy+for+a+cancelled+concert",
+        "https://www.eventim.de/"
+      ],
+      "latency_ms": 0.18
+    },
+    {
+      "query": "Pride festivals in Germany",
+      "intent": "events",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "top_urls": [
+        "https://example.test/germany-pride",
+        "https://example.test/berlin-pride",
+        "https://example.test/music-festival"
+      ],
+      "latency_ms": 0.48
+    },
+    {
+      "query": "CSD Berlin",
+      "intent": "events",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "top_urls": [
+        "https://example.test/berlin-pride",
+        "https://example.test/berlin-christmas",
+        "https://example.test/berlin-concert"
+      ],
+      "latency_ms": 0.59
+    },
+    {
+      "query": "Pride festivals Germany excluding Christmas markets",
+      "intent": "events",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "top_urls": [
+        "https://example.test/germany-pride",
+        "https://example.test/berlin-pride",
+        "https://example.test/music-festival"
+      ],
+      "latency_ms": 0.49
+    },
+    {
+      "query": "Feuerwerk London",
+      "intent": "events",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "top_urls": [
+        "https://example.test/london-fireworks",
+        "https://example.test/parade",
+        "https://example.test/london-tickets"
+      ],
+      "latency_ms": 0.5
+    },
+    {
+      "query": "fireworks in London",
+      "intent": "events",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "top_urls": [
+        "https://example.test/london-fireworks",
+        "https://example.test/parade",
+        "https://example.test/london-tickets"
+      ],
+      "latency_ms": 0.44
+    },
+    {
+      "query": "music festivals Europe",
+      "intent": "events",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "top_urls": [
+        "https://example.test/music-festival",
+        "https://example.test/berlin-concert",
+        "https://example.test/germany-pride"
+      ],
+      "latency_ms": 0.48
+    },
+    {
+      "query": "open air music festivals Europe",
+      "intent": "events",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "top_urls": [
+        "https://example.test/music-festival",
+        "https://example.test/berlin-concert",
+        "https://example.test/germany-pride"
+      ],
+      "latency_ms": 0.5
+    },
+    {
+      "query": "Christmas markets in Berlin",
+      "intent": "events",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "top_urls": [
+        "https://example.test/berlin-christmas",
+        "https://example.test/berlin-concert",
+        "https://example.test/berlin-pride"
+      ],
+      "latency_ms": 0.53
+    },
+    {
+      "query": "Weihnachtsm\u00e4rkte in Berlin",
+      "intent": "events",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "top_urls": [
+        "https://example.test/berlin-christmas",
+        "https://example.test/berlin-concert",
+        "https://example.test/berlin-pride"
+      ],
+      "latency_ms": 0.48
+    },
+    {
+      "query": "Berlin Veranstaltungen ohne Weihnachtsm\u00e4rkte",
+      "intent": "events",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "top_urls": [
+        "https://example.test/berlin-christmas",
+        "https://example.test/berlin-concert",
+        "https://example.test/berlin-pride"
+      ],
+      "latency_ms": 0.52
+    },
+    {
+      "query": "Diwali events in London",
+      "intent": "events",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "top_urls": [
+        "https://example.test/london-fireworks",
+        "https://example.test/parade",
+        "https://example.test/london-tickets"
+      ],
+      "latency_ms": 0.47
+    },
+    {
+      "query": "parades in London",
+      "intent": "events",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "top_urls": [
+        "https://example.test/london-fireworks",
+        "https://example.test/parade",
+        "https://example.test/london-tickets"
+      ],
+      "latency_ms": 0.47
+    },
+    {
+      "query": "Glastonbury 2027 dates",
+      "intent": "events",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "top_urls": [
+        "https://example.test/glastonbury",
+        "https://example.test/expired",
+        "https://example.test/parade"
+      ],
+      "latency_ms": 0.47
+    },
+    {
+      "query": "London Parade 2027",
+      "intent": "events",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "top_urls": [
+        "https://example.test/parade",
+        "https://example.test/london-fireworks",
+        "https://example.test/london-tickets"
+      ],
+      "latency_ms": 0.61
+    },
+    {
+      "query": "What is an email account?",
+      "intent": "general",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "top_urls": [
+        "https://example.test/general"
+      ],
+      "latency_ms": 0.54
+    },
+    {
+      "query": "What is a public transport day ticket?",
+      "intent": "transport",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "top_urls": [
+        "https://example.test/transit"
+      ],
+      "latency_ms": 0.5
+    },
+    {
+      "query": "Berlin public transport ticket instructions",
+      "intent": "transport",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "top_urls": [
+        "https://example.test/transit"
+      ],
+      "latency_ms": 0.54
+    },
+    {
+      "query": "What is the capital of Germany?",
+      "intent": "general",
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "top_urls": [
+        "https://en.wikipedia.org/wiki/Special:Search?search=What+is+the+capital+of+Germany%3F",
+        "https://www.gov.uk/search/all?keywords=What+is+the+capital+of+Germany%3F",
+        "https://www.berlin.de/en/"
+      ],
+      "latency_ms": 0.5
+    },
+    {
+      "query": "Berlin Wall history",
+      "intent": "general",
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "top_urls": [
+        "https://en.wikipedia.org/wiki/Special:Search?search=Berlin+Wall+history",
+        "https://www.gov.uk/search/all?keywords=Berlin+Wall+history",
+        "https://www.berlin.de/en/"
+      ],
+      "latency_ms": 0.48
+    },
+    {
+      "query": "Who runs Berlin public transport?",
+      "intent": "transport",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "top_urls": [
+        "https://example.test/transit"
+      ],
+      "latency_ms": 0.47
+    },
+    {
+      "query": "What is CSD?",
+      "intent": "events",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "top_urls": [
+        "https://example.test/berlin-pride",
+        "https://example.test/germany-pride"
+      ],
+      "latency_ms": 2.35
+    },
+    {
+      "query": "Museum Island Berlin information",
+      "intent": "general",
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "top_urls": [
+        "https://en.wikipedia.org/wiki/Special:Search?search=Museum+Island+Berlin+information",
+        "https://www.gov.uk/search/all?keywords=Museum+Island+Berlin+information",
+        "https://www.berlin.de/en/"
+      ],
+      "latency_ms": 0.48
+    },
+    {
+      "query": "Glastonbury 2025 dates",
+      "intent": "events",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "top_urls": [
+        "https://example.test/expired",
+        "https://example.test/glastonbury"
+      ],
+      "latency_ms": 0.51
+    },
+    {
+      "query": "Glastonbury 2026",
+      "intent": "events",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "top_urls": [
+        "https://example.test/glastonbury",
+        "https://example.test/expired",
+        "https://example.test/world-cup"
+      ],
+      "latency_ms": 0.49
+    },
+    {
+      "query": "Glatsunbury dates",
+      "intent": "general",
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "top_urls": [
+        "https://en.wikipedia.org/wiki/Special:Search?search=Glatsunbury+dates",
+        "https://www.gov.uk/search/all?keywords=Glatsunbury+dates",
+        "https://www.berlin.de/en/"
+      ],
+      "latency_ms": 0.44
+    },
+    {
+      "query": "Berln concert tickets",
+      "intent": "how_to",
+      "status": "staging_results",
+      "response_mode": "EXTRACTIVE_ANSWER",
+      "top_urls": [
+        "https://example.test/berlin-tickets",
+        "https://example.test/london-tickets",
+        "https://example.test/berlin-concert"
+      ],
+      "latency_ms": 0.43
+    },
+    {
+      "query": "official ChatGPT login free",
+      "intent": "general",
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "top_urls": [
+        "https://en.wikipedia.org/wiki/Special:Search?search=official+ChatGPT+login+free",
+        "https://www.gov.uk/search/all?keywords=official+ChatGPT+login+free",
+        "https://www.berlin.de/en/"
+      ],
+      "latency_ms": 0.5
+    },
+    {
+      "query": "weather Berlin 2030",
+      "intent": "weather",
+      "status": "official_links",
+      "response_mode": "CURRENT_SERVICE_HANDOFF",
+      "top_urls": [
+        "https://www.dwd.de/",
+        "https://www.bbc.co.uk/weather"
+      ],
+      "latency_ms": 0.05
+    },
+    {
+      "query": "affordable flights now",
+      "intent": "flights",
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "top_urls": [
+        "https://www.britishairways.com/",
+        "https://www.lufthansa.com/",
+        "https://www.easyjet.com/"
+      ],
+      "latency_ms": 0.09
+    },
+    {
+      "query": "asdfgh qwerty",
+      "intent": "general",
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "top_urls": [
+        "https://en.wikipedia.org/wiki/Special:Search?search=asdfgh+qwerty",
+        "https://www.gov.uk/search/all?keywords=asdfgh+qwerty",
+        "https://www.berlin.de/en/"
+      ],
+      "latency_ms": 0.53
+    },
+    {
+      "query": "events in Paris",
+      "intent": "events",
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "top_urls": [
+        "https://www.efa-aef.eu/",
+        "https://www.paris.fr/",
+        "https://www.visitparisregion.com/"
+      ],
+      "latency_ms": 0.55
+    },
+    {
+      "query": "Konzertkarten M\u00fcnchen",
+      "intent": "how_to",
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "top_urls": [
+        "https://www.berlin.de/events/",
+        "https://www.visitlondon.com/things-to-do/events",
+        "https://www.efa-aef.eu/"
+      ],
+      "latency_ms": 0.56
+    },
+    {
+      "query": "Was ist CSD?",
+      "intent": "events",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "top_urls": [
+        "https://example.test/berlin-pride",
+        "https://example.test/germany-pride"
+      ],
+      "latency_ms": 0.44
+    },
+    {
+      "query": "Berlin events without Christmas markets",
+      "intent": "events",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "top_urls": [
+        "https://example.test/berlin-pride",
+        "https://example.test/berlin-concert",
+        "https://example.test/berlin-tickets"
+      ],
+      "latency_ms": 0.61
+    },
+    {
+      "query": "How do I buy official tickets for a festival?",
+      "intent": "how_to",
+      "status": "staging_results",
+      "response_mode": "EXTRACTIVE_ANSWER",
+      "top_urls": [
+        "https://example.test/london-tickets",
+        "https://example.test/berlin-tickets",
+        "https://example.test/glastonbury"
+      ],
+      "latency_ms": 1.51
+    },
+    {
+      "query": "Where can I get tickets for a festival?",
+      "intent": "how_to",
+      "status": "staging_results",
+      "response_mode": "EXTRACTIVE_ANSWER",
+      "top_urls": [
+        "https://example.test/glastonbury",
+        "https://example.test/berlin-pride",
+        "https://example.test/music-festival"
+      ],
+      "latency_ms": 0.74
+    },
+    {
+      "query": "How do I get accessibility information for a Berlin venue?",
+      "intent": "how_to",
+      "status": "staging_results",
+      "response_mode": "EXTRACTIVE_ANSWER",
+      "top_urls": [
+        "https://example.test/berlin-tickets",
+        "https://example.test/berlin-venue",
+        "https://example.test/berlin-christmas"
+      ],
+      "latency_ms": 0.55
+    },
+    {
+      "query": "best shopping deals",
+      "intent": "shopping",
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "top_urls": [
+        "https://www.amazon.co.uk/",
+        "https://www.amazon.de/",
+        "https://www.google.com/shopping"
+      ],
+      "latency_ms": 0.34
+    },
+    {
+      "query": "Amazon rainforest facts",
+      "intent": "general",
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "top_urls": [
+        "https://en.wikipedia.org/wiki/Special:Search?search=Amazon+rainforest+facts",
+        "https://www.gov.uk/search/all?keywords=Amazon+rainforest+facts",
+        "https://www.berlin.de/en/"
+      ],
+      "latency_ms": 0.35
+    },
+    {
+      "query": "ChatGPT privacy policy",
+      "intent": "general",
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "top_urls": [
+        "https://en.wikipedia.org/wiki/Special:Search?search=ChatGPT+privacy+policy",
+        "https://www.gov.uk/search/all?keywords=ChatGPT+privacy+policy",
+        "https://www.berlin.de/en/"
+      ],
+      "latency_ms": 0.38
+    }
+  ],
+  "limits": [
+    "Labelled offline fixtures only; this is not open-web accuracy.",
+    "Source diversity is bounded by the fixture corpus."
+  ]
+}

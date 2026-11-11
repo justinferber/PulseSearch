@@ -21,7 +21,10 @@ from dataclasses import dataclass, field
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
+from .official import links_for
+
 ANSWERED = "ANSWERED"
+OFFICIAL_LINKS = "OFFICIAL_LINKS"
 NO_EVIDENCE = "NO_EVIDENCE"
 LIVE_SOURCE_REQUIRED = "LIVE_SOURCE_REQUIRED"
 NEEDS_CLARIFICATION = "NEEDS_CLARIFICATION"
@@ -321,6 +324,12 @@ class AnswerService:
                 found.append(place)
         return found
 
+    def _official_citations(self, cards: list[dict]) -> list[Citation]:
+        return [Citation(title=c.get("title", ""), url=c.get("url", ""),
+                         publisher=c.get("publisher", ""),
+                         retrieved_at=c.get("verified_at", ""), kind="official_service")
+                for c in cards if self.hosts.allows(c.get("url", ""))]
+
     def _cite(self, citation: dict, kind: str = "source") -> Citation | None:
         url = citation.get("url", "")
         if not self.hosts.allows(url):
@@ -347,20 +356,26 @@ class AnswerService:
                 f"Which place do you mean? I can answer current conditions for: {supported}.",
                 gates=gates, followups=["What is the weather in London today?"])
         if self.weather is None:
+            cards = links_for("weather", q)
+            links = "\n".join(f"- {c['title']}: {c['url']}" for c in cards)
             return self._simple(
-                LIVE_SOURCE_REQUIRED, "weather", q,
-                "I can't answer live weather without a provider connection, and I won't guess. "
-                "This build has the weather connector switched off. Enable it with "
-                "--live-weather (keyless Open-Meteo adapter) or connect your own provider.",
-                gates=gates, limits=["Live weather is an external data dependency, not an indexed fact."])
+                OFFICIAL_LINKS, "weather", q,
+                "I don't have a live weather reading. For the current forecast, use the official "
+                "service for the country:\n" + links,
+                citations=self._official_citations(cards), gates=gates,
+                limits=["Links only; no temperature or forecast value was fetched.",
+                        "A current observation is not a forecast for tomorrow."],
+                followups=["What is the weather in Berlin today?"])
         try:
             snapshot = self.weather.current(locations)
         except WeatherError as exc:
+            cards = links_for("weather", q)
             return self._simple(
-                LIVE_SOURCE_REQUIRED, "weather", q,
-                "The weather provider could not be reached or returned an unusable response, "
-                "so there is no current observation to report. Try again shortly.",
-                gates=gates, limits=[f"Provider error: {exc}."])
+                OFFICIAL_LINKS, "weather", q,
+                "The live weather provider is unavailable. Use the official forecast service:\n"
+                + "\n".join(f"- {c['title']}: {c['url']}" for c in cards),
+                citations=self._official_citations(cards), gates=gates,
+                limits=[f"Provider error: {exc}.", "No live value was fetched."])
         observed = _parse_iso(snapshot.get("observed_at", ""))
         if observed is None:
             return self._simple(
@@ -369,11 +384,15 @@ class AnswerService:
                 "its values as current.", gates=gates)
         age = now - observed
         if age > self.weather_ttl:
+            cards = links_for("weather", q)
             return self._simple(
-                LIVE_SOURCE_REQUIRED, "weather", q,
+                OFFICIAL_LINKS, "weather", q,
                 f"The latest observation is {int(age.total_seconds() // 60)} minutes old, beyond "
                 f"the {int(self.weather_ttl.total_seconds() // 60)}-minute freshness limit. "
-                "I won't present it as current weather.", gates=gates)
+                "Use the official forecast instead:\n"
+                + "\n".join(f"- {c['title']}: {c['url']}" for c in cards),
+                citations=self._official_citations(cards), gates=gates,
+                limits=["No stale value is presented as current weather."])
         lines = []
         for place in snapshot.get("locations") or []:
             temp = place.get("temperature_c")
@@ -555,7 +574,8 @@ def url_host(url: str) -> str:
 
 def render_answer_for_web(answer: Answer, escape) -> str:
     """Small HTML block used by the local console; ``escape`` is html.escape."""
-    pill = {"ANSWERED": "good", "LIVE_SOURCE_REQUIRED": "warn",
+    pill = {"ANSWERED": "good", "OFFICIAL_LINKS": "good",
+            "LIVE_SOURCE_REQUIRED": "warn",
             "NO_EVIDENCE": "warn", "REFUSED": "bad",
             "NEEDS_CLARIFICATION": "warn"}.get(answer.status, "warn")
     citations = "".join(

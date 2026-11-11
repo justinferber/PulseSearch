@@ -10,6 +10,8 @@ import unicodedata
 from dataclasses import dataclass, asdict
 from urllib.parse import urlsplit
 
+from .official import links_for
+
 # Verified-site *navigation*, not admission to crawl or permission to copy content.
 OFFICIAL_NAVIGATION = {
     "chatgpt": ("ChatGPT", "https://chatgpt.com/"),
@@ -27,9 +29,11 @@ ALIASES = {"chat gpt": "chatgpt", "yt": "youtube", "g mail": "gmail"}
 STOP = frozenset("""a an and are at be can do does for from get how i in is it me my
 near of on or the there this to what when where which who why with you your
 find show tell please best information about und der die das ein eine im
-den zu mit für wie kann ich ist wo gibt es tickets ticket""".split())
-GEOGRAPHIES = ("berlin", "london", "hamburg", "munich", "münchen",
-               "paris", "manchester", "new york", "birmingham", "glasgow")
+den zu mit für wie kann ich ist wo gibt es tickets ticket auch nach von
+weather forecast today tomorrow jetzt heute morgen bitte wetter""".split())
+GEOGRAPHIES = ("berlin", "london", "hamburg", "munich", "münchen", "munchen",
+               "paris", "manchester", "new york", "birmingham", "glasgow",
+               "cologne", "köln", "koeln", "frankfurt", "stuttgart")
 # Query expansion improves recall without pretending to create evidence.
 EXPAND = {
     "fireworks": ("firework", "feuerwerk", "silvester", "display"),
@@ -48,17 +52,38 @@ EXPAND = {
     "market": ("markt", "weihnachtsmarkt"),
     "markets": ("market", "markt", "weihnachtsmarkt"),
     "travel": ("transport", "verkehr", "train"),
-    "transport": ("travel", "bahn", "train"),
+    "transport": ("travel", "bahn", "train", "bvg", "tfl"),
+    "wetter": ("weather", "forecast"),
+    "weather": ("wetter", "forecast", "vorhersage"),
+    "forecast": ("weather", "wetter", "vorhersage"),
+    "konzert": ("concert", "konzerte", "gig"),
+    "konzertkarten": ("concert", "tickets", "karten"),
+    "konzerte": ("concert", "concerts", "gig"),
+    "karten": ("tickets", "ticket", "eintrittskarten"),
+    "eintrittskarten": ("tickets", "karten"),
+    "feuerwerk": ("fireworks", "firework"),
+    "weihnachtsmarkt": ("christmas", "market", "advent"),
+    "flugzeug": ("flight", "flights", "airline"),
+    "flug": ("flight", "flights"),
 }
 WORDS = re.compile(r"[^\W_]+", re.UNICODE)
-BOOKING = re.compile(r"\b(book|booking|buy|purchase|ticket|tickets|karten|eintritt|kaufen|reserv|checkout)\b", re.I)
-HOWTO = re.compile(r"\b(how|wie|guide|instructions?|steps?|where to buy|where can i|get tickets)\b", re.I)
-EVENTS = re.compile(r"\b(fireworks?|pride|csd|festival|festivals|concert|concerts|gig|"
-                    r"music|christmas|weihnachtsmarkt|diwali|parade|procession|events?|"
-                    r"stadfest|stadtfest|karneval|sport|tournament)\b", re.I)
-WEATHER = re.compile(r"\b(weather|forecast|temperature|rainfall|wetter|vorhersage)\b", re.I)
+BOOKING = re.compile(r"\b(book|booking|buy|purchase|ticket|tickets|karten|konzertkarten|eintritt|kaufen|reserv|checkout)\b", re.I)
+HOWTO = re.compile(r"\b(how|wie|guide|instructions?|steps?|where to buy|where can i|get tickets|"
+                   r"book|buy|purchase|kaufen|reserv\w*|refund|return|cancel)\b", re.I)
+EVENTS = re.compile(r"\b(fireworks?|feuerwerk|pride|csd|festival|festivals|concert|concerts|"
+                    r"konzert\w*|gig|music|christmas|weihnachtsmarkt\w*|weihnachtsm\w*|diwali|"
+                    r"parades?|procession|events?|veranstaltungen?|stadfest|stadtfest|karneval|"
+                    r"sport|tournament|glastonbury)\b", re.I)
+WEATHER = re.compile(r"\b(weather|forecast|temperature|rainfall|wetter|vorhersage|"
+                     r"regen|sonnig|bewölkung)\b", re.I)
+NEGATION = re.compile(r"\b(?:excluding|without|except|nicht|ohne|ausser|außer)\b\s+(.+)$", re.I)
 SPORTS = re.compile(r"\b(fifa|world cup|football score|match result|live score)\b", re.I)
-TRANSLATE = re.compile(r"\b(translate|translation|übersetz|translate into)\b", re.I)
+TRANSLATE = re.compile(r"\b(translate|translation|übersetz\w*|translate into)\b", re.I)
+FLIGHTS = re.compile(r"\b(flights?|airfare|airline|flug|flüge)\b", re.I)
+TRANSPORT = re.compile(r"\b(public transport|transport|tfl|bvg|s-bahn|get to|journey|"
+                       r"wie komme|anfahrt|verkehr)\b", re.I)
+REFUND = re.compile(r"\b(refund|refunds|return|returns|cancel|cancellation|erstattung|"
+                    r"stornieren)\b", re.I)
 FRESH = re.compile(r"\b(today|tomorrow|now|live|currently|this evening|this weekend|"
                    r"heute|morgen|jetzt|aktuell|tonight)\b", re.I)
 FAKE_NAV = re.compile(r"\b(login|sign in|official|website|site)\b", re.I)
@@ -106,7 +131,13 @@ def classify_query(query: str) -> SearchIntent:
         kind = "weather"
     elif TRANSLATE.search(q):
         kind = "translate"
-    elif HOWTO.search(q) and (BOOKING.search(q) or any(k in q for k in ("how do", "how to", "wie kann", "how can"))):
+    elif TRANSPORT.search(q):
+        kind = "transport"
+    elif FLIGHTS.search(q) and not EVENTS.search(q):
+        kind = "flights"
+    elif (HOWTO.search(q) and (BOOKING.search(q) or any(k in q for k in
+                            ("how do", "how to", "wie kann", "how can")))) or \
+            (BOOKING.search(q) and (EVENTS.search(q) or "ticket" in q)) or REFUND.search(q):
         kind = "how_to"
     elif SPORTS.search(q):
         kind = "sports"
@@ -117,6 +148,10 @@ def classify_query(query: str) -> SearchIntent:
     else:
         kind = "general"
     location = next((city for city in GEOGRAPHIES if re.search(r"\b"+re.escape(city)+r"\b", q)), None)
+    if location and location in ("münchen", "munchen"):
+        location = "munich"
+    elif location in ("köln", "koeln"):
+        location = "cologne"
     tokens = tuple(dict.fromkeys(tokenize(q)))
     extended = list(tokens)
     for word in tokens:
@@ -154,6 +189,7 @@ def document_type(doc: dict) -> str:
 
 
 def _score(doc: dict, intent: SearchIntent) -> tuple[float, list[str]]:
+    """Explainable lexical/BM25/authority blend, not a learned ranker."""
     title = normal(str(doc.get("title") or ""))
     snippet = normal(str(doc.get("snippet") or ""))
     url = normal(str(doc.get("url") or ""))
@@ -181,6 +217,23 @@ def _score(doc: dict, intent: SearchIntent) -> tuple[float, list[str]]:
             score += 1.1
         elif word in s:
             score += 0.45
+    bm25 = doc.get("bm25")
+    if isinstance(bm25, (int, float)) and bm25 < 0:
+        # SQLite bm25() returns a negative value: closer to zero is better.
+        score += min(4.0, 1.5 / (1.0 + abs(float(bm25))))
+    authority = str(doc.get("source_authority") or "").lower()
+    if authority in ("official", "primary"):
+        score += 3.0
+        reasons.append("official_source")
+    elif authority == "reference":
+        score += 1.0
+    fetched = str(doc.get("fetched_at") or "")
+    if fetched[:4].isdigit() and int(fetched[:4]) >= 2026:
+        score += 0.6
+        reasons.append("recent_fetch")
+    elif fetched[:4].isdigit() and int(fetched[:4]) < 2024:
+        score -= 1.0
+        reasons.append("stale_fetch")
     # Prefer pages that match the complete purpose, not an accidental word.
     coverage = len(matched_core) / len(core)
     score += coverage * 6.0
@@ -212,47 +265,161 @@ def _score(doc: dict, intent: SearchIntent) -> tuple[float, list[str]]:
     return (round(score, 3), reasons)
 
 
-def search_documents(documents: list[dict], query: str, limit: int = 10) -> dict:
-    """Search already admitted/staged documents only, no network or writes.
+def _canonical_key(url: str) -> str:
+    parts = urlsplit(url or "")
+    host = (parts.hostname or "").lower()
+    if host.startswith("www."):
+        host = host[4:]
+    path = re.sub(r"/+", "/", parts.path or "/").rstrip("/") or "/"
+    return host + path
 
-    Source URLs are unmodified. A matching source snippet is evidence for
-    navigation, NOT evidence that a time-sensitive claim is still true.
+
+def _excluded_terms(query: str) -> tuple[str, ...]:
+    match = NEGATION.search(query or "")
+    if not match:
+        return ()
+    return tuple(dict.fromkeys(tokenize(match.group(1))))
+
+
+def _snippet(text: str, tokens: tuple[str, ...], cap: int = 260) -> str:
+    clean = " ".join(str(text or "").split())
+    if not clean:
+        return ""
+    low = clean.lower()
+    position = min((low.find(t) for t in tokens if t in low), default=-1)
+    if position > 80:
+        clean = "…" + clean[max(0, position - 60):]
+    return clean[:cap].rstrip()
+
+
+def _diverse(items: list[dict], limit: int, per_host: int = 2) -> list[dict]:
+    """Keep source diversity; if the corpus is single-host, do not drop it."""
+    hosts = {(_canonical_key(item["url"]).split("/")[0]) for item in items if item.get("url")}
+    if len(hosts) <= 1:
+        return items[:limit]
+    out, counts = [], {}
+    for item in items:
+        host = (_canonical_key(item["url"]).split("/")[0]) if item.get("url") else ""
+        if counts.get(host, 0) >= per_host:
+            continue
+        counts[host] = counts.get(host, 0) + 1
+        out.append(item)
+        if len(out) >= limit:
+            break
+    return out
+
+
+def _official_response(query: str, intent: SearchIntent, mode: str, note: str) -> dict:
+    cards = links_for(intent.kind, query, intent.location)
+    return {"query": query, "intent": intent.as_dict(), "status": "official_links",
+            "response_mode": mode, "results": cards, "official_links": cards,
+            "answer": None, "notices": [note],
+            "note": note}
+
+
+def search_documents(documents: list[dict], query: str, limit: int = 10) -> dict:
+    """Search admitted documents and reviewed official services, no network.
+
+    A weather or translation query is a *handoff* to the official service even
+    when no provider is configured. A matched snippet is evidence for a link,
+    not proof that a time-sensitive claim is still true.
     """
     intent = classify_query(query)
     if intent.kind == "navigate" and intent.official_navigation:
         name, url = OFFICIAL_NAVIGATION[intent.official_navigation]
+        cards = [{"title": name, "url": url, "publisher": name,
+                  "description": "Official site navigation.", "kind": "navigation",
+                  "source_kind": "curated_official_link", "verified_live": False,
+                  "verified_at": "2026-11-11"}]
         return {"query": query, "intent": intent.as_dict(), "status": "official_navigation",
-                "results": [{"title": name, "url": url, "source_kind": "curated_official_link",
-                             "verified_live": False}], "answer": None,
+                "response_mode": "OFFICIAL_LINK", "results": cards, "official_links": cards,
+                "answer": None, "notices": [],
                 "note": "Navigation registry is not a crawler source allowlist."}
-    if intent.kind == "weather" or (intent.kind == "translate" and not documents):
-        return {"query": query, "intent": intent.as_dict(), "status": "live_provider_required",
-                "results": [], "answer": None,
-                "note": "A current provider or translation capability must be connected; no fabricated result."}
+    if intent.kind == "weather":
+        return _official_response(
+            query, intent, "CURRENT_SERVICE_HANDOFF",
+            "Official forecast services; Pulse Search did not fetch a live value. "
+            "A current observation is not a forecast for tomorrow.")
+    if intent.kind == "translate":
+        return _official_response(
+            query, intent, "CURRENT_SERVICE_HANDOFF",
+            "Use an authorised translator; Pulse Search did not perform or claim a translation.")
+    if intent.kind == "flights" or (REFUND.search(query) and intent.kind == "how_to"):
+        return _official_response(
+            query, intent, "OFFICIAL_LINKS",
+            "No live fares, stock or refund decision is claimed; use the official channels.")
+    excluded = _excluded_terms(query)
     scored = []
+    seen_urls, seen_titles = set(), set()
     for doc in documents:
         if doc.get("revoked") or not doc.get("url"):
+            continue
+        if str(doc.get("source_id") or "").lower() in ("untrusted", "blocked", "phish"):
+            continue
+        text = " ".join(str(doc.get(k) or "") for k in ("title", "snippet", "url")).lower()
+        if excluded and any(term in text for term in excluded):
             continue
         score, reasons = _score(doc, intent)
         if score <= 0:
             continue
+        # A general question needs more than one incidental place-name match.
+        core = set(intent.tokens)
+        coverage = len(core & set(tokenize(str(doc.get("title") or "") + " " +
+                                         str(doc.get("snippet") or ""))))
+        if intent.kind in ("general", "factual", "transport") and core and \
+                coverage / len(core) <= 0.5:
+            continue
+        if intent.location and intent.kind == "events":
+            haystack = (str(doc.get("title") or "") + " " + str(doc.get("snippet") or "") +
+                        " " + str(doc.get("url") or "")).lower()
+            if intent.location not in haystack:
+                continue
+        url_key = _canonical_key(doc["url"])
+        title_key = normal(str(doc.get("title") or ""))
+        if url_key in seen_urls or (title_key and title_key in seen_titles):
+            continue
+        seen_urls.add(url_key)
+        if title_key:
+            seen_titles.add(title_key)
         scored.append({"title": doc.get("title", ""), "url": doc["url"],
-                       "snippet": doc.get("snippet", ""), "source_id": doc.get("source_id"),
+                       "snippet": _snippet(str(doc.get("snippet") or ""), intent.tokens),
+                       "publisher": (_canonical_key(doc["url"]).split("/")[0]),
+                       "source_id": doc.get("source_id"),
                        "fetched_at": doc.get("fetched_at"),
                        "document_type": document_type(doc),
+                       "location": intent.location,
                        "score": score, "ranking_reasons": reasons,
                        "source_kind": "permissioned_staging_document",
                        "verified_live": False})
     scored.sort(key=lambda d: (-d["score"], d["url"]))
-    hits = scored[:max(0, min(int(limit), 50))]
-    # A dated event snippet is not a live booking guarantee; make no claims
-    # about available tickets, weather or an actual transaction.
-    status = "staging_results" if hits else "no_staging_evidence"
-    if intent.needs_live_data:
-        status = "staging_context_fresh_provider_required" if hits else "live_provider_required"
-    return {"query": query, "intent": intent.as_dict(), "status": status,
-            "results": hits, "answer": None,
-            "note": "Sources are offline-indexed evidence; verify current dates, prices and booking availability separately."}
+    hits = _diverse(scored, max(0, min(int(limit), 50)))
+    if hits:
+        status = "staging_results"
+        if intent.needs_live_data:
+            status = "staging_context_fresh_provider_required"
+        mode = "EXTRACTIVE_ANSWER" if intent.kind in ("how_to", "factual") else "SEARCH_RESULTS"
+        notices = ["Snippets are attributed excerpts from admitted pages; verify current dates, "
+                   "prices, stock and booking availability separately."]
+        if excluded:
+            notices.append("Excluded terms: " + ", ".join(excluded))
+        return {"query": query, "intent": intent.as_dict(), "status": status,
+                "response_mode": mode, "results": hits, "official_links": [],
+                "answer": None, "notices": notices,
+                "note": notices[0]}
+    official = links_for(intent.kind, query, intent.location)
+    if official:
+        notices = ["No admitted page answered this; these are reviewed official entry points. "
+                   "They are navigation, not a live value or a content licence."]
+        if excluded:
+            notices.append("Excluded terms: " + ", ".join(excluded))
+        return {"query": query, "intent": intent.as_dict(), "status": "official_links",
+                "response_mode": "OFFICIAL_LINKS", "results": official,
+                "official_links": official, "answer": None, "notices": notices,
+                "note": notices[0]}
+    return {"query": query, "intent": intent.as_dict(), "status": "no_staging_evidence",
+            "response_mode": "NO_EVIDENCE", "results": [], "official_links": [],
+            "answer": None, "notices": ["No evidence and no reviewed official entry point."],
+            "note": "No evidence and no reviewed official entry point."}
 
 
 def search_staging(staging, query: str, limit: int = 10, scan_limit: int = 5000) -> dict:
@@ -279,7 +446,7 @@ def search_staging(staging, query: str, limit: int = 10, scan_limit: int = 5000)
             expression = " OR ".join('"' + t + '"*' for t in terms)
             try:
                 rows = conn.execute(
-                    """SELECT d.* FROM doc_fts
+                    """SELECT d.*, bm25(doc_fts) AS bm25 FROM doc_fts
                        JOIN docs d ON d.doc_id=doc_fts.rowid
                        WHERE doc_fts MATCH ? AND d.revoked=0
                        ORDER BY bm25(doc_fts) LIMIT ?""",

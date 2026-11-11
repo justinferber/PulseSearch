@@ -1,0 +1,134 @@
+{
+  "kind": "R3A3G_WIKI_DEMO",
+  "generated_at": "2026-11-11",
+  "mode": "LOCAL_TEST_WIKI_ONLY",
+  "db": "data\\r3a3g_wiki\\wiki.sqlite",
+  "articles": [
+    {
+      "topic_id": "guide-berlin-concert-tickets",
+      "slug": "how-to-book-concert-tickets-berlin",
+      "result": "draft_created"
+    },
+    {
+      "topic_id": "guide-berlin-venue-transport",
+      "slug": "getting-to-berlin-concert-venues",
+      "result": "draft_created"
+    },
+    {
+      "topic_id": "reference-uk-weather-sources",
+      "slug": "uk-weather-forecast-sources",
+      "result": "draft_created"
+    },
+    {
+      "topic_id": "reference-germany-weather-sources",
+      "slug": "germany-weather-forecast-sources",
+      "result": "draft_created"
+    },
+    {
+      "topic_id": "guide-pride-festivals-germany",
+      "slug": "pride-festivals-germany",
+      "result": "draft_created"
+    },
+    {
+      "topic_id": "guide-london-new-year-fireworks",
+      "slug": "london-new-years-eve-fireworks",
+      "result": "draft_created"
+    },
+    {
+      "topic_id": "guide-flight-booking-channels",
+      "slug": "where-to-buy-flight-tickets",
+      "result": "draft_created"
+    },
+    {
+      "topic_id": "guide-ticket-refunds",
+      "slug": "ticket-refunds-and-cancellations",
+      "result": "draft_created"
+    },
+    {
+      "topic_id": "event-glastonbury-2027",
+      "slug": "glastonbury-festival-2027",
+      "result": "draft_created"
+    },
+    {
+      "topic_id": "event-london-parade-2027",
+      "slug": "london-parade-2027",
+      "result": "draft_created"
+    },
+    {
+      "topic_id": "guide-berlin-christmas-markets",
+      "slug": "berlin-christmas-markets",
+      "result": "draft_created"
+    }
+  ],
+  "update": {
+    "result": "update_draft",
+    "topic_id": "guide-berlin-concert-tickets",
+    "slug": "how-to-book-concert-tickets-berlin",
+    "diff": "--- how-to-book-concert-tickets-berlin@1\n+++ proposed\n@@ -6,6 +6,7 @@\n - Start at the venue's own programme or the Berlin events calendar, then follow the official ticket link shown for that event.\n - Eventim is an authorised ticketing agency in Germany; check that the seller named on the event page matches the checkout before paying.\n - Check the venue page for doors, age limits, accessibility and bag rules, which vary by show.\n+- Confirm the venue's accessibility arrangements on its own page before booking.\n \n ## Sources\n - [berlin.de](https://www.berlin.de/events/)",
+    "previous_version": 1
+  },
+  "duplicate": {
+    "result": "duplicate",
+    "topic_id": "guide-berlin-concert-tickets",
+    "slug": "how-to-book-concert-tickets-berlin",
+    "status": "draft_update"
+  },
+  "published": [
+    {
+      "result": "published",
+      "topic_id": "guide-berlin-concert-tickets",
+      "publisher": {
+        "ok": true,
+        "target": "local-test-wiki",
+        "slug": "how-to-book-concert-tickets-berlin",
+        "version": 1,
+        "published_at": "2026-11-11T14:01:29+00:00"
+      },
+      "status": "published"
+    },
+    {
+      "result": "published",
+      "topic_id": "guide-berlin-venue-transport",
+      "publisher": {
+        "ok": true,
+        "target": "local-test-wiki",
+        "slug": "getting-to-berlin-concert-venues",
+        "version": 1,
+        "published_at": "2026-11-11T14:01:29+00:00"
+      },
+      "status": "published"
+    },
+    {
+      "result": "published",
+      "topic_id": "reference-uk-weather-sources",
+      "publisher": {
+        "ok": true,
+        "target": "local-test-wiki",
+        "slug": "uk-weather-forecast-sources",
+        "version": 1,
+        "published_at": "2026-11-11T14:01:29+00:00"
+      },
+      "status": "published"
+    }
+  ],
+  "rejected": {
+    "result": "rejected",
+    "topic_id": "guide-pride-festivals-germany",
+    "reason": "needs a city-specific source"
+  },
+  "revocation": {
+    "result": "flagged",
+    "source": "https://www.bvg.de/",
+    "reason": "source withdrawn in test",
+    "topics": [
+      "guide-berlin-venue-transport"
+    ]
+  },
+  "status_counts": {
+    "draft": 7,
+    "flagged": 1,
+    "published": 2,
+    "rejected": 1
+  },
+  "publication_note": "Published only to the local test publisher. No Pulse UNITY/UNA Wiki write occurred."
+}

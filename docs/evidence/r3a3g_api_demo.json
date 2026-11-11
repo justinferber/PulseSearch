@@ -1,0 +1,331 @@
+{
+  "kind": "R3A3G_API_DEMO",
+  "generated_at": "2026-11-11",
+  "mode": "LOCAL_LOOPBACK_TOKEN_TEST",
+  "fixtures": [
+    {
+      "case": "unauthenticated",
+      "request": {
+        "path": "/v1/health",
+        "body": null
+      },
+      "status": 401,
+      "response": {
+        "status": "UNAUTHENTICATED",
+        "error": "bearer token required"
+      }
+    },
+    {
+      "case": "health",
+      "request": {
+        "path": "/v1/health",
+        "body": null
+      },
+      "status": 200,
+      "response": {
+        "status": "OK",
+        "service": "pulse-search",
+        "api_version": "1.0",
+        "request_id": "3da1b0d1cddb4b0da186722d0fbe5353",
+        "time_utc": "2026-11-11T14:01:27+00:00"
+      }
+    },
+    {
+      "case": "capabilities",
+      "request": {
+        "path": "/v1/capabilities",
+        "body": null
+      },
+      "status": 200,
+      "response": {
+        "status": "OK",
+        "api_version": "1.0",
+        "request_id": "f2ef8e14b3904fe88247f014f33217df",
+        "capabilities": {
+          "local_index": true,
+          "ephemeral_provider": false,
+          "live_weather": false,
+          "wiki_candidates": true,
+          "languages": [
+            "en",
+            "de"
+          ],
+          "max_results": 20
+        },
+        "endpoints": [
+          "POST /v1/search",
+          "POST /v1/answer",
+          "POST /v1/wiki-candidates"
+        ],
+        "notices": [
+          "Read-only local index. No public web search or paid provider is enabled."
+        ]
+      }
+    },
+    {
+      "case": "search",
+      "request": {
+        "path": "/v1/search",
+        "body": {
+          "query": "knowledge engine"
+        }
+      },
+      "status": 200,
+      "response": {
+        "query": "knowledge engine",
+        "intent": {
+          "kind": "general",
+          "query": "knowledge engine",
+          "tokens": [
+            "knowledge",
+            "engine"
+          ],
+          "expanded": [
+            "knowledge",
+            "engine"
+          ],
+          "location": null,
+          "needs_live_data": false,
+          "official_navigation": null
+        },
+        "status": "staging_results",
+        "response_mode": "SEARCH_RESULTS",
+        "results": [
+          {
+            "title": "Pulse UNITY Knowledge Engine",
+            "url": "https://pulseunity.co/knowledge",
+            "snippet": "The engine returns cited evidence or an honest no-evidence state.",
+            "publisher": "pulseunity.co",
+            "source_id": "demo",
+            "fetched_at": "2026-11-11T10:00:00+00:00",
+            "document_type": "general_reference",
+            "location": null,
+            "score": 20.5,
+            "ranking_reasons": [
+              "recent_fetch",
+              "all_query_terms"
+            ],
+            "source_kind": "permissioned_staging_document",
+            "verified_live": false
+          }
+        ],
+        "official_links": [],
+        "answer": null,
+        "notices": [
+          "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately."
+        ],
+        "note": "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately.",
+        "retrieval_mode": "fts_candidates",
+        "request_id": "5a473782f43b4fd78c18977d26e13ee5",
+        "retrieved_at": "2026-11-11T14:01:27+00:00",
+        "source_ids": [
+          "demo"
+        ],
+        "result_cards": [
+          {
+            "title": "Pulse UNITY Knowledge Engine",
+            "url": "https://pulseunity.co/knowledge",
+            "snippet": "The engine returns cited evidence or an honest no-evidence state.",
+            "publisher": "pulseunity.co",
+            "source_id": "demo",
+            "fetched_at": "2026-11-11T10:00:00+00:00",
+            "document_type": "general_reference",
+            "location": null,
+            "score": 20.5,
+            "ranking_reasons": [
+              "recent_fetch",
+              "all_query_terms"
+            ],
+            "source_kind": "permissioned_staging_document",
+            "verified_live": false
+          }
+        ],
+        "consumer_context_received": false,
+        "latency_ms": 3.6
+      }
+    },
+    {
+      "case": "answer_event",
+      "request": {
+        "path": "/v1/answer",
+        "body": {
+          "question": "When is Glastonbury on next year?"
+        }
+      },
+      "status": 200,
+      "response": {
+        "status": "ANSWERED",
+        "response_mode": "EXTRACTIVE_ANSWER",
+        "answer": "Glastonbury Festival is scheduled for Wednesday 23 June 2027 to Sunday 27 June 2027 (5 days) at Worthy Farm, Pilton, Somerset, England. 2026 was a fallow year; the festival returns for 2027.",
+        "intent": "event_date",
+        "claim_evidence": [
+          {
+            "claim": "Glastonbury Festival is scheduled for Wednesday 23 June 2027 to Sunday 27 June 2027 (5 days) at Worthy Farm, Pilton, Somerset, England. 2026 was a fallow year; the festival returns for 2027.",
+            "citations": [
+              {
+                "title": "Glastonbury 2027 ticket information confirmed",
+                "url": "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed",
+                "publisher": "Glastonbury Festivals",
+                "retrieved_at": "2026-11-11",
+                "kind": "source"
+              }
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "title": "Glastonbury 2027 ticket information confirmed",
+            "url": "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed",
+            "publisher": "Glastonbury Festivals",
+            "retrieved_at": "2026-11-11",
+            "kind": "source"
+          }
+        ],
+        "freshness": "2026-11-11T00:00:00+00:00",
+        "confidence": 0.95,
+        "limits": [],
+        "notices": [],
+        "request_id": "a155983b737b4bf79510f2268f6cba5a",
+        "retrieved_at": "2026-11-11T14:01:27+00:00",
+        "context_used": false,
+        "latency_ms": 2.5
+      }
+    },
+    {
+      "case": "answer_weather",
+      "request": {
+        "path": "/v1/answer",
+        "body": {
+          "question": "What is the weather in London tomorrow?"
+        }
+      },
+      "status": 200,
+      "response": {
+        "status": "OFFICIAL_LINKS",
+        "response_mode": "OFFICIAL_LINKS",
+        "answer": "I don't have a live weather reading. For the current forecast, use the official service for the country:\n- BBC Weather: https://www.bbc.co.uk/weather\n- Met Office UK forecast: https://weather.metoffice.gov.uk/forecast/uk",
+        "intent": "weather",
+        "claim_evidence": [
+          {
+            "claim": "I don't have a live weather reading. For the current forecast, use the official service for the country:\n- BBC Weather: https://www.bbc.co.uk/weather\n- Met Office UK forecast: https://weather.metoffice.gov.uk/forecast/uk",
+            "citations": [
+              {
+                "title": "BBC Weather",
+                "url": "https://www.bbc.co.uk/weather",
+                "publisher": "BBC",
+                "retrieved_at": "2026-11-11",
+                "kind": "official_service"
+              },
+              {
+                "title": "Met Office UK forecast",
+                "url": "https://weather.metoffice.gov.uk/forecast/uk",
+                "publisher": "Met Office",
+                "retrieved_at": "2026-11-11",
+                "kind": "official_service"
+              }
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "title": "BBC Weather",
+            "url": "https://www.bbc.co.uk/weather",
+            "publisher": "BBC",
+            "retrieved_at": "2026-11-11",
+            "kind": "official_service"
+          },
+          {
+            "title": "Met Office UK forecast",
+            "url": "https://weather.metoffice.gov.uk/forecast/uk",
+            "publisher": "Met Office",
+            "retrieved_at": "2026-11-11",
+            "kind": "official_service"
+          }
+        ],
+        "freshness": "",
+        "confidence": 0.0,
+        "limits": [
+          "Links only; no temperature or forecast value was fetched.",
+          "A current observation is not a forecast for tomorrow."
+        ],
+        "notices": [
+          "Links only; no temperature or forecast value was fetched.",
+          "A current observation is not a forecast for tomorrow."
+        ],
+        "request_id": "e49f266cdf6d40d4af83523348f764fb",
+        "retrieved_at": "2026-11-11T14:01:27+00:00",
+        "context_used": false,
+        "latency_ms": 1.9
+      }
+    },
+    {
+      "case": "no_evidence",
+      "request": {
+        "path": "/v1/answer",
+        "body": {
+          "question": "When is the Moon Parade?"
+        }
+      },
+      "status": 200,
+      "response": {
+        "status": "NO_EVIDENCE",
+        "response_mode": "NO_EVIDENCE",
+        "answer": "I found pages, but none are on the trusted-source list, so I won't cite them. Try a more specific question, or add a curated fact with a source to the knowledge pack.",
+        "intent": "index_lookup",
+        "claim_evidence": [
+          {
+            "claim": "I found pages, but none are on the trusted-source list, so I won't cite them. Try a more specific question, or add a curated fact with a source to the knowledge pack.",
+            "citations": []
+          }
+        ],
+        "citations": [],
+        "freshness": "",
+        "confidence": 0.0,
+        "limits": [],
+        "notices": [],
+        "request_id": "eae359df6bd5487b921bff74c7d68df7",
+        "retrieved_at": "2026-11-11T14:01:27+00:00",
+        "context_used": false,
+        "latency_ms": 1.7
+      }
+    },
+    {
+      "case": "wiki_candidate",
+      "request": {
+        "path": "/v1/wiki-candidates",
+        "body": {
+          "article": {
+            "topic_id": "demo-api-topic",
+            "title": "Demo API topic",
+            "summary": "Draft only.",
+            "claims": [
+              {
+                "text": "Use an official forecast service.",
+                "sources": [
+                  "https://www.bbc.co.uk/weather",
+                  "https://weather.metoffice.gov.uk/forecast/uk"
+                ]
+              }
+            ],
+            "verified_at": "2026-11-11"
+          }
+        }
+      },
+      "status": 200,
+      "response": {
+        "result": "draft_created",
+        "topic_id": "demo-api-topic",
+        "slug": "demo-api-topic",
+        "status": "draft_created",
+        "request_id": "822fd88b549d42f2b3e57bfa08d61610",
+        "consumer": "puke",
+        "publication": "DRAFT_ONLY",
+        "notices": [
+          "Draft proposal only. No Wiki page was published."
+        ],
+        "latency_ms": 5.1
+      }
+    }
+  ],
+  "note": "No public bind. The token is a local test fixture, not a secret."
+}

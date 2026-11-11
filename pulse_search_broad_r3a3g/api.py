@@ -271,7 +271,7 @@ class _Handler(BaseHTTPRequestHandler):
         limit = max(1, min(int(clean["limit"]), 20))
         index = self.server.open_index()
         try:
-            result = search_staging(index, query, limit=limit)
+            result = search_staging(index, query, limit=limit, enforce_support=True)
         finally:
             index.close()
         result.update({"request_id": request_id, "retrieved_at": now_iso(),

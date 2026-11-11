@@ -313,6 +313,34 @@ def _diverse(items: list[dict], limit: int, per_host: int = 2) -> list[dict]:
     return out
 
 
+QUERY_STOP = frozenset("""new year eve public service information best guide the
+and for with from into about berlin london germany uk""".split())
+
+
+def _specific_terms(intent: SearchIntent) -> set[str]:
+    return {term for term in intent.tokens
+            if term not in QUERY_STOP and term not in GEOGRAPHIES}
+
+
+def _sufficient(intent: SearchIntent, hits: list[dict]) -> bool:
+    """Do the admitted pages actually cover the question's specific terms?
+
+    A domain match, a city word or one incidental phrase is not enough. When
+    this returns False the caller offers reviewed official navigation instead
+    of ranking an unrelated page.
+    """
+    terms = _specific_terms(intent)
+    if not terms:
+        return True
+    need = max(1, (len(terms) * 3 + 3) // 4)  # ceil(0.75 * terms)
+    for hit in hits[:8]:
+        text = normal(" ".join(str(hit.get(k) or "") for k in
+                               ("title", "snippet", "url")))
+        if len(terms & set(tokenize(text))) >= need:
+            return True
+    return False
+
+
 def _official_response(query: str, intent: SearchIntent, mode: str, note: str) -> dict:
     cards = links_for(intent.kind, query, intent.location)
     return {"query": query, "intent": intent.as_dict(), "status": "official_links",
@@ -321,7 +349,8 @@ def _official_response(query: str, intent: SearchIntent, mode: str, note: str) -
             "note": note}
 
 
-def search_documents(documents: list[dict], query: str, limit: int = 10) -> dict:
+def search_documents(documents: list[dict], query: str, limit: int = 10,
+                     enforce_support: bool = False) -> dict:
     """Search admitted documents and reviewed official services, no network.
 
     A weather or translation query is a *handoff* to the official service even
@@ -397,6 +426,16 @@ def search_documents(documents: list[dict], query: str, limit: int = 10) -> dict
                        "verified_live": False})
     scored.sort(key=lambda d: (-d["score"], d["url"]))
     hits = _diverse(scored, max(0, min(int(limit), 50)))
+    if enforce_support and hits and not _sufficient(intent, hits):
+        official = links_for(intent.kind, query, intent.location)
+        if official:
+            return {"query": query, "intent": intent.as_dict(),
+                    "status": "official_links", "response_mode": "OFFICIAL_LINKS",
+                    "results": official, "official_links": official,
+                    "related_official_links": official, "answer": None,
+                    "notices": ["No admitted page covered the question's specific need; "
+                                "these are reviewed official entry points, not live values."],
+                    "note": "Weak admitted matches were withheld in favour of official navigation."}
     related = links_for(intent.kind, query, intent.location) if intent.kind in (
         "transport", "how_to") else []
     if hits:
@@ -434,7 +473,8 @@ def search_documents(documents: list[dict], query: str, limit: int = 10) -> dict
             "note": "No evidence and no reviewed official entry point."}
 
 
-def search_staging(staging, query: str, limit: int = 10, scan_limit: int = 5000) -> dict:
+def search_staging(staging, query: str, limit: int = 10, scan_limit: int = 5000,
+                   enforce_support: bool = False) -> dict:
     """Rank candidates from the existing staging index, without schema changes.
 
     Prefer indexed FTS5 OR candidate generation so relevant pages outside the
@@ -472,6 +512,6 @@ def search_staging(staging, query: str, limit: int = 10, scan_limit: int = 5000)
                 mode = "fts_error_bounded_scan"
     if docs is None:
         docs = staging.all_documents(scan_limit)
-    response = search_documents(docs, query, limit)
+    response = search_documents(docs, query, limit, enforce_support=enforce_support)
     response["retrieval_mode"] = mode
     return response

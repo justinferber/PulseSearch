@@ -26,8 +26,8 @@
         "status": "OK",
         "service": "pulse-search",
         "api_version": "1.1",
-        "request_id": "8abed3c3f36a4eb980e23237637de3ec",
-        "time_utc": "2026-11-11T15:55:47+00:00",
+        "request_id": "0ffa351d0e4e4d5ca8e0b3626954397d",
+        "time_utc": "2026-11-11T16:29:01+00:00",
         "consumer": "puke"
       }
     },
@@ -41,7 +41,7 @@
       "response": {
         "status": "OK",
         "api_version": "1.1",
-        "request_id": "5c287b91cb8f41caac7b377badcd86ee",
+        "request_id": "a98fb4a4e65e40dab70726f9c0fba5b5",
         "consumer": "puke",
         "scopes": [
           "answer:read",
@@ -126,8 +126,8 @@
         ],
         "note": "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately.",
         "retrieval_mode": "fts_candidates",
-        "request_id": "23ef1db399474a9b95312f104eac8167",
-        "retrieved_at": "2026-11-11T15:55:47+00:00",
+        "request_id": "80cd048a05de41f3ac6372a17280fcc1",
+        "retrieved_at": "2026-11-11T16:29:01+00:00",
         "source_ids": [
           "demo"
         ],
@@ -150,7 +150,7 @@
             "verified_live": false
           }
         ],
-        "latency_ms": 5.8
+        "latency_ms": 4.9
       }
     },
     {
@@ -217,9 +217,9 @@
         "confidence": 0.95,
         "limits": [],
         "notices": [],
-        "request_id": "c48dbf4535b14ea2b5364d4ae4a279a0",
-        "retrieved_at": "2026-11-11T15:55:47+00:00",
-        "latency_ms": 3.0
+        "request_id": "36b4e2d2f7a3427090de8a5bc3de9fdd",
+        "retrieved_at": "2026-11-11T16:29:01+00:00",
+        "latency_ms": 2.9
       }
     },
     {
@@ -343,9 +343,9 @@
           "Links only; no temperature or forecast value was fetched.",
           "A current observation is not a forecast for tomorrow."
         ],
-        "request_id": "633d697f544545d0b3cd80b3f4db9bb8",
-        "retrieved_at": "2026-11-11T15:55:47+00:00",
-        "latency_ms": 2.7
+        "request_id": "2f79a69eb0634b9693e3c4b38e32ef28",
+        "retrieved_at": "2026-11-11T16:29:01+00:00",
+        "latency_ms": 2.0
       }
     },
     {
@@ -360,11 +360,11 @@
       "response": {
         "status": "NO_EVIDENCE",
         "response_mode": "NO_EVIDENCE",
-        "answer": "I found pages, but none are on the trusted-source list, so I won't cite them. Try a more specific question, or add a curated fact with a source to the knowledge pack.",
+        "answer": "The index has no accepted page that answers this. Try a more specific question, or add a curated fact with a source to the knowledge pack.",
         "intent": "index_lookup",
         "claim_evidence": [
           {
-            "claim": "I found pages, but none are on the trusted-source list, so I won't cite them.",
+            "claim": "The index has no accepted page that answers this.",
             "support": "UNVERIFIED_TEXT",
             "citation_evidence_ids": [],
             "citations": []
@@ -381,9 +381,9 @@
         "confidence": 0.0,
         "limits": [],
         "notices": [],
-        "request_id": "93ca92664b324918843ab4d4ea289c9e",
-        "retrieved_at": "2026-11-11T15:55:47+00:00",
-        "latency_ms": 2.5
+        "request_id": "d2b3db3e3265447c98a2d5f66085413e",
+        "retrieved_at": "2026-11-11T16:29:01+00:00",
+        "latency_ms": 3.1
       }
     },
     {
@@ -419,14 +419,14 @@
         "previous_version": 1,
         "pending_version": 2,
         "status": "update_draft",
-        "request_id": "adf3105708374e4e9fb51e52029ff6e7",
+        "request_id": "9274f9468fe94ae4bf2233fd69dbe4e9",
         "consumer": "puke",
         "publication": "DRAFT_ONLY",
         "notices": [
           "Draft proposal only. No Wiki page was published.",
           "Evidence must already be admitted in the source registry."
         ],
-        "latency_ms": 5.0
+        "latency_ms": 5.6
       }
     },
     {

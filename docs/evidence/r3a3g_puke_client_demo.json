@@ -6,8 +6,8 @@
     "status": "OK",
     "service": "pulse-search",
     "api_version": "1.1",
-    "request_id": "0c66e91e63684203a2d70666be228bef",
-    "time_utc": "2026-11-11T15:43:18+00:00",
+    "request_id": "9969628390d14d68bc78597dd42fcff3",
+    "time_utc": "2026-11-11T16:28:33+00:00",
     "consumer": "puke"
   },
   "cases": [
@@ -19,7 +19,7 @@
       "links": 0,
       "citations": 2,
       "claim_evidence": 4,
-      "request_id": "d805a48e615540b19e4a3e8baf1bfadc",
+      "request_id": "05173f769cd9495b9a0e892e1dd40514",
       "has_evidence": true,
       "search_status": "official_links",
       "search_results": [
@@ -37,30 +37,30 @@
     },
     {
       "question": "When is CSD Berlin 2027?",
-      "status": "NO_EVIDENCE",
-      "response_mode": "NO_EVIDENCE",
-      "answer": "I found pages, but none are on the trusted-source list, so I won't cite them. Try a more specific question, or add a curated fact with a source to the knowledge pack.",
+      "status": "OFFICIAL_LINKS",
+      "response_mode": "OFFICIAL_LINKS",
+      "answer": "I don't have an admitted page that answers this. Use the reviewed official service below; no live value was fetched.\n- CSD Berlin: https://www.csd-berlin.de/\n- Berlin.de events calendar: https://www.berlin.de/events/\n- visitBerlin Christmas markets: https://www.visitberlin.de/en/christmas-markets-berlin\n- European Festivals Association: https://www.efa-aef.eu/",
       "links": 0,
-      "citations": 0,
-      "claim_evidence": 2,
-      "request_id": "2d402c9a06494ee9a3d3fda194269c77",
-      "has_evidence": false,
-      "search_status": "staging_results",
+      "citations": 4,
+      "claim_evidence": 6,
+      "request_id": "e072167f62834e4682e825da909468b2",
+      "has_evidence": true,
+      "search_status": "official_links",
       "search_results": [
         {
-          "title": "CSD Berlin | Christopher Street Day",
+          "title": "CSD Berlin",
           "url": "https://www.csd-berlin.de/",
-          "source_kind": "permissioned_staging_document"
+          "source_kind": "official_directory"
         },
         {
-          "title": "Berlin's official travel website - visitBerlin.de",
-          "url": "https://www.visitberlin.de/en",
-          "source_kind": "permissioned_staging_document"
+          "title": "Berlin.de events calendar",
+          "url": "https://www.berlin.de/events/",
+          "source_kind": "official_directory"
         },
         {
-          "title": "Christmas markets in Berlin | visitBerlin.de",
+          "title": "visitBerlin Christmas markets",
           "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
-          "source_kind": "permissioned_staging_document"
+          "source_kind": "official_directory"
         }
       ]
     },
@@ -72,7 +72,7 @@
       "links": 0,
       "citations": 1,
       "claim_evidence": 2,
-      "request_id": "edd6da01ab2340e6b6acf53b34badb1e",
+      "request_id": "044683e67ed34429bf2c5d877083f430",
       "has_evidence": true,
       "search_status": "staging_results",
       "search_results": [
@@ -90,39 +90,54 @@
     },
     {
       "question": "London New Year's Eve fireworks tickets",
-      "status": "NO_EVIDENCE",
-      "response_mode": "NO_EVIDENCE",
-      "answer": "I found pages, but none are on the trusted-source list, so I won't cite them. Try a more specific question, or add a curated fact with a source to the knowledge pack.",
+      "status": "OFFICIAL_LINKS",
+      "response_mode": "OFFICIAL_LINKS",
+      "answer": "I don't have an admitted page that answers this. Use the reviewed official service below; no live value was fetched.\n- Mayor of London: https://www.london.gov.uk/\n- The O2: https://www.theo2.co.uk/\n- Roundhouse: https://www.roundhouse.org.uk/\n- Southbank Centre: https://www.southbankcentre.co.uk/\n- Visit London events: https://www.visitlondon.com/things-to-do/events\n- European Festivals Association: https://www.efa-aef.eu/\n- Glastonbury Festival: https://www.glastonburyfestivals.co.uk/",
       "links": 0,
-      "citations": 0,
-      "claim_evidence": 2,
-      "request_id": "76fd0f9bd6074843a72dcc63fa97f130",
-      "has_evidence": false,
-      "search_status": "staging_results",
+      "citations": 7,
+      "claim_evidence": 9,
+      "request_id": "27681f015d3b42c1a6ccd178d98ac2ce",
+      "has_evidence": true,
+      "search_status": "official_links",
       "search_results": [
         {
-          "title": "Keeping London moving - Transport for London",
-          "url": "https://tfl.gov.uk/",
-          "source_kind": "permissioned_staging_document"
+          "title": "Mayor of London",
+          "url": "https://www.london.gov.uk/",
+          "source_kind": "official_directory"
+        },
+        {
+          "title": "The O2",
+          "url": "https://www.theo2.co.uk/",
+          "source_kind": "official_directory"
+        },
+        {
+          "title": "Roundhouse",
+          "url": "https://www.roundhouse.org.uk/",
+          "source_kind": "official_directory"
         }
       ]
     },
     {
       "question": "Berlin Christmas market public transport",
-      "status": "NO_EVIDENCE",
-      "response_mode": "NO_EVIDENCE",
-      "answer": "I found pages, but none are on the trusted-source list, so I won't cite them. Try a more specific question, or add a curated fact with a source to the knowledge pack.",
+      "status": "OFFICIAL_LINKS",
+      "response_mode": "OFFICIAL_LINKS",
+      "answer": "I don't have an admitted page that answers this. Use the reviewed official service below; no live value was fetched.\n- BVG Berlin: https://www.bvg.de/\n- S-Bahn Berlin: https://www.s-bahn-berlin.de/",
       "links": 0,
-      "citations": 0,
-      "claim_evidence": 2,
-      "request_id": "b504e42fd1ee4128a90f6d210c5c7d88",
-      "has_evidence": false,
-      "search_status": "staging_results",
+      "citations": 2,
+      "claim_evidence": 4,
+      "request_id": "ffb5fed826fe4180a813266275fc6ec5",
+      "has_evidence": true,
+      "search_status": "official_links",
       "search_results": [
         {
-          "title": "Christmas markets in Berlin | visitBerlin.de",
-          "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
-          "source_kind": "permissioned_staging_document"
+          "title": "BVG Berlin",
+          "url": "https://www.bvg.de/",
+          "source_kind": "official_directory"
+        },
+        {
+          "title": "S-Bahn Berlin",
+          "url": "https://www.s-bahn-berlin.de/",
+          "source_kind": "official_directory"
         }
       ]
     },
@@ -130,39 +145,23 @@
       "question": "When is the Moon Parade?",
       "status": "NO_EVIDENCE",
       "response_mode": "NO_EVIDENCE",
-      "answer": "I found pages, but none are on the trusted-source list, so I won't cite them. Try a more specific question, or add a curated fact with a source to the knowledge pack.",
+      "answer": "The index has no accepted page that answers this. Try a more specific question, or add a curated fact with a source to the knowledge pack.",
       "links": 0,
       "citations": 0,
       "claim_evidence": 2,
-      "request_id": "aa2f59bd719a405d89a2192eeabc5cf9",
+      "request_id": "325ab3ef379143889cd61a3d8c3e32aa",
       "has_evidence": false,
-      "search_status": "official_links",
-      "search_results": [
-        {
-          "title": "Berlin.de events calendar",
-          "url": "https://www.berlin.de/events/",
-          "source_kind": "official_directory"
-        },
-        {
-          "title": "CSD Berlin",
-          "url": "https://www.csd-berlin.de/",
-          "source_kind": "official_directory"
-        },
-        {
-          "title": "visitBerlin Christmas markets",
-          "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
-          "source_kind": "official_directory"
-        }
-      ]
+      "search_status": "no_staging_evidence",
+      "search_results": []
     }
   ],
   "chain": {
     "query": "How do I book concert tickets in Berlin?",
-    "search_status": "staging_results",
-    "search_top": "https://www.visitberlin.de/en",
-    "answer_status": "NO_EVIDENCE",
-    "answer_citations": 0,
-    "claim_evidence": 2
+    "search_status": "official_links",
+    "search_top": "https://www.eventim.de/city/berlin-8/",
+    "answer_status": "OFFICIAL_LINKS",
+    "answer_citations": 8,
+    "claim_evidence": 10
   },
   "wiki_candidate": {
     "status": "draft_created",

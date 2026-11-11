@@ -72,16 +72,19 @@ def main() -> int:
                    if not any(c == d or c.endswith("." + d) for c in captured_domains)]
         index = StagingIndex(tmp / "staging.sqlite")
         try:
-            response = search_staging(index, spec["query"], limit=5)
+            response = search_staging(index, spec["query"], limit=5, enforce_support=True)
         finally:
             index.close()
-        results = response.get("results") or []
+        results = (response.get("results") or []
+                   if response.get("status") == "staging_results" else [])
+        official_results = (response.get("official_links")
+                            or response.get("related_official_links") or [])
         related = response.get("related_official_links") or []
         ranked_domains = [host(r.get("url", "")) for r in results]
-        related_domains = [host(r.get("url", "")) for r in related]
+        related_domains = [host(r.get("url", "")) for r in official_results]
         matched = next((i + 1 for i, d in enumerate(ranked_domains)
                         if domain_matches(d, expected)), None)
-        top = results[0] if results else {}
+        top = (results or official_results or [{}])[0]
         top_text = (str(top.get("title") or "") + " " + str(top.get("snippet") or "")).lower()
         wrong_city = False
         qlow = spec["query"].lower()
@@ -155,10 +158,12 @@ def main() -> int:
         "queries": queries,
         "summary": {
             "queries": len(queries),
-            "auto_domain_matches": sum(1 for r in auto_ranks if r),
-            "auto_domain_match_rate": round(sum(1 for r in auto_ranks if r) / len(queries), 3),
-            "auto_recall_at_3": auto_recall,
-            "auto_mrr": auto_mrr,
+            "admitted_domain_matches": sum(1 for r in auto_ranks if r),
+            "admitted_domain_match_rate": round(sum(1 for r in auto_ranks if r) / len(queries), 3),
+            "admitted_recall_at_3": auto_recall,
+            "admitted_mrr": auto_mrr,
+            "official_handoff_matches": sum(
+                1 for q in queries if q["automated"]["official_handoff_available"]),
             "human_pass": labels["PASS"],
             "human_partial": labels["PARTIAL"],
             "human_fail": labels["FAIL"],
@@ -174,6 +179,7 @@ def main() -> int:
             "official_handoff_only": sum(1 for q in queries
                                          if q["automated"]["official_handoff_available"]
                                          and not q["automated"]["domain_match_rank"]),
+            "note": "Admitted metrics use captured pages only. Official handoffs are navigation, not recall of an admitted answer.",
         },
         "baseline_recomputed_from_legacy_ranks": {
             "source": "docs/evidence/r3a3g_real_source_eval_legacy.json",
@@ -188,6 +194,7 @@ def main() -> int:
         "limitations": [
             "Only captured pages with a title are indexed; descriptions are short metadata.",
             "Automatic domain matching is not factual correctness.",
+            "Human grades were recorded for admitted-page answers; official handoffs are reported separately.",
             "Human grades are one dated reviewer pass, not inter-annotator agreement.",
             "No page body is stored and no crawler admission is implied.",
         ],

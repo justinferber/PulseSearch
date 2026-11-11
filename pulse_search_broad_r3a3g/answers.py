@@ -325,10 +325,13 @@ class AnswerService:
         return found
 
     def _official_citations(self, cards: list[dict]) -> list[Citation]:
+        # These cards come from the reviewed official directory, not from an
+        # arbitrary crawl; they are navigation even when a publisher is not in
+        # the admitted-page host list.
         return [Citation(title=c.get("title", ""), url=c.get("url", ""),
                          publisher=c.get("publisher", ""),
                          retrieved_at=c.get("verified_at", ""), kind="official_service")
-                for c in cards if self.hosts.allows(c.get("url", ""))]
+                for c in cards if c.get("url")]
 
     def _cite(self, citation: dict, kind: str = "source") -> Citation | None:
         url = citation.get("url", "")
@@ -420,27 +423,39 @@ class AnswerService:
             limits=["Current observation, not a forecast.", "Live data is not stored in the index."],
             followups=["What is the weather in Berlin today?"])
 
+    def _official_handoff(self, q, gates, intent, text, kind="events") -> Answer:
+        cards = links_for(kind, q)
+        citations = self._official_citations(cards)
+        if citations:
+            return self._simple(
+                OFFICIAL_LINKS, intent, q,
+                (text + " No admitted page is available; use the reviewed official "
+                 "service below.\n" + "\n".join(
+                     f"- {c.title}: {c.url}" for c in citations)),
+                citations=citations, gates=gates,
+                limits=["Official navigation only; no live date, price or availability was fetched."])
+        return self._simple(NO_EVIDENCE, intent, q, text, gates=gates)
+
     # ------------------------------------------------------------------ events
     def _event_when(self, q, event, now, gates) -> Answer:
         try:
             start = date.fromisoformat(event["start"])
             end = date.fromisoformat(event["end"])
         except (KeyError, ValueError):
-            return self._simple(NO_EVIDENCE, "event_date", q,
-                                "The knowledge pack entry for this event has no valid date.",
-                                gates=gates)
+            return self._official_handoff(
+                q, gates, "event_date",
+                "The knowledge pack entry for this event has no valid date.")
         target = self._target_year(q, now)
         if target and start.year != target:
-            return self._simple(
-                NO_EVIDENCE, "event_date", q,
-                f"The pack has {event['name']} in {start.year}, not {target}. I won't move an "
-                "announced date to fit the question.", gates=gates,
-                limits=["Ask the organiser or check the official page for other editions."])
+            return self._official_handoff(
+                q, gates, "event_date",
+                f"The pack has {event['name']} in {start.year}, not {target}. "
+                "I won't move an announced date to fit the question.")
         citation = self._cite(event.get("source") or {})
         if citation is None:
-            return self._simple(NO_EVIDENCE, "event_date", q,
-                                "This event's source is not on the trusted-source list.",
-                                gates=gates)
+            return self._official_handoff(
+                q, gates, "event_date",
+                "This event's source is not on the trusted-source list.")
         days = (end - start).days + 1
         body = (f"{event['name']} is scheduled for {_fmt_date(start)} to {_fmt_date(end)} "
                 f"({days} days)")
@@ -465,9 +480,9 @@ class AnswerService:
     def _event_place(self, q, event, gates) -> Answer:
         citation = self._cite(event.get("source") or {})
         if citation is None or not event.get("venue"):
-            return self._simple(NO_EVIDENCE, "event_place", q,
-                                "No venue with a trusted source is recorded for this event.",
-                                gates=gates)
+            return self._official_handoff(
+                q, gates, "event_place",
+                "No venue with a trusted source is recorded for this event.")
         body = f"{event['name']} is held at {event['venue']}."
         if event.get("venue_note"):
             body += " " + event["venue_note"]
@@ -478,9 +493,10 @@ class AnswerService:
     def _tickets(self, q, event, now, gates) -> Answer:
         citation = self._cite(event.get("source") or {})
         if citation is None or not event.get("ticket_note"):
-            return self._simple(NO_EVIDENCE, "event_tickets", q,
-                                "No ticket status with a trusted source is recorded for this event.",
-                                gates=gates)
+            return self._official_handoff(
+                q, gates, "event_tickets",
+                "No ticket status with a trusted source is recorded for this event.",
+                kind="how_to")
         body = (f"{event['name']}: {event['ticket_note']} Only use the organiser's official "
                 "channel; Pulse Unity does not sell tickets or add a markup.")
         citations = [citation]
@@ -522,9 +538,39 @@ class AnswerService:
         try:
             from .search import search_staging
 
-            response = search_staging(self.staging, q, limit=8)
+            response = search_staging(self.staging, q, limit=8, enforce_support=True)
             rows = response.get("results") or []
             mode = str(response.get("retrieval_mode") or response.get("status") or "ranked")
+            if response.get("status") == "official_links":
+                official = response.get("official_links") or rows
+                citations = self._official_citations(official)
+                if citations:
+                    return Answer(
+                        status=OFFICIAL_LINKS, intent="official_handoff", question=q,
+                        answer=("I don't have an admitted page that answers this. "
+                                "Use the reviewed official service below; no live value "
+                                "was fetched.\n" + "\n".join(
+                                    f"- {c.title}: {c.url}" for c in citations)),
+                        citations=citations, confidence=0.45, gates=gates,
+                        pack_version=str(self.pack.get("version", "")),
+                        limits=["Official navigation only; not an admitted page or live data.",
+                                "Confirm dates, prices and access details with the service."])
+                # Keep the security counter visible when there is no official
+                # handoff: an untrusted page must never vanish into a generic
+                # no-evidence response without being reported as blocked.
+                blocked = 0
+                try:
+                    raw = self.staging.search(index_query(q), limit=8)
+                    blocked = sum(1 for row in raw
+                                  if not self.hosts.allows(row.get("url", "")))
+                except Exception:
+                    pass
+                if blocked:
+                    return self._simple(
+                        NO_EVIDENCE, "index_lookup", q,
+                        "I found pages, but none are on the trusted-source list, so I won't cite them.",
+                        gates=dict(gates, untrusted_hits_blocked=blocked,
+                                   retrieval_mode="trusted_host_filter"))
         except Exception:
             # The answer must still work if the broad-ranking adapter is
             # unavailable; fall back to the index's own FTS query.

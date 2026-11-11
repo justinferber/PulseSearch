@@ -57,7 +57,8 @@ def main(argv=None) -> int:
     if args.staging:
         staging = ReadOnlyStaging(args.staging)
         try:
-            result["local_index"] = search_staging(staging, args.query, args.limit)
+            result["local_index"] = search_staging(
+                staging, args.query, args.limit, enforce_support=True)
         finally:
             staging.close()
     if args.searxng:

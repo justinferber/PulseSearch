@@ -61,6 +61,13 @@ class ClientTests(unittest.TestCase):
         self.assertEqual(miss.status, "NO_EVIDENCE")
         self.assertFalse(miss.has_evidence)
 
+    def test_answer_uses_official_handoff_instead_of_no_evidence(self):
+        client = PulseSearchClient(self.base, TOKEN)
+        answer = client.answer("London New Year's Eve fireworks tickets")
+        self.assertEqual(answer.status, "OFFICIAL_LINKS")
+        self.assertTrue(answer.citations)
+        self.assertIn("official", answer.answer.lower())
+
     def test_remote_origin_requires_explicit_opt_in(self):
         with self.assertRaises(ValueError):
             PulseSearchClient("https://search.example.com", TOKEN)

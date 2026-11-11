@@ -98,19 +98,14 @@
       "automated": {
         "domain_match_rank": null,
         "domain_match_at_3": false,
-        "top3_domains": [
-          "visitberlin.de",
-          "csd-berlin.de",
-          "bvg.de"
-        ],
+        "top3_domains": [],
         "term_overlap": [
-          "ticket",
           "berlin"
         ],
         "wrong_city": false,
         "duplicate_urls_in_results": false,
         "official_handoff_available": true,
-        "response_status": "staging_results"
+        "response_status": "official_links"
       },
       "human": {
         "label": "FAIL",
@@ -121,14 +116,11 @@
         "notes": "Top result was a Christmas markets page while the matching Berlin events page appeared at rank 4."
       },
       "top_result": {
-        "title": "Berlin's official travel website - visitBerlin.de",
-        "url": "https://www.visitberlin.de/en",
-        "snippet": "Berlin's official travel portal visitBerlin.de: ✓ sights ✓ hotels ✓ tips ✓ events & tickets ► Here you can find out everything about the capital!",
-        "document_type": "event_detail",
-        "ranking_reasons": [
-          "recent_fetch",
-          "location_match"
-        ]
+        "title": "Eventim Berlin",
+        "url": "https://www.eventim.de/city/berlin-8/",
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
       },
       "missing_source_from_capture": [
         "berlin.de",
@@ -137,13 +129,13 @@
       ],
       "related_official_domains": [
         "eventim.de",
+        "eventim.de",
         "mercedes-benz-arena.de",
         "columbiahalle.de",
         "huxleys-neue-welt.de",
         "verti-music-hall.de",
         "berlin.de",
-        "csd-berlin.de",
-        "visitberlin.de"
+        "csd-berlin.de"
       ],
       "baseline": {
         "reported_status": "PASS",
@@ -170,18 +162,12 @@
       "automated": {
         "domain_match_rank": null,
         "domain_match_at_3": false,
-        "top3_domains": [
-          "visitberlin.de",
-          "csd-berlin.de",
-          "bvg.de"
-        ],
-        "term_overlap": [
-          "ticket"
-        ],
+        "top3_domains": [],
+        "term_overlap": [],
         "wrong_city": false,
         "duplicate_urls_in_results": false,
         "official_handoff_available": true,
-        "response_status": "staging_results"
+        "response_status": "official_links"
       },
       "human": {
         "label": "FAIL",
@@ -192,14 +178,11 @@
         "notes": "No captured official seller page; guides do not identify a seller."
       },
       "top_result": {
-        "title": "Berlin's official travel website - visitBerlin.de",
-        "url": "https://www.visitberlin.de/en",
-        "snippet": "Berlin's official travel portal visitBerlin.de: ✓ sights ✓ hotels ✓ tips ✓ events & tickets ► Here you can find out everything about the capital!",
-        "document_type": "event_detail",
-        "ranking_reasons": [
-          "recent_fetch",
-          "location_match"
-        ]
+        "title": "Eventim Berlin",
+        "url": "https://www.eventim.de/city/berlin-8/",
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
       },
       "missing_source_from_capture": [
         "mercedes-benz-arena.de",
@@ -209,13 +192,13 @@
       ],
       "related_official_domains": [
         "eventim.de",
+        "eventim.de",
         "mercedes-benz-arena.de",
         "columbiahalle.de",
         "huxleys-neue-welt.de",
         "verti-music-hall.de",
         "berlin.de",
-        "csd-berlin.de",
-        "visitberlin.de"
+        "csd-berlin.de"
       ],
       "baseline": {
         "reported_status": "FAIL",
@@ -237,21 +220,17 @@
         ]
       },
       "automated": {
-        "domain_match_rank": 1,
-        "domain_match_at_3": true,
-        "top3_domains": [
-          "csd-berlin.de",
-          "visitberlin.de",
-          "visitberlin.de"
-        ],
+        "domain_match_rank": null,
+        "domain_match_at_3": false,
+        "top3_domains": [],
         "term_overlap": [
           "csd",
           "berlin"
         ],
         "wrong_city": false,
         "duplicate_urls_in_results": false,
-        "official_handoff_available": false,
-        "response_status": "staging_results"
+        "official_handoff_available": true,
+        "response_status": "official_links"
       },
       "human": {
         "label": "FAIL",
@@ -262,18 +241,19 @@
         "notes": "CSD homepage captured but its stored title/description do not establish a 2027 date."
       },
       "top_result": {
-        "title": "CSD Berlin | Christopher Street Day",
+        "title": "CSD Berlin",
         "url": "https://www.csd-berlin.de/",
-        "snippet": "Der Christopher Street Day Berlin, Demonstration für Vielfalt, Akzeptanz und gleiche Rechte. Termine, Mitmach-Aktionen und alles über den Berliner CSD e.V.",
-        "document_type": "event_detail",
-        "ranking_reasons": [
-          "recent_fetch",
-          "event_page",
-          "location_match"
-        ]
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
       },
       "missing_source_from_capture": [],
-      "related_official_domains": [],
+      "related_official_domains": [
+        "csd-berlin.de",
+        "berlin.de",
+        "visitberlin.de",
+        "efa-aef.eu"
+      ],
       "baseline": {
         "reported_status": "PASS",
         "domain_match_rank": 1,
@@ -294,20 +274,16 @@
         ]
       },
       "automated": {
-        "domain_match_rank": 1,
-        "domain_match_at_3": true,
-        "top3_domains": [
-          "csd-berlin.de",
-          "visitberlin.de",
-          "visitberlin.de"
-        ],
+        "domain_match_rank": null,
+        "domain_match_at_3": false,
+        "top3_domains": [],
         "term_overlap": [
           "csd"
         ],
         "wrong_city": false,
         "duplicate_urls_in_results": false,
-        "official_handoff_available": false,
-        "response_status": "staging_results"
+        "official_handoff_available": true,
+        "response_status": "official_links"
       },
       "human": {
         "label": "PARTIAL",
@@ -318,18 +294,23 @@
         "notes": "Correct CSD publisher at rank 1, but the captured metadata does not establish route or accessibility details."
       },
       "top_result": {
-        "title": "CSD Berlin | Christopher Street Day",
+        "title": "CSD Berlin",
         "url": "https://www.csd-berlin.de/",
-        "snippet": "Der Christopher Street Day Berlin, Demonstration für Vielfalt, Akzeptanz und gleiche Rechte. Termine, Mitmach-Aktionen und alles über den Berliner CSD e.V.",
-        "document_type": "event_detail",
-        "ranking_reasons": [
-          "recent_fetch",
-          "event_page",
-          "location_match"
-        ]
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
       },
       "missing_source_from_capture": [],
-      "related_official_domains": [],
+      "related_official_domains": [
+        "csd-berlin.de",
+        "mercedes-benz-arena.de",
+        "columbiahalle.de",
+        "huxleys-neue-welt.de",
+        "verti-music-hall.de",
+        "berlin.de",
+        "visitberlin.de",
+        "efa-aef.eu"
+      ],
       "baseline": {
         "reported_status": "PASS",
         "domain_match_rank": 1,
@@ -351,19 +332,16 @@
         ]
       },
       "automated": {
-        "domain_match_rank": 1,
-        "domain_match_at_3": true,
-        "top3_domains": [
-          "tfl.gov.uk"
-        ],
+        "domain_match_rank": null,
+        "domain_match_at_3": false,
+        "top3_domains": [],
         "term_overlap": [
-          "ticket",
           "london"
         ],
         "wrong_city": false,
         "duplicate_urls_in_results": false,
         "official_handoff_available": true,
-        "response_status": "staging_results"
+        "response_status": "official_links"
       },
       "human": {
         "label": "FAIL",
@@ -374,14 +352,11 @@
         "notes": "TfL homepage is generic; the london.gov.uk fireworks page returned 404."
       },
       "top_result": {
-        "title": "Keeping London moving - Transport for London",
-        "url": "https://tfl.gov.uk/",
-        "snippet": "Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates.",
-        "document_type": "transport_guide",
-        "ranking_reasons": [
-          "recent_fetch",
-          "location_match"
-        ]
+        "title": "Mayor of London",
+        "url": "https://www.london.gov.uk/",
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
       },
       "missing_source_from_capture": [
         "london.gov.uk"
@@ -392,7 +367,8 @@
         "roundhouse.org.uk",
         "southbankcentre.co.uk",
         "visitlondon.com",
-        "efa-aef.eu"
+        "efa-aef.eu",
+        "glastonburyfestivals.co.uk"
       ],
       "baseline": {
         "reported_status": "PASS",
@@ -415,18 +391,14 @@
         ]
       },
       "automated": {
-        "domain_match_rank": 1,
-        "domain_match_at_3": true,
-        "top3_domains": [
-          "tfl.gov.uk"
-        ],
-        "term_overlap": [
-          "travel"
-        ],
+        "domain_match_rank": null,
+        "domain_match_at_3": false,
+        "top3_domains": [],
+        "term_overlap": [],
         "wrong_city": false,
         "duplicate_urls_in_results": false,
-        "official_handoff_available": false,
-        "response_status": "staging_results"
+        "official_handoff_available": true,
+        "response_status": "official_links"
       },
       "human": {
         "label": "FAIL",
@@ -437,19 +409,21 @@
         "notes": "TfL homepage is not the event travel/closure page."
       },
       "top_result": {
-        "title": "Keeping London moving - Transport for London",
-        "url": "https://tfl.gov.uk/",
-        "snippet": "Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates.",
-        "document_type": "transport_guide",
-        "ranking_reasons": [
-          "recent_fetch",
-          "location_match"
-        ]
+        "title": "Mayor of London",
+        "url": "https://www.london.gov.uk/",
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
       },
       "missing_source_from_capture": [
         "london.gov.uk"
       ],
-      "related_official_domains": [],
+      "related_official_domains": [
+        "london.gov.uk",
+        "visitlondon.com",
+        "efa-aef.eu",
+        "glastonburyfestivals.co.uk"
+      ],
       "baseline": {
         "reported_status": "PASS",
         "domain_match_rank": 1,
@@ -588,17 +562,12 @@
       "automated": {
         "domain_match_rank": null,
         "domain_match_at_3": false,
-        "top3_domains": [
-          "visitberlin.de"
-        ],
-        "term_overlap": [
-          "christmas",
-          "market"
-        ],
+        "top3_domains": [],
+        "term_overlap": [],
         "wrong_city": false,
         "duplicate_urls_in_results": false,
         "official_handoff_available": true,
-        "response_status": "staging_results"
+        "response_status": "official_links"
       },
       "human": {
         "label": "FAIL",
@@ -609,14 +578,11 @@
         "notes": "Only the visitBerlin markets page is admitted; BVG is a separate official handoff, not an admitted transport result."
       },
       "top_result": {
-        "title": "Christmas markets in Berlin | visitBerlin.de",
-        "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
-        "snippet": "Christmas Markets in Berlin: ✓ Over 80 from insider tips to popular ones ✓ How to find them ✓ Opening hours & admissions ► Find your favourite market!",
-        "document_type": "how_to",
-        "ranking_reasons": [
-          "recent_fetch",
-          "location_match"
-        ]
+        "title": "BVG Berlin",
+        "url": "https://www.bvg.de/",
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
       },
       "missing_source_from_capture": [
         "berlin.de"
@@ -649,16 +615,12 @@
       "automated": {
         "domain_match_rank": null,
         "domain_match_at_3": false,
-        "top3_domains": [
-          "csd-berlin.de",
-          "visitberlin.de",
-          "visitberlin.de"
-        ],
+        "top3_domains": [],
         "term_overlap": [],
         "wrong_city": false,
         "duplicate_urls_in_results": false,
-        "official_handoff_available": false,
-        "response_status": "staging_results"
+        "official_handoff_available": true,
+        "response_status": "official_links"
       },
       "human": {
         "label": "FAIL",
@@ -669,22 +631,27 @@
         "notes": "No usable venue page for accessibility; CSD is unrelated."
       },
       "top_result": {
-        "title": "CSD Berlin | Christopher Street Day",
-        "url": "https://www.csd-berlin.de/",
-        "snippet": "Der Christopher Street Day Berlin, Demonstration für Vielfalt, Akzeptanz und gleiche Rechte. Termine, Mitmach-Aktionen und alles über den Berliner CSD e.V.",
-        "document_type": "event_detail",
-        "ranking_reasons": [
-          "recent_fetch",
-          "event_page",
-          "location_match"
-        ]
+        "title": "Mercedes-Benz Arena Berlin",
+        "url": "https://www.mercedes-benz-arena.de/",
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
       },
       "missing_source_from_capture": [
         "huxleys-neue-welt.de",
         "verti-music-hall.de",
         "mercedes-benz-arena.de"
       ],
-      "related_official_domains": [],
+      "related_official_domains": [
+        "mercedes-benz-arena.de",
+        "columbiahalle.de",
+        "huxleys-neue-welt.de",
+        "verti-music-hall.de",
+        "berlin.de",
+        "csd-berlin.de",
+        "visitberlin.de",
+        "efa-aef.eu"
+      ],
       "baseline": {
         "reported_status": "FAIL",
         "domain_match_rank": null,
@@ -707,16 +674,12 @@
       "automated": {
         "domain_match_rank": null,
         "domain_match_at_3": false,
-        "top3_domains": [
-          "tfl.gov.uk"
-        ],
-        "term_overlap": [
-          "route"
-        ],
+        "top3_domains": [],
+        "term_overlap": [],
         "wrong_city": false,
         "duplicate_urls_in_results": false,
         "official_handoff_available": false,
-        "response_status": "staging_results"
+        "response_status": "official_links"
       },
       "human": {
         "label": "PASS",
@@ -727,19 +690,21 @@
         "notes": "Official organiser route/timing page is rank 1."
       },
       "top_result": {
-        "title": "Keeping London moving - Transport for London",
-        "url": "https://tfl.gov.uk/",
-        "snippet": "Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates.",
-        "document_type": "transport_guide",
-        "ranking_reasons": [
-          "recent_fetch",
-          "location_match"
-        ]
+        "title": "Mayor of London",
+        "url": "https://www.london.gov.uk/",
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
       },
       "missing_source_from_capture": [
         "londonparade.com"
       ],
-      "related_official_domains": [],
+      "related_official_domains": [
+        "london.gov.uk",
+        "visitlondon.com",
+        "efa-aef.eu",
+        "glastonburyfestivals.co.uk"
+      ],
       "baseline": {
         "reported_status": "PASS",
         "domain_match_rank": 1,
@@ -760,12 +725,9 @@
         ]
       },
       "automated": {
-        "domain_match_rank": 1,
-        "domain_match_at_3": true,
-        "top3_domains": [
-          "bvg.de",
-          "s-bahn-berlin.de"
-        ],
+        "domain_match_rank": null,
+        "domain_match_at_3": false,
+        "top3_domains": [],
         "term_overlap": [
           "bvg"
         ],
@@ -814,12 +776,9 @@
         ]
       },
       "automated": {
-        "domain_match_rank": 2,
-        "domain_match_at_3": true,
-        "top3_domains": [
-          "bvg.de",
-          "s-bahn-berlin.de"
-        ],
+        "domain_match_rank": null,
+        "domain_match_at_3": false,
+        "top3_domains": [],
         "term_overlap": [],
         "wrong_city": false,
         "duplicate_urls_in_results": false,
@@ -870,18 +829,15 @@
       "automated": {
         "domain_match_rank": null,
         "domain_match_at_3": false,
-        "top3_domains": [
-          "csd-berlin.de",
-          "visitberlin.de",
-          "visitberlin.de"
-        ],
+        "top3_domains": [],
         "term_overlap": [
+          "eventim",
           "berlin"
         ],
         "wrong_city": false,
         "duplicate_urls_in_results": false,
-        "official_handoff_available": false,
-        "response_status": "staging_results"
+        "official_handoff_available": true,
+        "response_status": "official_links"
       },
       "human": {
         "label": "FAIL",
@@ -892,20 +848,25 @@
         "notes": "Eventim capture was unavailable; Berlin events page does not identify Eventim seller pages."
       },
       "top_result": {
-        "title": "CSD Berlin | Christopher Street Day",
-        "url": "https://www.csd-berlin.de/",
-        "snippet": "Der Christopher Street Day Berlin, Demonstration für Vielfalt, Akzeptanz und gleiche Rechte. Termine, Mitmach-Aktionen und alles über den Berliner CSD e.V.",
-        "document_type": "event_detail",
-        "ranking_reasons": [
-          "recent_fetch",
-          "event_page",
-          "location_match"
-        ]
+        "title": "Eventim Berlin",
+        "url": "https://www.eventim.de/city/berlin-8/",
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
       },
       "missing_source_from_capture": [
         "eventim.de"
       ],
-      "related_official_domains": [],
+      "related_official_domains": [
+        "eventim.de",
+        "eventim.de",
+        "mercedes-benz-arena.de",
+        "columbiahalle.de",
+        "huxleys-neue-welt.de",
+        "verti-music-hall.de",
+        "berlin.de",
+        "csd-berlin.de"
+      ],
       "baseline": {
         "reported_status": "FAIL",
         "domain_match_rank": null,
@@ -928,19 +889,16 @@
       "automated": {
         "domain_match_rank": null,
         "domain_match_at_3": false,
-        "top3_domains": [
-          "visitberlin.de",
-          "csd-berlin.de",
-          "visitberlin.de"
-        ],
+        "top3_domains": [],
         "term_overlap": [
           "berlin",
-          "events"
+          "events",
+          "calendar"
         ],
         "wrong_city": false,
         "duplicate_urls_in_results": false,
-        "official_handoff_available": false,
-        "response_status": "staging_results"
+        "official_handoff_available": true,
+        "response_status": "official_links"
       },
       "human": {
         "label": "PASS",
@@ -951,20 +909,21 @@
         "notes": "Berlin.de events calendar is rank 1."
       },
       "top_result": {
-        "title": "Berlin's official travel website - visitBerlin.de",
-        "url": "https://www.visitberlin.de/en",
-        "snippet": "Berlin's official travel portal visitBerlin.de: ✓ sights ✓ hotels ✓ tips ✓ events & tickets ► Here you can find out everything about the capital!",
-        "document_type": "event_detail",
-        "ranking_reasons": [
-          "recent_fetch",
-          "event_page",
-          "location_match"
-        ]
+        "title": "Berlin.de events calendar",
+        "url": "https://www.berlin.de/events/",
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
       },
       "missing_source_from_capture": [
         "berlin.de"
       ],
-      "related_official_domains": [],
+      "related_official_domains": [
+        "berlin.de",
+        "csd-berlin.de",
+        "visitberlin.de",
+        "efa-aef.eu"
+      ],
       "baseline": {
         "reported_status": "PASS",
         "domain_match_rank": 1,
@@ -974,10 +933,11 @@
   ],
   "summary": {
     "queries": 15,
-    "auto_domain_matches": 8,
-    "auto_domain_match_rate": 0.533,
-    "auto_recall_at_3": 0.533,
-    "auto_mrr": 0.467,
+    "admitted_domain_matches": 2,
+    "admitted_domain_match_rate": 0.133,
+    "admitted_recall_at_3": 0.133,
+    "admitted_mrr": 0.1,
+    "official_handoff_matches": 12,
     "human_pass": 4,
     "human_partial": 3,
     "human_fail": 8,
@@ -988,7 +948,8 @@
     "wrong_city": 0,
     "duplicate_result_sets": 0,
     "unresolved_missing_sources": 11,
-    "official_handoff_only": 3
+    "official_handoff_only": 12,
+    "note": "Admitted metrics use captured pages only. Official handoffs are navigation, not recall of an admitted answer."
   },
   "baseline_recomputed_from_legacy_ranks": {
     "source": "docs/evidence/r3a3g_real_source_eval_legacy.json",
@@ -1003,6 +964,7 @@
   "limitations": [
     "Only captured pages with a title are indexed; descriptions are short metadata.",
     "Automatic domain matching is not factual correctness.",
+    "Human grades were recorded for admitted-page answers; official handoffs are reported separately.",
     "Human grades are one dated reviewer pass, not inter-annotator agreement.",
     "No page body is stored and no crawler admission is implied."
   ]

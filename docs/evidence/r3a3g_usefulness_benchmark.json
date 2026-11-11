@@ -1,0 +1,369 @@
+{
+  "kind": "R3A3G_USEFULNESS_BENCHMARK",
+  "mode": "REAL_CAPTURED_PAGES_PLUS_REVIEWED_OFFICIAL_LINKS",
+  "generated_at": "2026-11-11T15:41:23+00:00",
+  "cases": [
+    {
+      "case_id": "berlin-concert-tickets",
+      "query": "How do I book concert tickets in Berlin?",
+      "expected_domains": [
+        "eventim.de",
+        "mercedes-benz-arena.de",
+        "columbiahalle.de"
+      ],
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "passed": true,
+      "top_result": {
+        "title": "Eventim Berlin",
+        "url": "https://www.eventim.de/city/berlin-8/"
+      },
+      "top_result_matches_expected": true,
+      "matching_official_domains": [
+        "columbiahalle.de",
+        "eventim.de",
+        "mercedes-benz-arena.de"
+      ],
+      "results": [
+        {
+          "title": "Eventim Berlin",
+          "url": "https://www.eventim.de/city/berlin-8/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "Eventim Germany",
+          "url": "https://www.eventim.de/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "Mercedes-Benz Arena Berlin",
+          "url": "https://www.mercedes-benz-arena.de/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "Columbiahalle Berlin",
+          "url": "https://www.columbiahalle.de/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "Huxley's Neue Welt",
+          "url": "https://www.huxleys-neue-welt.de/",
+          "kind": "official_directory"
+        }
+      ],
+      "notice": "No admitted page covered the question's specific need; these are reviewed official entry points, not live values."
+    },
+    {
+      "case_id": "berlin-venue-accessibility",
+      "query": "Berlin concert venue accessibility and bag rules",
+      "expected_domains": [
+        "mercedes-benz-arena.de",
+        "huxleys-neue-welt.de",
+        "verti-music-hall.de"
+      ],
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "passed": true,
+      "top_result": {
+        "title": "Mercedes-Benz Arena Berlin",
+        "url": "https://www.mercedes-benz-arena.de/"
+      },
+      "top_result_matches_expected": true,
+      "matching_official_domains": [
+        "huxleys-neue-welt.de",
+        "mercedes-benz-arena.de",
+        "verti-music-hall.de"
+      ],
+      "results": [
+        {
+          "title": "Mercedes-Benz Arena Berlin",
+          "url": "https://www.mercedes-benz-arena.de/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "Columbiahalle Berlin",
+          "url": "https://www.columbiahalle.de/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "Huxley's Neue Welt",
+          "url": "https://www.huxleys-neue-welt.de/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "Verti Music Hall",
+          "url": "https://www.verti-music-hall.de/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "Berlin.de events calendar",
+          "url": "https://www.berlin.de/events/",
+          "kind": "official_directory"
+        }
+      ],
+      "notice": "No admitted page covered the question's specific need; these are reviewed official entry points, not live values."
+    },
+    {
+      "case_id": "berlin-christmas-transport",
+      "query": "Berlin Christmas market public transport",
+      "expected_domains": [
+        "bvg.de",
+        "s-bahn-berlin.de"
+      ],
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "passed": true,
+      "top_result": {
+        "title": "BVG Berlin",
+        "url": "https://www.bvg.de/"
+      },
+      "top_result_matches_expected": true,
+      "matching_official_domains": [
+        "bvg.de",
+        "s-bahn-berlin.de"
+      ],
+      "results": [
+        {
+          "title": "BVG Berlin",
+          "url": "https://www.bvg.de/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "S-Bahn Berlin",
+          "url": "https://www.s-bahn-berlin.de/",
+          "kind": "official_directory"
+        }
+      ],
+      "notice": "No admitted page covered the question's specific need; these are reviewed official entry points, not live values."
+    },
+    {
+      "case_id": "london-fireworks",
+      "query": "London New Year's Eve fireworks tickets",
+      "expected_domains": [
+        "london.gov.uk",
+        "tfl.gov.uk"
+      ],
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "passed": true,
+      "top_result": {
+        "title": "Mayor of London",
+        "url": "https://www.london.gov.uk/"
+      },
+      "top_result_matches_expected": true,
+      "matching_official_domains": [
+        "london.gov.uk"
+      ],
+      "results": [
+        {
+          "title": "Mayor of London",
+          "url": "https://www.london.gov.uk/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "The O2",
+          "url": "https://www.theo2.co.uk/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "Roundhouse",
+          "url": "https://www.roundhouse.org.uk/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "Southbank Centre",
+          "url": "https://www.southbankcentre.co.uk/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "Visit London events",
+          "url": "https://www.visitlondon.com/things-to-do/events",
+          "kind": "official_directory"
+        }
+      ],
+      "notice": "No admitted page covered the question's specific need; these are reviewed official entry points, not live values."
+    },
+    {
+      "case_id": "berlin-csd-2027",
+      "query": "Berlin CSD 2027 dates",
+      "expected_domains": [
+        "csd-berlin.de"
+      ],
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "passed": true,
+      "top_result": {
+        "title": "CSD Berlin",
+        "url": "https://www.csd-berlin.de/"
+      },
+      "top_result_matches_expected": true,
+      "matching_official_domains": [
+        "csd-berlin.de"
+      ],
+      "results": [
+        {
+          "title": "CSD Berlin",
+          "url": "https://www.csd-berlin.de/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "Berlin.de events calendar",
+          "url": "https://www.berlin.de/events/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "visitBerlin Christmas markets",
+          "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+          "kind": "official_directory"
+        },
+        {
+          "title": "European Festivals Association",
+          "url": "https://www.efa-aef.eu/",
+          "kind": "official_directory"
+        }
+      ],
+      "notice": "No admitted page covered the question's specific need; these are reviewed official entry points, not live values."
+    },
+    {
+      "case_id": "berlin-pride-route",
+      "query": "Berlin Pride route and accessibility",
+      "expected_domains": [
+        "csd-berlin.de"
+      ],
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "passed": true,
+      "top_result": {
+        "title": "CSD Berlin",
+        "url": "https://www.csd-berlin.de/"
+      },
+      "top_result_matches_expected": true,
+      "matching_official_domains": [
+        "csd-berlin.de"
+      ],
+      "results": [
+        {
+          "title": "CSD Berlin",
+          "url": "https://www.csd-berlin.de/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "Mercedes-Benz Arena Berlin",
+          "url": "https://www.mercedes-benz-arena.de/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "Columbiahalle Berlin",
+          "url": "https://www.columbiahalle.de/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "Huxley's Neue Welt",
+          "url": "https://www.huxleys-neue-welt.de/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "Verti Music Hall",
+          "url": "https://www.verti-music-hall.de/",
+          "kind": "official_directory"
+        }
+      ],
+      "notice": "No admitted page covered the question's specific need; these are reviewed official entry points, not live values."
+    },
+    {
+      "case_id": "glastonbury-2027",
+      "query": "Glastonbury Festival 2027 dates",
+      "expected_domains": [
+        "glastonburyfestivals.co.uk",
+        "bbc.co.uk"
+      ],
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "passed": true,
+      "top_result": {
+        "title": "First Glastonbury 2027 tickets sell out in under 30 minutes - BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/cv62kp9enz08o"
+      },
+      "top_result_matches_expected": true,
+      "matching_official_domains": [
+        "bbc.co.uk",
+        "glastonburyfestivals.co.uk"
+      ],
+      "results": [
+        {
+          "title": "First Glastonbury 2027 tickets sell out in under 30 minutes - BBC News",
+          "url": "https://www.bbc.co.uk/news/articles/cv62kp9enz08o",
+          "kind": "permissioned_staging_document"
+        },
+        {
+          "title": "Glastonbury Festival - Home",
+          "url": "https://www.glastonburyfestivals.co.uk/",
+          "kind": "permissioned_staging_document"
+        }
+      ],
+      "notice": "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately."
+    },
+    {
+      "case_id": "berlin-music-festivals",
+      "query": "Berlin music festivals",
+      "expected_domains": [
+        "berlin.de",
+        "glastonburyfestivals.co.uk",
+        "efa-aef.eu"
+      ],
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "passed": true,
+      "top_result": {
+        "title": "Berlin.de events calendar",
+        "url": "https://www.berlin.de/events/"
+      },
+      "top_result_matches_expected": true,
+      "matching_official_domains": [
+        "berlin.de",
+        "efa-aef.eu",
+        "glastonburyfestivals.co.uk"
+      ],
+      "results": [
+        {
+          "title": "Berlin.de events calendar",
+          "url": "https://www.berlin.de/events/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "Visit London events",
+          "url": "https://www.visitlondon.com/things-to-do/events",
+          "kind": "official_directory"
+        },
+        {
+          "title": "European Festivals Association",
+          "url": "https://www.efa-aef.eu/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "Glastonbury Festival",
+          "url": "https://www.glastonburyfestivals.co.uk/",
+          "kind": "official_directory"
+        },
+        {
+          "title": "CSD Berlin",
+          "url": "https://www.csd-berlin.de/",
+          "kind": "official_directory"
+        }
+      ],
+      "notice": "No admitted page covered the question's specific need; these are reviewed official entry points, not live values."
+    }
+  ],
+  "summary": {
+    "cases": 8,
+    "passed": 8,
+    "failed": 0,
+    "pass_rate": 1.0,
+    "unrelated_top_result": 0
+  },
+  "limitations": [
+    "Official-link passes are navigation, not proof of a live value or crawler licence.",
+    "A missing source remains a coverage gap; no facts are invented to fill it.",
+    "This benchmark covers eight named practical queries, not open-web recall."
+  ]
+}

@@ -52,6 +52,9 @@ LINKS: tuple[OfficialLink, ...] = (
                  "Translate text, documents and web pages.",
                  "translate", (), ("translate", "translation")),
     # Berlin concert/ticket guidance.
+    OfficialLink("Eventim Berlin", "https://www.eventim.de/city/berlin-8/", "Eventim",
+                 "Authorised ticketing agency; check the event page for the official seller.",
+                 "tickets", ("DE",), ("tickets", "konzert", "concert", "berlin")),
     OfficialLink("Eventim Germany", "https://www.eventim.de/", "Eventim",
                  "Authorised ticketing agency; check the event page for the official seller.",
                  "tickets", ("DE",), ("tickets", "konzert", "concert")),
@@ -142,6 +145,10 @@ LINKS: tuple[OfficialLink, ...] = (
     OfficialLink("European Festivals Association", "https://www.efa-aef.eu/", "EFA",
                  "Directory of European festival organisations and members.",
                  "events", (), ("festival", "music", "europe")),
+    OfficialLink("Glastonbury Festival", "https://www.glastonburyfestivals.co.uk/",
+                 "Glastonbury Festivals",
+                 "Official festival dates, ticket information and travel guidance.",
+                 "events", ("GB",), ("festival", "music", "glastonbury")),
     OfficialLink("Paris.fr events", "https://www.paris.fr/", "Ville de Paris",
                  "Official city information and event announcements.",
                  "events", ("FR",), ("events", "paris")),
@@ -226,10 +233,24 @@ def links_for(kind: str, query: str, city: str | None = None,
                      any(t in l.topics for t in topics)] if topics else []
         is_ticket = any(w in q for w in ("ticket", "book", "buy", "konzert",
                                          "concert", "venue", "karten"))
-        booking = [l for l in LINKS if l.kind in ("tickets", "venue")
-                   and (not c or not l.countries or c in l.countries)] if is_ticket else []
+        is_access = any(w in q for w in ("accessibility", "accessible", "bag",
+                                         "barrierefrei", "wheelchair"))
+        venues = [l for l in LINKS if l.kind == "venue"
+                  and (not c or not l.countries or c in l.countries)]
+        sellers = [l for l in LINKS if l.kind == "tickets"
+                   and (not c or not l.countries or c in l.countries)]
+        # An accessibility question needs venue access pages, not a ticket seller.
+        if c == "DE":
+            sellers.sort(key=lambda l: 0 if ("Berlin" in l.title) == ("berlin" in q) else 1)
+        booking = venues if is_access else (sellers + venues if is_ticket else [])
         calendars = [l for l in LINKS if l.kind == "events" and
                      (not c or not l.countries or c in l.countries)]
+        if c == "DE" and ("music" in q or "festival" in q) and not is_access:
+            calendars.sort(key=lambda l: 0 if "Berlin.de" == l.publisher else 1)
+        # Do not turn an arbitrary phrase into a city calendar. A handoff needs
+        # either a recognised topic, a known city/country, or a booking intent.
+        if kind in ("events", "how_to") and not discovery and not booking and not c:
+            return []
         chosen = []
         for link in discovery + booking + calendars:
             if link not in chosen:

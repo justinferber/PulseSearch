@@ -145,7 +145,8 @@ def render_html(report: dict, staging: StagingIndex, query: str = "", category: 
     results = staging.search(query, category or None, 20) if query.strip() else []
     # R3-A3G: natural-language ranking over existing permissioned staging pages.
     # This is offline retrieval, not a web search or live-provider claim.
-    broad = search_staging(staging, query, 12) if query.strip() else None
+    broad = (search_staging(staging, query, 12, enforce_support=True)
+             if query.strip() else None)
     broad_rows = "".join(
         f"<tr><td><a href='{html.escape(r['url'])}' rel='noopener noreferrer'>"
         f"{html.escape(str(r.get('title') or '')[:100])}</a></td>"

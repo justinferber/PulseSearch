@@ -1,0 +1,15 @@
+# Pulse Search R2-P31 — semantic aliases and broad-recall shadow (25 October 2026)
+
+**Scope:** standalone independent Pulse Search engine. Research-only ranking, **not** live deployment. No public crawling, APIs, paid search-provider calls or owner database writes.
+
+**Owner evidence pins:** R2-P30 report SHA-256 `3cd67802d2dcedb00a0e9c9097e98f682a17d83df92381076d9e860087b08514`; R2-P29 shadow SHA `328f3129f190f1d50905a37fd8ccd829104c9418808c79be161b5b02dfb32d5c`; R2-P27C report SHA `5b343dc1710663e248a958f486f293a1af67702ebe8980aa7b31641ad05e6787`; original R2-P29 source ZIP SHA `459670257dcfef8cab4fb46c101990c9aeb59d4dffb02da6c72e5b2891b70e88`; owner index expected SHA `bb8e52025a1a25f55141507a02621db190e54bf1fc4d4da8db4248357368c35d`. Required original R2-P29 source inside R2-P30 accepted ZIP is verified, along with its inherited engine. No modified accepted crawler.
+
+**Why:** the accepted R2-P30 diagnostic showed 8 named event-edition top1 hits, 8 missed recall questions, 3 new/ungraded results, and 5 abstentions. A pure title-and-year strict gate solved precision but missed common paraphrases and general-category requests.
+
+**New experimental code:** `pulse_search_r2p31.py`. It understands transparent aliases such as family doctor → GP, registration → register, JS → JavaScript, learner driver permit → provisional driving licence, New Year fireworks → New Year's Eve, property tax → Council Tax; facets by year/event, celebration/festival, multi-year series and government service pages. It works from indexed URL/title metadata only, **not** internet lookups or predetermined answer URLs. Dynamic live availability/stock/weather queries abstain.
+
+**Local verification:** all 36 existing research queries meet explicitly described URL/title retrieval objectives on a reconstructed **118-of-120 document metadata proxy**, including all 8 previously missing recall questions, plus a separately held-out suite of 20 variations. This proxy is NOT the actual owner SQLite DB, nor independent factual answer grading. Owner must run real immutable 120-page index test. Existing 285-engine tests and earlier R2-P29/R2-P30 tests remain unchanged.
+
+**What is NOT proven:** factual answers inside pages, official actual event date/cancellation, fresh weather/stock/hours, licensed commercial display, web-scale recall, or genuine performance on independently sampled broader queries. Never call this 100% open-web accuracy. 36 known queries were used to design the alias/facet layer, so **benchmark overfitting is a real concern**. New unseen user queries and broader sources are future release gates.
+
+Run `OnePass.sh` only after downloading this signed ZIP to `C:\Users\justi\Desktop\pulseunity\ChatGPTCode`. It SHA-verifies every bundled source, extracts the exact accepted engine and runs every unit/regression test, then opens the owner 120-page index **read-only** and produces new JSON and HTML reports in a uniquely named results folder. If owner-side results fail, the run HOLDS without deploying anything.

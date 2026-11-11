@@ -1,0 +1,3209 @@
+{
+  "version": "R2-P34-FourWay-Generalisation-v1",
+  "status": "READ_ONLY_GENERALISATION_DIAGNOSTIC_COMPLETE_NOT_DEPLOYED",
+  "index_sha_before_after": "bb8e52025a1a25f55141507a02621db190e54bf1fc4d4da8db4248357368c35d",
+  "indexed_pages": 120,
+  "sources": 7,
+  "original_36_guard_violations": [],
+  "original_36_first_changes": [
+    {
+      "question": "What happened during London Open House over the years?",
+      "before": "https://www.london.gov.uk/events/city-hall-open-house-2026",
+      "after": "https://www.london.gov.uk/events/london-open-house-2025"
+    }
+  ],
+  "prior_p33_reproduction": {
+    "p31": {
+      "previous_71": {
+        "EXPECTED_RETRIEVAL_BEHAVIOUR": 33,
+        "POTENTIAL_RETRIEVAL_ERROR": 23,
+        "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE": 15
+      },
+      "new_18_untouched": {
+        "EXPECTED_RETRIEVAL_BEHAVIOUR": 9,
+        "POTENTIAL_RETRIEVAL_ERROR": 5,
+        "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE": 4
+      }
+    },
+    "p32": {
+      "previous_71": {
+        "EXPECTED_RETRIEVAL_BEHAVIOUR": 50,
+        "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE": 15,
+        "POTENTIAL_RETRIEVAL_ERROR": 6
+      },
+      "new_18_untouched": {
+        "EXPECTED_RETRIEVAL_BEHAVIOUR": 10,
+        "POTENTIAL_RETRIEVAL_ERROR": 4,
+        "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE": 4
+      }
+    },
+    "p33": {
+      "previous_71": {
+        "EXPECTED_RETRIEVAL_BEHAVIOUR": 56,
+        "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE": 15
+      },
+      "new_18_untouched": {
+        "EXPECTED_RETRIEVAL_BEHAVIOUR": 10,
+        "POTENTIAL_RETRIEVAL_ERROR": 4,
+        "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE": 4
+      }
+    }
+  },
+  "comparative_counts": {
+    "previous_71": {
+      "p33_label": {
+        "EXPECTED_RETRIEVAL_BEHAVIOUR": 56,
+        "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE": 15
+      },
+      "p34_label": {
+        "EXPECTED_RETRIEVAL_BEHAVIOUR": 56,
+        "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE": 15
+      }
+    },
+    "previous_18": {
+      "p33_label": {
+        "EXPECTED_RETRIEVAL_BEHAVIOUR": 10,
+        "POTENTIAL_RETRIEVAL_ERROR": 4,
+        "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE": 4
+      },
+      "p34_label": {
+        "EXPECTED_RETRIEVAL_BEHAVIOUR": 14,
+        "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE": 4
+      }
+    },
+    "fresh_20_untouched": {
+      "p33_label": {
+        "POTENTIAL_RETRIEVAL_ERROR": 6,
+        "EXPECTED_RETRIEVAL_BEHAVIOUR": 10,
+        "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE": 4
+      },
+      "p34_label": {
+        "POTENTIAL_RETRIEVAL_ERROR": 6,
+        "EXPECTED_RETRIEVAL_BEHAVIOUR": 10,
+        "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE": 4
+      }
+    }
+  },
+  "previous_holdout_errors_recovered": [
+    {
+      "id": "previous_18_02",
+      "query": "NHS information about booking a blood test"
+    },
+    {
+      "id": "previous_18_04",
+      "query": "How does a GP surgery registration work?"
+    },
+    {
+      "id": "previous_18_06",
+      "query": "What were the London Open House editions?"
+    },
+    {
+      "id": "previous_18_08",
+      "query": "London events 2027 apart from Eid"
+    }
+  ],
+  "remaining_retrieval_misses": [
+    {
+      "id": "fresh_20_untouched_01",
+      "query": "How can I register as an NHS patient with a doctor?",
+      "partition": "fresh_20_untouched"
+    },
+    {
+      "id": "fresh_20_untouched_02",
+      "query": "NHS blood screening test instructions",
+      "partition": "fresh_20_untouched"
+    },
+    {
+      "id": "fresh_20_untouched_03",
+      "query": "Getting a temporary drivers permit in the UK",
+      "partition": "fresh_20_untouched"
+    },
+    {
+      "id": "fresh_20_untouched_04",
+      "query": "Help me enrol for voting in England",
+      "partition": "fresh_20_untouched"
+    },
+    {
+      "id": "fresh_20_untouched_11",
+      "query": "Previous years of St George’s Day London events",
+      "partition": "fresh_20_untouched"
+    },
+    {
+      "id": "fresh_20_untouched_13",
+      "query": "London festival events 2026 without London Games Festival",
+      "partition": "fresh_20_untouched"
+    }
+  ],
+  "factual_answers_verified": 0,
+  "no_network_calls": true,
+  "paid_search_api_calls": 0,
+  "database_writes": 0,
+  "production_integration": "HOLD_PENDING_GENERALISATION_AND_INDEPENDENT_FACT_EVIDENCE",
+  "issues": [],
+  "probes": [
+    {
+      "id": "previous_71_01",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "Where do I register with an NHS GP?",
+      "expected_kind": "url",
+      "expected_value": "/nhs-services/gps/how-to-register-with-a-gp-surgery/",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Register with a GP surgery - NHS",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Register with a GP surgery - NHS",
+          "url": "https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/",
+          "title": "Register with a GP surgery - NHS",
+          "fetched_at": "2026-10-23T16:32:19.089770+00:00",
+          "source_id": "nhs_services",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 7162,
+          "indexed_body_anchor_hits": 2,
+          "indexed_body_anchor_total": 2,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_02",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "NHS guide to blood testing",
+      "expected_kind": "url",
+      "expected_value": "/tests-and-treatments/blood-tests/",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Blood tests - NHS",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Blood tests - NHS",
+          "url": "https://www.nhs.uk/tests-and-treatments/blood-tests/"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.nhs.uk/tests-and-treatments/blood-tests/",
+          "title": "Blood tests - NHS",
+          "fetched_at": "2026-10-24T19:07:44.123763+00:00",
+          "source_id": "nhs_services",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 4656,
+          "indexed_body_anchor_hits": 3,
+          "indexed_body_anchor_total": 3,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_03",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "How can I find my council tax band?",
+      "expected_kind": "url",
+      "expected_value": "/council-tax-bands",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Check your Council Tax band - GOV.UK",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Check your Council Tax band - GOV.UK",
+          "url": "https://www.gov.uk/council-tax-bands"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.gov.uk/council-tax-bands",
+          "title": "Check your Council Tax band - GOV.UK",
+          "fetched_at": "2026-10-24T19:07:41.594529+00:00",
+          "source_id": "uk_services",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 3719,
+          "indexed_body_anchor_hits": 3,
+          "indexed_body_anchor_total": 3,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_04",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "British adult passport renewal application",
+      "expected_kind": "url",
+      "expected_value": "/renew-adult-passport/renew",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Renew or replace your adult passport: Renew - GOV.UK",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Renew or replace your adult passport: Renew - GOV.UK",
+          "url": "https://www.gov.uk/renew-adult-passport/renew"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.gov.uk/renew-adult-passport/renew",
+          "title": "Renew or replace your adult passport: Renew - GOV.UK",
+          "fetched_at": "2026-10-23T16:32:11.717956+00:00",
+          "source_id": "uk_services",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 4890,
+          "indexed_body_anchor_hits": 3,
+          "indexed_body_anchor_total": 3,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_05",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "A guide explaining JavaScript",
+      "expected_kind": "url",
+      "expected_value": "/What_is_JavaScript",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "What is JavaScript? - Learn web development | MDN",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "What is JavaScript? - Learn web development | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript",
+          "title": "What is JavaScript? - Learn web development | MDN",
+          "fetched_at": "2026-10-24T19:07:38.825042+00:00",
+          "source_id": "mdn_http",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 31626,
+          "indexed_body_anchor_hits": 1,
+          "indexed_body_anchor_total": 1,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_06",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "HTTP specification and explanation",
+      "expected_kind": "url",
+      "expected_value": "/Web/HTTP",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "HTTP: Hypertext Transfer Protocol | MDN",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "HTTP: Hypertext Transfer Protocol | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP",
+          "title": "HTTP: Hypertext Transfer Protocol | MDN",
+          "fetched_at": "2026-10-23T16:32:02.598664+00:00",
+          "source_id": "mdn_http",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 20085,
+          "indexed_body_anchor_hits": 1,
+          "indexed_body_anchor_total": 1,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_07",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "Application for a provisional driving licence",
+      "expected_kind": "url",
+      "expected_value": "/apply-first-provisional-driving-licence",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Apply for your first provisional driving licence - GOV.UK",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Apply for your first provisional driving licence - GOV.UK",
+          "url": "https://www.gov.uk/apply-first-provisional-driving-licence"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.gov.uk/apply-first-provisional-driving-licence",
+          "title": "Apply for your first provisional driving licence - GOV.UK",
+          "fetched_at": "2026-10-23T16:32:07.525978+00:00",
+          "source_id": "uk_services",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 6300,
+          "indexed_body_anchor_hits": 3,
+          "indexed_body_anchor_total": 3,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_08",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "Instructions for registering to vote",
+      "expected_kind": "url",
+      "expected_value": "/register-to-vote",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Register to vote - GOV.UK",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Register to vote - GOV.UK",
+          "url": "https://www.gov.uk/register-to-vote"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.gov.uk/register-to-vote",
+          "title": "Register to vote - GOV.UK",
+          "fetched_at": "2026-10-23T16:32:09.598364+00:00",
+          "source_id": "uk_services",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 8283,
+          "indexed_body_anchor_hits": 1,
+          "indexed_body_anchor_total": 1,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_09",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "Lunar New Year London 2026",
+      "expected_kind": "url",
+      "expected_value": "/events/lunar-new-year-festival-spring-2026",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Lunar New Year - the Festival of Spring 2026 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Lunar New Year - the Festival of Spring 2026 | London City Hall",
+          "url": "https://www.london.gov.uk/events/lunar-new-year-festival-spring-2026"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/lunar-new-year-festival-spring-2026",
+          "title": "Lunar New Year - the Festival of Spring 2026 | London City Hall",
+          "fetched_at": "2026-10-25T16:00:39.670548+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 11625,
+          "indexed_body_anchor_hits": 1,
+          "indexed_body_anchor_total": 1,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_10",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "Vaisakhi 2024 in London",
+      "expected_kind": "url",
+      "expected_value": "/events/vaisakhi-2024",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Vaisakhi 2024 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Vaisakhi 2024 | London City Hall",
+          "url": "https://www.london.gov.uk/events/vaisakhi-2024"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/vaisakhi-2024",
+          "title": "Vaisakhi 2024 | London City Hall",
+          "fetched_at": "2026-10-25T16:34:26.539174+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 18069,
+          "indexed_body_anchor_hits": 1,
+          "indexed_body_anchor_total": 1,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_11",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "UK Black Pride in the year 2024",
+      "expected_kind": "url",
+      "expected_value": "/events/uk-black-pride-2024",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "UK Black Pride 2024 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "UK Black Pride 2024 | London City Hall",
+          "url": "https://www.london.gov.uk/events/uk-black-pride-2024"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/uk-black-pride-2024",
+          "title": "UK Black Pride 2024 | London City Hall",
+          "fetched_at": "2026-10-25T16:34:09.083398+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 10440,
+          "indexed_body_anchor_hits": 2,
+          "indexed_body_anchor_total": 2,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_12",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "Armed Forces Day London 2025",
+      "expected_kind": "url",
+      "expected_value": "/events/armed-forces-day-2025",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Armed Forces Day 2025 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Armed Forces Day 2025 | London City Hall",
+          "url": "https://www.london.gov.uk/events/armed-forces-day-2025"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/armed-forces-day-2025",
+          "title": "Armed Forces Day 2025 | London City Hall",
+          "fetched_at": "2026-10-25T16:31:38.156671+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 10712,
+          "indexed_body_anchor_hits": 2,
+          "indexed_body_anchor_total": 3,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_13",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "What was St George's Day London 2025?",
+      "expected_kind": "url",
+      "expected_value": "/events/st-georges-day-2025",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "St George's Day 2025 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "St George's Day 2025 | London City Hall",
+          "url": "https://www.london.gov.uk/events/st-georges-day-2025"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/st-georges-day-2025",
+          "title": "St George's Day 2025 | London City Hall",
+          "fetched_at": "2026-10-25T16:33:55.357460+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 17393,
+          "indexed_body_anchor_hits": 3,
+          "indexed_body_anchor_total": 3,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_14",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "Eid on the Square 2025 celebration",
+      "expected_kind": "url",
+      "expected_value": "/events/eid-square-2025",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Eid on the Square 2025 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Eid on the Square 2025 | London City Hall",
+          "url": "https://www.london.gov.uk/events/eid-square-2025"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/eid-square-2025",
+          "title": "Eid on the Square 2025 | London City Hall",
+          "fetched_at": "2026-10-25T16:32:31.417862+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 28356,
+          "indexed_body_anchor_hits": 2,
+          "indexed_body_anchor_total": 2,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_15",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "London Data Week 2026 information",
+      "expected_kind": "url",
+      "expected_value": "/events/london-data-week-2026",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "London Data Week 2026 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "London Data Week 2026 | London City Hall",
+          "url": "https://www.london.gov.uk/events/london-data-week-2026"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/london-data-week-2026",
+          "title": "London Data Week 2026 | London City Hall",
+          "fetched_at": "2026-10-25T16:29:56.912811+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 10304,
+          "indexed_body_anchor_hits": 2,
+          "indexed_body_anchor_total": 2,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_16",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "What is London Open House 2024?",
+      "expected_kind": "url",
+      "expected_value": "/events/london-open-house-2024",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "London Open House 2024 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "London Open House 2024 | London City Hall",
+          "url": "https://www.london.gov.uk/events/london-open-house-2024"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/london-open-house-2024",
+          "title": "London Open House 2024 | London City Hall",
+          "fetched_at": "2026-10-25T16:30:46.082604+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 13147,
+          "indexed_body_anchor_hits": 2,
+          "indexed_body_anchor_total": 2,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_17",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "Pride in London 2024 event",
+      "expected_kind": "url",
+      "expected_value": "/events/pride-london-2024",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Pride in London 2024 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Pride in London 2024 | London City Hall",
+          "url": "https://www.london.gov.uk/events/pride-london-2024"
+        },
+        {
+          "title": "UK Black Pride 2024 | London City Hall",
+          "url": "https://www.london.gov.uk/events/uk-black-pride-2024"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/pride-london-2024",
+          "title": "Pride in London 2024 | London City Hall",
+          "fetched_at": "2026-10-25T16:30:58.480781+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 12239,
+          "indexed_body_anchor_hits": 1,
+          "indexed_body_anchor_total": 1,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_18",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "What was the Christmas carol service 2025 run by the Mayor?",
+      "expected_kind": "url",
+      "expected_value": "/events/mayors-christmas-carol-service-2025",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "The Mayor's Christmas Carol Service 2025 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "The Mayor's Christmas Carol Service 2025 | London City Hall",
+          "url": "https://www.london.gov.uk/events/mayors-christmas-carol-service-2025"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/mayors-christmas-carol-service-2025",
+          "title": "The Mayor's Christmas Carol Service 2025 | London City Hall",
+          "fetched_at": "2026-10-25T16:32:57.712138+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 10695,
+          "indexed_body_anchor_hits": 2,
+          "indexed_body_anchor_total": 3,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_19",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "Where can I submit my voter registration?",
+      "expected_kind": "url",
+      "expected_value": "/register-to-vote",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Register to vote - GOV.UK",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Register to vote - GOV.UK",
+          "url": "https://www.gov.uk/register-to-vote"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.gov.uk/register-to-vote",
+          "title": "Register to vote - GOV.UK",
+          "fetched_at": "2026-10-23T16:32:09.598364+00:00",
+          "source_id": "uk_services",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 8283,
+          "indexed_body_anchor_hits": 1,
+          "indexed_body_anchor_total": 1,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_20",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "What do I need to do to get a learner driver licence?",
+      "expected_kind": "url",
+      "expected_value": "/apply-first-provisional-driving-licence",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Apply for your first provisional driving licence - GOV.UK",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Apply for your first provisional driving licence - GOV.UK",
+          "url": "https://www.gov.uk/apply-first-provisional-driving-licence"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.gov.uk/apply-first-provisional-driving-licence",
+          "title": "Apply for your first provisional driving licence - GOV.UK",
+          "fetched_at": "2026-10-23T16:32:07.525978+00:00",
+          "source_id": "uk_services",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 6300,
+          "indexed_body_anchor_hits": 3,
+          "indexed_body_anchor_total": 3,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_21",
+      "partition": "previous_71",
+      "group": "catalog",
+      "query": "Find events in London during 2027",
+      "expected_kind": "year_event",
+      "expected_value": "2027",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Eid on the Square 2027 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Eid on the Square 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/eid"
+        },
+        {
+          "title": "Black On The Square 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/black-square-2027"
+        },
+        {
+          "title": "St Patrick’s Festival 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/st-patricks-day"
+        },
+        {
+          "title": "7/7 Memorial Service 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/77-memorial-service-2027"
+        },
+        {
+          "title": "Armed Forces Day 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/armed-forces-day-2027"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/eid",
+          "title": "Eid on the Square 2027 | London City Hall",
+          "fetched_at": "2026-10-25T16:32:22.418024+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 23863,
+          "indexed_body_anchor_hits": 0,
+          "indexed_body_anchor_total": 0,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_22",
+      "partition": "previous_71",
+      "group": "catalog",
+      "query": "Show London events planned for 2026",
+      "expected_kind": "year_event",
+      "expected_value": "2026",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Diwali on the Square 2026 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Diwali on the Square 2026 | London City Hall",
+          "url": "https://www.london.gov.uk/events/diwali-square-2026"
+        },
+        {
+          "title": "Eid on the Square 2026 | London City Hall",
+          "url": "https://www.london.gov.uk/events/eid-square-2026"
+        },
+        {
+          "title": "Black On The Square 2026 | London City Hall",
+          "url": "https://www.london.gov.uk/events/black-square-2026"
+        },
+        {
+          "title": "London Games Festival 2026 | London City Hall",
+          "url": "https://www.london.gov.uk/events/london-games-festival-2026"
+        },
+        {
+          "title": "Lunar New Year - the Festival of Spring 2026 | London City Hall",
+          "url": "https://www.london.gov.uk/events/lunar-new-year-festival-spring-2026"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/diwali-square-2026",
+          "title": "Diwali on the Square 2026 | London City Hall",
+          "fetched_at": "2026-10-23T22:10:09.830301+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 26916,
+          "indexed_body_anchor_hits": 0,
+          "indexed_body_anchor_total": 0,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_23",
+      "partition": "previous_71",
+      "group": "catalog",
+      "query": "Find London festivals in 2025",
+      "expected_kind": "year_festival",
+      "expected_value": "2025",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "London Games Festival 2025 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "London Games Festival 2025 | London City Hall",
+          "url": "https://www.london.gov.uk/events/london-games-festival-2025"
+        },
+        {
+          "title": "St Patrick’s Festival 2025 | London City Hall",
+          "url": "https://www.london.gov.uk/events/st-patricks-festival-2025"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/london-games-festival-2025",
+          "title": "London Games Festival 2025 | London City Hall",
+          "fetched_at": "2026-10-25T16:30:39.415310+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 12898,
+          "indexed_body_anchor_hits": 0,
+          "indexed_body_anchor_total": 0,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_24",
+      "partition": "previous_71",
+      "group": "catalog",
+      "query": "What festivals were on in London in 2027?",
+      "expected_kind": "year_festival",
+      "expected_value": "2027",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "St Patrick’s Festival 2027 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "St Patrick’s Festival 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/st-patricks-day"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/st-patricks-day",
+          "title": "St Patrick’s Festival 2027 | London City Hall",
+          "fetched_at": "2026-10-25T16:33:57.515438+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 20217,
+          "indexed_body_anchor_hits": 0,
+          "indexed_body_anchor_total": 0,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_25",
+      "partition": "previous_71",
+      "group": "catalog",
+      "query": "Celebrations in London during 2024",
+      "expected_kind": "year_celebration",
+      "expected_value": "2024",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Eid in the Square 2024 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Eid in the Square 2024 | London City Hall",
+          "url": "https://www.london.gov.uk/events/eid-square-2024"
+        },
+        {
+          "title": "Black On The Square 2024 | London City Hall",
+          "url": "https://www.london.gov.uk/events/black-square-2024"
+        },
+        {
+          "title": "Chanukah on the Square 2024 | London City Hall",
+          "url": "https://www.london.gov.uk/events/chanukah-square-2024"
+        },
+        {
+          "title": "Pride in London 2024 | London City Hall",
+          "url": "https://www.london.gov.uk/events/pride-london-2024"
+        },
+        {
+          "title": "St George's Day 2024 | London City Hall",
+          "url": "https://www.london.gov.uk/events/st-georges-day-2024"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/eid-square-2024",
+          "title": "Eid in the Square 2024 | London City Hall",
+          "fetched_at": "2026-10-25T16:32:29.321296+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 26013,
+          "indexed_body_anchor_hits": 0,
+          "indexed_body_anchor_total": 0,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_26",
+      "partition": "previous_71",
+      "group": "catalog",
+      "query": "What services does GOV.UK offer online?",
+      "expected_kind": "gov_catalog",
+      "expected_value": "gov.uk",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Apply for your first provisional driving licence - GOV.UK",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Apply for your first provisional driving licence - GOV.UK",
+          "url": "https://www.gov.uk/apply-first-provisional-driving-licence"
+        },
+        {
+          "title": "Check your Council Tax band - GOV.UK",
+          "url": "https://www.gov.uk/council-tax-bands"
+        },
+        {
+          "title": "Register to vote - GOV.UK",
+          "url": "https://www.gov.uk/register-to-vote"
+        },
+        {
+          "title": "Renew or replace your adult passport: Renew - GOV.UK",
+          "url": "https://www.gov.uk/renew-adult-passport/renew"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.gov.uk/apply-first-provisional-driving-licence",
+          "title": "Apply for your first provisional driving licence - GOV.UK",
+          "fetched_at": "2026-10-23T16:32:07.525978+00:00",
+          "source_id": "uk_services",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 6300,
+          "indexed_body_anchor_hits": 0,
+          "indexed_body_anchor_total": 0,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_27",
+      "partition": "previous_71",
+      "group": "catalog",
+      "query": "Historical editions of London Open House",
+      "expected_kind": "series",
+      "expected_value": "open house",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "City Hall Open House 2026 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "London Open House 2025 | London City Hall",
+          "url": "https://www.london.gov.uk/events/london-open-house-2025"
+        },
+        {
+          "title": "London Open House 2024 | London City Hall",
+          "url": "https://www.london.gov.uk/events/london-open-house-2024"
+        },
+        {
+          "title": "London Open House 2023 | London City Hall",
+          "url": "https://www.london.gov.uk/events/london-open-house-2023"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/london-open-house-2025",
+          "title": "London Open House 2025 | London City Hall",
+          "fetched_at": "2026-10-25T16:30:50.383708+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 13342,
+          "indexed_body_anchor_hits": 2,
+          "indexed_body_anchor_total": 2,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_28",
+      "partition": "previous_71",
+      "group": "catalog",
+      "query": "Tell me about past Eid on the Square editions",
+      "expected_kind": "series",
+      "expected_value": "eid",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Eid on the Square 2027 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Eid on the Square 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/eid"
+        },
+        {
+          "title": "Eid on the Square 2026 | London City Hall",
+          "url": "https://www.london.gov.uk/events/eid-square-2026"
+        },
+        {
+          "title": "Eid on the Square 2025 | London City Hall",
+          "url": "https://www.london.gov.uk/events/eid-square-2025"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/eid",
+          "title": "Eid on the Square 2027 | London City Hall",
+          "fetched_at": "2026-10-25T16:32:22.418024+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 23863,
+          "indexed_body_anchor_hits": 2,
+          "indexed_body_anchor_total": 2,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_29",
+      "partition": "previous_71",
+      "group": "negative",
+      "query": "Diwali on the Square 2038",
+      "expected_kind": "withhold",
+      "expected_value": "",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_30",
+      "partition": "previous_71",
+      "group": "negative",
+      "query": "Armed Forces Day 2044",
+      "expected_kind": "withhold",
+      "expected_value": "",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_31",
+      "partition": "previous_71",
+      "group": "negative",
+      "query": "London events in the year 2039",
+      "expected_kind": "withhold",
+      "expected_value": "",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_32",
+      "partition": "previous_71",
+      "group": "negative",
+      "query": "Will it snow in Bristol tomorrow?",
+      "expected_kind": "withhold",
+      "expected_value": "",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_UNVERIFIED_LIVE_DATA",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_33",
+      "partition": "previous_71",
+      "group": "negative",
+      "query": "Which new laptop can I buy in stock now?",
+      "expected_kind": "withhold",
+      "expected_value": "",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_UNVERIFIED_LIVE_DATA",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_34",
+      "partition": "previous_71",
+      "group": "negative",
+      "query": "Shops selling shoes in Manchester open now",
+      "expected_kind": "withhold",
+      "expected_value": "",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_UNVERIFIED_LIVE_DATA",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_35",
+      "partition": "previous_71",
+      "group": "negative",
+      "query": "Which New York festivals happen in 2027?",
+      "expected_kind": "withhold",
+      "expected_value": "",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_36",
+      "partition": "previous_71",
+      "group": "negative",
+      "query": "Is the New Year's Eve festival in Sydney in 2026?",
+      "expected_kind": "withhold",
+      "expected_value": "",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_37",
+      "partition": "previous_71",
+      "group": "negative",
+      "query": "Apply for a mortgage on Mars",
+      "expected_kind": "withhold",
+      "expected_value": "",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_38",
+      "partition": "previous_71",
+      "group": "negative",
+      "query": "Events happening in Liverpool during 2027",
+      "expected_kind": "withhold",
+      "expected_value": "",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_39",
+      "partition": "previous_71",
+      "group": "negative",
+      "query": "Diwali on the Square 2026 but in New York",
+      "expected_kind": "withhold",
+      "expected_value": "",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_40",
+      "partition": "previous_71",
+      "group": "negative",
+      "query": "London festivals in 2026 excluding St Patrick's Festival",
+      "expected_kind": "exclude",
+      "expected_value": "/events/st-patricks-festival-2026",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "London Games Festival 2026 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "London Games Festival 2026 | London City Hall",
+          "url": "https://www.london.gov.uk/events/london-games-festival-2026"
+        },
+        {
+          "title": "Lunar New Year - the Festival of Spring 2026 | London City Hall",
+          "url": "https://www.london.gov.uk/events/lunar-new-year-festival-spring-2026"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/london-games-festival-2026",
+          "title": "London Games Festival 2026 | London City Hall",
+          "fetched_at": "2026-10-23T22:10:13.407811+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 12421,
+          "indexed_body_anchor_hits": 0,
+          "indexed_body_anchor_total": 0,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_41",
+      "partition": "previous_71",
+      "group": "negative",
+      "query": "London events 2027 excluding Eid",
+      "expected_kind": "exclude",
+      "expected_value": "/events/eid",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Black On The Square 2027 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Black On The Square 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/black-square-2027"
+        },
+        {
+          "title": "St Patrick’s Festival 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/st-patricks-day"
+        },
+        {
+          "title": "7/7 Memorial Service 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/77-memorial-service-2027"
+        },
+        {
+          "title": "Armed Forces Day 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/armed-forces-day-2027"
+        },
+        {
+          "title": "Gypsy, Roma and Traveller History Month 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/gypsy-roma-and-traveller-history-month-2027"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/black-square-2027",
+          "title": "Black On The Square 2027 | London City Hall",
+          "fetched_at": "2026-10-25T16:31:53.561421+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 25270,
+          "indexed_body_anchor_hits": 0,
+          "indexed_body_anchor_total": 0,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_42",
+      "partition": "previous_71",
+      "group": "negative",
+      "query": "London events 2027 only in Edinburgh",
+      "expected_kind": "withhold",
+      "expected_value": "",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_CONTRADICTORY_GEOGRAPHY",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_43",
+      "partition": "previous_71",
+      "group": "negative",
+      "query": "London events 2027 except memorial services",
+      "expected_kind": "exclude",
+      "expected_value": "/events/77-memorial-service-2027",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Eid on the Square 2027 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Eid on the Square 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/eid"
+        },
+        {
+          "title": "Black On The Square 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/black-square-2027"
+        },
+        {
+          "title": "St Patrick’s Festival 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/st-patricks-day"
+        },
+        {
+          "title": "Armed Forces Day 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/armed-forces-day-2027"
+        },
+        {
+          "title": "Gypsy, Roma and Traveller History Month 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/gypsy-roma-and-traveller-history-month-2027"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/eid",
+          "title": "Eid on the Square 2027 | London City Hall",
+          "fetched_at": "2026-10-25T16:32:22.418024+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 23863,
+          "indexed_body_anchor_hits": 0,
+          "indexed_body_anchor_total": 0,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_44",
+      "partition": "previous_71",
+      "group": "negative",
+      "query": "Which 2027 London events have free entry confirmed?",
+      "expected_kind": "fact_unknown",
+      "expected_value": "free entry",
+      "p33_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p34_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_UNVERIFIED_FACT_QUALIFIER",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_45",
+      "partition": "previous_71",
+      "group": "negative",
+      "query": "Which 2026 London festivals were cancelled?",
+      "expected_kind": "fact_unknown",
+      "expected_value": "cancelled",
+      "p33_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p34_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_UNVERIFIED_FACT_QUALIFIER",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_46",
+      "partition": "previous_71",
+      "group": "negative",
+      "query": "London events in 2027 that have sold out",
+      "expected_kind": "fact_unknown",
+      "expected_value": "sold out",
+      "p33_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p34_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_UNVERIFIED_FACT_QUALIFIER",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_47",
+      "partition": "previous_71",
+      "group": "negative",
+      "query": "London festivals for 2026 but not St Patrick's",
+      "expected_kind": "exclude",
+      "expected_value": "/events/st-patricks-festival-2026",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "London Games Festival 2026 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "London Games Festival 2026 | London City Hall",
+          "url": "https://www.london.gov.uk/events/london-games-festival-2026"
+        },
+        {
+          "title": "Lunar New Year - the Festival of Spring 2026 | London City Hall",
+          "url": "https://www.london.gov.uk/events/lunar-new-year-festival-spring-2026"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/london-games-festival-2026",
+          "title": "London Games Festival 2026 | London City Hall",
+          "fetched_at": "2026-10-23T22:10:13.407811+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 12421,
+          "indexed_body_anchor_hits": 0,
+          "indexed_body_anchor_total": 0,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_48",
+      "partition": "previous_71",
+      "group": "factual",
+      "query": "What is the entry price for Black on the Square 2027?",
+      "expected_kind": "fact_unknown",
+      "expected_value": "entry price",
+      "p33_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p34_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_49",
+      "partition": "previous_71",
+      "group": "factual",
+      "query": "What time does Eid on the Square 2027 start?",
+      "expected_kind": "fact_unknown",
+      "expected_value": "start time",
+      "p33_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p34_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_50",
+      "partition": "previous_71",
+      "group": "factual",
+      "query": "Did London Games Festival 2026 sell tickets?",
+      "expected_kind": "fact_unknown",
+      "expected_value": "ticket sales",
+      "p33_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p34_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p33_top_title": "London Games Festival 2026 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "London Games Festival 2026 | London City Hall",
+          "url": "https://www.london.gov.uk/events/london-games-festival-2026"
+        },
+        {
+          "title": "Lunar New Year - the Festival of Spring 2026 | London City Hall",
+          "url": "https://www.london.gov.uk/events/lunar-new-year-festival-spring-2026"
+        },
+        {
+          "title": "St Patrick’s Festival 2026 | London City Hall",
+          "url": "https://www.london.gov.uk/events/st-patricks-festival-2026"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/london-games-festival-2026",
+          "title": "London Games Festival 2026 | London City Hall",
+          "fetched_at": "2026-10-23T22:10:13.407811+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 12421,
+          "indexed_body_anchor_hits": 0,
+          "indexed_body_anchor_total": 0,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_51",
+      "partition": "previous_71",
+      "group": "factual",
+      "query": "Was London Data Week 2025 cancelled?",
+      "expected_kind": "fact_unknown",
+      "expected_value": "cancellation",
+      "p33_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p34_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_52",
+      "partition": "previous_71",
+      "group": "factual",
+      "query": "How many people attended London Open House 2024?",
+      "expected_kind": "fact_unknown",
+      "expected_value": "attendance",
+      "p33_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p34_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_53",
+      "partition": "previous_71",
+      "group": "factual",
+      "query": "What is the fee for a UK adult passport renewal?",
+      "expected_kind": "fact_unknown",
+      "expected_value": "fees",
+      "p33_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p34_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_54",
+      "partition": "previous_71",
+      "group": "factual",
+      "query": "What steps are needed to register with a GP?",
+      "expected_kind": "fact_unknown",
+      "expected_value": "registration steps",
+      "p33_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p34_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_55",
+      "partition": "previous_71",
+      "group": "factual",
+      "query": "Which London events in 2027 have wheelchair access?",
+      "expected_kind": "fact_unknown",
+      "expected_value": "accessibility",
+      "p33_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p34_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p33_top_title": "Eid on the Square 2027 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Eid on the Square 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/eid"
+        },
+        {
+          "title": "Black On The Square 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/black-square-2027"
+        },
+        {
+          "title": "St Patrick’s Festival 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/st-patricks-day"
+        },
+        {
+          "title": "7/7 Memorial Service 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/77-memorial-service-2027"
+        },
+        {
+          "title": "Armed Forces Day 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/armed-forces-day-2027"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/eid",
+          "title": "Eid on the Square 2027 | London City Hall",
+          "fetched_at": "2026-10-25T16:32:22.418024+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 23863,
+          "indexed_body_anchor_hits": 0,
+          "indexed_body_anchor_total": 0,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_56",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "Apply for a provisional drivers permit",
+      "expected_kind": "url",
+      "expected_value": "/apply-first-provisional-driving-licence",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Apply for your first provisional driving licence - GOV.UK",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Apply for your first provisional driving licence - GOV.UK",
+          "url": "https://www.gov.uk/apply-first-provisional-driving-licence"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.gov.uk/apply-first-provisional-driving-licence",
+          "title": "Apply for your first provisional driving licence - GOV.UK",
+          "fetched_at": "2026-10-23T16:32:07.525978+00:00",
+          "source_id": "uk_services",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 6300,
+          "indexed_body_anchor_hits": 3,
+          "indexed_body_anchor_total": 3,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_57",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "Renew or replace a passport in England",
+      "expected_kind": "url",
+      "expected_value": "/renew-adult-passport/renew",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Renew or replace your adult passport: Renew - GOV.UK",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Renew or replace your adult passport: Renew - GOV.UK",
+          "url": "https://www.gov.uk/renew-adult-passport/renew"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.gov.uk/renew-adult-passport/renew",
+          "title": "Renew or replace your adult passport: Renew - GOV.UK",
+          "fetched_at": "2026-10-23T16:32:11.717956+00:00",
+          "source_id": "uk_services",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 4890,
+          "indexed_body_anchor_hits": 3,
+          "indexed_body_anchor_total": 3,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_58",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "What do I need to register with a GP near my home?",
+      "expected_kind": "url",
+      "expected_value": "/how-to-register-with-a-gp-surgery/",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Register with a GP surgery - NHS",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Register with a GP surgery - NHS",
+          "url": "https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/",
+          "title": "Register with a GP surgery - NHS",
+          "fetched_at": "2026-10-23T16:32:19.089770+00:00",
+          "source_id": "nhs_services",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 7162,
+          "indexed_body_anchor_hits": 1,
+          "indexed_body_anchor_total": 1,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_59",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "Eid celebration at Trafalgar Square 2026",
+      "expected_kind": "url",
+      "expected_value": "/events/eid-square-2026",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Eid on the Square 2026 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Eid on the Square 2026 | London City Hall",
+          "url": "https://www.london.gov.uk/events/eid-square-2026"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/eid-square-2026",
+          "title": "Eid on the Square 2026 | London City Hall",
+          "fetched_at": "2026-10-25T16:30:27.615329+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 30299,
+          "indexed_body_anchor_hits": 2,
+          "indexed_body_anchor_total": 2,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_60",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "UK Black Pride scheduled for 2025",
+      "expected_kind": "url",
+      "expected_value": "/events/uk-black-pride-2025",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "UK Black Pride 2025 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "UK Black Pride 2025 | London City Hall",
+          "url": "https://www.london.gov.uk/events/uk-black-pride-2025"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/uk-black-pride-2025",
+          "title": "UK Black Pride 2025 | London City Hall",
+          "fetched_at": "2026-10-25T16:34:11.240319+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 10541,
+          "indexed_body_anchor_hits": 2,
+          "indexed_body_anchor_total": 2,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_61",
+      "partition": "previous_71",
+      "group": "direct",
+      "query": "Guide for replacing a lost UK adult passport",
+      "expected_kind": "url",
+      "expected_value": "/renew-adult-passport/renew",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Renew or replace your adult passport: Renew - GOV.UK",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Renew or replace your adult passport: Renew - GOV.UK",
+          "url": "https://www.gov.uk/renew-adult-passport/renew"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.gov.uk/renew-adult-passport/renew",
+          "title": "Renew or replace your adult passport: Renew - GOV.UK",
+          "fetched_at": "2026-10-23T16:32:11.717956+00:00",
+          "source_id": "uk_services",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 4890,
+          "indexed_body_anchor_hits": 3,
+          "indexed_body_anchor_total": 3,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_62",
+      "partition": "previous_71",
+      "group": "negative",
+      "query": "London events in 2027 but not Eid",
+      "expected_kind": "exclude",
+      "expected_value": "/events/eid",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Black On The Square 2027 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Black On The Square 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/black-square-2027"
+        },
+        {
+          "title": "St Patrick’s Festival 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/st-patricks-day"
+        },
+        {
+          "title": "7/7 Memorial Service 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/77-memorial-service-2027"
+        },
+        {
+          "title": "Armed Forces Day 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/armed-forces-day-2027"
+        },
+        {
+          "title": "Gypsy, Roma and Traveller History Month 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/gypsy-roma-and-traveller-history-month-2027"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/black-square-2027",
+          "title": "Black On The Square 2027 | London City Hall",
+          "fetched_at": "2026-10-25T16:31:53.561421+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 25270,
+          "indexed_body_anchor_hits": 0,
+          "indexed_body_anchor_total": 0,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_63",
+      "partition": "previous_71",
+      "group": "negative",
+      "query": "Which London events in 2027 aren't free?",
+      "expected_kind": "fact_unknown",
+      "expected_value": "free entry",
+      "p33_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p34_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p33_top_title": "Eid on the Square 2027 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Eid on the Square 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/eid"
+        },
+        {
+          "title": "Black On The Square 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/black-square-2027"
+        },
+        {
+          "title": "St Patrick’s Festival 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/st-patricks-day"
+        },
+        {
+          "title": "7/7 Memorial Service 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/77-memorial-service-2027"
+        },
+        {
+          "title": "Armed Forces Day 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/armed-forces-day-2027"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/eid",
+          "title": "Eid on the Square 2027 | London City Hall",
+          "fetched_at": "2026-10-25T16:32:22.418024+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 23863,
+          "indexed_body_anchor_hits": 0,
+          "indexed_body_anchor_total": 0,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_64",
+      "partition": "previous_71",
+      "group": "negative",
+      "query": "What Manchester events will happen in 2027?",
+      "expected_kind": "withhold",
+      "expected_value": "",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_65",
+      "partition": "previous_71",
+      "group": "negative",
+      "query": "Eid on the Square 2027 except Eid",
+      "expected_kind": "withhold",
+      "expected_value": "",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_66",
+      "partition": "previous_71",
+      "group": "negative",
+      "query": "Diwali on the Square 2026 in Berlin",
+      "expected_kind": "withhold",
+      "expected_value": "",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_67",
+      "partition": "previous_71",
+      "group": "catalog",
+      "query": "Government service applications on GOV.UK",
+      "expected_kind": "gov_catalog",
+      "expected_value": "gov.uk",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Apply for your first provisional driving licence - GOV.UK",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Apply for your first provisional driving licence - GOV.UK",
+          "url": "https://www.gov.uk/apply-first-provisional-driving-licence"
+        },
+        {
+          "title": "Check your Council Tax band - GOV.UK",
+          "url": "https://www.gov.uk/council-tax-bands"
+        },
+        {
+          "title": "Register to vote - GOV.UK",
+          "url": "https://www.gov.uk/register-to-vote"
+        },
+        {
+          "title": "Renew or replace your adult passport: Renew - GOV.UK",
+          "url": "https://www.gov.uk/renew-adult-passport/renew"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.gov.uk/apply-first-provisional-driving-licence",
+          "title": "Apply for your first provisional driving licence - GOV.UK",
+          "fetched_at": "2026-10-23T16:32:07.525978+00:00",
+          "source_id": "uk_services",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 6300,
+          "indexed_body_anchor_hits": 0,
+          "indexed_body_anchor_total": 0,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_68",
+      "partition": "previous_71",
+      "group": "catalog",
+      "query": "Which festivals were held in London in 2025?",
+      "expected_kind": "year_festival",
+      "expected_value": "2025",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "London Games Festival 2025 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "London Games Festival 2025 | London City Hall",
+          "url": "https://www.london.gov.uk/events/london-games-festival-2025"
+        },
+        {
+          "title": "St Patrick’s Festival 2025 | London City Hall",
+          "url": "https://www.london.gov.uk/events/st-patricks-festival-2025"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/london-games-festival-2025",
+          "title": "London Games Festival 2025 | London City Hall",
+          "fetched_at": "2026-10-25T16:30:39.415310+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 12898,
+          "indexed_body_anchor_hits": 0,
+          "indexed_body_anchor_total": 0,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_69",
+      "partition": "previous_71",
+      "group": "factual",
+      "query": "Do tickets remain available for London New Year’s Eve 2026?",
+      "expected_kind": "fact_unknown",
+      "expected_value": "tickets",
+      "p33_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p34_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_70",
+      "partition": "previous_71",
+      "group": "factual",
+      "query": "Are there step-free routes at London Open House 2026?",
+      "expected_kind": "fact_unknown",
+      "expected_value": "accessibility",
+      "p33_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p34_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_71_71",
+      "partition": "previous_71",
+      "group": "factual",
+      "query": "What is the source-confirmed event date for Eid 2027?",
+      "expected_kind": "fact_unknown",
+      "expected_value": "event date",
+      "p33_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p34_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_18_01",
+      "partition": "previous_18",
+      "group": "direct",
+      "query": "2025 UK Black Pride event",
+      "expected_kind": "url",
+      "expected_value": "/events/uk-black-pride-2025",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "UK Black Pride 2025 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "UK Black Pride 2025 | London City Hall",
+          "url": "https://www.london.gov.uk/events/uk-black-pride-2025"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/uk-black-pride-2025",
+          "title": "UK Black Pride 2025 | London City Hall",
+          "fetched_at": "2026-10-25T16:34:11.240319+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 10541,
+          "indexed_body_anchor_hits": 2,
+          "indexed_body_anchor_total": 2,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_18_02",
+      "partition": "previous_18",
+      "group": "direct",
+      "query": "NHS information about booking a blood test",
+      "expected_kind": "url",
+      "expected_value": "/tests-and-treatments/blood-tests/",
+      "p33_label": "POTENTIAL_RETRIEVAL_ERROR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Blood tests - NHS",
+          "url": "https://www.nhs.uk/tests-and-treatments/blood-tests/"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.nhs.uk/tests-and-treatments/blood-tests/",
+          "title": "Blood tests - NHS",
+          "fetched_at": "2026-10-24T19:07:44.123763+00:00",
+          "source_id": "nhs_services",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 4656,
+          "indexed_body_anchor_hits": 4,
+          "indexed_body_anchor_total": 4,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_18_03",
+      "partition": "previous_18",
+      "group": "direct",
+      "query": "Where to replace my UK adult passport?",
+      "expected_kind": "url",
+      "expected_value": "/renew-adult-passport/renew",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Renew or replace your adult passport: Renew - GOV.UK",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Renew or replace your adult passport: Renew - GOV.UK",
+          "url": "https://www.gov.uk/renew-adult-passport/renew"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.gov.uk/renew-adult-passport/renew",
+          "title": "Renew or replace your adult passport: Renew - GOV.UK",
+          "fetched_at": "2026-10-23T16:32:11.717956+00:00",
+          "source_id": "uk_services",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 4890,
+          "indexed_body_anchor_hits": 3,
+          "indexed_body_anchor_total": 3,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_18_04",
+      "partition": "previous_18",
+      "group": "direct",
+      "query": "How does a GP surgery registration work?",
+      "expected_kind": "url",
+      "expected_value": "/how-to-register-with-a-gp-surgery/",
+      "p33_label": "POTENTIAL_RETRIEVAL_ERROR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Register with a GP surgery - NHS",
+          "url": "https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/",
+          "title": "Register with a GP surgery - NHS",
+          "fetched_at": "2026-10-23T16:32:19.089770+00:00",
+          "source_id": "nhs_services",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 7162,
+          "indexed_body_anchor_hits": 2,
+          "indexed_body_anchor_total": 2,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_18_05",
+      "partition": "previous_18",
+      "group": "catalog",
+      "query": "List London events for 2027",
+      "expected_kind": "year_event",
+      "expected_value": "2027",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Eid on the Square 2027 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Eid on the Square 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/eid"
+        },
+        {
+          "title": "Black On The Square 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/black-square-2027"
+        },
+        {
+          "title": "St Patrick’s Festival 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/st-patricks-day"
+        },
+        {
+          "title": "7/7 Memorial Service 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/77-memorial-service-2027"
+        },
+        {
+          "title": "Armed Forces Day 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/armed-forces-day-2027"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/eid",
+          "title": "Eid on the Square 2027 | London City Hall",
+          "fetched_at": "2026-10-25T16:32:22.418024+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 23863,
+          "indexed_body_anchor_hits": 0,
+          "indexed_body_anchor_total": 0,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_18_06",
+      "partition": "previous_18",
+      "group": "catalog",
+      "query": "What were the London Open House editions?",
+      "expected_kind": "series",
+      "expected_value": "open house",
+      "p33_label": "POTENTIAL_RETRIEVAL_ERROR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "London Open House 2025 | London City Hall",
+          "url": "https://www.london.gov.uk/events/london-open-house-2025"
+        },
+        {
+          "title": "London Open House 2024 | London City Hall",
+          "url": "https://www.london.gov.uk/events/london-open-house-2024"
+        },
+        {
+          "title": "London Open House 2023 | London City Hall",
+          "url": "https://www.london.gov.uk/events/london-open-house-2023"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/london-open-house-2025",
+          "title": "London Open House 2025 | London City Hall",
+          "fetched_at": "2026-10-25T16:30:50.383708+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 13342,
+          "indexed_body_anchor_hits": 2,
+          "indexed_body_anchor_total": 2,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_18_07",
+      "partition": "previous_18",
+      "group": "catalog",
+      "query": "What can I apply for through government online services?",
+      "expected_kind": "gov_catalog",
+      "expected_value": "gov.uk",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Apply for your first provisional driving licence - GOV.UK",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Apply for your first provisional driving licence - GOV.UK",
+          "url": "https://www.gov.uk/apply-first-provisional-driving-licence"
+        },
+        {
+          "title": "Check your Council Tax band - GOV.UK",
+          "url": "https://www.gov.uk/council-tax-bands"
+        },
+        {
+          "title": "Register to vote - GOV.UK",
+          "url": "https://www.gov.uk/register-to-vote"
+        },
+        {
+          "title": "Renew or replace your adult passport: Renew - GOV.UK",
+          "url": "https://www.gov.uk/renew-adult-passport/renew"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.gov.uk/apply-first-provisional-driving-licence",
+          "title": "Apply for your first provisional driving licence - GOV.UK",
+          "fetched_at": "2026-10-23T16:32:07.525978+00:00",
+          "source_id": "uk_services",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 6300,
+          "indexed_body_anchor_hits": 0,
+          "indexed_body_anchor_total": 0,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_18_08",
+      "partition": "previous_18",
+      "group": "negative",
+      "query": "London events 2027 apart from Eid",
+      "expected_kind": "exclude",
+      "expected_value": "/events/eid",
+      "p33_label": "POTENTIAL_RETRIEVAL_ERROR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Eid on the Square 2027 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Black On The Square 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/black-square-2027"
+        },
+        {
+          "title": "St Patrick’s Festival 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/st-patricks-day"
+        },
+        {
+          "title": "7/7 Memorial Service 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/77-memorial-service-2027"
+        },
+        {
+          "title": "Armed Forces Day 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/armed-forces-day-2027"
+        },
+        {
+          "title": "Gypsy, Roma and Traveller History Month 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/gypsy-roma-and-traveller-history-month-2027"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/black-square-2027",
+          "title": "Black On The Square 2027 | London City Hall",
+          "fetched_at": "2026-10-25T16:31:53.561421+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 25270,
+          "indexed_body_anchor_hits": 0,
+          "indexed_body_anchor_total": 0,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_18_09",
+      "partition": "previous_18",
+      "group": "negative",
+      "query": "Events in Paris in 2027",
+      "expected_kind": "withhold",
+      "expected_value": "",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_18_10",
+      "partition": "previous_18",
+      "group": "negative",
+      "query": "New York Pride festival in 2025",
+      "expected_kind": "withhold",
+      "expected_value": "",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_18_11",
+      "partition": "previous_18",
+      "group": "negative",
+      "query": "Diwali on the Square 2035",
+      "expected_kind": "withhold",
+      "expected_value": "",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_18_12",
+      "partition": "previous_18",
+      "group": "negative",
+      "query": "London events 2027 only in Manchester",
+      "expected_kind": "withhold",
+      "expected_value": "",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_CONTRADICTORY_GEOGRAPHY",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_18_13",
+      "partition": "previous_18",
+      "group": "negative",
+      "query": "Will it rain in Oxford tomorrow?",
+      "expected_kind": "withhold",
+      "expected_value": "",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_UNVERIFIED_LIVE_DATA",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_18_14",
+      "partition": "previous_18",
+      "group": "negative",
+      "query": "Is a new laptop available in stock right now?",
+      "expected_kind": "withhold",
+      "expected_value": "",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_UNVERIFIED_LIVE_DATA",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_18_15",
+      "partition": "previous_18",
+      "group": "factual",
+      "query": "Is St George's Day London 2025 free to attend?",
+      "expected_kind": "fact_unknown",
+      "expected_value": "admission",
+      "p33_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p34_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_18_16",
+      "partition": "previous_18",
+      "group": "factual",
+      "query": "Does the Eid on the Square 2027 webpage confirm its opening time?",
+      "expected_kind": "fact_unknown",
+      "expected_value": "start time",
+      "p33_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p34_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_18_17",
+      "partition": "previous_18",
+      "group": "factual",
+      "query": "Were all tickets sold for London New Year's Eve 2026?",
+      "expected_kind": "fact_unknown",
+      "expected_value": "tickets",
+      "p33_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p34_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "previous_18_18",
+      "partition": "previous_18",
+      "group": "factual",
+      "query": "How much is a UK provisional driving licence this month?",
+      "expected_kind": "fact_unknown",
+      "expected_value": "fee",
+      "p33_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p34_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "fresh_20_untouched_01",
+      "partition": "fresh_20_untouched",
+      "group": "direct",
+      "query": "How can I register as an NHS patient with a doctor?",
+      "expected_kind": "url",
+      "expected_value": "/nhs-services/gps/how-to-register-with-a-gp-surgery/",
+      "p33_label": "POTENTIAL_RETRIEVAL_ERROR",
+      "p34_label": "POTENTIAL_RETRIEVAL_ERROR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "fresh_20_untouched_02",
+      "partition": "fresh_20_untouched",
+      "group": "direct",
+      "query": "NHS blood screening test instructions",
+      "expected_kind": "url",
+      "expected_value": "/tests-and-treatments/blood-tests/",
+      "p33_label": "POTENTIAL_RETRIEVAL_ERROR",
+      "p34_label": "POTENTIAL_RETRIEVAL_ERROR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "fresh_20_untouched_03",
+      "partition": "fresh_20_untouched",
+      "group": "direct",
+      "query": "Getting a temporary drivers permit in the UK",
+      "expected_kind": "url",
+      "expected_value": "/apply-first-provisional-driving-licence",
+      "p33_label": "POTENTIAL_RETRIEVAL_ERROR",
+      "p34_label": "POTENTIAL_RETRIEVAL_ERROR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "fresh_20_untouched_04",
+      "partition": "fresh_20_untouched",
+      "group": "direct",
+      "query": "Help me enrol for voting in England",
+      "expected_kind": "url",
+      "expected_value": "/register-to-vote",
+      "p33_label": "POTENTIAL_RETRIEVAL_ERROR",
+      "p34_label": "POTENTIAL_RETRIEVAL_ERROR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "fresh_20_untouched_05",
+      "partition": "fresh_20_untouched",
+      "group": "direct",
+      "query": "JavaScript learning introduction",
+      "expected_kind": "url",
+      "expected_value": "/What_is_JavaScript",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "What is JavaScript? - Learn web development | MDN",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "What is JavaScript? - Learn web development | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript",
+          "title": "What is JavaScript? - Learn web development | MDN",
+          "fetched_at": "2026-10-24T19:07:38.825042+00:00",
+          "source_id": "mdn_http",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 31626,
+          "indexed_body_anchor_hits": 1,
+          "indexed_body_anchor_total": 1,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "fresh_20_untouched_06",
+      "partition": "fresh_20_untouched",
+      "group": "direct",
+      "query": "City Hall Open House 2026",
+      "expected_kind": "url",
+      "expected_value": "/events/city-hall-open-house-2026",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "City Hall Open House 2026 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "City Hall Open House 2026 | London City Hall",
+          "url": "https://www.london.gov.uk/events/city-hall-open-house-2026"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/city-hall-open-house-2026",
+          "title": "City Hall Open House 2026 | London City Hall",
+          "fetched_at": "2026-10-23T22:10:08.373595+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 11627,
+          "indexed_body_anchor_hits": 2,
+          "indexed_body_anchor_total": 2,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "fresh_20_untouched_07",
+      "partition": "fresh_20_untouched",
+      "group": "direct",
+      "query": "Black on the Square festival 2027",
+      "expected_kind": "url",
+      "expected_value": "/events/black-square-2027",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Black On The Square 2027 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Black On The Square 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/black-square-2027"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/black-square-2027",
+          "title": "Black On The Square 2027 | London City Hall",
+          "fetched_at": "2026-10-25T16:31:53.561421+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 25270,
+          "indexed_body_anchor_hits": 2,
+          "indexed_body_anchor_total": 2,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "fresh_20_untouched_08",
+      "partition": "fresh_20_untouched",
+      "group": "catalog",
+      "query": "London celebrations planned for 2027",
+      "expected_kind": "year_celebration",
+      "expected_value": "2027",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Eid on the Square 2027 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Eid on the Square 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/eid"
+        },
+        {
+          "title": "Black On The Square 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/black-square-2027"
+        },
+        {
+          "title": "St Patrick’s Festival 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/st-patricks-day"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/eid",
+          "title": "Eid on the Square 2027 | London City Hall",
+          "fetched_at": "2026-10-25T16:32:22.418024+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 23863,
+          "indexed_body_anchor_hits": 0,
+          "indexed_body_anchor_total": 0,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "fresh_20_untouched_09",
+      "partition": "fresh_20_untouched",
+      "group": "catalog",
+      "query": "Events happening around London in the year 2025",
+      "expected_kind": "year_event",
+      "expected_value": "2025",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Diwali on the Square 2025 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Diwali on the Square 2025 | London City Hall",
+          "url": "https://www.london.gov.uk/events/diwali-square-2025"
+        },
+        {
+          "title": "Eid on the Square 2025 | London City Hall",
+          "url": "https://www.london.gov.uk/events/eid-square-2025"
+        },
+        {
+          "title": "Black On The Square 2025 | London City Hall",
+          "url": "https://www.london.gov.uk/events/black-square-2025"
+        },
+        {
+          "title": "Chanukah on the Square 2025 | London City Hall",
+          "url": "https://www.london.gov.uk/events/chanukah-square-2025"
+        },
+        {
+          "title": "London Games Festival 2025 | London City Hall",
+          "url": "https://www.london.gov.uk/events/london-games-festival-2025"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/diwali-square-2025",
+          "title": "Diwali on the Square 2025 | London City Hall",
+          "fetched_at": "2026-10-25T16:32:17.887271+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 20262,
+          "indexed_body_anchor_hits": 0,
+          "indexed_body_anchor_total": 0,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "fresh_20_untouched_10",
+      "partition": "fresh_20_untouched",
+      "group": "catalog",
+      "query": "Which official online services can I access through GOV.UK?",
+      "expected_kind": "gov_catalog",
+      "expected_value": "gov.uk",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Apply for your first provisional driving licence - GOV.UK",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Apply for your first provisional driving licence - GOV.UK",
+          "url": "https://www.gov.uk/apply-first-provisional-driving-licence"
+        },
+        {
+          "title": "Check your Council Tax band - GOV.UK",
+          "url": "https://www.gov.uk/council-tax-bands"
+        },
+        {
+          "title": "Register to vote - GOV.UK",
+          "url": "https://www.gov.uk/register-to-vote"
+        },
+        {
+          "title": "Renew or replace your adult passport: Renew - GOV.UK",
+          "url": "https://www.gov.uk/renew-adult-passport/renew"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.gov.uk/apply-first-provisional-driving-licence",
+          "title": "Apply for your first provisional driving licence - GOV.UK",
+          "fetched_at": "2026-10-23T16:32:07.525978+00:00",
+          "source_id": "uk_services",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 6300,
+          "indexed_body_anchor_hits": 0,
+          "indexed_body_anchor_total": 0,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "fresh_20_untouched_11",
+      "partition": "fresh_20_untouched",
+      "group": "catalog",
+      "query": "Previous years of St George’s Day London events",
+      "expected_kind": "series",
+      "expected_value": "st george",
+      "p33_label": "POTENTIAL_RETRIEVAL_ERROR",
+      "p34_label": "POTENTIAL_RETRIEVAL_ERROR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "fresh_20_untouched_12",
+      "partition": "fresh_20_untouched",
+      "group": "negative",
+      "query": "London events 2027 excluding St Patrick’s Festival",
+      "expected_kind": "exclude",
+      "expected_value": "/events/st-patricks-day",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": "Eid on the Square 2027 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Eid on the Square 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/eid"
+        },
+        {
+          "title": "Black On The Square 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/black-square-2027"
+        },
+        {
+          "title": "7/7 Memorial Service 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/77-memorial-service-2027"
+        },
+        {
+          "title": "Armed Forces Day 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/armed-forces-day-2027"
+        },
+        {
+          "title": "Gypsy, Roma and Traveller History Month 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/gypsy-roma-and-traveller-history-month-2027"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/eid",
+          "title": "Eid on the Square 2027 | London City Hall",
+          "fetched_at": "2026-10-25T16:32:22.418024+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 23863,
+          "indexed_body_anchor_hits": 0,
+          "indexed_body_anchor_total": 0,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "fresh_20_untouched_13",
+      "partition": "fresh_20_untouched",
+      "group": "negative",
+      "query": "London festival events 2026 without London Games Festival",
+      "expected_kind": "exclude",
+      "expected_value": "/events/london-games-festival-2026",
+      "p33_label": "POTENTIAL_RETRIEVAL_ERROR",
+      "p34_label": "POTENTIAL_RETRIEVAL_ERROR",
+      "p33_top_title": "London Games Festival 2026 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "London Games Festival 2026 | London City Hall",
+          "url": "https://www.london.gov.uk/events/london-games-festival-2026"
+        },
+        {
+          "title": "Lunar New Year - the Festival of Spring 2026 | London City Hall",
+          "url": "https://www.london.gov.uk/events/lunar-new-year-festival-spring-2026"
+        },
+        {
+          "title": "St Patrick’s Festival 2026 | London City Hall",
+          "url": "https://www.london.gov.uk/events/st-patricks-festival-2026"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/london-games-festival-2026",
+          "title": "London Games Festival 2026 | London City Hall",
+          "fetched_at": "2026-10-23T22:10:13.407811+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 12421,
+          "indexed_body_anchor_hits": 0,
+          "indexed_body_anchor_total": 0,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "fresh_20_untouched_14",
+      "partition": "fresh_20_untouched",
+      "group": "negative",
+      "query": "Events in Berlin during 2027",
+      "expected_kind": "withhold",
+      "expected_value": "",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "fresh_20_untouched_15",
+      "partition": "fresh_20_untouched",
+      "group": "negative",
+      "query": "What is the weather in Manchester tomorrow?",
+      "expected_kind": "withhold",
+      "expected_value": "",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_UNVERIFIED_LIVE_DATA",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "fresh_20_untouched_16",
+      "partition": "fresh_20_untouched",
+      "group": "negative",
+      "query": "Diwali on the Square 2039",
+      "expected_kind": "withhold",
+      "expected_value": "",
+      "p33_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p34_label": "EXPECTED_RETRIEVAL_BEHAVIOUR",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "fresh_20_untouched_17",
+      "partition": "fresh_20_untouched",
+      "group": "factual",
+      "query": "What was the exact start time of Eid on the Square 2027?",
+      "expected_kind": "fact_unknown",
+      "expected_value": "start",
+      "p33_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p34_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "fresh_20_untouched_18",
+      "partition": "fresh_20_untouched",
+      "group": "factual",
+      "query": "How much is passport renewal today?",
+      "expected_kind": "fact_unknown",
+      "expected_value": "fee",
+      "p33_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p34_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "fresh_20_untouched_19",
+      "partition": "fresh_20_untouched",
+      "group": "factual",
+      "query": "Was St Patrick’s Festival 2027 cancelled?",
+      "expected_kind": "fact_unknown",
+      "expected_value": "cancellation",
+      "p33_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p34_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p33_top_title": null,
+      "p34_status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "p34_results": [],
+      "body_signals": [],
+      "factual_answer_verified": false
+    },
+    {
+      "id": "fresh_20_untouched_20",
+      "partition": "fresh_20_untouched",
+      "group": "factual",
+      "query": "Which 2027 London events require paid tickets?",
+      "expected_kind": "fact_unknown",
+      "expected_value": "ticket",
+      "p33_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p34_label": "UNVERIFIED_FACT_NEEDS_SOURCE_EVIDENCE",
+      "p33_top_title": "Eid on the Square 2027 | London City Hall",
+      "p34_status": "MATCHES_UNVERIFIED",
+      "p34_results": [
+        {
+          "title": "Eid on the Square 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/eid"
+        },
+        {
+          "title": "Black On The Square 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/black-square-2027"
+        },
+        {
+          "title": "St Patrick’s Festival 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/st-patricks-day"
+        },
+        {
+          "title": "7/7 Memorial Service 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/77-memorial-service-2027"
+        },
+        {
+          "title": "Armed Forces Day 2027 | London City Hall",
+          "url": "https://www.london.gov.uk/events/armed-forces-day-2027"
+        }
+      ],
+      "body_signals": [
+        {
+          "url": "https://www.london.gov.uk/events/eid",
+          "title": "Eid on the Square 2027 | London City Hall",
+          "fetched_at": "2026-10-25T16:32:22.418024+00:00",
+          "source_id": "london_events_p14",
+          "display_mode": "metadata_only",
+          "indexed_body_chars": 23863,
+          "indexed_body_anchor_hits": 0,
+          "indexed_body_anchor_total": 0,
+          "evidence_status": "INDEXED_TEXT_SIGNALS_ONLY_NOT_FACT_VERIFIED",
+          "publisher_body_exported": false
+        }
+      ],
+      "factual_answer_verified": false
+    }
+  ],
+  "limitations": [
+    "Retrieval expected URL is a proxy, not an answer",
+    "Fresh-20 authored after candidate freeze but not independently human graded",
+    "Body term presence is not proof of accurate time, place, tickets, law or health guidance",
+    "No publisher body exported",
+    "Only 120 pages/7 approved origins"
+  ]
+}

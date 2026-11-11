@@ -1,0 +1,76 @@
+[
+  {
+    "source_id": "london_nye",
+    "origin": "https://www.london.gov.uk",
+    "allowed_paths": [
+      "/media-centre/mayors-press-release/"
+    ],
+    "rights_basis": "Public City Hall NYE ticket page, for private technical search indexing only; no photos, excerpts or rights claim for commercial redistribution; review rights before any subscriber display.",
+    "collection_approved": true,
+    "display_mode": "metadata_only"
+  },
+  {
+    "source_id": "uk_services",
+    "origin": "https://www.gov.uk",
+    "allowed_paths": [
+      "/renew-adult-passport/renew",
+      "/register-to-vote",
+      "/apply-first-provisional-driving-licence"
+    ],
+    "rights_basis": "GOV.UK public content usually available under Open Government Licence v3.0 with exclusions/attribution; linking may not be charged per click without permission; internal metadata-only search research, no subscriber commercial release authorised.",
+    "collection_approved": true,
+    "display_mode": "metadata_only"
+  },
+  {
+    "source_id": "nhs_services",
+    "origin": "https://www.nhs.uk",
+    "allowed_paths": [
+      "/nhs-services/gps/how-to-register-with-a-gp-surgery/",
+      "/nhs-services/prescriptions/how-to-order-a-repeat-prescription/",
+      "/nhs-services/dentists/how-to-find-an-nhs-dentist/"
+    ],
+    "rights_basis": "NHS website terms release most page text under Open Government Licence with source attribution, excluded images/third-party content and currency requirements; internal metadata-only search research, no medical advice or subscriber redistribution.",
+    "collection_approved": true,
+    "display_mode": "metadata_only"
+  },
+  {
+    "source_id": "mdn_http",
+    "origin": "https://developer.mozilla.org",
+    "allowed_paths": [
+      "/en-US/docs/Web/HTTP"
+    ],
+    "rights_basis": "MDN documentation includes CC-licensed content with attribution and restrictions; only one known HTTP information page is used for internal metadata-only indexing.",
+    "collection_approved": true,
+    "display_mode": "metadata_only"
+  },
+  {
+    "source_id": "sqlite_sql",
+    "origin": "https://www.sqlite.org",
+    "allowed_paths": [
+      "/lang.html"
+    ],
+    "rights_basis": "SQLite language public documentation, public-domain licensing reviewed at site-level; internal metadata-only pilot, source attribution retained.",
+    "collection_approved": true,
+    "display_mode": "metadata_only"
+  },
+  {
+    "source_id": "python_guide",
+    "origin": "https://docs.python.org",
+    "allowed_paths": [
+      "/3/tutorial/index.html"
+    ],
+    "rights_basis": "Python documentation subject to PSF documentation licence and site-specific terms; internal metadata-only pilot with original source URL.",
+    "collection_approved": true,
+    "display_mode": "metadata_only"
+  },
+  {
+    "source_id": "robots_rfc",
+    "origin": "https://www.rfc-editor.org",
+    "allowed_paths": [
+      "/rfc/rfc9309.html"
+    ],
+    "rights_basis": "IETF Trust governs RFC licensing and derivative usage; link and metadata only for internal crawl standards benchmark; no reproduction.",
+    "collection_approved": true,
+    "display_mode": "metadata_only"
+  }
+]

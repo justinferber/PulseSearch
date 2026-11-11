@@ -1,0 +1,81 @@
+[
+  {
+    "id": "q01",
+    "q": "What events are happening in London for New Year's Eve 2026?",
+    "category": "events",
+    "target_sources": [
+      "london_nye"
+    ],
+    "answer_intent": "Needs event-specific information for 31 Dec 2026; a generic London guide alone is insufficient."
+  },
+  {
+    "id": "q02",
+    "q": "When do London New Year's Eve 2026 fireworks tickets go on sale?",
+    "category": "events",
+    "target_sources": [
+      "london_nye"
+    ],
+    "answer_intent": "Needs the official sale date and ticket source, not a previous-year answer."
+  },
+  {
+    "id": "q03",
+    "q": "How do I renew my UK adult passport online?",
+    "category": "government",
+    "target_sources": [
+      "uk_passport"
+    ],
+    "answer_intent": "Needs a reliable renewal procedure and the official online route."
+  },
+  {
+    "id": "q04",
+    "q": "How can I register with an NHS GP surgery in England?",
+    "category": "health_services",
+    "target_sources": [
+      "nhs_gp"
+    ],
+    "answer_intent": "Needs actual registration guidance, not unrelated health pages."
+  },
+  {
+    "id": "q05",
+    "q": "What is HTTP?",
+    "category": "technology",
+    "target_sources": [
+      "mdn_http"
+    ],
+    "answer_intent": "Needs an explanation of HTTP and how it functions."
+  },
+  {
+    "id": "q06",
+    "q": "Where can I learn Python programming?",
+    "category": "education",
+    "target_sources": [
+      "python_guide"
+    ],
+    "answer_intent": "Needs a usable programming tutorial, not unrelated Python documentation."
+  },
+  {
+    "id": "q07",
+    "q": "Where is SQLite SQL syntax documented?",
+    "category": "technology",
+    "target_sources": [
+      "sqlite_sql"
+    ],
+    "answer_intent": "Needs SQLite query-language documentation."
+  },
+  {
+    "id": "q08",
+    "q": "What is the robots exclusion protocol?",
+    "category": "technology",
+    "target_sources": [
+      "robot_rfc"
+    ],
+    "answer_intent": "Needs the protocol definition or specification."
+  },
+  {
+    "id": "q09",
+    "q": "Which restaurants near me are open now?",
+    "category": "out_of_coverage",
+    "target_sources": [],
+    "answer_intent": "No location-aware restaurant sources are indexed; expected abstention/coverage gap."
+  }
+]

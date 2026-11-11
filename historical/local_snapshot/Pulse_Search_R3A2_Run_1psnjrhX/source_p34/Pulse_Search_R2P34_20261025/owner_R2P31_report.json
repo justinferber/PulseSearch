@@ -1,0 +1,746 @@
+{
+  "version": "R2-P31-SemanticFacet-Shadow-v1",
+  "status": "READ_ONLY_SHADOW_PROVISIONAL_PASS_NOT_DEPLOYED",
+  "owner_index_sha256_before_after": "bb8e52025a1a25f55141507a02621db190e54bf1fc4d4da8db4248357368c35d",
+  "indexed_pages": 120,
+  "benchmark_questions": 36,
+  "named_edition_expected_top1": 8,
+  "named_edition_correct": 8,
+  "paraphrase_and_broad_nonempty": 11,
+  "paraphrase_and_broad_total": 11,
+  "negative_controls_withheld": 5,
+  "known_human_benchmark_issues": [],
+  "new_public_network_requests": 0,
+  "paid_search_provider_calls": 0,
+  "db_writes": 0,
+  "questions": [
+    {
+      "id": "p31_01",
+      "query": "How can I book an NHS blood test in England?",
+      "kind": "subject",
+      "normalized_terms": [
+        "book",
+        "nhs",
+        "blood",
+        "test"
+      ],
+      "requested_year": null,
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.nhs.uk/tests-and-treatments/blood-tests/",
+          "title": "Blood tests - NHS",
+          "score": 69.75,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        }
+      ]
+    },
+    {
+      "id": "p31_02",
+      "query": "How can I register with a GP surgery?",
+      "kind": "subject",
+      "normalized_terms": [
+        "gp",
+        "surgery"
+      ],
+      "requested_year": null,
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/",
+          "title": "Register with a GP surgery - NHS",
+          "score": 69.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        }
+      ]
+    },
+    {
+      "id": "p31_03",
+      "query": "What council tax band is my property in?",
+      "kind": "subject",
+      "normalized_terms": [
+        "council",
+        "tax",
+        "band"
+      ],
+      "requested_year": null,
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.gov.uk/council-tax-bands",
+          "title": "Check your Council Tax band - GOV.UK",
+          "score": 81.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        }
+      ]
+    },
+    {
+      "id": "p31_04",
+      "query": "Where can I register to vote?",
+      "kind": "subject",
+      "normalized_terms": [
+        "vote"
+      ],
+      "requested_year": null,
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.gov.uk/register-to-vote",
+          "title": "Register to vote - GOV.UK",
+          "score": 57.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        }
+      ]
+    },
+    {
+      "id": "p31_05",
+      "query": "Where can I learn JavaScript programming?",
+      "kind": "subject",
+      "normalized_terms": [
+        "javascript"
+      ],
+      "requested_year": null,
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript",
+          "title": "What is JavaScript? - Learn web development | MDN",
+          "score": 62.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        }
+      ]
+    },
+    {
+      "id": "p31_06",
+      "query": "What is HTTP?",
+      "kind": "subject",
+      "normalized_terms": [
+        "http"
+      ],
+      "requested_year": null,
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP",
+          "title": "HTTP: Hypertext Transfer Protocol | MDN",
+          "score": 57.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        }
+      ]
+    },
+    {
+      "id": "p31_07",
+      "query": "What events are happening in London for New Year's Eve 2026?",
+      "kind": "subject",
+      "normalized_terms": [
+        "eve"
+      ],
+      "requested_year": "2026",
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.london.gov.uk/events/london-new-years-eve-2026",
+          "title": "London New Year's Eve 2026 | London City Hall",
+          "score": 66.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        },
+        {
+          "url": "https://www.london.gov.uk/events/london-new-years-eve-2026/london-new-years-eve-2026-information-businesses-and-residents",
+          "title": "London New Year’s Eve 2026: Information for businesses and residents | London City Hall",
+          "score": 47.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        }
+      ]
+    },
+    {
+      "id": "p31_08",
+      "query": "What is Diwali on the Square in London 2026?",
+      "kind": "subject",
+      "normalized_terms": [
+        "diwali",
+        "square"
+      ],
+      "requested_year": "2026",
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.london.gov.uk/events/diwali-square-2026",
+          "title": "Diwali on the Square 2026 | London City Hall",
+          "score": 78.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        }
+      ]
+    },
+    {
+      "id": "p31_09",
+      "query": "How do I renew my UK adult passport online?",
+      "kind": "subject",
+      "normalized_terms": [
+        "renew",
+        "adult",
+        "passport"
+      ],
+      "requested_year": null,
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.gov.uk/renew-adult-passport/renew",
+          "title": "Renew or replace your adult passport: Renew - GOV.UK",
+          "score": 81.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        }
+      ]
+    },
+    {
+      "id": "p31_10",
+      "query": "How do I apply for a first provisional driving licence?",
+      "kind": "subject",
+      "normalized_terms": [
+        "provisional",
+        "driving",
+        "licence"
+      ],
+      "requested_year": null,
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.gov.uk/apply-first-provisional-driving-licence",
+          "title": "Apply for your first provisional driving licence - GOV.UK",
+          "score": 81.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        }
+      ]
+    },
+    {
+      "id": "p31_11",
+      "query": "Which vegan shoe shops in Manchester are open now?",
+      "kind": "dynamic",
+      "normalized_terms": [],
+      "requested_year": null,
+      "status": "WITHHELD_UNVERIFIED_LIVE_DATA",
+      "results": []
+    },
+    {
+      "id": "p31_12",
+      "query": "Will it rain in Newbury tomorrow?",
+      "kind": "dynamic",
+      "normalized_terms": [],
+      "requested_year": null,
+      "status": "WITHHELD_UNVERIFIED_LIVE_DATA",
+      "results": []
+    },
+    {
+      "id": "p31_13",
+      "query": "Black on the Square 2027",
+      "kind": "subject",
+      "normalized_terms": [
+        "black",
+        "square"
+      ],
+      "requested_year": "2027",
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.london.gov.uk/events/black-square-2027",
+          "title": "Black On The Square 2027 | London City Hall",
+          "score": 78.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        }
+      ]
+    },
+    {
+      "id": "p31_14",
+      "query": "Armed Forces Day 2027",
+      "kind": "subject",
+      "normalized_terms": [
+        "armed",
+        "force",
+        "day"
+      ],
+      "requested_year": "2027",
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.london.gov.uk/events/armed-forces-day-2027",
+          "title": "Armed Forces Day 2027 | London City Hall",
+          "score": 90.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        }
+      ]
+    },
+    {
+      "id": "p31_15",
+      "query": "Eid on the Square 2027",
+      "kind": "subject",
+      "normalized_terms": [
+        "eid",
+        "square"
+      ],
+      "requested_year": "2027",
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.london.gov.uk/events/eid",
+          "title": "Eid on the Square 2027 | London City Hall",
+          "score": 78.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        }
+      ]
+    },
+    {
+      "id": "p31_16",
+      "query": "St Patrick's Festival 2027",
+      "kind": "subject",
+      "normalized_terms": [
+        "st",
+        "patrick"
+      ],
+      "requested_year": "2027",
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.london.gov.uk/events/st-patricks-day",
+          "title": "St Patrick’s Festival 2027 | London City Hall",
+          "score": 78.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        }
+      ]
+    },
+    {
+      "id": "p31_17",
+      "query": "Diwali on the Square 2025",
+      "kind": "subject",
+      "normalized_terms": [
+        "diwali",
+        "square"
+      ],
+      "requested_year": "2025",
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.london.gov.uk/events/diwali-square-2025",
+          "title": "Diwali on the Square 2025 | London City Hall",
+          "score": 78.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        }
+      ]
+    },
+    {
+      "id": "p31_18",
+      "query": "UK Black Pride 2025",
+      "kind": "subject",
+      "normalized_terms": [
+        "black",
+        "pride"
+      ],
+      "requested_year": "2025",
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.london.gov.uk/events/uk-black-pride-2025",
+          "title": "UK Black Pride 2025 | London City Hall",
+          "score": 78.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        }
+      ]
+    },
+    {
+      "id": "p31_19",
+      "query": "London Data Week 2025",
+      "kind": "subject",
+      "normalized_terms": [
+        "data",
+        "week"
+      ],
+      "requested_year": "2025",
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.london.gov.uk/events/london-data-week-2025",
+          "title": "London Data Week 2025 | London City Hall",
+          "score": 78.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        }
+      ]
+    },
+    {
+      "id": "p31_20",
+      "query": "7/7 Memorial Service 2027",
+      "kind": "subject",
+      "normalized_terms": [
+        "7",
+        "memorial"
+      ],
+      "requested_year": "2027",
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.london.gov.uk/events/77-memorial-service-2027",
+          "title": "7/7 Memorial Service 2027 | London City Hall",
+          "score": 78.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        }
+      ]
+    },
+    {
+      "id": "p31_21",
+      "query": "How do I get an NHS blood test?",
+      "kind": "subject",
+      "normalized_terms": [
+        "nhs",
+        "blood",
+        "test"
+      ],
+      "requested_year": null,
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.nhs.uk/tests-and-treatments/blood-tests/",
+          "title": "Blood tests - NHS",
+          "score": 81.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        }
+      ]
+    },
+    {
+      "id": "p31_22",
+      "query": "How to sign up with a family doctor surgery?",
+      "kind": "subject",
+      "normalized_terms": [
+        "gp",
+        "surgery"
+      ],
+      "requested_year": null,
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/",
+          "title": "Register with a GP surgery - NHS",
+          "score": 69.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        }
+      ]
+    },
+    {
+      "id": "p31_23",
+      "query": "Check the property tax band of my home",
+      "kind": "subject",
+      "normalized_terms": [
+        "council",
+        "tax",
+        "band"
+      ],
+      "requested_year": null,
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.gov.uk/council-tax-bands",
+          "title": "Check your Council Tax band - GOV.UK",
+          "score": 81.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        }
+      ]
+    },
+    {
+      "id": "p31_24",
+      "query": "Getting started learning JS coding",
+      "kind": "subject",
+      "normalized_terms": [
+        "javascript"
+      ],
+      "requested_year": null,
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript",
+          "title": "What is JavaScript? - Learn web development | MDN",
+          "score": 62.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        }
+      ]
+    },
+    {
+      "id": "p31_25",
+      "query": "How can I apply for a learner driver permit in Britain?",
+      "kind": "subject",
+      "normalized_terms": [
+        "provisional",
+        "driving",
+        "licence"
+      ],
+      "requested_year": null,
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.gov.uk/apply-first-provisional-driving-licence",
+          "title": "Apply for your first provisional driving licence - GOV.UK",
+          "score": 81.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        }
+      ]
+    },
+    {
+      "id": "p31_26",
+      "query": "Tell me about London City Hall New Year fireworks 2026",
+      "kind": "subject",
+      "normalized_terms": [
+        "eve"
+      ],
+      "requested_year": "2026",
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.london.gov.uk/events/london-new-years-eve-2026",
+          "title": "London New Year's Eve 2026 | London City Hall",
+          "score": 66.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        },
+        {
+          "url": "https://www.london.gov.uk/events/london-new-years-eve-2026/london-new-years-eve-2026-information-businesses-and-residents",
+          "title": "London New Year’s Eve 2026: Information for businesses and residents | London City Hall",
+          "score": 47.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        }
+      ]
+    },
+    {
+      "id": "p31_27",
+      "query": "London events 2027",
+      "kind": "event_catalog",
+      "normalized_terms": [],
+      "requested_year": "2027",
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.london.gov.uk/events/eid",
+          "title": "Eid on the Square 2027 | London City Hall",
+          "score": 28,
+          "match_reason": "YEAR_AND_EVENT_FACET"
+        },
+        {
+          "url": "https://www.london.gov.uk/events/black-square-2027",
+          "title": "Black On The Square 2027 | London City Hall",
+          "score": 27,
+          "match_reason": "YEAR_AND_EVENT_FACET"
+        },
+        {
+          "url": "https://www.london.gov.uk/events/st-patricks-day",
+          "title": "St Patrick’s Festival 2027 | London City Hall",
+          "score": 27,
+          "match_reason": "YEAR_AND_EVENT_FACET"
+        },
+        {
+          "url": "https://www.london.gov.uk/events/77-memorial-service-2027",
+          "title": "7/7 Memorial Service 2027 | London City Hall",
+          "score": 26,
+          "match_reason": "YEAR_AND_EVENT_FACET"
+        },
+        {
+          "url": "https://www.london.gov.uk/events/armed-forces-day-2027",
+          "title": "Armed Forces Day 2027 | London City Hall",
+          "score": 26,
+          "match_reason": "YEAR_AND_EVENT_FACET"
+        }
+      ]
+    },
+    {
+      "id": "p31_28",
+      "query": "Which festivals are happening in London in 2026?",
+      "kind": "event_facet",
+      "normalized_terms": [],
+      "requested_year": "2026",
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.london.gov.uk/events/london-games-festival-2026",
+          "title": "London Games Festival 2026 | London City Hall",
+          "score": 27,
+          "match_reason": "YEAR_AND_EVENT_FACET"
+        },
+        {
+          "url": "https://www.london.gov.uk/events/lunar-new-year-festival-spring-2026",
+          "title": "Lunar New Year - the Festival of Spring 2026 | London City Hall",
+          "score": 27,
+          "match_reason": "YEAR_AND_EVENT_FACET"
+        },
+        {
+          "url": "https://www.london.gov.uk/events/st-patricks-festival-2026",
+          "title": "St Patrick’s Festival 2026 | London City Hall",
+          "score": 27,
+          "match_reason": "YEAR_AND_EVENT_FACET"
+        }
+      ]
+    },
+    {
+      "id": "p31_29",
+      "query": "What happened during London Open House over the years?",
+      "kind": "series",
+      "normalized_terms": [
+        "open",
+        "house"
+      ],
+      "requested_year": null,
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.london.gov.uk/events/city-hall-open-house-2026",
+          "title": "City Hall Open House 2026 | London City Hall",
+          "score": 71.4,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        },
+        {
+          "url": "https://www.london.gov.uk/events/london-open-house-2025",
+          "title": "London Open House 2025 | London City Hall",
+          "score": 71.0,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        },
+        {
+          "url": "https://www.london.gov.uk/events/london-open-house-2024",
+          "title": "London Open House 2024 | London City Hall",
+          "score": 70.6,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        },
+        {
+          "url": "https://www.london.gov.uk/events/london-open-house-2023",
+          "title": "London Open House 2023 | London City Hall",
+          "score": 70.2,
+          "match_reason": "SUBJECT_YEAR_AND_ALIASES"
+        }
+      ]
+    },
+    {
+      "id": "p31_30",
+      "query": "What London celebrations were held in 2025?",
+      "kind": "event_facet",
+      "normalized_terms": [],
+      "requested_year": "2025",
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.london.gov.uk/events/diwali-square-2025",
+          "title": "Diwali on the Square 2025 | London City Hall",
+          "score": 28,
+          "match_reason": "YEAR_AND_EVENT_FACET"
+        },
+        {
+          "url": "https://www.london.gov.uk/events/eid-square-2025",
+          "title": "Eid on the Square 2025 | London City Hall",
+          "score": 28,
+          "match_reason": "YEAR_AND_EVENT_FACET"
+        },
+        {
+          "url": "https://www.london.gov.uk/events/black-square-2025",
+          "title": "Black On The Square 2025 | London City Hall",
+          "score": 27,
+          "match_reason": "YEAR_AND_EVENT_FACET"
+        },
+        {
+          "url": "https://www.london.gov.uk/events/chanukah-square-2025",
+          "title": "Chanukah on the Square 2025 | London City Hall",
+          "score": 27,
+          "match_reason": "YEAR_AND_EVENT_FACET"
+        },
+        {
+          "url": "https://www.london.gov.uk/events/london-games-festival-2025",
+          "title": "London Games Festival 2025 | London City Hall",
+          "score": 27,
+          "match_reason": "YEAR_AND_EVENT_FACET"
+        }
+      ]
+    },
+    {
+      "id": "p31_31",
+      "query": "What online government services can I use?",
+      "kind": "gov_catalog",
+      "normalized_terms": [],
+      "requested_year": null,
+      "status": "MATCHES_UNVERIFIED",
+      "results": [
+        {
+          "url": "https://www.gov.uk/apply-first-provisional-driving-licence",
+          "title": "Apply for your first provisional driving licence - GOV.UK",
+          "score": 26,
+          "match_reason": "GOV_UK_SERVICE_CATEGORY"
+        },
+        {
+          "url": "https://www.gov.uk/council-tax-bands",
+          "title": "Check your Council Tax band - GOV.UK",
+          "score": 26,
+          "match_reason": "GOV_UK_SERVICE_CATEGORY"
+        },
+        {
+          "url": "https://www.gov.uk/register-to-vote",
+          "title": "Register to vote - GOV.UK",
+          "score": 26,
+          "match_reason": "GOV_UK_SERVICE_CATEGORY"
+        },
+        {
+          "url": "https://www.gov.uk/renew-adult-passport/renew",
+          "title": "Renew or replace your adult passport: Renew - GOV.UK",
+          "score": 26,
+          "match_reason": "GOV_UK_SERVICE_CATEGORY"
+        }
+      ]
+    },
+    {
+      "id": "p31_32",
+      "query": "Diwali on the Square 2031",
+      "kind": "subject",
+      "normalized_terms": [
+        "diwali",
+        "square"
+      ],
+      "requested_year": "2031",
+      "status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "results": []
+    },
+    {
+      "id": "p31_33",
+      "query": "Armed Forces Day 2031",
+      "kind": "subject",
+      "normalized_terms": [
+        "armed",
+        "force",
+        "day"
+      ],
+      "requested_year": "2031",
+      "status": "WITHHELD_NO_SUPPORTED_INDEX_MATCH",
+      "results": []
+    },
+    {
+      "id": "p31_34",
+      "query": "Which Manchester shops sell vegan shoes and are open now?",
+      "kind": "dynamic",
+      "normalized_terms": [],
+      "requested_year": null,
+      "status": "WITHHELD_UNVERIFIED_LIVE_DATA",
+      "results": []
+    },
+    {
+      "id": "p31_35",
+      "query": "Is Newbury expecting rain tomorrow?",
+      "kind": "dynamic",
+      "normalized_terms": [],
+      "requested_year": null,
+      "status": "WITHHELD_UNVERIFIED_LIVE_DATA",
+      "results": []
+    },
+    {
+      "id": "p31_36",
+      "query": "Which new laptop is in stock today?",
+      "kind": "dynamic",
+      "normalized_terms": [],
+      "requested_year": null,
+      "status": "WITHHELD_UNVERIFIED_LIVE_DATA",
+      "results": []
+    }
+  ],
+  "limitations": [
+    "Matching titles and URLs does not provide a verified natural-language answer",
+    "Corpus is 120 research pages, 7 publishers; query policy calibrated after seeing the benchmark",
+    "All new/topical matches require fresh human validation before deployment",
+    "Dynamic data requires fresh sources and is intentionally withheld",
+    "Named edition year is inferred from title/URL, not live event verification",
+    "New unseen held-out tests and broader corpus are needed before production"
+  ]
+}

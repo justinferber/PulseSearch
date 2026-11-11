@@ -1,0 +1,258 @@
+{
+  "version": "r2p23-human-review-v1",
+  "source_audit_sha256": "0bb30987d91db818d18b70ce567d8c0df701e13325888cfae4d0533688835987",
+  "questions": [
+    {
+      "id": "search_01",
+      "query": "How can I book an NHS blood test in England?",
+      "topic": "healthcare",
+      "results": [
+        {
+          "position": 1,
+          "url": "https://www.nhs.uk/tests-and-treatments/blood-tests/",
+          "grade": 1
+        },
+        {
+          "position": 2,
+          "url": "https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/",
+          "grade": 1
+        },
+        {
+          "position": 3,
+          "url": "https://www.nhs.uk/nhs-services/dentists/how-to-find-an-nhs-dentist/",
+          "grade": 0
+        }
+      ],
+      "no_match_assessment": null,
+      "note": "You are asking How can I book an NHS blood test in England? The result is an unrelated NHS Page about a dentist"
+    },
+    {
+      "id": "search_02",
+      "query": "How can I register with a GP surgery?",
+      "topic": "healthcare",
+      "results": [
+        {
+          "position": 1,
+          "url": "https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/",
+          "grade": 3
+        },
+        {
+          "position": 2,
+          "url": "https://www.nhs.uk/nhs-services/prescriptions/how-to-order-a-repeat-prescription/",
+          "grade": 0
+        },
+        {
+          "position": 3,
+          "url": "https://www.nhs.uk/tests-and-treatments/blood-tests/",
+          "grade": 0
+        }
+      ],
+      "no_match_assessment": null,
+      "note": "You asked, How can I register with a GP surgery? The result returned an NHS page about repeat prescriptions. | Does not answer the question"
+    },
+    {
+      "id": "search_03",
+      "query": "What council tax band is my property in?",
+      "topic": "public_services",
+      "results": [
+        {
+          "position": 1,
+          "url": "https://www.gov.uk/council-tax-bands",
+          "grade": 3
+        },
+        {
+          "position": 2,
+          "url": "https://www.gov.uk/register-to-vote",
+          "grade": 0
+        },
+        {
+          "position": 3,
+          "url": "https://www.london.gov.uk/events/diwali-square-2026",
+          "grade": 0
+        }
+      ],
+      "no_match_assessment": null,
+      "note": "Does not answer the question | Does not answer the question"
+    },
+    {
+      "id": "search_04",
+      "query": "Where can I register to vote?",
+      "topic": "public_services",
+      "results": [
+        {
+          "position": 1,
+          "url": "https://www.gov.uk/register-to-vote",
+          "grade": 3
+        }
+      ],
+      "no_match_assessment": null,
+      "note": ""
+    },
+    {
+      "id": "search_05",
+      "query": "Where can I learn JavaScript programming?",
+      "topic": "web_development",
+      "results": [
+        {
+          "position": 1,
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript",
+          "grade": 2
+        },
+        {
+          "position": 2,
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP",
+          "grade": 1
+        },
+        {
+          "position": 3,
+          "url": "https://docs.python.org/3/tutorial/index.html",
+          "grade": 1
+        }
+      ],
+      "no_match_assessment": null,
+      "note": "Does not answer the question | Better results can be https://docs.python.org/3/search.html?q=Javascript"
+    },
+    {
+      "id": "search_06",
+      "query": "What is HTTP?",
+      "topic": "web_development",
+      "results": [
+        {
+          "position": 1,
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP",
+          "grade": 3
+        },
+        {
+          "position": 2,
+          "url": "https://www.rfc-editor.org/rfc/rfc9309.html",
+          "grade": 0
+        },
+        {
+          "position": 3,
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript",
+          "grade": 0
+        }
+      ],
+      "no_match_assessment": null,
+      "note": "This page is about robots text"
+    },
+    {
+      "id": "search_07",
+      "query": "What events are happening in London for New Year's Eve 2026?",
+      "topic": "london_events",
+      "results": [
+        {
+          "position": 1,
+          "url": "https://www.london.gov.uk/events/london-new-years-eve-2026",
+          "grade": 2
+        },
+        {
+          "position": 2,
+          "url": "https://www.london.gov.uk/events/city-hall-open-house-2026",
+          "grade": 0
+        },
+        {
+          "position": 3,
+          "url": "https://www.london.gov.uk/events/london-games-festival-2026",
+          "grade": 0
+        }
+      ],
+      "no_match_assessment": null,
+      "note": "The event searched was London for New Year's Eve 2026. The page is about an event in september | The event has already gone in April 2026. This maybe useful as a future event if the crawler can detect future dates."
+    },
+    {
+      "id": "search_08",
+      "query": "What is Diwali on the Square in London 2026?",
+      "topic": "london_events",
+      "results": [
+        {
+          "position": 1,
+          "url": "https://www.london.gov.uk/events/diwali-square-2026",
+          "grade": 3
+        },
+        {
+          "position": 2,
+          "url": "https://www.london.gov.uk/events/london-games-festival-2026",
+          "grade": 0
+        },
+        {
+          "position": 3,
+          "url": "https://www.london.gov.uk/events/city-hall-open-house-2026",
+          "grade": 0
+        }
+      ],
+      "no_match_assessment": null,
+      "note": "Wrong event | Wrong event"
+    },
+    {
+      "id": "search_09",
+      "query": "How do I renew my UK adult passport online?",
+      "topic": "identity_documents",
+      "results": [
+        {
+          "position": 1,
+          "url": "https://www.gov.uk/renew-adult-passport/renew",
+          "grade": 3
+        },
+        {
+          "position": 2,
+          "url": "https://www.gov.uk/apply-first-provisional-driving-licence",
+          "grade": 0
+        },
+        {
+          "position": 3,
+          "url": "https://www.gov.uk/register-to-vote",
+          "grade": 0
+        }
+      ],
+      "no_match_assessment": null,
+      "note": "Wrong page | Wrong page"
+    },
+    {
+      "id": "search_10",
+      "query": "How do I apply for a first provisional driving licence?",
+      "topic": "identity_documents",
+      "results": [
+        {
+          "position": 1,
+          "url": "https://www.gov.uk/apply-first-provisional-driving-licence",
+          "grade": 3
+        },
+        {
+          "position": 2,
+          "url": "https://www.gov.uk/council-tax-bands",
+          "grade": 0
+        },
+        {
+          "position": 3,
+          "url": "https://www.gov.uk/renew-adult-passport/renew",
+          "grade": 0
+        }
+      ],
+      "no_match_assessment": null,
+      "note": "Wrong page | Wrong page"
+    },
+    {
+      "id": "search_11",
+      "query": "Which vegan shoe shops in Manchester are open now?",
+      "topic": "live_local",
+      "results": [
+        {
+          "position": 1,
+          "url": "https://www.london.gov.uk/events/diwali-square-2026",
+          "grade": 0
+        }
+      ],
+      "no_match_assessment": null,
+      "note": ""
+    },
+    {
+      "id": "search_12",
+      "query": "Will it rain in Newbury tomorrow?",
+      "topic": "live_local",
+      "results": [],
+      "no_match_assessment": "unsure",
+      "note": "No weather report or URL found"
+    }
+  ]
+}

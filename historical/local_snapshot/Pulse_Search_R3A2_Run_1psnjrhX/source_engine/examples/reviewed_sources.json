@@ -1,0 +1,73 @@
+[
+  {
+    "source_id": "london_nye",
+    "origin": "https://www.london.gov.uk",
+    "allowed_paths": [
+      "/visit-london-nye",
+      "/media-centre/mayors-press-release/"
+    ],
+    "collection_approved": true,
+    "display_mode": "metadata_only",
+    "rights_basis": "Internal bounded search benchmark only. City Hall pages are public but their text, photos and commercial reuse require separate rights assessment. Robots and source terms always apply. No snippets or images publicly displayed."
+  },
+  {
+    "source_id": "uk_passport",
+    "origin": "https://www.gov.uk",
+    "allowed_paths": [
+      "/renew-adult-passport/renew"
+    ],
+    "collection_approved": true,
+    "display_mode": "metadata_only",
+    "rights_basis": "Internal bounded search benchmark only. GOV.UK public factual information; review Open Government Licence and exceptions before redistribution. Robots and source terms always apply. No snippets or images publicly displayed."
+  },
+  {
+    "source_id": "nhs_gp",
+    "origin": "https://www.nhs.uk",
+    "allowed_paths": [
+      "/nhs-services/gps/how-to-register-with-a-gp-surgery/"
+    ],
+    "collection_approved": true,
+    "display_mode": "metadata_only",
+    "rights_basis": "Internal bounded search benchmark only. NHS official public factual page; metadata-only internal testing; no public display or health advice. Robots and source terms always apply. No snippets or images publicly displayed."
+  },
+  {
+    "source_id": "mdn_http",
+    "origin": "https://developer.mozilla.org",
+    "allowed_paths": [
+      "/en-US/docs/Web/HTTP"
+    ],
+    "collection_approved": true,
+    "display_mode": "metadata_only",
+    "rights_basis": "Internal bounded search benchmark only. MDN technical documentation; CC attribution requirements and robots apply; metadata-only internal research. Robots and source terms always apply. No snippets or images publicly displayed."
+  },
+  {
+    "source_id": "sqlite_sql",
+    "origin": "https://www.sqlite.org",
+    "allowed_paths": [
+      "/lang.html"
+    ],
+    "collection_approved": true,
+    "display_mode": "metadata_only",
+    "rights_basis": "Internal bounded search benchmark only. SQLite published public domain documentation; metadata-only technical search benchmark. Robots and source terms always apply. No snippets or images publicly displayed."
+  },
+  {
+    "source_id": "python_guide",
+    "origin": "https://docs.python.org",
+    "allowed_paths": [
+      "/3/tutorial/index.html"
+    ],
+    "collection_approved": true,
+    "display_mode": "metadata_only",
+    "rights_basis": "Internal bounded search benchmark only. Python documentation licence applies; metadata-only search benchmark. Robots and source terms always apply. No snippets or images publicly displayed."
+  },
+  {
+    "source_id": "robot_rfc",
+    "origin": "https://www.rfc-editor.org",
+    "allowed_paths": [
+      "/rfc/rfc9309.html"
+    ],
+    "collection_approved": true,
+    "display_mode": "metadata_only",
+    "rights_basis": "Internal bounded search benchmark only. IETF Trust rights terms apply; metadata-only web standards benchmark. Robots and source terms always apply. No snippets or images publicly displayed."
+  }
+]

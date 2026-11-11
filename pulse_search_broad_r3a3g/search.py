@@ -556,6 +556,7 @@ def search_documents(documents: list[dict], query: str, limit: int = 10,
         seen_urls.add(url_key)
         if title_key:
             seen_titles.add(title_key)
+        basis = _support_basis(intent, doc) or "content"
         scored.append({"title": doc.get("title", ""), "url": doc["url"],
                        "snippet": _snippet(str(doc.get("snippet") or ""), intent.tokens),
                        "publisher": (_canonical_key(doc["url"]).split("/")[0]),
@@ -570,13 +571,24 @@ def search_documents(documents: list[dict], query: str, limit: int = 10,
                        "provenance": doc.get("provenance"),
                        "metadata": metadata,
                        "metadata_source": "curator_assigned" if metadata else None,
-                       "support_basis": _support_basis(intent, doc) or "content",
+                       "support_basis": basis,
+                       "evidence_class": ("curator_metadata_navigation"
+                                          if basis == "metadata_assisted" else "source_excerpt"),
+                       "verified_fact": False,
                        "snippet_source": "captured_page_description",
                        "location": intent.location,
                        "score": score, "ranking_reasons": reasons,
-                       "source_kind": "permissioned_staging_document",
+                       "source_kind": ("curator_metadata_navigation"
+                                        if basis == "metadata_assisted"
+                                        else "permissioned_staging_document"),
                        "verified_live": False})
     scored.sort(key=lambda d: (-d["score"], d["url"]))
+    # Do not let an unrelated second or third card ride along solely because it
+    # shares one incidental query word with the first result. Apply the cutoff
+    # only to longer result sets so a genuinely relevant small set is retained.
+    if len(scored) > 3 and intent.kind in ("general", "factual", "sports"):
+        cutoff = max(1.0, scored[0]["score"] * 0.25)
+        scored = [item for item in scored if item["score"] >= cutoff]
     hits = _diverse(scored, max(0, min(int(limit), 50)))
     if enforce_support and hits and not _sufficient(intent, hits):
         official = links_for(intent.kind, query, intent.location)
@@ -602,7 +614,7 @@ def search_documents(documents: list[dict], query: str, limit: int = 10,
                            "navigation, not admitted page content.")
         if any(hit.get("support_basis") == "metadata_assisted" for hit in hits):
             notices.append("Some matches use curator-assigned topics or document type; "
-                           "they are not quoted as page content.")
+                           "they are classified as navigation, not verified fact evidence.")
         if excluded:
             notices.append("Excluded terms: " + ", ".join(excluded))
         return {"query": query, "intent": intent.as_dict(), "status": status,

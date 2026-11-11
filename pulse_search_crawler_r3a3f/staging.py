@@ -123,7 +123,8 @@ class StagingIndex:
 
     # ------------------------------------------------------------------ write
     def add_document(self, record: dict, shingle_list: list[int], *,
-                     index_allowed: bool = False) -> tuple[bool, str]:
+                     index_allowed: bool = False,
+                     allow_reactivation: bool = False) -> tuple[bool, str]:
         """Insert an accepted page. Returns (indexed, reason).
 
         Fail closed: indexing requires an explicit rights decision. A source
@@ -142,8 +143,14 @@ class StagingIndex:
                                   "admin or authentication route")
             return False, "administrative_path"
         existing = self.conn.execute(
-            "SELECT doc_id FROM docs WHERE url=?", (record["url"],)
+            "SELECT doc_id, revoked, revoked_reason FROM docs WHERE url=?", (record["url"],)
         ).fetchone()
+        if existing and existing["revoked"] and not allow_reactivation:
+            self.record_rejection(
+                record["url"], record.get("source_id", ""), int(record.get("depth", 0)),
+                "revoked_requires_explicit_admission",
+                "refusing to clear revoked state without a new admission decision")
+            return False, "revoked_requires_explicit_admission"
         if existing:
             self.conn.execute(
                 """UPDATE docs SET source_id=?, title=?, snippet=?, category=?,

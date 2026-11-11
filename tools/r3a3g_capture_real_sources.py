@@ -70,6 +70,7 @@ class CapturePolicy:
             raise ValueError(f"{source['id']}: unsupported rights class")
         self.last_request: dict[str, float] = {}
         self.attempts = 0
+        self.robots_checked: set[str] = set()
 
     def target_denial(self, target: str) -> str | None:
         parts = urllib.parse.urlsplit(target)
@@ -104,6 +105,28 @@ class CapturePolicy:
         self.last_request[host] = time.monotonic()
         return None
 
+    def redirect_gate(self, fetcher: Fetcher, target: str) -> str | None:
+        denial = self.target_denial(target)
+        if denial:
+            return denial
+        parts = urllib.parse.urlsplit(target)
+        host = (parts.hostname or "").lower()
+        if host not in self.robots_checked:
+            robots_url = "https://" + (parts.netloc or host) + "/robots.txt"
+            denial = self.request_gate(robots_url)
+            if denial:
+                return denial
+            robots = fetcher.fetch(
+                robots_url, max_bytes=MAX_ROBOTS_BYTES,
+                redirect_gate=lambda hop: self.target_denial(hop))
+            if robots.error:
+                return "redirect_robots_error"
+            rules = decision_for_status(robots.status, robots.body, fetcher.config.user_agent)
+            if not rules.can_fetch(parts.path or "/"):
+                return "redirect_robots_denied"
+            self.robots_checked.add(host)
+        return self.request_gate(target)
+
     def paced_fetch(self, fetcher: Fetcher, url: str, *, max_bytes: int,
                     user_agent: str):
         # The gate covers robots, the initial request and every redirect hop.
@@ -112,7 +135,7 @@ class CapturePolicy:
             return FetchResult(url, url, error=denial)
         return fetcher.fetch(
             url, max_bytes=max_bytes, extra_headers={"Accept": "text/html"},
-            redirect_gate=self.request_gate)
+            redirect_gate=lambda target: self.redirect_gate(fetcher, target))
 
 
 def capture(source: dict, fetcher: Fetcher) -> dict:
@@ -128,6 +151,7 @@ def capture(source: dict, fetcher: Fetcher) -> dict:
                 "approval_ref": source["approval_ref"],
                 "rights": source["rights"], "redirect_chain": []}
     rules = decision_for_status(robots_result.status, robots_result.body, user_agent)
+    policy.robots_checked.add((urllib.parse.urlsplit(source["url"]).hostname or "").lower())
     path = urllib.parse.urlsplit(source["url"]).path or "/"
     if not rules.can_fetch(path):
         return {"status": 0, "final_url": source["url"], "title": "", "description": "",

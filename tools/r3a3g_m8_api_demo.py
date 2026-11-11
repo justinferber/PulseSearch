@@ -71,8 +71,11 @@ def main() -> int:
                 "questions": len(cases),
                 "with_indexed_result": sum(1 for c in cases if "permissioned_staging_document"
                                            in (c["result_types"] or [])),
+                "with_metadata_navigation": sum(
+                    1 for c in cases if "curator_metadata_navigation" in (c["result_types"] or [])),
                 "with_official_navigation": sum(1 for c in cases
-                                                  if c["status"] == "official_links"),
+                                                  if c["status"] in ("official_links",
+                                                                     "official_navigation")),
                 "no_evidence": sum(1 for c in cases if c["status"] == "no_staging_evidence"),
             },
             "notes": ["Temporary provider leads are absent because no SearXNG is configured.",

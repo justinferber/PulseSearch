@@ -84,6 +84,9 @@ class M8Tests(unittest.TestCase):
         self.assertEqual(card["metadata"]["topics"], ["museum", "wheelchair"])
         self.assertEqual(card["metadata_source"], "curator_assigned")
         self.assertEqual(card["support_basis"], "metadata_assisted")
+        self.assertEqual(card["evidence_class"], "curator_metadata_navigation")
+        self.assertEqual(card["source_kind"], "curator_metadata_navigation")
+        self.assertFalse(card["verified_fact"])
 
     def test_source_manifest_has_rights_and_specific_pages(self):
         manifest = json.loads((ROOT / "config/m8_sources.json").read_text(encoding="utf-8"))
@@ -129,6 +132,16 @@ class M8Tests(unittest.TestCase):
             self.assertTrue(index.revoke(record["url"], "test"))
             self.assertEqual(index.get(record["url"])["revoked"], 1)
             self.assertEqual(index.get(record["url"])["revoked_reason"], "test")
+            blocked = index.add_document(record, [], index_allowed=True)
+            self.assertEqual(blocked, (False, "revoked_requires_explicit_admission"))
+            self.assertEqual(index.get(record["url"])["revoked"], 1)
+            reactivated = {**record, "rights_mode": "evaluation_metadata_only"}
+            admitted = index.add_document(reactivated, [], index_allowed=True,
+                                          allow_reactivation=True)
+            self.assertEqual(admitted, (True, "updated"))
+            self.assertEqual(index.get(record["url"])["revoked"], 0)
+            self.assertEqual(index.get(record["url"])["rights_mode"],
+                             "evaluation_metadata_only")
             index.close()
 
     def test_m8_questions_are_new_and_frozen(self):

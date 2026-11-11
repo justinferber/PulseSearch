@@ -375,6 +375,8 @@ def source_receipts(results: list[dict]) -> list[dict]:
             "publisher": item.get("publisher"),
             "source_kind": item.get("source_kind"),
             "support_basis": item.get("support_basis"),
+            "evidence_class": item.get("evidence_class"),
+            "verified_fact": bool(item.get("verified_fact", False)),
             "metadata_source": item.get("metadata_source"),
             "rights_mode": item.get("rights_mode"),
             "fetched_at": item.get("fetched_at"),

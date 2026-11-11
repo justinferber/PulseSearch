@@ -71,7 +71,7 @@
       "rights_class": "public_guidance",
       "verified_at": "2026-11-11",
       "claims": [
-        {"text": "Check the Mayor of London's official page for the event announcement, viewing areas and ticket arrangements.", "sources": ["https://www.london.gov.uk/", "https://www.bbc.co.uk/weather"]},
+        {"text": "Check the Mayor of London's official page for the event announcement, viewing areas and ticket arrangements.", "sources": ["https://www.london.gov.uk/", "https://tfl.gov.uk/"]},
         {"text": "Plan travel with TfL and expect road closures and busy stations on the night.", "sources": ["https://tfl.gov.uk/", "https://www.london.gov.uk/"]}
       ]
     },
@@ -132,7 +132,7 @@
       "verified_at": "2026-11-11",
       "claims": [
         {"text": "Check the Berlin city calendar for current Christmas market listings and opening periods.", "sources": ["https://www.berlin.de/events/", "https://www.berlin.de/en/"]},
-        {"text": "Confirm opening times and any entry conditions on the organiser's page before travelling.", "sources": ["https://www.berlin.de/events/"]}
+        {"text": "Plan travel to the markets with BVG and confirm opening times and entry conditions on the organiser's page before travelling.", "sources": ["https://www.bvg.de/", "https://www.berlin.de/events/"]}
       ]
     }
   ]

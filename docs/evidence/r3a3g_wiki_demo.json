@@ -64,14 +64,17 @@
     "result": "update_draft",
     "topic_id": "guide-berlin-concert-tickets",
     "slug": "how-to-book-concert-tickets-berlin",
-    "diff": "--- how-to-book-concert-tickets-berlin@1\n+++ proposed\n@@ -6,6 +6,7 @@\n - Start at the venue's own programme or the Berlin events calendar, then follow the official ticket link shown for that event.\n - Eventim is an authorised ticketing agency in Germany; check that the seller named on the event page matches the checkout before paying.\n - Check the venue page for doors, age limits, accessibility and bag rules, which vary by show.\n+- Confirm the venue's accessibility arrangements on its own page before booking.\n \n ## Sources\n - [berlin.de](https://www.berlin.de/events/)",
-    "previous_version": 1
+    "diff": "--- how-to-book-concert-tickets-berlin@1\n+++ pending@2\n@@ -6,6 +6,7 @@\n - Start at the venue's own programme or the Berlin events calendar, then follow the official ticket link shown for that event.\n - Eventim is an authorised ticketing agency in Germany; check that the seller named on the event page matches the checkout before paying.\n - Check the venue page for doors, age limits, accessibility and bag rules, which vary by show.\n+- Confirm the venue's accessibility arrangements on its own page before booking.\n \n ## Sources\n - [Berlin event calendar](https://www.berlin.de/events) \u2014 Berlin.de (ev-berlin-events, verified 2026-11-11)",
+    "previous_version": 1,
+    "pending_version": 2
   },
   "duplicate": {
-    "result": "duplicate",
+    "result": "update_draft",
     "topic_id": "guide-berlin-concert-tickets",
     "slug": "how-to-book-concert-tickets-berlin",
-    "status": "draft_update"
+    "diff": "",
+    "previous_version": 1,
+    "pending_version": 2
   },
   "published": [
     {
@@ -80,11 +83,14 @@
       "publisher": {
         "ok": true,
         "target": "local-test-wiki",
-        "slug": "how-to-book-concert-tickets-berlin",
-        "version": 1,
-        "published_at": "2026-11-11T14:01:29+00:00"
+        "external_id": "local:how-to-book-concert-tickets-berlin",
+        "revision": 2,
+        "checksum": "cdd1ef920542fc51b6bf662002c97db77526d5289add64e4c8c2e2a2fa805482",
+        "published_at": "2026-11-11T14:38:41+00:00"
       },
-      "status": "published"
+      "status": "published",
+      "version": 2,
+      "checksum": "cdd1ef920542fc51b6bf662002c97db77526d5289add64e4c8c2e2a2fa805482"
     },
     {
       "result": "published",
@@ -92,11 +98,14 @@
       "publisher": {
         "ok": true,
         "target": "local-test-wiki",
-        "slug": "getting-to-berlin-concert-venues",
-        "version": 1,
-        "published_at": "2026-11-11T14:01:29+00:00"
+        "external_id": "local:getting-to-berlin-concert-venues",
+        "revision": 1,
+        "checksum": "6a8185807324906b33e8fa625ea07da48bfe26d2ea7bd50b8488aedc1aebc129",
+        "published_at": "2026-11-11T14:38:41+00:00"
       },
-      "status": "published"
+      "status": "published",
+      "version": 1,
+      "checksum": "6a8185807324906b33e8fa625ea07da48bfe26d2ea7bd50b8488aedc1aebc129"
     },
     {
       "result": "published",
@@ -104,28 +113,34 @@
       "publisher": {
         "ok": true,
         "target": "local-test-wiki",
-        "slug": "uk-weather-forecast-sources",
-        "version": 1,
-        "published_at": "2026-11-11T14:01:29+00:00"
+        "external_id": "local:uk-weather-forecast-sources",
+        "revision": 1,
+        "checksum": "ae052b6d7684d8ad4dc9ab462f12576fb02ab4097b733143f7ce54df3bf6c322",
+        "published_at": "2026-11-11T14:38:41+00:00"
       },
-      "status": "published"
+      "status": "published",
+      "version": 1,
+      "checksum": "ae052b6d7684d8ad4dc9ab462f12576fb02ab4097b733143f7ce54df3bf6c322"
     }
   ],
   "rejected": {
     "result": "rejected",
     "topic_id": "guide-pride-festivals-germany",
-    "reason": "needs a city-specific source"
+    "reason": "needs a city-specific source",
+    "status": "rejected"
   },
   "revocation": {
     "result": "flagged",
     "source": "https://www.bvg.de/",
     "reason": "source withdrawn in test",
     "topics": [
-      "guide-berlin-venue-transport"
+      "guide-berlin-venue-transport",
+      "guide-berlin-christmas-markets"
     ]
   },
   "status_counts": {
-    "draft": 7,
+    "draft": 6,
+    "draft_flagged": 1,
     "flagged": 1,
     "published": 2,
     "rejected": 1

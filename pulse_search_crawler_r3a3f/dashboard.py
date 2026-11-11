@@ -79,8 +79,10 @@ def render_wiki_index(store: WikiStore) -> str:
     rows = "".join(
         f"<tr><td><a href='/wiki/{html.escape(p['slug'])}'>{html.escape(p['title'])}</a></td>"
         f"<td><span class='pill {'good' if p['status'] == 'published' else 'warn'}'>"
-        f"{html.escape(p['status'])}</span></td><td>{p['version']}</td>"
-        f"<td>{len(json.loads(p['sources'] or '[]'))}</td>"
+        f"{html.escape(p['status'])}</span>"
+        f"{(' <span class=\'sub\'>pending v' + str(p.get('pending_version')) + '</span>') if p.get('has_pending') else ''}</td>"
+        f"<td>{p['version']}</td>"
+        f"<td>{len(p['sources'] or [])}</td>"
         f"<td>{html.escape(str(p['verified_at']))}</td></tr>"
         for p in store.list()
     ) or "<tr><td colspan='5'>No local drafts yet.</td></tr>"
@@ -98,8 +100,13 @@ def render_wiki_page(store: WikiStore, slug: str) -> str | None:
     if not row:
         return None
     page = dict(row)
-    sources = json.loads(page["sources"] or "[]")
-    claims = json.loads(page["claims"] or "[]")
+    sources = page["sources"] or []
+    claims = page["claims"] or []
+    pending = page.get("pending_body") or ""
+    pending_block = ("" if not pending else
+                     f"<h2>Pending update (version {page.get('pending_version')})</h2>"
+                     f"<div class='answer'><pre style='white-space:pre-wrap'>{html.escape(pending)}</pre></div>"
+                     f"<div class='sub'>This pending revision is not published. Publication sends this exact body.</div>")
     revisions = store.revisions(page["topic_id"])
     source_items = "".join(
         f"<li><a href='{html.escape(s['url'])}' rel='noopener noreferrer'>"
@@ -118,6 +125,7 @@ def render_wiki_page(store: WikiStore, slug: str) -> str | None:
             f"<div class='answer'><pre style='white-space:pre-wrap'>{html.escape(page['body'])}</pre></div>"
             f"<h2>Claims ({len(claims)})</h2><ul class='tight'>{claim_items}</ul>"
             f"<h2>Sources ({len(sources)})</h2><ul class='tight'>{source_items}</ul>"
+            f"{pending_block}"
             f"<h2>Revisions</h2><table><tr><th>Version</th><th>State</th><th>Note</th><th>Created</th></tr>"
             f"{revision_rows}</table>"
             "<p><a href='/wiki'>All drafts</a> · <a href='/'>Search console</a></p></section>")
@@ -149,6 +157,13 @@ def render_html(report: dict, staging: StagingIndex, query: str = "", category: 
     broad_status = html.escape(str((broad or {}).get("status", "NO_QUERY")))
     broad_intent = html.escape(str(((broad or {}).get("intent") or {}).get("kind", "n/a")))
     broad_note = html.escape(str((broad or {}).get("note", "Enter a search query above.")))
+    related_official = (broad or {}).get("related_official_links") or []
+    related_rows = "".join(
+        f"<li><a href='{html.escape(str(r.get('url') or ''))}' rel='noopener noreferrer'>"
+        f"{html.escape(str(r.get('title') or r.get('url') or ''))}</a> — "
+        f"{html.escape(str(r.get('publisher') or ''))} "
+        f"<span class='sub'>(official navigation, not crawled)</span></li>"
+        for r in related_official)
     useful_leads = report.get("broad_source_candidates", [])
     useful_lead_rows = "".join(
         f"<tr><td>{html.escape(str(c['origin']))}</td>"
@@ -443,7 +458,9 @@ official-site navigation links. Weather, translation, live sport, prices and ava
 require approved fresh providers; synthetic fixtures are never presented as live evidence.</div>
 <table><tr><th>Result</th><th>Page type</th><th>Relevant information</th><th>Source</th></tr>
 {broad_rows or "<tr><td colspan='4'>No supported local evidence yet. The source catalogue and fresh-provider connections must grow.</td></tr>"}
-</table></section>
+</table>
+{("<div class='sub' style='margin-top:12px'>Reviewed official entry points — navigation only, not crawled or permanently indexed.</div><ul class='tight'>" + related_rows + "</ul>") if related_rows else ""}
+</section>
 
 <section><h2>Search the staging index</h2>
 <form method="get" action="/search">

@@ -80,8 +80,8 @@ NEGATION = re.compile(r"\b(?:excluding|without|except|nicht|ohne|ausser|außer)\
 SPORTS = re.compile(r"\b(fifa|world cup|football score|match result|live score)\b", re.I)
 TRANSLATE = re.compile(r"\b(translate|translation|übersetz\w*|translate into)\b", re.I)
 FLIGHTS = re.compile(r"\b(flights?|airfare|airline|flug|flüge)\b", re.I)
-TRANSPORT = re.compile(r"\b(public transport|transport|tfl|bvg|s-bahn|get to|journey|"
-                       r"wie komme|anfahrt|verkehr)\b", re.I)
+TRANSPORT = re.compile(r"\b(public transport|transport|tfl|bvg|s-bahn|s bahn|sbahn|"
+                       r"get to|journey|journey planner|fahrplan|wie komme|anfahrt|verkehr)\b", re.I)
 REFUND = re.compile(r"\b(refund|refunds|return|returns|cancel|cancellation|erstattung|"
                     r"stornieren)\b", re.I)
 FRESH = re.compile(r"\b(today|tomorrow|now|live|currently|this evening|this weekend|"
@@ -393,6 +393,8 @@ def search_documents(documents: list[dict], query: str, limit: int = 10) -> dict
                        "verified_live": False})
     scored.sort(key=lambda d: (-d["score"], d["url"]))
     hits = _diverse(scored, max(0, min(int(limit), 50)))
+    related = links_for(intent.kind, query, intent.location) if intent.kind in (
+        "transport", "how_to") else []
     if hits:
         status = "staging_results"
         if intent.needs_live_data:
@@ -400,10 +402,14 @@ def search_documents(documents: list[dict], query: str, limit: int = 10) -> dict
         mode = "EXTRACTIVE_ANSWER" if intent.kind in ("how_to", "factual") else "SEARCH_RESULTS"
         notices = ["Snippets are attributed excerpts from admitted pages; verify current dates, "
                    "prices, stock and booking availability separately."]
+        if related and intent.kind == "how_to":
+            notices.append("Reviewed official entry points are listed separately; they are "
+                           "navigation, not admitted page content.")
         if excluded:
             notices.append("Excluded terms: " + ", ".join(excluded))
         return {"query": query, "intent": intent.as_dict(), "status": status,
                 "response_mode": mode, "results": hits, "official_links": [],
+                "related_official_links": related,
                 "answer": None, "notices": notices,
                 "note": notices[0]}
     official = links_for(intent.kind, query, intent.location)
@@ -414,10 +420,12 @@ def search_documents(documents: list[dict], query: str, limit: int = 10) -> dict
             notices.append("Excluded terms: " + ", ".join(excluded))
         return {"query": query, "intent": intent.as_dict(), "status": "official_links",
                 "response_mode": "OFFICIAL_LINKS", "results": official,
-                "official_links": official, "answer": None, "notices": notices,
+                "official_links": official, "related_official_links": official,
+                "answer": None, "notices": notices,
                 "note": notices[0]}
     return {"query": query, "intent": intent.as_dict(), "status": "no_staging_evidence",
             "response_mode": "NO_EVIDENCE", "results": [], "official_links": [],
+            "related_official_links": [],
             "answer": None, "notices": ["No evidence and no reviewed official entry point."],
             "note": "No evidence and no reviewed official entry point."}
 

@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from pulse_search_broad_r3a3g.wiki import (  # noqa: E402
-    WikiPolicy, WikiService, WikiStore,
+    LocalPublisher, WikiPolicy, WikiService, WikiStore,
 )
 
 DB = ROOT / "data/r3a3g_wiki/wiki.sqlite"
@@ -21,7 +21,7 @@ def main() -> int:
     if DB.exists():
         DB.unlink()
     store = WikiStore(DB)
-    service = WikiService(store)
+    service = WikiService(store, LocalPublisher())
     articles = json.loads((ROOT / "config/wiki_articles.json").read_text(encoding="utf-8"))["articles"]
     created = []
     for article in articles:
@@ -37,7 +37,8 @@ def main() -> int:
     duplicate = service.propose(articles[0])
     # Editorial approval and a local-only publication test.
     published = []
-    policy = WikiPolicy(auto_publish_enabled=True, authorised_by="LOCAL_TEST_POLICY_ONLY")
+    policy = WikiPolicy(auto_publish_enabled=True, authorised_by="LOCAL_TEST_POLICY_ONLY",
+                        allowed_categories=("general",))
     for article in articles[:3]:
         service.approve(article["topic_id"], "local-test-editor")
         published.append(service.publish(article["topic_id"], policy,

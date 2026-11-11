@@ -25,9 +25,10 @@
       "response": {
         "status": "OK",
         "service": "pulse-search",
-        "api_version": "1.0",
-        "request_id": "3da1b0d1cddb4b0da186722d0fbe5353",
-        "time_utc": "2026-11-11T14:01:27+00:00"
+        "api_version": "1.1",
+        "request_id": "ca6f342552ff42d99b02a67a367f2b21",
+        "time_utc": "2026-11-11T14:46:56+00:00",
+        "consumer": "puke"
       }
     },
     {
@@ -39,8 +40,15 @@
       "status": 200,
       "response": {
         "status": "OK",
-        "api_version": "1.0",
-        "request_id": "f2ef8e14b3904fe88247f014f33217df",
+        "api_version": "1.1",
+        "request_id": "7c54cf9d3a094a6b87936743e1358ea7",
+        "consumer": "puke",
+        "scopes": [
+          "answer:read",
+          "health:read",
+          "search:read",
+          "wiki:propose"
+        ],
         "capabilities": {
           "local_index": true,
           "ephemeral_provider": false,
@@ -58,7 +66,8 @@
           "POST /v1/wiki-candidates"
         ],
         "notices": [
-          "Read-only local index. No public web search or paid provider is enabled."
+          "Read-only local index. No public web search or paid provider is enabled.",
+          "Wiki candidates are drafts only; this service has no publish endpoint."
         ]
       }
     },
@@ -110,14 +119,15 @@
           }
         ],
         "official_links": [],
+        "related_official_links": [],
         "answer": null,
         "notices": [
           "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately."
         ],
         "note": "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately.",
         "retrieval_mode": "fts_candidates",
-        "request_id": "5a473782f43b4fd78c18977d26e13ee5",
-        "retrieved_at": "2026-11-11T14:01:27+00:00",
+        "request_id": "e72d1363b23b4cf59d8a17f5b0d053b7",
+        "retrieved_at": "2026-11-11T14:46:56+00:00",
         "source_ids": [
           "demo"
         ],
@@ -141,7 +151,7 @@
           }
         ],
         "consumer_context_received": false,
-        "latency_ms": 3.6
+        "latency_ms": 3.8
       }
     },
     {
@@ -160,14 +170,36 @@
         "intent": "event_date",
         "claim_evidence": [
           {
-            "claim": "Glastonbury Festival is scheduled for Wednesday 23 June 2027 to Sunday 27 June 2027 (5 days) at Worthy Farm, Pilton, Somerset, England. 2026 was a fallow year; the festival returns for 2027.",
+            "claim": "Glastonbury Festival is scheduled for Wednesday 23 June 2027 to Sunday 27 June 2027 (5 days) at Worthy Farm, Pilton, Somerset, England.",
+            "support": "ATTRIBUTED_SENTENCE",
+            "citation_evidence_ids": [
+              "ev-864f62b29ab1"
+            ],
             "citations": [
               {
                 "title": "Glastonbury 2027 ticket information confirmed",
                 "url": "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed",
                 "publisher": "Glastonbury Festivals",
                 "retrieved_at": "2026-11-11",
-                "kind": "source"
+                "kind": "source",
+                "evidence_id": "ev-864f62b29ab1"
+              }
+            ]
+          },
+          {
+            "claim": "2026 was a fallow year; the festival returns for 2027.",
+            "support": "ATTRIBUTED_SENTENCE",
+            "citation_evidence_ids": [
+              "ev-864f62b29ab1"
+            ],
+            "citations": [
+              {
+                "title": "Glastonbury 2027 ticket information confirmed",
+                "url": "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed",
+                "publisher": "Glastonbury Festivals",
+                "retrieved_at": "2026-11-11",
+                "kind": "source",
+                "evidence_id": "ev-864f62b29ab1"
               }
             ]
           }
@@ -178,17 +210,18 @@
             "url": "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed",
             "publisher": "Glastonbury Festivals",
             "retrieved_at": "2026-11-11",
-            "kind": "source"
+            "kind": "source",
+            "evidence_id": "ev-864f62b29ab1"
           }
         ],
         "freshness": "2026-11-11T00:00:00+00:00",
         "confidence": 0.95,
         "limits": [],
         "notices": [],
-        "request_id": "a155983b737b4bf79510f2268f6cba5a",
-        "retrieved_at": "2026-11-11T14:01:27+00:00",
+        "request_id": "98943de7fe4e4539b17c8756cbd8b912",
+        "retrieved_at": "2026-11-11T14:46:56+00:00",
         "context_used": false,
-        "latency_ms": 2.5
+        "latency_ms": 1.5
       }
     },
     {
@@ -207,21 +240,79 @@
         "intent": "weather",
         "claim_evidence": [
           {
-            "claim": "I don't have a live weather reading. For the current forecast, use the official service for the country:\n- BBC Weather: https://www.bbc.co.uk/weather\n- Met Office UK forecast: https://weather.metoffice.gov.uk/forecast/uk",
+            "claim": "I don't have a live weather reading.",
+            "support": "ATTRIBUTED_SENTENCE",
+            "citation_evidence_ids": [
+              "ev-a8bcd0e4ea1f"
+            ],
             "citations": [
               {
                 "title": "BBC Weather",
                 "url": "https://www.bbc.co.uk/weather",
                 "publisher": "BBC",
                 "retrieved_at": "2026-11-11",
-                "kind": "official_service"
+                "kind": "official_service",
+                "evidence_id": "ev-a8bcd0e4ea1f"
+              }
+            ]
+          },
+          {
+            "claim": "For the current forecast, use the official service for the country:",
+            "support": "ATTRIBUTED_SENTENCE",
+            "citation_evidence_ids": [
+              "ev-d69929e36ef2"
+            ],
+            "citations": [
+              {
+                "title": "Met Office UK forecast",
+                "url": "https://weather.metoffice.gov.uk/forecast/uk",
+                "publisher": "Met Office",
+                "retrieved_at": "2026-11-11",
+                "kind": "official_service",
+                "evidence_id": "ev-d69929e36ef2"
+              }
+            ]
+          },
+          {
+            "claim": "BBC Weather: https://www.bbc.co.uk/weather",
+            "support": "ATTRIBUTED_SENTENCE",
+            "citation_evidence_ids": [
+              "ev-a8bcd0e4ea1f"
+            ],
+            "citations": [
+              {
+                "title": "BBC Weather",
+                "url": "https://www.bbc.co.uk/weather",
+                "publisher": "BBC",
+                "retrieved_at": "2026-11-11",
+                "kind": "official_service",
+                "evidence_id": "ev-a8bcd0e4ea1f"
+              }
+            ]
+          },
+          {
+            "claim": "Met Office UK forecast: https://weather.metoffice.gov.uk/forecast/uk",
+            "support": "ATTRIBUTED_SENTENCE",
+            "citation_evidence_ids": [
+              "ev-a8bcd0e4ea1f",
+              "ev-d69929e36ef2"
+            ],
+            "citations": [
+              {
+                "title": "BBC Weather",
+                "url": "https://www.bbc.co.uk/weather",
+                "publisher": "BBC",
+                "retrieved_at": "2026-11-11",
+                "kind": "official_service",
+                "evidence_id": "ev-a8bcd0e4ea1f"
               },
               {
                 "title": "Met Office UK forecast",
                 "url": "https://weather.metoffice.gov.uk/forecast/uk",
                 "publisher": "Met Office",
                 "retrieved_at": "2026-11-11",
-                "kind": "official_service"
+                "kind": "official_service",
+                "evidence_id": "ev-d69929e36ef2"
               }
             ]
           }
@@ -232,14 +323,16 @@
             "url": "https://www.bbc.co.uk/weather",
             "publisher": "BBC",
             "retrieved_at": "2026-11-11",
-            "kind": "official_service"
+            "kind": "official_service",
+            "evidence_id": "ev-a8bcd0e4ea1f"
           },
           {
             "title": "Met Office UK forecast",
             "url": "https://weather.metoffice.gov.uk/forecast/uk",
             "publisher": "Met Office",
             "retrieved_at": "2026-11-11",
-            "kind": "official_service"
+            "kind": "official_service",
+            "evidence_id": "ev-d69929e36ef2"
           }
         ],
         "freshness": "",
@@ -252,10 +345,10 @@
           "Links only; no temperature or forecast value was fetched.",
           "A current observation is not a forecast for tomorrow."
         ],
-        "request_id": "e49f266cdf6d40d4af83523348f764fb",
-        "retrieved_at": "2026-11-11T14:01:27+00:00",
+        "request_id": "edd5dc3a57fb41efbaa54b23da9df259",
+        "retrieved_at": "2026-11-11T14:46:56+00:00",
         "context_used": false,
-        "latency_ms": 1.9
+        "latency_ms": 2.6
       }
     },
     {
@@ -274,7 +367,15 @@
         "intent": "index_lookup",
         "claim_evidence": [
           {
-            "claim": "I found pages, but none are on the trusted-source list, so I won't cite them. Try a more specific question, or add a curated fact with a source to the knowledge pack.",
+            "claim": "I found pages, but none are on the trusted-source list, so I won't cite them.",
+            "support": "UNVERIFIED_TEXT",
+            "citation_evidence_ids": [],
+            "citations": []
+          },
+          {
+            "claim": "Try a more specific question, or add a curated fact with a source to the knowledge pack.",
+            "support": "UNVERIFIED_TEXT",
+            "citation_evidence_ids": [],
             "citations": []
           }
         ],
@@ -283,10 +384,10 @@
         "confidence": 0.0,
         "limits": [],
         "notices": [],
-        "request_id": "eae359df6bd5487b921bff74c7d68df7",
-        "retrieved_at": "2026-11-11T14:01:27+00:00",
+        "request_id": "afdb3ba918ec4b6db59a3417f35f36c1",
+        "retrieved_at": "2026-11-11T14:46:56+00:00",
         "context_used": false,
-        "latency_ms": 1.7
+        "latency_ms": 3.5
       }
     },
     {
@@ -295,15 +396,16 @@
         "path": "/v1/wiki-candidates",
         "body": {
           "article": {
-            "topic_id": "demo-api-topic",
+            "topic_id": "guide-berlin-concert-tickets",
+            "slug": "demo-api-topic",
             "title": "Demo API topic",
             "summary": "Draft only.",
             "claims": [
               {
-                "text": "Use an official forecast service.",
-                "sources": [
-                  "https://www.bbc.co.uk/weather",
-                  "https://weather.metoffice.gov.uk/forecast/uk"
+                "text": "Start at the venue programme or the Berlin events calendar.",
+                "evidence": [
+                  "ev-berlin-events",
+                  "ev-mercedes-arena"
                 ]
               }
             ],
@@ -314,16 +416,34 @@
       "status": 200,
       "response": {
         "result": "draft_created",
-        "topic_id": "demo-api-topic",
+        "topic_id": "guide-berlin-concert-tickets",
         "slug": "demo-api-topic",
         "status": "draft_created",
-        "request_id": "822fd88b549d42f2b3e57bfa08d61610",
+        "request_id": "52d44ccb9fc14b6c99c684208a0d1229",
         "consumer": "puke",
         "publication": "DRAFT_ONLY",
         "notices": [
-          "Draft proposal only. No Wiki page was published."
+          "Draft proposal only. No Wiki page was published.",
+          "Evidence must already be admitted in the source registry."
         ],
-        "latency_ms": 5.1
+        "latency_ms": 6.7
+      }
+    },
+    {
+      "case": "wiki_scope_denied",
+      "request": {
+        "path": "/v1/wiki-candidates",
+        "body": {
+          "article": {
+            "title": "Blocked"
+          }
+        }
+      },
+      "status": 403,
+      "response": {
+        "status": "FORBIDDEN",
+        "required_scope": "wiki:propose",
+        "consumer": "search-only"
       }
     }
   ],

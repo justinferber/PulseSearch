@@ -15,7 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from pulse_search_broad_r3a3g.api import RateLimiter, build_server  # noqa: E402
+from pulse_search_broad_r3a3g.api import Consumer, RateLimiter, build_server  # noqa: E402
 from pulse_search_crawler_r3a3f.staging import StagingIndex  # noqa: E402
 from pulse_search_broad_r3a3g.wiki import WikiService, WikiStore  # noqa: E402
 
@@ -38,14 +38,21 @@ class ApiTests(unittest.TestCase):
         staging.close()
         wiki = WikiStore(cls.tmp / "wiki.sqlite")
         WikiService(wiki).propose({
-            "topic_id": "api-draft", "title": "API draft topic", "summary": "Summary",
-            "claims": [{"text": "A neutral sourced claim.", "sources": [
-                "https://www.bbc.co.uk/weather", "https://weather.metoffice.gov.uk/forecast/uk"]}],
+            "topic_id": "reference-uk-weather-sources", "slug": "api-draft-topic",
+            "title": "API draft topic", "summary": "Summary",
+            "claims": [{"text": "Use BBC Weather and the Met Office for UK forecasts.",
+                         "evidence": ["ev-uk-weather", "ev-metoffice"]}],
             "verified_at": "2026-11-11",
         })
         wiki.close()
-        cls.server = build_server(str(cls.tmp / "staging.sqlite"), {"puke": TOKEN},
-                                  port=0, wiki_path=str(cls.tmp / "wiki.sqlite"))
+        cls.search_token = "search-only-token"
+        cls.server = build_server(
+            str(cls.tmp / "staging.sqlite"),
+            {"puke": Consumer("puke", TOKEN, frozenset({
+                "health:read", "search:read", "answer:read", "wiki:propose"})),
+             "search-only": Consumer("search-only", cls.search_token,
+                                     frozenset({"search:read"}))},
+            port=0, wiki_path=str(cls.tmp / "wiki.sqlite"))
         cls.thread = threading.Thread(target=cls.server.serve_forever, daemon=True)
         cls.thread.start()
         cls.base = f"http://127.0.0.1:{cls.server.server_address[1]}"
@@ -100,11 +107,11 @@ class ApiTests(unittest.TestCase):
         self.assertNotIn("°C", body["answer"])
 
     def test_wiki_candidates_are_draft_only(self):
-        article = {"topic_id": "new-api-topic", "title": "New API topic",
+        article = {"topic_id": "guide-berlin-concert-tickets",
+                   "slug": "api-berlin-concert-guide", "title": "API Berlin concert guide",
                    "summary": "A sourced draft.",
-                   "claims": [{"text": "Use official forecast services.",
-                               "sources": ["https://www.bbc.co.uk/weather",
-                                           "https://weather.metoffice.gov.uk/forecast/uk"]}],
+                   "claims": [{"text": "Start at the venue programme or the Berlin events calendar.",
+                               "evidence": ["ev-berlin-events", "ev-mercedes-arena"]}],
                    "verified_at": "2026-11-11"}
         status, body, _ = self.request("/v1/wiki-candidates", {"article": article})
         self.assertEqual(status, 200)
@@ -132,6 +139,38 @@ class ApiTests(unittest.TestCase):
             self.assertIn("Retry-After", headers)
         finally:
             self.server.limiter = original
+
+    def test_scope_denies_wiki_write_for_search_only_token(self):
+        article = {"topic_id": "guide-berlin-concert-tickets", "title": "Blocked",
+                   "claims": [{"text": "Start at the Berlin events calendar.",
+                               "evidence": ["ev-berlin-events"]}]}
+        status, body, _ = self.request("/v1/wiki-candidates", {"article": article},
+                                       token=self.search_token)
+        self.assertEqual(status, 403)
+        self.assertEqual(body["required_scope"], "wiki:propose")
+        status, _, _ = self.request("/v1/answer", {"question": "Glastonbury dates?"},
+                                    token=self.search_token)
+        self.assertEqual(status, 403)
+
+    def test_answer_claim_evidence_is_sentence_level(self):
+        status, body, _ = self.request(
+            "/v1/answer", {"question": "When is Glastonbury on next year?"})
+        self.assertEqual(status, 200)
+        self.assertTrue(body["claim_evidence"])
+        self.assertTrue(all("support" in item for item in body["claim_evidence"]))
+        self.assertNotEqual(body["claim_evidence"][0]["claim"], body["answer"])
+
+    def test_invalid_utf8_is_rejected(self):
+        import socket
+        sock = socket.create_connection(("127.0.0.1", self.server.server_address[1]), 5)
+        body = b"{\"query\": \"\xff\"}"
+        sock.sendall(("POST /v1/search HTTP/1.1\r\nHost: localhost\r\n"
+                      f"Authorization: Bearer {TOKEN}\r\nContent-Type: application/json\r\n"
+                      f"Content-Length: {len(body)}\r\nConnection: close\r\n\r\n").encode()
+                     + body)
+        response = sock.recv(4096)
+        sock.close()
+        self.assertIn(b" 400 ", response)
 
     def test_capabilities_and_no_cors_by_default(self):
         status, body, headers = self.request("/v1/capabilities")

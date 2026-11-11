@@ -1,0 +1,160 @@
+{
+  "kind": "R3A3G_PUKE_CLIENT_DEMO",
+  "generated_at": "2026-11-11T14:36:30+00:00",
+  "mode": "SEPARATE_LOOPBACK_CLIENT",
+  "health": {
+    "status": "OK",
+    "service": "pulse-search",
+    "api_version": "1.1",
+    "request_id": "de32c42da5a649fe88ca2514d96f7291",
+    "time_utc": "2026-11-11T14:46:32+00:00",
+    "consumer": "puke"
+  },
+  "cases": [
+    {
+      "question": "What is the weather in London tomorrow?",
+      "status": "OFFICIAL_LINKS",
+      "response_mode": "OFFICIAL_LINKS",
+      "answer": "I don't have a live weather reading. For the current forecast, use the official service for the country:\n- BBC Weather: https://www.bbc.co.uk/weather\n- Met Office UK forecast: https://weather.metoffice.gov.uk/forecast/uk",
+      "links": 0,
+      "citations": 2,
+      "claim_evidence": 4,
+      "request_id": "e3f71d71cdf6432a9c0594420b8f340c",
+      "has_evidence": true,
+      "search_status": "official_links",
+      "search_results": [
+        {
+          "title": "BBC Weather",
+          "url": "https://www.bbc.co.uk/weather",
+          "source_kind": "official_directory"
+        },
+        {
+          "title": "Met Office UK forecast",
+          "url": "https://weather.metoffice.gov.uk/forecast/uk",
+          "source_kind": "official_directory"
+        }
+      ]
+    },
+    {
+      "question": "When is CSD Berlin 2027?",
+      "status": "NO_EVIDENCE",
+      "response_mode": "NO_EVIDENCE",
+      "answer": "I found pages, but none are on the trusted-source list, so I won't cite them. Try a more specific question, or add a curated fact with a source to the knowledge pack.",
+      "links": 0,
+      "citations": 0,
+      "claim_evidence": 2,
+      "request_id": "0fd1634734ac4e6ea8cb37f2a06f0773",
+      "has_evidence": false,
+      "search_status": "staging_results",
+      "search_results": [
+        {
+          "title": "CSD Berlin | Christopher Street Day",
+          "url": "https://www.csd-berlin.de/",
+          "source_kind": "permissioned_staging_document"
+        },
+        {
+          "title": "Events & Culture in Berlin – Berlin.de",
+          "url": "https://www.berlin.de/en/events/",
+          "source_kind": "permissioned_staging_document"
+        },
+        {
+          "title": "Willkommen in Berlin | S-Bahn Berlin GmbH",
+          "url": "https://www.s-bahn-berlin.de/",
+          "source_kind": "permissioned_staging_document"
+        }
+      ]
+    },
+    {
+      "question": "When is Glastonbury Festival 2027?",
+      "status": "ANSWERED",
+      "response_mode": "EXTRACTIVE_ANSWER",
+      "answer": "Glastonbury Festival is scheduled for Wednesday 23 June 2027 to Sunday 27 June 2027 (5 days) at Worthy Farm, Pilton, Somerset, England. 2026 was a fallow year; the festival returns for 2027.",
+      "links": 0,
+      "citations": 1,
+      "claim_evidence": 2,
+      "request_id": "8221079a1e4b412e8e74555f7dd727ca",
+      "has_evidence": true,
+      "search_status": "staging_results",
+      "search_results": [
+        {
+          "title": "Glastonbury Festival - Home",
+          "url": "https://www.glastonburyfestivals.co.uk/",
+          "source_kind": "permissioned_staging_document"
+        },
+        {
+          "title": "LONDON PARADE 2027 Location & Timing - London Parade",
+          "url": "https://londonparade.com/parade-location-timing/",
+          "source_kind": "permissioned_staging_document"
+        }
+      ]
+    },
+    {
+      "question": "London New Year's Eve fireworks tickets",
+      "status": "NO_EVIDENCE",
+      "response_mode": "NO_EVIDENCE",
+      "answer": "I found pages, but none are on the trusted-source list, so I won't cite them. Try a more specific question, or add a curated fact with a source to the knowledge pack.",
+      "links": 0,
+      "citations": 0,
+      "claim_evidence": 2,
+      "request_id": "c1505d820baf4d59b78e8c2e898c26b0",
+      "has_evidence": false,
+      "search_status": "staging_results",
+      "search_results": [
+        {
+          "title": "Keeping London moving - Transport for London",
+          "url": "https://tfl.gov.uk/",
+          "source_kind": "permissioned_staging_document"
+        },
+        {
+          "title": "LONDON PARADE 2027 Location & Timing - London Parade",
+          "url": "https://londonparade.com/parade-location-timing/",
+          "source_kind": "permissioned_staging_document"
+        }
+      ]
+    },
+    {
+      "question": "Berlin Christmas market public transport",
+      "status": "NO_EVIDENCE",
+      "response_mode": "NO_EVIDENCE",
+      "answer": "I found pages, but none are on the trusted-source list, so I won't cite them. Try a more specific question, or add a curated fact with a source to the knowledge pack.",
+      "links": 0,
+      "citations": 0,
+      "claim_evidence": 2,
+      "request_id": "d1f1f5097e094f40991f2cc77ea84817",
+      "has_evidence": false,
+      "search_status": "staging_results",
+      "search_results": [
+        {
+          "title": "Christmas markets in Berlin | visitBerlin.de",
+          "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+          "source_kind": "permissioned_staging_document"
+        }
+      ]
+    },
+    {
+      "question": "When is the Moon Parade?",
+      "status": "NO_EVIDENCE",
+      "response_mode": "NO_EVIDENCE",
+      "answer": "I found pages, but none are on the trusted-source list, so I won't cite them. Try a more specific question, or add a curated fact with a source to the knowledge pack.",
+      "links": 0,
+      "citations": 0,
+      "claim_evidence": 2,
+      "request_id": "0a23a019d8234899a572ccc9ade7f513",
+      "has_evidence": false,
+      "search_status": "staging_results",
+      "search_results": [
+        {
+          "title": "LONDON PARADE 2027 Location & Timing - London Parade",
+          "url": "https://londonparade.com/parade-location-timing/",
+          "source_kind": "permissioned_staging_document"
+        }
+      ]
+    }
+  ],
+  "wiki_candidate": {
+    "status": "update_draft",
+    "publication": "DRAFT_ONLY"
+  },
+  "member_context_blocked_client_side": true,
+  "note": "No member context is sent. The client is a separate process/contract, not part of the API server."
+}

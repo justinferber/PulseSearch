@@ -1,0 +1,252 @@
+{
+  "kind": "R3A3G_REAL_SOURCE_SNAPSHOT",
+  "captured_at": "2026-11-11T14:36:30+00:00",
+  "mode": "MANUAL_SINGLE_PAGE_EVIDENCE_ONLY",
+  "not_a_crawler_admission": true,
+  "pages": [
+    {
+      "id": "berlin-events",
+      "url": "https://www.berlin.de/en/events/",
+      "publisher": "Berlin.de",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "events",
+        "concert",
+        "christmas",
+        "pride"
+      ],
+      "status": 200,
+      "final_url": "https://www.berlin.de/en/events/",
+      "title": "Events & Culture in Berlin – Berlin.de",
+      "description": "Things to do in Berlin: Highlights of the Berlin culture programme, tips for theater, opera, concerts, movies, trade fairs and more.",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "berlin-concerts",
+      "url": "https://www.berlin.de/en/events/concert/",
+      "publisher": "Berlin.de",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "concert"
+      ],
+      "status": 410,
+      "final_url": "https://www.berlin.de/en/events/concert/",
+      "title": "",
+      "description": "",
+      "content_type": "",
+      "error": "HTTP 410"
+    },
+    {
+      "id": "mercedes-arena",
+      "url": "https://www.mercedes-benz-arena.de/en/events/",
+      "publisher": "Mercedes-Benz Arena",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "concert",
+        "venue"
+      ],
+      "status": 0,
+      "final_url": "https://www.mercedes-benz-arena.de/en/events/",
+      "title": "",
+      "description": "",
+      "content_type": "",
+      "error": "URLError"
+    },
+    {
+      "id": "eventim-berlin",
+      "url": "https://www.eventim.de/city/berlin-8/",
+      "publisher": "Eventim",
+      "authority": "primary",
+      "topics": [
+        "berlin",
+        "concert",
+        "tickets"
+      ],
+      "status": 0,
+      "final_url": "https://www.eventim.de/city/berlin-8/",
+      "title": "",
+      "description": "",
+      "content_type": "",
+      "error": "TimeoutError"
+    },
+    {
+      "id": "huxleys",
+      "url": "https://www.huxleys-neue-welt.de/",
+      "publisher": "Huxley's Neue Welt",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "concert",
+        "venue"
+      ],
+      "status": 0,
+      "final_url": "https://www.huxleys-neue-welt.de/",
+      "title": "",
+      "description": "",
+      "content_type": "",
+      "error": "URLError"
+    },
+    {
+      "id": "verti",
+      "url": "https://www.verti-music-hall.de/",
+      "publisher": "Verti Music Hall",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "concert",
+        "venue"
+      ],
+      "status": 200,
+      "final_url": "https://www.uber-eats-music-hall.de/",
+      "title": "",
+      "description": "",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "csd-berlin",
+      "url": "https://www.csd-berlin.de/",
+      "publisher": "CSD Berlin",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "pride",
+        "csd"
+      ],
+      "status": 200,
+      "final_url": "https://csd-berlin.de/",
+      "title": "CSD Berlin | Christopher Street Day",
+      "description": "Der Christopher Street Day Berlin, Demonstration für Vielfalt, Akzeptanz und gleiche Rechte. Termine, Mitmach-Aktionen und alles über den Berliner CSD e.V.",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "bvg",
+      "url": "https://www.bvg.de/en",
+      "publisher": "BVG",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "transport"
+      ],
+      "status": 200,
+      "final_url": "https://www.bvg.de/en",
+      "title": "Berliner Verkehrsbetriebe: BVG - Because we love you | BVG",
+      "description": "Your public transportation in Berlin: timetable information, tickets, subscriptions, apps, traffic news & tourist info.",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "sbahn",
+      "url": "https://www.s-bahn-berlin.de/",
+      "publisher": "S-Bahn Berlin",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "transport"
+      ],
+      "status": 200,
+      "final_url": "https://sbahn.berlin/",
+      "title": "Willkommen in Berlin | S-Bahn Berlin GmbH",
+      "description": "Die offizielle Homepage der S-Bahn Berlin GmbH. Fahrplan, Routenplaner, Erlebnis-Stadtplan, Tickets, Veranstaltungen, Ausflugstipps und vieles mehr.",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "london-fireworks",
+      "url": "https://www.london.gov.uk/events/london-new-years-eve-fireworks",
+      "publisher": "London.gov.uk",
+      "authority": "official",
+      "topics": [
+        "london",
+        "fireworks"
+      ],
+      "status": 404,
+      "final_url": "https://www.london.gov.uk/events/london-new-years-eve-fireworks",
+      "title": "",
+      "description": "",
+      "content_type": "",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "tfl",
+      "url": "https://tfl.gov.uk/",
+      "publisher": "Transport for London",
+      "authority": "official",
+      "topics": [
+        "london",
+        "transport",
+        "fireworks",
+        "parade"
+      ],
+      "status": 200,
+      "final_url": "https://tfl.gov.uk/",
+      "title": "Keeping London moving - Transport for London",
+      "description": "Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates.",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "london-parade",
+      "url": "https://londonparade.com/parade-location-timing/",
+      "publisher": "London Parade",
+      "authority": "official",
+      "topics": [
+        "london",
+        "parade"
+      ],
+      "status": 200,
+      "final_url": "https://londonparade.com/parade-location-timing/",
+      "title": "LONDON PARADE 2027 Location & Timing - London Parade",
+      "description": "Where Piccadilly, Regent Street, St James's, Pall Mall, Trafalgar Square and Whitehall. When Friday, the 1st of January 2027 Free-standing for the general public Ticket Holders to arrive from: Noon Timing: 1 pm- 4:30 pm",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "glastonbury",
+      "url": "https://www.glastonburyfestivals.co.uk/",
+      "publisher": "Glastonbury Festivals",
+      "authority": "official",
+      "topics": [
+        "music",
+        "festival",
+        "glastonbury"
+      ],
+      "status": 200,
+      "final_url": "https://www.glastonburyfestivals.co.uk/",
+      "title": "Glastonbury Festival - Home",
+      "description": "Glastonbury Festival - Wed 25th Jun - Sun 29th Jun 2025",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "berlin-christmas",
+      "url": "https://www.berlin.de/en/events/christmas-markets/",
+      "publisher": "Berlin.de",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "christmas",
+        "market"
+      ],
+      "status": 410,
+      "final_url": "https://www.berlin.de/en/events/christmas-markets/",
+      "title": "",
+      "description": "",
+      "content_type": "",
+      "error": "HTTP 410"
+    },
+    {
+      "id": "visitberlin-christmas",
+      "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+      "publisher": "visitBerlin",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "christmas",
+        "market"
+      ],
+      "status": 200,
+      "final_url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+      "title": "Christmas markets in Berlin | visitBerlin.de",
+      "description": "Christmas Markets in Berlin: ✓ Over 80 from insider tips to popular ones ✓ How to find them ✓ Opening hours & admissions ► Find your favourite market!",
+      "content_type": "text/html; charset=utf-8"
+    }
+  ]
+}

@@ -23,7 +23,7 @@ class WikiWorkflowTests(unittest.TestCase):
     def setUp(self):
         self.tmp = Path(tempfile.mkdtemp(prefix="r3a3g-wiki-"))
         self.store = WikiStore(self.tmp / "wiki.sqlite")
-        self.service = WikiService(self.store)
+        self.service = WikiService(self.store, LocalPublisher())
 
     def tearDown(self):
         self.store.close()
@@ -36,7 +36,7 @@ class WikiWorkflowTests(unittest.TestCase):
         pages = self.store.list()
         self.assertGreaterEqual(len(pages), 10)
         for page in pages:
-            sources = json.loads(page["sources"])
+            sources = page["sources"]
             self.assertGreaterEqual(len({s["url"] for s in sources}), 2)
             self.assertIn("## Sources", page["body"])
 
@@ -72,7 +72,8 @@ class WikiWorkflowTests(unittest.TestCase):
         self.service.approve(article["topic_id"], "editor@example.test")
         with self.assertRaises(WikiError):
             self.service.publish(article["topic_id"], WikiPolicy(auto_publish_enabled=True))
-        policy = WikiPolicy(auto_publish_enabled=True, authorised_by="local-test-policy")
+        policy = WikiPolicy(auto_publish_enabled=True, authorised_by="local-test-policy",
+                            allowed_categories=("general",))
         result = self.service.publish(article["topic_id"], policy, reviewer="editor")
         self.assertEqual(result["result"], "published")
         self.assertEqual(self.store.get(article["topic_id"])["status"], "published")
@@ -82,7 +83,8 @@ class WikiWorkflowTests(unittest.TestCase):
         self.service.propose(article)
         self.service.approve(article["topic_id"], "editor")
         self.service.publish(article["topic_id"],
-                             WikiPolicy(auto_publish_enabled=True, authorised_by="test"),
+                             WikiPolicy(auto_publish_enabled=True, authorised_by="test",
+                                        allowed_categories=("general",)),
                              reviewer="editor")
         source = article["claims"][0]["sources"][0]
         result = self.service.flag_source(source, "rights withdrawn")
@@ -114,7 +116,8 @@ class WikiWorkflowTests(unittest.TestCase):
         service.approve(article["topic_id"], "editor")
         with self.assertRaises(WikiError):
             service.publish(article["topic_id"],
-                            WikiPolicy(auto_publish_enabled=True, authorised_by="test"),
+                            WikiPolicy(auto_publish_enabled=True, authorised_by="test",
+                                       allowed_categories=("general",)),
                             reviewer="editor")
 
 

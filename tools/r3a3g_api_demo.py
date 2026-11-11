@@ -14,7 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from pulse_search_broad_r3a3g.api import build_server  # noqa: E402
+from pulse_search_broad_r3a3g.api import Consumer, build_server  # noqa: E402
 from pulse_search_broad_r3a3g.wiki import WikiService, WikiStore  # noqa: E402
 from pulse_search_crawler_r3a3f.staging import StagingIndex  # noqa: E402
 
@@ -50,14 +50,19 @@ def main() -> int:
     staging.close()
     wiki = WikiStore(tmp / "wiki.sqlite")
     WikiService(wiki).propose({
-        "topic_id": "demo-wiki", "title": "Demo Wiki topic", "summary": "Public evidence only.",
-        "claims": [{"text": "Use official forecast services for current weather.",
-                    "sources": ["https://www.bbc.co.uk/weather",
-                                "https://weather.metoffice.gov.uk/forecast/uk"]}],
+        "topic_id": "reference-uk-weather-sources", "slug": "demo-wiki-topic",
+        "title": "Demo Wiki topic", "summary": "Public evidence only.",
+        "claims": [{"text": "Use BBC Weather and the Met Office for UK forecasts.",
+                    "evidence": ["ev-uk-weather", "ev-metoffice"]}],
         "verified_at": "2026-11-11"})
     wiki.close()
-    server = build_server(str(tmp / "staging.sqlite"), {"puke": TOKEN}, port=0,
-                          wiki_path=str(tmp / "wiki.sqlite"))
+    server = build_server(
+        str(tmp / "staging.sqlite"),
+        {"puke": Consumer("puke", TOKEN, frozenset({
+            "health:read", "search:read", "answer:read", "wiki:propose"})),
+         "search-only": Consumer("search-only", "search-only-token",
+                                 frozenset({"search:read"}))},
+        port=0, wiki_path=str(tmp / "wiki.sqlite"))
     thread = threading.Thread(target=server.serve_forever, daemon=True)
     thread.start()
     base = f"http://127.0.0.1:{server.server_address[1]}"
@@ -73,11 +78,13 @@ def main() -> int:
              {"question": "What is the weather in London tomorrow?"}, TOKEN),
             ("no_evidence", "/v1/answer", {"question": "When is the Moon Parade?"}, TOKEN),
             ("wiki_candidate", "/v1/wiki-candidates", {"article": {
-                "topic_id": "demo-api-topic", "title": "Demo API topic", "summary": "Draft only.",
-                "claims": [{"text": "Use an official forecast service.",
-                            "sources": ["https://www.bbc.co.uk/weather",
-                                        "https://weather.metoffice.gov.uk/forecast/uk"]}],
+                "topic_id": "guide-berlin-concert-tickets", "slug": "demo-api-topic",
+                "title": "Demo API topic", "summary": "Draft only.",
+                "claims": [{"text": "Start at the venue programme or the Berlin events calendar.",
+                            "evidence": ["ev-berlin-events", "ev-mercedes-arena"]}],
                 "verified_at": "2026-11-11"}}, TOKEN),
+            ("wiki_scope_denied", "/v1/wiki-candidates", {"article": {
+                "title": "Blocked"}}, "search-only-token"),
         ]:
             status, body = call(base, path, payload, token)
             fixtures.append({"case": label, "request": {"path": path, "body": payload},

@@ -1,0 +1,8 @@
+# Byte-pinned Pulse Search provenance fixtures.
+#
+# These files are verified by exact SHA-256 inside the archived tests. With
+# core.autocrlf=true, a Windows checkout rewrote them to CRLF, changing their
+# hash and failing four provenance modules against authentic bytes that were
+# present in Git all along. -text keeps them exactly as committed.
+historical/local_snapshot/**/owner_R2P3*_report.json -text
+historical/local_snapshot/**/owner_review_r2p20.json -text

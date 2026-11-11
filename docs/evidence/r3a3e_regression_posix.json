@@ -1,0 +1,170 @@
+{
+  "kind": "R3A3E_POSIX_REGRESSION_MATRIX",
+  "interpreter": "CPython 3.12.15 (provisioned stage venv)",
+  "modules": 25,
+  "passing": 25,
+  "tests": 419,
+  "tests_in_passing_modules": 419,
+  "previously_passing_modules": 21,
+  "previously_failing_now_passing": [
+    "test_p21",
+    "test_r2p32",
+    "test_r2p33",
+    "test_r2p34"
+  ],
+  "cause": "core.autocrlf=true rewrote byte-pinned fixtures to CRLF on Windows checkout; authentic bytes were present in Git blobs",
+  "tests_edited": false,
+  "expected_digests_changed": false,
+  "modules_detail": [
+    {
+      "module": "test_r3a2",
+      "status": "PASS",
+      "tests": 17,
+      "dir": "historical/local_snapshot/Pulse_Search_R3A2R2_20261026"
+    },
+    {
+      "module": "test_r3a2r1",
+      "status": "PASS",
+      "tests": 3,
+      "dir": "historical/local_snapshot/Pulse_Search_R3A2R2_20261026"
+    },
+    {
+      "module": "test_r3a2r2",
+      "status": "PASS",
+      "tests": 8,
+      "dir": "historical/local_snapshot/Pulse_Search_R3A2R2_20261026"
+    },
+    {
+      "module": "test_engine",
+      "status": "PASS",
+      "tests": 54,
+      "dir": "historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_p10",
+      "status": "PASS",
+      "tests": 6,
+      "dir": "historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_p11",
+      "status": "PASS",
+      "tests": 6,
+      "dir": "historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_p11_extra",
+      "status": "PASS",
+      "tests": 1,
+      "dir": "historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_p12",
+      "status": "PASS",
+      "tests": 15,
+      "dir": "historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_p14",
+      "status": "PASS",
+      "tests": 32,
+      "dir": "historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_p15",
+      "status": "PASS",
+      "tests": 18,
+      "dir": "historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_p16",
+      "status": "PASS",
+      "tests": 21,
+      "dir": "historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_p17",
+      "status": "PASS",
+      "tests": 16,
+      "dir": "historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_p18",
+      "status": "PASS",
+      "tests": 16,
+      "dir": "historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_p19",
+      "status": "PASS",
+      "tests": 24,
+      "dir": "historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_p21",
+      "status": "PASS",
+      "tests": 16,
+      "dir": "historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_quality",
+      "status": "PASS",
+      "tests": 20,
+      "dir": "historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_real_questions",
+      "status": "PASS",
+      "tests": 12,
+      "dir": "historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_scheduler",
+      "status": "PASS",
+      "tests": 28,
+      "dir": "historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests"
+    },
+    {
+      "module": "test_r2p29",
+      "status": "PASS",
+      "tests": 20,
+      "dir": "historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_p29/Pulse_Search_R2P29_20261025"
+    },
+    {
+      "module": "test_r2p31",
+      "status": "PASS",
+      "tests": 10,
+      "dir": "historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025"
+    },
+    {
+      "module": "test_r2p32",
+      "status": "PASS",
+      "tests": 12,
+      "dir": "historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_p32/Pulse_Search_R2P32_20261025"
+    },
+    {
+      "module": "test_r2p33",
+      "status": "PASS",
+      "tests": 15,
+      "dir": "historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_p33/Pulse_Search_R2P33_20261025"
+    },
+    {
+      "module": "test_r2p34",
+      "status": "PASS",
+      "tests": 14,
+      "dir": "historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_p34/Pulse_Search_R2P34_20261025"
+    },
+    {
+      "module": "test_r2p35",
+      "status": "PASS",
+      "tests": 20,
+      "dir": "historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025"
+    },
+    {
+      "module": "test_r3a",
+      "status": "PASS",
+      "tests": 15,
+      "dir": "historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_r3a1/Pulse_Search_R3A1_20261026"
+    }
+  ]
+}

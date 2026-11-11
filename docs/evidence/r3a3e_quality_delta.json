@@ -1,0 +1,130 @@
+{
+  "kind": "R3A3E_QUALITY_DELTA",
+  "generated": "2026-11-11",
+  "status": "HOLD_UNGRADED",
+  "signed_human_grades": 0,
+  "source_verified_factual_answers": 0,
+  "engine_snapshots_modified": false,
+  "owner_index_sha256": "bb8e52025a1a25f55141507a02621db190e54bf1fc4d4da8db4248357368c35d",
+  "model_manifest_sha256": "3955a9a2ca390314555ddb6a11b2ed16210657b689cab1b8e708653d3c63c437",
+  "index_hash_unchanged_after_all_runs": true,
+  "what_is_measured": "Engineer-authored URL expectations and rule-based constraint compliance. This is NOT relevance, NOT independent human grading, and NOT production approval.",
+  "accepted_engine_baseline": {
+    "hybrid": {
+      "PASS_RETRIEVAL": 19,
+      "PASS_SAFETY": 10,
+      "ABSTAIN_FACT_UNVERIFIED": 11,
+      "FAIL_WRONG_TOP1": 4,
+      "FAIL_EMPTY_DISCOVERY": 4,
+      "FAIL_MISSING_EDITION": 3,
+      "FAIL_SERIES_RECALL": 2,
+      "FAIL_EXCLUSION_LEAK": 1
+    },
+    "bge_dense": {
+      "PASS_RETRIEVAL": 27,
+      "PASS_SAFETY": 10,
+      "ABSTAIN_FACT_UNVERIFIED": 11,
+      "FAIL_MISSING_EDITION": 3,
+      "FAIL_SERIES_RECALL": 2,
+      "FAIL_EXCLUSION_LEAK": 1
+    }
+  },
+  "candidate_constraint_layer": {
+    "hybrid": {
+      "PASS_RETRIEVAL": 29,
+      "PASS_SAFETY": 10,
+      "ABSTAIN_FACT_UNVERIFIED": 11,
+      "FAIL_WRONG_TOP1": 4,
+      "FAIL_EMPTY_DISCOVERY": 0,
+      "FAIL_MISSING_EDITION": 0,
+      "FAIL_SERIES_RECALL": 0,
+      "FAIL_EXCLUSION_LEAK": 0
+    },
+    "bge_dense": {
+      "PASS_RETRIEVAL": 33,
+      "PASS_SAFETY": 10,
+      "ABSTAIN_FACT_UNVERIFIED": 11,
+      "FAIL_WRONG_TOP1": 0,
+      "FAIL_EMPTY_DISCOVERY": 0,
+      "FAIL_MISSING_EDITION": 0,
+      "FAIL_SERIES_RECALL": 0,
+      "FAIL_EXCLUSION_LEAK": 0
+    }
+  },
+  "newly_passing": {
+    "hybrid": [
+      "event_series_2",
+      "event_series_3",
+      "exclude_eid",
+      "exclude_games",
+      "exclude_diwali",
+      "catalog_history",
+      "x09",
+      "x10",
+      "x12",
+      "x14"
+    ],
+    "bge_dense": [
+      "event_series_2",
+      "event_series_3",
+      "exclude_diwali",
+      "catalog_history",
+      "x09",
+      "x14"
+    ]
+  },
+  "regressions": {
+    "hybrid": [],
+    "bge_dense": []
+  },
+  "remaining_hybrid_failures": {
+    "FAIL_WRONG_TOP1": [
+      "new_patient_doctor",
+      "learner_motorist",
+      "x01",
+      "x04"
+    ],
+    "note": "Genuine lexical recall misses on both engines, unchanged by the constraint layer and not claimed as fixed. BGE recovers these four."
+  },
+  "lab_api": {
+    "scope": "8-page synthetic loopback fixture; LAB_QUERY_PATH_ONLY, never combined with October scoring",
+    "protocol_checks": {"before": "11/11", "after": "11/11"},
+    "relevance_assertions": {"before": "3/5", "after": "5/5"},
+    "indexed_fixture_pages": {"before": 8, "after": 10},
+    "doctor_query": {"before": "0 results", "after": "/gp-registration rank 1"},
+    "vote_query": {"before": "/gp-registration rank 1", "after": "/register-to-vote rank 1"}
+  },
+  "top1_agreement_correction": {
+    "comparable_nonempty": 44,
+    "matched": 44,
+    "no_result_combinations": 10,
+    "correct_framing": "44/44 comparable nonempty top-1 URLs",
+    "superseded_framing": "44/54",
+    "explanation": "44/54 used the 54-question denominator. Ten queries return no BGE result, so they have no top URL to compare. No top-URL divergence exists on comparable results."
+  },
+  "original_regression": {
+    "modules": 25,
+    "passing": 25,
+    "tests": 419,
+    "previously_passing": 21,
+    "cause_of_four_failures": "core.autocrlf=true rewrote byte-pinned fixtures to CRLF on Windows checkout; authentic bytes were present in Git blobs",
+    "tests_edited_to_force_pass": false,
+    "expected_digests_changed": false
+  },
+  "gates": {
+    "REPLAY_REPRODUCED": "PASS",
+    "BLIND_PACK_VALID": "HOLD_WORKBOOK_NOT_PRESENT_LOCALLY",
+    "SIGNED_HUMAN_GRADING": 0,
+    "FULL_K_EXCLUSION_COMPLIANCE": "ACCEPTED_ENGINE_FAIL / CANDIDATE_LAYER_PASS",
+    "OPEN_HOUSE_EDITION_COVERAGE": "ACCEPTED_ENGINE_FAIL / CANDIDATE_LAYER_PASS",
+    "ORIGINAL_REGRESSION": "PASS",
+    "PRODUCTION": "HOLD"
+  },
+  "evidence": [
+    "docs/evidence/r3a3e_constraint_layer_54.json",
+    "docs/evidence/r3a3e_constraint_layer_54_bge.json",
+    "docs/evidence/r3a3e_defect_focus.json",
+    "docs/evidence/r3a3e_lab_api_relevance.json",
+    "docs/evidence/r3a3e_regression_posix.txt"
+  ]
+}

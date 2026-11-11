@@ -162,6 +162,7 @@ def verify(replay, frozen, candidates=None, empties=None):
         "ranked_candidates": 423,
         "explicit_empty_combinations": 32,
         "comparable_bge_top1_url_agreement": "44/44",
+        "bge_no_result_combinations": 54 - comparable,
         "confirmed_exclusion_defects": failed_constraints,
         "candidate_review_csv_rows_checked": None if candidates is None else len(candidates),
         "no_results_csv_rows_checked": None if empties is None else len(empties),

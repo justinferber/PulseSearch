@@ -101,7 +101,7 @@
       "event_name": "London Parade (formerly London's New Year's Day Parade / LNYDP)",
       "official_source_url": "https://londonparade.com/",
       "organiser": "Destination Events Ltd",
-      "relationship_note": "Mine Media works commercially on this event. Commercial representation does not itself grant search crawler or content reuse permission; obtain written approval from the authorised organiser.",
+      "relationship_note": "Project owner confirms Mine Media is the official London Parade partner and that Destination Events approved use of London Parade text and imagery. Owner also affirmed the proposed internal Pulse Search metadata/snippet test. Do not seek duplicate organiser approval.",
       "event_year_and_date": "2027 edition, 1 January 2027",
       "role": "candidate_B_london_parade",
       "owner_requested_add": true,
@@ -111,28 +111,29 @@
         "origin": "https://londonparade.com",
         "allowed_paths": [],
         "path_review_candidates": [
-          "/news/",
           "/about/",
-          "/parade-location-timing/"
+          "/parade-location-timing/",
+          "/londonparade-participants/",
+          "/news-archive",
+          "/festivals/concerts/"
         ],
         "seed_review_candidates": [
           "https://londonparade.com/parade-location-timing/",
           "https://londonparade.com/about/"
         ],
-        "rights_status": "OWNER_ATTESTED_ORGANISER_APPROVAL_SCOPE_TO_RECORD",
+        "rights_status": "OWNER_CONFIRMED_DESTINATION_EVENTS_TEXT_AND_IMAGERY",
         "approved": false,
         "index_allowed": false,
         "store_body": false,
         "probe_policy": [],
         "probe_budget_per_run": 0,
-        "contact": "ORGANISER_TO_CONFIRM"
+        "contact": "contact@londonparade.com"
       },
       "pending": [
-        "Confirm canonical host, redirects and current page path tree; internet lookup of www host was unavailable, and robots status could not be verified via tool",
-        "Record the existing Destination Events approval's data-use scope and document reference; do not request redundant approval",
-        "Review robots.txt, site terms, allowed child paths and form/login exclusions; never harvest participant form submissions or personal information",
-        "Agree seed URLs, max-depth=3, category facets and independent host budget",
-        "Record reviewer, approval date, permission evidence and takedown contact before changing flags"
+        "Separate owner first-live-crawler go/no-go and source admission action; content rights are confirmed already",
+        "Use reviewed apex-host scope and seeds, do not admit www or other hosts without a separate source record",
+        "Retain 10-second host pacing, persisted 20 accepted/300 attempts/30 minutes caps, zero probes and exclude private forms/accounts/personal data",
+        "Optional structured feed availability is not a prerequisite for P1"
       ],
       "discovery_themes": [
         "Parades & Processions",
@@ -140,7 +141,15 @@
         "Arts & Culture",
         "Fundraiser",
         "Festival"
-      ]
+      ],
+      "content_use_attestation": {
+        "confirmed_by": "Mine Media owner",
+        "date": "2026-11-11",
+        "source_quote": "London Parade is just One of 100s of Mine Media clients. Yes we are approved to use any text or imagery we want.",
+        "rights": "London Parade text and imagery, including proposed internal Pulse Search metadata/snippet test",
+        "reference": "OWNER_DIRECT_ATTESTATION_2026-11-11_LONDON_PARADE",
+        "first_live_crawler_authorisation": false
+      }
     },
     {
       "host": "www.lordmayorsshow.london",
@@ -288,7 +297,7 @@
   },
   "owner_decisions_required": [
     "Retain City Hall /events and add London Parade and Lord Mayor's Show as candidates (scope selection only; not live approval)",
-    "Obtain written source-specific authorisation including crawling, indexing/snippet/deep-link rights and retention",
+    "London Parade content rights confirmed by owner; other two sources remain subject to source-specific rights checks",
     "Confirm canonical hosts, reviewed exact path scopes, approved seeds and robots decisions independently for each candidate",
     "Confirm per-host user-agent contact, owner reviewer, permission date, takedown path and host budgets",
     "Choose the single first live pilot source; retain 20 accepted pages/day for P1, total-request ceiling 300/day and zero probes",
@@ -296,7 +305,7 @@
   ],
   "updated_at": "2026-11-11",
   "owner_scope_decision": "RETAIN_CITY_HALL_ADD_LONDON_PARADE_AND_LORD_MAYORS_SHOW_AS_CANDIDATES_ONLY",
-  "owner_scope_not_authorisation": "User approved adding two source candidates to discovery planning; this does not admit the hosts, grant third-party content rights or authorise any live request.",
+  "owner_scope_not_authorisation": "Source selections alone are not crawler activation. However London Parade content-use rights are owner-confirmed as of 11 November 2026 and include the proposed internal snippet test; the live crawler run still requires a separate go/no-go.",
   "candidate_rollout": [
     {
       "sequence": 1,

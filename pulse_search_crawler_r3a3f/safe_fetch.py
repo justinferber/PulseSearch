@@ -37,6 +37,7 @@ class FetchResult:
     error: str = ""
     retry_after_s: float | None = None
     chain: list[str] = field(default_factory=list)
+    hops: list[dict] = field(default_factory=list)
     latency_ms: int = 0
     bytes_received: int = 0
 
@@ -89,32 +90,58 @@ class Fetcher:
         *,
         max_bytes: int | None = None,
         extra_headers: dict[str, str] | None = None,
+        redirect_gate=None,
     ) -> FetchResult:
+        """Fetch a URL, following redirects only through `redirect_gate`.
+
+        `redirect_gate(target)` is called before every redirect destination is
+        requested. It returns None to allow the hop or a short reason string to
+        refuse it; refusing means no request is issued to that URL. The gate is
+        where admission, scope, robots, request budget and pacing are enforced.
+        """
         limit = max_bytes or self.config.max_bytes
         started = time.monotonic()
+        hops: list[dict] = []
         scheme = urlsplit(url).scheme.lower()
         if scheme and scheme not in ("http", "https"):
             return FetchResult(url, url, error=f"scheme_not_allowed:{scheme}")
         current = url
+        previous = None
         chain: list[str] = []
         for hop in range(self.config.max_redirects + 1):
             try:
                 current = canonicalize(current)
             except ValueError as exc:
-                return FetchResult(url, current, error=f"bad_url:{exc}", chain=chain)
+                return FetchResult(url, current, error=f"bad_url:{exc}", chain=chain,
+                                   hops=hops)
+            if hop > 0 and redirect_gate is not None:
+                denial = redirect_gate(current)
+                if denial:
+                    hops.append({"hop": hop, "url": current, "redirect_from": previous,
+                                 "status": None, "decision": "blocked", "reason": denial})
+                    chain.append(current)
+                    return FetchResult(url, current, error=f"redirect_blocked:{denial}",
+                                       chain=chain, hops=hops)
             chain.append(current)
             result = self._one(current, limit, extra_headers, chain, started)
+            hops.append({"hop": hop, "url": current, "redirect_from": previous,
+                         "status": result.status, "decision": "followed",
+                         "reason": ""})
             if result.error or result.status not in REDIRECT_CODES:
+                result.hops = hops
                 return result
             location = result.headers.get("location")
             if not location:
                 result.error = "redirect_without_location"
+                result.hops = hops
                 return result
             if hop >= self.config.max_redirects:
                 result.error = "too_many_redirects"
+                result.hops = hops
                 return result
+            previous = current
             current = urljoin(current, location)
-        return FetchResult(url, current, error="too_many_redirects", chain=chain)
+        return FetchResult(url, current, error="too_many_redirects", chain=chain, hops=hops)
 
     def _one(self, url, limit, extra_headers, chain, started) -> FetchResult:
         parts = urlsplit(url)

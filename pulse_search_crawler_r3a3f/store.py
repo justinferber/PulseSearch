@@ -62,6 +62,10 @@ CREATE TABLE IF NOT EXISTS rejections(
   seen_at TEXT);
 CREATE TABLE IF NOT EXISTS sitemap_candidates(
   url TEXT PRIMARY KEY, source_id TEXT, robots_origin TEXT, policy TEXT, seen_at TEXT);
+CREATE TABLE IF NOT EXISTS redirect_log(
+  id INTEGER PRIMARY KEY AUTOINCREMENT, source_id TEXT, depth INTEGER,
+  from_url TEXT, to_url TEXT, hop INTEGER, status INTEGER, decision TEXT,
+  reason TEXT, at_utc TEXT);
 """
 
 
@@ -570,6 +574,30 @@ class Store:
             (url, source_id, robots_origin, utc_now()),
         )
         self.conn.commit()
+
+    def log_redirect(self, *, source_id: str, depth: int, from_url: str | None,
+                     to_url: str, hop: int, status: int | None, decision: str,
+                     reason: str = "") -> None:
+        self.conn.execute(
+            """INSERT INTO redirect_log(source_id,depth,from_url,to_url,hop,status,
+                 decision,reason,at_utc) VALUES(?,?,?,?,?,?,?,?,?)""",
+            (source_id, depth, from_url, to_url, hop, status, decision, reason, utc_now()),
+        )
+        self.conn.commit()
+
+    def redirect_log(self, limit: int = 200) -> list[dict]:
+        return [
+            dict(r) for r in self.conn.execute(
+                "SELECT * FROM redirect_log ORDER BY id DESC LIMIT ?", (limit,))
+        ]
+
+    def redirect_counts(self) -> dict[str, int]:
+        return {
+            f"{row['decision']}:{row['reason']}": row["n"]
+            for row in self.conn.execute(
+                "SELECT decision, reason, COUNT(*) n FROM redirect_log "
+                "GROUP BY decision, reason ORDER BY n DESC")
+        }
 
     def sitemap_candidates(self) -> list[dict]:
         return [dict(r) for r in self.conn.execute(

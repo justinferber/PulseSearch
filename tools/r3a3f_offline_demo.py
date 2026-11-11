@@ -19,9 +19,11 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from pulse_search_crawler_r3a3f.classify import CATEGORIES  # noqa: E402
+from pulse_search_crawler_r3a3f.cli import AdmissionError, load_sources  # noqa: E402
 from pulse_search_crawler_r3a3f.config import CrawlConfig  # noqa: E402
 from pulse_search_crawler_r3a3f.crawler import Crawler, build_report  # noqa: E402
-from pulse_search_crawler_r3a3f.sitesim import build_network  # noqa: E402
+from pulse_search_crawler_r3a3f.sitesim import (  # noqa: E402
+    Route, RouteServer, build_network, page_html)
 from pulse_search_crawler_r3a3f.staging import StagingIndex  # noqa: E402
 from pulse_search_crawler_r3a3f.store import Store, utc_now  # noqa: E402
 
@@ -67,6 +69,16 @@ def main() -> int:
     frozen_sha = sha256_file(ROOT / "docs/evidence/r3a3d_frozen54_replay.json")
 
     network = build_network()
+    # A public origin that is never admitted. A redirect to it must be refused
+    # even though the page is readable: that host was never reviewed.
+    outside = RouteServer().start()
+    outside.set("/robots.txt", Route(body=b"User-agent: *\nAllow: /\n",
+                                     mime="text/plain; charset=utf-8"))
+    outside.set("/events", Route(body=page_html(
+        "Unadmitted events", "Public events page on a host that was never admitted.")))
+    network.servers["berlin-events"].set(
+        "/redirect/offsite",
+        Route(status=302, headers={"Location": outside.base + "/events"}))
     store = Store(data / "crawl.sqlite")
     staging = StagingIndex(data / "staging.sqlite")
     config = CrawlConfig(
@@ -123,6 +135,23 @@ def main() -> int:
                                and not unreviewed["index_allowed"]
                                and unreviewed["probe_policy"] == "[]")
 
+        # The CLI has no approval defaults either: an incomplete record or an
+        # approval without a reviewed rights basis is refused at import time.
+        try:
+            load_sources({"sources": [{"source_id": "incomplete",
+                                       "origin": "https://example.org"}]})
+            cli_rejects_incomplete = False
+        except AdmissionError:
+            cli_rejects_incomplete = True
+        try:
+            load_sources({"sources": [{
+                "source_id": "unreviewed", "origin": "https://example.org",
+                "allowed_paths": ["/events"], "rights_status": "NOT_ASSESSED",
+                "approved": True, "index_allowed": True}]})
+            cli_rejects_unreviewed_rights = False
+        except AdmissionError:
+            cli_rejects_unreviewed_rights = True
+
         # Temporary-absence recheck: the Christmas listing 404s out of season
         # and appears later. It must be rechecked, not buried as gone.
         network.enable_seasonal_listing()
@@ -149,7 +178,7 @@ def main() -> int:
         revoked_docs = staging.revoke_source("community-hub", "source_revoked_demo")
         search_after_revoke = staging.search("volunteering", None, 10)
 
-        report = build_report(store, staging, config)
+        report = build_report(store, staging, config, historical_index=OWNER_INDEX)
         owner_sha_after = sha256_file(OWNER_INDEX) if OWNER_INDEX.exists() else None
         docs = staging.all_documents(2000)
         urls = {d["url"] for d in docs}
@@ -204,6 +233,17 @@ def main() -> int:
             "HOST_FAIRNESS_UNDER_BUDGET": len(report["fairness"]["fetches_by_source"]) >= 4
             and all(v > 0 for v in report["fairness"]["fetches_by_source"].values()),
             "USEFUL_DISCOVERY_MEASURED": report["discovery"]["useful_per_100_fetches"] > 0,
+            "REDIRECT_OFF_ORIGIN_BLOCKED": outside.hits == []
+            and report["redirects"]["by_decision"].get("blocked:off_origin", 0) >= 1,
+            "REDIRECT_ROBOTS_BLOCKED": network.servers["berlin-events"].hits_for("/private") == 0
+            and report["redirects"]["by_decision"].get("blocked:robots_denied", 0) >= 1,
+            "REDIRECT_HOPS_LOGGED": report["redirects"]["followed_hops"] >= 3
+            and report["redirects"]["blocked_hops"] >= 2
+            and len(report["redirects"]["log"]) >= 5,
+            "SOURCE_ADMISSION_EXPLICIT": cli_rejects_incomplete
+            and cli_rejects_unreviewed_rights,
+            "NOVELTY_MEASURED": report["novelty"]["status"] == "MEASURED_READ_ONLY"
+            and report["novelty"]["historical_index_pages"] >= 100,
         }
         evidence = {
             "kind": "R3A3F_OFFLINE_DEMO_EVIDENCE",
@@ -225,6 +265,18 @@ def main() -> int:
                                    "approved": bool(unreviewed["approved"]),
                                    "index_allowed": bool(unreviewed["index_allowed"]),
                                    "probe_policy": unreviewed["probe_policy"]},
+            "source_admission_cli": {
+                "incomplete_record_rejected": cli_rejects_incomplete,
+                "unreviewed_rights_rejected": cli_rejects_unreviewed_rights,
+            },
+            "redirects": {
+                "followed_hops": report["redirects"]["followed_hops"],
+                "blocked_hops": report["redirects"]["blocked_hops"],
+                "by_decision": report["redirects"]["by_decision"],
+                "log_sample": report["redirects"]["log"][:20],
+                "unadmitted_target_hits": list(outside.hits),
+            },
+            "novelty": report["novelty"],
             "recheck": {"waiting_before": rechecks_waiting,
                         "reactivated": reactivated,
                         "seasonal_listing_indexed": seasonal_indexed,
@@ -268,6 +320,8 @@ def main() -> int:
         store.close()
         staging.close()
         network.stop()
+        outside.shutdown()
+        outside.server_close()
 
 
 if __name__ == "__main__":

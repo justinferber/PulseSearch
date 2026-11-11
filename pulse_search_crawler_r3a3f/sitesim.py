@@ -340,7 +340,10 @@ def build_network() -> SyntheticNetwork:
                ("/events/karneval-umzug", "Carnival parade Umzug"),
                ("/events/pride-berlin", "Pride Berlin events"),
                ("/events/stadtfest-berlin", "Stadtfest street festival"),
-               ("/events/diwali", "Diwali festival of lights")])))
+               ("/events/diwali", "Diwali festival of lights"),
+               ("/redirect/start", "Redirecting listing"),
+               ("/redirect/private", "Members-only listing"),
+               ("/redirect/offsite", "Partner listing")])))
     berlin.set("/", Route(body=page_html(
         "Berlin events guide", "A guide to conferences, festivals and community events in Berlin.",
         links=hub_links + guide_links + [("/whats-on", "What's on in Berlin"),
@@ -377,6 +380,11 @@ def build_network() -> SyntheticNetwork:
         body=b"<?xml version='1.0'?><urlset><url><loc>" + f"{berlin.base}/private/secret".encode()
              + b"</loc></url></urlset>", mime="application/xml"))
     berlin.set("/redirect/start", Route(status=301, headers={"Location": "/redirect/step"}))
+    # Redirects that must never be followed: a robots-disallowed path on the
+    # same origin, and a public host that was never admitted.
+    berlin.set("/redirect/private", Route(status=302, headers={"Location": "/private/secret"}))
+    berlin.set("/redirect/offsite", Route(
+        status=302, headers={"Location": "https://outside.invalid/events"}))
     berlin.set("/redirect/step", Route(status=302, headers={"Location": "/redirect/deep"}))
     berlin.set("/redirect/deep", Route(status=307, headers={"Location": "/redirect/final"}))
     berlin.set("/redirect/final", Route(status=308, headers={"Location": "/events/workshop"}))

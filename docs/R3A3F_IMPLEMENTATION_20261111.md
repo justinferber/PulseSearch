@@ -45,25 +45,27 @@ Run against six loopback origins, 103 routes, 18 categories:
 
 | Measure | Value |
 | --- | --- |
-| Fetched (four phases) | 144 |
+| Fetched (four phases) | 147 |
 | Accepted | 70 (69 searchable documents; 1 updated) |
-| Acceptance yield | 48.6% (synthetic — **not** a real-world yield) |
+| Acceptance yield | 47.6% (synthetic — **not** a real-world yield) |
 | Categories covered | **18/18** |
-| Depth histogram of fetched URLs | 0: 8, 1: 40, 2: 28, 3: 6 |
+| Depth histogram of fetched URLs | 0: 8, 1: 40, 2: 31, 3: 6 |
 | Deepest fetch | 3 |
 | Depth-4 sentinel hits | **0** |
 | Robots requests | logged `outcome="robots"` and paced on the same host schedule as content |
 | Robots-denied fetches | 0 (denied URLs never reached the network) |
 | Sites with broken robots (503) | 1 request total: `/robots.txt` only; content never fetched |
-| Duplicate rejections | 24 exact, 1 near |
+| Duplicate rejections | 25 exact, 1 near |
 | Rate-limit responses handled | 10 across the four phases (`Retry-After` honoured, host paused) |
 | 404 rechecks scheduled / recovered | 5 scheduled, 1 recovered to 200 and indexed |
-| Discovery provenance | 8 seeds, 72 genuine link discoveries, 2 reviewed probes (no fabricated parent) |
-| Useful discoveries | 14 intent-bearing documents; 10.6 per 100 fetches |
-| Mean / p95 latency | 7.3 ms / 23 ms (loopback) |
+| Discovery provenance | 8 seeds, 75 genuine link discoveries, 2 reviewed probes (no fabricated parent) |
+| Useful discoveries | 14 intent-bearing documents; 10.4 per 100 fetches |
+| Redirects | 4 hops followed inside the approved origin; 2 blocked (1 off-origin, 1 robots-denied) |
+| Novelty vs pinned index | 69 staged, 69 novel, 0 overlap (loopback fixture), 120 historical pages |
+| Mean / p95 latency | 8.3 ms / 24 ms (loopback) |
 | Off-domain hosts proposed | recorded, none crawled |
 
-Gate checks: **23/23 PASS** — the original 15 (depth ≤3, robots denial, robots 5xx fail-closed, noindex exclusion, duplicate rejection, cultural events discoverable, 18/18 coverage, ≥100-page network, restart recovery, conditional recrawl, source revocation, rate-limit backoff, no unapproved hosts, owner index untouched, frozen 54 replay unchanged) plus fail-closed admission by default, probe provenance without a fabricated parent, 404 recheck recovery, per-source fairness under budget, measured useful discoveries, separate genuine-link versus guessed-probe counts, and the out-of-season Christmas listing recovered after a 404.
+Gate checks: **28/28 PASS** — the original 15 (depth ≤3, robots denial, robots 5xx fail-closed, noindex exclusion, duplicate rejection, cultural events discoverable, 18/18 coverage, ≥100-page network, restart recovery, conditional recrawl, source revocation, rate-limit backoff, no unapproved hosts, owner index untouched, frozen 54 replay unchanged) plus fail-closed admission by default, probe provenance without a fabricated parent, 404 recheck recovery, per-source fairness under budget, measured useful discoveries, separate genuine-link versus guessed-probe counts, the out-of-season Christmas listing recovered after a 404, off-origin redirect refusal, robots-denied redirect refusal, per-hop redirect logging, explicit CLI source admission, and read-only novelty measurement.
 
 ### The 1,000/day question
 
@@ -97,9 +99,19 @@ Five findings were fixed without rebuilding the crawler; the suite was extended,
 
 Evidence now distinguishes **admitted seeds**, **genuine link discoveries**, **reviewed probes**, **successful pages** and **rejected pages**, and reports each source's share of the run's fetches. Improvement ideas for later: `docs/R3A3F_PREPILOT_NOTES_20261111.md`; the pilot proposal is `docs/R3A3F_PILOT_SOURCE_PROPOSAL_20261111.md` (`PROPOSAL_ONLY_NOT_ADMITTED`).
 
+## Pre-pilot security corrections (review of `a7f6d37`)
+
+| Finding | Fix | Where |
+| --- | --- | --- |
+| CLI import defaulted missing approval/indexing fields to `True` | `load_sources` requires every admission field, rejects non-boolean flags, approval without a reviewed rights basis, indexing without approval, seeds for unknown or unadmitted sources and seeds outside the approved scope; `run` preflight refuses with no admitted source or an admitted source without a reviewed basis, before any request | `cli.py` |
+| Redirect hops bypassed admission, scope, robots, budget and pacing | `Fetcher.fetch(redirect_gate=…)` calls the gate before every destination request; the gate refuses off-origin targets (even public or separately admitted hosts), out-of-scope paths, robots-denied paths and an exhausted request ceiling, and waits and records the host slot; every hop lands in `redirect_log` and in `report.redirects` | `safe_fetch.py`, `crawler.py`, `store.py` |
+| Pilot scope was too broad | proposal narrowed to `https://www.london.gov.uk` + `/events` only, `/whats-on` removed pending verification, zero probes in Phase 1, every source unapproved, manual robots/terms review required, and read-only novelty against the 107 pages already in the pinned index | `docs/R3A3F_PILOT_SOURCE_PROPOSAL_20261111.md`, `docs/evidence/r3a3f_pilot_source_proposal.json`, `novelty.py` |
+
+The run report and console now include a redirect section (followed and blocked hops by decision) and a novelty line (novel documents versus already-indexed ones), so a pilot cannot present re-crawled pages as new.
+
 ## Tests
 
-* `tests/test_r3a3f_units.py`, `test_r3a3f_safety.py`, `test_r3a3f_crawl.py`, `test_r3a3f_discovery.py`, `test_r3a3f_prepilot.py` — **83 tests, all passing**; `test_r3a3f_prepilot.py` is one class per review correction.
+* `tests/test_r3a3f_units.py`, `test_r3a3f_safety.py`, `test_r3a3f_crawl.py`, `test_r3a3f_discovery.py`, `test_r3a3f_prepilot.py`, `test_r3a3f_redirects.py`, `test_r3a3f_admission.py` — **97 tests, all passing**; `test_r3a3f_prepilot.py` is one class per admission/pacing/recheck/fairness correction, `test_r3a3f_redirects.py` covers per-hop authorisation adversarially, and `test_r3a3f_admission.py` proves the CLI cannot imply approval.
 * Archived POSIX matrix — **25/25 modules, 419 tests passing** (`docs/evidence/r3a3f_regression_posix.txt`), with `historical/local_snapshot` byte-clean.
 * Owner index SHA-256 `bb8e5202…7368c35d` unchanged before and after; frozen 54 replay `bf0bee88…` unchanged.
 

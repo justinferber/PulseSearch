@@ -111,6 +111,20 @@ def render_html(report: dict, staging: StagingIndex, query: str = "", category: 
     ) or "<tr><td colspan='2'>none</td></tr>"
     discovery = report.get("discovery") or {}
     fairness = report.get("fairness") or {}
+    redirects = report.get("redirects") or {}
+    novelty = report.get("novelty") or {}
+    redirect_rows = "".join(
+        f"<tr><td>{html.escape(str(decision))}</td><td>{count}</td></tr>"
+        for decision, count in (redirects.get("by_decision") or {}).items()
+    ) or "<tr><td colspan='2'>No redirects followed or blocked.</td></tr>"
+    novelty_line = (
+        "Novelty versus the pinned index: "
+        f"{novelty.get('novel_documents')} new of {novelty.get('staged_documents')} staged · "
+        f"{novelty.get('already_in_historical_index')} already present in "
+        f"{novelty.get('historical_index_pages')} historical pages."
+        if novelty.get("status") == "MEASURED_READ_ONLY"
+        else "Novelty versus the pinned index: not computed for this report."
+    )
     provenance_rows = "".join(
         f"<tr><td>{html.escape(label)}</td><td>{count}</td><td>{html.escape(note)}</td></tr>"
         for label, count, note in (
@@ -222,9 +236,17 @@ no topic, host or category is ever blocked.</div>
 <table style="margin-top:12px"><tr><th>Priority-raised URL</th><th>Priority</th><th>Hint</th></tr>
 {prioritised_rows}</table></section>
 
-<section><h2>Sources and rights</h2><table>
+<section><h2>Sources and rights</h2>
+<div class="sub">{html.escape(novelty_line)}</div><table>
 <tr><th>Source</th><th>Origin</th><th>Rights basis</th><th>Docs</th><th>Index allowed</th></tr>
 {source_rows}</table></section>
+
+<section><h2>Redirects — every hop re-authorised</h2>
+<div class="sub">Followed hops {redirects.get('followed_hops', 0)} · blocked hops
+{redirects.get('blocked_hops', 0)}. Each destination is re-checked for approved source,
+path scope, robots, request budget and host pacing before the request is issued;
+off-origin redirects are refused even to public hosts.</div>
+<table><tr><th>Decision</th><th>Hops</th></tr>{redirect_rows}</table></section>
 
 <section><h2>Freshness, errors and safety</h2><table>
 <tr><th>Signal</th><th>Value</th></tr>
@@ -233,6 +255,7 @@ no topic, host or category is ever blocked.</div>
 <tr><td>Rate limited (429/503)</td><td>{report['errors']['rate_limited']}</td></tr>
 <tr><td>Robots denials</td><td>{report['robots']['denied']}</td></tr>
 <tr><td>Removed or denied (403/404/410/451)</td><td>{report['errors']['removed_or_denied']}</td></tr>
+<tr><td>Redirect hops followed / blocked</td><td>{redirects.get('followed_hops', 0)} / {redirects.get('blocked_hops', 0)}</td></tr>
 <tr><td>Mean / p95 latency</td><td>{report['latency']['mean_ms']} ms / {report['latency']['p95_ms']} ms</td></tr>
 <tr><td>Off-domain hosts seen</td><td>{html.escape(external)}</td></tr>
 <tr><td>Body storage</td><td>{html.escape(safety['body_storage'])}</td></tr>
@@ -279,7 +302,8 @@ class _Handler(BaseHTTPRequestHandler):
         if parsed.path == "/health":
             self._send(200, b'{"ok":true}', "application/json")
             return
-        report = build_report(self.server.store, self.server.staging, self.server.config)
+        report = build_report(self.server.store, self.server.staging, self.server.config,
+                              historical_index=self.server.historical_index)
         if parsed.path == "/api/report.json":
             self._send(200, json.dumps(report, indent=2).encode("utf-8"), "application/json")
             return
@@ -297,7 +321,8 @@ class _Handler(BaseHTTPRequestHandler):
         self._send(200, body, "text/html; charset=utf-8")
 
 
-def serve(db_path: str, staging_path: str, port: int = 8787) -> HTTPServer:
+def serve(db_path: str, staging_path: str, port: int = 8787,
+          historical_index: str | None = None) -> HTTPServer:
     # Single-threaded on purpose: the sqlite handles are opened once here and
     # must be used from the same thread. A local read-only console has no need
     # for concurrent request handling.
@@ -308,6 +333,7 @@ def serve(db_path: str, staging_path: str, port: int = 8787) -> HTTPServer:
     server.staging = staging
     server.config = CrawlConfig(allow_loopback=True, loopback_hosts=("127.0.0.1",),
                                 min_interval_s=0.0)
+    server.historical_index = historical_index
     return server
 
 
@@ -316,8 +342,10 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--db", required=True)
     parser.add_argument("--staging", required=True)
     parser.add_argument("--port", type=int, default=8787)
+    parser.add_argument("--historical-index", default=None,
+                        help="optional pinned index for read-only novelty comparison")
     args = parser.parse_args(argv)
-    server = serve(args.db, args.staging, args.port)
+    server = serve(args.db, args.staging, args.port, args.historical_index)
     print(f"dashboard: http://127.0.0.1:{args.port}/", flush=True)
     try:
         server.serve_forever()

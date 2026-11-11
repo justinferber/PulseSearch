@@ -16,13 +16,22 @@ third-party host has been contacted.
 
 ## 2. Suggestions, ranked by expected value for a first pilot
 
+### P0 — implemented in response to the second security review
+
+Source admission is now strict at every entry point: the CLI requires each admission field
+explicitly, refuses approval without a reviewed rights basis and refuses seeds outside the approved
+scope, and `run` refuses to start when nothing is admitted. Redirect destinations are new URLs: each
+hop is re-checked for source, path, robots, request budget and pacing before the request is issued,
+off-origin hops are refused even to public hosts, and every hop is logged. The pilot proposal is
+narrowed to one host and one path with no probes.
+
 ### P1 — worth doing before or during the pilot
 
 **1. Record a per-request evidence row for every network attempt, including robots and redirects.**
-Today `fetch_log` holds one row per claimed URL plus a `robots` row. A redirect hops three times and
-only the final URL is recorded. A pilot that has to demonstrate politeness should be able to show
-each hop, its host, and the wait that preceded it. *Effort: small. Value: high for audit and dispute
-handling.*
+*Partly done:* every redirect hop now lands in `redirect_log` with its decision and reason, and the
+report exposes `redirects.by_decision`. Still missing: a `pace_log` of the wait that preceded each
+request, and folding robots/first-hop request rows into one per-run request ledger. *Effort: small.
+Value: high for audit and dispute handling.*
 
 **2. Persist pacing decisions, not just outcomes.** `HostPacer.waits` lives in memory and dies with
 the process. Writing `(host, waited_s, reason)` to a `pace_log` table makes "we waited 600 seconds

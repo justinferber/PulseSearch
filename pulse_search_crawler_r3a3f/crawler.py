@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 import math
+import sqlite3
 import time
 import uuid
 from collections import Counter
@@ -21,6 +22,7 @@ from . import quality, topics
 from .classify import CATEGORIES, category_coverage, classify
 from .config import CrawlConfig
 from .extract import extract_page
+from .novelty import overlap
 from .pacing import HostPacer
 from .robots import MAX_ROBOTS_BYTES, RobotsCache, RobotsRules, decision_for_status
 from .safe_fetch import Fetcher
@@ -55,6 +57,8 @@ class Crawler:
         self.robots = RobotsCache(self.fetcher)
         self.pacer = HostPacer(store, clock=clock, sleep=sleep)
         self._last_host: str | None = None
+        self._active_source: dict | None = None
+        self._request_ceiling = 1 << 30
         self.counters: Counter = Counter()
         self.latencies: list[int] = []
         self.run_id = uuid.uuid4().hex[:12]
@@ -142,6 +146,9 @@ class Crawler:
         approved_sources = len(store.sources())
         per_host_cap = (max(1, math.ceil(per_run * self.config.max_host_share))
                         if approved_sources > 1 else per_run)
+        # Every redirect hop is a request too, so the run has a request ceiling
+        # that includes the hops a batch of claimed URLs could add.
+        self._request_ceiling = per_run * (self.config.max_redirects + 1)
         host_fetches: Counter = Counter()
         stop_reason = "queue_empty"
         while True:
@@ -200,6 +207,7 @@ class Crawler:
         if depth > self.config.max_depth:
             self._reject(row, "depth_beyond_max", f"depth {depth}")
             return
+        self._active_source = source
         origin = origin_of(url)
         rules = self._robots_for(host, origin)
         self.store.note_robots(host, rules.source)
@@ -217,10 +225,21 @@ class Crawler:
         interval = HostPacer.interval_for(self.config.min_interval_s, rules.crawl_delay)
         self.pacer.wait(host, interval)
         conditional = self._conditional_headers(url)
-        result = self.fetcher.fetch(url, extra_headers=conditional)
+        result = self.fetcher.fetch(url, extra_headers=conditional,
+                                    redirect_gate=self._redirect_gate)
         retry_after = result.retry_after_s if result.status in (429, 503) else None
         self.pacer.record(host, interval, retry_after_s=retry_after)
         self.latencies.append(result.latency_ms)
+        self._log_redirects(row, source, result, depth)
+        if result.error and result.error.startswith("redirect_blocked:"):
+            denial = result.error.split(":", 1)[1]
+            self._log(row, result.status or 0, result, "redirect_blocked", denial)
+            self.store.record_rejection(url, source["source_id"], depth,
+                                        "redirect_blocked", denial)
+            self.store.finish(url, state="blocked", error=result.error)
+            self.counters["redirect_blocked"] += 1
+            self.counters[f"redirect_blocked_{denial}"] += 1
+            return
         status = result.status
         if result.error:
             self._handle_fetch_error(row, result)
@@ -470,6 +489,52 @@ class Crawler:
                 headers["If-Modified-Since"] = prior["last_modified"]
         return headers
 
+    def _redirect_gate(self, target: str) -> str | None:
+        """Authorise one redirect destination before its request is issued.
+
+        A redirect is a new URL, so it is re-checked exactly like a discovered
+        one: approved source, approved path, robots, request budget and host
+        pacing. An off-origin redirect is refused even when the other host is
+        public or separately admitted — that host needs its own admission and
+        its own seed.
+        """
+        source = self._active_source
+        if source is None or not source["approved"] or not source["enabled"]:
+            return "unapproved_source"
+        try:
+            canonical = canonicalize(target)
+        except (UrlError, ValueError):
+            return "bad_url"
+        if origin_of(canonical) != source["origin"]:
+            return "off_origin"
+        if not in_scope(canonical, source["origin"], _paths(source["allowed_paths"])):
+            return "out_of_scope"
+        if self.fetcher.requests >= self._request_ceiling:
+            return "request_budget_exhausted"
+        host = host_port(canonical)
+        rules = self._robots_for(host, origin_of(canonical))
+        path = urlsplit(canonical).path or "/"
+        if urlsplit(canonical).query:
+            path = f"{path}?{urlsplit(canonical).query}"
+        if not rules.can_fetch(path):
+            return "robots_denied"
+        interval = HostPacer.interval_for(self.config.min_interval_s, rules.crawl_delay)
+        self.pacer.wait(host, interval)
+        self.pacer.record(host, interval)
+        self.counters["redirect_hops"] += 1
+        return None
+
+    def _log_redirects(self, row, source, result, depth: int) -> None:
+        for hop in getattr(result, "hops", []):
+            if not hop.get("redirect_from"):
+                continue
+            self.store.log_redirect(
+                source_id=source["source_id"], depth=depth,
+                from_url=hop["redirect_from"], to_url=hop["url"],
+                hop=int(hop["hop"]), status=hop.get("status"),
+                decision=hop.get("decision", "followed"), reason=hop.get("reason", ""),
+            )
+
     def _robots_for(self, host: str, origin: str):
         """Fetch robots through the same host schedule as content."""
         def loader(origin_url: str):
@@ -612,7 +677,33 @@ def _fairness_block(store: Store, staging: StagingIndex, config: CrawlConfig) ->
     }
 
 
-def build_report(store: Store, staging: StagingIndex, config: CrawlConfig) -> dict:
+def _redirect_block(store: Store) -> dict:
+    counts = store.redirect_counts()
+    followed = sum(n for key, n in counts.items() if key.startswith("followed"))
+    blocked = sum(n for key, n in counts.items() if key.startswith("blocked"))
+    return {
+        "followed_hops": followed,
+        "blocked_hops": blocked,
+        "by_decision": counts,
+        "log": store.redirect_log(50),
+        "policy": "every redirect destination is re-checked for approved source, "
+                  "path scope, robots, request budget and host pacing before its "
+                  "request is issued",
+    }
+
+
+def _novelty_block(staging: StagingIndex, historical_index) -> dict:
+    if not historical_index:
+        return {"status": "NOT_COMPUTED",
+                "note": "pass --historical-index to compare against the pinned index"}
+    try:
+        return overlap(staging, historical_index)
+    except (OSError, sqlite3.Error, ValueError) as exc:
+        return {"status": "UNAVAILABLE", "detail": str(exc)}
+
+
+def build_report(store: Store, staging: StagingIndex, config: CrawlConfig,
+                 historical_index=None) -> dict:
     stats = staging.stats()
     queue = store.queue_counts()
     outcomes = store.outcome_counts()
@@ -666,6 +757,8 @@ def build_report(store: Store, staging: StagingIndex, config: CrawlConfig) -> di
         },
         "discovery": _discovery_block(store, staging, config),
         "fairness": _fairness_block(store, staging, config),
+        "redirects": _redirect_block(store),
+        "novelty": _novelty_block(staging, historical_index),
         "sources": [
             {
                 "source_id": s["source_id"],
@@ -729,6 +822,8 @@ def build_report(store: Store, staging: StagingIndex, config: CrawlConfig) -> di
         "safety": {
             "loopback_mode": config.allow_loopback,
             "unapproved_host_requests": 0,
+            "redirects_blocked": sum(1 for key in store.redirect_counts()
+                                     if key.startswith("blocked")),
             "depth4_fetches": store.conn.execute(
                 "SELECT COUNT(*) n FROM fetch_log WHERE depth>?", (config.max_depth,)
             ).fetchone()["n"],

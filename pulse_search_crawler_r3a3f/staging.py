@@ -27,7 +27,9 @@ CREATE TABLE IF NOT EXISTS docs(
   content_hash TEXT NOT NULL, shingle_count INTEGER NOT NULL DEFAULT 0,
   etag TEXT, last_modified TEXT, lang TEXT, dates TEXT, rights_mode TEXT NOT NULL,
   fetch_status INTEGER, mime TEXT, intent TEXT, indexed_at TEXT NOT NULL,
-  revoked INTEGER NOT NULL DEFAULT 0, revoked_reason TEXT);
+  revoked INTEGER NOT NULL DEFAULT 0, revoked_reason TEXT,
+  source_authority TEXT, document_type TEXT, language TEXT,
+  jurisdiction TEXT, specificity TEXT, provenance TEXT, metadata TEXT);
 CREATE INDEX IF NOT EXISTS idx_docs_category ON docs(category, revoked);
 CREATE INDEX IF NOT EXISTS idx_docs_source ON docs(source_id, revoked);
 CREATE TABLE IF NOT EXISTS doc_shingles(
@@ -69,6 +71,11 @@ class StagingIndex:
         if columns and "intent" not in columns:  # migrate pre-discovery staging DBs
             self.conn.execute("ALTER TABLE docs ADD COLUMN intent TEXT")
             self.conn.commit()
+        for name in ("source_authority", "document_type", "language",
+                     "jurisdiction", "specificity", "provenance", "metadata"):
+            if columns and name not in columns:
+                self.conn.execute(f"ALTER TABLE docs ADD COLUMN {name} TEXT")
+                self.conn.commit()
         try:
             self.conn.executescript(FTS_SCHEMA)
             self.fts = True
@@ -116,7 +123,9 @@ class StagingIndex:
 
     # ------------------------------------------------------------------ write
     def add_document(self, record: dict, shingle_list: list[int], *,
-                     index_allowed: bool = False) -> tuple[bool, str]:
+                     index_allowed: bool = False,
+                     allow_reactivation: bool = False,
+                     reactivation_approval: dict | None = None) -> tuple[bool, str]:
         """Insert an accepted page. Returns (indexed, reason).
 
         Fail closed: indexing requires an explicit rights decision. A source
@@ -135,22 +144,50 @@ class StagingIndex:
                                   "admin or authentication route")
             return False, "administrative_path"
         existing = self.conn.execute(
-            "SELECT doc_id FROM docs WHERE url=?", (record["url"],)
+            "SELECT doc_id, revoked, revoked_reason FROM docs WHERE url=?", (record["url"],)
         ).fetchone()
+        if existing and existing["revoked"]:
+            approval = reactivation_approval or {}
+            if (not allow_reactivation or not approval.get("approved_by")
+                    or not approval.get("approval_ref")
+                    or not approval.get("approved_at")):
+                self.record_rejection(
+                    record["url"], record.get("source_id", ""), int(record.get("depth", 0)),
+                    "reactivation_approval_required",
+                    "refusing to clear revoked state without a recorded authorised approval")
+                return False, "reactivation_approval_required"
+            try:
+                provenance = json.loads(record.get("provenance") or "{}")
+                if not isinstance(provenance, dict):
+                    provenance = {}
+            except (TypeError, ValueError):
+                provenance = {}
+            provenance["reactivation"] = {
+                "approved_by": str(approval["approved_by"]),
+                "approval_ref": str(approval["approval_ref"]),
+                "approved_at": str(approval["approved_at"]),
+            }
+            record = {**record, "provenance": json.dumps(provenance, ensure_ascii=False)}
         if existing:
             self.conn.execute(
-                """UPDATE docs SET title=?, snippet=?, category=?, category_confidence=?,
-                     category_uncertain=?, categories=?, depth=?, fetched_at=?,
-                     content_hash=?, shingle_count=?, etag=?, last_modified=?, lang=?,
-                     dates=?, indexed_at=?, revoked=0
+                """UPDATE docs SET source_id=?, title=?, snippet=?, category=?,
+                     category_confidence=?, category_uncertain=?, categories=?, depth=?,
+                     fetched_at=?, content_hash=?, shingle_count=?, etag=?, last_modified=?,
+                     lang=?, dates=?, rights_mode=?, source_authority=?, document_type=?,
+                     language=?, jurisdiction=?, specificity=?, provenance=?, metadata=?,
+                     indexed_at=?, revoked=0
                    WHERE doc_id=?""",
-                (record["title"], record["snippet"], record["category"],
+                (record["source_id"], record["title"], record["snippet"], record["category"],
                  record["category_confidence"], int(record.get("category_uncertain", 0)),
                  json.dumps(record["categories"]),
                  record["depth"], record["fetched_at"], record["content_hash"],
                  len(shingle_list), record.get("etag"), record.get("last_modified"),
                  record.get("lang", ""), json.dumps(record.get("dates", [])),
-                 utc_now(), existing["doc_id"]),
+                 record.get("rights_mode", "metadata_and_short_snippet"),
+                 record.get("source_authority"), record.get("document_type"),
+                 record.get("language"), record.get("jurisdiction"),
+                 record.get("specificity"), record.get("provenance"),
+                 record.get("metadata"), utc_now(), existing["doc_id"]),
             )
             self.conn.execute("DELETE FROM doc_shingles WHERE doc_id=?", (existing["doc_id"],))
             doc_id = existing["doc_id"]
@@ -160,8 +197,9 @@ class StagingIndex:
                 """INSERT INTO docs(url,canonical_url,source_id,seed_id,parent_url,title,
                      snippet,category,category_confidence,category_uncertain,categories,
                      depth,fetched_at,content_hash,shingle_count,etag,last_modified,lang,
-                     dates,rights_mode,fetch_status,mime,indexed_at)
-                   VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                     dates,rights_mode,fetch_status,mime,source_authority,
+                     document_type,language,jurisdiction,specificity,provenance,metadata,indexed_at)
+                   VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
                 (record["url"], record.get("canonical_url", record["url"]),
                  record["source_id"], record.get("seed_id"), record.get("parent_url"),
                  record["title"], record["snippet"], record["category"],
@@ -171,7 +209,11 @@ class StagingIndex:
                  len(shingle_list), record.get("etag"), record.get("last_modified"),
                  record.get("lang", ""), json.dumps(record.get("dates", [])),
                  record.get("rights_mode", "metadata_and_short_snippet"),
-                 record.get("fetch_status"), record.get("mime", ""), utc_now()),
+                 record.get("fetch_status"), record.get("mime", ""),
+                 record.get("source_authority"), record.get("document_type"),
+                 record.get("language"), record.get("jurisdiction"),
+                 record.get("specificity"), record.get("provenance"),
+                 record.get("metadata"), utc_now()),
             )
             doc_id = cursor.lastrowid
             outcome = "indexed"

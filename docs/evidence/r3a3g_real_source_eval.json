@@ -1,0 +1,971 @@
+{
+  "kind": "R3A3G_REAL_SOURCE_EVAL",
+  "generated_at": "2026-11-11T15:41:23+00:00",
+  "mode": "AUTO_DOMAIN_METRICS_PLUS_SIGNED_HUMAN_GRADES",
+  "not_open_web_benchmark": true,
+  "captured_pages": 7,
+  "captured_domains": 6,
+  "failed_captures": [
+    {
+      "id": "berlin-events",
+      "url": "https://www.berlin.de/en/events/",
+      "status": 301,
+      "error": "too_many_redirects"
+    },
+    {
+      "id": "berlin-concerts",
+      "url": "https://www.berlin.de/en/events/concert/",
+      "status": 410,
+      "error": "no usable title/description"
+    },
+    {
+      "id": "mercedes-arena",
+      "url": "https://www.mercedes-benz-arena.de/en/events/",
+      "status": 0,
+      "error": "robots_error:unsafe_target:dns resolution failed: [Errno 11001] getaddrinfo failed"
+    },
+    {
+      "id": "eventim-berlin",
+      "url": "https://www.eventim.de/city/berlin-8/",
+      "status": 0,
+      "error": "robots_error:network:ConnectionResetError"
+    },
+    {
+      "id": "huxleys",
+      "url": "https://www.huxleys-neue-welt.de/",
+      "status": 0,
+      "error": "robots_error:unsafe_target:dns resolution failed: [Errno 11001] getaddrinfo failed"
+    },
+    {
+      "id": "verti",
+      "url": "https://www.verti-music-hall.de/",
+      "status": 0,
+      "error": "robots_error:redirect_blocked:off_approved_domain"
+    },
+    {
+      "id": "sbahn",
+      "url": "https://www.s-bahn-berlin.de/",
+      "status": 0,
+      "error": "robots_error:redirect_blocked:off_approved_domain"
+    },
+    {
+      "id": "london-fireworks",
+      "url": "https://www.london.gov.uk/events/london-new-years-eve-fireworks",
+      "status": 404,
+      "error": "no usable title/description"
+    },
+    {
+      "id": "london-parade",
+      "url": "https://londonparade.com/parade-location-timing/",
+      "status": 403,
+      "error": "no usable title/description"
+    },
+    {
+      "id": "berlin-christmas",
+      "url": "https://www.berlin.de/en/events/christmas-markets/",
+      "status": 410,
+      "error": "no usable title/description"
+    },
+    {
+      "id": "columbiahalle",
+      "url": "https://www.columbiahalle.de/",
+      "status": 0,
+      "error": "robots_error:declared_oversize"
+    },
+    {
+      "id": "glastonbury-2027",
+      "url": "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed",
+      "status": 301,
+      "error": "too_many_redirects"
+    }
+  ],
+  "queries": [
+    {
+      "query": "How do I book concert tickets in Berlin?",
+      "intent": "how_to",
+      "expected": {
+        "domains": [
+          "berlin.de",
+          "eventim.de",
+          "mercedes-benz-arena.de"
+        ],
+        "terms": [
+          "ticket",
+          "concert",
+          "berlin"
+        ]
+      },
+      "automated": {
+        "domain_match_rank": null,
+        "domain_match_at_3": false,
+        "top3_domains": [],
+        "term_overlap": [
+          "berlin"
+        ],
+        "wrong_city": false,
+        "duplicate_urls_in_results": false,
+        "official_handoff_available": true,
+        "response_status": "official_links"
+      },
+      "human": {
+        "label": "FAIL",
+        "top1_answers": false,
+        "answer_correct": false,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "Top result was a Christmas markets page while the matching Berlin events page appeared at rank 4."
+      },
+      "top_result": {
+        "title": "Eventim Berlin",
+        "url": "https://www.eventim.de/city/berlin-8/",
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
+      },
+      "missing_source_from_capture": [
+        "berlin.de",
+        "eventim.de",
+        "mercedes-benz-arena.de"
+      ],
+      "related_official_domains": [
+        "eventim.de",
+        "eventim.de",
+        "mercedes-benz-arena.de",
+        "columbiahalle.de",
+        "huxleys-neue-welt.de",
+        "verti-music-hall.de",
+        "berlin.de",
+        "csd-berlin.de"
+      ],
+      "baseline": {
+        "reported_status": "PASS",
+        "domain_match_rank": 4,
+        "domain_match_at_3": false
+      }
+    },
+    {
+      "query": "Berlin concert official ticket seller",
+      "intent": "how_to",
+      "expected": {
+        "domains": [
+          "mercedes-benz-arena.de",
+          "eventim.de",
+          "huxleys-neue-welt.de",
+          "verti-music-hall.de"
+        ],
+        "terms": [
+          "ticket",
+          "seller",
+          "concert"
+        ]
+      },
+      "automated": {
+        "domain_match_rank": null,
+        "domain_match_at_3": false,
+        "top3_domains": [],
+        "term_overlap": [],
+        "wrong_city": false,
+        "duplicate_urls_in_results": false,
+        "official_handoff_available": true,
+        "response_status": "official_links"
+      },
+      "human": {
+        "label": "FAIL",
+        "top1_answers": false,
+        "answer_correct": false,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "No captured official seller page; guides do not identify a seller."
+      },
+      "top_result": {
+        "title": "Eventim Berlin",
+        "url": "https://www.eventim.de/city/berlin-8/",
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
+      },
+      "missing_source_from_capture": [
+        "mercedes-benz-arena.de",
+        "eventim.de",
+        "huxleys-neue-welt.de",
+        "verti-music-hall.de"
+      ],
+      "related_official_domains": [
+        "eventim.de",
+        "eventim.de",
+        "mercedes-benz-arena.de",
+        "columbiahalle.de",
+        "huxleys-neue-welt.de",
+        "verti-music-hall.de",
+        "berlin.de",
+        "csd-berlin.de"
+      ],
+      "baseline": {
+        "reported_status": "FAIL",
+        "domain_match_rank": null,
+        "domain_match_at_3": false
+      }
+    },
+    {
+      "query": "Berlin CSD 2027 dates",
+      "intent": "events",
+      "expected": {
+        "domains": [
+          "csd-berlin.de"
+        ],
+        "terms": [
+          "csd",
+          "berlin",
+          "2027"
+        ]
+      },
+      "automated": {
+        "domain_match_rank": null,
+        "domain_match_at_3": false,
+        "top3_domains": [],
+        "term_overlap": [
+          "csd",
+          "berlin"
+        ],
+        "wrong_city": false,
+        "duplicate_urls_in_results": false,
+        "official_handoff_available": true,
+        "response_status": "official_links"
+      },
+      "human": {
+        "label": "FAIL",
+        "top1_answers": false,
+        "answer_correct": false,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "CSD homepage captured but its stored title/description do not establish a 2027 date."
+      },
+      "top_result": {
+        "title": "CSD Berlin",
+        "url": "https://www.csd-berlin.de/",
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
+      },
+      "missing_source_from_capture": [],
+      "related_official_domains": [
+        "csd-berlin.de",
+        "berlin.de",
+        "visitberlin.de",
+        "efa-aef.eu"
+      ],
+      "baseline": {
+        "reported_status": "PASS",
+        "domain_match_rank": 1,
+        "domain_match_at_3": true
+      }
+    },
+    {
+      "query": "CSD Berlin route and accessibility",
+      "intent": "events",
+      "expected": {
+        "domains": [
+          "csd-berlin.de"
+        ],
+        "terms": [
+          "route",
+          "accessibility",
+          "csd"
+        ]
+      },
+      "automated": {
+        "domain_match_rank": null,
+        "domain_match_at_3": false,
+        "top3_domains": [],
+        "term_overlap": [
+          "csd"
+        ],
+        "wrong_city": false,
+        "duplicate_urls_in_results": false,
+        "official_handoff_available": true,
+        "response_status": "official_links"
+      },
+      "human": {
+        "label": "PARTIAL",
+        "top1_answers": false,
+        "answer_correct": false,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "Correct CSD publisher at rank 1, but the captured metadata does not establish route or accessibility details."
+      },
+      "top_result": {
+        "title": "CSD Berlin",
+        "url": "https://www.csd-berlin.de/",
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
+      },
+      "missing_source_from_capture": [],
+      "related_official_domains": [
+        "csd-berlin.de",
+        "mercedes-benz-arena.de",
+        "columbiahalle.de",
+        "huxleys-neue-welt.de",
+        "verti-music-hall.de",
+        "berlin.de",
+        "visitberlin.de",
+        "efa-aef.eu"
+      ],
+      "baseline": {
+        "reported_status": "PASS",
+        "domain_match_rank": 1,
+        "domain_match_at_3": true
+      }
+    },
+    {
+      "query": "London New Year's Eve fireworks tickets",
+      "intent": "how_to",
+      "expected": {
+        "domains": [
+          "london.gov.uk",
+          "tfl.gov.uk"
+        ],
+        "terms": [
+          "fireworks",
+          "ticket",
+          "london"
+        ]
+      },
+      "automated": {
+        "domain_match_rank": null,
+        "domain_match_at_3": false,
+        "top3_domains": [],
+        "term_overlap": [
+          "london"
+        ],
+        "wrong_city": false,
+        "duplicate_urls_in_results": false,
+        "official_handoff_available": true,
+        "response_status": "official_links"
+      },
+      "human": {
+        "label": "FAIL",
+        "top1_answers": false,
+        "answer_correct": false,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "TfL homepage is generic; the london.gov.uk fireworks page returned 404."
+      },
+      "top_result": {
+        "title": "Mayor of London",
+        "url": "https://www.london.gov.uk/",
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
+      },
+      "missing_source_from_capture": [
+        "london.gov.uk"
+      ],
+      "related_official_domains": [
+        "london.gov.uk",
+        "theo2.co.uk",
+        "roundhouse.org.uk",
+        "southbankcentre.co.uk",
+        "visitlondon.com",
+        "efa-aef.eu",
+        "glastonburyfestivals.co.uk"
+      ],
+      "baseline": {
+        "reported_status": "PASS",
+        "domain_match_rank": 1,
+        "domain_match_at_3": true
+      }
+    },
+    {
+      "query": "London fireworks travel and road closures",
+      "intent": "events",
+      "expected": {
+        "domains": [
+          "tfl.gov.uk",
+          "london.gov.uk"
+        ],
+        "terms": [
+          "travel",
+          "road",
+          "closure"
+        ]
+      },
+      "automated": {
+        "domain_match_rank": null,
+        "domain_match_at_3": false,
+        "top3_domains": [],
+        "term_overlap": [],
+        "wrong_city": false,
+        "duplicate_urls_in_results": false,
+        "official_handoff_available": true,
+        "response_status": "official_links"
+      },
+      "human": {
+        "label": "FAIL",
+        "top1_answers": false,
+        "answer_correct": false,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "TfL homepage is not the event travel/closure page."
+      },
+      "top_result": {
+        "title": "Mayor of London",
+        "url": "https://www.london.gov.uk/",
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
+      },
+      "missing_source_from_capture": [
+        "london.gov.uk"
+      ],
+      "related_official_domains": [
+        "london.gov.uk",
+        "visitlondon.com",
+        "efa-aef.eu",
+        "glastonburyfestivals.co.uk"
+      ],
+      "baseline": {
+        "reported_status": "PASS",
+        "domain_match_rank": 1,
+        "domain_match_at_3": true
+      }
+    },
+    {
+      "query": "Glastonbury Festival 2027 dates",
+      "intent": "events",
+      "expected": {
+        "domains": [
+          "glastonburyfestivals.co.uk"
+        ],
+        "terms": [
+          "2027",
+          "glastonbury",
+          "june"
+        ]
+      },
+      "automated": {
+        "domain_match_rank": 2,
+        "domain_match_at_3": true,
+        "top3_domains": [
+          "bbc.co.uk",
+          "glastonburyfestivals.co.uk"
+        ],
+        "term_overlap": [
+          "2027",
+          "glastonbury"
+        ],
+        "wrong_city": false,
+        "duplicate_urls_in_results": false,
+        "official_handoff_available": false,
+        "response_status": "staging_results"
+      },
+      "human": {
+        "label": "PARTIAL",
+        "top1_answers": false,
+        "answer_correct": false,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "Official homepage ranks first, but the captured metadata does not establish the 2027 dates."
+      },
+      "top_result": {
+        "title": "First Glastonbury 2027 tickets sell out in under 30 minutes - BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/cv62kp9enz08o",
+        "snippet": "Coach tickets for the 2027 festival are all snapped up in under 30 minutes.",
+        "document_type": "event_detail",
+        "ranking_reasons": [
+          "recent_fetch",
+          "event_page"
+        ]
+      },
+      "missing_source_from_capture": [],
+      "related_official_domains": [],
+      "baseline": {
+        "reported_status": "PASS",
+        "domain_match_rank": 1,
+        "domain_match_at_3": true
+      }
+    },
+    {
+      "query": "Berlin Christmas markets opening times",
+      "intent": "events",
+      "expected": {
+        "domains": [
+          "berlin.de",
+          "visitberlin.de"
+        ],
+        "terms": [
+          "christmas",
+          "market",
+          "opening"
+        ]
+      },
+      "automated": {
+        "domain_match_rank": 1,
+        "domain_match_at_3": true,
+        "top3_domains": [
+          "visitberlin.de",
+          "csd-berlin.de",
+          "visitberlin.de"
+        ],
+        "term_overlap": [
+          "christmas",
+          "market",
+          "opening"
+        ],
+        "wrong_city": false,
+        "duplicate_urls_in_results": false,
+        "official_handoff_available": false,
+        "response_status": "staging_results"
+      },
+      "human": {
+        "label": "PASS",
+        "top1_answers": true,
+        "answer_correct": true,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "visitBerlin Christmas markets page is rank 1; opening times still require checking the page."
+      },
+      "top_result": {
+        "title": "Christmas markets in Berlin | visitBerlin.de",
+        "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+        "snippet": "Christmas Markets in Berlin: ✓ Over 80 from insider tips to popular ones ✓ How to find them ✓ Opening hours & admissions ► Find your favourite market!",
+        "document_type": "how_to",
+        "ranking_reasons": [
+          "recent_fetch",
+          "location_match"
+        ]
+      },
+      "missing_source_from_capture": [
+        "berlin.de"
+      ],
+      "related_official_domains": [],
+      "baseline": {
+        "reported_status": "PASS",
+        "domain_match_rank": 1,
+        "domain_match_at_3": true
+      }
+    },
+    {
+      "query": "Berlin Christmas market public transport",
+      "intent": "transport",
+      "expected": {
+        "domains": [
+          "bvg.de",
+          "berlin.de"
+        ],
+        "terms": [
+          "christmas",
+          "market",
+          "transport"
+        ]
+      },
+      "automated": {
+        "domain_match_rank": null,
+        "domain_match_at_3": false,
+        "top3_domains": [],
+        "term_overlap": [],
+        "wrong_city": false,
+        "duplicate_urls_in_results": false,
+        "official_handoff_available": true,
+        "response_status": "official_links"
+      },
+      "human": {
+        "label": "FAIL",
+        "top1_answers": false,
+        "answer_correct": false,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "Only the visitBerlin markets page is admitted; BVG is a separate official handoff, not an admitted transport result."
+      },
+      "top_result": {
+        "title": "BVG Berlin",
+        "url": "https://www.bvg.de/",
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
+      },
+      "missing_source_from_capture": [
+        "berlin.de"
+      ],
+      "related_official_domains": [
+        "bvg.de",
+        "s-bahn-berlin.de"
+      ],
+      "baseline": {
+        "reported_status": "FAIL",
+        "domain_match_rank": null,
+        "domain_match_at_3": false
+      }
+    },
+    {
+      "query": "Berlin concert venue accessibility and bag rules",
+      "intent": "events",
+      "expected": {
+        "domains": [
+          "huxleys-neue-welt.de",
+          "verti-music-hall.de",
+          "mercedes-benz-arena.de"
+        ],
+        "terms": [
+          "accessibility",
+          "bag",
+          "venue"
+        ]
+      },
+      "automated": {
+        "domain_match_rank": null,
+        "domain_match_at_3": false,
+        "top3_domains": [],
+        "term_overlap": [],
+        "wrong_city": false,
+        "duplicate_urls_in_results": false,
+        "official_handoff_available": true,
+        "response_status": "official_links"
+      },
+      "human": {
+        "label": "FAIL",
+        "top1_answers": false,
+        "answer_correct": false,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "No usable venue page for accessibility; CSD is unrelated."
+      },
+      "top_result": {
+        "title": "Mercedes-Benz Arena Berlin",
+        "url": "https://www.mercedes-benz-arena.de/",
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
+      },
+      "missing_source_from_capture": [
+        "huxleys-neue-welt.de",
+        "verti-music-hall.de",
+        "mercedes-benz-arena.de"
+      ],
+      "related_official_domains": [
+        "mercedes-benz-arena.de",
+        "columbiahalle.de",
+        "huxleys-neue-welt.de",
+        "verti-music-hall.de",
+        "berlin.de",
+        "csd-berlin.de",
+        "visitberlin.de",
+        "efa-aef.eu"
+      ],
+      "baseline": {
+        "reported_status": "FAIL",
+        "domain_match_rank": null,
+        "domain_match_at_3": false
+      }
+    },
+    {
+      "query": "London Parade route and start time",
+      "intent": "events",
+      "expected": {
+        "domains": [
+          "londonparade.com"
+        ],
+        "terms": [
+          "parade",
+          "route",
+          "start"
+        ]
+      },
+      "automated": {
+        "domain_match_rank": null,
+        "domain_match_at_3": false,
+        "top3_domains": [],
+        "term_overlap": [],
+        "wrong_city": false,
+        "duplicate_urls_in_results": false,
+        "official_handoff_available": false,
+        "response_status": "official_links"
+      },
+      "human": {
+        "label": "PASS",
+        "top1_answers": true,
+        "answer_correct": true,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "Official organiser route/timing page is rank 1."
+      },
+      "top_result": {
+        "title": "Mayor of London",
+        "url": "https://www.london.gov.uk/",
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
+      },
+      "missing_source_from_capture": [
+        "londonparade.com"
+      ],
+      "related_official_domains": [
+        "london.gov.uk",
+        "visitlondon.com",
+        "efa-aef.eu",
+        "glastonburyfestivals.co.uk"
+      ],
+      "baseline": {
+        "reported_status": "PASS",
+        "domain_match_rank": 1,
+        "domain_match_at_3": true
+      }
+    },
+    {
+      "query": "Berlin BVG journey planner",
+      "intent": "transport",
+      "expected": {
+        "domains": [
+          "bvg.de"
+        ],
+        "terms": [
+          "bvg",
+          "journey",
+          "planner"
+        ]
+      },
+      "automated": {
+        "domain_match_rank": null,
+        "domain_match_at_3": false,
+        "top3_domains": [],
+        "term_overlap": [
+          "bvg"
+        ],
+        "wrong_city": false,
+        "duplicate_urls_in_results": false,
+        "official_handoff_available": true,
+        "response_status": "official_links"
+      },
+      "human": {
+        "label": "PASS",
+        "top1_answers": true,
+        "answer_correct": true,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "BVG official journey-planner handoff is first."
+      },
+      "top_result": {
+        "title": "BVG Berlin",
+        "url": "https://www.bvg.de/",
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
+      },
+      "missing_source_from_capture": [],
+      "related_official_domains": [
+        "bvg.de",
+        "s-bahn-berlin.de"
+      ],
+      "baseline": {
+        "reported_status": "PASS",
+        "domain_match_rank": 1,
+        "domain_match_at_3": true
+      }
+    },
+    {
+      "query": "S-Bahn Berlin service updates",
+      "intent": "transport",
+      "expected": {
+        "domains": [
+          "s-bahn-berlin.de"
+        ],
+        "terms": [
+          "s-bahn",
+          "service",
+          "update"
+        ]
+      },
+      "automated": {
+        "domain_match_rank": null,
+        "domain_match_at_3": false,
+        "top3_domains": [],
+        "term_overlap": [],
+        "wrong_city": false,
+        "duplicate_urls_in_results": false,
+        "official_handoff_available": true,
+        "response_status": "official_links"
+      },
+      "human": {
+        "label": "PARTIAL",
+        "top1_answers": false,
+        "answer_correct": true,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "S-Bahn official link is present at rank 2; BVG ranks first and is not the service-update page."
+      },
+      "top_result": {
+        "title": "BVG Berlin",
+        "url": "https://www.bvg.de/",
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
+      },
+      "missing_source_from_capture": [
+        "s-bahn-berlin.de"
+      ],
+      "related_official_domains": [
+        "bvg.de",
+        "s-bahn-berlin.de"
+      ],
+      "baseline": {
+        "reported_status": "PASS",
+        "domain_match_rank": 2,
+        "domain_match_at_3": true
+      }
+    },
+    {
+      "query": "Eventim Berlin concerts",
+      "intent": "events",
+      "expected": {
+        "domains": [
+          "eventim.de"
+        ],
+        "terms": [
+          "eventim",
+          "berlin",
+          "concert"
+        ]
+      },
+      "automated": {
+        "domain_match_rank": null,
+        "domain_match_at_3": false,
+        "top3_domains": [],
+        "term_overlap": [
+          "eventim",
+          "berlin"
+        ],
+        "wrong_city": false,
+        "duplicate_urls_in_results": false,
+        "official_handoff_available": true,
+        "response_status": "official_links"
+      },
+      "human": {
+        "label": "FAIL",
+        "top1_answers": false,
+        "answer_correct": false,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "Eventim capture was unavailable; Berlin events page does not identify Eventim seller pages."
+      },
+      "top_result": {
+        "title": "Eventim Berlin",
+        "url": "https://www.eventim.de/city/berlin-8/",
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
+      },
+      "missing_source_from_capture": [
+        "eventim.de"
+      ],
+      "related_official_domains": [
+        "eventim.de",
+        "eventim.de",
+        "mercedes-benz-arena.de",
+        "columbiahalle.de",
+        "huxleys-neue-welt.de",
+        "verti-music-hall.de",
+        "berlin.de",
+        "csd-berlin.de"
+      ],
+      "baseline": {
+        "reported_status": "FAIL",
+        "domain_match_rank": null,
+        "domain_match_at_3": false
+      }
+    },
+    {
+      "query": "Berlin events calendar",
+      "intent": "events",
+      "expected": {
+        "domains": [
+          "berlin.de"
+        ],
+        "terms": [
+          "berlin",
+          "events",
+          "calendar"
+        ]
+      },
+      "automated": {
+        "domain_match_rank": null,
+        "domain_match_at_3": false,
+        "top3_domains": [],
+        "term_overlap": [
+          "berlin",
+          "events",
+          "calendar"
+        ],
+        "wrong_city": false,
+        "duplicate_urls_in_results": false,
+        "official_handoff_available": true,
+        "response_status": "official_links"
+      },
+      "human": {
+        "label": "PASS",
+        "top1_answers": true,
+        "answer_correct": true,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "Berlin.de events calendar is rank 1."
+      },
+      "top_result": {
+        "title": "Berlin.de events calendar",
+        "url": "https://www.berlin.de/events/",
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
+      },
+      "missing_source_from_capture": [
+        "berlin.de"
+      ],
+      "related_official_domains": [
+        "berlin.de",
+        "csd-berlin.de",
+        "visitberlin.de",
+        "efa-aef.eu"
+      ],
+      "baseline": {
+        "reported_status": "PASS",
+        "domain_match_rank": 1,
+        "domain_match_at_3": true
+      }
+    }
+  ],
+  "summary": {
+    "queries": 15,
+    "admitted_domain_matches": 2,
+    "admitted_domain_match_rate": 0.133,
+    "admitted_recall_at_3": 0.133,
+    "admitted_mrr": 0.1,
+    "official_handoff_matches": 12,
+    "human_pass": 4,
+    "human_partial": 3,
+    "human_fail": 8,
+    "human_unreviewed": 0,
+    "human_pass_rate": 0.267,
+    "top1_helpful": 4,
+    "answer_correct": 5,
+    "wrong_city": 0,
+    "duplicate_result_sets": 0,
+    "unresolved_missing_sources": 11,
+    "official_handoff_only": 12,
+    "note": "Admitted metrics use captured pages only. Official handoffs are navigation, not recall of an admitted answer."
+  },
+  "baseline_recomputed_from_legacy_ranks": {
+    "source": "docs/evidence/r3a3g_real_source_eval_legacy.json",
+    "reported_pass": 11,
+    "reported_fail": 4,
+    "reported_recall_at_3": 0.733,
+    "reported_mrr": 0.65,
+    "recomputed_recall_at_3": 0.667,
+    "recomputed_mrr": 0.65,
+    "note": "The legacy PASS label used domain+term overlap; this recomputation only checks whether a matching domain rank was <=3."
+  },
+  "limitations": [
+    "Only captured pages with a title are indexed; descriptions are short metadata.",
+    "Automatic domain matching is not factual correctness.",
+    "Human grades were recorded for admitted-page answers; official handoffs are reported separately.",
+    "Human grades are one dated reviewer pass, not inter-annotator agreement.",
+    "No page body is stored and no crawler admission is implied."
+  ]
+}

@@ -1,0 +1,46 @@
+..........................................................................................................................................................................................................E...........................................................................
+======================================================================
+ERROR: test_scope_denies_wiki_write_for_search_only_token (test_r3a3g_api.ApiTests.test_scope_denies_wiki_write_for_search_only_token)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\justi\Desktop\pulseunity\ChatGPTCode\PulseSearch_FB2_R3A3F_20261111\tests\test_r3a3g_api.py", line 148, in test_scope_denies_wiki_write_for_search_only_token
+    status, body, _ = self.request("/v1/wiki-candidates", {"article": article},
+                      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                   token=self.search_token)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\justi\Desktop\pulseunity\ChatGPTCode\PulseSearch_FB2_R3A3F_20261111\tests\test_r3a3g_api.py", line 68, in request
+    with urllib.request.urlopen(req, timeout=10) as response:
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\justi\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 189, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\justi\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 489, in open
+    response = self._open(req, data)
+  File "C:\Users\justi\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 506, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "C:\Users\justi\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 466, in _call_chain
+    result = func(*args)
+  File "C:\Users\justi\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 1360, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\justi\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 1335, in do_open
+    r = h.getresponse()
+  File "C:\Users\justi\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 1478, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\justi\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 343, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\justi\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 304, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\justi\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 723, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+
+----------------------------------------------------------------------
+Ran 278 tests in 44.468s
+
+FAILED (errors=1)

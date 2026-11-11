@@ -12,12 +12,19 @@ import html
 import json
 import urllib.parse
 from http.server import BaseHTTPRequestHandler, HTTPServer
+from pathlib import Path
 
 from .classify import CATEGORIES
 from .config import CrawlConfig
 from .crawler import build_report
 from .staging import StagingIndex
 from .store import Store
+
+from pulse_search_broad_r3a3g.answers import (AnswerService, OpenMeteoProvider, load_pack,
+                                              render_answer_for_web)
+from pulse_search_broad_r3a3g.search import search_staging
+from pulse_search_broad_r3a3g.wiki import WikiStore
+from pulse_search_broad_r3a3g.source_discovery import rank_external_candidates
 
 CSS = """
 :root{--bg:#0b1020;--panel:#141b2d;--line:#26304a;--ink:#e8ecf7;--muted:#95a2bd;
@@ -55,9 +62,74 @@ button{background:#1b2a4a;cursor:pointer}
 button:hover{background:#24365e}
 code{background:#0f1729;padding:1px 6px;border-radius:6px;font-size:12px}
 .foot{margin-top:30px;color:var(--muted);font-size:12px}
+.answer{margin-top:14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+.answer p{margin:10px 0;line-height:1.6}
 ul.tight{margin:0;padding-left:18px}
 ul.tight li{margin:2px 0}
 """
+
+
+def _shell(title: str, body: str) -> str:
+    return (f"<!doctype html><html lang='en'><head><meta charset='utf-8'>"
+            f"<title>{html.escape(title)}</title><style>{CSS}</style></head><body>"
+            f"<header><h1>{html.escape(title)}</h1></header><main>{body}</main></body></html>")
+
+
+def render_wiki_index(store: WikiStore) -> str:
+    rows = "".join(
+        f"<tr><td><a href='/wiki/{html.escape(p['slug'])}'>{html.escape(p['title'])}</a></td>"
+        f"<td><span class='pill {'good' if p['status'] == 'published' else 'warn'}'>"
+        f"{html.escape(p['status'])}</span>"
+        f"{(' <span class=\'sub\'>pending v' + str(p.get('pending_version')) + '</span>') if p.get('has_pending') else ''}</td>"
+        f"<td>{p['version']}</td>"
+        f"<td>{len(p['sources'] or [])}</td>"
+        f"<td>{html.escape(str(p['verified_at']))}</td></tr>"
+        for p in store.list()
+    ) or "<tr><td colspan='5'>No local drafts yet.</td></tr>"
+    body = ("<section><h2>Wiki draft previews — local test workflow</h2>"
+            "<div class='sub'>Pulse Search proposes; editors approve. Nothing here is a Pulse UNITY/UNA "
+            "publication. PUBLISHED means the local test publisher only.</div>"
+            "<table><tr><th>Title</th><th>Status</th><th>Version</th><th>Sources</th>"
+            f"<th>Verified</th></tr>{rows}</table>"
+            "<p><a href='/'>Back to the search console</a></p></section>")
+    return _shell("Pulse Search · Wiki drafts", body)
+
+
+def render_wiki_page(store: WikiStore, slug: str) -> str | None:
+    row = store.conn.execute("SELECT * FROM wiki_pages WHERE slug=?", (slug,)).fetchone()
+    if not row:
+        return None
+    page = dict(row)
+    sources = page["sources"] or []
+    claims = page["claims"] or []
+    pending = page.get("pending_body") or ""
+    pending_block = ("" if not pending else
+                     f"<h2>Pending update (version {page.get('pending_version')})</h2>"
+                     f"<div class='answer'><pre style='white-space:pre-wrap'>{html.escape(pending)}</pre></div>"
+                     f"<div class='sub'>This pending revision is not published. Publication sends this exact body.</div>")
+    revisions = store.revisions(page["topic_id"])
+    source_items = "".join(
+        f"<li><a href='{html.escape(s['url'])}' rel='noopener noreferrer'>"
+        f"{html.escape(s.get('title') or s['url'])}</a> — {html.escape(s.get('publisher') or '')}</li>"
+        for s in sources)
+    claim_items = "".join(f"<li>{html.escape(c.get('text', ''))}</li>" for c in claims)
+    revision_rows = "".join(
+        f"<tr><td>{r['version']}</td><td>{html.escape(r['status'])}</td>"
+        f"<td>{html.escape(r.get('note') or '')}</td><td>{html.escape(r['created_at'])}</td></tr>"
+        for r in revisions)
+    body = (f"<section><h2>{html.escape(page['title'])}</h2>"
+            f"<div class='sub'>Status <span class='pill {'good' if page['status'] == 'published' else 'warn'}'>"
+            f"{html.escape(page['status'])}</span> · version {page['version']} · verified "
+            f"{html.escape(page['verified_at'])} · rights {html.escape(page['rights_class'])}"
+            f"{(' · FLAGGED: ' + html.escape(page['flag_reason'])) if page.get('flag_reason') else ''}</div>"
+            f"<div class='answer'><pre style='white-space:pre-wrap'>{html.escape(page['body'])}</pre></div>"
+            f"<h2>Claims ({len(claims)})</h2><ul class='tight'>{claim_items}</ul>"
+            f"<h2>Sources ({len(sources)})</h2><ul class='tight'>{source_items}</ul>"
+            f"{pending_block}"
+            f"<h2>Revisions</h2><table><tr><th>Version</th><th>State</th><th>Note</th><th>Created</th></tr>"
+            f"{revision_rows}</table>"
+            "<p><a href='/wiki'>All drafts</a> · <a href='/'>Search console</a></p></section>")
+    return _shell(f"Pulse Search · {page['title']}", body)
 
 
 def _bar(value: int, peak: int) -> str:
@@ -65,11 +137,42 @@ def _bar(value: int, peak: int) -> str:
     return f"<div class='bar'><i style='width:{pct}%'></i></div>"
 
 
-def render_html(report: dict, staging: StagingIndex, query: str = "", category: str = "") -> str:
+def render_html(report: dict, staging: StagingIndex, query: str = "", category: str = "",
+                ask_html: str = "") -> str:
     funnel = report["funnel"]
     categories = report["categories"]
     peak = max(categories["counts"].values() or [1])
     results = staging.search(query, category or None, 20) if query.strip() else []
+    # R3-A3G: natural-language ranking over existing permissioned staging pages.
+    # This is offline retrieval, not a web search or live-provider claim.
+    broad = (search_staging(staging, query, 12, enforce_support=True)
+             if query.strip() else None)
+    broad_rows = "".join(
+        f"<tr><td><a href='{html.escape(r['url'])}' rel='noopener noreferrer'>"
+        f"{html.escape(str(r.get('title') or '')[:100])}</a></td>"
+        f"<td>{html.escape(str(r.get('document_type') or r.get('kind') or 'official'))}</td>"
+        f"<td>{html.escape(str(r.get('snippet') or r.get('description') or '')[:220])}</td>"
+        f"<td>{html.escape(str(r.get('source_id') or r.get('publisher') or r.get('source_kind') or ''))}</td></tr>"
+        for r in (broad or {}).get("results", [])
+    )
+    broad_status = html.escape(str((broad or {}).get("status", "NO_QUERY")))
+    broad_intent = html.escape(str(((broad or {}).get("intent") or {}).get("kind", "n/a")))
+    broad_note = html.escape(str((broad or {}).get("note", "Enter a search query above.")))
+    related_official = (broad or {}).get("related_official_links") or []
+    related_rows = "".join(
+        f"<li><a href='{html.escape(str(r.get('url') or ''))}' rel='noopener noreferrer'>"
+        f"{html.escape(str(r.get('title') or r.get('url') or ''))}</a> — "
+        f"{html.escape(str(r.get('publisher') or ''))} "
+        f"<span class='sub'>(official navigation, not crawled)</span></li>"
+        for r in related_official)
+    useful_leads = report.get("broad_source_candidates", [])
+    useful_lead_rows = "".join(
+        f"<tr><td>{html.escape(str(c['origin']))}</td>"
+        f"<td>{html.escape(', '.join(c.get('source_families', [])))}</td>"
+        f"<td>{c.get('observed_referrer_count', 0)}</td>"
+        f"<td>{c.get('review_priority', 0)}</td><td>NOT ADMITTED</td></tr>"
+        for c in useful_leads[:25]
+    )
     run = report.get("run") or {}
     counters = {}
     if run.get("counters"):
@@ -234,6 +337,17 @@ final status <span class="pill warn">PRODUCTION HOLD</span></div></header>
     <div class="n">must be zero · unapproved hosts {safety['unapproved_host_requests']}</div></div>
 </div>
 
+<section><h2>Ask Pulse UNITY — cited answers</h2>
+<div class="sub">Answers come only from the curated fact pack or an accepted staging page, with citations.
+If there is no trusted evidence, or live data is switched off, the answer says so instead of guessing.
+Try <code>When is Glastonbury on next year?</code>, <code>What is the weather in London or Berlin today?</code>,
+<code>Can you name place to buy flight tickets?</code> or <code>How do I book tickets for a concert in Berlin?</code>.</div>
+<form method="get" action="/ask">
+<input name="q" value="{html.escape(query)}" placeholder="Ask about an event, weather, how-to or where to buy" size="62">
+<button type="submit">Ask</button></form>
+{ask_html}
+</section>
+
 <section><h2>Progress towards 1,000 accepted pages/day</h2>
 <table><tr><th>Measure</th><th>Value</th><th>Note</th></tr>
 <tr><td>Target</td><td>{target['target_new_pages_per_day']}</td><td>aim, never a quota to fake</td></tr>
@@ -298,6 +412,19 @@ synthetic fixtures named in the register, never from the real hosts.</div>
 
 {parade_section}
 
+<section><h2>Useful new-source candidates — R3-A3G</h2>
+<div class="sub">Ranked from out-of-domain links already observed by permitted sources.
+These are potential event, ticketing-help, venue, transport and general-information
+sources for manual review. Listing here does not permit crawling, indexing or copying.</div>
+<table><tr><th>Candidate origin</th><th>Likely topic</th><th>Referrers</th>
+<th>Review priority</th><th>Permission</th></tr>
+{useful_lead_rows or "<tr><td colspan='5'>No external source leads yet — this is not evidence of universal search coverage.</td></tr>"}
+</table></section>
+
+<section><h2>Wiki drafts — local workflow</h2>
+<div class="sub">Sourced, public-evidence drafts proposed to the Wiki workflow. Nothing here is published to Pulse UNITY/UNA; local statuses only.</div>
+<p><a href="/wiki">Open Wiki draft previews</a> · <a href="/api/wiki">draft JSON</a></p></section>
+
 <section><h2>Sources and rights</h2>
 <div class="sub">{html.escape(novelty_line)}</div><table>
 <tr><th>Source</th><th>Origin</th><th>Rights basis</th><th>Docs</th><th>Index allowed</th></tr>
@@ -323,6 +450,18 @@ off-origin redirects are refused even to public hosts.</div>
 <tr><td>Body storage</td><td>{html.escape(safety['body_storage'])}</td></tr>
 <tr><td>Events Engine writes</td><td>{safety['events_engine_writes']}</td></tr>
 </table></section>
+
+<section><h2>Broad search results — R3-A3G</h2>
+<div class="sub">What does the person want? Query intent: <code>{broad_intent}</code> ·
+Evidence state: <code>{broad_status}</code>. {broad_note}</div>
+<div class="sub">These are ranked pages in the existing local staging index or manually curated
+official-site navigation links. Weather, translation, live sport, prices and availability
+require approved fresh providers; synthetic fixtures are never presented as live evidence.</div>
+<table><tr><th>Result</th><th>Page type</th><th>Relevant information</th><th>Source</th></tr>
+{broad_rows or "<tr><td colspan='4'>No supported local evidence yet. The source catalogue and fresh-provider connections must grow.</td></tr>"}
+</table>
+{("<div class='sub' style='margin-top:12px'>Reviewed official entry points — navigation only, not crawled or permanently indexed.</div><ul class='tight'>" + related_rows + "</ul>") if related_rows else ""}
+</section>
 
 <section><h2>Search the staging index</h2>
 <form method="get" action="/search">
@@ -364,10 +503,40 @@ class _Handler(BaseHTTPRequestHandler):
         if parsed.path == "/health":
             self._send(200, b'{"ok":true}', "application/json")
             return
+        if parsed.path == "/api/ask":
+            question = (params.get("q") or [""])[0]
+            answer = self.server.answers.answer(question)
+            self._send(200, json.dumps(answer.as_dict(), indent=2).encode("utf-8"),
+                       "application/json")
+            return
+        if parsed.path in ("/wiki", "/api/wiki"):
+            if self.server.wiki_store is None:
+                self._send(200, b"[]" if parsed.path == "/api/wiki" else
+                           _shell("Pulse Search · Wiki drafts",
+                                  "<p>No local Wiki workflow database configured.</p>").encode(),
+                           "application/json" if parsed.path == "/api/wiki" else "text/html; charset=utf-8")
+                return
+            if parsed.path == "/api/wiki":
+                self._send(200, json.dumps(self.server.wiki_store.list(), indent=2).encode(),
+                           "application/json")
+                return
+            self._send(200, render_wiki_index(self.server.wiki_store).encode(),
+                       "text/html; charset=utf-8")
+            return
+        if parsed.path.startswith("/wiki/"):
+            slug = parsed.path.split("/wiki/", 1)[1]
+            body = render_wiki_page(self.server.wiki_store, slug) if self.server.wiki_store else None
+            if body is None:
+                self._send(404, b"<h1>Not found</h1>", "text/html; charset=utf-8")
+            else:
+                self._send(200, body.encode(), "text/html; charset=utf-8")
+            return
         report = build_report(self.server.store, self.server.staging, self.server.config,
                               historical_index=self.server.historical_index,
                               expected_index_sha256=self.server.index_sha256,
                               registry=self.server.registry)
+        report["broad_source_candidates"] = rank_external_candidates(
+            report.get("external_candidates", []), limit=100)
         if parsed.path == "/api/report.json":
             self._send(200, json.dumps(report, indent=2).encode("utf-8"), "application/json")
             return
@@ -381,13 +550,19 @@ class _Handler(BaseHTTPRequestHandler):
             return
         query = (params.get("q") or [""])[0]
         category = (params.get("category") or [""])[0]
-        body = render_html(report, self.server.staging, query, category).encode("utf-8")
+        ask_html = ""
+        if parsed.path == "/ask":
+            answer = self.server.answers.answer(query)
+            ask_html = render_answer_for_web(answer, html.escape)
+        body = render_html(report, self.server.staging, query, category,
+                           ask_html=ask_html).encode("utf-8")
         self._send(200, body, "text/html; charset=utf-8")
 
 
 def serve(db_path: str, staging_path: str, port: int = 8787,
           historical_index: str | None = None, registry_path: str | None = None,
-          index_sha256: str | None = None) -> HTTPServer:
+          index_sha256: str | None = None, knowledge_path: str | None = None,
+          live_weather: bool = False, wiki_path: str | None = None) -> HTTPServer:
     # Single-threaded on purpose: the sqlite handles are opened once here and
     # must be used from the same thread. A local read-only console has no need
     # for concurrent request handling.
@@ -405,6 +580,16 @@ def serve(db_path: str, staging_path: str, port: int = 8787,
         from .registry import load_registry
 
         server.registry = load_registry(registry_path)
+    pack_path = knowledge_path or "config/knowledge_pack.json"
+    try:
+        pack = load_pack(pack_path)
+    except (OSError, ValueError):
+        pack = {"policy": {"trusted_hosts": []}, "version": 0}
+    server.answers = AnswerService(
+        staging, pack, weather=OpenMeteoProvider() if live_weather else None)
+    server.wiki_store = None
+    if wiki_path and Path(wiki_path).exists():
+        server.wiki_store = WikiStore(wiki_path, create=False)
     return server
 
 
@@ -419,9 +604,17 @@ def main(argv: list[str] | None = None) -> int:
                         help="expected SHA-256 of the historical index (pin check)")
     parser.add_argument("--registry", default=None,
                         help="optional three-candidate source register JSON")
+    parser.add_argument("--knowledge", default=None,
+                        help="knowledge pack JSON (default config/knowledge_pack.json)")
+    parser.add_argument("--live-weather", action="store_true",
+                        help="enable the keyless Open-Meteo live weather adapter")
+    parser.add_argument("--wiki", default="data/r3a3g_wiki/wiki.sqlite",
+                        help="local Wiki workflow database for draft previews")
     args = parser.parse_args(argv)
     server = serve(args.db, args.staging, args.port, args.historical_index,
-                   registry_path=args.registry, index_sha256=args.index_sha256)
+                   registry_path=args.registry, index_sha256=args.index_sha256,
+                   knowledge_path=args.knowledge, live_weather=args.live_weather,
+                   wiki_path=args.wiki)
     print(f"dashboard: http://127.0.0.1:{args.port}/", flush=True)
     try:
         server.serve_forever()

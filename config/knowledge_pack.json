@@ -1,0 +1,80 @@
+{
+  "schema": "pulse-unity-knowledge-pack/v1",
+  "version": 1,
+  "updated": "2026-11-11",
+  "purpose": "Curated facts for the Pulse UNITY knowledge engine. Every entry carries a source and a verification date. No entry is generated at answer time.",
+  "policy": {
+    "trusted_hosts": [
+      "glastonburyfestivals.co.uk",
+      "bbc.co.uk",
+      "metoffice.gov.uk",
+      "dwd.de",
+      "open-meteo.com",
+      "britishairways.com",
+      "lufthansa.com",
+      "easyjet.com",
+      "ryanair.com",
+      "heathrow.com",
+      "gatwickairport.com",
+      "berlin-airport.de",
+      "caa.co.uk",
+      "abta.com",
+      "pulseunity.co"
+    ],
+    "max_snippet_chars": 320,
+    "weather_ttl_minutes": 30,
+    "event_recheck_days": 180,
+    "max_answer_chars": 1200,
+    "live_fares": false,
+    "generated_text": false
+  },
+  "weather_locations": [
+    {"name": "London", "country": "GB", "latitude": 51.5072, "longitude": -0.1276, "aliases": ["london", "central london"]},
+    {"name": "Berlin", "country": "DE", "latitude": 52.52, "longitude": 13.405, "aliases": ["berlin"]}
+  ],
+  "events": [
+    {
+      "id": "glastonbury-2027",
+      "name": "Glastonbury Festival",
+      "aliases": ["glastonbury", "glastonbury festival", "glasto"],
+      "start": "2027-06-23",
+      "end": "2027-06-27",
+      "venue": "Worthy Farm, Pilton, Somerset, England",
+      "venue_note": "The site is a working farm; use the organiser's travel guidance rather than arriving by car without a pass.",
+      "edition": "2027",
+      "status": "announced",
+      "date_note": "2026 was a fallow year; the festival returns for 2027.",
+      "ticket_note": "General admission for 2027 has sold out. The organiser says cancelled or returned tickets will be resold in spring 2027, and tickets are strictly non-transferable with security checks at the gate.",
+      "source": {
+        "title": "Glastonbury 2027 ticket information confirmed",
+        "url": "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed",
+        "publisher": "Glastonbury Festivals",
+        "retrieved_at": "2026-11-11"
+      },
+      "ticket_source": {
+        "title": "Glastonbury Festival official site",
+        "url": "https://www.glastonburyfestivals.co.uk/",
+        "publisher": "Glastonbury Festivals",
+        "retrieved_at": "2026-11-11"
+      },
+      "verified_at": "2026-11-11"
+    }
+  ],
+  "buying": {
+    "flights": {
+      "intro": "There is no single best place to buy flight tickets. Buy directly from the airline or a licensed agent so the fare rules, baggage and changes are clear.",
+      "channels": [
+        {"name": "British Airways (direct)", "url": "https://www.britishairways.com/", "kind": "airline"},
+        {"name": "Lufthansa (direct)", "url": "https://www.lufthansa.com/", "kind": "airline"},
+        {"name": "easyJet (direct)", "url": "https://www.easyjet.com/", "kind": "airline"},
+        {"name": "Ryanair (direct)", "url": "https://www.ryanair.com/", "kind": "airline"},
+        {"name": "Heathrow Airport", "url": "https://www.heathrow.com/", "kind": "airport"},
+        {"name": "Gatwick Airport", "url": "https://www.gatwickairport.com/", "kind": "airport"},
+        {"name": "Berlin Brandenburg Airport", "url": "https://www.berlin-airport.de/", "kind": "airport"},
+        {"name": "UK Civil Aviation Authority (ATOL checks)", "url": "https://www.caa.co.uk/", "kind": "regulator"},
+        {"name": "ABTA (agent membership checks)", "url": "https://www.abta.com/", "kind": "regulator"}
+      ],
+      "note": "Check who the seller is, whether the booking is ATOL/ABTA protected, and the fare rules before paying. Pulse Unity is not a travel agent and these are not affiliate links."
+    }
+  }
+}

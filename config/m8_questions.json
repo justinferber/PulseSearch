@@ -1,0 +1,28 @@
+{
+  "reviewer": "FB2 M8 internal open-set review",
+  "reviewed_at": "2026-11-11",
+  "queries": [
+    {"id": "hvv-ticket", "query": "Hamburg HVV ticket information", "grades": {"https://www.hvv.de/en/deutschlandticket-en": 3}},
+    {"id": "hamburg-christmas-travel", "query": "Hamburg Christmas market travel", "grades": {"https://www.hamburg.com/": 2, "https://www.hvv.de/en/deutschlandticket-en": 1}},
+    {"id": "tate-access", "query": "Tate London wheelchair access", "grades": {"https://www.tate.org.uk/visit/accessibility": 3}},
+    {"id": "london-museum-access", "query": "Which London museum has wheelchair access information?", "grades": {"https://www.tate.org.uk/visit/accessibility": 3}},
+    {"id": "german-concert-refund", "query": "Can I refund concert tickets in Germany?", "grades": {"https://www.verbraucherzentrale.de/wissen/vertraege-reklamation": 3, "https://www.gov.uk/search/all?keywords=Can+I+refund+concert+tickets+in+Germany%3F": 0}},
+    {"id": "german-consumer", "query": "German consumer cancellation rights", "grades": {"https://www.verbraucherzentrale.de/wissen/vertraege-reklamation": 2}},
+    {"id": "paris-pride-dates", "query": "Paris Pride dates 2027", "grades": {"https://www.paris.fr/": 1, "https://www.paris.fr/quefaire": 2}},
+    {"id": "paris-weekend", "query": "What is happening in Paris this weekend?", "grades": {"https://www.paris.fr/quefaire": 2, "https://www.paris.fr/": 1}},
+    {"id": "passport-renewal", "query": "Renew a UK passport online", "grades": {"https://www.gov.uk/apply-renew-passport": 3}},
+    {"id": "uk-consumer-refund", "query": "UK consumer refund rights", "grades": {"https://www.gov.uk/consumer-protection-rights": 3}},
+    {"id": "london-theatre-refund", "query": "London theatre refund policy", "grades": {"https://officiallondontheatre.com/": 2, "https://www.gov.uk/search/all?keywords=London+theatre+refund+policy": 1}},
+    {"id": "nhs-111", "query": "When should I call NHS 111?", "grades": {"https://www.nhs.uk/": 2}},
+    {"id": "berlin-museum-hours", "query": "Berlin museum opening hours", "grades": {"https://www.berlin.de/en/museums": 2, "https://www.berlin.de/en/museums/": 2}},
+    {"id": "berlin-christmas-travel", "query": "Getting to Berlin Christmas markets by public transport", "grades": {"https://www.visitberlin.de/en/christmas-markets-berlin": 2, "https://www.bvg.de/": 1}},
+    {"id": "uber-access", "query": "Uber Arena Berlin accessibility", "grades": {"https://www.uber-arena.de/": 3}},
+    {"id": "london-events", "query": "London events this weekend", "grades": {"https://www.london.gov.uk/events": 2}},
+    {"id": "berlin-concert-tickets", "query": "Where to buy concert tickets in Berlin", "grades": {"https://www.eventim.de/city/berlin-8/": 2}},
+    {"id": "london-theatre-access", "query": "Accessible theatre tickets in London", "grades": {"https://officiallondontheatre.com/": 2}},
+    {"id": "manchester-pride", "query": "Manchester Pride 2027", "grades": {"https://www.manchesterpride.com/": 2}},
+    {"id": "berlin-weihnachtsmarkt", "query": "Berlin Weihnachtsmarkt Öffnungszeiten", "grades": {"https://www.visitberlin.de/en/christmas-markets-berlin": 2}},
+    {"id": "uk-train-refund", "query": "How do I claim a UK rail ticket refund?", "grades": {"https://www.gov.uk/search/all?keywords=UK+train+ticket+refund+rules": 2}},
+    {"id": "paris-nye", "query": "Paris New Year's Eve celebrations 2027", "grades": {"https://www.paris.fr/": 1, "https://www.paris.fr/quefaire": 1}}
+  ]
+}

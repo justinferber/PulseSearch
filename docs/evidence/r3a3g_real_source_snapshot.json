@@ -1,0 +1,636 @@
+{
+  "kind": "R3A3G_REAL_SOURCE_SNAPSHOT",
+  "captured_at": "2026-11-11T15:41:23+00:00",
+  "mode": "CONTROLLED_SINGLE_PAGE_EVALUATION_METADATA",
+  "not_a_crawler_admission": true,
+  "controls": {
+    "ssrf_private_ip_guard": "pulse_search_crawler_r3a3f.netguard",
+    "robots": "RFC9309-style, fail closed",
+    "redirects": "same registrable domain, per-hop re-check",
+    "pacing_s": 3.0,
+    "attempt_ceiling_per_source": 8,
+    "rights": "evaluation_metadata_only",
+    "owner_approval_required": true
+  },
+  "pages": [
+    {
+      "id": "berlin-events",
+      "url": "https://www.berlin.de/en/events/",
+      "publisher": "Berlin.de",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "events",
+        "concert",
+        "christmas",
+        "pride"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only",
+      "status": 301,
+      "final_url": "https://www.berlin.de/en/events",
+      "title": "",
+      "description": "",
+      "error": "too_many_redirects",
+      "robots_source": "parsed",
+      "redirect_chain": [
+        "https://www.berlin.de/en/events",
+        "https://www.berlin.de/en/events",
+        "https://www.berlin.de/en/events",
+        "https://www.berlin.de/en/events"
+      ],
+      "redirect_hops": [
+        {
+          "hop": 0,
+          "url": "https://www.berlin.de/en/events",
+          "redirect_from": null,
+          "status": 301,
+          "decision": "followed",
+          "reason": ""
+        },
+        {
+          "hop": 1,
+          "url": "https://www.berlin.de/en/events",
+          "redirect_from": "https://www.berlin.de/en/events",
+          "status": 301,
+          "decision": "followed",
+          "reason": ""
+        },
+        {
+          "hop": 2,
+          "url": "https://www.berlin.de/en/events",
+          "redirect_from": "https://www.berlin.de/en/events",
+          "status": 301,
+          "decision": "followed",
+          "reason": ""
+        },
+        {
+          "hop": 3,
+          "url": "https://www.berlin.de/en/events",
+          "redirect_from": "https://www.berlin.de/en/events",
+          "status": 301,
+          "decision": "followed",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "berlin-concerts",
+      "url": "https://www.berlin.de/en/events/concert/",
+      "publisher": "Berlin.de",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "concert"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only",
+      "status": 410,
+      "final_url": "https://www.berlin.de/en/events/concert",
+      "title": "berlin.de (BerlinDe/Rubric/Index): 410 Gone",
+      "description": "",
+      "content_type": "text/html; charset=utf-8",
+      "robots_source": "parsed",
+      "redirect_chain": [
+        "https://www.berlin.de/en/events/concert"
+      ],
+      "redirect_hops": [
+        {
+          "hop": 0,
+          "url": "https://www.berlin.de/en/events/concert",
+          "redirect_from": null,
+          "status": 410,
+          "decision": "followed",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "mercedes-arena",
+      "url": "https://www.mercedes-benz-arena.de/en/events/",
+      "publisher": "Mercedes-Benz Arena",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "concert",
+        "venue"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only",
+      "status": 0,
+      "final_url": "https://www.mercedes-benz-arena.de/en/events/",
+      "title": "",
+      "description": "",
+      "error": "robots_error:unsafe_target:dns resolution failed: [Errno 11001] getaddrinfo failed",
+      "robots_source": "unreachable_fail_closed",
+      "redirect_chain": []
+    },
+    {
+      "id": "eventim-berlin",
+      "url": "https://www.eventim.de/city/berlin-8/",
+      "publisher": "Eventim",
+      "authority": "primary",
+      "topics": [
+        "berlin",
+        "concert",
+        "tickets"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only",
+      "status": 0,
+      "final_url": "https://www.eventim.de/city/berlin-8/",
+      "title": "",
+      "description": "",
+      "error": "robots_error:network:ConnectionResetError",
+      "robots_source": "unreachable_fail_closed",
+      "redirect_chain": []
+    },
+    {
+      "id": "huxleys",
+      "url": "https://www.huxleys-neue-welt.de/",
+      "publisher": "Huxley's Neue Welt",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "concert",
+        "venue"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only",
+      "status": 0,
+      "final_url": "https://www.huxleys-neue-welt.de/",
+      "title": "",
+      "description": "",
+      "error": "robots_error:unsafe_target:dns resolution failed: [Errno 11001] getaddrinfo failed",
+      "robots_source": "unreachable_fail_closed",
+      "redirect_chain": []
+    },
+    {
+      "id": "verti",
+      "url": "https://www.verti-music-hall.de/",
+      "publisher": "Verti Music Hall",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "concert",
+        "venue"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only",
+      "status": 0,
+      "final_url": "https://www.verti-music-hall.de/",
+      "title": "",
+      "description": "",
+      "error": "robots_error:redirect_blocked:off_approved_domain",
+      "robots_source": "unreachable_fail_closed",
+      "redirect_chain": []
+    },
+    {
+      "id": "csd-berlin",
+      "url": "https://www.csd-berlin.de/",
+      "publisher": "CSD Berlin",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "pride",
+        "csd"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only",
+      "status": 200,
+      "final_url": "https://csd-berlin.de/",
+      "title": "CSD Berlin | Christopher Street Day",
+      "description": "Der Christopher Street Day Berlin, Demonstration für Vielfalt, Akzeptanz und gleiche Rechte. Termine, Mitmach-Aktionen und alles über den Berliner CSD e.V.",
+      "content_type": "text/html; charset=utf-8",
+      "robots_source": "parsed",
+      "redirect_chain": [
+        "https://www.csd-berlin.de/",
+        "https://csd-berlin.de/"
+      ],
+      "redirect_hops": [
+        {
+          "hop": 0,
+          "url": "https://www.csd-berlin.de/",
+          "redirect_from": null,
+          "status": 301,
+          "decision": "followed",
+          "reason": ""
+        },
+        {
+          "hop": 1,
+          "url": "https://csd-berlin.de/",
+          "redirect_from": "https://www.csd-berlin.de/",
+          "status": 200,
+          "decision": "followed",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "bvg",
+      "url": "https://www.bvg.de/en",
+      "publisher": "BVG",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "transport"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only",
+      "status": 200,
+      "final_url": "https://www.bvg.de/en",
+      "title": "Berliner Verkehrsbetriebe: BVG - Because we love you | BVG",
+      "description": "Your public transportation in Berlin: timetable information, tickets, subscriptions, apps, traffic news & tourist info.",
+      "content_type": "text/html; charset=utf-8",
+      "robots_source": "parsed",
+      "redirect_chain": [
+        "https://www.bvg.de/en"
+      ],
+      "redirect_hops": [
+        {
+          "hop": 0,
+          "url": "https://www.bvg.de/en",
+          "redirect_from": null,
+          "status": 200,
+          "decision": "followed",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "sbahn",
+      "url": "https://www.s-bahn-berlin.de/",
+      "publisher": "S-Bahn Berlin",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "transport"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only",
+      "status": 0,
+      "final_url": "https://www.s-bahn-berlin.de/",
+      "title": "",
+      "description": "",
+      "error": "robots_error:redirect_blocked:off_approved_domain",
+      "robots_source": "unreachable_fail_closed",
+      "redirect_chain": []
+    },
+    {
+      "id": "london-fireworks",
+      "url": "https://www.london.gov.uk/events/london-new-years-eve-fireworks",
+      "publisher": "London.gov.uk",
+      "authority": "official",
+      "topics": [
+        "london",
+        "fireworks"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only",
+      "status": 404,
+      "final_url": "https://www.london.gov.uk/events/london-new-years-eve-fireworks",
+      "title": "Sorry - page not found | London City Hall",
+      "description": "404 error message.",
+      "content_type": "text/html; charset=utf-8",
+      "robots_source": "parsed",
+      "redirect_chain": [
+        "https://www.london.gov.uk/events/london-new-years-eve-fireworks"
+      ],
+      "redirect_hops": [
+        {
+          "hop": 0,
+          "url": "https://www.london.gov.uk/events/london-new-years-eve-fireworks",
+          "redirect_from": null,
+          "status": 404,
+          "decision": "followed",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "tfl",
+      "url": "https://tfl.gov.uk/",
+      "publisher": "Transport for London",
+      "authority": "official",
+      "topics": [
+        "london",
+        "transport",
+        "fireworks",
+        "parade"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only",
+      "status": 200,
+      "final_url": "https://tfl.gov.uk/",
+      "title": "Keeping London moving - Transport for London",
+      "description": "Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates.",
+      "content_type": "text/html; charset=utf-8",
+      "robots_source": "parsed",
+      "redirect_chain": [
+        "https://tfl.gov.uk/"
+      ],
+      "redirect_hops": [
+        {
+          "hop": 0,
+          "url": "https://tfl.gov.uk/",
+          "redirect_from": null,
+          "status": 200,
+          "decision": "followed",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "london-parade",
+      "url": "https://londonparade.com/parade-location-timing/",
+      "publisher": "London Parade",
+      "authority": "official",
+      "topics": [
+        "london",
+        "parade"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only",
+      "status": 403,
+      "final_url": "https://londonparade.com/parade-location-timing",
+      "title": "Just a moment...",
+      "description": "",
+      "content_type": "text/html; charset=UTF-8",
+      "robots_source": "parsed",
+      "redirect_chain": [
+        "https://londonparade.com/parade-location-timing"
+      ],
+      "redirect_hops": [
+        {
+          "hop": 0,
+          "url": "https://londonparade.com/parade-location-timing",
+          "redirect_from": null,
+          "status": 403,
+          "decision": "followed",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "glastonbury",
+      "url": "https://www.glastonburyfestivals.co.uk/",
+      "publisher": "Glastonbury Festivals",
+      "authority": "official",
+      "topics": [
+        "music",
+        "festival",
+        "glastonbury"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only",
+      "status": 200,
+      "final_url": "https://www.glastonburyfestivals.co.uk/",
+      "title": "Glastonbury Festival - Home",
+      "description": "Glastonbury Festival - Wed 25th Jun - Sun 29th Jun 2025",
+      "content_type": "text/html; charset=UTF-8",
+      "robots_source": "parsed",
+      "redirect_chain": [
+        "https://www.glastonburyfestivals.co.uk/"
+      ],
+      "redirect_hops": [
+        {
+          "hop": 0,
+          "url": "https://www.glastonburyfestivals.co.uk/",
+          "redirect_from": null,
+          "status": 200,
+          "decision": "followed",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "berlin-christmas",
+      "url": "https://www.berlin.de/en/events/christmas-markets/",
+      "publisher": "Berlin.de",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "christmas",
+        "market"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only",
+      "status": 410,
+      "final_url": "https://www.berlin.de/en/events/christmas-markets",
+      "title": "berlin.de (BerlinDe/Rubric/Index): 410 Gone",
+      "description": "",
+      "content_type": "text/html; charset=utf-8",
+      "robots_source": "parsed",
+      "redirect_chain": [
+        "https://www.berlin.de/en/events/christmas-markets"
+      ],
+      "redirect_hops": [
+        {
+          "hop": 0,
+          "url": "https://www.berlin.de/en/events/christmas-markets",
+          "redirect_from": null,
+          "status": 410,
+          "decision": "followed",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "visitberlin-christmas",
+      "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+      "publisher": "visitBerlin",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "christmas",
+        "market"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only",
+      "status": 200,
+      "final_url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+      "title": "Christmas markets in Berlin | visitBerlin.de",
+      "description": "Christmas Markets in Berlin: ✓ Over 80 from insider tips to popular ones ✓ How to find them ✓ Opening hours & admissions ► Find your favourite market!",
+      "content_type": "text/html; charset=utf-8",
+      "robots_source": "parsed",
+      "redirect_chain": [
+        "https://www.visitberlin.de/en/christmas-markets-berlin"
+      ],
+      "redirect_hops": [
+        {
+          "hop": 0,
+          "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+          "redirect_from": null,
+          "status": 200,
+          "decision": "followed",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "columbiahalle",
+      "url": "https://www.columbiahalle.de/",
+      "publisher": "Columbiahalle",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "concert",
+        "venue",
+        "tickets"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only",
+      "status": 0,
+      "final_url": "https://www.columbiahalle.de/",
+      "title": "",
+      "description": "",
+      "error": "robots_error:declared_oversize",
+      "robots_source": "unreachable_fail_closed",
+      "redirect_chain": []
+    },
+    {
+      "id": "visitberlin",
+      "url": "https://www.visitberlin.de/en",
+      "publisher": "visitBerlin",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "guide",
+        "events"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only",
+      "status": 200,
+      "final_url": "https://www.visitberlin.de/en",
+      "title": "Berlin's official travel website - visitBerlin.de",
+      "description": "Berlin's official travel portal visitBerlin.de: ✓ sights ✓ hotels ✓ tips ✓ events & tickets ► Here you can find out everything about the capital!",
+      "content_type": "text/html; charset=utf-8",
+      "robots_source": "parsed",
+      "redirect_chain": [
+        "https://www.visitberlin.de/en"
+      ],
+      "redirect_hops": [
+        {
+          "hop": 0,
+          "url": "https://www.visitberlin.de/en",
+          "redirect_from": null,
+          "status": 200,
+          "decision": "followed",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "glastonbury-2027",
+      "url": "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed",
+      "publisher": "Glastonbury Festivals",
+      "authority": "official",
+      "topics": [
+        "music",
+        "festival",
+        "glastonbury",
+        "2027"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only",
+      "status": 301,
+      "final_url": "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed",
+      "title": "",
+      "description": "",
+      "error": "too_many_redirects",
+      "robots_source": "parsed",
+      "redirect_chain": [
+        "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed",
+        "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed",
+        "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed",
+        "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed"
+      ],
+      "redirect_hops": [
+        {
+          "hop": 0,
+          "url": "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed",
+          "redirect_from": null,
+          "status": 301,
+          "decision": "followed",
+          "reason": ""
+        },
+        {
+          "hop": 1,
+          "url": "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed",
+          "redirect_from": "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed",
+          "status": 301,
+          "decision": "followed",
+          "reason": ""
+        },
+        {
+          "hop": 2,
+          "url": "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed",
+          "redirect_from": "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed",
+          "status": 301,
+          "decision": "followed",
+          "reason": ""
+        },
+        {
+          "hop": 3,
+          "url": "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed",
+          "redirect_from": "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed",
+          "status": 301,
+          "decision": "followed",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "bbc-glastonbury",
+      "url": "https://www.bbc.co.uk/news/articles/cv62kp9enz08o",
+      "publisher": "BBC News",
+      "authority": "reference",
+      "topics": [
+        "music",
+        "festival",
+        "glastonbury",
+        "2027"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only",
+      "status": 200,
+      "final_url": "https://www.bbc.co.uk/news/articles/cv62kp9enz08o",
+      "title": "First Glastonbury 2027 tickets sell out in under 30 minutes - BBC News",
+      "description": "Coach tickets for the 2027 festival are all snapped up in under 30 minutes.",
+      "content_type": "text/html",
+      "robots_source": "parsed",
+      "redirect_chain": [
+        "https://www.bbc.co.uk/news/articles/cv62kp9enz08o"
+      ],
+      "redirect_hops": [
+        {
+          "hop": 0,
+          "url": "https://www.bbc.co.uk/news/articles/cv62kp9enz08o",
+          "redirect_from": null,
+          "status": 200,
+          "decision": "followed",
+          "reason": ""
+        }
+      ]
+    }
+  ]
+}

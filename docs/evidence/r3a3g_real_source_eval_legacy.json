@@ -1,0 +1,780 @@
+{
+  "kind": "R3A3G_REAL_SOURCE_EVAL",
+  "generated_at": "2026-11-11T14:36:30+00:00",
+  "mode": "HUMAN_GRADED_MANUAL_CAPTURE",
+  "not_open_web_benchmark": true,
+  "captured_pages": 8,
+  "captured_domains": 8,
+  "failed_captures": [
+    {
+      "id": "berlin-concerts",
+      "url": "https://www.berlin.de/en/events/concert/",
+      "status": 410,
+      "error": "HTTP 410"
+    },
+    {
+      "id": "mercedes-arena",
+      "url": "https://www.mercedes-benz-arena.de/en/events/",
+      "status": 0,
+      "error": "URLError"
+    },
+    {
+      "id": "eventim-berlin",
+      "url": "https://www.eventim.de/city/berlin-8/",
+      "status": 0,
+      "error": "TimeoutError"
+    },
+    {
+      "id": "huxleys",
+      "url": "https://www.huxleys-neue-welt.de/",
+      "status": 0,
+      "error": "URLError"
+    },
+    {
+      "id": "verti",
+      "url": "https://www.verti-music-hall.de/",
+      "status": 200,
+      "error": "non-200 or no description"
+    },
+    {
+      "id": "london-fireworks",
+      "url": "https://www.london.gov.uk/events/london-new-years-eve-fireworks",
+      "status": 404,
+      "error": "HTTP 404"
+    },
+    {
+      "id": "berlin-christmas",
+      "url": "https://www.berlin.de/en/events/christmas-markets/",
+      "status": 410,
+      "error": "HTTP 410"
+    }
+  ],
+  "queries": [
+    {
+      "query": "How do I book concert tickets in Berlin?",
+      "human_expected": {
+        "domains": [
+          "berlin.de",
+          "eventim.de",
+          "mercedes-benz-arena.de"
+        ],
+        "terms": [
+          "ticket",
+          "concert",
+          "berlin"
+        ],
+        "intent": "how_to"
+      },
+      "status": "PASS",
+      "matched_expected_rank": 4,
+      "top3_domains": [
+        "visitberlin.de",
+        "s-bahn-berlin.de",
+        "csd-berlin.de"
+      ],
+      "top_result": {
+        "title": "Christmas markets in Berlin | visitBerlin.de",
+        "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+        "snippet": "Christmas Markets in Berlin: ✓ Over 80 from insider tips to popular ones ✓ How to find them ✓ Opening hours & admissions ► Find your favourite market!",
+        "document_type": "how_to",
+        "ranking_reasons": [
+          "recent_fetch",
+          "instruction_page",
+          "location_match"
+        ]
+      },
+      "term_hits": [
+        "concert",
+        "berlin"
+      ],
+      "missing_source_from_capture": [
+        "eventim.de",
+        "mercedes-benz-arena.de"
+      ],
+      "related_official_domains": [
+        "eventim.de",
+        "mercedes-benz-arena.de",
+        "columbiahalle.de",
+        "huxleys-neue-welt.de",
+        "verti-music-hall.de",
+        "berlin.de",
+        "csd-berlin.de",
+        "visitberlin.de"
+      ],
+      "official_handoff_available": true,
+      "wrong_city": false,
+      "duplicate_urls_in_results": false,
+      "response_status": "staging_results",
+      "notices": [
+        "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately.",
+        "Reviewed official entry points are listed separately; they are navigation, not admitted page content."
+      ]
+    },
+    {
+      "query": "Berlin concert official ticket seller",
+      "human_expected": {
+        "domains": [
+          "mercedes-benz-arena.de",
+          "eventim.de",
+          "huxleys-neue-welt.de",
+          "verti-music-hall.de"
+        ],
+        "terms": [
+          "ticket",
+          "seller",
+          "concert"
+        ],
+        "intent": "how_to"
+      },
+      "status": "FAIL",
+      "matched_expected_rank": null,
+      "top3_domains": [
+        "visitberlin.de",
+        "s-bahn-berlin.de",
+        "csd-berlin.de"
+      ],
+      "top_result": {
+        "title": "Christmas markets in Berlin | visitBerlin.de",
+        "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+        "snippet": "Christmas Markets in Berlin: ✓ Over 80 from insider tips to popular ones ✓ How to find them ✓ Opening hours & admissions ► Find your favourite market!",
+        "document_type": "how_to",
+        "ranking_reasons": [
+          "recent_fetch",
+          "instruction_page",
+          "location_match"
+        ]
+      },
+      "term_hits": [],
+      "missing_source_from_capture": [
+        "mercedes-benz-arena.de",
+        "eventim.de",
+        "huxleys-neue-welt.de",
+        "verti-music-hall.de"
+      ],
+      "related_official_domains": [
+        "eventim.de",
+        "mercedes-benz-arena.de",
+        "columbiahalle.de",
+        "huxleys-neue-welt.de",
+        "verti-music-hall.de",
+        "berlin.de",
+        "csd-berlin.de",
+        "visitberlin.de"
+      ],
+      "official_handoff_available": true,
+      "wrong_city": false,
+      "duplicate_urls_in_results": false,
+      "response_status": "staging_results",
+      "notices": [
+        "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately.",
+        "Reviewed official entry points are listed separately; they are navigation, not admitted page content."
+      ]
+    },
+    {
+      "query": "Berlin CSD 2027 dates",
+      "human_expected": {
+        "domains": [
+          "csd-berlin.de"
+        ],
+        "terms": [
+          "csd",
+          "berlin",
+          "2027"
+        ],
+        "intent": "events"
+      },
+      "status": "PASS",
+      "matched_expected_rank": 1,
+      "top3_domains": [
+        "csd-berlin.de",
+        "berlin.de",
+        "s-bahn-berlin.de"
+      ],
+      "top_result": {
+        "title": "CSD Berlin | Christopher Street Day",
+        "url": "https://www.csd-berlin.de/",
+        "snippet": "Der Christopher Street Day Berlin, Demonstration für Vielfalt, Akzeptanz und gleiche Rechte. Termine, Mitmach-Aktionen und alles über den Berliner CSD e.V.",
+        "document_type": "event_detail",
+        "ranking_reasons": [
+          "recent_fetch",
+          "event_page",
+          "location_match"
+        ]
+      },
+      "term_hits": [
+        "csd",
+        "berlin"
+      ],
+      "missing_source_from_capture": [],
+      "related_official_domains": [],
+      "official_handoff_available": false,
+      "wrong_city": false,
+      "duplicate_urls_in_results": false,
+      "response_status": "staging_results",
+      "notices": [
+        "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately."
+      ]
+    },
+    {
+      "query": "CSD Berlin route and accessibility",
+      "human_expected": {
+        "domains": [
+          "csd-berlin.de"
+        ],
+        "terms": [
+          "route",
+          "accessibility",
+          "csd"
+        ],
+        "intent": "events"
+      },
+      "status": "PASS",
+      "matched_expected_rank": 1,
+      "top3_domains": [
+        "csd-berlin.de",
+        "berlin.de",
+        "s-bahn-berlin.de"
+      ],
+      "top_result": {
+        "title": "CSD Berlin | Christopher Street Day",
+        "url": "https://www.csd-berlin.de/",
+        "snippet": "Der Christopher Street Day Berlin, Demonstration für Vielfalt, Akzeptanz und gleiche Rechte. Termine, Mitmach-Aktionen und alles über den Berliner CSD e.V.",
+        "document_type": "event_detail",
+        "ranking_reasons": [
+          "recent_fetch",
+          "event_page",
+          "location_match"
+        ]
+      },
+      "term_hits": [
+        "csd"
+      ],
+      "missing_source_from_capture": [],
+      "related_official_domains": [],
+      "official_handoff_available": false,
+      "wrong_city": false,
+      "duplicate_urls_in_results": false,
+      "response_status": "staging_results",
+      "notices": [
+        "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately."
+      ]
+    },
+    {
+      "query": "London New Year's Eve fireworks tickets",
+      "human_expected": {
+        "domains": [
+          "london.gov.uk",
+          "tfl.gov.uk"
+        ],
+        "terms": [
+          "fireworks",
+          "ticket",
+          "london"
+        ],
+        "intent": "events"
+      },
+      "status": "PASS",
+      "matched_expected_rank": 1,
+      "top3_domains": [
+        "tfl.gov.uk",
+        "londonparade.com"
+      ],
+      "top_result": {
+        "title": "Keeping London moving - Transport for London",
+        "url": "https://tfl.gov.uk/",
+        "snippet": "Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates.",
+        "document_type": "transport_guide",
+        "ranking_reasons": [
+          "recent_fetch",
+          "location_match"
+        ]
+      },
+      "term_hits": [
+        "ticket",
+        "london"
+      ],
+      "missing_source_from_capture": [
+        "london.gov.uk"
+      ],
+      "related_official_domains": [
+        "london.gov.uk",
+        "theo2.co.uk",
+        "roundhouse.org.uk",
+        "southbankcentre.co.uk",
+        "visitlondon.com",
+        "efa-aef.eu"
+      ],
+      "official_handoff_available": true,
+      "wrong_city": false,
+      "duplicate_urls_in_results": false,
+      "response_status": "staging_results",
+      "notices": [
+        "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately.",
+        "Reviewed official entry points are listed separately; they are navigation, not admitted page content."
+      ]
+    },
+    {
+      "query": "London fireworks travel and road closures",
+      "human_expected": {
+        "domains": [
+          "tfl.gov.uk",
+          "london.gov.uk"
+        ],
+        "terms": [
+          "travel",
+          "road",
+          "closure"
+        ],
+        "intent": "transport"
+      },
+      "status": "PASS",
+      "matched_expected_rank": 1,
+      "top3_domains": [
+        "tfl.gov.uk",
+        "londonparade.com"
+      ],
+      "top_result": {
+        "title": "Keeping London moving - Transport for London",
+        "url": "https://tfl.gov.uk/",
+        "snippet": "Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates.",
+        "document_type": "transport_guide",
+        "ranking_reasons": [
+          "recent_fetch",
+          "location_match"
+        ]
+      },
+      "term_hits": [
+        "travel"
+      ],
+      "missing_source_from_capture": [
+        "london.gov.uk"
+      ],
+      "related_official_domains": [],
+      "official_handoff_available": false,
+      "wrong_city": false,
+      "duplicate_urls_in_results": false,
+      "response_status": "staging_results",
+      "notices": [
+        "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately."
+      ]
+    },
+    {
+      "query": "Glastonbury Festival 2027 dates",
+      "human_expected": {
+        "domains": [
+          "glastonburyfestivals.co.uk"
+        ],
+        "terms": [
+          "2027",
+          "glastonbury",
+          "june"
+        ],
+        "intent": "events"
+      },
+      "status": "PASS",
+      "matched_expected_rank": 1,
+      "top3_domains": [
+        "glastonburyfestivals.co.uk",
+        "londonparade.com"
+      ],
+      "top_result": {
+        "title": "Glastonbury Festival - Home",
+        "url": "https://www.glastonburyfestivals.co.uk/",
+        "snippet": "Glastonbury Festival - Wed 25th Jun - Sun 29th Jun 2025",
+        "document_type": "event_detail",
+        "ranking_reasons": [
+          "recent_fetch",
+          "event_page"
+        ]
+      },
+      "term_hits": [
+        "glastonbury"
+      ],
+      "missing_source_from_capture": [],
+      "related_official_domains": [],
+      "official_handoff_available": false,
+      "wrong_city": false,
+      "duplicate_urls_in_results": false,
+      "response_status": "staging_results",
+      "notices": [
+        "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately."
+      ]
+    },
+    {
+      "query": "Berlin Christmas markets opening times",
+      "human_expected": {
+        "domains": [
+          "berlin.de",
+          "visitberlin.de"
+        ],
+        "terms": [
+          "christmas",
+          "market",
+          "opening"
+        ],
+        "intent": "events"
+      },
+      "status": "PASS",
+      "matched_expected_rank": 1,
+      "top3_domains": [
+        "visitberlin.de",
+        "berlin.de",
+        "csd-berlin.de"
+      ],
+      "top_result": {
+        "title": "Christmas markets in Berlin | visitBerlin.de",
+        "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+        "snippet": "Christmas Markets in Berlin: ✓ Over 80 from insider tips to popular ones ✓ How to find them ✓ Opening hours & admissions ► Find your favourite market!",
+        "document_type": "how_to",
+        "ranking_reasons": [
+          "recent_fetch",
+          "location_match"
+        ]
+      },
+      "term_hits": [
+        "christmas",
+        "market",
+        "opening"
+      ],
+      "missing_source_from_capture": [],
+      "related_official_domains": [],
+      "official_handoff_available": false,
+      "wrong_city": false,
+      "duplicate_urls_in_results": false,
+      "response_status": "staging_results",
+      "notices": [
+        "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately."
+      ]
+    },
+    {
+      "query": "Berlin Christmas market public transport",
+      "human_expected": {
+        "domains": [
+          "bvg.de",
+          "berlin.de"
+        ],
+        "terms": [
+          "christmas",
+          "market",
+          "transport"
+        ],
+        "intent": "transport"
+      },
+      "status": "FAIL",
+      "matched_expected_rank": null,
+      "top3_domains": [
+        "visitberlin.de"
+      ],
+      "top_result": {
+        "title": "Christmas markets in Berlin | visitBerlin.de",
+        "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+        "snippet": "Christmas Markets in Berlin: ✓ Over 80 from insider tips to popular ones ✓ How to find them ✓ Opening hours & admissions ► Find your favourite market!",
+        "document_type": "how_to",
+        "ranking_reasons": [
+          "recent_fetch",
+          "location_match"
+        ]
+      },
+      "term_hits": [
+        "christmas",
+        "market"
+      ],
+      "missing_source_from_capture": [],
+      "related_official_domains": [
+        "bvg.de",
+        "s-bahn-berlin.de"
+      ],
+      "official_handoff_available": true,
+      "wrong_city": false,
+      "duplicate_urls_in_results": false,
+      "response_status": "staging_results",
+      "notices": [
+        "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately."
+      ]
+    },
+    {
+      "query": "Berlin concert venue accessibility and bag rules",
+      "human_expected": {
+        "domains": [
+          "huxleys-neue-welt.de",
+          "verti-music-hall.de",
+          "mercedes-benz-arena.de"
+        ],
+        "terms": [
+          "accessibility",
+          "bag",
+          "venue"
+        ],
+        "intent": "how_to"
+      },
+      "status": "FAIL",
+      "matched_expected_rank": null,
+      "top3_domains": [
+        "csd-berlin.de",
+        "s-bahn-berlin.de",
+        "berlin.de"
+      ],
+      "top_result": {
+        "title": "CSD Berlin | Christopher Street Day",
+        "url": "https://www.csd-berlin.de/",
+        "snippet": "Der Christopher Street Day Berlin, Demonstration für Vielfalt, Akzeptanz und gleiche Rechte. Termine, Mitmach-Aktionen und alles über den Berliner CSD e.V.",
+        "document_type": "event_detail",
+        "ranking_reasons": [
+          "recent_fetch",
+          "event_page",
+          "location_match"
+        ]
+      },
+      "term_hits": [],
+      "missing_source_from_capture": [
+        "huxleys-neue-welt.de",
+        "verti-music-hall.de",
+        "mercedes-benz-arena.de"
+      ],
+      "related_official_domains": [],
+      "official_handoff_available": false,
+      "wrong_city": false,
+      "duplicate_urls_in_results": false,
+      "response_status": "staging_results",
+      "notices": [
+        "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately."
+      ]
+    },
+    {
+      "query": "London Parade route and start time",
+      "human_expected": {
+        "domains": [
+          "londonparade.com"
+        ],
+        "terms": [
+          "parade",
+          "route",
+          "start"
+        ],
+        "intent": "events"
+      },
+      "status": "PASS",
+      "matched_expected_rank": 1,
+      "top3_domains": [
+        "londonparade.com",
+        "tfl.gov.uk"
+      ],
+      "top_result": {
+        "title": "LONDON PARADE 2027 Location & Timing - London Parade",
+        "url": "https://londonparade.com/parade-location-timing/",
+        "snippet": "Where Piccadilly, Regent Street, St James's, Pall Mall, Trafalgar Square and Whitehall. When Friday, the 1st of January 2027 Free-standing for the general public Ticket Holders to arrive from: Noon Timing: 1 pm- 4:30 pm",
+        "document_type": "event_detail",
+        "ranking_reasons": [
+          "recent_fetch",
+          "event_page",
+          "location_match"
+        ]
+      },
+      "term_hits": [
+        "parade"
+      ],
+      "missing_source_from_capture": [],
+      "related_official_domains": [],
+      "official_handoff_available": false,
+      "wrong_city": false,
+      "duplicate_urls_in_results": false,
+      "response_status": "staging_results",
+      "notices": [
+        "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately."
+      ]
+    },
+    {
+      "query": "Berlin BVG journey planner",
+      "human_expected": {
+        "domains": [
+          "bvg.de"
+        ],
+        "terms": [
+          "bvg",
+          "journey",
+          "planner"
+        ],
+        "intent": "transport"
+      },
+      "status": "PASS",
+      "matched_expected_rank": 1,
+      "top3_domains": [
+        "bvg.de",
+        "s-bahn-berlin.de"
+      ],
+      "top_result": {
+        "title": "BVG Berlin",
+        "url": "https://www.bvg.de/",
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
+      },
+      "term_hits": [
+        "bvg"
+      ],
+      "missing_source_from_capture": [],
+      "related_official_domains": [
+        "bvg.de",
+        "s-bahn-berlin.de"
+      ],
+      "official_handoff_available": true,
+      "wrong_city": false,
+      "duplicate_urls_in_results": false,
+      "response_status": "official_links",
+      "notices": [
+        "No admitted page answered this; these are reviewed official entry points. They are navigation, not a live value or a content licence."
+      ]
+    },
+    {
+      "query": "S-Bahn Berlin service updates",
+      "human_expected": {
+        "domains": [
+          "s-bahn-berlin.de"
+        ],
+        "terms": [
+          "s-bahn",
+          "service",
+          "update"
+        ],
+        "intent": "transport"
+      },
+      "status": "PASS",
+      "matched_expected_rank": 2,
+      "top3_domains": [
+        "bvg.de",
+        "s-bahn-berlin.de"
+      ],
+      "top_result": {
+        "title": "BVG Berlin",
+        "url": "https://www.bvg.de/",
+        "snippet": null,
+        "document_type": null,
+        "ranking_reasons": null
+      },
+      "term_hits": [
+        "s-bahn"
+      ],
+      "missing_source_from_capture": [],
+      "related_official_domains": [
+        "bvg.de",
+        "s-bahn-berlin.de"
+      ],
+      "official_handoff_available": true,
+      "wrong_city": false,
+      "duplicate_urls_in_results": false,
+      "response_status": "official_links",
+      "notices": [
+        "No admitted page answered this; these are reviewed official entry points. They are navigation, not a live value or a content licence."
+      ]
+    },
+    {
+      "query": "Eventim Berlin concerts",
+      "human_expected": {
+        "domains": [
+          "eventim.de"
+        ],
+        "terms": [
+          "eventim",
+          "berlin",
+          "concert"
+        ],
+        "intent": "events"
+      },
+      "status": "FAIL",
+      "matched_expected_rank": null,
+      "top3_domains": [
+        "berlin.de",
+        "csd-berlin.de",
+        "s-bahn-berlin.de"
+      ],
+      "top_result": {
+        "title": "Events & Culture in Berlin – Berlin.de",
+        "url": "https://www.berlin.de/en/events/",
+        "snippet": "Things to do in Berlin: Highlights of the Berlin culture programme, tips for theater, opera, concerts, movies, trade fairs and more.",
+        "document_type": "event_detail",
+        "ranking_reasons": [
+          "recent_fetch",
+          "event_page",
+          "location_match"
+        ]
+      },
+      "term_hits": [
+        "berlin",
+        "concert"
+      ],
+      "missing_source_from_capture": [
+        "eventim.de"
+      ],
+      "related_official_domains": [],
+      "official_handoff_available": false,
+      "wrong_city": false,
+      "duplicate_urls_in_results": false,
+      "response_status": "staging_results",
+      "notices": [
+        "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately."
+      ]
+    },
+    {
+      "query": "Berlin events calendar",
+      "human_expected": {
+        "domains": [
+          "berlin.de"
+        ],
+        "terms": [
+          "berlin",
+          "events",
+          "calendar"
+        ],
+        "intent": "events"
+      },
+      "status": "PASS",
+      "matched_expected_rank": 1,
+      "top3_domains": [
+        "berlin.de",
+        "csd-berlin.de",
+        "s-bahn-berlin.de"
+      ],
+      "top_result": {
+        "title": "Events & Culture in Berlin – Berlin.de",
+        "url": "https://www.berlin.de/en/events/",
+        "snippet": "Things to do in Berlin: Highlights of the Berlin culture programme, tips for theater, opera, concerts, movies, trade fairs and more.",
+        "document_type": "event_detail",
+        "ranking_reasons": [
+          "recent_fetch",
+          "event_page",
+          "location_match"
+        ]
+      },
+      "term_hits": [
+        "berlin",
+        "events"
+      ],
+      "missing_source_from_capture": [],
+      "related_official_domains": [],
+      "official_handoff_available": false,
+      "wrong_city": false,
+      "duplicate_urls_in_results": false,
+      "response_status": "staging_results",
+      "notices": [
+        "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately."
+      ]
+    }
+  ],
+  "summary": {
+    "queries": 15,
+    "pass": 11,
+    "fail": 4,
+    "recall_at_3": 0.733,
+    "mrr": 0.65,
+    "wrong_city": 0,
+    "duplicate_result_sets": 0,
+    "unresolved_missing_sources": 6,
+    "official_handoff_only": 2
+  },
+  "limitations": [
+    "Only pages that returned HTTP 200 and a description are indexed.",
+    "A missing page is reported as a capture gap, not counted as a ranking win.",
+    "No page body is stored; titles and meta descriptions are short evidence.",
+    "This is not a crawler admission or a permanent indexing licence."
+  ]
+}

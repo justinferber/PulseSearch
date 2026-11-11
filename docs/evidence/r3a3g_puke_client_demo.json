@@ -1,0 +1,162 @@
+{
+  "kind": "R3A3G_PUKE_CLIENT_DEMO",
+  "generated_at": "2026-11-11T15:41:23+00:00",
+  "mode": "SEPARATE_LOOPBACK_CLIENT",
+  "health": {
+    "status": "OK",
+    "service": "pulse-search",
+    "api_version": "1.2",
+    "request_id": "aaf83255577d4f10870cdf1dace06772",
+    "time_utc": "2026-11-11T18:15:00+00:00",
+    "consumer": "puke"
+  },
+  "cases": [
+    {
+      "question": "What is the weather in London tomorrow?",
+      "status": "OFFICIAL_LINKS",
+      "response_mode": "OFFICIAL_LINKS",
+      "answer": "I don't have a live weather reading. For the current forecast, use the official service for the country:\n- BBC Weather: https://www.bbc.co.uk/weather\n- Met Office UK forecast: https://weather.metoffice.gov.uk/forecast/uk",
+      "links": 0,
+      "citations": 2,
+      "claim_evidence": 4,
+      "request_id": "b4f6482439c8448b805a51dcab0a48d3",
+      "has_evidence": true,
+      "search_status": "official_links",
+      "search_results": [
+        {
+          "title": "BBC Weather",
+          "url": "https://www.bbc.co.uk/weather",
+          "source_kind": "official_directory"
+        },
+        {
+          "title": "Met Office UK forecast",
+          "url": "https://weather.metoffice.gov.uk/forecast/uk",
+          "source_kind": "official_directory"
+        }
+      ]
+    },
+    {
+      "question": "When is CSD Berlin 2027?",
+      "status": "OFFICIAL_LINKS",
+      "response_mode": "OFFICIAL_LINKS",
+      "answer": "I don't have an admitted page that answers this. Use the reviewed official service below; no live value was fetched.\n- CSD Berlin: https://www.csd-berlin.de/\n- Berlin.de events calendar: https://www.berlin.de/events/",
+      "links": 0,
+      "citations": 2,
+      "claim_evidence": 4,
+      "request_id": "babaaffb10424b30b969d3224df23d27",
+      "has_evidence": true,
+      "search_status": "official_links",
+      "search_results": [
+        {
+          "title": "CSD Berlin",
+          "url": "https://www.csd-berlin.de/",
+          "source_kind": "official_directory"
+        },
+        {
+          "title": "Berlin.de events calendar",
+          "url": "https://www.berlin.de/events/",
+          "source_kind": "official_directory"
+        }
+      ]
+    },
+    {
+      "question": "When is Glastonbury Festival 2027?",
+      "status": "ANSWERED",
+      "response_mode": "EXTRACTIVE_ANSWER",
+      "answer": "Glastonbury Festival is scheduled for Wednesday 23 June 2027 to Sunday 27 June 2027 (5 days) at Worthy Farm, Pilton, Somerset, England. 2026 was a fallow year; the festival returns for 2027.",
+      "links": 0,
+      "citations": 1,
+      "claim_evidence": 2,
+      "request_id": "3546637d1cce40cb94f89f823ff11f4f",
+      "has_evidence": true,
+      "search_status": "staging_results",
+      "search_results": [
+        {
+          "title": "Glastonbury Festival - Home",
+          "url": "https://www.glastonburyfestivals.co.uk/",
+          "source_kind": "permissioned_staging_document"
+        },
+        {
+          "title": "First Glastonbury 2027 tickets sell out in under 30 minutes - BBC News",
+          "url": "https://www.bbc.co.uk/news/articles/cv62kp9enz08o",
+          "source_kind": "permissioned_staging_document"
+        }
+      ]
+    },
+    {
+      "question": "London New Year's Eve fireworks tickets",
+      "status": "OFFICIAL_LINKS",
+      "response_mode": "OFFICIAL_LINKS",
+      "answer": "I don't have an admitted page that answers this. Use the reviewed official service below; no live value was fetched.\n- Mayor of London: https://www.london.gov.uk/\n- Visit London events: https://www.visitlondon.com/things-to-do/events",
+      "links": 0,
+      "citations": 2,
+      "claim_evidence": 4,
+      "request_id": "e9fa2620761f4221ac345d92a66943a3",
+      "has_evidence": true,
+      "search_status": "official_links",
+      "search_results": [
+        {
+          "title": "Mayor of London",
+          "url": "https://www.london.gov.uk/",
+          "source_kind": "official_directory"
+        },
+        {
+          "title": "Visit London events",
+          "url": "https://www.visitlondon.com/things-to-do/events",
+          "source_kind": "official_directory"
+        }
+      ]
+    },
+    {
+      "question": "Berlin Christmas market public transport",
+      "status": "OFFICIAL_LINKS",
+      "response_mode": "OFFICIAL_LINKS",
+      "answer": "I don't have an admitted page that answers this. Use the reviewed official service below; no live value was fetched.\n- BVG Berlin: https://www.bvg.de/\n- S-Bahn Berlin: https://www.s-bahn-berlin.de/",
+      "links": 0,
+      "citations": 2,
+      "claim_evidence": 4,
+      "request_id": "356d986ce46f43368c6e9c6945b3c0cc",
+      "has_evidence": true,
+      "search_status": "official_links",
+      "search_results": [
+        {
+          "title": "BVG Berlin",
+          "url": "https://www.bvg.de/",
+          "source_kind": "official_directory"
+        },
+        {
+          "title": "S-Bahn Berlin",
+          "url": "https://www.s-bahn-berlin.de/",
+          "source_kind": "official_directory"
+        }
+      ]
+    },
+    {
+      "question": "When is the Moon Parade?",
+      "status": "NO_EVIDENCE",
+      "response_mode": "NO_EVIDENCE",
+      "answer": "The index has no accepted page that answers this. Try a more specific question, or add a curated fact with a source to the knowledge pack.",
+      "links": 0,
+      "citations": 0,
+      "claim_evidence": 2,
+      "request_id": "4643744b1474485abd1014c4cd40bf1f",
+      "has_evidence": false,
+      "search_status": "no_staging_evidence",
+      "search_results": []
+    }
+  ],
+  "chain": {
+    "query": "How do I book concert tickets in Berlin?",
+    "search_status": "official_links",
+    "search_top": "https://www.eventim.de/city/berlin-8/",
+    "answer_status": "OFFICIAL_LINKS",
+    "answer_citations": 6,
+    "claim_evidence": 8
+  },
+  "wiki_candidate": {
+    "status": "draft_created",
+    "publication": "DRAFT_ONLY"
+  },
+  "member_context_blocked_client_side": true,
+  "note": "No member context is sent. The client is a separate process/contract, not part of the API server."
+}

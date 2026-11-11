@@ -128,6 +128,36 @@ INTENTS: tuple[Intent, ...] = (
         months=(12, 1),
         weight=1.0,
     ),
+    Intent(
+        "fireworks",
+        "Public fireworks displays and local celebrations",
+        ("Festival", "Music & Performance"),
+        ("fireworks", "firework display", "feuerwerk", "pyrotechnics",
+         "bonfire night", "fireworks show", "public fireworks"),
+        months=(1, 7, 11, 12),
+        weight=1.25,
+    ),
+    Intent(
+        "ticketing_guides",
+        "Official ticketing and booking information",
+        ("Music & Performance", "Other"),
+        ("ticket booking", "how to book", "how to buy tickets",
+         "official tickets", "ticket information", "ticket office",
+         "ticket refund", "booking guide", "tickets kaufen",
+         "eintrittskarten", "karten kaufen", "vorverkauf"),
+        weight=1.2,
+    ),
+    Intent(
+        "visitor_guides",
+        "Venues, practical information and how-to guides",
+        ("Tour", "Other"),
+        ("how to get there", "getting there", "public transport",
+         "visitor guide", "venue guide", "accessibility information",
+         "frequently asked questions", "visitor information",
+         "directions", "anreise", "barrierefreiheit"),
+        weight=1.05,
+    ),
+
 )
 
 INTENT_BY_SLUG = {intent.slug: intent for intent in INTENTS}

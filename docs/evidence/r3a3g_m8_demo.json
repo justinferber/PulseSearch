@@ -1,0 +1,2001 @@
+{
+  "kind": "R3A3G_M8_REAL_SOURCE_DEMO",
+  "generated_at": "2026-11-11T18:10:08+00:00",
+  "mode": "CONTROLLED_LOCAL_INDEX",
+  "cases": [
+    {
+      "id": "hamburg-transport",
+      "query": "Hamburg public transport tickets",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "results": [
+        {
+          "title": "hvv - hvv Deutschlandticket",
+          "url": "https://www.hvv.de/en/deutschlandticket-en",
+          "snippet": "All information about the hvv Deutschlandticket.",
+          "publisher": "hvv.de",
+          "source_id": "hvv-deutschlandticket",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "document_type": "transport_ticket_guide",
+          "source_authority": "official",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "language": "en",
+          "jurisdiction": "DE",
+          "specificity": "specific",
+          "provenance": "{\"source_id\": \"hvv-deutschlandticket\", \"final_url\": \"https://www.hvv.de/en/deutschlandticket-en\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}",
+          "metadata": {
+            "topics": [
+              "hamburg",
+              "transport",
+              "ticket",
+              "deutschlandticket"
+            ],
+            "jurisdiction": "DE",
+            "document_type": "transport_ticket_guide",
+            "source_authority": "official"
+          },
+          "metadata_source": "curator_assigned",
+          "support_basis": "metadata_assisted",
+          "evidence_class": "curator_metadata_navigation",
+          "verified_fact": false,
+          "snippet_source": "captured_page_description",
+          "location": "hamburg",
+          "score": 13.4,
+          "ranking_reasons": [
+            "official_source",
+            "recent_fetch",
+            "specific_page"
+          ],
+          "source_kind": "curator_metadata_navigation",
+          "verified_live": false
+        },
+        {
+          "title": "Christmas markets in Berlin | visitBerlin.de",
+          "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+          "snippet": "Christmas Markets in Berlin: ✓ Over 80 from insider tips to popular ones ✓ How to find them ✓ Opening hours & admissions ► Find your favourite market!",
+          "publisher": "visitberlin.de",
+          "source_id": "berlin-christmas",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "document_type": "event_guide",
+          "source_authority": "official",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "language": "en",
+          "jurisdiction": "DE",
+          "specificity": "specific",
+          "provenance": "{\"source_id\": \"berlin-christmas\", \"final_url\": \"https://www.visitberlin.de/en/christmas-markets-berlin\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}",
+          "metadata": {
+            "topics": [
+              "berlin",
+              "christmas",
+              "market",
+              "transport",
+              "dates"
+            ],
+            "jurisdiction": "DE",
+            "document_type": "event_guide",
+            "source_authority": "official"
+          },
+          "metadata_source": "curator_assigned",
+          "support_basis": "metadata_assisted",
+          "evidence_class": "curator_metadata_navigation",
+          "verified_fact": false,
+          "snippet_source": "captured_page_description",
+          "location": "hamburg",
+          "score": 2.1,
+          "ranking_reasons": [
+            "official_source",
+            "recent_fetch",
+            "specific_page",
+            "location_mismatch"
+          ],
+          "source_kind": "curator_metadata_navigation",
+          "verified_live": false
+        }
+      ],
+      "source_receipts": [
+        {
+          "url": "https://www.hvv.de/en/deutschlandticket-en",
+          "source_id": "hvv-deutschlandticket",
+          "publisher": "hvv.de",
+          "source_kind": "curator_metadata_navigation",
+          "support_basis": "metadata_assisted",
+          "evidence_class": "curator_metadata_navigation",
+          "verified_fact": false,
+          "metadata_source": "curator_assigned",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"hvv-deutschlandticket\", \"final_url\": \"https://www.hvv.de/en/deutschlandticket-en\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        },
+        {
+          "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+          "source_id": "berlin-christmas",
+          "publisher": "visitberlin.de",
+          "source_kind": "curator_metadata_navigation",
+          "support_basis": "metadata_assisted",
+          "evidence_class": "curator_metadata_navigation",
+          "verified_fact": false,
+          "metadata_source": "curator_assigned",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"berlin-christmas\", \"final_url\": \"https://www.visitberlin.de/en/christmas-markets-berlin\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        }
+      ],
+      "unverified_leads": {
+        "provider": "searxng",
+        "status": "NOT_CONFIGURED",
+        "verified": false,
+        "leads": [],
+        "notices": [
+          "No SearXNG endpoint is configured; no temporary web leads were requested."
+        ]
+      },
+      "note": "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately."
+    },
+    {
+      "id": "london-museum-access",
+      "query": "London museum wheelchair access",
+      "status": "staging_results",
+      "response_mode": "EXTRACTIVE_ANSWER",
+      "results": [
+        {
+          "title": "Accessibility | Tate",
+          "url": "https://www.tate.org.uk/visit/accessibility",
+          "snippet": "Accessibility | Tate",
+          "publisher": "tate.org.uk",
+          "source_id": "tate-accessibility",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "document_type": "accessibility_guide",
+          "source_authority": "official",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "language": "en",
+          "jurisdiction": "GB",
+          "specificity": "specific",
+          "provenance": "{\"source_id\": \"tate-accessibility\", \"final_url\": \"https://www.tate.org.uk/visit/accessibility\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}",
+          "metadata": {
+            "topics": [
+              "london",
+              "museum",
+              "gallery",
+              "accessibility",
+              "wheelchair"
+            ],
+            "jurisdiction": "GB",
+            "document_type": "accessibility_guide",
+            "source_authority": "official"
+          },
+          "metadata_source": "curator_assigned",
+          "support_basis": "metadata_assisted",
+          "evidence_class": "curator_metadata_navigation",
+          "verified_fact": false,
+          "snippet_source": "captured_page_description",
+          "location": "london",
+          "score": 25.088,
+          "ranking_reasons": [
+            "official_source",
+            "recent_fetch",
+            "specific_page",
+            "accessibility_page"
+          ],
+          "source_kind": "curator_metadata_navigation",
+          "verified_live": false
+        },
+        {
+          "title": "Official London Theatre | Buy London Theatre Tickets",
+          "url": "https://officiallondontheatre.com/",
+          "snippet": "Looking for last-minute theatre tickets in London? We've got you covered with West End tickets for every show. Discover award-winning shows online now.",
+          "publisher": "officiallondontheatre.com",
+          "source_id": "official-london-theatre",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "document_type": "theatre_guide",
+          "source_authority": "official",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "language": "en",
+          "jurisdiction": "GB",
+          "specificity": "category",
+          "provenance": "{\"source_id\": \"official-london-theatre\", \"final_url\": \"https://officiallondontheatre.com/\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}",
+          "metadata": {
+            "topics": [
+              "london",
+              "theatre",
+              "tickets",
+              "accessibility",
+              "refunds"
+            ],
+            "jurisdiction": "GB",
+            "document_type": "theatre_guide",
+            "source_authority": "official"
+          },
+          "metadata_source": "curator_assigned",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "snippet_source": "captured_page_description",
+          "location": "london",
+          "score": 19.903,
+          "ranking_reasons": [
+            "official_source",
+            "recent_fetch",
+            "location_match"
+          ],
+          "source_kind": "permissioned_staging_document",
+          "verified_live": false
+        },
+        {
+          "title": "Keeping London moving - Transport for London",
+          "url": "https://tfl.gov.uk/",
+          "snippet": "Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates.",
+          "publisher": "tfl.gov.uk",
+          "source_id": "tfl",
+          "fetched_at": "2026-11-11T15:41:23+00:00",
+          "document_type": "transport_guide",
+          "source_authority": "official",
+          "rights_mode": "evaluation_metadata_only",
+          "language": null,
+          "jurisdiction": "GB",
+          "specificity": null,
+          "provenance": "{\"source_id\": \"tfl\", \"final_url\": \"https://tfl.gov.uk/\", \"captured_at\": \"2026-11-11T15:41:23+00:00\", \"approval_ref\": \"FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111\", \"rights\": \"evaluation_metadata_only\", \"snapshot\": \"r3a3g\"}",
+          "metadata": {
+            "topics": [
+              "london",
+              "transport",
+              "fireworks",
+              "parade"
+            ],
+            "jurisdiction": null,
+            "document_type": null,
+            "source_authority": "official"
+          },
+          "metadata_source": "curator_assigned",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "snippet_source": "captured_page_description",
+          "location": "london",
+          "score": 19.096,
+          "ranking_reasons": [
+            "official_source",
+            "recent_fetch",
+            "location_match"
+          ],
+          "source_kind": "permissioned_staging_document",
+          "verified_live": false
+        },
+        {
+          "title": "Upcoming events | London City Hall",
+          "url": "https://www.london.gov.uk/events",
+          "snippet": "Find out what fun things there are to see and do in London.",
+          "publisher": "london.gov.uk",
+          "source_id": "london-events",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "document_type": "event_directory",
+          "source_authority": "official",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "language": "en",
+          "jurisdiction": "GB",
+          "specificity": "category",
+          "provenance": "{\"source_id\": \"london-events\", \"final_url\": \"https://www.london.gov.uk/events\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}",
+          "metadata": {
+            "topics": [
+              "london",
+              "events",
+              "fireworks",
+              "pride",
+              "festival"
+            ],
+            "jurisdiction": "GB",
+            "document_type": "event_directory",
+            "source_authority": "official"
+          },
+          "metadata_source": "curator_assigned",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "snippet_source": "captured_page_description",
+          "location": "london",
+          "score": 8.934,
+          "ranking_reasons": [
+            "official_source",
+            "recent_fetch",
+            "not_instruction_page",
+            "location_match"
+          ],
+          "source_kind": "permissioned_staging_document",
+          "verified_live": false
+        }
+      ],
+      "source_receipts": [
+        {
+          "url": "https://www.tate.org.uk/visit/accessibility",
+          "source_id": "tate-accessibility",
+          "publisher": "tate.org.uk",
+          "source_kind": "curator_metadata_navigation",
+          "support_basis": "metadata_assisted",
+          "evidence_class": "curator_metadata_navigation",
+          "verified_fact": false,
+          "metadata_source": "curator_assigned",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"tate-accessibility\", \"final_url\": \"https://www.tate.org.uk/visit/accessibility\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        },
+        {
+          "url": "https://officiallondontheatre.com/",
+          "source_id": "official-london-theatre",
+          "publisher": "officiallondontheatre.com",
+          "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "metadata_source": "curator_assigned",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"official-london-theatre\", \"final_url\": \"https://officiallondontheatre.com/\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        },
+        {
+          "url": "https://tfl.gov.uk/",
+          "source_id": "tfl",
+          "publisher": "tfl.gov.uk",
+          "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "metadata_source": "curator_assigned",
+          "rights_mode": "evaluation_metadata_only",
+          "fetched_at": "2026-11-11T15:41:23+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"tfl\", \"final_url\": \"https://tfl.gov.uk/\", \"captured_at\": \"2026-11-11T15:41:23+00:00\", \"approval_ref\": \"FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111\", \"rights\": \"evaluation_metadata_only\", \"snapshot\": \"r3a3g\"}"
+        },
+        {
+          "url": "https://www.london.gov.uk/events",
+          "source_id": "london-events",
+          "publisher": "london.gov.uk",
+          "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "metadata_source": "curator_assigned",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"london-events\", \"final_url\": \"https://www.london.gov.uk/events\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        }
+      ],
+      "unverified_leads": {
+        "provider": "searxng",
+        "status": "NOT_CONFIGURED",
+        "verified": false,
+        "leads": [],
+        "notices": [
+          "No SearXNG endpoint is configured; no temporary web leads were requested."
+        ]
+      },
+      "note": "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately."
+    },
+    {
+      "id": "german-concert-refund",
+      "query": "Can I refund concert tickets in Germany?",
+      "status": "staging_results",
+      "response_mode": "EXTRACTIVE_ANSWER",
+      "results": [
+        {
+          "title": "Verträge & Reklamation | Verbraucherzentrale.de",
+          "url": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation",
+          "snippet": "Kauf- und Dienstleistungsverträge, falsche Versprechen aus Gewinnspielen - es gibt Spielregeln für einen fairen und transparenten Markt. Hier finden Sie alle Angebote der Verbraucherzentralen zum Thema Verträge und Reklamation.",
+          "publisher": "verbraucherzentrale.de",
+          "source_id": "german-consumer-advice",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "document_type": "consumer_guidance",
+          "source_authority": "official",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "language": "de",
+          "jurisdiction": "DE",
+          "specificity": "category",
+          "provenance": "{\"source_id\": \"german-consumer-advice\", \"final_url\": \"https://www.verbraucherzentrale.de/wissen/vertraege-reklamation\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}",
+          "metadata": {
+            "topics": [
+              "germany",
+              "consumer",
+              "refund",
+              "cancellation",
+              "tickets"
+            ],
+            "jurisdiction": "DE",
+            "document_type": "consumer_guidance",
+            "source_authority": "official"
+          },
+          "metadata_source": "curator_assigned",
+          "support_basis": "metadata_assisted",
+          "evidence_class": "curator_metadata_navigation",
+          "verified_fact": false,
+          "snippet_source": "captured_page_description",
+          "location": null,
+          "score": 10.2,
+          "ranking_reasons": [
+            "official_source",
+            "recent_fetch"
+          ],
+          "source_kind": "curator_metadata_navigation",
+          "verified_live": false
+        },
+        {
+          "title": "Consumer rights - GOV.UK",
+          "url": "https://www.gov.uk/consumer-protection-rights",
+          "snippet": "…ning faulty goods, consumer credit, credit and store cards, refunds.",
+          "publisher": "gov.uk",
+          "source_id": "uk-consumer-rights",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "document_type": "consumer_guidance",
+          "source_authority": "official",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "language": "en",
+          "jurisdiction": "GB",
+          "specificity": "specific",
+          "provenance": "{\"source_id\": \"uk-consumer-rights\", \"final_url\": \"https://www.gov.uk/consumer-protection-rights\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}",
+          "metadata": {
+            "topics": [
+              "uk",
+              "consumer",
+              "refund",
+              "rights",
+              "tickets"
+            ],
+            "jurisdiction": "GB",
+            "document_type": "consumer_guidance",
+            "source_authority": "official"
+          },
+          "metadata_source": "curator_assigned",
+          "support_basis": "metadata_assisted",
+          "evidence_class": "curator_metadata_navigation",
+          "verified_fact": false,
+          "snippet_source": "captured_page_description",
+          "location": null,
+          "score": 6.744,
+          "ranking_reasons": [
+            "official_source",
+            "recent_fetch",
+            "wrong_jurisdiction",
+            "specific_page"
+          ],
+          "source_kind": "curator_metadata_navigation",
+          "verified_live": false
+        }
+      ],
+      "source_receipts": [
+        {
+          "url": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation",
+          "source_id": "german-consumer-advice",
+          "publisher": "verbraucherzentrale.de",
+          "source_kind": "curator_metadata_navigation",
+          "support_basis": "metadata_assisted",
+          "evidence_class": "curator_metadata_navigation",
+          "verified_fact": false,
+          "metadata_source": "curator_assigned",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"german-consumer-advice\", \"final_url\": \"https://www.verbraucherzentrale.de/wissen/vertraege-reklamation\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        },
+        {
+          "url": "https://www.gov.uk/consumer-protection-rights",
+          "source_id": "uk-consumer-rights",
+          "publisher": "gov.uk",
+          "source_kind": "curator_metadata_navigation",
+          "support_basis": "metadata_assisted",
+          "evidence_class": "curator_metadata_navigation",
+          "verified_fact": false,
+          "metadata_source": "curator_assigned",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"uk-consumer-rights\", \"final_url\": \"https://www.gov.uk/consumer-protection-rights\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        }
+      ],
+      "unverified_leads": {
+        "provider": "searxng",
+        "status": "NOT_CONFIGURED",
+        "verified": false,
+        "leads": [],
+        "notices": [
+          "No SearXNG endpoint is configured; no temporary web leads were requested."
+        ]
+      },
+      "note": "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately."
+    },
+    {
+      "id": "paris-pride",
+      "query": "Paris Pride dates",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "results": [
+        {
+          "title": "Que faire à Paris - Ville de Paris",
+          "url": "https://www.paris.fr/quefaire",
+          "snippet": "Culture, sorties et loisirs de la Ville de Paris.",
+          "publisher": "paris.fr",
+          "source_id": "paris-events",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "document_type": "event_directory",
+          "source_authority": "official",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "language": "fr",
+          "jurisdiction": "FR",
+          "specificity": "category",
+          "provenance": "{\"source_id\": \"paris-events\", \"final_url\": \"https://www.paris.fr/quefaire\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}",
+          "metadata": {
+            "topics": [
+              "paris",
+              "events",
+              "pride",
+              "new year",
+              "dates",
+              "culture"
+            ],
+            "jurisdiction": "FR",
+            "document_type": "event_directory",
+            "source_authority": "official"
+          },
+          "metadata_source": "curator_assigned",
+          "support_basis": "metadata_assisted",
+          "evidence_class": "curator_metadata_navigation",
+          "verified_fact": false,
+          "snippet_source": "captured_page_description",
+          "location": "paris",
+          "score": 26.793,
+          "ranking_reasons": [
+            "official_source",
+            "recent_fetch",
+            "location_match",
+            "all_query_terms"
+          ],
+          "source_kind": "curator_metadata_navigation",
+          "verified_live": false
+        }
+      ],
+      "source_receipts": [
+        {
+          "url": "https://www.paris.fr/quefaire",
+          "source_id": "paris-events",
+          "publisher": "paris.fr",
+          "source_kind": "curator_metadata_navigation",
+          "support_basis": "metadata_assisted",
+          "evidence_class": "curator_metadata_navigation",
+          "verified_fact": false,
+          "metadata_source": "curator_assigned",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"paris-events\", \"final_url\": \"https://www.paris.fr/quefaire\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        }
+      ],
+      "unverified_leads": {
+        "provider": "searxng",
+        "status": "NOT_CONFIGURED",
+        "verified": false,
+        "leads": [],
+        "notices": [
+          "No SearXNG endpoint is configured; no temporary web leads were requested."
+        ]
+      },
+      "note": "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately."
+    },
+    {
+      "id": "uk-passport",
+      "query": "How do I renew a UK passport?",
+      "status": "staging_results",
+      "response_mode": "EXTRACTIVE_ANSWER",
+      "results": [
+        {
+          "title": "Apply online for a UK passport - GOV.UK",
+          "url": "https://www.gov.uk/apply-renew-passport",
+          "snippet": "You can apply for, update, renew or replace a passport online.",
+          "publisher": "gov.uk",
+          "source_id": "uk-passport",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "document_type": "how_to",
+          "source_authority": "official",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "language": "en",
+          "jurisdiction": "GB",
+          "specificity": "specific",
+          "provenance": "{\"source_id\": \"uk-passport\", \"final_url\": \"https://www.gov.uk/apply-renew-passport\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}",
+          "metadata": {
+            "topics": [
+              "uk",
+              "passport",
+              "renew",
+              "apply",
+              "travel"
+            ],
+            "jurisdiction": "GB",
+            "document_type": "how_to",
+            "source_authority": "official"
+          },
+          "metadata_source": "curator_assigned",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "snippet_source": "captured_page_description",
+          "location": null,
+          "score": 40.089,
+          "ranking_reasons": [
+            "official_source",
+            "recent_fetch",
+            "specific_page",
+            "instruction_page",
+            "all_query_terms"
+          ],
+          "source_kind": "permissioned_staging_document",
+          "verified_live": false
+        },
+        {
+          "title": "Consumer rights - GOV.UK",
+          "url": "https://www.gov.uk/consumer-protection-rights",
+          "snippet": "Consumer protection and rights for goods and services - returning faulty goods, consumer credit, credit and store cards, refunds.",
+          "publisher": "gov.uk",
+          "source_id": "uk-consumer-rights",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "document_type": "consumer_guidance",
+          "source_authority": "official",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "language": "en",
+          "jurisdiction": "GB",
+          "specificity": "specific",
+          "provenance": "{\"source_id\": \"uk-consumer-rights\", \"final_url\": \"https://www.gov.uk/consumer-protection-rights\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}",
+          "metadata": {
+            "topics": [
+              "uk",
+              "consumer",
+              "refund",
+              "rights",
+              "tickets"
+            ],
+            "jurisdiction": "GB",
+            "document_type": "consumer_guidance",
+            "source_authority": "official"
+          },
+          "metadata_source": "curator_assigned",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "snippet_source": "captured_page_description",
+          "location": null,
+          "score": 17.8,
+          "ranking_reasons": [
+            "official_source",
+            "recent_fetch",
+            "specific_page"
+          ],
+          "source_kind": "permissioned_staging_document",
+          "verified_live": false
+        },
+        {
+          "title": "Accessibility | Tate",
+          "url": "https://www.tate.org.uk/visit/accessibility",
+          "snippet": "Accessibility | Tate",
+          "publisher": "tate.org.uk",
+          "source_id": "tate-accessibility",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "document_type": "accessibility_guide",
+          "source_authority": "official",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "language": "en",
+          "jurisdiction": "GB",
+          "specificity": "specific",
+          "provenance": "{\"source_id\": \"tate-accessibility\", \"final_url\": \"https://www.tate.org.uk/visit/accessibility\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}",
+          "metadata": {
+            "topics": [
+              "london",
+              "museum",
+              "gallery",
+              "accessibility",
+              "wheelchair"
+            ],
+            "jurisdiction": "GB",
+            "document_type": "accessibility_guide",
+            "source_authority": "official"
+          },
+          "metadata_source": "curator_assigned",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "snippet_source": "captured_page_description",
+          "location": null,
+          "score": 11.9,
+          "ranking_reasons": [
+            "official_source",
+            "recent_fetch",
+            "specific_page"
+          ],
+          "source_kind": "permissioned_staging_document",
+          "verified_live": false
+        },
+        {
+          "title": "Keeping London moving - Transport for London",
+          "url": "https://tfl.gov.uk/",
+          "snippet": "Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates.",
+          "publisher": "tfl.gov.uk",
+          "source_id": "tfl",
+          "fetched_at": "2026-11-11T15:41:23+00:00",
+          "document_type": "transport_guide",
+          "source_authority": "official",
+          "rights_mode": "evaluation_metadata_only",
+          "language": null,
+          "jurisdiction": "GB",
+          "specificity": null,
+          "provenance": "{\"source_id\": \"tfl\", \"final_url\": \"https://tfl.gov.uk/\", \"captured_at\": \"2026-11-11T15:41:23+00:00\", \"approval_ref\": \"FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111\", \"rights\": \"evaluation_metadata_only\", \"snapshot\": \"r3a3g\"}",
+          "metadata": {
+            "topics": [
+              "london",
+              "transport",
+              "fireworks",
+              "parade"
+            ],
+            "jurisdiction": null,
+            "document_type": null,
+            "source_authority": "official"
+          },
+          "metadata_source": "curator_assigned",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "snippet_source": "captured_page_description",
+          "location": null,
+          "score": 7.9,
+          "ranking_reasons": [
+            "official_source",
+            "recent_fetch"
+          ],
+          "source_kind": "permissioned_staging_document",
+          "verified_live": false
+        },
+        {
+          "title": "Glastonbury Festival - Home",
+          "url": "https://www.glastonburyfestivals.co.uk/",
+          "snippet": "Glastonbury Festival - Wed 25th Jun - Sun 29th Jun 2025",
+          "publisher": "glastonburyfestivals.co.uk",
+          "source_id": "glastonbury",
+          "fetched_at": "2026-11-11T15:41:23+00:00",
+          "document_type": "event_detail",
+          "source_authority": "official",
+          "rights_mode": "evaluation_metadata_only",
+          "language": null,
+          "jurisdiction": "GB",
+          "specificity": null,
+          "provenance": "{\"source_id\": \"glastonbury\", \"final_url\": \"https://www.glastonburyfestivals.co.uk/\", \"captured_at\": \"2026-11-11T15:41:23+00:00\", \"approval_ref\": \"FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111\", \"rights\": \"evaluation_metadata_only\", \"snapshot\": \"r3a3g\"}",
+          "metadata": {
+            "topics": [
+              "music",
+              "festival",
+              "glastonbury"
+            ],
+            "jurisdiction": null,
+            "document_type": null,
+            "source_authority": "official"
+          },
+          "metadata_source": "curator_assigned",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "snippet_source": "captured_page_description",
+          "location": null,
+          "score": 7.9,
+          "ranking_reasons": [
+            "official_source",
+            "recent_fetch"
+          ],
+          "source_kind": "permissioned_staging_document",
+          "verified_live": false
+        }
+      ],
+      "source_receipts": [
+        {
+          "url": "https://www.gov.uk/apply-renew-passport",
+          "source_id": "uk-passport",
+          "publisher": "gov.uk",
+          "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "metadata_source": "curator_assigned",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"uk-passport\", \"final_url\": \"https://www.gov.uk/apply-renew-passport\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        },
+        {
+          "url": "https://www.gov.uk/consumer-protection-rights",
+          "source_id": "uk-consumer-rights",
+          "publisher": "gov.uk",
+          "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "metadata_source": "curator_assigned",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"uk-consumer-rights\", \"final_url\": \"https://www.gov.uk/consumer-protection-rights\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        },
+        {
+          "url": "https://www.tate.org.uk/visit/accessibility",
+          "source_id": "tate-accessibility",
+          "publisher": "tate.org.uk",
+          "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "metadata_source": "curator_assigned",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"tate-accessibility\", \"final_url\": \"https://www.tate.org.uk/visit/accessibility\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        },
+        {
+          "url": "https://tfl.gov.uk/",
+          "source_id": "tfl",
+          "publisher": "tfl.gov.uk",
+          "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "metadata_source": "curator_assigned",
+          "rights_mode": "evaluation_metadata_only",
+          "fetched_at": "2026-11-11T15:41:23+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"tfl\", \"final_url\": \"https://tfl.gov.uk/\", \"captured_at\": \"2026-11-11T15:41:23+00:00\", \"approval_ref\": \"FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111\", \"rights\": \"evaluation_metadata_only\", \"snapshot\": \"r3a3g\"}"
+        },
+        {
+          "url": "https://www.glastonburyfestivals.co.uk/",
+          "source_id": "glastonbury",
+          "publisher": "glastonburyfestivals.co.uk",
+          "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "metadata_source": "curator_assigned",
+          "rights_mode": "evaluation_metadata_only",
+          "fetched_at": "2026-11-11T15:41:23+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"glastonbury\", \"final_url\": \"https://www.glastonburyfestivals.co.uk/\", \"captured_at\": \"2026-11-11T15:41:23+00:00\", \"approval_ref\": \"FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111\", \"rights\": \"evaluation_metadata_only\", \"snapshot\": \"r3a3g\"}"
+        }
+      ],
+      "unverified_leads": {
+        "provider": "searxng",
+        "status": "NOT_CONFIGURED",
+        "verified": false,
+        "leads": [],
+        "notices": [
+          "No SearXNG endpoint is configured; no temporary web leads were requested."
+        ]
+      },
+      "note": "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately."
+    },
+    {
+      "id": "london-theatre-refund",
+      "query": "London theatre ticket refund policy",
+      "status": "staging_results",
+      "response_mode": "EXTRACTIVE_ANSWER",
+      "results": [
+        {
+          "title": "Official London Theatre | Buy London Theatre Tickets",
+          "url": "https://officiallondontheatre.com/",
+          "snippet": "Looking for last-minute theatre tickets in London? We've got you covered with West End tickets for every show. Discover award-winning shows online now.",
+          "publisher": "officiallondontheatre.com",
+          "source_id": "official-london-theatre",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "document_type": "theatre_guide",
+          "source_authority": "official",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "language": "en",
+          "jurisdiction": "GB",
+          "specificity": "category",
+          "provenance": "{\"source_id\": \"official-london-theatre\", \"final_url\": \"https://officiallondontheatre.com/\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}",
+          "metadata": {
+            "topics": [
+              "london",
+              "theatre",
+              "tickets",
+              "accessibility",
+              "refunds"
+            ],
+            "jurisdiction": "GB",
+            "document_type": "theatre_guide",
+            "source_authority": "official"
+          },
+          "metadata_source": "curator_assigned",
+          "support_basis": "metadata_assisted",
+          "evidence_class": "curator_metadata_navigation",
+          "verified_fact": false,
+          "snippet_source": "captured_page_description",
+          "location": "london",
+          "score": 28.634,
+          "ranking_reasons": [
+            "official_source",
+            "recent_fetch",
+            "location_match"
+          ],
+          "source_kind": "curator_metadata_navigation",
+          "verified_live": false
+        },
+        {
+          "title": "Keeping London moving - Transport for London",
+          "url": "https://tfl.gov.uk/",
+          "snippet": "Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates.",
+          "publisher": "tfl.gov.uk",
+          "source_id": "tfl",
+          "fetched_at": "2026-11-11T15:41:23+00:00",
+          "document_type": "transport_guide",
+          "source_authority": "official",
+          "rights_mode": "evaluation_metadata_only",
+          "language": null,
+          "jurisdiction": "GB",
+          "specificity": null,
+          "provenance": "{\"source_id\": \"tfl\", \"final_url\": \"https://tfl.gov.uk/\", \"captured_at\": \"2026-11-11T15:41:23+00:00\", \"approval_ref\": \"FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111\", \"rights\": \"evaluation_metadata_only\", \"snapshot\": \"r3a3g\"}",
+          "metadata": {
+            "topics": [
+              "london",
+              "transport",
+              "fireworks",
+              "parade"
+            ],
+            "jurisdiction": null,
+            "document_type": null,
+            "source_authority": "official"
+          },
+          "metadata_source": "curator_assigned",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "snippet_source": "captured_page_description",
+          "location": "london",
+          "score": 19.096,
+          "ranking_reasons": [
+            "official_source",
+            "recent_fetch",
+            "location_match"
+          ],
+          "source_kind": "permissioned_staging_document",
+          "verified_live": false
+        },
+        {
+          "title": "Consumer rights - GOV.UK",
+          "url": "https://www.gov.uk/consumer-protection-rights",
+          "snippet": "…ning faulty goods, consumer credit, credit and store cards, refunds.",
+          "publisher": "gov.uk",
+          "source_id": "uk-consumer-rights",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "document_type": "consumer_guidance",
+          "source_authority": "official",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "language": "en",
+          "jurisdiction": "GB",
+          "specificity": "specific",
+          "provenance": "{\"source_id\": \"uk-consumer-rights\", \"final_url\": \"https://www.gov.uk/consumer-protection-rights\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}",
+          "metadata": {
+            "topics": [
+              "uk",
+              "consumer",
+              "refund",
+              "rights",
+              "tickets"
+            ],
+            "jurisdiction": "GB",
+            "document_type": "consumer_guidance",
+            "source_authority": "official"
+          },
+          "metadata_source": "curator_assigned",
+          "support_basis": "metadata_assisted",
+          "evidence_class": "curator_metadata_navigation",
+          "verified_fact": false,
+          "snippet_source": "captured_page_description",
+          "location": "london",
+          "score": 10.459,
+          "ranking_reasons": [
+            "official_source",
+            "recent_fetch",
+            "specific_page"
+          ],
+          "source_kind": "curator_metadata_navigation",
+          "verified_live": false
+        },
+        {
+          "title": "Accessibility | Tate",
+          "url": "https://www.tate.org.uk/visit/accessibility",
+          "snippet": "Accessibility | Tate",
+          "publisher": "tate.org.uk",
+          "source_id": "tate-accessibility",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "document_type": "accessibility_guide",
+          "source_authority": "official",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "language": "en",
+          "jurisdiction": "GB",
+          "specificity": "specific",
+          "provenance": "{\"source_id\": \"tate-accessibility\", \"final_url\": \"https://www.tate.org.uk/visit/accessibility\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}",
+          "metadata": {
+            "topics": [
+              "london",
+              "museum",
+              "gallery",
+              "accessibility",
+              "wheelchair"
+            ],
+            "jurisdiction": "GB",
+            "document_type": "accessibility_guide",
+            "source_authority": "official"
+          },
+          "metadata_source": "curator_assigned",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "snippet_source": "captured_page_description",
+          "location": "london",
+          "score": 10.0,
+          "ranking_reasons": [
+            "official_source",
+            "recent_fetch",
+            "specific_page"
+          ],
+          "source_kind": "permissioned_staging_document",
+          "verified_live": false
+        },
+        {
+          "title": "Upcoming events | London City Hall",
+          "url": "https://www.london.gov.uk/events",
+          "snippet": "Find out what fun things there are to see and do in London.",
+          "publisher": "london.gov.uk",
+          "source_id": "london-events",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "document_type": "event_directory",
+          "source_authority": "official",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "language": "en",
+          "jurisdiction": "GB",
+          "specificity": "category",
+          "provenance": "{\"source_id\": \"london-events\", \"final_url\": \"https://www.london.gov.uk/events\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}",
+          "metadata": {
+            "topics": [
+              "london",
+              "events",
+              "fireworks",
+              "pride",
+              "festival"
+            ],
+            "jurisdiction": "GB",
+            "document_type": "event_directory",
+            "source_authority": "official"
+          },
+          "metadata_source": "curator_assigned",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "snippet_source": "captured_page_description",
+          "location": "london",
+          "score": 8.934,
+          "ranking_reasons": [
+            "official_source",
+            "recent_fetch",
+            "not_instruction_page",
+            "location_match"
+          ],
+          "source_kind": "permissioned_staging_document",
+          "verified_live": false
+        }
+      ],
+      "source_receipts": [
+        {
+          "url": "https://officiallondontheatre.com/",
+          "source_id": "official-london-theatre",
+          "publisher": "officiallondontheatre.com",
+          "source_kind": "curator_metadata_navigation",
+          "support_basis": "metadata_assisted",
+          "evidence_class": "curator_metadata_navigation",
+          "verified_fact": false,
+          "metadata_source": "curator_assigned",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"official-london-theatre\", \"final_url\": \"https://officiallondontheatre.com/\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        },
+        {
+          "url": "https://tfl.gov.uk/",
+          "source_id": "tfl",
+          "publisher": "tfl.gov.uk",
+          "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "metadata_source": "curator_assigned",
+          "rights_mode": "evaluation_metadata_only",
+          "fetched_at": "2026-11-11T15:41:23+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"tfl\", \"final_url\": \"https://tfl.gov.uk/\", \"captured_at\": \"2026-11-11T15:41:23+00:00\", \"approval_ref\": \"FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111\", \"rights\": \"evaluation_metadata_only\", \"snapshot\": \"r3a3g\"}"
+        },
+        {
+          "url": "https://www.gov.uk/consumer-protection-rights",
+          "source_id": "uk-consumer-rights",
+          "publisher": "gov.uk",
+          "source_kind": "curator_metadata_navigation",
+          "support_basis": "metadata_assisted",
+          "evidence_class": "curator_metadata_navigation",
+          "verified_fact": false,
+          "metadata_source": "curator_assigned",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"uk-consumer-rights\", \"final_url\": \"https://www.gov.uk/consumer-protection-rights\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        },
+        {
+          "url": "https://www.tate.org.uk/visit/accessibility",
+          "source_id": "tate-accessibility",
+          "publisher": "tate.org.uk",
+          "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "metadata_source": "curator_assigned",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"tate-accessibility\", \"final_url\": \"https://www.tate.org.uk/visit/accessibility\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        },
+        {
+          "url": "https://www.london.gov.uk/events",
+          "source_id": "london-events",
+          "publisher": "london.gov.uk",
+          "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "metadata_source": "curator_assigned",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"london-events\", \"final_url\": \"https://www.london.gov.uk/events\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        }
+      ],
+      "unverified_leads": {
+        "provider": "searxng",
+        "status": "NOT_CONFIGURED",
+        "verified": false,
+        "leads": [],
+        "notices": [
+          "No SearXNG endpoint is configured; no temporary web leads were requested."
+        ]
+      },
+      "note": "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately."
+    },
+    {
+      "id": "berlin-museum-hours",
+      "query": "Berlin museum opening hours Sunday",
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "results": [
+        {
+          "title": "Berlin.de museums",
+          "url": "https://www.berlin.de/en/museums/",
+          "publisher": "Berlin.de",
+          "description": "Official Berlin museum directory and visitor information.",
+          "kind": "events",
+          "countries": [
+            "DE"
+          ],
+          "topics": [
+            "berlin",
+            "museum",
+            "accessibility",
+            "culture"
+          ],
+          "aliases": [],
+          "source_kind": "official_directory",
+          "verified_live": false,
+          "verified_at": "2026-11-11"
+        }
+      ],
+      "source_receipts": [
+        {
+          "url": "https://www.berlin.de/en/museums/",
+          "source_id": null,
+          "publisher": "Berlin.de",
+          "source_kind": "official_directory",
+          "support_basis": null,
+          "evidence_class": null,
+          "verified_fact": false,
+          "metadata_source": null,
+          "rights_mode": null,
+          "fetched_at": null,
+          "verified_live": false,
+          "provenance": null
+        }
+      ],
+      "unverified_leads": {
+        "provider": "searxng",
+        "status": "NOT_CONFIGURED",
+        "verified": false,
+        "leads": [],
+        "notices": [
+          "No SearXNG endpoint is configured; no temporary web leads were requested."
+        ]
+      },
+      "note": "Weak admitted matches were withheld in favour of official navigation."
+    },
+    {
+      "id": "berlin-christmas-transport",
+      "query": "Berlin Christmas market public transport",
+      "status": "staging_results",
+      "response_mode": "SEARCH_RESULTS",
+      "results": [
+        {
+          "title": "Christmas markets in Berlin | visitBerlin.de",
+          "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+          "snippet": "Christmas Markets in Berlin: ✓ Over 80 from insider tips to popular ones ✓ How to find them ✓ Opening hours & admissions ► Find your favourite market!",
+          "publisher": "visitberlin.de",
+          "source_id": "berlin-christmas",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "document_type": "event_guide",
+          "source_authority": "official",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "language": "en",
+          "jurisdiction": "DE",
+          "specificity": "specific",
+          "provenance": "{\"source_id\": \"berlin-christmas\", \"final_url\": \"https://www.visitberlin.de/en/christmas-markets-berlin\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}",
+          "metadata": {
+            "topics": [
+              "berlin",
+              "christmas",
+              "market",
+              "transport",
+              "dates"
+            ],
+            "jurisdiction": "DE",
+            "document_type": "event_guide",
+            "source_authority": "official"
+          },
+          "metadata_source": "curator_assigned",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "snippet_source": "captured_page_description",
+          "location": "berlin",
+          "score": 38.556,
+          "ranking_reasons": [
+            "official_source",
+            "recent_fetch",
+            "specific_page",
+            "location_match"
+          ],
+          "source_kind": "permissioned_staging_document",
+          "verified_live": false
+        }
+      ],
+      "source_receipts": [
+        {
+          "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+          "source_id": "berlin-christmas",
+          "publisher": "visitberlin.de",
+          "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "metadata_source": "curator_assigned",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"berlin-christmas\", \"final_url\": \"https://www.visitberlin.de/en/christmas-markets-berlin\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        }
+      ],
+      "unverified_leads": {
+        "provider": "searxng",
+        "status": "NOT_CONFIGURED",
+        "verified": false,
+        "leads": [],
+        "notices": [
+          "No SearXNG endpoint is configured; no temporary web leads were requested."
+        ]
+      },
+      "note": "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately."
+    },
+    {
+      "id": "nhs-urgent-care",
+      "query": "When should I call NHS 111?",
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "results": [
+        {
+          "title": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Special:Search?search=When+should+I+call+NHS+111%3F",
+          "publisher": "Wikimedia",
+          "description": "General reference; verify time-sensitive facts against a primary source.",
+          "kind": "reference",
+          "countries": [],
+          "topics": [
+            "general",
+            "reference",
+            "factual"
+          ],
+          "aliases": [],
+          "source_kind": "official_directory",
+          "verified_live": false,
+          "verified_at": "2026-11-11"
+        },
+        {
+          "title": "GOV.UK",
+          "url": "https://www.gov.uk/search/all?keywords=When+should+I+call+NHS+111%3F",
+          "publisher": "GOV.UK",
+          "description": "Official UK government guidance and public services.",
+          "kind": "reference",
+          "countries": [
+            "GB"
+          ],
+          "topics": [
+            "refund",
+            "consumer",
+            "guidance"
+          ],
+          "aliases": [],
+          "source_kind": "official_directory",
+          "verified_live": false,
+          "verified_at": "2026-11-11"
+        },
+        {
+          "title": "Verbraucherzentrale",
+          "url": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation",
+          "publisher": "Verbraucherzentrale",
+          "description": "German consumer advice for contracts, cancellations and refunds.",
+          "kind": "reference",
+          "countries": [
+            "DE"
+          ],
+          "topics": [
+            "refund",
+            "consumer",
+            "cancellation",
+            "tickets"
+          ],
+          "aliases": [],
+          "source_kind": "official_directory",
+          "verified_live": false,
+          "verified_at": "2026-11-11"
+        },
+        {
+          "title": "Berlin.de service portal",
+          "url": "https://www.berlin.de/en/",
+          "publisher": "Berlin.de",
+          "description": "Official city services, transport and visitor information.",
+          "kind": "reference",
+          "countries": [
+            "DE"
+          ],
+          "topics": [
+            "berlin",
+            "guidance",
+            "transport"
+          ],
+          "aliases": [],
+          "source_kind": "official_directory",
+          "verified_live": false,
+          "verified_at": "2026-11-11"
+        }
+      ],
+      "source_receipts": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Special:Search?search=When+should+I+call+NHS+111%3F",
+          "source_id": null,
+          "publisher": "Wikimedia",
+          "source_kind": "official_directory",
+          "support_basis": null,
+          "evidence_class": null,
+          "verified_fact": false,
+          "metadata_source": null,
+          "rights_mode": null,
+          "fetched_at": null,
+          "verified_live": false,
+          "provenance": null
+        },
+        {
+          "url": "https://www.gov.uk/search/all?keywords=When+should+I+call+NHS+111%3F",
+          "source_id": null,
+          "publisher": "GOV.UK",
+          "source_kind": "official_directory",
+          "support_basis": null,
+          "evidence_class": null,
+          "verified_fact": false,
+          "metadata_source": null,
+          "rights_mode": null,
+          "fetched_at": null,
+          "verified_live": false,
+          "provenance": null
+        },
+        {
+          "url": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation",
+          "source_id": null,
+          "publisher": "Verbraucherzentrale",
+          "source_kind": "official_directory",
+          "support_basis": null,
+          "evidence_class": null,
+          "verified_fact": false,
+          "metadata_source": null,
+          "rights_mode": null,
+          "fetched_at": null,
+          "verified_live": false,
+          "provenance": null
+        },
+        {
+          "url": "https://www.berlin.de/en/",
+          "source_id": null,
+          "publisher": "Berlin.de",
+          "source_kind": "official_directory",
+          "support_basis": null,
+          "evidence_class": null,
+          "verified_fact": false,
+          "metadata_source": null,
+          "rights_mode": null,
+          "fetched_at": null,
+          "verified_live": false,
+          "provenance": null
+        }
+      ],
+      "unverified_leads": {
+        "provider": "searxng",
+        "status": "NOT_CONFIGURED",
+        "verified": false,
+        "leads": [],
+        "notices": [
+          "No SearXNG endpoint is configured; no temporary web leads were requested."
+        ]
+      },
+      "note": "No admitted page answered this; these are reviewed official entry points. They are navigation, not a live value or a content licence."
+    },
+    {
+      "id": "berlin-venue-access",
+      "query": "Berlin Uber Arena accessibility and bag policy",
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "results": [
+        {
+          "title": "Uber Arena Berlin",
+          "url": "https://www.uber-arena.de/",
+          "publisher": "Uber Arena",
+          "description": "Venue programme, official box office and travel information.",
+          "kind": "venue",
+          "countries": [
+            "DE"
+          ],
+          "topics": [
+            "concert",
+            "venue",
+            "berlin"
+          ],
+          "aliases": [
+            "Mercedes-Benz Arena Berlin",
+            "Mercedes-Benz Arena"
+          ],
+          "source_kind": "official_directory",
+          "verified_live": false,
+          "verified_at": "2026-11-11"
+        }
+      ],
+      "source_receipts": [
+        {
+          "url": "https://www.uber-arena.de/",
+          "source_id": null,
+          "publisher": "Uber Arena",
+          "source_kind": "official_directory",
+          "support_basis": null,
+          "evidence_class": null,
+          "verified_fact": false,
+          "metadata_source": null,
+          "rights_mode": null,
+          "fetched_at": null,
+          "verified_live": false,
+          "provenance": null
+        }
+      ],
+      "unverified_leads": {
+        "provider": "searxng",
+        "status": "NOT_CONFIGURED",
+        "verified": false,
+        "leads": [],
+        "notices": [
+          "No SearXNG endpoint is configured; no temporary web leads were requested."
+        ]
+      },
+      "note": "Official accessibility or venue information; verify current access arrangements directly."
+    },
+    {
+      "id": "paris-events",
+      "query": "What events are on in Paris this weekend?",
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "results": [
+        {
+          "title": "Paris.fr events",
+          "url": "https://www.paris.fr/",
+          "publisher": "Ville de Paris",
+          "description": "Official city information and event announcements.",
+          "kind": "events",
+          "countries": [
+            "FR"
+          ],
+          "topics": [
+            "events",
+            "paris"
+          ],
+          "aliases": [],
+          "source_kind": "official_directory",
+          "verified_live": false,
+          "verified_at": "2026-11-11"
+        },
+        {
+          "title": "Visit Paris Region",
+          "url": "https://www.visitparisregion.com/",
+          "publisher": "Visit Paris Region",
+          "description": "Official tourism events and visitor guidance for Paris.",
+          "kind": "events",
+          "countries": [
+            "FR"
+          ],
+          "topics": [
+            "events",
+            "paris"
+          ],
+          "aliases": [],
+          "source_kind": "official_directory",
+          "verified_live": false,
+          "verified_at": "2026-11-11"
+        }
+      ],
+      "source_receipts": [
+        {
+          "url": "https://www.paris.fr/",
+          "source_id": null,
+          "publisher": "Ville de Paris",
+          "source_kind": "official_directory",
+          "support_basis": null,
+          "evidence_class": null,
+          "verified_fact": false,
+          "metadata_source": null,
+          "rights_mode": null,
+          "fetched_at": null,
+          "verified_live": false,
+          "provenance": null
+        },
+        {
+          "url": "https://www.visitparisregion.com/",
+          "source_id": null,
+          "publisher": "Visit Paris Region",
+          "source_kind": "official_directory",
+          "support_basis": null,
+          "evidence_class": null,
+          "verified_fact": false,
+          "metadata_source": null,
+          "rights_mode": null,
+          "fetched_at": null,
+          "verified_live": false,
+          "provenance": null
+        }
+      ],
+      "unverified_leads": {
+        "provider": "searxng",
+        "status": "NOT_CONFIGURED",
+        "verified": false,
+        "leads": [],
+        "notices": [
+          "No SearXNG endpoint is configured; no temporary web leads were requested."
+        ]
+      },
+      "note": "Weak admitted matches were withheld in favour of official navigation."
+    },
+    {
+      "id": "uk-consumer-refund",
+      "query": "UK consumer refund rights",
+      "status": "staging_results",
+      "response_mode": "EXTRACTIVE_ANSWER",
+      "results": [
+        {
+          "title": "Consumer rights - GOV.UK",
+          "url": "https://www.gov.uk/consumer-protection-rights",
+          "snippet": "Consumer protection and rights for goods and services - returning faulty goods, consumer credit, credit and store cards, refunds.",
+          "publisher": "gov.uk",
+          "source_id": "uk-consumer-rights",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "document_type": "consumer_guidance",
+          "source_authority": "official",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "language": "en",
+          "jurisdiction": "GB",
+          "specificity": "specific",
+          "provenance": "{\"source_id\": \"uk-consumer-rights\", \"final_url\": \"https://www.gov.uk/consumer-protection-rights\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}",
+          "metadata": {
+            "topics": [
+              "uk",
+              "consumer",
+              "refund",
+              "rights",
+              "tickets"
+            ],
+            "jurisdiction": "GB",
+            "document_type": "consumer_guidance",
+            "source_authority": "official"
+          },
+          "metadata_source": "curator_assigned",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "snippet_source": "captured_page_description",
+          "location": null,
+          "score": 37.939,
+          "ranking_reasons": [
+            "official_source",
+            "recent_fetch",
+            "specific_page",
+            "all_query_terms"
+          ],
+          "source_kind": "permissioned_staging_document",
+          "verified_live": false
+        },
+        {
+          "title": "Apply online for a UK passport - GOV.UK",
+          "url": "https://www.gov.uk/apply-renew-passport",
+          "snippet": "You can apply for, update, renew or replace a passport online.",
+          "publisher": "gov.uk",
+          "source_id": "uk-passport",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "document_type": "how_to",
+          "source_authority": "official",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "language": "en",
+          "jurisdiction": "GB",
+          "specificity": "specific",
+          "provenance": "{\"source_id\": \"uk-passport\", \"final_url\": \"https://www.gov.uk/apply-renew-passport\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}",
+          "metadata": {
+            "topics": [
+              "uk",
+              "passport",
+              "renew",
+              "apply",
+              "travel"
+            ],
+            "jurisdiction": "GB",
+            "document_type": "how_to",
+            "source_authority": "official"
+          },
+          "metadata_source": "curator_assigned",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "snippet_source": "captured_page_description",
+          "location": null,
+          "score": 25.3,
+          "ranking_reasons": [
+            "official_source",
+            "recent_fetch",
+            "specific_page",
+            "instruction_page"
+          ],
+          "source_kind": "permissioned_staging_document",
+          "verified_live": false
+        },
+        {
+          "title": "Accessibility | Tate",
+          "url": "https://www.tate.org.uk/visit/accessibility",
+          "snippet": "Accessibility | Tate",
+          "publisher": "tate.org.uk",
+          "source_id": "tate-accessibility",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "document_type": "accessibility_guide",
+          "source_authority": "official",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "language": "en",
+          "jurisdiction": "GB",
+          "specificity": "specific",
+          "provenance": "{\"source_id\": \"tate-accessibility\", \"final_url\": \"https://www.tate.org.uk/visit/accessibility\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}",
+          "metadata": {
+            "topics": [
+              "london",
+              "museum",
+              "gallery",
+              "accessibility",
+              "wheelchair"
+            ],
+            "jurisdiction": "GB",
+            "document_type": "accessibility_guide",
+            "source_authority": "official"
+          },
+          "metadata_source": "curator_assigned",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "snippet_source": "captured_page_description",
+          "location": null,
+          "score": 11.4,
+          "ranking_reasons": [
+            "official_source",
+            "recent_fetch",
+            "specific_page"
+          ],
+          "source_kind": "permissioned_staging_document",
+          "verified_live": false
+        },
+        {
+          "title": "Keeping London moving - Transport for London",
+          "url": "https://tfl.gov.uk/",
+          "snippet": "Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates.",
+          "publisher": "tfl.gov.uk",
+          "source_id": "tfl",
+          "fetched_at": "2026-11-11T15:41:23+00:00",
+          "document_type": "transport_guide",
+          "source_authority": "official",
+          "rights_mode": "evaluation_metadata_only",
+          "language": null,
+          "jurisdiction": "GB",
+          "specificity": null,
+          "provenance": "{\"source_id\": \"tfl\", \"final_url\": \"https://tfl.gov.uk/\", \"captured_at\": \"2026-11-11T15:41:23+00:00\", \"approval_ref\": \"FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111\", \"rights\": \"evaluation_metadata_only\", \"snapshot\": \"r3a3g\"}",
+          "metadata": {
+            "topics": [
+              "london",
+              "transport",
+              "fireworks",
+              "parade"
+            ],
+            "jurisdiction": null,
+            "document_type": null,
+            "source_authority": "official"
+          },
+          "metadata_source": "curator_assigned",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "snippet_source": "captured_page_description",
+          "location": null,
+          "score": 7.4,
+          "ranking_reasons": [
+            "official_source",
+            "recent_fetch"
+          ],
+          "source_kind": "permissioned_staging_document",
+          "verified_live": false
+        },
+        {
+          "title": "Glastonbury Festival - Home",
+          "url": "https://www.glastonburyfestivals.co.uk/",
+          "snippet": "Glastonbury Festival - Wed 25th Jun - Sun 29th Jun 2025",
+          "publisher": "glastonburyfestivals.co.uk",
+          "source_id": "glastonbury",
+          "fetched_at": "2026-11-11T15:41:23+00:00",
+          "document_type": "event_detail",
+          "source_authority": "official",
+          "rights_mode": "evaluation_metadata_only",
+          "language": null,
+          "jurisdiction": "GB",
+          "specificity": null,
+          "provenance": "{\"source_id\": \"glastonbury\", \"final_url\": \"https://www.glastonburyfestivals.co.uk/\", \"captured_at\": \"2026-11-11T15:41:23+00:00\", \"approval_ref\": \"FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111\", \"rights\": \"evaluation_metadata_only\", \"snapshot\": \"r3a3g\"}",
+          "metadata": {
+            "topics": [
+              "music",
+              "festival",
+              "glastonbury"
+            ],
+            "jurisdiction": null,
+            "document_type": null,
+            "source_authority": "official"
+          },
+          "metadata_source": "curator_assigned",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "snippet_source": "captured_page_description",
+          "location": null,
+          "score": 7.4,
+          "ranking_reasons": [
+            "official_source",
+            "recent_fetch"
+          ],
+          "source_kind": "permissioned_staging_document",
+          "verified_live": false
+        }
+      ],
+      "source_receipts": [
+        {
+          "url": "https://www.gov.uk/consumer-protection-rights",
+          "source_id": "uk-consumer-rights",
+          "publisher": "gov.uk",
+          "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "metadata_source": "curator_assigned",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"uk-consumer-rights\", \"final_url\": \"https://www.gov.uk/consumer-protection-rights\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        },
+        {
+          "url": "https://www.gov.uk/apply-renew-passport",
+          "source_id": "uk-passport",
+          "publisher": "gov.uk",
+          "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "metadata_source": "curator_assigned",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"uk-passport\", \"final_url\": \"https://www.gov.uk/apply-renew-passport\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        },
+        {
+          "url": "https://www.tate.org.uk/visit/accessibility",
+          "source_id": "tate-accessibility",
+          "publisher": "tate.org.uk",
+          "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "metadata_source": "curator_assigned",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"tate-accessibility\", \"final_url\": \"https://www.tate.org.uk/visit/accessibility\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        },
+        {
+          "url": "https://tfl.gov.uk/",
+          "source_id": "tfl",
+          "publisher": "tfl.gov.uk",
+          "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "metadata_source": "curator_assigned",
+          "rights_mode": "evaluation_metadata_only",
+          "fetched_at": "2026-11-11T15:41:23+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"tfl\", \"final_url\": \"https://tfl.gov.uk/\", \"captured_at\": \"2026-11-11T15:41:23+00:00\", \"approval_ref\": \"FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111\", \"rights\": \"evaluation_metadata_only\", \"snapshot\": \"r3a3g\"}"
+        },
+        {
+          "url": "https://www.glastonburyfestivals.co.uk/",
+          "source_id": "glastonbury",
+          "publisher": "glastonburyfestivals.co.uk",
+          "source_kind": "permissioned_staging_document",
+          "support_basis": "content",
+          "evidence_class": "source_excerpt",
+          "verified_fact": false,
+          "metadata_source": "curator_assigned",
+          "rights_mode": "evaluation_metadata_only",
+          "fetched_at": "2026-11-11T15:41:23+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"glastonbury\", \"final_url\": \"https://www.glastonburyfestivals.co.uk/\", \"captured_at\": \"2026-11-11T15:41:23+00:00\", \"approval_ref\": \"FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111\", \"rights\": \"evaluation_metadata_only\", \"snapshot\": \"r3a3g\"}"
+        }
+      ],
+      "unverified_leads": {
+        "provider": "searxng",
+        "status": "NOT_CONFIGURED",
+        "verified": false,
+        "leads": [],
+        "notices": [
+          "No SearXNG endpoint is configured; no temporary web leads were requested."
+        ]
+      },
+      "note": "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately."
+    },
+    {
+      "id": "hamburg-christmas",
+      "query": "Hamburg Christmas market travel",
+      "status": "official_links",
+      "response_mode": "OFFICIAL_LINKS",
+      "results": [
+        {
+          "title": "Hamburg tourism",
+          "url": "https://www.hamburg.com/",
+          "publisher": "Hamburg Tourism",
+          "description": "Official Hamburg visitor information, events and Christmas markets.",
+          "kind": "events",
+          "countries": [
+            "DE"
+          ],
+          "topics": [
+            "hamburg",
+            "events",
+            "christmas",
+            "music"
+          ],
+          "aliases": [],
+          "source_kind": "official_directory",
+          "verified_live": false,
+          "verified_at": "2026-11-11"
+        },
+        {
+          "title": "Hamburg city portal",
+          "url": "https://www.hamburg.de/",
+          "publisher": "Hamburg",
+          "description": "Official Hamburg services, events and transport information.",
+          "kind": "events",
+          "countries": [
+            "DE"
+          ],
+          "topics": [
+            "hamburg",
+            "events",
+            "transport",
+            "christmas"
+          ],
+          "aliases": [],
+          "source_kind": "official_directory",
+          "verified_live": false,
+          "verified_at": "2026-11-11"
+        }
+      ],
+      "source_receipts": [
+        {
+          "url": "https://www.hamburg.com/",
+          "source_id": null,
+          "publisher": "Hamburg Tourism",
+          "source_kind": "official_directory",
+          "support_basis": null,
+          "evidence_class": null,
+          "verified_fact": false,
+          "metadata_source": null,
+          "rights_mode": null,
+          "fetched_at": null,
+          "verified_live": false,
+          "provenance": null
+        },
+        {
+          "url": "https://www.hamburg.de/",
+          "source_id": null,
+          "publisher": "Hamburg",
+          "source_kind": "official_directory",
+          "support_basis": null,
+          "evidence_class": null,
+          "verified_fact": false,
+          "metadata_source": null,
+          "rights_mode": null,
+          "fetched_at": null,
+          "verified_live": false,
+          "provenance": null
+        }
+      ],
+      "unverified_leads": {
+        "provider": "searxng",
+        "status": "NOT_CONFIGURED",
+        "verified": false,
+        "leads": [],
+        "notices": [
+          "No SearXNG endpoint is configured; no temporary web leads were requested."
+        ]
+      },
+      "note": "No admitted page answered this; these are reviewed official entry points. They are navigation, not a live value or a content licence."
+    },
+    {
+      "id": "unsupported-query",
+      "query": "What is the Moon Parade route?",
+      "status": "no_staging_evidence",
+      "response_mode": "NO_EVIDENCE",
+      "results": [],
+      "source_receipts": [],
+      "unverified_leads": {
+        "provider": "searxng",
+        "status": "NOT_CONFIGURED",
+        "verified": false,
+        "leads": [],
+        "notices": [
+          "No SearXNG endpoint is configured; no temporary web leads were requested."
+        ]
+      },
+      "note": "No evidence and no reviewed official entry point."
+    }
+  ],
+  "summary": {
+    "cases": 14,
+    "with_specific_result": 13,
+    "no_evidence": 1,
+    "provider_leads": "NOT_CONFIGURED"
+  },
+  "limits": [
+    "No live dates, prices, availability or facts are asserted.",
+    "Provider leads are unverified metadata and are never merged into results."
+  ]
+}

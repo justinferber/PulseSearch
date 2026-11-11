@@ -1,0 +1,120 @@
+{
+  "reviewer": "FB2 internal relevance review",
+  "reviewed_at": "2026-11-11",
+  "queries": [
+    {
+      "id": "berlin-concert-tickets",
+      "query": "Berlin concert tickets",
+      "grades": {
+        "https://www.eventim.de/city/berlin-8/": 3,
+        "https://www.berlin.de/events/": 2,
+        "https://www.uber-arena.de/": 2,
+        "https://www.columbiahalle.de/": 2,
+        "https://www.huxleys-neue-welt.de/": 2,
+        "https://www.uber-eats-music-hall.de/": 2,
+        "https://www.efa-aef.eu/": 0
+      }
+    },
+    {
+      "id": "berlin-venue-accessibility",
+      "query": "Berlin concert venue accessibility and bag rules",
+      "grades": {
+        "https://www.huxleys-neue-welt.de/": 3,
+        "https://www.uber-arena.de/": 2,
+        "https://www.columbiahalle.de/": 2,
+        "https://www.uber-eats-music-hall.de/": 2,
+        "https://www.eventim.de/city/berlin-8/": 0
+      }
+    },
+    {
+      "id": "berlin-museum-accessibility",
+      "query": "Berlin museum accessibility",
+      "grades": {
+        "https://www.berlin.de/en/museums/": 3,
+        "https://www.huxleys-neue-welt.de/": 1,
+        "https://www.uber-arena.de/": 1,
+        "https://www.columbiahalle.de/": 1,
+        "https://www.uber-eats-music-hall.de/": 1
+      }
+    },
+    {
+      "id": "london-theatre-tickets",
+      "query": "London theatre tickets",
+      "grades": {
+        "https://www.roundhouse.org.uk/": 2,
+        "https://www.southbankcentre.co.uk/": 2,
+        "https://www.theo2.co.uk/": 2,
+        "https://www.eventim.de/": 0
+      }
+    },
+    {
+      "id": "manchester-pride",
+      "query": "Manchester Pride",
+      "grades": {
+        "https://www.manchesterpride.com/": 3,
+        "https://www.efa-aef.eu/": 1,
+        "https://www.glastonburyfestivals.co.uk/": 0
+      }
+    },
+    {
+      "id": "london-pride",
+      "query": "London Pride",
+      "grades": {
+        "https://prideinlondon.org/": 3,
+        "https://www.london.gov.uk/": 2,
+        "https://www.visitlondon.com/things-to-do/events": 1
+      }
+    },
+    {
+      "id": "paris-events",
+      "query": "Paris events this weekend",
+      "grades": {
+        "https://www.paris.fr/": 3,
+        "https://www.visitparisregion.com/": 2,
+        "https://www.efa-aef.eu/": 1
+      }
+    },
+    {
+      "id": "munich-concert-tickets",
+      "query": "Munich concert tickets",
+      "grades": {
+        "https://www.eventim.de/": 3,
+        "https://www.muenchen.de/": 2,
+        "https://www.efa-aef.eu/": 0
+      }
+    },
+    {
+      "id": "hamburg-christmas-markets",
+      "query": "Hamburg Christmas markets",
+      "grades": {
+        "https://www.hamburg.com/": 3,
+        "https://www.hamburg.de/": 2,
+        "https://www.efa-aef.eu/": 0
+      }
+    },
+    {
+      "id": "london-transport",
+      "query": "London public transport",
+      "grades": {
+        "https://tfl.gov.uk/": 3,
+        "https://www.london.gov.uk/": 2
+      }
+    },
+    {
+      "id": "berlin-christmas-transport",
+      "query": "Berlin Christmas market public transport",
+      "grades": {
+        "https://www.bvg.de/": 3,
+        "https://www.s-bahn-berlin.de/": 2
+      }
+    },
+    {
+      "id": "uk-ticket-refunds",
+      "query": "UK ticket refund rights",
+      "grades": {
+        "https://www.gov.uk/search/all": 3,
+        "https://www.caa.co.uk/": 2
+      }
+    }
+  ]
+}

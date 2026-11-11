@@ -1,0 +1,514 @@
+{
+  "kind": "R3A3G_M6_GRADED_RELEVANCE",
+  "reviewer": "FB2 M7 internal open-set relevance review",
+  "reviewed_at": "2026-11-11",
+  "cases": [
+    {
+      "id": "uber-arena-access",
+      "query": "Berlin Uber Arena accessibility and bag policy",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Uber Arena Berlin",
+          "url": "https://www.uber-arena.de/",
+          "grade": 3
+        }
+      ],
+      "precision_at_3": 1.0,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 1
+    },
+    {
+      "id": "uber-eats-access",
+      "query": "Uber Eats Music Hall Berlin accessible seating",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Uber Eats Music Hall Berlin",
+          "url": "https://www.uber-eats-music-hall.de/",
+          "grade": 3
+        }
+      ],
+      "precision_at_3": 1.0,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 1
+    },
+    {
+      "id": "o2-access",
+      "query": "London O2 accessible seating and bag rules",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "The O2",
+          "url": "https://www.theo2.co.uk/",
+          "grade": 3
+        }
+      ],
+      "precision_at_3": 1.0,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 1
+    },
+    {
+      "id": "berlin-christmas-hours",
+      "query": "Berlin Christmas market opening hours",
+      "status": "staging_results",
+      "top": [
+        {
+          "title": "Christmas markets in Berlin | visitBerlin.de",
+          "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+          "grade": 3
+        }
+      ],
+      "precision_at_3": 1.0,
+      "helpful_top1": true,
+      "ndcg_at_5": 0.917,
+      "judged_at_5": 1
+    },
+    {
+      "id": "london-nye-closures",
+      "query": "London New Year Eve fireworks road closures",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Mayor of London",
+          "url": "https://www.london.gov.uk/",
+          "grade": 2
+        },
+        {
+          "title": "Visit London events",
+          "url": "https://www.visitlondon.com/things-to-do/events",
+          "grade": 1
+        }
+      ],
+      "precision_at_3": 0.5,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 2
+    },
+    {
+      "id": "berlin-bvg-day-ticket",
+      "query": "Berlin BVG day ticket price",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "BVG Berlin",
+          "url": "https://www.bvg.de/",
+          "grade": 2
+        },
+        {
+          "title": "S-Bahn Berlin",
+          "url": "https://www.s-bahn-berlin.de/",
+          "grade": 1
+        }
+      ],
+      "precision_at_3": 0.5,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 2
+    },
+    {
+      "id": "munich-christmas",
+      "query": "Munich Christmas markets 2026",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Munich city portal",
+          "url": "https://www.muenchen.de/",
+          "grade": 1
+        }
+      ],
+      "precision_at_3": 0.0,
+      "helpful_top1": false,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 1
+    },
+    {
+      "id": "hamburg-transport",
+      "query": "Hamburg public transport day ticket",
+      "status": "no_staging_evidence",
+      "top": [],
+      "precision_at_3": 0.0,
+      "helpful_top1": false,
+      "ndcg_at_5": 0.0,
+      "judged_at_5": 0
+    },
+    {
+      "id": "paris-pride",
+      "query": "Paris Pride 2027 dates",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Paris.fr events",
+          "url": "https://www.paris.fr/",
+          "grade": 1
+        }
+      ],
+      "precision_at_3": 0.0,
+      "helpful_top1": false,
+      "ndcg_at_5": 0.613,
+      "judged_at_5": 1
+    },
+    {
+      "id": "berlin-museum-hours",
+      "query": "Berlin museum opening hours Sunday",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Berlin.de museums",
+          "url": "https://www.berlin.de/en/museums/",
+          "grade": 2
+        }
+      ],
+      "precision_at_3": 1.0,
+      "helpful_top1": true,
+      "ndcg_at_5": 0.826,
+      "judged_at_5": 1
+    },
+    {
+      "id": "london-museum-access",
+      "query": "London museum wheelchair access",
+      "status": "no_staging_evidence",
+      "top": [],
+      "precision_at_3": 0.0,
+      "helpful_top1": false,
+      "ndcg_at_5": 0.0,
+      "judged_at_5": 0
+    },
+    {
+      "id": "uk-train-refund",
+      "query": "UK train ticket refund rules",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "GOV.UK",
+          "url": "https://www.gov.uk/search/all?keywords=UK+train+ticket+refund+rules",
+          "grade": 2
+        }
+      ],
+      "precision_at_3": 1.0,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 1
+    },
+    {
+      "id": "glastonbury-resale",
+      "query": "Glastonbury ticket resale 2027",
+      "status": "staging_results",
+      "top": [
+        {
+          "title": "First Glastonbury 2027 tickets sell out in under 30 minutes - BBC News",
+          "url": "https://www.bbc.co.uk/news/articles/cv62kp9enz08o",
+          "grade": 1
+        },
+        {
+          "title": "Glastonbury Festival - Home",
+          "url": "https://www.glastonburyfestivals.co.uk/",
+          "grade": 2
+        }
+      ],
+      "precision_at_3": 0.5,
+      "helpful_top1": false,
+      "ndcg_at_5": 0.797,
+      "judged_at_5": 2
+    },
+    {
+      "id": "berlin-festival-program",
+      "query": "Berlin festival programme 2027",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Berlin.de events calendar",
+          "url": "https://www.berlin.de/events/",
+          "grade": 3
+        }
+      ],
+      "precision_at_3": 1.0,
+      "helpful_top1": true,
+      "ndcg_at_5": 0.917,
+      "judged_at_5": 1
+    },
+    {
+      "id": "manchester-pride-tickets",
+      "query": "Manchester Pride tickets 2027",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Manchester Pride",
+          "url": "https://www.manchesterpride.com/",
+          "grade": 2
+        }
+      ],
+      "precision_at_3": 1.0,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 1
+    },
+    {
+      "id": "london-theatre-access",
+      "query": "London theatre accessible tickets",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Roundhouse",
+          "url": "https://www.roundhouse.org.uk/",
+          "grade": 2
+        },
+        {
+          "title": "Southbank Centre",
+          "url": "https://www.southbankcentre.co.uk/",
+          "grade": 2
+        },
+        {
+          "title": "The O2",
+          "url": "https://www.theo2.co.uk/",
+          "grade": 2
+        }
+      ],
+      "precision_at_3": 1.0,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 3
+    },
+    {
+      "id": "berlin-csd-route",
+      "query": "Berlin CSD parade route 2027",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "CSD Berlin",
+          "url": "https://www.csd-berlin.de/",
+          "grade": 3
+        },
+        {
+          "title": "Berlin.de events calendar",
+          "url": "https://www.berlin.de/events/",
+          "grade": 1
+        }
+      ],
+      "precision_at_3": 0.5,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 2
+    },
+    {
+      "id": "berlin-concert-calendar",
+      "query": "Berlin concert calendar this month",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Columbiahalle Berlin",
+          "url": "https://www.columbiahalle.de/",
+          "grade": 2
+        },
+        {
+          "title": "Eventim Berlin",
+          "url": "https://www.eventim.de/city/berlin-8/",
+          "grade": 2
+        },
+        {
+          "title": "Huxley's Neue Welt",
+          "url": "https://www.huxleys-neue-welt.de/",
+          "grade": 1
+        },
+        {
+          "title": "Uber Arena Berlin",
+          "url": "https://www.uber-arena.de/",
+          "grade": 1
+        },
+        {
+          "title": "Uber Eats Music Hall Berlin",
+          "url": "https://www.uber-eats-music-hall.de/",
+          "grade": 1
+        }
+      ],
+      "precision_at_3": 0.667,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 5
+    },
+    {
+      "id": "munich-venues",
+      "query": "Munich live music venues",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Eventim Germany",
+          "url": "https://www.eventim.de/",
+          "grade": 2
+        }
+      ],
+      "precision_at_3": 1.0,
+      "helpful_top1": true,
+      "ndcg_at_5": 0.826,
+      "judged_at_5": 1
+    },
+    {
+      "id": "hamburg-christmas-transport",
+      "query": "Hamburg Christmas market transport",
+      "status": "no_staging_evidence",
+      "top": [],
+      "precision_at_3": 0.0,
+      "helpful_top1": false,
+      "ndcg_at_5": 0.0,
+      "judged_at_5": 0
+    },
+    {
+      "id": "paris-nye",
+      "query": "Paris New Year fireworks 2027",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Paris.fr events",
+          "url": "https://www.paris.fr/",
+          "grade": 1
+        }
+      ],
+      "precision_at_3": 0.0,
+      "helpful_top1": false,
+      "ndcg_at_5": 0.613,
+      "judged_at_5": 1
+    },
+    {
+      "id": "berlin-cancel",
+      "query": "Berlin concert ticket cancellation rules",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "GOV.UK",
+          "url": "https://www.gov.uk/search/all?keywords=Berlin+concert+ticket+cancellation+rules",
+          "grade": 0
+        }
+      ],
+      "precision_at_3": 0.0,
+      "helpful_top1": false,
+      "ndcg_at_5": 0.0,
+      "judged_at_5": 1
+    },
+    {
+      "id": "london-festival-access",
+      "query": "London festival accessibility information",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Visit London events",
+          "url": "https://www.visitlondon.com/things-to-do/events",
+          "grade": 1
+        }
+      ],
+      "precision_at_3": 0.0,
+      "helpful_top1": false,
+      "ndcg_at_5": 0.613,
+      "judged_at_5": 1
+    },
+    {
+      "id": "berlin-weihnachtsmaerkte",
+      "query": "Berlin Weihnachtsmärkte Öffnungszeiten",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "visitBerlin Christmas markets",
+          "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+          "grade": 3
+        },
+        {
+          "title": "Berlin.de events calendar",
+          "url": "https://www.berlin.de/events/",
+          "grade": 2
+        },
+        {
+          "title": "CSD Berlin",
+          "url": "https://www.csd-berlin.de/",
+          "grade": 0
+        }
+      ],
+      "precision_at_3": 0.667,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 3
+    },
+    {
+      "id": "muenchen-konzertkarten",
+      "query": "München Konzertkarten kaufen",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Eventim Germany",
+          "url": "https://www.eventim.de/",
+          "grade": 2
+        }
+      ],
+      "precision_at_3": 1.0,
+      "helpful_top1": true,
+      "ndcg_at_5": 0.826,
+      "judged_at_5": 1
+    },
+    {
+      "id": "london-silvester",
+      "query": "London Silvester Feuerwerk Tickets",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Mayor of London",
+          "url": "https://www.london.gov.uk/",
+          "grade": 2
+        },
+        {
+          "title": "Visit London events",
+          "url": "https://www.visitlondon.com/things-to-do/events",
+          "grade": 1
+        }
+      ],
+      "precision_at_3": 0.5,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 2
+    },
+    {
+      "id": "berlin-uber-eats",
+      "query": "Uber Eats Music Hall Programm",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Uber Eats Music Hall Berlin",
+          "url": "https://www.uber-eats-music-hall.de/",
+          "grade": 3
+        }
+      ],
+      "precision_at_3": 1.0,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 1
+    },
+    {
+      "id": "london-refunds",
+      "query": "London theatre ticket refund policy",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "GOV.UK",
+          "url": "https://www.gov.uk/search/all?keywords=London+theatre+ticket+refund+policy",
+          "grade": 0
+        }
+      ],
+      "precision_at_3": 0.0,
+      "helpful_top1": false,
+      "ndcg_at_5": 0.0,
+      "judged_at_5": 1
+    }
+  ],
+  "summary": {
+    "queries": 28,
+    "mean_ndcg_at_5": 0.748,
+    "mean_precision_at_3": 0.566,
+    "helpful_top1_rate": 0.643,
+    "judged_at_5": 38
+  },
+  "limitations": [
+    "Internal first-pass grades; not an external reviewer.",
+    "Captured pages only; unjudged results score zero.",
+    "No live dates, prices or availability are asserted."
+  ]
+}

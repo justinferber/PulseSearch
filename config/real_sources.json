@@ -1,0 +1,586 @@
+{
+  "schema": "pulse-search-real-source-eval/v1",
+  "note": "Controlled evaluation metadata only. Every source requires explicit approval, robots review, bounded redirects, private-IP guards and host pacing; this is not crawler admission or a permanent indexing licence.",
+  "sources": [
+    {
+      "id": "berlin-events",
+      "url": "https://www.berlin.de/en/events/",
+      "publisher": "Berlin.de",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "events",
+        "concert",
+        "christmas",
+        "pride"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only"
+    },
+    {
+      "id": "berlin-concerts",
+      "url": "https://www.berlin.de/en/events/concert/",
+      "publisher": "Berlin.de",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "concert"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only"
+    },
+    {
+      "id": "mercedes-arena",
+      "url": "https://www.mercedes-benz-arena.de/en/events/",
+      "publisher": "Mercedes-Benz Arena",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "concert",
+        "venue"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only"
+    },
+    {
+      "id": "eventim-berlin",
+      "url": "https://www.eventim.de/city/berlin-8/",
+      "publisher": "Eventim",
+      "authority": "primary",
+      "topics": [
+        "berlin",
+        "concert",
+        "tickets"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only"
+    },
+    {
+      "id": "huxleys",
+      "url": "https://www.huxleys-neue-welt.de/",
+      "publisher": "Huxley's Neue Welt",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "concert",
+        "venue"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only"
+    },
+    {
+      "id": "verti",
+      "url": "https://www.verti-music-hall.de/",
+      "publisher": "Verti Music Hall",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "concert",
+        "venue"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only"
+    },
+    {
+      "id": "csd-berlin",
+      "url": "https://www.csd-berlin.de/",
+      "publisher": "CSD Berlin",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "pride",
+        "csd"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only"
+    },
+    {
+      "id": "bvg",
+      "url": "https://www.bvg.de/en",
+      "publisher": "BVG",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "transport"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only"
+    },
+    {
+      "id": "sbahn",
+      "url": "https://www.s-bahn-berlin.de/",
+      "publisher": "S-Bahn Berlin",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "transport"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only"
+    },
+    {
+      "id": "london-fireworks",
+      "url": "https://www.london.gov.uk/events/london-new-years-eve-fireworks",
+      "publisher": "London.gov.uk",
+      "authority": "official",
+      "topics": [
+        "london",
+        "fireworks"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only"
+    },
+    {
+      "id": "tfl",
+      "url": "https://tfl.gov.uk/",
+      "publisher": "Transport for London",
+      "authority": "official",
+      "topics": [
+        "london",
+        "transport",
+        "fireworks",
+        "parade"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only"
+    },
+    {
+      "id": "london-parade",
+      "url": "https://londonparade.com/parade-location-timing/",
+      "publisher": "London Parade",
+      "authority": "official",
+      "topics": [
+        "london",
+        "parade"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only"
+    },
+    {
+      "id": "glastonbury",
+      "url": "https://www.glastonburyfestivals.co.uk/",
+      "publisher": "Glastonbury Festivals",
+      "authority": "official",
+      "topics": [
+        "music",
+        "festival",
+        "glastonbury"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only"
+    },
+    {
+      "id": "berlin-christmas",
+      "url": "https://www.berlin.de/en/events/christmas-markets/",
+      "publisher": "Berlin.de",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "christmas",
+        "market"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only"
+    },
+    {
+      "id": "visitberlin-christmas",
+      "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+      "publisher": "visitBerlin",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "christmas",
+        "market"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only"
+    },
+    {
+      "id": "columbiahalle",
+      "url": "https://www.columbiahalle.de/",
+      "publisher": "Columbiahalle",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "concert",
+        "venue",
+        "tickets"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only"
+    },
+    {
+      "id": "visitberlin",
+      "url": "https://www.visitberlin.de/en",
+      "publisher": "visitBerlin",
+      "authority": "official",
+      "topics": [
+        "berlin",
+        "guide",
+        "events"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only"
+    },
+    {
+      "id": "glastonbury-2027",
+      "url": "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed",
+      "publisher": "Glastonbury Festivals",
+      "authority": "official",
+      "topics": [
+        "music",
+        "festival",
+        "glastonbury",
+        "2027"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only"
+    },
+    {
+      "id": "bbc-glastonbury",
+      "url": "https://www.bbc.co.uk/news/articles/cv62kp9enz08o",
+      "publisher": "BBC News",
+      "authority": "reference",
+      "topics": [
+        "music",
+        "festival",
+        "glastonbury",
+        "2027"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111",
+      "rights": "evaluation_metadata_only"
+    }
+  ],
+  "queries": [
+    {
+      "query": "How do I book concert tickets in Berlin?",
+      "expect_domains": [
+        "berlin.de",
+        "eventim.de",
+        "mercedes-benz-arena.de"
+      ],
+      "expect_terms": [
+        "ticket",
+        "concert",
+        "berlin"
+      ],
+      "intent": "how_to",
+      "human_grade": {
+        "label": "FAIL",
+        "top1_answers": false,
+        "answer_correct": false,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "Top result was a Christmas markets page while the matching Berlin events page appeared at rank 4."
+      }
+    },
+    {
+      "query": "Berlin concert official ticket seller",
+      "expect_domains": [
+        "mercedes-benz-arena.de",
+        "eventim.de",
+        "huxleys-neue-welt.de",
+        "verti-music-hall.de"
+      ],
+      "expect_terms": [
+        "ticket",
+        "seller",
+        "concert"
+      ],
+      "intent": "how_to",
+      "human_grade": {
+        "label": "FAIL",
+        "top1_answers": false,
+        "answer_correct": false,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "No captured official seller page; guides do not identify a seller."
+      }
+    },
+    {
+      "query": "Berlin CSD 2027 dates",
+      "expect_domains": [
+        "csd-berlin.de"
+      ],
+      "expect_terms": [
+        "csd",
+        "berlin",
+        "2027"
+      ],
+      "intent": "events",
+      "human_grade": {
+        "label": "FAIL",
+        "top1_answers": false,
+        "answer_correct": false,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "CSD homepage captured but its stored title/description do not establish a 2027 date."
+      }
+    },
+    {
+      "query": "CSD Berlin route and accessibility",
+      "expect_domains": [
+        "csd-berlin.de"
+      ],
+      "expect_terms": [
+        "route",
+        "accessibility",
+        "csd"
+      ],
+      "intent": "events",
+      "human_grade": {
+        "label": "PARTIAL",
+        "top1_answers": false,
+        "answer_correct": false,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "Correct CSD publisher at rank 1, but the captured metadata does not establish route or accessibility details."
+      }
+    },
+    {
+      "query": "London New Year's Eve fireworks tickets",
+      "expect_domains": [
+        "london.gov.uk",
+        "tfl.gov.uk"
+      ],
+      "expect_terms": [
+        "fireworks",
+        "ticket",
+        "london"
+      ],
+      "intent": "events",
+      "human_grade": {
+        "label": "FAIL",
+        "top1_answers": false,
+        "answer_correct": false,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "TfL homepage is generic; the london.gov.uk fireworks page returned 404."
+      }
+    },
+    {
+      "query": "London fireworks travel and road closures",
+      "expect_domains": [
+        "tfl.gov.uk",
+        "london.gov.uk"
+      ],
+      "expect_terms": [
+        "travel",
+        "road",
+        "closure"
+      ],
+      "intent": "transport",
+      "human_grade": {
+        "label": "FAIL",
+        "top1_answers": false,
+        "answer_correct": false,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "TfL homepage is not the event travel/closure page."
+      }
+    },
+    {
+      "query": "Glastonbury Festival 2027 dates",
+      "expect_domains": [
+        "glastonburyfestivals.co.uk"
+      ],
+      "expect_terms": [
+        "2027",
+        "glastonbury",
+        "june"
+      ],
+      "intent": "events",
+      "human_grade": {
+        "label": "PARTIAL",
+        "top1_answers": false,
+        "answer_correct": false,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "Official homepage ranks first, but the captured metadata does not establish the 2027 dates."
+      }
+    },
+    {
+      "query": "Berlin Christmas markets opening times",
+      "expect_domains": [
+        "berlin.de",
+        "visitberlin.de"
+      ],
+      "expect_terms": [
+        "christmas",
+        "market",
+        "opening"
+      ],
+      "intent": "events",
+      "human_grade": {
+        "label": "PASS",
+        "top1_answers": true,
+        "answer_correct": true,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "visitBerlin Christmas markets page is rank 1; opening times still require checking the page."
+      }
+    },
+    {
+      "query": "Berlin Christmas market public transport",
+      "expect_domains": [
+        "bvg.de",
+        "berlin.de"
+      ],
+      "expect_terms": [
+        "christmas",
+        "market",
+        "transport"
+      ],
+      "intent": "transport",
+      "human_grade": {
+        "label": "FAIL",
+        "top1_answers": false,
+        "answer_correct": false,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "Only the visitBerlin markets page is admitted; BVG is a separate official handoff, not an admitted transport result."
+      }
+    },
+    {
+      "query": "Berlin concert venue accessibility and bag rules",
+      "expect_domains": [
+        "huxleys-neue-welt.de",
+        "verti-music-hall.de",
+        "mercedes-benz-arena.de"
+      ],
+      "expect_terms": [
+        "accessibility",
+        "bag",
+        "venue"
+      ],
+      "intent": "how_to",
+      "human_grade": {
+        "label": "FAIL",
+        "top1_answers": false,
+        "answer_correct": false,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "No usable venue page for accessibility; CSD is unrelated."
+      }
+    },
+    {
+      "query": "London Parade route and start time",
+      "expect_domains": [
+        "londonparade.com"
+      ],
+      "expect_terms": [
+        "parade",
+        "route",
+        "start"
+      ],
+      "intent": "events",
+      "human_grade": {
+        "label": "PASS",
+        "top1_answers": true,
+        "answer_correct": true,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "Official organiser route/timing page is rank 1."
+      }
+    },
+    {
+      "query": "Berlin BVG journey planner",
+      "expect_domains": [
+        "bvg.de"
+      ],
+      "expect_terms": [
+        "bvg",
+        "journey",
+        "planner"
+      ],
+      "intent": "transport",
+      "human_grade": {
+        "label": "PASS",
+        "top1_answers": true,
+        "answer_correct": true,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "BVG official journey-planner handoff is first."
+      }
+    },
+    {
+      "query": "S-Bahn Berlin service updates",
+      "expect_domains": [
+        "s-bahn-berlin.de"
+      ],
+      "expect_terms": [
+        "s-bahn",
+        "service",
+        "update"
+      ],
+      "intent": "transport",
+      "human_grade": {
+        "label": "PARTIAL",
+        "top1_answers": false,
+        "answer_correct": true,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "S-Bahn official link is present at rank 2; BVG ranks first and is not the service-update page."
+      }
+    },
+    {
+      "query": "Eventim Berlin concerts",
+      "expect_domains": [
+        "eventim.de"
+      ],
+      "expect_terms": [
+        "eventim",
+        "berlin",
+        "concert"
+      ],
+      "intent": "events",
+      "human_grade": {
+        "label": "FAIL",
+        "top1_answers": false,
+        "answer_correct": false,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "Eventim capture was unavailable; Berlin events page does not identify Eventim seller pages."
+      }
+    },
+    {
+      "query": "Berlin events calendar",
+      "expect_domains": [
+        "berlin.de"
+      ],
+      "expect_terms": [
+        "berlin",
+        "events",
+        "calendar"
+      ],
+      "intent": "events",
+      "human_grade": {
+        "label": "PASS",
+        "top1_answers": true,
+        "answer_correct": true,
+        "reviewer": "FB2 manual review",
+        "reviewed_at": "2026-11-11",
+        "notes": "Berlin.de events calendar is rank 1."
+      }
+    }
+  ]
+}

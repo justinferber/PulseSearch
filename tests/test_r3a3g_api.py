@@ -63,7 +63,8 @@ class ApiTests(unittest.TestCase):
         req = urllib.request.Request(
             self.base + path, data=data, method=method or ("POST" if data else "GET"),
             headers={"Authorization": f"Bearer {token}",
-                     "Content-Type": "application/json"})
+                     "Content-Type": "application/json",
+                     "Connection": "close"})
         try:
             with urllib.request.urlopen(req, timeout=10) as response:
                 return response.status, json.load(response), dict(response.headers)

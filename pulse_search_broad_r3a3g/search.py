@@ -521,6 +521,8 @@ def search_documents(documents: list[dict], query: str, limit: int = 10,
         metadata = _metadata(doc)
         text = " ".join(str(doc.get(k) or "") for k in ("title", "snippet", "url")).lower()
         text += " " + json.dumps(metadata, ensure_ascii=False).lower()
+        if MUSEUM.search(query) and "museum" not in text and "gallery" not in text:
+            continue
         if excluded and any(term in text for term in excluded):
             continue
         if intent.kind == "events" and not excluded:
@@ -544,10 +546,13 @@ def search_documents(documents: list[dict], query: str, limit: int = 10,
         if intent.kind in ("general", "factual", "transport") and core and \
                 coverage / len(core) <= 0.5 and _support_basis(intent, doc) != "metadata_assisted":
             continue
-        if intent.location and intent.kind == "events":
+        if intent.location and intent.kind in ("events", "transport"):
             haystack = (str(doc.get("title") or "") + " " + str(doc.get("snippet") or "") +
-                        " " + str(doc.get("url") or "")).lower()
-            if intent.location not in haystack:
+                        " " + str(doc.get("url") or "") + " " +
+                        json.dumps(metadata, ensure_ascii=False)).lower()
+            other_cities = [city for city in GEOGRAPHIES
+                            if city != intent.location and city in haystack]
+            if intent.location not in haystack or (intent.kind == "transport" and other_cities):
                 continue
         url_key = _canonical_key(doc["url"])
         title_key = normal(str(doc.get("title") or ""))
@@ -556,7 +561,10 @@ def search_documents(documents: list[dict], query: str, limit: int = 10,
         seen_urls.add(url_key)
         if title_key:
             seen_titles.add(title_key)
-        basis = _support_basis(intent, doc) or "content"
+        basis = _support_basis(intent, doc)
+        if basis is None and enforce_support:
+            continue
+        basis = basis or "content"
         scored.append({"title": doc.get("title", ""), "url": doc["url"],
                        "snippet": _snippet(str(doc.get("snippet") or ""), intent.tokens),
                        "publisher": (_canonical_key(doc["url"]).split("/")[0]),
@@ -583,6 +591,15 @@ def search_documents(documents: list[dict], query: str, limit: int = 10,
                                         else "permissioned_staging_document"),
                        "verified_live": False})
     scored.sort(key=lambda d: (-d["score"], d["url"]))
+    query_words = set(intent.tokens)
+    wanted_jurisdiction = ("DE" if query_words & {"germany", "german", "deutschland",
+                                                "deutsch"} else
+                           "GB" if query_words & {"uk", "britain", "british", "england"}
+                           else None)
+    if wanted_jurisdiction:
+        same = [item for item in scored if item.get("jurisdiction") == wanted_jurisdiction]
+        if same:
+            scored = same
     # Do not let an unrelated second or third card ride along solely because it
     # shares one incidental query word with the first result. Apply the cutoff
     # only to longer result sets so a genuinely relevant small set is retained.
@@ -606,7 +623,13 @@ def search_documents(documents: list[dict], query: str, limit: int = 10,
         status = "staging_results"
         if intent.needs_live_data:
             status = "staging_context_fresh_provider_required"
-        mode = "EXTRACTIVE_ANSWER" if intent.kind in ("how_to", "factual") else "SEARCH_RESULTS"
+        bases = {hit.get("support_basis") for hit in hits}
+        if bases == {"metadata_assisted"}:
+            mode = "NAVIGATION_ONLY"
+        elif "metadata_assisted" in bases:
+            mode = "SEARCH_RESULTS"
+        else:
+            mode = "EXTRACTIVE_ANSWER" if intent.kind in ("how_to", "factual") else "SEARCH_RESULTS"
         notices = ["Snippets are attributed excerpts from admitted pages; verify current dates, "
                    "prices, stock and booking availability separately."]
         if related and intent.kind == "how_to":
@@ -615,6 +638,8 @@ def search_documents(documents: list[dict], query: str, limit: int = 10,
         if any(hit.get("support_basis") == "metadata_assisted" for hit in hits):
             notices.append("Some matches use curator-assigned topics or document type; "
                            "they are classified as navigation, not verified fact evidence.")
+        if mode == "NAVIGATION_ONLY":
+            notices.append("All matching cards are navigation only; this is not an extractive answer.")
         if excluded:
             notices.append("Excluded terms: " + ", ".join(excluded))
         return {"query": query, "intent": intent.as_dict(), "status": status,

@@ -87,6 +87,7 @@ class M8Tests(unittest.TestCase):
         self.assertEqual(card["evidence_class"], "curator_metadata_navigation")
         self.assertEqual(card["source_kind"], "curator_metadata_navigation")
         self.assertFalse(card["verified_fact"])
+        self.assertEqual(result["response_mode"], "NAVIGATION_ONLY")
 
     def test_source_manifest_has_rights_and_specific_pages(self):
         manifest = json.loads((ROOT / "config/m8_sources.json").read_text(encoding="utf-8"))
@@ -133,11 +134,14 @@ class M8Tests(unittest.TestCase):
             self.assertEqual(index.get(record["url"])["revoked"], 1)
             self.assertEqual(index.get(record["url"])["revoked_reason"], "test")
             blocked = index.add_document(record, [], index_allowed=True)
-            self.assertEqual(blocked, (False, "revoked_requires_explicit_admission"))
+            self.assertEqual(blocked, (False, "reactivation_approval_required"))
             self.assertEqual(index.get(record["url"])["revoked"], 1)
             reactivated = {**record, "rights_mode": "evaluation_metadata_only"}
-            admitted = index.add_document(reactivated, [], index_allowed=True,
-                                          allow_reactivation=True)
+            admitted = index.add_document(
+                reactivated, [], index_allowed=True, allow_reactivation=True,
+                reactivation_approval={"approved_by": "owner@example.test",
+                                       "approval_ref": "M11-REACTIVATE-001",
+                                       "approved_at": "2026-11-11T20:00:00Z"})
             self.assertEqual(admitted, (True, "updated"))
             self.assertEqual(index.get(record["url"])["revoked"], 0)
             self.assertEqual(index.get(record["url"])["rights_mode"],

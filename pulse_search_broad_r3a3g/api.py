@@ -163,6 +163,20 @@ class _Handler(BaseHTTPRequestHandler):
             return None
         return consumer
 
+    def _drain_body(self):
+        """Consume a POST body before an early error response.
+
+        A 401/403/429 that leaves request bytes unread can make the server
+        close a keep-alive socket with a reset (WinError 10053) before the
+        client reads the response.
+        """
+        try:
+            length = int(self.headers.get("Content-Length") or 0)
+        except ValueError:
+            length = 0
+        if 0 < length <= MAX_BODY:
+            self.rfile.read(length)
+
     def _body(self) -> dict:
         self.connection.settimeout(READ_TIMEOUT)
         if self.headers.get("Transfer-Encoding"):
@@ -231,19 +245,29 @@ class _Handler(BaseHTTPRequestHandler):
         if scope is None:
             self._json(404, {"status": "NOT_FOUND", "request_id": request_id})
             return
-        consumer = self._require(scope)
-        if not consumer:
+        consumer = self._consumer()
+        if consumer is None:
+            self._drain_body()
+            self._unauthenticated("bearer token required")
             return
-        allowed, retry = self.server.limiter.allow(consumer.name)
-        if not allowed:
-            self._json(429, {"status": "RATE_LIMITED", "request_id": request_id,
-                             "retry_after_s": retry}, {"Retry-After": str(retry)})
+        if not consumer.allows(scope):
+            self._drain_body()
+            self._json(403, {"status": "FORBIDDEN", "required_scope": scope,
+                             "consumer": consumer.name})
             return
         try:
             payload = self._body()
         except (ValueError, json.JSONDecodeError) as exc:
             self._json(400, {"status": "BAD_REQUEST", "error": str(exc),
                              "request_id": request_id})
+            return
+        # Consume the request body before a rate-limit response. Replying early
+        # leaves unread bytes on a keep-alive socket; closing it then resets the
+        # connection on Windows before the client can read the 429.
+        allowed, retry = self.server.limiter.allow(consumer.name)
+        if not allowed:
+            self._json(429, {"status": "RATE_LIMITED", "request_id": request_id,
+                             "retry_after_s": retry}, {"Retry-After": str(retry)})
             return
         try:
             if path == "/v1/search":
@@ -394,6 +418,7 @@ def result_types(result: dict) -> list[str]:
 
 def response_mode(status: str) -> str:
     return {"ANSWERED": "EXTRACTIVE_ANSWER", "OFFICIAL_LINKS": "OFFICIAL_LINKS",
+            "NAVIGATION_ONLY": "NAVIGATION_ONLY",
             "LIVE_SOURCE_REQUIRED": "CURRENT_SERVICE_HANDOFF",
             "NO_EVIDENCE": "NO_EVIDENCE", "REFUSED": "REFUSED",
             "NEEDS_CLARIFICATION": "CLARIFICATION"}.get(status, "NO_EVIDENCE")

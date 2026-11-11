@@ -29,6 +29,7 @@ NO_EVIDENCE = "NO_EVIDENCE"
 LIVE_SOURCE_REQUIRED = "LIVE_SOURCE_REQUIRED"
 NEEDS_CLARIFICATION = "NEEDS_CLARIFICATION"
 REFUSED = "REFUSED"
+NAVIGATION_ONLY = "NAVIGATION_ONLY"
 
 INJECTION_RE = re.compile(
     r"(ignore\s+(all\s+)?(previous|prior)\s+instructions?"
@@ -591,6 +592,18 @@ class AnswerService:
             return self._simple(NO_EVIDENCE, "index_lookup", q,
                                 reason + " Try a more specific question, or add a curated fact "
                                 "with a source to the knowledge pack.", gates=gates)
+        if all(row.get("support_basis") == "metadata_assisted" for row in trusted):
+            citations = [Citation(title=row.get("title", ""), url=row.get("url", ""),
+                                  publisher=row.get("publisher", ""),
+                                  kind="indexed_navigation") for row in trusted[:5]]
+            return Answer(status=NAVIGATION_ONLY, intent="index_navigation", question=q,
+                          answer="These are navigation results, not a quoted answer. "
+                                 "Open the source and verify the current details.",
+                          citations=citations, confidence=0.3, gates=gates,
+                          pack_version=str(self.pack.get("version", "")),
+                          limits=["Metadata-assisted navigation only; no fact was extracted.",
+                                  "Verify dates, access, prices and availability on the source page."],
+                          followups=[])
         top = trusted[0]
         snippet = neutralise_snippet(top.get("snippet", ""), self.snippet_chars)
         if not snippet:

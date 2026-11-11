@@ -137,6 +137,9 @@ LINKS: tuple[OfficialLink, ...] = (
     OfficialLink("UEFA", "https://www.uefa.com/", "UEFA",
                  "Official competition information and ticketing announcements.",
                  "sports", (), ("sports", "football")),
+    OfficialLink("NHS 111", "https://111.nhs.uk/", "NHS",
+                 "NHS 111 urgent and emergency care guidance for England.",
+                 "reference", ("GB",), ("nhs", "111", "urgent", "medical")),
     OfficialLink("Wikipedia", "https://en.wikipedia.org/wiki/Special:Search?search={query}",
                  "Wikimedia", "General reference; verify time-sensitive facts against a primary source.",
                  "reference", (), ("general", "reference", "factual")),
@@ -308,6 +311,10 @@ def links_for(kind: str, query: str, city: str | None = None,
     useful even with no live adapter; the caller must label it as navigation.
     """
     q = (query or "").lower()
+    if "nhs" in q and "111" in q:
+        nhs = next((link for link in LINKS if link.title == "NHS 111"), None)
+        if nhs is not None:
+            return _cards([nhs], query, limit)
     loc = _requested_city(query, city)
     topics = {w for w in q.replace("?", " ").replace(",", " ").split() if w}
     kinds = {kind}

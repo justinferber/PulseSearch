@@ -276,8 +276,8 @@ def search_staging(staging, query: str, limit: int = 10, scan_limit: int = 5000)
             expression = " OR ".join('"' + t + '"*' for t in terms)
             try:
                 rows = conn.execute(
-                    """SELECT d.* FROM doc_fts f
-                       JOIN docs d ON d.doc_id=f.rowid
+                    """SELECT d.* FROM doc_fts
+                       JOIN docs d ON d.doc_id=doc_fts.rowid
                        WHERE doc_fts MATCH ? AND d.revoked=0
                        ORDER BY bm25(doc_fts) LIMIT ?""",
                     (expression, max(100, min(scan_limit, 1000))),

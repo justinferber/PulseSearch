@@ -2,6 +2,19 @@
   "kind": "R3A3E_CONSTRAINT_LAYER_MEASUREMENT_NOT_ACCEPTED_ENGINE",
   "engine": "BGE_DENSE_PINNED",
   "engine_snapshots_modified": false,
+  "index_integrity": {
+    "sha256_before": "bb8e52025a1a25f55141507a02621db190e54bf1fc4d4da8db4248357368c35d",
+    "sha256_after": "bb8e52025a1a25f55141507a02621db190e54bf1fc4d4da8db4248357368c35d",
+    "pin_enforced": true,
+    "approved_rows": 120
+  },
+  "model_integrity": {
+    "manifest_sha256": "3955a9a2ca390314555ddb6a11b2ed16210657b689cab1b8e708653d3c63c437",
+    "weights_sha256": "3c9f31665447c8911517620762200d2245a2518d6e7208acc78cd9db317e21ad",
+    "weights_bytes": 133466304,
+    "pin_verified": true
+  },
+  "exclusion_semantics": "QUERY_LOCAL_NEGATION_ONLY",
   "probe_count": 54,
   "before_distribution": {
     "PASS_RETRIEVAL": 27,
@@ -25,6 +38,16 @@
     "x14"
   ],
   "regressions": [],
+  "partial_retrieval_probes": [],
+  "metrics_scope": {
+    "exclusion_semantics": "QUERY_LOCAL_NEGATION_ONLY",
+    "global_event_suppression": false,
+    "persisted_state": false,
+    "index_or_source_mutation": false,
+    "retrieval_metric": "ENGINE_RANKING_WITH_CONSTRAINTS",
+    "relevance_metric": "ENGINEER_AUTHORED_URL_EXPECTATION_NOT_HUMAN_GRADE",
+    "human_signed_grades": 0
+  },
   "changed": [
     {
       "probe_id": "event_series_2",
@@ -103,9 +126,20 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "new nhs patient sign up",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 10
+        }
+      ],
       "dropped": []
     },
     {
@@ -153,9 +187,20 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "uk provisional motorist",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 10
+        }
+      ],
       "dropped": []
     },
     {
@@ -203,9 +248,20 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 10
+        }
+      ],
       "dropped": []
     },
     {
@@ -253,9 +309,20 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "arrange laboratory blood test",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 10
+        }
+      ],
       "dropped": []
     },
     {
@@ -303,9 +370,20 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "javascript programming",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 10
+        }
+      ],
       "dropped": []
     },
     {
@@ -353,9 +431,20 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "explain http protocol",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 10
+        }
+      ],
       "dropped": []
     },
     {
@@ -399,9 +488,30 @@
           "2027"
         ],
         "subject_phrase": "armed force day",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 7,
+          "eligible": 7
+        }
+      ],
       "dropped": []
     },
     {
@@ -445,9 +555,30 @@
           "2027"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 7,
+          "eligible": 7
+        }
+      ],
       "dropped": []
     },
     {
@@ -497,9 +628,20 @@
           "2025"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 10
+        }
+      ],
       "dropped": []
     },
     {
@@ -533,9 +675,41 @@
           "2025"
         ],
         "subject_phrase": "london open house",
-        "series_like": true
+        "series_like": true,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {
+        "2024": {
+          "status": "RETRIEVED",
+          "returned": 19,
+          "depth": 120
+        },
+        "2025": {
+          "status": "RETRIEVED",
+          "returned": 29,
+          "depth": 120
+        }
+      },
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 20,
+          "eligible": 2
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 48,
+          "eligible": 2
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 48,
+          "eligible": 2
+        }
+      ],
       "dropped": [
         {
           "url": "https://www.london.gov.uk/events/pride-london-2024",
@@ -662,6 +836,202 @@
           "violations": [
             "SERIES_SUBJECT_MISMATCH"
           ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/peoples-question-time-2024",
+          "title": "People's Question Time 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/bmw-classics-2024",
+          "title": "BMW Classics 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/vaisakhi-2024",
+          "title": "Vaisakhi 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/uk-black-pride-2024",
+          "title": "UK Black Pride 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/SOLD2024",
+          "title": "State of London Debate 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/77-memorial-service-2024",
+          "title": "7/7 Memorial Service 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/mayors-christmas-carol-service-2024",
+          "title": "The Mayor's Christmas Carol Service 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/holocaust-memorial-day-ceremony-2024",
+          "title": "Holocaust Memorial Day Ceremony 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/unesco-day-remembering-transatlantic-slave-trade-and-its-abolition-2024",
+          "title": "UNESCO Day for Remembering the Transatlantic Slave Trade and its Abolition 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/towards-new-london-plan-online-event-6-june-2025",
+          "title": "Towards a new London Plan (online event, 6 June 2025) | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/diwali-square-2025",
+          "title": "Diwali on the Square 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/armed-forces-day-2025",
+          "title": "Armed Forces Day 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/black-square-2025",
+          "title": "Black On The Square 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/towards-new-london-plan-online-event-29-may-2025",
+          "title": "Towards a new London Plan (online event, 29 May 2025) | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/state-london-debate-2025",
+          "title": "State of London Debate 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/st-patricks-festival-2025",
+          "title": "St Patrick’s Festival 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/towards-new-london-plan-online-event-13-may-2025",
+          "title": "Towards a new London Plan (online event, 13 May 2025) | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/uk-black-pride-2025",
+          "title": "UK Black Pride 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/london-data-week-2025",
+          "title": "London Data Week 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/bmw-classics-2025",
+          "title": "BMW Classics 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/vaisakhi-square-2025",
+          "title": "Vaisakhi on the Square 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/peoples-question-time-2025-hammersmith-and-fulham",
+          "title": "People's Question Time 2025 - Hammersmith and Fulham | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/mayors-christmas-carol-service-2025",
+          "title": "The Mayor's Christmas Carol Service 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/royal-docks-originals-2025",
+          "title": "Royal Docks Originals 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/holocaust-memorial-day-ceremony-2025",
+          "title": "Holocaust Memorial Day Ceremony 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/passion-jesus-trafalgar-square-2025",
+          "title": "The Passion of Jesus in Trafalgar Square 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/peoples-question-time-2025-haringey",
+          "title": "People's Question Time 2025 - Haringey | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/unesco-day-remembering-transatlantic-slave-trade-and-its-abolition-2025",
+          "title": "UNESCO Day for Remembering the Transatlantic Slave Trade and its Abolition 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
         }
       ]
     },
@@ -698,9 +1068,46 @@
           "2025"
         ],
         "subject_phrase": "london open house",
-        "series_like": true
+        "series_like": true,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {
+        "2023": {
+          "status": "RETRIEVED",
+          "returned": 16,
+          "depth": 120
+        },
+        "2024": {
+          "status": "RETRIEVED",
+          "returned": 19,
+          "depth": 120
+        },
+        "2025": {
+          "status": "RETRIEVED",
+          "returned": 29,
+          "depth": 120
+        }
+      },
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 30,
+          "eligible": 3
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 64,
+          "eligible": 3
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 64,
+          "eligible": 3
+        }
+      ],
       "dropped": [
         {
           "url": "https://www.london.gov.uk/events/st-georges-day-2023",
@@ -890,6 +1297,244 @@
           "violations": [
             "SERIES_SUBJECT_MISMATCH"
           ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/st-patricks-festival-2023",
+          "title": "St Patrick's Festival 2023 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/77-memorial-service-2023",
+          "title": "7/7 Memorial Service 2023 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/mayors-christmas-carol-service-2023",
+          "title": "The Mayor's Christmas Carol Service 2023 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/gypsy-roma-and-traveller-history-month-2023",
+          "title": "Gypsy, Roma and Traveller History Month 2023 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/passion-jesus-trafalgar-square-2023",
+          "title": "The Passion of Jesus in Trafalgar Square 2023 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/unesco-day-remembering-transatlantic-slave-trade-and-its-abolition-2023",
+          "title": "UNESCO Day for Remembering the Transatlantic Slave Trade and its Abolition 2023 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/peoples-question-time-2024",
+          "title": "People's Question Time 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/bmw-classics-2024",
+          "title": "BMW Classics 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/vaisakhi-2024",
+          "title": "Vaisakhi 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/uk-black-pride-2024",
+          "title": "UK Black Pride 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/SOLD2024",
+          "title": "State of London Debate 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/77-memorial-service-2024",
+          "title": "7/7 Memorial Service 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/mayors-christmas-carol-service-2024",
+          "title": "The Mayor's Christmas Carol Service 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/holocaust-memorial-day-ceremony-2024",
+          "title": "Holocaust Memorial Day Ceremony 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/unesco-day-remembering-transatlantic-slave-trade-and-its-abolition-2024",
+          "title": "UNESCO Day for Remembering the Transatlantic Slave Trade and its Abolition 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/towards-new-london-plan-online-event-6-june-2025",
+          "title": "Towards a new London Plan (online event, 6 June 2025) | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/diwali-square-2025",
+          "title": "Diwali on the Square 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/armed-forces-day-2025",
+          "title": "Armed Forces Day 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/black-square-2025",
+          "title": "Black On The Square 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/towards-new-london-plan-online-event-29-may-2025",
+          "title": "Towards a new London Plan (online event, 29 May 2025) | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/state-london-debate-2025",
+          "title": "State of London Debate 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/st-patricks-festival-2025",
+          "title": "St Patrick’s Festival 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/towards-new-london-plan-online-event-13-may-2025",
+          "title": "Towards a new London Plan (online event, 13 May 2025) | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/uk-black-pride-2025",
+          "title": "UK Black Pride 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/london-data-week-2025",
+          "title": "London Data Week 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/bmw-classics-2025",
+          "title": "BMW Classics 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/vaisakhi-square-2025",
+          "title": "Vaisakhi on the Square 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/peoples-question-time-2025-hammersmith-and-fulham",
+          "title": "People's Question Time 2025 - Hammersmith and Fulham | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/mayors-christmas-carol-service-2025",
+          "title": "The Mayor's Christmas Carol Service 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/royal-docks-originals-2025",
+          "title": "Royal Docks Originals 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/holocaust-memorial-day-ceremony-2025",
+          "title": "Holocaust Memorial Day Ceremony 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/passion-jesus-trafalgar-square-2025",
+          "title": "The Passion of Jesus in Trafalgar Square 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/peoples-question-time-2025-haringey",
+          "title": "People's Question Time 2025 - Haringey | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/unesco-day-remembering-transatlantic-slave-trade-and-its-abolition-2025",
+          "title": "UNESCO Day for Remembering the Transatlantic Slave Trade and its Abolition 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
         }
       ]
     },
@@ -940,9 +1585,20 @@
           "2026"
         ],
         "subject_phrase": "open house",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 10
+        }
+      ],
       "dropped": []
     },
     {
@@ -986,9 +1642,30 @@
           "2027"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 7,
+          "eligible": 6
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 7,
+          "eligible": 6
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 7,
+          "eligible": 6
+        }
+      ],
       "dropped": [
         {
           "url": "https://www.london.gov.uk/events/eid",
@@ -1032,9 +1709,30 @@
           "2026"
         ],
         "subject_phrase": "london celebration",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 3,
+          "eligible": 2
+        }
+      ],
       "dropped": [
         {
           "url": "https://www.london.gov.uk/events/st-patricks-festival-2026",
@@ -1070,7 +1768,7 @@
       "after": {
         "verdict": "PASS_RETRIEVAL",
         "note": "Non-excluded alternative returned",
-        "count": 9,
+        "count": 10,
         "urls": [
           "https://www.london.gov.uk/events/lunar-new-year-festival-spring-2026",
           "https://www.london.gov.uk/events/st-patricks-festival-2026",
@@ -1080,7 +1778,8 @@
           "https://www.london.gov.uk/events/remembrance-service-2026",
           "https://www.london.gov.uk/events/city-hall-open-house-2026",
           "https://www.london.gov.uk/events/diwali-square-2026",
-          "https://www.london.gov.uk/events/london-new-years-eve-2026/london-new-years-eve-2026-information-businesses-and-residents"
+          "https://www.london.gov.uk/events/london-new-years-eve-2026/london-new-years-eve-2026-information-businesses-and-residents",
+          "https://www.london.gov.uk/events/holocaust-memorial-day-2026-ceremony"
         ]
       },
       "decomposition": {
@@ -1093,9 +1792,25 @@
           "2026"
         ],
         "subject_phrase": "london celebration",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 9
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 27,
+          "eligible": 26
+        }
+      ],
       "dropped": [
         {
           "url": "https://www.london.gov.uk/events/london-games-festival-2026",
@@ -1155,9 +1870,20 @@
           "2025"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 10
+        }
+      ],
       "dropped": []
     },
     {
@@ -1201,9 +1927,30 @@
           "2027"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 7,
+          "eligible": 7
+        }
+      ],
       "dropped": []
     },
     {
@@ -1253,9 +2000,20 @@
           "2025"
         ],
         "subject_phrase": "london celebration",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 10
+        }
+      ],
       "dropped": []
     },
     {
@@ -1290,9 +2048,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "london open house",
-        "series_like": true
+        "series_like": true,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 4,
+          "eligible": 3
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 4,
+          "eligible": 3
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 4,
+          "eligible": 3
+        }
+      ],
       "dropped": [
         {
           "url": "https://www.london.gov.uk/events/city-hall-open-house-2026",
@@ -1328,9 +2107,30 @@
           "2040"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -1358,9 +2158,30 @@
           "2027"
         ],
         "subject_phrase": "pari celebration",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -1388,9 +2209,30 @@
           "2027"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -1416,9 +2258,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "oxford tomorrow",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -1444,9 +2307,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "new laptop",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -1476,9 +2360,14 @@
           "2027"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "WITHHELD_CONTRADICTION",
+      "retrieval_status": "WITHHELD",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [],
       "dropped": []
     },
     {
@@ -1526,9 +2415,20 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "adult uk passport renew today",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 10
+        }
+      ],
       "dropped": []
     },
     {
@@ -1572,9 +2472,30 @@
           "2027"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 7,
+          "eligible": 7
+        }
+      ],
       "dropped": []
     },
     {
@@ -1618,9 +2539,30 @@
           "2027"
         ],
         "subject_phrase": "entrance wheelchair accessible",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 7,
+          "eligible": 7
+        }
+      ],
       "dropped": []
     },
     {
@@ -1659,9 +2601,30 @@
           "2026"
         ],
         "subject_phrase": "ticket sold out",
-        "series_like": true
+        "series_like": true,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 27,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 27,
+          "eligible": 0
+        }
+      ],
       "dropped": [
         {
           "url": "https://www.london.gov.uk/events/london-new-years-eve-2026",
@@ -1732,6 +2695,125 @@
           "violations": [
             "SERIES_SUBJECT_MISMATCH"
           ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/london-games-festival-2026",
+          "title": "London Games Festival 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/eid-square-2026",
+          "title": "Eid on the Square 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/st-georges-day-2026",
+          "title": "St George's Day 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/st-patricks-festival-2026",
+          "title": "St Patrick’s Festival 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/pride-parade-2026",
+          "title": "Pride Parade 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/remembrance-service-2026",
+          "title": "Remembrance Service 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/vaisakhi-square-2026",
+          "title": "Vaisakhi on the Square 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/black-square-2026",
+          "title": "Black On The Square 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/armed-forces-day-2026",
+          "title": "Armed Forces Day 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/77-memorial-service-2026",
+          "title": "7/7 Memorial Service 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/holocaust-memorial-day-2026-ceremony",
+          "title": "Holocaust Memorial Day 2026 ceremony | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/london-data-week-2026",
+          "title": "London Data Week 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/passion-jesus-trafalgar-square-2026",
+          "title": "The Passion of Jesus in Trafalgar Square 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/draft-london-plan-consultation-person-event-22-september-2026",
+          "title": "Draft London Plan consultation (in-person event, 22 September 2026) | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/unesco-day-remembering-transatlantic-slave-trade-and-its-abolition-2026",
+          "title": "UNESCO Day for Remembering the Transatlantic Slave Trade and its Abolition 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/draft-london-plan-consultation-accessible-online-event-24-september-2026",
+          "title": "Draft London Plan consultation (accessible online event, 24 September 2026) | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/draft-london-plan-consultation-accessible-online-event-22-july-2026",
+          "title": "Draft London Plan consultation (accessible online event, 22 July 2026) | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
         }
       ]
     },
@@ -1776,9 +2858,30 @@
           "2027"
         ],
         "subject_phrase": "armed force day",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 7,
+          "eligible": 7
+        }
+      ],
       "dropped": []
     },
     {
@@ -1826,9 +2929,20 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "family doctor practice",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 10
+        }
+      ],
       "dropped": []
     },
     {
@@ -1876,9 +2990,20 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "provisional motorist licence",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 10
+        }
+      ],
       "dropped": []
     },
     {
@@ -1926,9 +3051,20 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "vote enrol",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 10
+        }
+      ],
       "dropped": []
     },
     {
@@ -1976,9 +3112,20 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "local property rate valuation band",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 10
+        }
+      ],
       "dropped": []
     },
     {
@@ -2026,9 +3173,20 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "javascript script",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 10
+        }
+      ],
       "dropped": []
     },
     {
@@ -2076,9 +3234,20 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "http protocol",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 10
+        }
+      ],
       "dropped": []
     },
     {
@@ -2126,9 +3295,20 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "online step",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 10
+        }
+      ],
       "dropped": []
     },
     {
@@ -2176,9 +3356,20 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "nhs blood sample test",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 10
+        }
+      ],
       "dropped": []
     },
     {
@@ -2221,9 +3412,41 @@
           "2025"
         ],
         "subject_phrase": "london open house",
-        "series_like": true
+        "series_like": true,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {
+        "2024": {
+          "status": "RETRIEVED",
+          "returned": 19,
+          "depth": 120
+        },
+        "2025": {
+          "status": "RETRIEVED",
+          "returned": 29,
+          "depth": 120
+        }
+      },
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 22,
+          "eligible": 2
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 48,
+          "eligible": 2
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 48,
+          "eligible": 2
+        }
+      ],
       "dropped": [
         {
           "url": "https://www.london.gov.uk/events/london-games-festival-2025",
@@ -2364,6 +3587,188 @@
           "violations": [
             "SERIES_SUBJECT_MISMATCH"
           ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/state-london-debate-2025",
+          "title": "State of London Debate 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/peoples-question-time-2025-hammersmith-and-fulham",
+          "title": "People's Question Time 2025 - Hammersmith and Fulham | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/towards-new-london-plan-online-event-6-june-2025",
+          "title": "Towards a new London Plan (online event, 6 June 2025) | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/armed-forces-day-2025",
+          "title": "Armed Forces Day 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/towards-new-london-plan-online-event-29-may-2025",
+          "title": "Towards a new London Plan (online event, 29 May 2025) | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/st-patricks-festival-2025",
+          "title": "St Patrick’s Festival 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/black-square-2025",
+          "title": "Black On The Square 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/vaisakhi-square-2025",
+          "title": "Vaisakhi on the Square 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/towards-new-london-plan-online-event-13-may-2025",
+          "title": "Towards a new London Plan (online event, 13 May 2025) | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/bmw-classics-2025",
+          "title": "BMW Classics 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/holocaust-memorial-day-ceremony-2025",
+          "title": "Holocaust Memorial Day Ceremony 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/royal-docks-originals-2025",
+          "title": "Royal Docks Originals 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/uk-black-pride-2025",
+          "title": "UK Black Pride 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/mayors-christmas-carol-service-2025",
+          "title": "The Mayor's Christmas Carol Service 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/peoples-question-time-2025-haringey",
+          "title": "People's Question Time 2025 - Haringey | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/passion-jesus-trafalgar-square-2025",
+          "title": "The Passion of Jesus in Trafalgar Square 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/unesco-day-remembering-transatlantic-slave-trade-and-its-abolition-2025",
+          "title": "UNESCO Day for Remembering the Transatlantic Slave Trade and its Abolition 2025 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/peoples-question-time-2024",
+          "title": "People's Question Time 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/bmw-classics-2024",
+          "title": "BMW Classics 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/vaisakhi-2024",
+          "title": "Vaisakhi 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/uk-black-pride-2024",
+          "title": "UK Black Pride 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/SOLD2024",
+          "title": "State of London Debate 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/77-memorial-service-2024",
+          "title": "7/7 Memorial Service 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/mayors-christmas-carol-service-2024",
+          "title": "The Mayor's Christmas Carol Service 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/holocaust-memorial-day-ceremony-2024",
+          "title": "Holocaust Memorial Day Ceremony 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/unesco-day-remembering-transatlantic-slave-trade-and-its-abolition-2024",
+          "title": "UNESCO Day for Remembering the Transatlantic Slave Trade and its Abolition 2024 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
         }
       ]
     },
@@ -2408,9 +3813,30 @@
           "2027"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 7,
+          "eligible": 6
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 7,
+          "eligible": 6
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 7,
+          "eligible": 6
+        }
+      ],
       "dropped": [
         {
           "url": "https://www.london.gov.uk/events/eid",
@@ -2446,7 +3872,7 @@
       "after": {
         "verdict": "PASS_RETRIEVAL",
         "note": "Non-excluded alternative returned",
-        "count": 9,
+        "count": 10,
         "urls": [
           "https://www.london.gov.uk/events/london-games-festival-2026",
           "https://www.london.gov.uk/events/lunar-new-year-festival-spring-2026",
@@ -2456,7 +3882,8 @@
           "https://www.london.gov.uk/events/remembrance-service-2026",
           "https://www.london.gov.uk/events/diwali-square-2026",
           "https://www.london.gov.uk/events/london-new-years-eve-2026/london-new-years-eve-2026-information-businesses-and-residents",
-          "https://www.london.gov.uk/events/city-hall-open-house-2026"
+          "https://www.london.gov.uk/events/city-hall-open-house-2026",
+          "https://www.london.gov.uk/events/holocaust-memorial-day-2026-ceremony"
         ]
       },
       "decomposition": {
@@ -2469,9 +3896,25 @@
           "2026"
         ],
         "subject_phrase": "london celebration",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 9
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 27,
+          "eligible": 26
+        }
+      ],
       "dropped": [
         {
           "url": "https://www.london.gov.uk/events/st-patricks-festival-2026",
@@ -2507,7 +3950,7 @@
       "after": {
         "verdict": "PASS_RETRIEVAL",
         "note": "Non-excluded alternative returned",
-        "count": 9,
+        "count": 10,
         "urls": [
           "https://www.london.gov.uk/events/lunar-new-year-festival-spring-2026",
           "https://www.london.gov.uk/events/st-patricks-festival-2026",
@@ -2517,7 +3960,8 @@
           "https://www.london.gov.uk/events/remembrance-service-2026",
           "https://www.london.gov.uk/events/diwali-square-2026",
           "https://www.london.gov.uk/events/london-new-years-eve-2026/london-new-years-eve-2026-information-businesses-and-residents",
-          "https://www.london.gov.uk/events/city-hall-open-house-2026"
+          "https://www.london.gov.uk/events/city-hall-open-house-2026",
+          "https://www.london.gov.uk/events/holocaust-memorial-day-2026-ceremony"
         ]
       },
       "decomposition": {
@@ -2530,9 +3974,25 @@
           "2026"
         ],
         "subject_phrase": "london celebration",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 9
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 27,
+          "eligible": 26
+        }
+      ],
       "dropped": [
         {
           "url": "https://www.london.gov.uk/events/london-games-festival-2026",
@@ -2584,9 +4044,30 @@
           "2027"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 7,
+          "eligible": 7
+        }
+      ],
       "dropped": []
     },
     {
@@ -2621,9 +4102,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "london open house",
-        "series_like": true
+        "series_like": true,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 4,
+          "eligible": 3
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 4,
+          "eligible": 3
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 4,
+          "eligible": 3
+        }
+      ],
       "dropped": [
         {
           "url": "https://www.london.gov.uk/events/city-hall-open-house-2026",
@@ -2659,9 +4161,30 @@
           "2038"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -2689,9 +4212,30 @@
           "2027"
         ],
         "subject_phrase": "edinburgh concert",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -2719,9 +4263,30 @@
           "2025"
         ],
         "subject_phrase": "london pride",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -2747,9 +4312,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "newbury tomorrow",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -2793,9 +4379,30 @@
           "2027"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 7,
+          "eligible": 7
+        }
+      ],
       "dropped": []
     },
     {
@@ -2834,9 +4441,30 @@
           "2026"
         ],
         "subject_phrase": "sold out",
-        "series_like": true
+        "series_like": true,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 27,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 27,
+          "eligible": 0
+        }
+      ],
       "dropped": [
         {
           "url": "https://www.london.gov.uk/events/london-new-years-eve-2026",
@@ -2907,6 +4535,125 @@
           "violations": [
             "SERIES_SUBJECT_MISMATCH"
           ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/london-games-festival-2026",
+          "title": "London Games Festival 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/st-patricks-festival-2026",
+          "title": "St Patrick’s Festival 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/eid-square-2026",
+          "title": "Eid on the Square 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/pride-parade-2026",
+          "title": "Pride Parade 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/st-georges-day-2026",
+          "title": "St George's Day 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/vaisakhi-square-2026",
+          "title": "Vaisakhi on the Square 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/remembrance-service-2026",
+          "title": "Remembrance Service 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/black-square-2026",
+          "title": "Black On The Square 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/holocaust-memorial-day-2026-ceremony",
+          "title": "Holocaust Memorial Day 2026 ceremony | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/armed-forces-day-2026",
+          "title": "Armed Forces Day 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/77-memorial-service-2026",
+          "title": "7/7 Memorial Service 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/london-data-week-2026",
+          "title": "London Data Week 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/passion-jesus-trafalgar-square-2026",
+          "title": "The Passion of Jesus in Trafalgar Square 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/unesco-day-remembering-transatlantic-slave-trade-and-its-abolition-2026",
+          "title": "UNESCO Day for Remembering the Transatlantic Slave Trade and its Abolition 2026 | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/draft-london-plan-consultation-person-event-22-september-2026",
+          "title": "Draft London Plan consultation (in-person event, 22 September 2026) | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/draft-london-plan-consultation-accessible-online-event-24-september-2026",
+          "title": "Draft London Plan consultation (accessible online event, 24 September 2026) | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
+        },
+        {
+          "url": "https://www.london.gov.uk/events/draft-london-plan-consultation-accessible-online-event-22-july-2026",
+          "title": "Draft London Plan consultation (accessible online event, 22 July 2026) | London City Hall",
+          "violations": [
+            "SERIES_SUBJECT_MISMATCH"
+          ]
         }
       ]
     },
@@ -2939,9 +4686,30 @@
           "2027"
         ],
         "subject_phrase": "london celebration",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
       "dropped": []
     },
     {
@@ -2985,9 +4753,30 @@
           "2027"
         ],
         "subject_phrase": "wheelchair accessibility",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 7,
+          "eligible": 7
+        }
+      ],
       "dropped": []
     },
     {
@@ -3035,9 +4824,20 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "new uk passport now",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 10
+        }
+      ],
       "dropped": []
     },
     {
@@ -3073,15 +4873,36 @@
           "2026"
         ],
         "subject_phrase": "london celebration",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 3,
+          "eligible": 3
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 3,
+          "eligible": 3
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 3,
+          "eligible": 3
+        }
+      ],
       "dropped": []
     }
   ],
   "limitations": [
-    "Hybrid lexical path only in this file; dense path measured separately.",
-    "Engineer-authored expectations are not independent human relevance labels.",
-    "Constraint compliance is a rule check, not proof of user-visible quality."
+    "Engineer-authored URL expectations are not independent human relevance labels.",
+    "Constraint compliance is a rule check, not proof of user-visible quality.",
+    "No metric in this file may be reported as a relevance score."
   ]
 }

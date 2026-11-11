@@ -2,6 +2,14 @@
   "kind": "R3A3E_CONSTRAINT_LAYER_MEASUREMENT_NOT_ACCEPTED_ENGINE",
   "engine": "HYBRID_LEXICAL",
   "engine_snapshots_modified": false,
+  "index_integrity": {
+    "sha256_before": "bb8e52025a1a25f55141507a02621db190e54bf1fc4d4da8db4248357368c35d",
+    "sha256_after": "bb8e52025a1a25f55141507a02621db190e54bf1fc4d4da8db4248357368c35d",
+    "pin_enforced": true,
+    "approved_rows": 120
+  },
+  "model_integrity": null,
+  "exclusion_semantics": "QUERY_LOCAL_NEGATION_ONLY",
   "probe_count": 54,
   "before_distribution": {
     "FAIL_WRONG_TOP1": 4,
@@ -32,6 +40,16 @@
     "x14"
   ],
   "regressions": [],
+  "partial_retrieval_probes": [],
+  "metrics_scope": {
+    "exclusion_semantics": "QUERY_LOCAL_NEGATION_ONLY",
+    "global_event_suppression": false,
+    "persisted_state": false,
+    "index_or_source_mutation": false,
+    "retrieval_metric": "ENGINE_RANKING_WITH_CONSTRAINTS",
+    "relevance_metric": "ENGINEER_AUTHORED_URL_EXPECTATION_NOT_HUMAN_GRADE",
+    "human_signed_grades": 0
+  },
   "changed": [
     {
       "probe_id": "event_series_2",
@@ -108,9 +126,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "new nhs patient sign up",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -136,9 +175,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "uk provisional motorist",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -170,9 +230,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 2,
+          "eligible": 2
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 2,
+          "eligible": 2
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 2,
+          "eligible": 2
+        }
+      ],
       "dropped": []
     },
     {
@@ -202,9 +283,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "arrange laboratory blood test",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
       "dropped": []
     },
     {
@@ -234,9 +336,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "javascript programming",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
       "dropped": []
     },
     {
@@ -268,9 +391,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "explain http protocol",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 2,
+          "eligible": 2
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 2,
+          "eligible": 2
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 2,
+          "eligible": 2
+        }
+      ],
       "dropped": []
     },
     {
@@ -302,9 +446,30 @@
           "2027"
         ],
         "subject_phrase": "armed force day",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
       "dropped": []
     },
     {
@@ -338,9 +503,30 @@
           "2027"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 2,
+          "eligible": 2
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 2,
+          "eligible": 2
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 2,
+          "eligible": 2
+        }
+      ],
       "dropped": []
     },
     {
@@ -382,9 +568,30 @@
           "2025"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 6,
+          "eligible": 6
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 6,
+          "eligible": 6
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 6,
+          "eligible": 6
+        }
+      ],
       "dropped": []
     },
     {
@@ -418,9 +625,41 @@
           "2025"
         ],
         "subject_phrase": "london open house",
-        "series_like": true
+        "series_like": true,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {
+        "2024": {
+          "status": "RETRIEVED",
+          "returned": 1,
+          "depth": 120
+        },
+        "2025": {
+          "status": "RETRIEVED",
+          "returned": 2,
+          "depth": 120
+        }
+      },
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 3,
+          "eligible": 2
+        }
+      ],
       "dropped": [
         {
           "url": "https://www.london.gov.uk/events/open-iftar-2025",
@@ -464,9 +703,46 @@
           "2025"
         ],
         "subject_phrase": "london open house",
-        "series_like": true
+        "series_like": true,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {
+        "2023": {
+          "status": "RETRIEVED",
+          "returned": 1,
+          "depth": 120
+        },
+        "2024": {
+          "status": "RETRIEVED",
+          "returned": 1,
+          "depth": 120
+        },
+        "2025": {
+          "status": "RETRIEVED",
+          "returned": 2,
+          "depth": 120
+        }
+      },
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 4,
+          "eligible": 3
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 4,
+          "eligible": 3
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 4,
+          "eligible": 3
+        }
+      ],
       "dropped": [
         {
           "url": "https://www.london.gov.uk/events/open-iftar-2025",
@@ -506,9 +782,30 @@
           "2026"
         ],
         "subject_phrase": "open house",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
       "dropped": []
     },
     {
@@ -543,9 +840,30 @@
           "2027"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 5,
+          "eligible": 4
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 5,
+          "eligible": 4
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 5,
+          "eligible": 4
+        }
+      ],
       "dropped": [
         {
           "url": "https://www.london.gov.uk/events/eid",
@@ -589,9 +907,30 @@
           "2026"
         ],
         "subject_phrase": "london celebration",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 3,
+          "eligible": 2
+        }
+      ],
       "dropped": [
         {
           "url": "https://www.london.gov.uk/events/st-patricks-festival-2026",
@@ -632,9 +971,30 @@
           "2026"
         ],
         "subject_phrase": "london celebration",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 3,
+          "eligible": 2
+        }
+      ],
       "dropped": [
         {
           "url": "https://www.london.gov.uk/events/london-games-festival-2026",
@@ -685,9 +1045,20 @@
           "2025"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 10
+        }
+      ],
       "dropped": []
     },
     {
@@ -731,9 +1102,30 @@
           "2027"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 7,
+          "eligible": 7
+        }
+      ],
       "dropped": []
     },
     {
@@ -783,9 +1175,20 @@
           "2025"
         ],
         "subject_phrase": "london celebration",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 10,
+          "eligible": 10
+        }
+      ],
       "dropped": []
     },
     {
@@ -820,9 +1223,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "london open house",
-        "series_like": true
+        "series_like": true,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 4,
+          "eligible": 3
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 4,
+          "eligible": 3
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 4,
+          "eligible": 3
+        }
+      ],
       "dropped": [
         {
           "url": "https://www.london.gov.uk/events/city-hall-open-house-2026",
@@ -858,9 +1282,30 @@
           "2040"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -888,9 +1333,30 @@
           "2027"
         ],
         "subject_phrase": "pari celebration",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -918,9 +1384,30 @@
           "2027"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -946,9 +1433,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "oxford tomorrow",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -974,9 +1482,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "new laptop",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -1006,9 +1535,14 @@
           "2027"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "WITHHELD_CONTRADICTION",
+      "retrieval_status": "WITHHELD",
+      "year_coverage": {},
+      "refilled": false,
+      "search_passes": [],
       "dropped": []
     },
     {
@@ -1038,9 +1572,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "adult uk passport renew today",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
       "dropped": []
     },
     {
@@ -1072,9 +1627,30 @@
           "2027"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
       "dropped": []
     },
     {
@@ -1102,9 +1678,30 @@
           "2027"
         ],
         "subject_phrase": "entrance wheelchair accessible",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -1132,9 +1729,30 @@
           "2026"
         ],
         "subject_phrase": "ticket sold out",
-        "series_like": true
+        "series_like": true,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -1166,9 +1784,30 @@
           "2027"
         ],
         "subject_phrase": "armed force day",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
       "dropped": []
     },
     {
@@ -1194,9 +1833,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "family doctor practice",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -1226,9 +1886,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "provisional motorist licence",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
       "dropped": []
     },
     {
@@ -1258,9 +1939,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "vote enrol",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
       "dropped": []
     },
     {
@@ -1286,9 +1988,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "local property rate valuation band",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -1318,9 +2041,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "javascript script",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
       "dropped": []
     },
     {
@@ -1350,9 +2094,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "http protocol",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
       "dropped": []
     },
     {
@@ -1382,9 +2147,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "online step",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
       "dropped": []
     },
     {
@@ -1414,9 +2200,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "nhs blood sample test",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
       "dropped": []
     },
     {
@@ -1451,9 +2258,41 @@
           "2025"
         ],
         "subject_phrase": "london open house",
-        "series_like": true
+        "series_like": true,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {
+        "2024": {
+          "status": "RETRIEVED",
+          "returned": 1,
+          "depth": 120
+        },
+        "2025": {
+          "status": "RETRIEVED",
+          "returned": 2,
+          "depth": 120
+        }
+      },
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 3,
+          "eligible": 2
+        }
+      ],
       "dropped": [
         {
           "url": "https://www.london.gov.uk/events/open-iftar-2025",
@@ -1498,9 +2337,30 @@
           "2027"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 7,
+          "eligible": 6
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 7,
+          "eligible": 6
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 7,
+          "eligible": 6
+        }
+      ],
       "dropped": [
         {
           "url": "https://www.london.gov.uk/events/eid",
@@ -1544,9 +2404,30 @@
           "2026"
         ],
         "subject_phrase": "london celebration",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 3,
+          "eligible": 2
+        }
+      ],
       "dropped": [
         {
           "url": "https://www.london.gov.uk/events/st-patricks-festival-2026",
@@ -1587,9 +2468,30 @@
           "2026"
         ],
         "subject_phrase": "london celebration",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 3,
+          "eligible": 2
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 3,
+          "eligible": 2
+        }
+      ],
       "dropped": [
         {
           "url": "https://www.london.gov.uk/events/london-games-festival-2026",
@@ -1641,9 +2543,30 @@
           "2027"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 7,
+          "eligible": 7
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 7,
+          "eligible": 7
+        }
+      ],
       "dropped": []
     },
     {
@@ -1678,9 +2601,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "london open house",
-        "series_like": true
+        "series_like": true,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 4,
+          "eligible": 3
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 4,
+          "eligible": 3
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 4,
+          "eligible": 3
+        }
+      ],
       "dropped": [
         {
           "url": "https://www.london.gov.uk/events/city-hall-open-house-2026",
@@ -1716,9 +2660,30 @@
           "2038"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -1746,9 +2711,30 @@
           "2027"
         ],
         "subject_phrase": "edinburgh concert",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -1776,9 +2762,30 @@
           "2025"
         ],
         "subject_phrase": "london pride",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -1804,9 +2811,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "newbury tomorrow",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -1838,9 +2866,30 @@
           "2027"
         ],
         "subject_phrase": "",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
       "dropped": []
     },
     {
@@ -1868,9 +2917,30 @@
           "2026"
         ],
         "subject_phrase": "sold out",
-        "series_like": true
+        "series_like": true,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -1902,9 +2972,30 @@
           "2027"
         ],
         "subject_phrase": "london celebration",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
       "dropped": []
     },
     {
@@ -1936,9 +3027,30 @@
           "2027"
         ],
         "subject_phrase": "wheelchair accessibility",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 1,
+          "eligible": 1
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 1,
+          "eligible": 1
+        }
+      ],
       "dropped": []
     },
     {
@@ -1964,9 +3076,30 @@
         "exclusions": [],
         "years": [],
         "subject_phrase": "new uk passport now",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "EMPTY_AFTER_CONSTRAINTS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 0,
+          "eligible": 0
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 0,
+          "eligible": 0
+        }
+      ],
       "dropped": []
     },
     {
@@ -2002,15 +3135,36 @@
           "2026"
         ],
         "subject_phrase": "london celebration",
-        "series_like": false
+        "series_like": false,
+        "exclusion_scope": "QUERY_LOCAL_NEGATION"
       },
       "constraint_compliance": "ALL_RETURNED_RANKS_PASS",
+      "retrieval_status": "COMPLETE",
+      "year_coverage": {},
+      "refilled": true,
+      "search_passes": [
+        {
+          "depth": 10,
+          "candidate_pool": 3,
+          "eligible": 3
+        },
+        {
+          "depth": 50,
+          "candidate_pool": 3,
+          "eligible": 3
+        },
+        {
+          "depth": 120,
+          "candidate_pool": 3,
+          "eligible": 3
+        }
+      ],
       "dropped": []
     }
   ],
   "limitations": [
-    "Hybrid lexical path only in this file; dense path measured separately.",
-    "Engineer-authored expectations are not independent human relevance labels.",
-    "Constraint compliance is a rule check, not proof of user-visible quality."
+    "Engineer-authored URL expectations are not independent human relevance labels.",
+    "Constraint compliance is a rule check, not proof of user-visible quality.",
+    "No metric in this file may be reported as a relevance score."
   ]
 }

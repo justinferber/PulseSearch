@@ -9,17 +9,108 @@ Use --empty /path/to/EXPORTED-'No Results'.csv for abstention-row check.
 import argparse
 import collections
 import csv
+import hashlib
 import json
 import sys
+import xml.etree.ElementTree as ET
+import zipfile
 from pathlib import Path
 
 INDEX_PIN = "bb8e52025a1a25f55141507a02621db190e54bf1fc4d4da8db4248357368c35d"
 MODEL_PIN = "3955a9a2ca390314555ddb6a11b2ed16210657b689cab1b8e708653d3c63c437"
 
 
+NS_MAIN = "{http://schemas.openxmlformats.org/spreadsheetml/2006/main}"
+NS_REL = "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}"
+EXPECTED_SHEETS = {"candidate review": 423, "no results": 32}
+
+
 def require(condition, message):
     if not condition:
         raise ValueError(message)
+
+
+def sha256_file(path):
+    digest = hashlib.sha256()
+    with open(path, "rb") as handle:
+        for block in iter(lambda: handle.read(1 << 20), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def _first_column(body, archive):
+    """Column A of every row. Sheet banners mean raw <row> counts are not row counts."""
+    shared = []
+    if "xl/sharedStrings.xml" in archive.namelist():
+        for si in ET.fromstring(archive.read("xl/sharedStrings.xml")).iter(NS_MAIN + "si"):
+            shared.append("".join(t.text or "" for t in si.iter(NS_MAIN + "t")))
+    values = []
+    for row in body.iter(NS_MAIN + "row"):
+        text = ""
+        for cell in row.iter(NS_MAIN + "c"):
+            letters = "".join(ch for ch in (cell.get("r") or "") if ch.isalpha())
+            if letters != "A":
+                continue
+            if cell.get("t") == "s":
+                node = cell.find(NS_MAIN + "v")
+                if node is not None and node.text is not None:
+                    text = shared[int(node.text)]
+            elif cell.get("t") == "inlineStr":
+                node = cell.find(NS_MAIN + "is")
+                if node is not None:
+                    text = "".join(t.text or "" for t in node.iter(NS_MAIN + "t"))
+            else:
+                node = cell.find(NS_MAIN + "v")
+                text = node.text if node is not None and node.text is not None else ""
+            break
+        values.append(text or "")
+    return values
+
+
+def workbook_summary(path):
+    """Stdlib shape check of the transferred workbook. Never reads grades out.
+
+    Fails closed on a corrupt container, a missing expected sheet or a row count
+    that contradicts the replay. Only structure is asserted here: the grade
+    columns are deliberately never interpreted, so no machine value can be
+    mistaken for a human signature.
+    """
+    summary = {"zip_integrity": "OK", "sheets": {}, "row_shape_checked": True,
+               "grade_cells_interpreted": False,
+               "note": "Structure only. Blank/signed grade cells are verified by a human, not this tool."}
+    with zipfile.ZipFile(path) as archive:
+        corrupt = archive.testzip()
+        if corrupt:
+            raise ValueError("workbook zip member corrupt: " + corrupt)
+        workbook = ET.fromstring(archive.read("xl/workbook.xml"))
+        rels = ET.fromstring(archive.read("xl/_rels/workbook.xml.rels"))
+        targets = {rel.get("Id"): rel.get("Target") for rel in rels}
+        for sheet in workbook.iter(NS_MAIN + "sheet"):
+            name = sheet.get("name")
+            target = targets.get(sheet.get(NS_REL + "id"), "")
+            member = target.lstrip("/") if target.startswith("/") else "xl/" + target
+            if member not in archive.namelist():
+                raise ValueError("workbook sheet part missing: " + member)
+            body = ET.fromstring(archive.read(member))
+            dimension = body.find(NS_MAIN + "dimension")
+            values = _first_column(body, archive)
+            header_at = next((i for i, v in enumerate(values)
+                              if v.strip().casefold() == "probe id"), None)
+            ids = [v.strip() for v in values[header_at + 1:] if v.strip()] if header_at is not None else []
+            summary["sheets"][name] = {
+                "rows_including_header": len(values),
+                "data_rows": len(ids) if header_at is not None else None,
+                "probe_id_counts": dict(collections.Counter(ids)),
+                "dimension": dimension.get("ref") if dimension is not None else None,
+            }
+    for wanted, expected in EXPECTED_SHEETS.items():
+        match = [n for n in summary["sheets"] if wanted in n.strip().casefold()]
+        if not match:
+            raise ValueError("workbook missing expected sheet: " + wanted)
+        rows = summary["sheets"][match[0]]["data_rows"]
+        if rows != expected:
+            raise ValueError(f"workbook sheet {wanted} has {rows} data rows, expected {expected}")
+    return summary
 
 
 def csv_rows(path):
@@ -34,7 +125,7 @@ def pairs(p, engine):
             for i, hit in enumerate(p[engine]["top"], start=1)]
 
 
-def verify(replay, frozen, candidates=None, empties=None):
+def verify(replay, frozen, candidates=None, empties=None, workbook_present=False):
     require(replay.get("status") == "READ_ONLY_TRUE_BGE_REPLAY_COMPLETED_NOT_DEPLOYED",
             "not the genuine R3-A3D replay")
     require(replay.get("question_total") == 54, "not 54 queries")
@@ -154,8 +245,11 @@ def verify(replay, frozen, candidates=None, empties=None):
             require(r["Recorded status"].strip() == "NO RESULTS", "invalid zero receipt")
             actual_zero[key] += 1
         require(actual_zero == collections.Counter(zero), "no-result receipts don't match replay")
+    complete = candidates is not None and empties is not None and workbook_present
+    partial = candidates is not None or empties is not None or workbook_present
     return {
-        "status": "PASS_REPLAY_AND_REVIEW_INPUT_INTEGRITY" if candidates is not None and empties is not None
+        "status": "PASS_REPLAY_AND_REVIEW_INPUT_INTEGRITY" if complete
+                  else "PASS_REPLAY_INTEGRITY_REVIEW_INPUT_PARTIAL" if partial
                   else "PASS_REPLAY_INTEGRITY_REVIEW_EXPORT_NOT_SUPPLIED",
         "frozen_queries": 54,
         "engine_query_combinations": 108,
@@ -180,12 +274,42 @@ def main():
     pa.add_argument("--frozen", default="data/frozen_54.csv")
     pa.add_argument("--candidates", help="CSV exported from workbook Candidate Review worksheet")
     pa.add_argument("--empty", help="CSV exported from workbook No Results worksheet")
+    pa.add_argument("--workbook", help="original blinded .xlsx transfer (structure only, grades never read)")
+    pa.add_argument("--manifest-out", help="write the file-hash manifest for this transfer")
     args = pa.parse_args()
     with open(args.replay, encoding="utf-8") as f:
         replay = json.load(f)
-    answer = verify(replay, csv_rows(args.frozen),
-                    csv_rows(args.candidates) if args.candidates else None,
-                    csv_rows(args.empty) if args.empty else None)
+    candidates = csv_rows(args.candidates) if args.candidates else None
+    empties = csv_rows(args.empty) if args.empty else None
+    workbook = workbook_summary(args.workbook) if args.workbook else None
+    answer = verify(replay, csv_rows(args.frozen), candidates, empties,
+                    workbook_present=workbook is not None)
+    if workbook is not None:
+        answer["workbook"] = workbook
+        for wanted, rows_for in (("candidate review", candidates), ("no results", empties)):
+            if rows_for is None:
+                continue
+            key = next((n for n in workbook["sheets"] if wanted in n.casefold()), None)
+            csv_counts = collections.Counter(r["Probe ID"].strip() for r in rows_for)
+            if key is None or dict(csv_counts) != workbook["sheets"][key]["probe_id_counts"]:
+                raise ValueError(f"workbook {wanted} rows disagree with its CSV export")
+    supplied = [("replay", args.replay), ("frozen", args.frozen),
+                ("candidates", args.candidates), ("empty", args.empty),
+                ("workbook", args.workbook)]
+    answer["input_files"] = [
+        {"role": role, "path": str(path),
+         "sha256": sha256_file(path), "bytes": Path(path).stat().st_size}
+        for role, path in supplied if path
+    ]
+    if args.manifest_out:
+        manifest = Path(args.manifest_out)
+        manifest.parent.mkdir(parents=True, exist_ok=True)
+        manifest.write_text(json.dumps({
+            "kind": "R3A3E_GRADING_TRANSFER_HASH_MANIFEST",
+            "status": answer["status"],
+            "human_signed_grades": 0,
+            "files": answer["input_files"],
+        }, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(json.dumps(answer, indent=2, ensure_ascii=False))
     return 0
 

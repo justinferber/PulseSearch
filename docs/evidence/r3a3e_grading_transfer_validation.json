@@ -1,0 +1,64 @@
+{
+  "kind": "R3A3E_GRADING_TRANSFER_VALIDATION",
+  "date": "2026-11-11",
+  "status": "PASS_REPLAY_AND_REVIEW_INPUT_INTEGRITY",
+  "validator_scope": "replay integrity + review-input structure; no human grade was read or produced",
+  "published_fingerprints_match": {
+    "workbook": true,
+    "candidates": true,
+    "empty": true
+  },
+  "human_signed_grades": 0,
+  "frozen_queries": 54,
+  "engine_query_combinations": 108,
+  "ranked_candidates": 423,
+  "explicit_empty_combinations": 32,
+  "candidate_review_csv_rows_checked": 423,
+  "no_results_csv_rows_checked": 32,
+  "grade_rows_structurally_complete_NOT_HUMAN_VERIFIED": 0,
+  "ungraded_candidate_rows": 423,
+  "workbook_sheets": {
+    "START HERE": null,
+    "Case Navigator": 54,
+    "Priority 25": null,
+    "Candidate Review": 423,
+    "No Results": 32,
+    "PROVENANCE": null
+  },
+  "workbook_note": "Structure only. Blank/signed grade cells are verified by a human, not this tool.",
+  "input_files": [
+    {
+      "role": "replay",
+      "name": "r3a3d_frozen54_replay.json",
+      "sha256": "bf0bee88909a537d10e7e7090c7f64fc8929981a862c06d36226ac801d3d2577",
+      "bytes": 116577
+    },
+    {
+      "role": "frozen",
+      "name": "frozen_54.csv",
+      "sha256": "905d5ff9e4c18a3e032ebb79f2a1488ceca7b7424afea24a3875a03b367a323b",
+      "bytes": 11101
+    },
+    {
+      "role": "candidates",
+      "name": "EXPORTED-Candidate Review.csv",
+      "sha256": "154c01f5de1e0947ecd0b23d4372b703fa0490eecb7c6de1c12d8214b76da5dd",
+      "bytes": 75492
+    },
+    {
+      "role": "empty",
+      "name": "EXPORTED-No Results.csv",
+      "sha256": "1bd65d169b880f210278d69cb6b341177a59ee5c99679b355155d9cdede5e43e",
+      "bytes": 2705
+    },
+    {
+      "role": "workbook",
+      "name": "PulseSearch_R3A3D_Blind_Independent_Grading_54_20261111.xlsx",
+      "sha256": "5d4ebb462f19bb8bb754546828439de3f72017034dea18fadbd1ffc4f58537a7",
+      "bytes": 45057
+    }
+  ],
+  "reviewer_folder": "local private folder outside Git; workbook, exports and reviewer identities are not committed",
+  "quality_scores": "HOLD_UNTIL_GENUINE_INDEPENDENT_GRADING",
+  "production": "HOLD"
+}

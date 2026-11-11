@@ -2,7 +2,7 @@
   "kind": "R3A3F_LONDON_PARADE_DATA_USE_SCOPE",
   "schema": "pulse-search-r3a3f-parade-scope/v1",
   "generated_at": "2026-11-11",
-  "status": "OWNER_ATTESTED_EXISTING_APPROVAL_SCOPE_TO_RECORD",
+  "status": "OWNER_CONFIRMED_LONDON_PARADE_CONTENT_RIGHTS_P1_SCOPE_READY",
   "no_new_permission_request": true,
   "real_sources_admitted": 0,
   "third_party_crawler_requests": 0,
@@ -16,12 +16,15 @@
     "source": "project owner direct confirmation",
     "quote": "I do have Destination Events' approval for London Parade Mine Media is the official partner.",
     "documentation_reference": null,
-    "scope_expressly_stated": false
+    "scope_expressly_stated": true,
+    "latest_confirmation": "London Parade is just One of 100s of Mine Media clients. Yes we are approved to use any text or imagery we want.",
+    "evidence_type": "DIRECT_OWNER_STATEMENT_IN_CONVERSATION",
+    "scope_interpretation": "Owner confirms Mine Media has Destination Events approval to use London Parade text and imagery. Includes consent to the previously proposed internal-only Pulse Search content-use test. Do not invent a separate written clause, document reference, signatory or validity term."
   },
   "document_reference": null,
   "effective_date": null,
   "review_date": null,
-  "audience": "INTERNAL_REVIEW_BY_DEFAULT_PUBLIC_DISPLAY_UNCONFIRMED",
+  "audience": "INTERNAL_PILOT_CONFIRMED; FUTURE_PUBLIC_PRODUCT_ROLLOUT_SEPARATE",
   "machine_readable_feed": {
     "availability": "UNKNOWN",
     "question": "Does the existing arrangement include an authorised JSON/CSV/API feed of public event metadata?",
@@ -53,14 +56,14 @@
     "store_body": false
   },
   "metadata_coverage": {
-    "title": "PROPOSED_CONFIRM_AGAINST_AGREEMENT",
-    "canonical_url_and_link_back": "PROPOSED_CONFIRM_AGAINST_AGREEMENT",
-    "edition_date_and_year": "PROPOSED_CONFIRM_AGAINST_AGREEMENT",
-    "route_and_landmarks": "PROPOSED_CONFIRM_AGAINST_AGREEMENT",
-    "category": "PROPOSED_CONFIRM_AGAINST_AGREEMENT",
-    "short_excerpt": "PROPOSED_MAX_320_CHARS_CONFIRM_SNIPPET_RIGHT",
+    "title": "OWNER_CONFIRMED_CONTENT_USE",
+    "canonical_url_and_link_back": "OWNER_CONFIRMED_CONTENT_USE",
+    "edition_date_and_year": "OWNER_CONFIRMED_CONTENT_USE",
+    "route_and_landmarks": "OWNER_CONFIRMED_CONTENT_USE",
+    "category": "OWNER_CONFIRMED_CONTENT_USE",
+    "short_excerpt": "OWNER_CONFIRMED_USE_PILOT_CAP_320_CHARS",
     "page_body": "NOT_STORED",
-    "images_video_audio": "NOT_CLAIMED"
+    "images_video_audio": "IMAGERY_USE_CONFIRMED_BY_OWNER; PILOT_EXCLUDES_MEDIA_DOWNLOADING_AND_INDEXING_BY_CHOICE"
   },
   "exclusions": [
     "/shop/",
@@ -94,29 +97,103 @@
     "approved": false,
     "index_allowed": false,
     "owner_authorisation": null,
-    "reason": "scope record and first-live authorisation not yet signed"
+    "reason": "Owner has confirmed London Parade text and imagery reuse rights. Admission and first live crawler run are separate operational authorisations not yet given."
   },
   "checklist": [
-    {"id": "A1", "item": "owner attestation recorded", "status": "RECORDED"},
-    {"id": "A2", "item": "scope record completed from agreement", "status": "PENDING"},
-    {"id": "A3", "item": "canonical host and www redirects confirmed", "status": "PENDING"},
-    {"id": "A4", "item": "seeds and permitted paths signed off", "status": "PREPARED"},
-    {"id": "A5", "item": "admission with owner_authorisation", "status": "PENDING"},
-    {"id": "A6", "item": "first-live-request authorisation", "status": "PENDING"},
-    {"id": "B1", "item": "10s crawl delay floor enforced", "status": "PASS"},
-    {"id": "B2", "item": "pacing and Retry-After", "status": "PASS"},
-    {"id": "B3", "item": "persisted daily caps", "status": "PASS"},
-    {"id": "B4", "item": "depth 3 and zero probes", "status": "PASS"},
-    {"id": "B5", "item": "excluded forms, commerce and admin routes", "status": "PASS"},
-    {"id": "B6", "item": "robots redirects gated (host, pacing, budget, admin)", "status": "PASS"},
-    {"id": "B7", "item": "metadata and snippet only", "status": "PASS"},
-    {"id": "B8", "item": "edition separation and no invented dates", "status": "PASS"},
-    {"id": "B9", "item": "dashboard and JSON evidence", "status": "PASS"}
+    {
+      "id": "A1",
+      "item": "owner attestation recorded",
+      "status": "RECORDED"
+    },
+    {
+      "id": "A2",
+      "item": "scope record completed from agreement",
+      "status": "OWNER_CONFIRMED_RIGHTS_SCOPE; CONTRACT_REFERENCE_OPTIONAL"
+    },
+    {
+      "id": "A3",
+      "item": "canonical host and www redirects confirmed",
+      "status": "NOT_REQUIRED_FOR_APEX_ONLY; DO_NOT_EXPAND_TO_WWW"
+    },
+    {
+      "id": "A4",
+      "item": "seeds and permitted paths signed off",
+      "status": "PREPARED"
+    },
+    {
+      "id": "A5",
+      "item": "admission with owner_authorisation",
+      "status": "PENDING"
+    },
+    {
+      "id": "A6",
+      "item": "first-live-request authorisation",
+      "status": "PENDING"
+    },
+    {
+      "id": "B1",
+      "item": "10s crawl delay floor enforced",
+      "status": "PASS"
+    },
+    {
+      "id": "B2",
+      "item": "pacing and Retry-After",
+      "status": "PASS"
+    },
+    {
+      "id": "B3",
+      "item": "persisted daily caps",
+      "status": "PASS"
+    },
+    {
+      "id": "B4",
+      "item": "depth 3 and zero probes",
+      "status": "PASS"
+    },
+    {
+      "id": "B5",
+      "item": "excluded forms, commerce and admin routes",
+      "status": "PASS"
+    },
+    {
+      "id": "B6",
+      "item": "robots redirects gated (host, pacing, budget, admin)",
+      "status": "PASS"
+    },
+    {
+      "id": "B7",
+      "item": "metadata and snippet only",
+      "status": "PASS"
+    },
+    {
+      "id": "B8",
+      "item": "edition separation and no invented dates",
+      "status": "PASS"
+    },
+    {
+      "id": "B9",
+      "item": "dashboard and JSON evidence",
+      "status": "PASS"
+    }
   ],
   "evidence": [
     "docs/R3A3F_LONDON_PARADE_DATA_USE_SCOPE_20261111.md",
     "docs/R3A3F_LONDON_PARADE_PILOT_ACTIVATION_CHECKLIST_20261111.md",
     "docs/evidence/r3a3f_three_source_admission.json",
     "docs/evidence/r3a3f_three_source_offline.json"
-  ]
+  ],
+  "updated_at": "2026-11-11",
+  "content_rights": {
+    "source": "London Parade / Destination Events Ltd",
+    "confirmation": "OWNER_ATTESTED_EXISTING_APPROVAL",
+    "text_use": "APPROVED_BY_OWNER_ATTESTATION",
+    "imagery_use": "APPROVED_BY_OWNER_ATTESTATION",
+    "internal_pulse_search_indexing": "APPROVED_BY_OWNER_RESPONSE_TO_PRIOR_SCOPE_QUESTION",
+    "titles_dates_urls_categories": "APPROVED_BY_OWNER_ATTESTATION",
+    "short_excerpts_up_to_320_chars": "APPROVED_BY_OWNER_ATTESTATION",
+    "public_display": "Owner attests broad rights to use London Parade text and imagery; pilot remains internal-only by design and public product rollout remains separately gated",
+    "third_party_contributions": "Avoid assuming additional rights over unrelated third-party works or personal data; apply normal handling",
+    "permission_reference": "OWNER_DIRECT_ATTESTATION_2026-11-11_LONDON_PARADE",
+    "contract_document_reference": null
+  }
 }

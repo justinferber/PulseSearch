@@ -5,9 +5,9 @@
   "health": {
     "status": "OK",
     "service": "pulse-search",
-    "api_version": "1.1",
-    "request_id": "d7789c56955943fb909f9285dbf7489f",
-    "time_utc": "2026-11-11T17:32:00+00:00",
+    "api_version": "1.2",
+    "request_id": "aaf83255577d4f10870cdf1dace06772",
+    "time_utc": "2026-11-11T18:15:00+00:00",
     "consumer": "puke"
   },
   "cases": [
@@ -19,7 +19,7 @@
       "links": 0,
       "citations": 2,
       "claim_evidence": 4,
-      "request_id": "99fb5a30ebc449c6925c43a529796eba",
+      "request_id": "b4f6482439c8448b805a51dcab0a48d3",
       "has_evidence": true,
       "search_status": "official_links",
       "search_results": [
@@ -43,7 +43,7 @@
       "links": 0,
       "citations": 2,
       "claim_evidence": 4,
-      "request_id": "abb8af2c0175497fb7f45e36240ab1a3",
+      "request_id": "babaaffb10424b30b969d3224df23d27",
       "has_evidence": true,
       "search_status": "official_links",
       "search_results": [
@@ -67,18 +67,18 @@
       "links": 0,
       "citations": 1,
       "claim_evidence": 2,
-      "request_id": "41011e28a41647db878199434ed56b38",
+      "request_id": "3546637d1cce40cb94f89f823ff11f4f",
       "has_evidence": true,
       "search_status": "staging_results",
       "search_results": [
         {
-          "title": "First Glastonbury 2027 tickets sell out in under 30 minutes - BBC News",
-          "url": "https://www.bbc.co.uk/news/articles/cv62kp9enz08o",
+          "title": "Glastonbury Festival - Home",
+          "url": "https://www.glastonburyfestivals.co.uk/",
           "source_kind": "permissioned_staging_document"
         },
         {
-          "title": "Glastonbury Festival - Home",
-          "url": "https://www.glastonburyfestivals.co.uk/",
+          "title": "First Glastonbury 2027 tickets sell out in under 30 minutes - BBC News",
+          "url": "https://www.bbc.co.uk/news/articles/cv62kp9enz08o",
           "source_kind": "permissioned_staging_document"
         }
       ]
@@ -91,7 +91,7 @@
       "links": 0,
       "citations": 2,
       "claim_evidence": 4,
-      "request_id": "b254a547d456414e8a42ae6b39a0237d",
+      "request_id": "e9fa2620761f4221ac345d92a66943a3",
       "has_evidence": true,
       "search_status": "official_links",
       "search_results": [
@@ -115,7 +115,7 @@
       "links": 0,
       "citations": 2,
       "claim_evidence": 4,
-      "request_id": "7e449c1b261245b99bdffe4cd28e28db",
+      "request_id": "356d986ce46f43368c6e9c6945b3c0cc",
       "has_evidence": true,
       "search_status": "official_links",
       "search_results": [
@@ -139,7 +139,7 @@
       "links": 0,
       "citations": 0,
       "claim_evidence": 2,
-      "request_id": "08777ee2256f4600be564d824f134d50",
+      "request_id": "4643744b1474485abd1014c4cd40bf1f",
       "has_evidence": false,
       "search_status": "no_staging_evidence",
       "search_results": []

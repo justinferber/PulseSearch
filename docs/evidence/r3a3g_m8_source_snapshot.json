@@ -1,0 +1,484 @@
+{
+  "kind": "R3A3G_M8_SOURCE_SNAPSHOT",
+  "schema": "pulse-search-m8-source-snapshot/v1",
+  "captured_at": "2026-11-11T18:10:08+00:00",
+  "mode": "CONTROLLED_SPECIFIC_PAGE_METADATA",
+  "not_a_crawler_admission": true,
+  "source_manifest": "config/m8_sources.json",
+  "controls": {
+    "ssrf_private_ip_guard": "pulse_search_crawler_r3a3f.netguard",
+    "robots": "RFC9309-style, fail closed",
+    "redirects": "same registrable domain, per-hop re-check",
+    "pacing_s": 3.0,
+    "rights": "public_metadata_and_short_snippet",
+    "owner_approval_required": true
+  },
+  "pages": [
+    {
+      "id": "hvv-deutschlandticket",
+      "url": "https://www.hvv.de/en/deutschlandticket-en",
+      "publisher": "HVV",
+      "authority": "official",
+      "jurisdiction": "DE",
+      "language": "en",
+      "document_type": "transport_ticket_guide",
+      "specificity": "specific",
+      "topics": [
+        "hamburg",
+        "transport",
+        "ticket",
+        "deutschlandticket"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-M8-OWNER-DIRECTIVE-20261111",
+      "rights": "public_metadata_and_short_snippet",
+      "index_allowed": true,
+      "status": 200,
+      "final_url": "https://www.hvv.de/en/deutschlandticket-en",
+      "title": "hvv - hvv Deutschlandticket",
+      "description": "All information about the hvv Deutschlandticket.",
+      "content_type": "text/html;charset=UTF-8",
+      "robots_source": "parsed",
+      "redirect_chain": [
+        "https://www.hvv.de/en/deutschlandticket-en"
+      ],
+      "redirect_hops": [
+        {
+          "hop": 0,
+          "url": "https://www.hvv.de/en/deutschlandticket-en",
+          "redirect_from": null,
+          "status": 200,
+          "decision": "followed",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "tate-accessibility",
+      "url": "https://www.tate.org.uk/visit/accessibility",
+      "publisher": "Tate",
+      "authority": "official",
+      "jurisdiction": "GB",
+      "language": "en",
+      "document_type": "accessibility_guide",
+      "specificity": "specific",
+      "topics": [
+        "london",
+        "museum",
+        "gallery",
+        "accessibility",
+        "wheelchair"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-M8-OWNER-DIRECTIVE-20261111",
+      "rights": "public_metadata_and_short_snippet",
+      "index_allowed": true,
+      "status": 200,
+      "final_url": "https://www.tate.org.uk/visit/accessibility",
+      "title": "Accessibility | Tate",
+      "description": "",
+      "content_type": "text/html; charset=utf-8",
+      "robots_source": "parsed",
+      "redirect_chain": [
+        "https://www.tate.org.uk/visit/accessibility"
+      ],
+      "redirect_hops": [
+        {
+          "hop": 0,
+          "url": "https://www.tate.org.uk/visit/accessibility",
+          "redirect_from": null,
+          "status": 200,
+          "decision": "followed",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "official-london-theatre",
+      "url": "https://officiallondontheatre.com/",
+      "publisher": "Official London Theatre",
+      "authority": "official",
+      "jurisdiction": "GB",
+      "language": "en",
+      "document_type": "theatre_guide",
+      "specificity": "category",
+      "topics": [
+        "london",
+        "theatre",
+        "tickets",
+        "accessibility",
+        "refunds"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-M8-OWNER-DIRECTIVE-20261111",
+      "rights": "public_metadata_and_short_snippet",
+      "index_allowed": true,
+      "status": 200,
+      "final_url": "https://officiallondontheatre.com/",
+      "title": "Official London Theatre | Buy London Theatre Tickets",
+      "description": "Looking for last-minute theatre tickets in London? We've got you covered with West End tickets for every show. Discover award-winning shows online now.",
+      "content_type": "text/html; charset=UTF-8",
+      "robots_source": "parsed",
+      "redirect_chain": [
+        "https://officiallondontheatre.com/"
+      ],
+      "redirect_hops": [
+        {
+          "hop": 0,
+          "url": "https://officiallondontheatre.com/",
+          "redirect_from": null,
+          "status": 200,
+          "decision": "followed",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "german-consumer-advice",
+      "url": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation",
+      "publisher": "Verbraucherzentrale",
+      "authority": "official",
+      "jurisdiction": "DE",
+      "language": "de",
+      "document_type": "consumer_guidance",
+      "specificity": "category",
+      "topics": [
+        "germany",
+        "consumer",
+        "refund",
+        "cancellation",
+        "tickets"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-M8-OWNER-DIRECTIVE-20261111",
+      "rights": "public_metadata_and_short_snippet",
+      "index_allowed": true,
+      "status": 200,
+      "final_url": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation",
+      "title": "Verträge & Reklamation | Verbraucherzentrale.de",
+      "description": "Kauf- und Dienstleistungsverträge, falsche Versprechen aus Gewinnspielen - es gibt Spielregeln für einen fairen und transparenten Markt. Hier finden Sie alle Angebote der Verbraucherzentralen zum Thema Verträge und Reklamation.",
+      "content_type": "text/html; charset=UTF-8",
+      "robots_source": "parsed",
+      "redirect_chain": [
+        "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation"
+      ],
+      "redirect_hops": [
+        {
+          "hop": 0,
+          "url": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation",
+          "redirect_from": null,
+          "status": 200,
+          "decision": "followed",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "uk-passport",
+      "url": "https://www.gov.uk/apply-renew-passport",
+      "publisher": "GOV.UK",
+      "authority": "official",
+      "jurisdiction": "GB",
+      "language": "en",
+      "document_type": "how_to",
+      "specificity": "specific",
+      "topics": [
+        "uk",
+        "passport",
+        "renew",
+        "apply",
+        "travel"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-M8-OWNER-DIRECTIVE-20261111",
+      "rights": "public_metadata_and_short_snippet",
+      "index_allowed": true,
+      "status": 200,
+      "final_url": "https://www.gov.uk/apply-renew-passport",
+      "title": "Apply online for a UK passport - GOV.UK",
+      "description": "You can apply for, update, renew or replace a passport online.",
+      "content_type": "text/html; charset=utf-8",
+      "robots_source": "parsed",
+      "redirect_chain": [
+        "https://www.gov.uk/apply-renew-passport"
+      ],
+      "redirect_hops": [
+        {
+          "hop": 0,
+          "url": "https://www.gov.uk/apply-renew-passport",
+          "redirect_from": null,
+          "status": 200,
+          "decision": "followed",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "uk-consumer-rights",
+      "url": "https://www.gov.uk/consumer-protection-rights",
+      "publisher": "GOV.UK",
+      "authority": "official",
+      "jurisdiction": "GB",
+      "language": "en",
+      "document_type": "consumer_guidance",
+      "specificity": "specific",
+      "topics": [
+        "uk",
+        "consumer",
+        "refund",
+        "rights",
+        "tickets"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-M8-OWNER-DIRECTIVE-20261111",
+      "rights": "public_metadata_and_short_snippet",
+      "index_allowed": true,
+      "status": 200,
+      "final_url": "https://www.gov.uk/consumer-protection-rights",
+      "title": "Consumer rights - GOV.UK",
+      "description": "Consumer protection and rights for goods and services - returning faulty goods, consumer credit, credit and store cards, refunds.",
+      "content_type": "text/html; charset=utf-8",
+      "robots_source": "parsed",
+      "redirect_chain": [
+        "https://www.gov.uk/consumer-protection-rights"
+      ],
+      "redirect_hops": [
+        {
+          "hop": 0,
+          "url": "https://www.gov.uk/consumer-protection-rights",
+          "redirect_from": null,
+          "status": 200,
+          "decision": "followed",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "paris-events",
+      "url": "https://www.paris.fr/quefaire",
+      "publisher": "Ville de Paris",
+      "authority": "official",
+      "jurisdiction": "FR",
+      "language": "fr",
+      "document_type": "event_directory",
+      "specificity": "category",
+      "topics": [
+        "paris",
+        "events",
+        "pride",
+        "new year",
+        "dates",
+        "culture"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-M8-OWNER-DIRECTIVE-20261111",
+      "rights": "public_metadata_and_short_snippet",
+      "index_allowed": true,
+      "status": 200,
+      "final_url": "https://www.paris.fr/quefaire",
+      "title": "Que faire à Paris - Ville de Paris",
+      "description": "Culture, sorties et loisirs de la Ville de Paris.",
+      "content_type": "text/html; charset=utf-8",
+      "robots_source": "no-matching-group",
+      "redirect_chain": [
+        "https://www.paris.fr/quefaire"
+      ],
+      "redirect_hops": [
+        {
+          "hop": 0,
+          "url": "https://www.paris.fr/quefaire",
+          "redirect_from": null,
+          "status": 200,
+          "decision": "followed",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "berlin-museums",
+      "url": "https://www.berlin.de/en/museums",
+      "publisher": "Berlin.de",
+      "authority": "official",
+      "jurisdiction": "DE",
+      "language": "en",
+      "document_type": "museum_directory",
+      "specificity": "category",
+      "topics": [
+        "berlin",
+        "museum",
+        "opening",
+        "accessibility"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-M8-OWNER-DIRECTIVE-20261111",
+      "rights": "public_metadata_and_short_snippet",
+      "index_allowed": true,
+      "status": 301,
+      "final_url": "https://www.berlin.de/en/museums",
+      "title": "",
+      "description": "",
+      "error": "too_many_redirects",
+      "robots_source": "parsed",
+      "redirect_chain": [
+        "https://www.berlin.de/en/museums",
+        "https://www.berlin.de/en/museums",
+        "https://www.berlin.de/en/museums",
+        "https://www.berlin.de/en/museums"
+      ],
+      "redirect_hops": [
+        {
+          "hop": 0,
+          "url": "https://www.berlin.de/en/museums",
+          "redirect_from": null,
+          "status": 301,
+          "decision": "followed",
+          "reason": ""
+        },
+        {
+          "hop": 1,
+          "url": "https://www.berlin.de/en/museums",
+          "redirect_from": "https://www.berlin.de/en/museums",
+          "status": 301,
+          "decision": "followed",
+          "reason": ""
+        },
+        {
+          "hop": 2,
+          "url": "https://www.berlin.de/en/museums",
+          "redirect_from": "https://www.berlin.de/en/museums",
+          "status": 301,
+          "decision": "followed",
+          "reason": ""
+        },
+        {
+          "hop": 3,
+          "url": "https://www.berlin.de/en/museums",
+          "redirect_from": "https://www.berlin.de/en/museums",
+          "status": 301,
+          "decision": "followed",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "london-events",
+      "url": "https://www.london.gov.uk/events",
+      "publisher": "London.gov.uk",
+      "authority": "official",
+      "jurisdiction": "GB",
+      "language": "en",
+      "document_type": "event_directory",
+      "specificity": "category",
+      "topics": [
+        "london",
+        "events",
+        "fireworks",
+        "pride",
+        "festival"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-M8-OWNER-DIRECTIVE-20261111",
+      "rights": "public_metadata_and_short_snippet",
+      "index_allowed": true,
+      "status": 200,
+      "final_url": "https://www.london.gov.uk/events",
+      "title": "Upcoming events | London City Hall",
+      "description": "Find out what fun things there are to see and do in London.",
+      "content_type": "text/html; charset=utf-8",
+      "robots_source": "parsed",
+      "redirect_chain": [
+        "https://www.london.gov.uk/events"
+      ],
+      "redirect_hops": [
+        {
+          "hop": 0,
+          "url": "https://www.london.gov.uk/events",
+          "redirect_from": null,
+          "status": 200,
+          "decision": "followed",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "berlin-christmas",
+      "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+      "publisher": "visitBerlin",
+      "authority": "official",
+      "jurisdiction": "DE",
+      "language": "en",
+      "document_type": "event_guide",
+      "specificity": "specific",
+      "topics": [
+        "berlin",
+        "christmas",
+        "market",
+        "transport",
+        "dates"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-M8-OWNER-DIRECTIVE-20261111",
+      "rights": "public_metadata_and_short_snippet",
+      "index_allowed": true,
+      "status": 200,
+      "final_url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+      "title": "Christmas markets in Berlin | visitBerlin.de",
+      "description": "Christmas Markets in Berlin: ✓ Over 80 from insider tips to popular ones ✓ How to find them ✓ Opening hours & admissions ► Find your favourite market!",
+      "content_type": "text/html; charset=utf-8",
+      "robots_source": "parsed",
+      "redirect_chain": [
+        "https://www.visitberlin.de/en/christmas-markets-berlin"
+      ],
+      "redirect_hops": [
+        {
+          "hop": 0,
+          "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+          "redirect_from": null,
+          "status": 200,
+          "decision": "followed",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "nhs-urgent-care",
+      "url": "https://www.nhs.uk/",
+      "publisher": "NHS",
+      "authority": "official",
+      "jurisdiction": "GB",
+      "language": "en",
+      "document_type": "public_service",
+      "specificity": "general",
+      "topics": [
+        "uk",
+        "nhs",
+        "urgent",
+        "health",
+        "111"
+      ],
+      "approved": true,
+      "approval_ref": "FB2-M8-OWNER-DIRECTIVE-20261111",
+      "rights": "public_metadata_and_short_snippet",
+      "index_allowed": true,
+      "status": 200,
+      "final_url": "https://www.nhs.uk/",
+      "title": "NHS website for England - NHS",
+      "description": "Find information and services to help you manage your health.",
+      "content_type": "text/html; charset=utf-8",
+      "robots_source": "parsed",
+      "redirect_chain": [
+        "https://www.nhs.uk/"
+      ],
+      "redirect_hops": [
+        {
+          "hop": 0,
+          "url": "https://www.nhs.uk/",
+          "redirect_from": null,
+          "status": 200,
+          "decision": "followed",
+          "reason": ""
+        }
+      ]
+    }
+  ]
+}

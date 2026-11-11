@@ -1,0 +1,426 @@
+{
+  "kind": "R3A3G_M8_STANDALONE_API_DEMO",
+  "generated_at": "2026-11-11T18:10:08+00:00",
+  "mode": "AUTHENTICATED_LOOPBACK_API",
+  "cases": [
+    {
+      "question": "Hamburg public transport tickets",
+      "status": "staging_results",
+      "result_types": [
+        "permissioned_staging_document"
+      ],
+      "top": "https://www.hvv.de/en/deutschlandticket-en",
+      "source_receipts": [
+        {
+          "url": "https://www.hvv.de/en/deutschlandticket-en",
+          "source_id": "hvv-deutschlandticket",
+          "publisher": "hvv.de",
+          "source_kind": "permissioned_staging_document",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"hvv-deutschlandticket\", \"final_url\": \"https://www.hvv.de/en/deutschlandticket-en\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        },
+        {
+          "url": "https://www.bvg.de/en",
+          "source_id": "bvg",
+          "publisher": "bvg.de",
+          "source_kind": "permissioned_staging_document",
+          "rights_mode": "evaluation_metadata_only",
+          "fetched_at": "2026-11-11T15:41:23+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"bvg\", \"final_url\": \"https://www.bvg.de/en\", \"captured_at\": \"2026-11-11T15:41:23+00:00\", \"approval_ref\": \"FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111\", \"rights\": \"evaluation_metadata_only\", \"snapshot\": \"r3a3g\"}"
+        }
+      ],
+      "unverified_leads": {
+        "provider": "searxng",
+        "status": "NOT_CONFIGURED",
+        "verified": false,
+        "leads": [],
+        "notices": [
+          "No SearXNG endpoint is configured; no temporary web leads were requested."
+        ]
+      }
+    },
+    {
+      "question": "London museum wheelchair access",
+      "status": "staging_results",
+      "result_types": [
+        "permissioned_staging_document"
+      ],
+      "top": "https://www.tate.org.uk/visit/accessibility",
+      "source_receipts": [
+        {
+          "url": "https://www.tate.org.uk/visit/accessibility",
+          "source_id": "tate-accessibility",
+          "publisher": "tate.org.uk",
+          "source_kind": "permissioned_staging_document",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"tate-accessibility\", \"final_url\": \"https://www.tate.org.uk/visit/accessibility\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        },
+        {
+          "url": "https://www.london.gov.uk/events",
+          "source_id": "london-events",
+          "publisher": "london.gov.uk",
+          "source_kind": "permissioned_staging_document",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"london-events\", \"final_url\": \"https://www.london.gov.uk/events\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        },
+        {
+          "url": "https://officiallondontheatre.com/",
+          "source_id": "official-london-theatre",
+          "publisher": "officiallondontheatre.com",
+          "source_kind": "permissioned_staging_document",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"official-london-theatre\", \"final_url\": \"https://officiallondontheatre.com/\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        },
+        {
+          "url": "https://tfl.gov.uk/",
+          "source_id": "tfl",
+          "publisher": "tfl.gov.uk",
+          "source_kind": "permissioned_staging_document",
+          "rights_mode": "evaluation_metadata_only",
+          "fetched_at": "2026-11-11T15:41:23+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"tfl\", \"final_url\": \"https://tfl.gov.uk/\", \"captured_at\": \"2026-11-11T15:41:23+00:00\", \"approval_ref\": \"FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111\", \"rights\": \"evaluation_metadata_only\", \"snapshot\": \"r3a3g\"}"
+        }
+      ],
+      "unverified_leads": {
+        "provider": "searxng",
+        "status": "NOT_CONFIGURED",
+        "verified": false,
+        "leads": [],
+        "notices": [
+          "No SearXNG endpoint is configured; no temporary web leads were requested."
+        ]
+      }
+    },
+    {
+      "question": "Can I refund concert tickets in Germany?",
+      "status": "official_links",
+      "result_types": [
+        "official_directory"
+      ],
+      "top": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation",
+      "source_receipts": [
+        {
+          "url": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation",
+          "source_id": null,
+          "publisher": "Verbraucherzentrale",
+          "source_kind": "official_directory",
+          "rights_mode": null,
+          "fetched_at": null,
+          "verified_live": false,
+          "provenance": null
+        },
+        {
+          "url": "https://www.gov.uk/search/all?keywords=Can+I+refund+concert+tickets+in+Germany%3F",
+          "source_id": null,
+          "publisher": "GOV.UK",
+          "source_kind": "official_directory",
+          "rights_mode": null,
+          "fetched_at": null,
+          "verified_live": false,
+          "provenance": null
+        }
+      ],
+      "unverified_leads": {
+        "provider": "searxng",
+        "status": "NOT_CONFIGURED",
+        "verified": false,
+        "leads": [],
+        "notices": [
+          "No SearXNG endpoint is configured; no temporary web leads were requested."
+        ]
+      }
+    },
+    {
+      "question": "Paris Pride dates",
+      "status": "staging_results",
+      "result_types": [
+        "permissioned_staging_document"
+      ],
+      "top": "https://www.paris.fr/quefaire",
+      "source_receipts": [
+        {
+          "url": "https://www.paris.fr/quefaire",
+          "source_id": "paris-events",
+          "publisher": "paris.fr",
+          "source_kind": "permissioned_staging_document",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"paris-events\", \"final_url\": \"https://www.paris.fr/quefaire\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        }
+      ],
+      "unverified_leads": {
+        "provider": "searxng",
+        "status": "NOT_CONFIGURED",
+        "verified": false,
+        "leads": [],
+        "notices": [
+          "No SearXNG endpoint is configured; no temporary web leads were requested."
+        ]
+      }
+    },
+    {
+      "question": "How do I renew a UK passport?",
+      "status": "staging_results",
+      "result_types": [
+        "permissioned_staging_document"
+      ],
+      "top": "https://www.gov.uk/apply-renew-passport",
+      "source_receipts": [
+        {
+          "url": "https://www.gov.uk/apply-renew-passport",
+          "source_id": "uk-passport",
+          "publisher": "gov.uk",
+          "source_kind": "permissioned_staging_document",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"uk-passport\", \"final_url\": \"https://www.gov.uk/apply-renew-passport\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        },
+        {
+          "url": "https://www.gov.uk/consumer-protection-rights",
+          "source_id": "uk-consumer-rights",
+          "publisher": "gov.uk",
+          "source_kind": "permissioned_staging_document",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"uk-consumer-rights\", \"final_url\": \"https://www.gov.uk/consumer-protection-rights\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        },
+        {
+          "url": "https://www.tate.org.uk/visit/accessibility",
+          "source_id": "tate-accessibility",
+          "publisher": "tate.org.uk",
+          "source_kind": "permissioned_staging_document",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"tate-accessibility\", \"final_url\": \"https://www.tate.org.uk/visit/accessibility\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        },
+        {
+          "url": "https://www.london.gov.uk/events",
+          "source_id": "london-events",
+          "publisher": "london.gov.uk",
+          "source_kind": "permissioned_staging_document",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"london-events\", \"final_url\": \"https://www.london.gov.uk/events\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        },
+        {
+          "url": "https://www.nhs.uk/",
+          "source_id": "nhs-urgent-care",
+          "publisher": "nhs.uk",
+          "source_kind": "permissioned_staging_document",
+          "rights_mode": "public_metadata_and_short_snippet",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"nhs-urgent-care\", \"final_url\": \"https://www.nhs.uk/\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        }
+      ],
+      "unverified_leads": {
+        "provider": "searxng",
+        "status": "NOT_CONFIGURED",
+        "verified": false,
+        "leads": [],
+        "notices": [
+          "No SearXNG endpoint is configured; no temporary web leads were requested."
+        ]
+      }
+    },
+    {
+      "question": "When should I call NHS 111?",
+      "status": "official_links",
+      "result_types": [
+        "official_directory"
+      ],
+      "top": "https://en.wikipedia.org/wiki/Special:Search?search=When+should+I+call+NHS+111%3F",
+      "source_receipts": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Special:Search?search=When+should+I+call+NHS+111%3F",
+          "source_id": null,
+          "publisher": "Wikimedia",
+          "source_kind": "official_directory",
+          "rights_mode": null,
+          "fetched_at": null,
+          "verified_live": false,
+          "provenance": null
+        },
+        {
+          "url": "https://www.gov.uk/search/all?keywords=When+should+I+call+NHS+111%3F",
+          "source_id": null,
+          "publisher": "GOV.UK",
+          "source_kind": "official_directory",
+          "rights_mode": null,
+          "fetched_at": null,
+          "verified_live": false,
+          "provenance": null
+        },
+        {
+          "url": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation",
+          "source_id": null,
+          "publisher": "Verbraucherzentrale",
+          "source_kind": "official_directory",
+          "rights_mode": null,
+          "fetched_at": null,
+          "verified_live": false,
+          "provenance": null
+        },
+        {
+          "url": "https://www.berlin.de/en/",
+          "source_id": null,
+          "publisher": "Berlin.de",
+          "source_kind": "official_directory",
+          "rights_mode": null,
+          "fetched_at": null,
+          "verified_live": false,
+          "provenance": null
+        }
+      ],
+      "unverified_leads": {
+        "provider": "searxng",
+        "status": "NOT_CONFIGURED",
+        "verified": false,
+        "leads": [],
+        "notices": [
+          "No SearXNG endpoint is configured; no temporary web leads were requested."
+        ]
+      }
+    },
+    {
+      "question": "Berlin museum opening hours",
+      "status": "official_links",
+      "result_types": [
+        "official_directory"
+      ],
+      "top": "https://www.berlin.de/en/museums/",
+      "source_receipts": [
+        {
+          "url": "https://www.berlin.de/en/museums/",
+          "source_id": null,
+          "publisher": "Berlin.de",
+          "source_kind": "official_directory",
+          "rights_mode": null,
+          "fetched_at": null,
+          "verified_live": false,
+          "provenance": null
+        }
+      ],
+      "unverified_leads": {
+        "provider": "searxng",
+        "status": "NOT_CONFIGURED",
+        "verified": false,
+        "leads": [],
+        "notices": [
+          "No SearXNG endpoint is configured; no temporary web leads were requested."
+        ]
+      }
+    },
+    {
+      "question": "Berlin Christmas market public transport",
+      "status": "staging_results",
+      "result_types": [
+        "permissioned_staging_document"
+      ],
+      "top": "https://www.visitberlin.de/en/christmas-markets-berlin",
+      "source_receipts": [
+        {
+          "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+          "source_id": "visitberlin-christmas",
+          "publisher": "visitberlin.de",
+          "source_kind": "permissioned_staging_document",
+          "rights_mode": "evaluation_metadata_only",
+          "fetched_at": "2026-11-11T18:10:08+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"berlin-christmas\", \"final_url\": \"https://www.visitberlin.de/en/christmas-markets-berlin\", \"captured_at\": \"2026-11-11T18:10:08+00:00\", \"approval_ref\": \"FB2-M8-OWNER-DIRECTIVE-20261111\", \"rights\": \"public_metadata_and_short_snippet\", \"snapshot\": \"m8\"}"
+        },
+        {
+          "url": "https://www.bvg.de/en",
+          "source_id": "bvg",
+          "publisher": "bvg.de",
+          "source_kind": "permissioned_staging_document",
+          "rights_mode": "evaluation_metadata_only",
+          "fetched_at": "2026-11-11T15:41:23+00:00",
+          "verified_live": false,
+          "provenance": "{\"source_id\": \"bvg\", \"final_url\": \"https://www.bvg.de/en\", \"captured_at\": \"2026-11-11T15:41:23+00:00\", \"approval_ref\": \"FB2-R3A3G-M4-OWNER-DIRECTIVE-20261111\", \"rights\": \"evaluation_metadata_only\", \"snapshot\": \"r3a3g\"}"
+        }
+      ],
+      "unverified_leads": {
+        "provider": "searxng",
+        "status": "NOT_CONFIGURED",
+        "verified": false,
+        "leads": [],
+        "notices": [
+          "No SearXNG endpoint is configured; no temporary web leads were requested."
+        ]
+      }
+    },
+    {
+      "question": "Berlin Uber Arena accessibility",
+      "status": "official_links",
+      "result_types": [
+        "official_directory"
+      ],
+      "top": "https://www.uber-arena.de/",
+      "source_receipts": [
+        {
+          "url": "https://www.uber-arena.de/",
+          "source_id": null,
+          "publisher": "Uber Arena",
+          "source_kind": "official_directory",
+          "rights_mode": null,
+          "fetched_at": null,
+          "verified_live": false,
+          "provenance": null
+        }
+      ],
+      "unverified_leads": {
+        "provider": "searxng",
+        "status": "NOT_CONFIGURED",
+        "verified": false,
+        "leads": [],
+        "notices": [
+          "No SearXNG endpoint is configured; no temporary web leads were requested."
+        ]
+      }
+    },
+    {
+      "question": "What is the Moon Parade route?",
+      "status": "no_staging_evidence",
+      "result_types": [
+        "no_evidence"
+      ],
+      "top": null,
+      "source_receipts": [],
+      "unverified_leads": {
+        "provider": "searxng",
+        "status": "NOT_CONFIGURED",
+        "verified": false,
+        "leads": [],
+        "notices": [
+          "No SearXNG endpoint is configured; no temporary web leads were requested."
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "questions": 10,
+    "with_indexed_result": 5,
+    "with_official_navigation": 4,
+    "no_evidence": 1
+  },
+  "notes": [
+    "Temporary provider leads are absent because no SearXNG is configured.",
+    "Source receipts distinguish indexed pages from official navigation."
+  ]
+}

@@ -143,6 +143,11 @@ LINKS: tuple[OfficialLink, ...] = (
     OfficialLink("GOV.UK", "https://www.gov.uk/search/all?keywords={query}", "GOV.UK",
                  "Official UK government guidance and public services.",
                  "reference", ("GB",), ("refund", "consumer", "guidance")),
+    OfficialLink("Verbraucherzentrale",
+                 "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation",
+                 "Verbraucherzentrale",
+                 "German consumer advice for contracts, cancellations and refunds.",
+                 "reference", ("DE",), ("refund", "consumer", "cancellation", "tickets")),
     OfficialLink("Berlin.de service portal", "https://www.berlin.de/en/", "Berlin.de",
                  "Official city services, transport and visitor information.",
                  "reference", ("DE",), ("berlin", "guidance", "transport")),
@@ -415,11 +420,14 @@ def links_for(kind: str, query: str, city: str | None = None,
             calendars.sort(key=lambda l: 0 if "Berlin.de" == l.publisher else 1)
         if "refund" in q or "return" in q or "cancel" in q:
             gov = [l for l in LINKS if l.publisher == "GOV.UK"]
+            de = [l for l in LINKS if l.publisher == "Verbraucherzentrale"]
             caa = [l for l in LINKS if l.publisher == "CAA"]
-            # General ticket/refund queries go to consumer guidance first;
-            # aviation advice only leads when the query is about flights.
-            refund = gov + (caa if any(w in q for w in
-                                        ("flight", "airline", "airfare")) else [])
+            # Consumer guidance follows the jurisdiction of the question.
+            wants_de = c == "DE" or any(w in q for w in
+                                        ("germany", "german", "deutschland", "deutsch"))
+            refund = (de + gov) if wants_de else gov
+            refund += caa if any(w in q for w in
+                                 ("flight", "airline", "airfare")) else []
             return _cards(refund, query, limit)
         # Do not turn an arbitrary phrase into a city calendar. A handoff needs
         # either a recognised topic, a known city/country, or a booking intent.

@@ -38,7 +38,7 @@ def dcg(grades: list[int]) -> float:
     return sum((2 ** g - 1) / math.log2(i + 2) for i, g in enumerate(grades))
 
 
-def evaluate(config: dict, pages: list[dict]) -> dict:
+def evaluate(config: dict, pages: list[dict], snapshot_path: Path = SNAPSHOT) -> dict:
     reviewer = str(config.get("reviewer") or "").strip()
     reviewed_at = str(config.get("reviewed_at") or "").strip()
     if not reviewer or not reviewed_at:
@@ -47,13 +47,18 @@ def evaluate(config: dict, pages: list[dict]) -> dict:
     if len({q.get("id") for q in queries}) != len(queries):
         raise ValueError("query ids must be unique")
     usable = [p for p in pages if p.get("status") == 200 and p.get("title")]
-    captured_at = json.loads(SNAPSHOT.read_text(encoding="utf-8"))["captured_at"]
+    captured_at = json.loads(snapshot_path.read_text(encoding="utf-8"))["captured_at"]
     tmp = Path(tempfile.mkdtemp(prefix="r3a3g-m6-relevance-"))
     index = StagingIndex(tmp / "staging.sqlite")
     for page in usable:
         index.add_document({
             "url": page["url"], "source_id": page["id"], "title": page["title"],
-            "snippet": page.get("description") or "", "category": "Other",
+            "snippet": " ".join(part for part in (
+                page.get("description") or "",
+                " ".join(page.get("topics") or []),
+                page.get("document_type") or "",
+                page.get("jurisdiction") or "",
+            ) if part), "category": "Other",
             "category_confidence": 0.9, "categories": ["Other"], "depth": 1,
             "fetched_at": captured_at,
             "content_hash": "m6-" + page["id"],
@@ -83,6 +88,7 @@ def evaluate(config: dict, pages: list[dict]) -> dict:
             "top": [{"title": r.get("title"), "url": r.get("url"),
                      "grade": labels.get(key(r.get("url", "")), 0)} for r in top],
             "precision_at_3": round(sum(g >= 2 for g in grades[:3]) / max(1, len(grades[:3])), 3),
+            "relevant_at_3": sum(g >= 2 for g in grades[:3]),
             "helpful_top1": bool(grades and grades[0] >= 2),
             "ndcg_at_5": round(ndcg, 3),
             "judged_at_5": len(judged),
@@ -91,6 +97,8 @@ def evaluate(config: dict, pages: list[dict]) -> dict:
         "queries": len(cases),
         "mean_ndcg_at_5": round(sum(c["ndcg_at_5"] for c in cases) / len(cases), 3),
         "mean_precision_at_3": round(sum(c["precision_at_3"] for c in cases) / len(cases), 3),
+        "mean_fixed_precision_at_3": round(
+            sum(c["relevant_at_3"] for c in cases) / max(1, len(cases) * 3), 3),
         "helpful_top1_rate": round(sum(c["helpful_top1"] for c in cases) / len(cases), 3),
         "judged_at_5": sum(c["judged_at_5"] for c in cases),
     }
@@ -102,10 +110,11 @@ def evaluate(config: dict, pages: list[dict]) -> dict:
                             "No live dates, prices or availability are asserted."]}
 
 
-def main(config_path: Path = CONFIG, out_path: Path = OUT) -> int:
+def main(config_path: Path = CONFIG, out_path: Path = OUT,
+         snapshot_path: Path = SNAPSHOT) -> int:
     config = json.loads(config_path.read_text(encoding="utf-8"))
-    pages = json.loads(SNAPSHOT.read_text(encoding="utf-8"))["pages"]
-    result = evaluate(config, pages)
+    pages = json.loads(snapshot_path.read_text(encoding="utf-8"))["pages"]
+    result = evaluate(config, pages, snapshot_path)
     out_path.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
     print(json.dumps(result["summary"], indent=2))
     for case in result["cases"]:
@@ -119,5 +128,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", type=Path, default=CONFIG)
     parser.add_argument("--output", type=Path, default=OUT)
+    parser.add_argument("--snapshot", type=Path, default=SNAPSHOT)
     args = parser.parse_args()
-    raise SystemExit(main(args.config, args.output))
+    raise SystemExit(main(args.config, args.output, args.snapshot))

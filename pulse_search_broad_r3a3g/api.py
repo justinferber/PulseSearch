@@ -26,13 +26,14 @@ from urllib.parse import quote, urlsplit
 
 from . import privacy
 from .answers import AnswerService, load_pack
+from .discovery import SearxngDiscovery
 from .search import search_staging
 from .wiki import WikiError, WikiPolicy, WikiService, WikiStore
 
 MAX_BODY = 16_384
 MAX_QUERY = 400
 READ_TIMEOUT = 10.0
-VERSION = "1.1"
+VERSION = "1.2"
 
 SCOPES = {
     "health:read", "search:read", "answer:read", "wiki:propose",
@@ -208,13 +209,15 @@ class _Handler(BaseHTTPRequestHandler):
             self._json(200, {
                 "status": "OK", "api_version": VERSION, "request_id": request_id,
                 "consumer": consumer.name, "scopes": sorted(consumer.scopes),
-                "capabilities": {"local_index": True, "ephemeral_provider": False,
+                "capabilities": {"local_index": True,
+                                 "ephemeral_provider": self.server.discovery.configured,
+                                 "provider_leads_separate": True,
                                  "live_weather": False,
                                  "wiki_candidates": self.server.wiki is not None,
                                  "languages": ["en", "de"], "max_results": 20},
                 "endpoints": ["POST /v1/search", "POST /v1/answer",
                               "POST /v1/wiki-candidates"],
-                "notices": ["Read-only local index. No public web search or paid provider is enabled.",
+                "notices": ["Read-only local index. Temporary provider leads are separate and unverified.",
                             "Wiki candidates are drafts only; this service has no publish endpoint."],
             })
             return
@@ -274,9 +277,13 @@ class _Handler(BaseHTTPRequestHandler):
             result = search_staging(index, query, limit=limit, enforce_support=True)
         finally:
             index.close()
+        leads = self.server.discovery.search(query, limit=5)
         result.update({"request_id": request_id, "retrieved_at": now_iso(),
                        "source_ids": sorted({r.get("source_id") or "" for r in
                                              result.get("results", []) if r.get("source_id")}),
+                       "source_receipts": source_receipts(result.get("results", [])),
+                       "result_types": result_types(result),
+                       "unverified_leads": leads,
                        "result_cards": result.get("results", [])})
         return result
 
@@ -359,6 +366,28 @@ def claim_evidence(answer_text: str, citations: list[dict]) -> list[dict]:
     return out
 
 
+def source_receipts(results: list[dict]) -> list[dict]:
+    """Return the provenance needed to distinguish evidence from navigation."""
+    out = []
+    for item in results:
+        out.append({
+            "url": item.get("url"), "source_id": item.get("source_id"),
+            "publisher": item.get("publisher"),
+            "source_kind": item.get("source_kind"),
+            "rights_mode": item.get("rights_mode"),
+            "fetched_at": item.get("fetched_at"),
+            "verified_live": bool(item.get("verified_live", False)),
+            "provenance": item.get("provenance"),
+        })
+    return out
+
+
+def result_types(result: dict) -> list[str]:
+    if result.get("results"):
+        return sorted({str(item.get("source_kind") or "result") for item in result["results"]})
+    return ["no_evidence"]
+
+
 def response_mode(status: str) -> str:
     return {"ANSWERED": "EXTRACTIVE_ANSWER", "OFFICIAL_LINKS": "OFFICIAL_LINKS",
             "LIVE_SOURCE_REQUIRED": "CURRENT_SERVICE_HANDOFF",
@@ -403,7 +432,8 @@ def normalise_consumers(consumers: dict) -> dict[str, Consumer]:
 def build_server(staging_path: str, tokens: dict, port: int = 8788,
                  host: str = "127.0.0.1", pack_path: str = "config/knowledge_pack.json",
                  wiki_path: str | None = None,
-                 wiki_evidence_path: str | None = None) -> ThreadingHTTPServer:
+                 wiki_evidence_path: str | None = None,
+                 discovery: SearxngDiscovery | None = None) -> ThreadingHTTPServer:
     consumers = normalise_consumers(tokens)
     if host not in ("127.0.0.1", "::1", "localhost"):
         raise ValueError("refusing a non-loopback bind; public exposure needs a separate review")
@@ -419,6 +449,7 @@ def build_server(staging_path: str, tokens: dict, port: int = 8788,
     server.limiter = RateLimiter()
     server.wiki = wiki
     server.pack = pack
+    server.discovery = discovery or SearxngDiscovery(None)
     server.staging_path = staging_path
     server.open_index = lambda: ReadOnlyIndex(staging_path)
     return server
@@ -443,10 +474,14 @@ def main(argv: list[str] | None = None) -> int:
     unknown = scopes - SCOPES - {"*"}
     if unknown:
         parser.error(f"unknown scopes: {', '.join(sorted(unknown))}")
+    discovery = None
+    if os.environ.get("PULSE_SEARXNG_URL"):
+        discovery = SearxngDiscovery(os.environ["PULSE_SEARXNG_URL"])
     server = build_server(
         args.staging,
         {args.consumer: Consumer(args.consumer, args.token, scopes)},
-        args.port, pack_path=args.knowledge, wiki_path=args.wiki)
+        args.port, pack_path=args.knowledge, wiki_path=args.wiki,
+        discovery=discovery)
     print(f"pulse-search api: http://127.0.0.1:{args.port}/v1/health (consumer={args.consumer})",
           flush=True)
     try:

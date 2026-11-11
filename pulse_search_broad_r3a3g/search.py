@@ -200,6 +200,21 @@ def document_type(doc: dict) -> str:
     return "general_reference"
 
 
+def _doc_jurisdiction(doc: dict) -> str:
+    explicit = str(doc.get("jurisdiction") or "").upper()
+    if explicit:
+        return explicit
+    url = str(doc.get("url") or "").lower()
+    host = urlsplit(url).hostname or ""
+    if host.endswith(".de"):
+        return "DE"
+    if host.endswith(".uk"):
+        return "GB"
+    if host.endswith(".fr"):
+        return "FR"
+    return ""
+
+
 def _score(doc: dict, intent: SearchIntent) -> tuple[float, list[str]]:
     """Explainable lexical/BM25/authority blend, not a learned ranker."""
     title = normal(str(doc.get("title") or ""))
@@ -246,6 +261,28 @@ def _score(doc: dict, intent: SearchIntent) -> tuple[float, list[str]]:
     elif fetched[:4].isdigit() and int(fetched[:4]) < 2024:
         score -= 1.0
         reasons.append("stale_fetch")
+    jurisdiction = _doc_jurisdiction(doc)
+    wants_de = bool(set(intent.tokens) & {"germany", "german", "deutschland", "deutsch"})
+    wants_gb = bool(set(intent.tokens) & {"uk", "britain", "british", "england"})
+    if wants_de and jurisdiction and jurisdiction != "DE":
+        score *= 0.15
+        reasons.append("wrong_jurisdiction")
+    if wants_gb and jurisdiction and jurisdiction != "GB":
+        score *= 0.15
+        reasons.append("wrong_jurisdiction")
+    if intent.location in ("berlin", "hamburg", "munich", "cologne", "frankfurt",
+                           "stuttgart") and jurisdiction == "GB":
+        score *= 0.15
+        reasons.append("wrong_jurisdiction")
+    specificity = str(doc.get("specificity") or "").lower()
+    if specificity == "specific":
+        score += 2.5
+        reasons.append("specific_page")
+    elif specificity == "category":
+        score += 0.8
+    elif specificity == "general":
+        score -= 1.0
+        reasons.append("generic_page")
     # Prefer pages that match the complete purpose, not an accidental word.
     coverage = len(matched_core) / len(core)
     score += coverage * 6.0
@@ -326,7 +363,8 @@ def _diverse(items: list[dict], limit: int, per_host: int = 2) -> list[dict]:
 
 
 QUERY_STOP = frozenset("""new year eve public service information best guide the
-and for with from into about berlin london germany uk""".split())
+and for with from into about berlin london germany uk when should call
+how can i do is what""".split())
 
 
 def _specific_terms(intent: SearchIntent) -> set[str]:
@@ -389,7 +427,9 @@ def search_documents(documents: list[dict], query: str, limit: int = 10,
         return _official_response(
             query, intent, "CURRENT_SERVICE_HANDOFF",
             "Use an authorised translator; Pulse Search did not perform or claim a translation.")
-    if intent.kind == "how_to" and ACCESS.search(query):
+    if intent.kind == "how_to" and ACCESS.search(query) and "museum" not in query \
+            and any(w in query.lower() for w in
+                    ("venue", "arena", "hall", "theatre", "theater", "club", "stadium")):
         cards = links_for(intent.kind, query, intent.location)
         if cards:
             return _official_response(
@@ -418,6 +458,13 @@ def search_documents(documents: list[dict], query: str, limit: int = 10,
             event_terms = set(intent.expanded) & EVENT_TOPICS
             if event_terms and not any(term in text for term in event_terms):
                 continue
+            if not intent.location and not ({"pride", "csd"} & set(intent.expanded)) \
+                    and any(city in text for city in GEOGRAPHIES):
+                # A location-free event question must not be answered by a
+                # city calendar that happens to mention the same generic word.
+                # Pride/CSD questions are allowed to resolve to a named
+                # organiser whose programme is not city-prefixed.
+                continue
         score, reasons = _score(doc, intent)
         if score <= 0:
             continue
@@ -445,7 +492,13 @@ def search_documents(documents: list[dict], query: str, limit: int = 10,
                        "publisher": (_canonical_key(doc["url"]).split("/")[0]),
                        "source_id": doc.get("source_id"),
                        "fetched_at": doc.get("fetched_at"),
-                       "document_type": document_type(doc),
+                       "document_type": doc.get("document_type") or document_type(doc),
+                       "source_authority": doc.get("source_authority"),
+                       "rights_mode": doc.get("rights_mode"),
+                       "language": doc.get("language"),
+                       "jurisdiction": _doc_jurisdiction(doc),
+                       "specificity": doc.get("specificity"),
+                       "provenance": doc.get("provenance"),
                        "location": intent.location,
                        "score": score, "ranking_reasons": reasons,
                        "source_kind": "permissioned_staging_document",

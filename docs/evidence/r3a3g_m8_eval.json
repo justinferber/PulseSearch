@@ -1,0 +1,524 @@
+{
+  "kind": "R3A3G_M6_GRADED_RELEVANCE",
+  "reviewer": "FB2 M8 internal open-set review",
+  "reviewed_at": "2026-11-11",
+  "cases": [
+    {
+      "id": "hvv-ticket",
+      "query": "Hamburg HVV ticket information",
+      "status": "staging_results",
+      "top": [
+        {
+          "title": "hvv - hvv Deutschlandticket",
+          "url": "https://www.hvv.de/en/deutschlandticket-en",
+          "grade": 3
+        }
+      ],
+      "precision_at_3": 1.0,
+      "relevant_at_3": 1,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 1
+    },
+    {
+      "id": "hamburg-christmas-travel",
+      "query": "Hamburg Christmas market travel",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Hamburg tourism",
+          "url": "https://www.hamburg.com/",
+          "grade": 2
+        },
+        {
+          "title": "Hamburg city portal",
+          "url": "https://www.hamburg.de/",
+          "grade": 0
+        }
+      ],
+      "precision_at_3": 0.5,
+      "relevant_at_3": 1,
+      "helpful_top1": true,
+      "ndcg_at_5": 0.826,
+      "judged_at_5": 1
+    },
+    {
+      "id": "tate-access",
+      "query": "Tate London wheelchair access",
+      "status": "staging_results",
+      "top": [
+        {
+          "title": "Accessibility | Tate",
+          "url": "https://www.tate.org.uk/visit/accessibility",
+          "grade": 3
+        },
+        {
+          "title": "Upcoming events | London City Hall",
+          "url": "https://www.london.gov.uk/events",
+          "grade": 0
+        },
+        {
+          "title": "Official London Theatre | Buy London Theatre Tickets",
+          "url": "https://officiallondontheatre.com/",
+          "grade": 0
+        }
+      ],
+      "precision_at_3": 0.333,
+      "relevant_at_3": 1,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 1
+    },
+    {
+      "id": "london-museum-access",
+      "query": "Which London museum has wheelchair access information?",
+      "status": "staging_results",
+      "top": [
+        {
+          "title": "Accessibility | Tate",
+          "url": "https://www.tate.org.uk/visit/accessibility",
+          "grade": 3
+        },
+        {
+          "title": "Upcoming events | London City Hall",
+          "url": "https://www.london.gov.uk/events",
+          "grade": 0
+        },
+        {
+          "title": "Official London Theatre | Buy London Theatre Tickets",
+          "url": "https://officiallondontheatre.com/",
+          "grade": 0
+        }
+      ],
+      "precision_at_3": 0.333,
+      "relevant_at_3": 1,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 1
+    },
+    {
+      "id": "german-concert-refund",
+      "query": "Can I refund concert tickets in Germany?",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Verbraucherzentrale",
+          "url": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation",
+          "grade": 3
+        },
+        {
+          "title": "GOV.UK",
+          "url": "https://www.gov.uk/search/all?keywords=Can+I+refund+concert+tickets+in+Germany%3F",
+          "grade": 0
+        }
+      ],
+      "precision_at_3": 0.5,
+      "relevant_at_3": 1,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 2
+    },
+    {
+      "id": "german-consumer",
+      "query": "German consumer cancellation rights",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Verbraucherzentrale",
+          "url": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation",
+          "grade": 2
+        },
+        {
+          "title": "GOV.UK",
+          "url": "https://www.gov.uk/search/all?keywords=German+consumer+cancellation+rights",
+          "grade": 0
+        }
+      ],
+      "precision_at_3": 0.5,
+      "relevant_at_3": 1,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 1
+    },
+    {
+      "id": "paris-pride-dates",
+      "query": "Paris Pride dates 2027",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Paris.fr events",
+          "url": "https://www.paris.fr/",
+          "grade": 1
+        }
+      ],
+      "precision_at_3": 0.0,
+      "relevant_at_3": 0,
+      "helpful_top1": false,
+      "ndcg_at_5": 0.275,
+      "judged_at_5": 1
+    },
+    {
+      "id": "paris-weekend",
+      "query": "What is happening in Paris this weekend?",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Special:Search?search=What+is+happening+in+Paris+this+weekend%3F",
+          "grade": 0
+        },
+        {
+          "title": "GOV.UK",
+          "url": "https://www.gov.uk/search/all?keywords=What+is+happening+in+Paris+this+weekend%3F",
+          "grade": 0
+        },
+        {
+          "title": "Verbraucherzentrale",
+          "url": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation",
+          "grade": 0
+        },
+        {
+          "title": "Berlin.de service portal",
+          "url": "https://www.berlin.de/en/",
+          "grade": 0
+        }
+      ],
+      "precision_at_3": 0.0,
+      "relevant_at_3": 0,
+      "helpful_top1": false,
+      "ndcg_at_5": 0.0,
+      "judged_at_5": 0
+    },
+    {
+      "id": "passport-renewal",
+      "query": "Renew a UK passport online",
+      "status": "staging_results",
+      "top": [
+        {
+          "title": "Apply online for a UK passport - GOV.UK",
+          "url": "https://www.gov.uk/apply-renew-passport",
+          "grade": 3
+        }
+      ],
+      "precision_at_3": 1.0,
+      "relevant_at_3": 1,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 1
+    },
+    {
+      "id": "uk-consumer-refund",
+      "query": "UK consumer refund rights",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "GOV.UK",
+          "url": "https://www.gov.uk/search/all?keywords=UK+consumer+refund+rights",
+          "grade": 0
+        }
+      ],
+      "precision_at_3": 0.0,
+      "relevant_at_3": 0,
+      "helpful_top1": false,
+      "ndcg_at_5": 0.0,
+      "judged_at_5": 0
+    },
+    {
+      "id": "london-theatre-refund",
+      "query": "London theatre refund policy",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "GOV.UK",
+          "url": "https://www.gov.uk/search/all?keywords=London+theatre+refund+policy",
+          "grade": 1
+        }
+      ],
+      "precision_at_3": 0.0,
+      "relevant_at_3": 0,
+      "helpful_top1": false,
+      "ndcg_at_5": 0.275,
+      "judged_at_5": 1
+    },
+    {
+      "id": "nhs-111",
+      "query": "When should I call NHS 111?",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Special:Search?search=When+should+I+call+NHS+111%3F",
+          "grade": 0
+        },
+        {
+          "title": "GOV.UK",
+          "url": "https://www.gov.uk/search/all?keywords=When+should+I+call+NHS+111%3F",
+          "grade": 0
+        },
+        {
+          "title": "Verbraucherzentrale",
+          "url": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation",
+          "grade": 0
+        },
+        {
+          "title": "Berlin.de service portal",
+          "url": "https://www.berlin.de/en/",
+          "grade": 0
+        }
+      ],
+      "precision_at_3": 0.0,
+      "relevant_at_3": 0,
+      "helpful_top1": false,
+      "ndcg_at_5": 0.0,
+      "judged_at_5": 0
+    },
+    {
+      "id": "berlin-museum-hours",
+      "query": "Berlin museum opening hours",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Berlin.de museums",
+          "url": "https://www.berlin.de/en/museums/",
+          "grade": 2
+        }
+      ],
+      "precision_at_3": 1.0,
+      "relevant_at_3": 1,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 1
+    },
+    {
+      "id": "berlin-christmas-travel",
+      "query": "Getting to Berlin Christmas markets by public transport",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "BVG Berlin",
+          "url": "https://www.bvg.de/",
+          "grade": 1
+        },
+        {
+          "title": "S-Bahn Berlin",
+          "url": "https://www.s-bahn-berlin.de/",
+          "grade": 0
+        }
+      ],
+      "precision_at_3": 0.0,
+      "relevant_at_3": 0,
+      "helpful_top1": false,
+      "ndcg_at_5": 0.275,
+      "judged_at_5": 1
+    },
+    {
+      "id": "uber-access",
+      "query": "Uber Arena Berlin accessibility",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Uber Arena Berlin",
+          "url": "https://www.uber-arena.de/",
+          "grade": 3
+        }
+      ],
+      "precision_at_3": 1.0,
+      "relevant_at_3": 1,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 1
+    },
+    {
+      "id": "london-events",
+      "query": "London events this weekend",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Visit London events",
+          "url": "https://www.visitlondon.com/things-to-do/events",
+          "grade": 0
+        },
+        {
+          "title": "London Pride",
+          "url": "https://prideinlondon.org/",
+          "grade": 0
+        },
+        {
+          "title": "Mayor of London",
+          "url": "https://www.london.gov.uk/",
+          "grade": 0
+        }
+      ],
+      "precision_at_3": 0.0,
+      "relevant_at_3": 0,
+      "helpful_top1": false,
+      "ndcg_at_5": 0.0,
+      "judged_at_5": 0
+    },
+    {
+      "id": "berlin-concert-tickets",
+      "query": "Where to buy concert tickets in Berlin",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Eventim Berlin",
+          "url": "https://www.eventim.de/city/berlin-8/",
+          "grade": 2
+        },
+        {
+          "title": "Eventim Germany",
+          "url": "https://www.eventim.de/",
+          "grade": 0
+        },
+        {
+          "title": "Columbiahalle Berlin",
+          "url": "https://www.columbiahalle.de/",
+          "grade": 0
+        },
+        {
+          "title": "Huxley's Neue Welt",
+          "url": "https://www.huxleys-neue-welt.de/",
+          "grade": 0
+        },
+        {
+          "title": "Uber Arena Berlin",
+          "url": "https://www.uber-arena.de/",
+          "grade": 0
+        }
+      ],
+      "precision_at_3": 0.333,
+      "relevant_at_3": 1,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 1
+    },
+    {
+      "id": "london-theatre-access",
+      "query": "Accessible theatre tickets in London",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Roundhouse",
+          "url": "https://www.roundhouse.org.uk/",
+          "grade": 0
+        },
+        {
+          "title": "Southbank Centre",
+          "url": "https://www.southbankcentre.co.uk/",
+          "grade": 0
+        },
+        {
+          "title": "The O2",
+          "url": "https://www.theo2.co.uk/",
+          "grade": 0
+        }
+      ],
+      "precision_at_3": 0.0,
+      "relevant_at_3": 0,
+      "helpful_top1": false,
+      "ndcg_at_5": 0.0,
+      "judged_at_5": 0
+    },
+    {
+      "id": "manchester-pride",
+      "query": "Manchester Pride 2027",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Manchester Pride",
+          "url": "https://www.manchesterpride.com/",
+          "grade": 2
+        }
+      ],
+      "precision_at_3": 1.0,
+      "relevant_at_3": 1,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 1
+    },
+    {
+      "id": "berlin-weihnachtsmarkt",
+      "query": "Berlin Weihnachtsmarkt Öffnungszeiten",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "visitBerlin Christmas markets",
+          "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+          "grade": 2
+        },
+        {
+          "title": "Berlin.de events calendar",
+          "url": "https://www.berlin.de/events/",
+          "grade": 0
+        }
+      ],
+      "precision_at_3": 0.5,
+      "relevant_at_3": 1,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 1
+    },
+    {
+      "id": "uk-train-refund",
+      "query": "How do I claim a UK rail ticket refund?",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "GOV.UK",
+          "url": "https://www.gov.uk/search/all?keywords=How+do+I+claim+a+UK+rail+ticket+refund%3F",
+          "grade": 2
+        }
+      ],
+      "precision_at_3": 1.0,
+      "relevant_at_3": 1,
+      "helpful_top1": true,
+      "ndcg_at_5": 1.0,
+      "judged_at_5": 1
+    },
+    {
+      "id": "paris-nye",
+      "query": "Paris New Year's Eve celebrations 2027",
+      "status": "official_links",
+      "top": [
+        {
+          "title": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Special:Search?search=Paris+New+Year%27s+Eve+celebrations+2027",
+          "grade": 0
+        },
+        {
+          "title": "GOV.UK",
+          "url": "https://www.gov.uk/search/all?keywords=Paris+New+Year%27s+Eve+celebrations+2027",
+          "grade": 0
+        },
+        {
+          "title": "Verbraucherzentrale",
+          "url": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation",
+          "grade": 0
+        },
+        {
+          "title": "Berlin.de service portal",
+          "url": "https://www.berlin.de/en/",
+          "grade": 0
+        }
+      ],
+      "precision_at_3": 0.0,
+      "relevant_at_3": 0,
+      "helpful_top1": false,
+      "ndcg_at_5": 0.0,
+      "judged_at_5": 0
+    }
+  ],
+  "summary": {
+    "queries": 22,
+    "mean_ndcg_at_5": 0.62,
+    "mean_precision_at_3": 0.409,
+    "mean_fixed_precision_at_3": 0.197,
+    "helpful_top1_rate": 0.591,
+    "judged_at_5": 17
+  },
+  "limitations": [
+    "Internal first-pass grades; not an external reviewer.",
+    "Captured pages only; unjudged results score zero.",
+    "No live dates, prices or availability are asserted."
+  ]
+}

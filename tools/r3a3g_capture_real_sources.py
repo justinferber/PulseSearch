@@ -65,8 +65,9 @@ class CapturePolicy:
         self.domain = registrable_domain(urllib.parse.urlsplit(source["url"]).hostname or "")
         if not source.get("approved") or not source.get("approval_ref"):
             raise ValueError(f"{source['id']}: explicit owner approval is required")
-        if source.get("rights") != "evaluation_metadata_only":
-            raise ValueError(f"{source['id']}: evaluation-only rights class is required")
+        if source.get("rights") not in (
+                "evaluation_metadata_only", "public_metadata_and_short_snippet"):
+            raise ValueError(f"{source['id']}: unsupported rights class")
         self.last_request: dict[str, float] = {}
         self.attempts = 0
 

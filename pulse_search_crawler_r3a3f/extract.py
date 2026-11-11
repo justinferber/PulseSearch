@@ -28,6 +28,7 @@ class ExtractedPage:
     jsonld: list[dict] = field(default_factory=list)
     description: str = ""
     dates: list[str] = field(default_factory=list)
+    link_texts: dict[str, str] = field(default_factory=dict)
 
     @property
     def word_count(self) -> int:
@@ -41,6 +42,9 @@ class _Parser(HTMLParser):
         self.headings: list[str] = []
         self.text_parts: list[str] = []
         self.links: list[tuple[str, str]] = []
+        self.link_texts: dict[str, str] = {}
+        self._anchor_href: str | None = None
+        self._anchor_buffer: list[str] = []
         self.canonical: str | None = None
         self.lang = ""
         self.noindex = False
@@ -80,8 +84,16 @@ class _Parser(HTMLParser):
             self._json_buffer = []
         if tag == "a" and a.get("href"):
             self.links.append((a["href"], a.get("rel", "").lower()))
+            self._anchor_href = a["href"]
+            self._anchor_buffer = []
 
     def handle_endtag(self, tag):
+        if tag == "a" and self._anchor_href:
+            anchor = " ".join(" ".join(self._anchor_buffer).split())[:160]
+            if anchor:
+                self.link_texts[self._anchor_href] = anchor
+            self._anchor_href = None
+            self._anchor_buffer = []
         if tag in SKIP_TAGS:
             self._skip = max(0, self._skip - 1)
         if tag == "title":
@@ -102,6 +114,8 @@ class _Parser(HTMLParser):
         text = " ".join(data.split())
         if not text:
             return
+        if self._anchor_href:
+            self._anchor_buffer.append(text)
         if self._in_title:
             self.title_parts.append(text)
         if self._in_h:
@@ -124,6 +138,7 @@ def extract_page(raw: bytes, base_url: str, charset: str = "utf-8") -> Extracted
     text = " ".join(parser.text_parts)
     title = " ".join(parser.title_parts).strip() or (parser.headings[0] if parser.headings else "")
     links: list[str] = []
+    link_texts: dict[str, str] = {}
     for href, rel in parser.links:
         if "nofollow" in rel:
             continue
@@ -132,6 +147,9 @@ def extract_page(raw: bytes, base_url: str, charset: str = "utf-8") -> Extracted
         absolute = urljoin(base_url, href).split("#", 1)[0]
         if absolute.startswith(("http://", "https://")):
             links.append(absolute)
+            anchor = parser.link_texts.get(href)
+            if anchor and absolute not in link_texts:
+                link_texts[absolute] = anchor
     jsonld = []
     for blob in parser.jsonld_raw:
         try:
@@ -154,4 +172,5 @@ def extract_page(raw: bytes, base_url: str, charset: str = "utf-8") -> Extracted
         jsonld=jsonld[:10],
         description=parser.description,
         dates=dates,
+        link_texts=link_texts,
     )

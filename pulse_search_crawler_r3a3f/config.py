@@ -37,6 +37,8 @@ class CrawlConfig:
     allow_loopback: bool = False
     loopback_hosts: tuple[str, ...] = ()
     sitemap_policy: str = "candidate_only"
+    discovery_probes: bool = True
+    focus_month: int | None = None
     rights_default: str = "metadata_and_short_snippet"
 
     def validate(self) -> None:
@@ -48,6 +50,8 @@ class CrawlConfig:
             raise ConfigError("only one in-flight request per host is approved")
         if not 0.0 <= self.near_dup_threshold <= 1.0:
             raise ConfigError("near_dup_threshold must be within 0..1")
+        if self.focus_month is not None and not 1 <= self.focus_month <= 12:
+            raise ConfigError("focus_month must be 1..12")
         if self.sitemap_policy not in ("candidate_only", "deny"):
             raise ConfigError("sitemaps may only be recorded as candidates")
         if not self.allow_loopback and self.min_interval_s < 3.0:

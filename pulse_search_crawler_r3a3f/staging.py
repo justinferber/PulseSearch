@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS docs(
   categories TEXT NOT NULL, depth INTEGER NOT NULL, fetched_at TEXT NOT NULL,
   content_hash TEXT NOT NULL, shingle_count INTEGER NOT NULL DEFAULT 0,
   etag TEXT, last_modified TEXT, lang TEXT, dates TEXT, rights_mode TEXT NOT NULL,
-  fetch_status INTEGER, mime TEXT, indexed_at TEXT NOT NULL,
+  fetch_status INTEGER, mime TEXT, intent TEXT, indexed_at TEXT NOT NULL,
   revoked INTEGER NOT NULL DEFAULT 0, revoked_reason TEXT);
 CREATE INDEX IF NOT EXISTS idx_docs_category ON docs(category, revoked);
 CREATE INDEX IF NOT EXISTS idx_docs_source ON docs(source_id, revoked);
@@ -64,6 +64,10 @@ class StagingIndex:
         self.conn.row_factory = sqlite3.Row
         self.conn.execute("PRAGMA journal_mode=WAL")
         self.conn.executescript(SCHEMA)
+        columns = {row["name"] for row in self.conn.execute("PRAGMA table_info(docs)")}
+        if columns and "intent" not in columns:  # migrate pre-discovery staging DBs
+            self.conn.execute("ALTER TABLE docs ADD COLUMN intent TEXT")
+            self.conn.commit()
         try:
             self.conn.executescript(FTS_SCHEMA)
             self.fts = True
@@ -153,6 +157,8 @@ class StagingIndex:
             )
             doc_id = cursor.lastrowid
             outcome = "indexed"
+        self.conn.execute("UPDATE docs SET intent=? WHERE doc_id=?",
+                          (record.get("intent"), doc_id))
         for shingle in shingle_list:
             self.conn.execute(
                 "INSERT OR IGNORE INTO doc_shingles(doc_id,shingle) VALUES(?,?)",
@@ -256,12 +262,20 @@ class StagingIndex:
                 "SELECT reason, COUNT(*) n FROM rejected_pages GROUP BY reason ORDER BY n DESC"
             )
         }
+        by_intent = {
+            row["intent"]: row["n"]
+            for row in self.conn.execute(
+                "SELECT intent, COUNT(*) n FROM docs WHERE revoked=0 AND intent IS NOT NULL "
+                "GROUP BY intent ORDER BY n DESC"
+            )
+        }
         return {
             "documents": total,
             "revoked": revoked,
             "by_category": by_category,
             "by_source": by_source,
             "by_depth": by_depth,
+            "by_intent": by_intent,
             "rejections": rejected,
             "fts": self.fts,
         }

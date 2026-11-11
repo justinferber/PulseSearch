@@ -50,8 +50,18 @@ def main() -> int:
 
     data = Path(args.data)
     if data.exists():
-        shutil.rmtree(data)
-    data.mkdir(parents=True)
+        try:
+            shutil.rmtree(data)
+        except PermissionError:
+            # A read-only dashboard can hold the sqlite file open on Windows.
+            candidate = data.with_name(data.name + "_run")
+            index = 2
+            while candidate.exists():
+                candidate = data.with_name(f"{data.name}_run{index}")
+                index += 1
+            data = candidate
+            print(f"note: previous data dir is in use; writing to {data}", flush=True)
+    data.mkdir(parents=True, exist_ok=True)
 
     owner_sha_before = sha256_file(OWNER_INDEX) if OWNER_INDEX.exists() else None
     frozen_sha = sha256_file(ROOT / "docs/evidence/r3a3d_frozen54_replay.json")
@@ -142,6 +152,12 @@ def main() -> int:
             "NO_UNAPPROVED_HOSTS": report["safety"]["unapproved_host_requests"] == 0,
             "OWNER_INDEX_UNTOUCHED": owner_sha_before == owner_sha_after,
             "FROZEN_54_UNCHANGED": frozen_sha == FROZEN_REPLAY_SHA,
+            "DISCOVERY_PROBES_QUEUED": report["discovery"]["probes_total"] > 0,
+            "DISCOVERY_INTENTS_FOUND": any(
+                item["documents"] for item in report["discovery"]["intents"]),
+            "SEASONAL_EVENT_PAGES_DISCOVERED": all(
+                any(slug in url for url in urls)
+                for slug in ("weihnachtsmarkt", "open-air-festival", "karneval-umzug")),
         }
         evidence = {
             "kind": "R3A3F_OFFLINE_DEMO_EVIDENCE",

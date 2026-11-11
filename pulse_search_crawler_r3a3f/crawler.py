@@ -16,7 +16,7 @@ from collections import Counter
 from datetime import datetime, timedelta, timezone
 from urllib.parse import urlsplit
 
-from . import quality
+from . import quality, topics
 from .classify import CATEGORIES, category_coverage, classify
 from .config import CrawlConfig
 from .extract import extract_page
@@ -54,6 +54,7 @@ class Crawler:
         self.latencies: list[int] = []
         self.run_id = uuid.uuid4().hex[:12]
         self.started_at = utc_now()
+        self.month = config.focus_month or datetime.now(timezone.utc).month
 
     # ------------------------------------------------------------------ seeds
     def register_seed(self, source_id: str, url: str, note: str = "") -> str:
@@ -71,11 +72,47 @@ class Crawler:
         self.counters[f"admit_{outcome}"] += 1
         return outcome
 
+    def admit_discovery_probes(self) -> int:
+        """Queue listing-section probes inside already-approved source paths.
+
+        A homepage rarely links "Weihnachtsmarkt" or "CSD" directly; listing
+        sections do. These are ordinary same-origin URLs at depth 1, still
+        gated by robots, scope, depth and rights.
+        """
+        admitted = 0
+        for source in self.store.sources():
+            if not source["index_allowed"]:
+                continue
+            for path in topics.PROBE_PATHS:
+                url = source["origin"].rstrip("/") + path
+                if not in_scope(url, source["origin"], _paths(source["allowed_paths"])):
+                    continue
+                try:
+                    canonical = canonicalize(url)
+                except (UrlError, ValueError):
+                    continue
+                exists = self.store.conn.execute(
+                    "SELECT 1 FROM frontier WHERE url=?", (canonical,)).fetchone()
+                if exists:
+                    continue
+                outcome = self.store.enqueue(
+                    canonical, source_id=source["source_id"], seed_id=None,
+                    parent_url=source["origin"].rstrip("/") + "/", depth=1,
+                    max_depth=self.config.max_depth, priority=150,
+                    hint="discovery_probe",
+                )
+                if outcome == "new":
+                    admitted += 1
+        self.counters["discovery_probes_admitted"] += admitted
+        return admitted
+
     # -------------------------------------------------------------------- run
     def run(self, max_fetches: int | None = None, stop_epoch: float | None = None) -> dict:
         store = self.store
         store.start_run(self.run_id, self.config.as_dict())
         store.reset_inflight()
+        if self.config.discovery_probes:
+            self.admit_discovery_probes()
         budget = self.config.max_fetches_per_day
         per_run = max_fetches if max_fetches is not None else budget
         consumed = store.fetches_today()
@@ -271,7 +308,12 @@ class Crawler:
             self.store.finish(url, state="done", status=200)
             self.counters["duplicate_near"] += 1
             return
+        page_intent, page_intent_score = topics.best_intent(f"{page.title} {url}")
+        page_intent = page_intent if page_intent_score >= 0.4 else None
+        if page_intent:
+            self.counters[f"intent_indexed_{page_intent}"] += 1
         record = {
+            "intent": page_intent,
             "url": canonicalize(url),
             "canonical_url": canonicalize(url),
             "source_id": source["source_id"],
@@ -328,6 +370,10 @@ class Crawler:
             if not in_scope(target, source["origin"], _paths(source["allowed_paths"])):
                 self.counters["out_of_scope"] += 1
                 continue
+            anchor = page.link_texts.get(link, "")
+            intent_slug, intent_score = topics.best_intent(f"{anchor} {target}")
+            boost = topics.intent_boost({intent_slug: intent_score}, self.month) if intent_slug else 0.0
+            hint = intent_slug if intent_slug and intent_score >= 0.4 else None
             outcome = self.store.enqueue(
                 target,
                 source_id=source["source_id"],
@@ -335,7 +381,12 @@ class Crawler:
                 parent_url=url,
                 depth=depth + 1,
                 max_depth=self.config.max_depth,
+                priority=100 - depth * 10 + int(round(boost * 40)),
+                hint=hint or ("hub" if topics.is_event_listing(
+                    page.title, page.text, len(page.links), url) else None),
             )
+            if hint:
+                self.counters[f"intent_discovered_{hint}"] += 1
             self.counters["discovered"] += 1
             if outcome == "new":
                 self.counters["admitted"] += 1
@@ -416,6 +467,28 @@ class Crawler:
 
 
 # -------------------------------------------------------------------- report
+def _discovery_block(store: Store, staging: StagingIndex, config: CrawlConfig) -> dict:
+    counts = staging.stats().get("by_intent", {})
+    probes_total = store.conn.execute(
+        "SELECT COUNT(*) n FROM frontier WHERE category_hint='discovery_probe'").fetchone()["n"]
+    probes_done = store.conn.execute(
+        "SELECT COUNT(*) n FROM frontier WHERE category_hint='discovery_probe' AND state='done'"
+    ).fetchone()["n"]
+    prioritised = [dict(r) for r in store.conn.execute(
+        "SELECT url, priority, min_depth, category_hint FROM frontier "
+        "WHERE priority>100 ORDER BY priority DESC LIMIT 10")]
+    month = config.focus_month or datetime.now(timezone.utc).month
+    block = topics.focus_report(month, counts)
+    block.update({
+        "probes_total": probes_total,
+        "probes_completed": probes_done,
+        "prioritised": prioritised,
+        "note": "Intent only reorders discovery and labels documents; it never "
+                "restricts a topic, host or category.",
+    })
+    return block
+
+
 def build_report(store: Store, staging: StagingIndex, config: CrawlConfig) -> dict:
     stats = staging.stats()
     queue = store.queue_counts()
@@ -468,6 +541,7 @@ def build_report(store: Store, staging: StagingIndex, config: CrawlConfig) -> di
             "covered": sum(1 for name in CATEGORIES if stats["by_category"].get(name, 0) > 0),
             "uncovered": [name for name in CATEGORIES if not stats["by_category"].get(name, 0)],
         },
+        "discovery": _discovery_block(store, staging, config),
         "sources": [
             {
                 "source_id": s["source_id"],

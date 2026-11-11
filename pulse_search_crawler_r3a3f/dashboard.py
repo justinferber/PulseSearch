@@ -109,6 +109,18 @@ def render_html(report: dict, staging: StagingIndex, query: str = "", category: 
         f"<tr><td>{html.escape(reason)}</td><td>{count}</td></tr>"
         for reason, count in report["rejections"].items()
     ) or "<tr><td colspan='2'>none</td></tr>"
+    discovery = report.get("discovery") or {}
+    intent_rows = "".join(
+        f"<tr><td>{html.escape(i['label'])}</td><td>{i['documents']}</td>"
+        f"<td>{'in season' if i['in_season'] else ''}</td>"
+        f"<td>{html.escape(', '.join(i['categories']))}</td></tr>"
+        for i in discovery.get("intents", [])
+    ) or "<tr><td colspan='4'>No discovery intents configured.</td></tr>"
+    prioritised_rows = "".join(
+        f"<tr><td>{html.escape(p['url'])}</td><td>{p['priority']}</td>"
+        f"<td>{html.escape(str(p['category_hint'] or ''))}</td></tr>"
+        for p in discovery.get("prioritised", [])[:6]
+    ) or "<tr><td colspan='3'>No intent-prioritised URLs yet.</td></tr>"
     target = report["daily_target_model"]
     needed = target["gross_fetches_needed_at_observed_yield"]
     safety = report["safety"]
@@ -163,6 +175,14 @@ final status <span class="pill warn">PRODUCTION HOLD</span></div></header>
 <div><h2>Rejections by reason</h2><table>
 <tr><th>Reason</th><th>Count</th></tr>{rejection_rows}
 </table></div></section>
+
+<section><h2>Discovery focus — outdoor festivals, music, parades, seasonal markets</h2>
+<div class="sub">Listing probes within approved paths: {discovery.get('probes_completed', 0)}/
+{discovery.get('probes_total', 0)} completed. Intent reorders discovery and labels documents;
+no topic, host or category is ever blocked. In-season month: {discovery.get('seasonal_month', 'n/a')}.</div>
+<table><tr><th>Intent</th><th>Documents</th><th>Season</th><th>Feeds categories</th></tr>{intent_rows}</table>
+<table style="margin-top:12px"><tr><th>Priority-raised URL</th><th>Priority</th><th>Hint</th></tr>
+{prioritised_rows}</table></section>
 
 <section><h2>Sources and rights</h2><table>
 <tr><th>Source</th><th>Origin</th><th>Rights basis</th><th>Docs</th><th>Index allowed</th></tr>

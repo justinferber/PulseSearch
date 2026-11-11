@@ -192,8 +192,14 @@ class Store:
         parent_url: str | None,
         depth: int,
         max_depth: int,
+        priority: int | None = None,
+        hint: str | None = None,
     ) -> str:
-        """Admit a URL. Returns new|promoted|duplicate|depth_refused|trap."""
+        """Admit a URL. Returns new|promoted|duplicate|depth_refused|trap.
+
+        `priority` and `hint` come from anchor-text discovery intent; they only
+        change fetch order and labelling, never whether a URL may be crawled.
+        """
         try:
             canonical = canonicalize(url)
         except (UrlError, ValueError):
@@ -211,8 +217,10 @@ class Store:
         if existing:
             if depth < existing["min_depth"]:
                 self.conn.execute(
-                    "UPDATE frontier SET min_depth=?, parent_url=COALESCE(?,parent_url) WHERE url=?",
-                    (depth, parent_url, canonical),
+                    "UPDATE frontier SET min_depth=?, priority=MAX(priority,?), "
+                    "category_hint=COALESCE(category_hint,?), "
+                    "parent_url=COALESCE(?,parent_url) WHERE url=?",
+                    (depth, priority if priority is not None else 0, hint, parent_url, canonical),
                 )
                 if existing["state"] == "blocked":
                     self.conn.execute(
@@ -226,9 +234,10 @@ class Store:
             return "duplicate"
         self.conn.execute(
             """INSERT INTO frontier(url,source_id,seed_id,parent_url,min_depth,state,
-                 priority,discovered_at) VALUES(?,?,?,?,?,'queued',?,?)""",
+                 priority,category_hint,discovered_at)
+               VALUES(?,?,?,?,?,'queued',?,?,?)""",
             (canonical, source_id, seed_id, parent_url, depth,
-             100 - depth * 10, utc_now()),
+             priority if priority is not None else 100 - depth * 10, hint, utc_now()),
         )
         self.record_edge(parent_url, canonical, depth, True, "admitted")
         self.conn.commit()
@@ -239,7 +248,7 @@ class Store:
             """SELECT * FROM frontier
                WHERE state='queued' AND min_depth<=?
                  AND (next_retry IS NULL OR next_retry<=?)
-               ORDER BY min_depth, priority DESC, discovered_at
+               ORDER BY priority DESC, min_depth, discovered_at
                LIMIT 400""",
             (max_depth, now_ts),
         ).fetchall()

@@ -74,6 +74,10 @@ python -m pulse_search_crawler_r3a3f.dashboard \
 
 Open http://127.0.0.1:8787/ — funnel, 18/18 coverage bars, target progress, schedule/depth, source and rights table, rejections, freshness, latency, robots/errors, staged-document table, and a staging search box (try `Diwali`, `CSD Berlin`, `Stadtfest`). `/api/report.json` and **Download JSON report** (`/download`) provide the machine-readable run for independent assessment. The console is read-only: it cannot start a crawl or write to the index.
 
+## Discovery focus (added after the first offline run)
+
+Breadth-first discovery spent the 3-hop budget on navigation and missed seasonal content. `topics.py` adds seven discovery intents (Christmas/Advent markets, Pride/CSD, open-air music, parades/carnivals, street/summer festivals, Diwali, New Year) with local-language terms, anchor-text scoring, listing-section probes inside approved paths, hub detection and seasonality. Intent only changes **fetch order and labels**; it never blocks a topic, host or category. Full detail: `docs/R3A3F_DISCOVERY_PROFILES_20261111.md`.
+
 ## Tests
 
 * `tests/test_r3a3f_units.py`, `test_r3a3f_safety.py`, `test_r3a3f_crawl.py` — **52 tests, all passing**.

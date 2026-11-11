@@ -37,7 +37,11 @@ def page_html(title: str, text: str, links: list[str] | None = None, *,
               "publish programme updates and any changes to the schedule on this page.")
     head.append("<main><p>" + text + detail + "</p>")
     for link in links or []:
-        head.append(f"<a href='{link}'>link</a>")
+        if isinstance(link, (tuple, list)):
+            href, anchor = link
+        else:
+            href, anchor = link, "link"
+        head.append(f"<a href='{href}'>{anchor}</a>")
     head.append("</main><footer>Pulse Search synthetic fixture</footer></body></html>")
     return "".join(head).encode("utf-8")
 
@@ -297,9 +301,36 @@ def build_network() -> SyntheticNetwork:
             CATEGORY_TEXT[topic] + f" Guide {index} also explains booking, access and travel "
             "for visitors, with practical notes for first-time attendees.",
             links=["/events/festival", "/venue/hall"])))
+    # A listing hub with intent-bearing anchors, as a real "what's on" page.
+    berlin.set("/events/weihnachtsmarkt", Route(body=page_html(
+        "Weihnachtsmarkt Berlin 2026",
+        "Der Weihnachtsmarkt am Rathaus öffnet mit Adventsmarkt-Ständen, Glühwein und "
+        "einem winterlichen Marktprogramm für die ganze Familie.",
+        links=[("/events/market", "Christmas market stalls")])))
+    berlin.set("/events/open-air-festival", Route(body=page_html(
+        "Open air music festival 2026",
+        "Open air music festival with a lineup of live acts, a festival stage and "
+        "an evening concert series in the park.",
+        links=[("/events/music", "Live music programme")])))
+    berlin.set("/events/karneval-umzug", Route(body=page_html(
+        "Karneval Umzug Berlin",
+        "Karneval parade with an Umzug through the streets, costumes, marching groups "
+        "and a street festival afterwards.",
+        links=[("/events/parade", "Parade route")])))
+    berlin.set("/whats-on", Route(body=page_html(
+        "What's on in Berlin",
+        "Whats on guide and events calendar listing festivals, markets, concerts and "
+        "community celebrations across the city.",
+        links=[("/events/weihnachtsmarkt", "Christmas markets 2026"),
+               ("/events/open-air-festival", "Open air music festival lineup"),
+               ("/events/karneval-umzug", "Carnival parade Umzug"),
+               ("/events/pride-berlin", "Pride Berlin events"),
+               ("/events/stadtfest-berlin", "Stadtfest street festival"),
+               ("/events/diwali", "Diwali festival of lights")])))
     berlin.set("/", Route(body=page_html(
         "Berlin events guide", "A guide to conferences, festivals and community events in Berlin.",
-        links=hub_links + guide_links + ["/robots.txt-page", "/sitemap.xml"])))
+        links=hub_links + guide_links + [("/whats-on", "What's on in Berlin"),
+                                        "/robots.txt-page", "/sitemap.xml"])))
     # Traps and safety fixtures.
     berlin.set("/deep/0", Route(body=page_html(
         "Depth zero hub", "Depth zero page about the conference venue and market hall programme.",

@@ -42,7 +42,7 @@ EXPAND = {
     "csd": ("pride", "christopher street day"),
     "festival": ("festivals", "stadtfest"),
     "festivals": ("festival", "stadtfest"),
-    "concert": ("concerts", "konzert", "gig"),
+    "concert": ("concerts", "konzert", "gig", "events", "calendar", "programme"),
     "concerts": ("concert", "konzert", "gig"),
     "gig": ("concert", "concerts", "konzert"),
     "book": ("booking", "buy", "kaufen"),
@@ -244,6 +244,10 @@ def _score(doc: dict, intent: SearchIntent) -> tuple[float, list[str]]:
         if typ in ("booking_guide", "how_to"):
             score += 8.0
             reasons.append("instruction_page")
+            purpose = set(intent.expanded) - ({intent.location} if intent.location else set())
+            if purpose and not (purpose & (t | s)):
+                score -= 12.0
+                reasons.append("off_intent_instruction_page")
         if BOOKING.search(title+" "+snippet) and ("concert" in intent.tokens or "tickets" in intent.tokens):
             score += 2.0
     elif intent.kind == "events" and typ in ("event_detail", "event_listing"):

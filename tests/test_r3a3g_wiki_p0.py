@@ -13,9 +13,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from pulse_search_broad_r3a3g.evidence import EvidenceRegistry  # noqa: E402
+from pulse_search_broad_r3a3g.evidence import EvidenceError, EvidenceRegistry  # noqa: E402
 from pulse_search_broad_r3a3g.wiki import (  # noqa: E402
-    LocalPublisher, PublisherNotConfigured, WikiError, WikiPolicy, WikiService, WikiStore,
+    InvalidAcknowledgement, LocalPublisher, PublisherNotConfigured, WikiError, WikiPolicy,
+    WikiService, WikiStore,
 )
 
 ARTICLES = json.loads((ROOT / "config/wiki_articles.json").read_text(encoding="utf-8"))["articles"]
@@ -36,6 +37,17 @@ class CapturingPublisher(LocalPublisher):
         if self.fail_once and self.calls == 1:
             raise TimeoutError("simulated adapter timeout")
         return super().publish(revision)
+
+
+class BadReceiptPublisher(CapturingPublisher):
+    def __init__(self, receipt):
+        super().__init__()
+        self.receipt = receipt
+
+    def publish(self, revision):
+        self.calls += 1
+        self.revisions.append(revision)
+        return dict(self.receipt)
 
 
 class P0WikiTests(unittest.TestCase):
@@ -72,10 +84,7 @@ class P0WikiTests(unittest.TestCase):
         article = self.create()
         self.publish(article)
         updated = dict(article)
-        updated["claims"] = article["claims"] + [{
-            "text": "Confirm accessibility arrangements on the venue's own page before booking.",
-            "evidence": ["ev-mercedes-arena", "ev-huxleys"],
-        }]
+        updated["claims"] = article["claims"] + [article["claims"][2]]
         result = self.service.propose(updated)
         self.assertEqual(result["result"], "update_draft")
         self.assertEqual(self.store.get(article["topic_id"])["status"], "published")
@@ -88,7 +97,7 @@ class P0WikiTests(unittest.TestCase):
         self.assertEqual(sent.version, 2)
         self.assertEqual(sent.base_version, 1)
         self.assertEqual(published["body"], sent.body)
-        self.assertIn("accessibility arrangements", published["body"])
+        self.assertIn("accessibility", published["body"])
         self.assertEqual(published["claims"], list(sent.claims))
         self.assertEqual(published["sources"], list(sent.sources))
         self.assertEqual(published["version"], 2)
@@ -113,6 +122,64 @@ class P0WikiTests(unittest.TestCase):
         self.assertTrue(again["idempotent"])
         self.assertEqual(again["external_id"], result["publisher"]["external_id"])
         self.assertEqual(len({r.idempotency_key for r in publisher.revisions}), 1)
+
+    def test_invalid_acknowledgement_is_not_retried_blindly(self):
+        article = self.create()
+        publisher = BadReceiptPublisher({
+            "ok": True, "target": "local-test-wiki", "external_id": "ext-1",
+            "revision": 99, "checksum": "wrong"})
+        publisher.receipt["target"] = publisher.target
+        service = WikiService(self.store, publisher)
+        service.approve(article["topic_id"], "editor")
+        before = self.store.get(article["topic_id"])
+        with self.assertRaises(InvalidAcknowledgement):
+            service.publish(article["topic_id"], POLICY, reviewer="editor")
+        after = self.store.get(article["topic_id"])
+        self.assertEqual(before["body"], after["body"])
+        self.assertEqual(after["status"], "approved")
+        attempt = self.store.attempt(publisher.revisions[0].idempotency_key)
+        self.assertEqual(attempt["state"], "needs_reconciliation")
+        with self.assertRaises(WikiError):
+            service.publish(article["topic_id"], POLICY, reviewer="editor")
+        self.assertEqual(publisher.calls, 1)
+
+    def test_explicit_rejection_is_safely_retryable(self):
+        article = self.create()
+        publisher = BadReceiptPublisher({"ok": False, "error": "validation failed"})
+        service = WikiService(self.store, publisher)
+        service.approve(article["topic_id"], "editor")
+        with self.assertRaises(InvalidAcknowledgement):
+            service.publish(article["topic_id"], POLICY, reviewer="editor")
+        key = publisher.revisions[0].idempotency_key
+        self.assertEqual(self.store.attempt(key)["state"], "rejected")
+        self.assertEqual(self.store.get(article["topic_id"])["status"], "approved")
+
+    def test_post_ack_local_failure_reconciles_without_second_write(self):
+        article = self.create()
+        calls = self.publisher.calls
+        original = self.service._commit_publication
+        self.service._commit_publication = lambda *args, **kwargs: (_ for _ in ()).throw(
+            RuntimeError("simulated local database failure"))
+        with self.assertRaises(WikiError):
+            self.publish(article, service=self.service)
+        self.service._commit_publication = original
+        result = self.service.publish(article["topic_id"], POLICY, reviewer="editor")
+        self.assertEqual(result["result"], "published_after_retry")
+        self.assertEqual(self.publisher.calls, calls + 1)
+
+    def test_exact_fact_binding_rejects_overlap_false_date_and_swapped_source(self):
+        registry = EvidenceRegistry.from_file(ROOT / "config/wiki_evidence.json")
+        fact_id = ARTICLES[0]["claims"][0]["fact_id"]
+        topic = ARTICLES[0]["topic_id"]
+        with self.assertRaises(EvidenceError):
+            registry.get_fact(fact_id, topic_id=topic,
+                              claim="Berlin concert tickets are always refundable.")
+        with self.assertRaises(EvidenceError):
+            registry.get_fact(fact_id, topic_id=topic,
+                              claim="Berlin concert tickets went on sale in 1999.")
+        with self.assertRaises(EvidenceError):
+            registry.get_fact("fact-does-not-exist", topic_id=topic,
+                              claim=ARTICLES[0]["claims"][0]["text"])
 
     def test_fake_evidence_same_domain_and_cross_topic_are_rejected(self):
         fake = json.loads(json.dumps(ARTICLES[0]))
@@ -154,10 +221,7 @@ class P0WikiTests(unittest.TestCase):
         article = self.create()
         self.publish(article)
         updated = dict(article)
-        updated["claims"] = article["claims"] + [{
-            "text": "Check the venue accessibility page before booking.",
-            "evidence": ["ev-mercedes-arena"],
-        }]
+        updated["claims"] = article["claims"] + [article["claims"][2]]
         self.service.propose(updated)
         self.assertEqual(self.store.get(article["topic_id"])["has_pending"], 1)
         result = self.service.flag_source("https://www.mercedes-benz-arena.de/",

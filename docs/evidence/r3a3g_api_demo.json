@@ -26,8 +26,8 @@
         "status": "OK",
         "service": "pulse-search",
         "api_version": "1.1",
-        "request_id": "ca6f342552ff42d99b02a67a367f2b21",
-        "time_utc": "2026-11-11T14:46:56+00:00",
+        "request_id": "8abed3c3f36a4eb980e23237637de3ec",
+        "time_utc": "2026-11-11T15:55:47+00:00",
         "consumer": "puke"
       }
     },
@@ -41,7 +41,7 @@
       "response": {
         "status": "OK",
         "api_version": "1.1",
-        "request_id": "7c54cf9d3a094a6b87936743e1358ea7",
+        "request_id": "5c287b91cb8f41caac7b377badcd86ee",
         "consumer": "puke",
         "scopes": [
           "answer:read",
@@ -126,8 +126,8 @@
         ],
         "note": "Snippets are attributed excerpts from admitted pages; verify current dates, prices, stock and booking availability separately.",
         "retrieval_mode": "fts_candidates",
-        "request_id": "e72d1363b23b4cf59d8a17f5b0d053b7",
-        "retrieved_at": "2026-11-11T14:46:56+00:00",
+        "request_id": "23ef1db399474a9b95312f104eac8167",
+        "retrieved_at": "2026-11-11T15:55:47+00:00",
         "source_ids": [
           "demo"
         ],
@@ -150,8 +150,7 @@
             "verified_live": false
           }
         ],
-        "consumer_context_received": false,
-        "latency_ms": 3.8
+        "latency_ms": 5.8
       }
     },
     {
@@ -218,10 +217,9 @@
         "confidence": 0.95,
         "limits": [],
         "notices": [],
-        "request_id": "98943de7fe4e4539b17c8756cbd8b912",
-        "retrieved_at": "2026-11-11T14:46:56+00:00",
-        "context_used": false,
-        "latency_ms": 1.5
+        "request_id": "c48dbf4535b14ea2b5364d4ae4a279a0",
+        "retrieved_at": "2026-11-11T15:55:47+00:00",
+        "latency_ms": 3.0
       }
     },
     {
@@ -345,10 +343,9 @@
           "Links only; no temperature or forecast value was fetched.",
           "A current observation is not a forecast for tomorrow."
         ],
-        "request_id": "edd5dc3a57fb41efbaa54b23da9df259",
-        "retrieved_at": "2026-11-11T14:46:56+00:00",
-        "context_used": false,
-        "latency_ms": 2.6
+        "request_id": "633d697f544545d0b3cd80b3f4db9bb8",
+        "retrieved_at": "2026-11-11T15:55:47+00:00",
+        "latency_ms": 2.7
       }
     },
     {
@@ -384,10 +381,9 @@
         "confidence": 0.0,
         "limits": [],
         "notices": [],
-        "request_id": "afdb3ba918ec4b6db59a3417f35f36c1",
-        "retrieved_at": "2026-11-11T14:46:56+00:00",
-        "context_used": false,
-        "latency_ms": 3.5
+        "request_id": "93ca92664b324918843ab4d4ea289c9e",
+        "retrieved_at": "2026-11-11T15:55:47+00:00",
+        "latency_ms": 2.5
       }
     },
     {
@@ -402,7 +398,8 @@
             "summary": "Draft only.",
             "claims": [
               {
-                "text": "Start at the venue programme or the Berlin events calendar.",
+                "text": "Start at the venue's own programme or the Berlin events calendar, then follow the official ticket link shown for that event.",
+                "fact_id": "fact-66996b79a739",
                 "evidence": [
                   "ev-berlin-events",
                   "ev-mercedes-arena"
@@ -415,18 +412,21 @@
       },
       "status": 200,
       "response": {
-        "result": "draft_created",
+        "result": "update_draft",
         "topic_id": "guide-berlin-concert-tickets",
-        "slug": "demo-api-topic",
-        "status": "draft_created",
-        "request_id": "52d44ccb9fc14b6c99c684208a0d1229",
+        "slug": "demo-wiki-topic",
+        "diff": "--- demo-wiki-topic@1\n+++ pending@2\n@@ -1,6 +1,6 @@\n-# Demo Wiki topic\n+# Demo API topic\n \n-Public evidence only.\n+Draft only.\n \n ## Guidance\n - Start at the venue's own programme or the Berlin events calendar, then follow the official ticket link shown for that event.",
+        "previous_version": 1,
+        "pending_version": 2,
+        "status": "update_draft",
+        "request_id": "adf3105708374e4e9fb51e52029ff6e7",
         "consumer": "puke",
         "publication": "DRAFT_ONLY",
         "notices": [
           "Draft proposal only. No Wiki page was published.",
           "Evidence must already be admitted in the source registry."
         ],
-        "latency_ms": 6.7
+        "latency_ms": 5.0
       }
     },
     {

@@ -11,9 +11,30 @@
       "rights_class": "public_guidance",
       "verified_at": "2026-11-11",
       "claims": [
-        {"text": "Start at the venue's own programme or the Berlin events calendar, then follow the official ticket link shown for that event.", "sources": ["https://www.berlin.de/events/", "https://www.mercedes-benz-arena.de/"]},
-        {"text": "Eventim is an authorised ticketing agency in Germany; check that the seller named on the event page matches the checkout before paying.", "sources": ["https://www.eventim.de/", "https://www.columbiahalle.de/"]},
-        {"text": "Check the venue page for doors, age limits, accessibility and bag rules, which vary by show.", "sources": ["https://www.huxleys-neue-welt.de/", "https://www.verti-music-hall.de/"]}
+        {
+          "text": "Start at the venue's own programme or the Berlin events calendar, then follow the official ticket link shown for that event.",
+          "fact_id": "fact-66996b79a739",
+          "evidence": [
+            "ev-berlin-events",
+            "ev-mercedes-arena"
+          ]
+        },
+        {
+          "text": "Eventim is an authorised ticketing agency in Germany; check that the seller named on the event page matches the checkout before paying.",
+          "fact_id": "fact-3160fd902580",
+          "evidence": [
+            "ev-eventim",
+            "ev-columbiahalle"
+          ]
+        },
+        {
+          "text": "Check the venue page for doors, age limits, accessibility and bag rules, which vary by show.",
+          "fact_id": "fact-4364f94f7a29",
+          "evidence": [
+            "ev-huxleys",
+            "ev-verti"
+          ]
+        }
       ]
     },
     {
@@ -24,8 +45,22 @@
       "rights_class": "public_guidance",
       "verified_at": "2026-11-11",
       "claims": [
-        {"text": "Use the BVG journey planner for U-Bahn, tram and bus connections to the venue.", "sources": ["https://www.bvg.de/", "https://www.berlin.de/en/"]},
-        {"text": "Check S-Bahn service updates before travelling; engineering works can change the last connection.", "sources": ["https://www.s-bahn-berlin.de/", "https://www.bvg.de/"]}
+        {
+          "text": "Use the BVG journey planner for U-Bahn, tram and bus connections to the venue.",
+          "fact_id": "fact-7c25f45f0509",
+          "evidence": [
+            "ev-bvg",
+            "ev-berlin-en"
+          ]
+        },
+        {
+          "text": "Check S-Bahn service updates before travelling; engineering works can change the last connection.",
+          "fact_id": "fact-02b47ee0fd51",
+          "evidence": [
+            "ev-sbahn",
+            "ev-bvg"
+          ]
+        }
       ]
     },
     {
@@ -36,8 +71,21 @@
       "rights_class": "official_reference",
       "verified_at": "2026-11-11",
       "claims": [
-        {"text": "Use BBC Weather for city forecasts and the Met Office for the official UK forecast and weather warnings.", "sources": ["https://www.bbc.co.uk/weather", "https://weather.metoffice.gov.uk/forecast/uk"]},
-        {"text": "Treat a forecast as guidance, not a guarantee; warnings and local conditions can change during the day.", "sources": ["https://weather.metoffice.gov.uk/forecast/uk"]}
+        {
+          "text": "Use BBC Weather for city forecasts and the Met Office for the official UK forecast and weather warnings.",
+          "fact_id": "fact-5e8d528f71e7",
+          "evidence": [
+            "ev-uk-weather",
+            "ev-metoffice"
+          ]
+        },
+        {
+          "text": "Treat a forecast as guidance, not a guarantee; warnings and local conditions can change during the day.",
+          "fact_id": "fact-f5f010165854",
+          "evidence": [
+            "ev-metoffice"
+          ]
+        }
       ]
     },
     {
@@ -48,7 +96,14 @@
       "rights_class": "official_reference",
       "verified_at": "2026-11-11",
       "claims": [
-        {"text": "Use the DWD for national warnings and forecasts, and the city or state service for local information.", "sources": ["https://www.dwd.de/", "https://www.berlin.de/en/"]}
+        {
+          "text": "Use the DWD for national warnings and forecasts, and the city or state service for local information.",
+          "fact_id": "fact-b5853c4036ad",
+          "evidence": [
+            "ev-dwd",
+            "ev-berlin-en"
+          ]
+        }
       ]
     },
     {
@@ -59,8 +114,21 @@
       "rights_class": "public_guidance",
       "verified_at": "2026-11-11",
       "claims": [
-        {"text": "Look for CSD or Christopher Street Day listings in each city; programmes and dates are published by local organisers.", "sources": ["https://www.berlin.de/events/", "https://www.csd-berlin.de/"]},
-        {"text": "Check the organiser's own page for route, accessibility and any changes before travelling.", "sources": ["https://www.csd-berlin.de/"]}
+        {
+          "text": "Look for CSD or Christopher Street Day listings in each city; programmes and dates are published by local organisers.",
+          "fact_id": "fact-628b2a367fc2",
+          "evidence": [
+            "ev-berlin-events",
+            "ev-csd-berlin"
+          ]
+        },
+        {
+          "text": "Check the organiser's own page for route, accessibility and any changes before travelling.",
+          "fact_id": "fact-cdf187c6322c",
+          "evidence": [
+            "ev-csd-berlin"
+          ]
+        }
       ]
     },
     {
@@ -71,8 +139,22 @@
       "rights_class": "public_guidance",
       "verified_at": "2026-11-11",
       "claims": [
-        {"text": "Check the Mayor of London's official page for the event announcement, viewing areas and ticket arrangements.", "sources": ["https://www.london.gov.uk/", "https://tfl.gov.uk/"]},
-        {"text": "Plan travel with TfL and expect road closures and busy stations on the night.", "sources": ["https://tfl.gov.uk/", "https://www.london.gov.uk/"]}
+        {
+          "text": "Check the Mayor of London's official page for the event announcement, viewing areas and ticket arrangements.",
+          "fact_id": "fact-db6ae8bf5e93",
+          "evidence": [
+            "ev-london-gov",
+            "ev-tfl"
+          ]
+        },
+        {
+          "text": "Plan travel with TfL and expect road closures and busy stations on the night.",
+          "fact_id": "fact-fe1adf1c3038",
+          "evidence": [
+            "ev-tfl",
+            "ev-london-gov"
+          ]
+        }
       ]
     },
     {
@@ -83,8 +165,22 @@
       "rights_class": "public_guidance",
       "verified_at": "2026-11-11",
       "claims": [
-        {"text": "Compare the airline's own site with a licensed agent, and check who the seller is before paying.", "sources": ["https://www.britishairways.com/", "https://www.lufthansa.com/"]},
-        {"text": "Check ATOL or ABTA protection where it applies, and read the fare rules for changes and refunds.", "sources": ["https://www.caa.co.uk/", "https://www.abta.com/"]}
+        {
+          "text": "Compare the airline's own site with a licensed agent, and check who the seller is before paying.",
+          "fact_id": "fact-e6eb0dc5d401",
+          "evidence": [
+            "ev-ba",
+            "ev-lufthansa"
+          ]
+        },
+        {
+          "text": "Check ATOL or ABTA protection where it applies, and read the fare rules for changes and refunds.",
+          "fact_id": "fact-7a867c014811",
+          "evidence": [
+            "ev-caa",
+            "ev-abta"
+          ]
+        }
       ]
     },
     {
@@ -95,8 +191,22 @@
       "rights_class": "official_reference",
       "verified_at": "2026-11-11",
       "claims": [
-        {"text": "Check the seller's terms and the official consumer guidance for the country of purchase before disputing a charge.", "sources": ["https://www.gov.uk/search/all?keywords=consumer%20rights%20tickets", "https://www.caa.co.uk/"]},
-        {"text": "For a cancelled event, contact the original seller; resale sites may not offer the same protection.", "sources": ["https://www.caa.co.uk/", "https://www.abta.com/"]}
+        {
+          "text": "Check the seller's terms and the official consumer guidance for the country of purchase before disputing a charge.",
+          "fact_id": "fact-edf4b314a95b",
+          "evidence": [
+            "ev-govuk-consumer",
+            "ev-caa"
+          ]
+        },
+        {
+          "text": "For a cancelled event, contact the original seller; resale sites may not offer the same protection.",
+          "fact_id": "fact-57109a62cbb2",
+          "evidence": [
+            "ev-caa",
+            "ev-abta"
+          ]
+        }
       ]
     },
     {
@@ -107,8 +217,21 @@
       "rights_class": "event_announcement",
       "verified_at": "2026-11-11",
       "claims": [
-        {"text": "The 2027 festival is scheduled from Wednesday 23 to Sunday 27 June 2027.", "sources": ["https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed", "https://www.bbc.co.uk/news/articles/cv62kp9enz08o"]},
-        {"text": "The festival is held at Worthy Farm, Pilton, Somerset; use the organiser's travel guidance.", "sources": ["https://www.glastonburyfestivals.co.uk/"]}
+        {
+          "text": "The 2027 festival is scheduled from Wednesday 23 to Sunday 27 June 2027.",
+          "fact_id": "fact-2e6ad1f801b3",
+          "evidence": [
+            "ev-glastonbury-2027",
+            "ev-bbc-glastonbury"
+          ]
+        },
+        {
+          "text": "The festival is held at Worthy Farm, Pilton, Somerset; use the organiser's travel guidance.",
+          "fact_id": "fact-3d1862abafa2",
+          "evidence": [
+            "ev-glastonbury-home"
+          ]
+        }
       ]
     },
     {
@@ -119,8 +242,21 @@
       "rights_class": "event_announcement",
       "verified_at": "2026-11-11",
       "claims": [
-        {"text": "Use the organiser's official site for the current route, start time and road closures.", "sources": ["https://londonparade.com/parade-location-timing/", "https://londonparade.com/about/"]},
-        {"text": "Check TfL for travel changes on the day and plan around central London closures.", "sources": ["https://tfl.gov.uk/"]}
+        {
+          "text": "Use the organiser's official site for the current route, start time and road closures.",
+          "fact_id": "fact-fca7bb1b393b",
+          "evidence": [
+            "ev-london-parade-route",
+            "ev-london-parade-about"
+          ]
+        },
+        {
+          "text": "Check TfL for travel changes on the day and plan around central London closures.",
+          "fact_id": "fact-1681516c5cc1",
+          "evidence": [
+            "ev-tfl"
+          ]
+        }
       ]
     },
     {
@@ -131,8 +267,22 @@
       "rights_class": "public_guidance",
       "verified_at": "2026-11-11",
       "claims": [
-        {"text": "Check the Berlin city calendar for current Christmas market listings and opening periods.", "sources": ["https://www.berlin.de/events/", "https://www.berlin.de/en/"]},
-        {"text": "Plan travel to the markets with BVG and confirm opening times and entry conditions on the organiser's page before travelling.", "sources": ["https://www.bvg.de/", "https://www.berlin.de/events/"]}
+        {
+          "text": "Check the Berlin city calendar for current Christmas market listings and opening periods.",
+          "fact_id": "fact-6f22b2383b72",
+          "evidence": [
+            "ev-berlin-events",
+            "ev-berlin-en"
+          ]
+        },
+        {
+          "text": "Plan travel to the markets with BVG and confirm opening times and entry conditions on the organiser's page before travelling.",
+          "fact_id": "fact-e4cf993ab207",
+          "evidence": [
+            "ev-bvg",
+            "ev-berlin-events"
+          ]
+        }
       ]
     }
   ]

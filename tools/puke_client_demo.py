@@ -17,6 +17,8 @@ from pulse_search_broad_r3a3g.client import PulseSearchClient, PulseSearchError 
 from pulse_search_broad_r3a3g.wiki import WikiService, WikiStore  # noqa: E402
 from pulse_search_crawler_r3a3f.staging import StagingIndex  # noqa: E402
 
+ARTICLES = json.loads((ROOT / "config/wiki_articles.json").read_text(encoding="utf-8"))["articles"]
+
 TOKEN = "local-puke-client-token"
 
 
@@ -37,12 +39,6 @@ def main() -> int:
         }, [], index_allowed=True)
     staging.close()
     wiki = WikiStore(tmp / "wiki.sqlite")
-    WikiService(wiki).propose({
-        "topic_id": "guide-berlin-concert-tickets", "slug": "puke-berlin-guide",
-        "title": "PUKE Berlin booking guide", "summary": "Draft only.",
-        "claims": [{"text": "Start at the venue programme or the Berlin events calendar.",
-                    "evidence": ["ev-berlin-events", "ev-mercedes-arena"]}],
-        "verified_at": "2026-11-11"})
     wiki.close()
     server = build_server(
         str(tmp / "staging.sqlite"),
@@ -79,12 +75,10 @@ def main() -> int:
                      "source_kind": r.get("source_kind")}
                     for r in (search.get("results") or [])[:3]],
             })
-        wiki = client.wiki_candidate({
-            "topic_id": "guide-berlin-concert-tickets", "slug": "puke-second-draft",
-            "title": "PUKE second draft", "summary": "Draft only.",
-            "claims": [{"text": "Confirm the venue's accessibility arrangements on its own page.",
-                        "evidence": ["ev-mercedes-arena", "ev-huxleys"]}],
-            "verified_at": "2026-11-11"})
+        chain_question = "How do I book concert tickets in Berlin?"
+        chain_search = client.search(chain_question, limit=3)
+        chain_answer = client.answer(chain_question)
+        wiki = client.wiki_candidate(ARTICLES[0])
         try:
             client.wiki_candidate({"title": "blocked", "member_context": "private"})
             context_blocked = False
@@ -99,6 +93,12 @@ def main() -> int:
         "generated_at": snapshot["captured_at"],
         "mode": "SEPARATE_LOOPBACK_CLIENT",
         "health": health, "cases": cases,
+        "chain": {"query": chain_question,
+                  "search_status": chain_search.get("status"),
+                  "search_top": (chain_search.get("results") or [{}])[0].get("url"),
+                  "answer_status": chain_answer.status,
+                  "answer_citations": len(chain_answer.citations),
+                  "claim_evidence": len(chain_answer.claim_evidence)},
         "wiki_candidate": {"status": wiki.get("status"),
                            "publication": wiki.get("publication")},
         "member_context_blocked_client_side": context_blocked,

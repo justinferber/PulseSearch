@@ -3,32 +3,783 @@
   "generated_at": "2026-11-11",
   "note": "Curated evidence admission for offline Wiki candidates. A URL in this file is a reviewed support link, not a crawler permission or a claim that the page is permanently indexed.",
   "evidence": [
-    {"evidence_id": "ev-berlin-events", "url": "https://www.berlin.de/events/", "title": "Berlin event calendar", "publisher": "Berlin.de", "rights": "public_guidance", "verified_at": "2026-11-11", "excerpt": "The Berlin event calendar lists concerts, festivals, Christmas markets and CSD events, with links to organisers and ticket sellers.", "topics": ["guide-berlin-concert-tickets", "guide-pride-festivals-germany", "guide-berlin-christmas-markets"], "supports": ["berlin", "events", "calendar", "concert", "festival", "christmas", "market", "pride", "csd", "ticket"]},
-    {"evidence_id": "ev-berlin-en", "url": "https://www.berlin.de/en/", "title": "Berlin.de English portal", "publisher": "Berlin.de", "rights": "public_guidance", "verified_at": "2026-11-11", "excerpt": "The official Berlin portal links city services, public transport, local weather and event information for visitors.", "topics": ["guide-berlin-venue-transport", "reference-germany-weather-sources", "guide-berlin-christmas-markets"], "supports": ["berlin", "city", "transport", "u-bahn", "tram", "bus", "connection", "venue", "weather", "forecast", "service", "christmas", "market"]},
-    {"evidence_id": "ev-berlin-christmas", "url": "https://www.berlin.de/en/events/christmas-markets/", "title": "Berlin Christmas markets", "publisher": "Berlin.de", "rights": "public_guidance", "verified_at": "2026-11-11", "excerpt": "Berlin.de lists Christmas markets with opening periods, locations and organiser links; dates vary by market.", "topics": ["guide-berlin-christmas-markets"], "supports": ["berlin", "christmas", "market", "opening", "dates", "advent", "organiser"]},
-    {"evidence_id": "ev-mercedes-arena", "url": "https://www.mercedes-benz-arena.de/", "title": "Mercedes-Benz Arena Berlin", "publisher": "Mercedes-Benz Arena", "rights": "public_guidance", "verified_at": "2026-11-11", "excerpt": "The venue programme lists concerts and events and links to the authorised ticket seller for each show.", "topics": ["guide-berlin-concert-tickets"], "supports": ["venue", "programme", "concert", "event", "ticket", "arena", "berlin"]},
-    {"evidence_id": "ev-eventim", "url": "https://www.eventim.de/", "title": "Eventim Germany", "publisher": "Eventim", "rights": "public_guidance", "verified_at": "2026-11-11", "excerpt": "Eventim is a ticketing agency in Germany; event pages name the organiser and the authorised seller.", "topics": ["guide-berlin-concert-tickets"], "supports": ["eventim", "ticketing", "agency", "germany", "seller", "authorised", "ticket"]},
-    {"evidence_id": "ev-columbiahalle", "url": "https://www.columbiahalle.de/", "title": "Columbiahalle Berlin", "publisher": "Columbiahalle", "rights": "public_guidance", "verified_at": "2026-11-11", "excerpt": "Columbiahalle event pages identify the concert, the organiser and the official ticketing partner.", "topics": ["guide-berlin-concert-tickets"], "supports": ["venue", "concert", "berlin", "organiser", "ticketing", "seller", "eventim"]},
-    {"evidence_id": "ev-huxleys", "url": "https://www.huxleys-neue-welt.de/", "title": "Huxley's Neue Welt Berlin", "publisher": "Huxley's Neue Welt", "rights": "public_guidance", "verified_at": "2026-11-11", "excerpt": "The venue publishes doors, age limits, accessibility, bag rules and arrival information for each show.", "topics": ["guide-berlin-concert-tickets"], "supports": ["venue", "doors", "age", "accessibility", "bag", "rules", "concert", "berlin"]},
-    {"evidence_id": "ev-verti", "url": "https://www.verti-music-hall.de/", "title": "Verti Music Hall Berlin", "publisher": "Verti Music Hall", "rights": "public_guidance", "verified_at": "2026-11-11", "excerpt": "Verti Music Hall publishes event-specific door times, age limits, accessibility and bag policies.", "topics": ["guide-berlin-concert-tickets"], "supports": ["venue", "doors", "age", "accessibility", "bag", "rules", "concert", "berlin"]},
-    {"evidence_id": "ev-bvg", "url": "https://www.bvg.de/", "title": "BVG journey planner", "publisher": "BVG", "rights": "official_reference", "verified_at": "2026-11-11", "excerpt": "The BVG journey planner covers U-Bahn, tram and bus connections and publishes service updates, including S-Bahn connections.", "topics": ["guide-berlin-venue-transport", "guide-berlin-christmas-markets"], "supports": ["bvg", "journey", "planner", "u-bahn", "tram", "bus", "s-bahn", "connection", "service", "update", "transport", "travel"]},
-    {"evidence_id": "ev-sbahn", "url": "https://www.s-bahn-berlin.de/", "title": "S-Bahn Berlin", "publisher": "S-Bahn Berlin", "rights": "official_reference", "verified_at": "2026-11-11", "excerpt": "S-Bahn Berlin publishes timetable changes, engineering works and service updates that can affect the last connection.", "topics": ["guide-berlin-venue-transport"], "supports": ["s-bahn", "berlin", "service", "update", "engineering", "works", "connection", "timetable", "travel"]},
-    {"evidence_id": "ev-uk-weather", "url": "https://www.bbc.co.uk/weather", "title": "BBC Weather", "publisher": "BBC Weather", "rights": "official_reference", "verified_at": "2026-11-11", "excerpt": "BBC Weather publishes city forecasts and current conditions for the UK and other locations.", "topics": ["reference-uk-weather-sources"], "supports": ["bbc", "weather", "forecast", "city", "current", "conditions", "uk"]},
-    {"evidence_id": "ev-metoffice", "url": "https://weather.metoffice.gov.uk/forecast/uk", "title": "Met Office UK forecast", "publisher": "Met Office", "rights": "official_reference", "verified_at": "2026-11-11", "excerpt": "The Met Office publishes the official UK forecast and weather warnings; forecasts are guidance and can change.", "topics": ["reference-uk-weather-sources"], "supports": ["met", "office", "official", "uk", "forecast", "warning", "weather", "guidance", "change"]},
-    {"evidence_id": "ev-dwd", "url": "https://www.dwd.de/", "title": "Deutscher Wetterdienst", "publisher": "DWD", "rights": "official_reference", "verified_at": "2026-11-11", "excerpt": "The Deutscher Wetterdienst is Germany's national weather service for forecasts, warnings and climate information.", "topics": ["reference-germany-weather-sources"], "supports": ["dwd", "deutscher", "wetterdienst", "germany", "national", "weather", "forecast", "warning", "climate"]},
-    {"evidence_id": "ev-csd-berlin", "url": "https://www.csd-berlin.de/", "title": "CSD Berlin", "publisher": "CSD Berlin", "rights": "event_announcement", "verified_at": "2026-11-11", "excerpt": "The local CSD Berlin organiser publishes the programme, route, accessibility information and any changes.", "topics": ["guide-pride-festivals-germany"], "supports": ["csd", "berlin", "christopher", "street", "day", "pride", "programme", "route", "accessibility", "organiser", "change"]},
-    {"evidence_id": "ev-london-gov", "url": "https://www.london.gov.uk/", "title": "Mayor of London", "publisher": "London.gov.uk", "rights": "event_announcement", "verified_at": "2026-11-11", "excerpt": "The Mayor of London publishes official event announcements, viewing areas and ticket arrangements for London New Year's Eve.", "topics": ["guide-london-new-year-fireworks"], "supports": ["mayor", "london", "official", "event", "announcement", "viewing", "ticket", "arrangement", "fireworks", "travel", "road", "closure", "station"]},
-    {"evidence_id": "ev-tfl", "url": "https://tfl.gov.uk/", "title": "Transport for London", "publisher": "Transport for London", "rights": "official_reference", "verified_at": "2026-11-11", "excerpt": "TfL publishes travel plans, road closures and busy-station advice for major London events.", "topics": ["guide-london-new-year-fireworks", "event-london-parade-2027"], "supports": ["tfl", "transport", "london", "travel", "road", "closure", "station", "event", "plan"]},
-    {"evidence_id": "ev-ba", "url": "https://www.britishairways.com/", "title": "British Airways", "publisher": "British Airways", "rights": "public_guidance", "verified_at": "2026-11-11", "excerpt": "The airline's own site sells flights and publishes fare rules, baggage and change conditions.", "topics": ["guide-flight-booking-channels"], "supports": ["airline", "site", "flight", "fare", "rule", "baggage", "change", "seller", "compare"]},
-    {"evidence_id": "ev-lufthansa", "url": "https://www.lufthansa.com/", "title": "Lufthansa", "publisher": "Lufthansa", "rights": "public_guidance", "verified_at": "2026-11-11", "excerpt": "Lufthansa sells flights directly and publishes fare, baggage and change conditions.", "topics": ["guide-flight-booking-channels"], "supports": ["airline", "site", "flight", "fare", "baggage", "change", "seller", "compare"]},
-    {"evidence_id": "ev-caa", "url": "https://www.caa.co.uk/", "title": "UK Civil Aviation Authority", "publisher": "CAA", "rights": "official_reference", "verified_at": "2026-11-11", "excerpt": "The CAA publishes consumer protection guidance, including ATOL and refunds for cancelled flights or events.", "topics": ["guide-flight-booking-channels", "guide-ticket-refunds"], "supports": ["caa", "consumer", "protection", "atol", "refund", "cancelled", "event", "seller", "charge", "guidance"]},
-    {"evidence_id": "ev-abta", "url": "https://www.abta.com/", "title": "ABTA", "publisher": "ABTA", "rights": "official_reference", "verified_at": "2026-11-11", "excerpt": "ABTA publishes travel-agent protection and booking guidance for licensed agents and package holidays.", "topics": ["guide-flight-booking-channels", "guide-ticket-refunds"], "supports": ["abta", "protection", "travel", "agent", "booking", "licensed", "refund", "cancelled", "seller"]},
-    {"evidence_id": "ev-govuk-consumer", "url": "https://www.gov.uk/search/all?keywords=consumer%20rights%20tickets", "title": "GOV.UK consumer rights search", "publisher": "GOV.UK", "rights": "official_reference", "verified_at": "2026-11-11", "excerpt": "GOV.UK search results link official consumer-rights guidance for tickets, cancellations and charge disputes.", "topics": ["guide-ticket-refunds"], "supports": ["gov.uk", "consumer", "rights", "ticket", "cancellation", "charge", "dispute", "seller", "terms"]},
-    {"evidence_id": "ev-glastonbury-2027", "url": "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed", "title": "Glastonbury 2027 ticket information", "publisher": "Glastonbury Festivals", "rights": "event_announcement", "verified_at": "2026-11-11", "excerpt": "The organiser confirms the 2027 festival runs from Wednesday 23 to Sunday 27 June 2027 at Worthy Farm.", "topics": ["event-glastonbury-2027"], "supports": ["2027", "festival", "wednesday", "23", "sunday", "27", "june", "worthy", "farm", "somerset", "glastonbury"]},
-    {"evidence_id": "ev-glastonbury-home", "url": "https://www.glastonburyfestivals.co.uk/", "title": "Glastonbury Festival", "publisher": "Glastonbury Festivals", "rights": "event_announcement", "verified_at": "2026-11-11", "excerpt": "The festival is held at Worthy Farm, Pilton, Somerset; the organiser publishes travel guidance.", "topics": ["event-glastonbury-2027"], "supports": ["festival", "worthy", "farm", "pilton", "somerset", "travel", "organiser", "glastonbury"]},
-    {"evidence_id": "ev-bbc-glastonbury", "url": "https://www.bbc.co.uk/news/articles/cv62kp9enz08o", "title": "BBC News: Glastonbury 2027 dates", "publisher": "BBC News", "rights": "event_announcement", "verified_at": "2026-11-11", "excerpt": "BBC News reports the announced Glastonbury 2027 dates and the fallow year.",
-  "topics": ["event-glastonbury-2027"], "supports": ["glastonbury", "2027", "dates", "june", "festival", "fallow"]},
-    {"evidence_id": "ev-london-parade-route", "url": "https://londonparade.com/parade-location-timing/", "title": "London Parade route and timing", "publisher": "London Parade", "rights": "event_announcement", "verified_at": "2026-11-11", "excerpt": "The organiser publishes the parade route, start time and road closures for central London.", "topics": ["event-london-parade-2027"], "supports": ["london", "parade", "route", "start", "time", "road", "closure", "organiser"]},
-    {"evidence_id": "ev-london-parade-about", "url": "https://londonparade.com/about/", "title": "About London Parade", "publisher": "London Parade", "rights": "event_announcement", "verified_at": "2026-11-11", "excerpt": "London Parade is the New Year's Day parade in central London; the organiser publishes participant information.", "topics": ["event-london-parade-2027"], "supports": ["london", "parade", "new", "year", "day", "central", "participant", "organiser"]}
+    {
+      "evidence_id": "ev-berlin-events",
+      "url": "https://www.berlin.de/events/",
+      "title": "Berlin event calendar",
+      "publisher": "Berlin.de",
+      "rights": "public_guidance",
+      "verified_at": "2026-11-11",
+      "excerpt": "The Berlin event calendar lists concerts, festivals, Christmas markets and CSD events, with links to organisers and ticket sellers.",
+      "topics": [
+        "guide-berlin-concert-tickets",
+        "guide-pride-festivals-germany",
+        "guide-berlin-christmas-markets"
+      ],
+      "supports": [
+        "berlin",
+        "events",
+        "calendar",
+        "concert",
+        "festival",
+        "christmas",
+        "market",
+        "pride",
+        "csd",
+        "ticket"
+      ]
+    },
+    {
+      "evidence_id": "ev-berlin-en",
+      "url": "https://www.berlin.de/en/",
+      "title": "Berlin.de English portal",
+      "publisher": "Berlin.de",
+      "rights": "public_guidance",
+      "verified_at": "2026-11-11",
+      "excerpt": "The official Berlin portal links city services, public transport, local weather and event information for visitors.",
+      "topics": [
+        "guide-berlin-venue-transport",
+        "reference-germany-weather-sources",
+        "guide-berlin-christmas-markets"
+      ],
+      "supports": [
+        "berlin",
+        "city",
+        "transport",
+        "u-bahn",
+        "tram",
+        "bus",
+        "connection",
+        "venue",
+        "weather",
+        "forecast",
+        "service",
+        "christmas",
+        "market"
+      ]
+    },
+    {
+      "evidence_id": "ev-berlin-christmas",
+      "url": "https://www.berlin.de/en/events/christmas-markets/",
+      "title": "Berlin Christmas markets",
+      "publisher": "Berlin.de",
+      "rights": "public_guidance",
+      "verified_at": "2026-11-11",
+      "excerpt": "Berlin.de lists Christmas markets with opening periods, locations and organiser links; dates vary by market.",
+      "topics": [
+        "guide-berlin-christmas-markets"
+      ],
+      "supports": [
+        "berlin",
+        "christmas",
+        "market",
+        "opening",
+        "dates",
+        "advent",
+        "organiser"
+      ]
+    },
+    {
+      "evidence_id": "ev-mercedes-arena",
+      "url": "https://www.mercedes-benz-arena.de/",
+      "title": "Mercedes-Benz Arena Berlin",
+      "publisher": "Mercedes-Benz Arena",
+      "rights": "public_guidance",
+      "verified_at": "2026-11-11",
+      "excerpt": "The venue programme lists concerts and events and links to the authorised ticket seller for each show.",
+      "topics": [
+        "guide-berlin-concert-tickets"
+      ],
+      "supports": [
+        "venue",
+        "programme",
+        "concert",
+        "event",
+        "ticket",
+        "arena",
+        "berlin"
+      ]
+    },
+    {
+      "evidence_id": "ev-eventim",
+      "url": "https://www.eventim.de/",
+      "title": "Eventim Germany",
+      "publisher": "Eventim",
+      "rights": "public_guidance",
+      "verified_at": "2026-11-11",
+      "excerpt": "Eventim is a ticketing agency in Germany; event pages name the organiser and the authorised seller.",
+      "topics": [
+        "guide-berlin-concert-tickets"
+      ],
+      "supports": [
+        "eventim",
+        "ticketing",
+        "agency",
+        "germany",
+        "seller",
+        "authorised",
+        "ticket"
+      ]
+    },
+    {
+      "evidence_id": "ev-columbiahalle",
+      "url": "https://www.columbiahalle.de/",
+      "title": "Columbiahalle Berlin",
+      "publisher": "Columbiahalle",
+      "rights": "public_guidance",
+      "verified_at": "2026-11-11",
+      "excerpt": "Columbiahalle event pages identify the concert, the organiser and the official ticketing partner.",
+      "topics": [
+        "guide-berlin-concert-tickets"
+      ],
+      "supports": [
+        "venue",
+        "concert",
+        "berlin",
+        "organiser",
+        "ticketing",
+        "seller",
+        "eventim"
+      ]
+    },
+    {
+      "evidence_id": "ev-huxleys",
+      "url": "https://www.huxleys-neue-welt.de/",
+      "title": "Huxley's Neue Welt Berlin",
+      "publisher": "Huxley's Neue Welt",
+      "rights": "public_guidance",
+      "verified_at": "2026-11-11",
+      "excerpt": "The venue publishes doors, age limits, accessibility, bag rules and arrival information for each show.",
+      "topics": [
+        "guide-berlin-concert-tickets"
+      ],
+      "supports": [
+        "venue",
+        "doors",
+        "age",
+        "accessibility",
+        "bag",
+        "rules",
+        "concert",
+        "berlin"
+      ]
+    },
+    {
+      "evidence_id": "ev-verti",
+      "url": "https://www.verti-music-hall.de/",
+      "title": "Verti Music Hall Berlin",
+      "publisher": "Verti Music Hall",
+      "rights": "public_guidance",
+      "verified_at": "2026-11-11",
+      "excerpt": "Verti Music Hall publishes event-specific door times, age limits, accessibility and bag policies.",
+      "topics": [
+        "guide-berlin-concert-tickets"
+      ],
+      "supports": [
+        "venue",
+        "doors",
+        "age",
+        "accessibility",
+        "bag",
+        "rules",
+        "concert",
+        "berlin"
+      ]
+    },
+    {
+      "evidence_id": "ev-bvg",
+      "url": "https://www.bvg.de/",
+      "title": "BVG journey planner",
+      "publisher": "BVG",
+      "rights": "official_reference",
+      "verified_at": "2026-11-11",
+      "excerpt": "The BVG journey planner covers U-Bahn, tram and bus connections and publishes service updates, including S-Bahn connections.",
+      "topics": [
+        "guide-berlin-venue-transport",
+        "guide-berlin-christmas-markets"
+      ],
+      "supports": [
+        "bvg",
+        "journey",
+        "planner",
+        "u-bahn",
+        "tram",
+        "bus",
+        "s-bahn",
+        "connection",
+        "service",
+        "update",
+        "transport",
+        "travel"
+      ]
+    },
+    {
+      "evidence_id": "ev-sbahn",
+      "url": "https://www.s-bahn-berlin.de/",
+      "title": "S-Bahn Berlin",
+      "publisher": "S-Bahn Berlin",
+      "rights": "official_reference",
+      "verified_at": "2026-11-11",
+      "excerpt": "S-Bahn Berlin publishes timetable changes, engineering works and service updates that can affect the last connection.",
+      "topics": [
+        "guide-berlin-venue-transport"
+      ],
+      "supports": [
+        "s-bahn",
+        "berlin",
+        "service",
+        "update",
+        "engineering",
+        "works",
+        "connection",
+        "timetable",
+        "travel"
+      ]
+    },
+    {
+      "evidence_id": "ev-uk-weather",
+      "url": "https://www.bbc.co.uk/weather",
+      "title": "BBC Weather",
+      "publisher": "BBC Weather",
+      "rights": "official_reference",
+      "verified_at": "2026-11-11",
+      "excerpt": "BBC Weather publishes city forecasts and current conditions for the UK and other locations.",
+      "topics": [
+        "reference-uk-weather-sources"
+      ],
+      "supports": [
+        "bbc",
+        "weather",
+        "forecast",
+        "city",
+        "current",
+        "conditions",
+        "uk"
+      ]
+    },
+    {
+      "evidence_id": "ev-metoffice",
+      "url": "https://weather.metoffice.gov.uk/forecast/uk",
+      "title": "Met Office UK forecast",
+      "publisher": "Met Office",
+      "rights": "official_reference",
+      "verified_at": "2026-11-11",
+      "excerpt": "The Met Office publishes the official UK forecast and weather warnings; forecasts are guidance and can change.",
+      "topics": [
+        "reference-uk-weather-sources"
+      ],
+      "supports": [
+        "met",
+        "office",
+        "official",
+        "uk",
+        "forecast",
+        "warning",
+        "weather",
+        "guidance",
+        "change"
+      ]
+    },
+    {
+      "evidence_id": "ev-dwd",
+      "url": "https://www.dwd.de/",
+      "title": "Deutscher Wetterdienst",
+      "publisher": "DWD",
+      "rights": "official_reference",
+      "verified_at": "2026-11-11",
+      "excerpt": "The Deutscher Wetterdienst is Germany's national weather service for forecasts, warnings and climate information.",
+      "topics": [
+        "reference-germany-weather-sources"
+      ],
+      "supports": [
+        "dwd",
+        "deutscher",
+        "wetterdienst",
+        "germany",
+        "national",
+        "weather",
+        "forecast",
+        "warning",
+        "climate"
+      ]
+    },
+    {
+      "evidence_id": "ev-csd-berlin",
+      "url": "https://www.csd-berlin.de/",
+      "title": "CSD Berlin",
+      "publisher": "CSD Berlin",
+      "rights": "event_announcement",
+      "verified_at": "2026-11-11",
+      "excerpt": "The local CSD Berlin organiser publishes the programme, route, accessibility information and any changes.",
+      "topics": [
+        "guide-pride-festivals-germany"
+      ],
+      "supports": [
+        "csd",
+        "berlin",
+        "christopher",
+        "street",
+        "day",
+        "pride",
+        "programme",
+        "route",
+        "accessibility",
+        "organiser",
+        "change"
+      ]
+    },
+    {
+      "evidence_id": "ev-london-gov",
+      "url": "https://www.london.gov.uk/",
+      "title": "Mayor of London",
+      "publisher": "London.gov.uk",
+      "rights": "event_announcement",
+      "verified_at": "2026-11-11",
+      "excerpt": "The Mayor of London publishes official event announcements, viewing areas and ticket arrangements for London New Year's Eve.",
+      "topics": [
+        "guide-london-new-year-fireworks"
+      ],
+      "supports": [
+        "mayor",
+        "london",
+        "official",
+        "event",
+        "announcement",
+        "viewing",
+        "ticket",
+        "arrangement",
+        "fireworks",
+        "travel",
+        "road",
+        "closure",
+        "station"
+      ]
+    },
+    {
+      "evidence_id": "ev-tfl",
+      "url": "https://tfl.gov.uk/",
+      "title": "Transport for London",
+      "publisher": "Transport for London",
+      "rights": "official_reference",
+      "verified_at": "2026-11-11",
+      "excerpt": "TfL publishes travel plans, road closures and busy-station advice for major London events.",
+      "topics": [
+        "guide-london-new-year-fireworks",
+        "event-london-parade-2027"
+      ],
+      "supports": [
+        "tfl",
+        "transport",
+        "london",
+        "travel",
+        "road",
+        "closure",
+        "station",
+        "event",
+        "plan"
+      ]
+    },
+    {
+      "evidence_id": "ev-ba",
+      "url": "https://www.britishairways.com/",
+      "title": "British Airways",
+      "publisher": "British Airways",
+      "rights": "public_guidance",
+      "verified_at": "2026-11-11",
+      "excerpt": "The airline's own site sells flights and publishes fare rules, baggage and change conditions.",
+      "topics": [
+        "guide-flight-booking-channels"
+      ],
+      "supports": [
+        "airline",
+        "site",
+        "flight",
+        "fare",
+        "rule",
+        "baggage",
+        "change",
+        "seller",
+        "compare"
+      ]
+    },
+    {
+      "evidence_id": "ev-lufthansa",
+      "url": "https://www.lufthansa.com/",
+      "title": "Lufthansa",
+      "publisher": "Lufthansa",
+      "rights": "public_guidance",
+      "verified_at": "2026-11-11",
+      "excerpt": "Lufthansa sells flights directly and publishes fare, baggage and change conditions.",
+      "topics": [
+        "guide-flight-booking-channels"
+      ],
+      "supports": [
+        "airline",
+        "site",
+        "flight",
+        "fare",
+        "baggage",
+        "change",
+        "seller",
+        "compare"
+      ]
+    },
+    {
+      "evidence_id": "ev-caa",
+      "url": "https://www.caa.co.uk/",
+      "title": "UK Civil Aviation Authority",
+      "publisher": "CAA",
+      "rights": "official_reference",
+      "verified_at": "2026-11-11",
+      "excerpt": "The CAA publishes consumer protection guidance, including ATOL and refunds for cancelled flights or events.",
+      "topics": [
+        "guide-flight-booking-channels",
+        "guide-ticket-refunds"
+      ],
+      "supports": [
+        "caa",
+        "consumer",
+        "protection",
+        "atol",
+        "refund",
+        "cancelled",
+        "event",
+        "seller",
+        "charge",
+        "guidance"
+      ]
+    },
+    {
+      "evidence_id": "ev-abta",
+      "url": "https://www.abta.com/",
+      "title": "ABTA",
+      "publisher": "ABTA",
+      "rights": "official_reference",
+      "verified_at": "2026-11-11",
+      "excerpt": "ABTA publishes travel-agent protection and booking guidance for licensed agents and package holidays.",
+      "topics": [
+        "guide-flight-booking-channels",
+        "guide-ticket-refunds"
+      ],
+      "supports": [
+        "abta",
+        "protection",
+        "travel",
+        "agent",
+        "booking",
+        "licensed",
+        "refund",
+        "cancelled",
+        "seller"
+      ]
+    },
+    {
+      "evidence_id": "ev-govuk-consumer",
+      "url": "https://www.gov.uk/search/all?keywords=consumer%20rights%20tickets",
+      "title": "GOV.UK consumer rights search",
+      "publisher": "GOV.UK",
+      "rights": "official_reference",
+      "verified_at": "2026-11-11",
+      "excerpt": "GOV.UK search results link official consumer-rights guidance for tickets, cancellations and charge disputes.",
+      "topics": [
+        "guide-ticket-refunds"
+      ],
+      "supports": [
+        "gov.uk",
+        "consumer",
+        "rights",
+        "ticket",
+        "cancellation",
+        "charge",
+        "dispute",
+        "seller",
+        "terms"
+      ]
+    },
+    {
+      "evidence_id": "ev-glastonbury-2027",
+      "url": "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed",
+      "title": "Glastonbury 2027 ticket information",
+      "publisher": "Glastonbury Festivals",
+      "rights": "event_announcement",
+      "verified_at": "2026-11-11",
+      "excerpt": "The organiser confirms the 2027 festival runs from Wednesday 23 to Sunday 27 June 2027 at Worthy Farm.",
+      "topics": [
+        "event-glastonbury-2027"
+      ],
+      "supports": [
+        "2027",
+        "festival",
+        "wednesday",
+        "23",
+        "sunday",
+        "27",
+        "june",
+        "worthy",
+        "farm",
+        "somerset",
+        "glastonbury"
+      ]
+    },
+    {
+      "evidence_id": "ev-glastonbury-home",
+      "url": "https://www.glastonburyfestivals.co.uk/",
+      "title": "Glastonbury Festival",
+      "publisher": "Glastonbury Festivals",
+      "rights": "event_announcement",
+      "verified_at": "2026-11-11",
+      "excerpt": "The festival is held at Worthy Farm, Pilton, Somerset; the organiser publishes travel guidance.",
+      "topics": [
+        "event-glastonbury-2027"
+      ],
+      "supports": [
+        "festival",
+        "worthy",
+        "farm",
+        "pilton",
+        "somerset",
+        "travel",
+        "organiser",
+        "glastonbury"
+      ]
+    },
+    {
+      "evidence_id": "ev-bbc-glastonbury",
+      "url": "https://www.bbc.co.uk/news/articles/cv62kp9enz08o",
+      "title": "BBC News: Glastonbury 2027 dates",
+      "publisher": "BBC News",
+      "rights": "event_announcement",
+      "verified_at": "2026-11-11",
+      "excerpt": "BBC News reports the announced Glastonbury 2027 dates and the fallow year.",
+      "topics": [
+        "event-glastonbury-2027"
+      ],
+      "supports": [
+        "glastonbury",
+        "2027",
+        "dates",
+        "june",
+        "festival",
+        "fallow"
+      ]
+    },
+    {
+      "evidence_id": "ev-london-parade-route",
+      "url": "https://londonparade.com/parade-location-timing/",
+      "title": "London Parade route and timing",
+      "publisher": "London Parade",
+      "rights": "event_announcement",
+      "verified_at": "2026-11-11",
+      "excerpt": "The organiser publishes the parade route, start time and road closures for central London.",
+      "topics": [
+        "event-london-parade-2027"
+      ],
+      "supports": [
+        "london",
+        "parade",
+        "route",
+        "start",
+        "time",
+        "road",
+        "closure",
+        "organiser"
+      ]
+    },
+    {
+      "evidence_id": "ev-london-parade-about",
+      "url": "https://londonparade.com/about/",
+      "title": "About London Parade",
+      "publisher": "London Parade",
+      "rights": "event_announcement",
+      "verified_at": "2026-11-11",
+      "excerpt": "London Parade is the New Year's Day parade in central London; the organiser publishes participant information.",
+      "topics": [
+        "event-london-parade-2027"
+      ],
+      "supports": [
+        "london",
+        "parade",
+        "new",
+        "year",
+        "day",
+        "central",
+        "participant",
+        "organiser"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "fact_id": "fact-66996b79a739",
+      "text": "Start at the venue's own programme or the Berlin events calendar, then follow the official ticket link shown for that event.",
+      "evidence": [
+        "ev-berlin-events",
+        "ev-mercedes-arena"
+      ]
+    },
+    {
+      "fact_id": "fact-3160fd902580",
+      "text": "Eventim is an authorised ticketing agency in Germany; check that the seller named on the event page matches the checkout before paying.",
+      "evidence": [
+        "ev-eventim",
+        "ev-columbiahalle"
+      ]
+    },
+    {
+      "fact_id": "fact-4364f94f7a29",
+      "text": "Check the venue page for doors, age limits, accessibility and bag rules, which vary by show.",
+      "evidence": [
+        "ev-huxleys",
+        "ev-verti"
+      ]
+    },
+    {
+      "fact_id": "fact-7c25f45f0509",
+      "text": "Use the BVG journey planner for U-Bahn, tram and bus connections to the venue.",
+      "evidence": [
+        "ev-bvg",
+        "ev-berlin-en"
+      ]
+    },
+    {
+      "fact_id": "fact-02b47ee0fd51",
+      "text": "Check S-Bahn service updates before travelling; engineering works can change the last connection.",
+      "evidence": [
+        "ev-sbahn",
+        "ev-bvg"
+      ]
+    },
+    {
+      "fact_id": "fact-5e8d528f71e7",
+      "text": "Use BBC Weather for city forecasts and the Met Office for the official UK forecast and weather warnings.",
+      "evidence": [
+        "ev-uk-weather",
+        "ev-metoffice"
+      ]
+    },
+    {
+      "fact_id": "fact-f5f010165854",
+      "text": "Treat a forecast as guidance, not a guarantee; warnings and local conditions can change during the day.",
+      "evidence": [
+        "ev-metoffice"
+      ]
+    },
+    {
+      "fact_id": "fact-b5853c4036ad",
+      "text": "Use the DWD for national warnings and forecasts, and the city or state service for local information.",
+      "evidence": [
+        "ev-dwd",
+        "ev-berlin-en"
+      ]
+    },
+    {
+      "fact_id": "fact-628b2a367fc2",
+      "text": "Look for CSD or Christopher Street Day listings in each city; programmes and dates are published by local organisers.",
+      "evidence": [
+        "ev-berlin-events",
+        "ev-csd-berlin"
+      ]
+    },
+    {
+      "fact_id": "fact-cdf187c6322c",
+      "text": "Check the organiser's own page for route, accessibility and any changes before travelling.",
+      "evidence": [
+        "ev-csd-berlin"
+      ]
+    },
+    {
+      "fact_id": "fact-db6ae8bf5e93",
+      "text": "Check the Mayor of London's official page for the event announcement, viewing areas and ticket arrangements.",
+      "evidence": [
+        "ev-london-gov",
+        "ev-tfl"
+      ]
+    },
+    {
+      "fact_id": "fact-fe1adf1c3038",
+      "text": "Plan travel with TfL and expect road closures and busy stations on the night.",
+      "evidence": [
+        "ev-tfl",
+        "ev-london-gov"
+      ]
+    },
+    {
+      "fact_id": "fact-e6eb0dc5d401",
+      "text": "Compare the airline's own site with a licensed agent, and check who the seller is before paying.",
+      "evidence": [
+        "ev-ba",
+        "ev-lufthansa"
+      ]
+    },
+    {
+      "fact_id": "fact-7a867c014811",
+      "text": "Check ATOL or ABTA protection where it applies, and read the fare rules for changes and refunds.",
+      "evidence": [
+        "ev-caa",
+        "ev-abta"
+      ]
+    },
+    {
+      "fact_id": "fact-edf4b314a95b",
+      "text": "Check the seller's terms and the official consumer guidance for the country of purchase before disputing a charge.",
+      "evidence": [
+        "ev-govuk-consumer",
+        "ev-caa"
+      ]
+    },
+    {
+      "fact_id": "fact-57109a62cbb2",
+      "text": "For a cancelled event, contact the original seller; resale sites may not offer the same protection.",
+      "evidence": [
+        "ev-caa",
+        "ev-abta"
+      ]
+    },
+    {
+      "fact_id": "fact-2e6ad1f801b3",
+      "text": "The 2027 festival is scheduled from Wednesday 23 to Sunday 27 June 2027.",
+      "evidence": [
+        "ev-glastonbury-2027",
+        "ev-bbc-glastonbury"
+      ]
+    },
+    {
+      "fact_id": "fact-3d1862abafa2",
+      "text": "The festival is held at Worthy Farm, Pilton, Somerset; use the organiser's travel guidance.",
+      "evidence": [
+        "ev-glastonbury-home"
+      ]
+    },
+    {
+      "fact_id": "fact-fca7bb1b393b",
+      "text": "Use the organiser's official site for the current route, start time and road closures.",
+      "evidence": [
+        "ev-london-parade-route",
+        "ev-london-parade-about"
+      ]
+    },
+    {
+      "fact_id": "fact-1681516c5cc1",
+      "text": "Check TfL for travel changes on the day and plan around central London closures.",
+      "evidence": [
+        "ev-tfl"
+      ]
+    },
+    {
+      "fact_id": "fact-6f22b2383b72",
+      "text": "Check the Berlin city calendar for current Christmas market listings and opening periods.",
+      "evidence": [
+        "ev-berlin-events",
+        "ev-berlin-en"
+      ]
+    },
+    {
+      "fact_id": "fact-e4cf993ab207",
+      "text": "Plan travel to the markets with BVG and confirm opening times and entry conditions on the organiser's page before travelling.",
+      "evidence": [
+        "ev-bvg",
+        "ev-berlin-events"
+      ]
+    }
   ]
 }

@@ -54,10 +54,7 @@ class WikiWorkflowTests(unittest.TestCase):
         self.service.propose(article)
         original = self.store.get(article["topic_id"])["body"]
         changed = dict(article)
-        changed["claims"] = article["claims"] + [{
-            "text": "Check the venue's own site for current accessibility arrangements.",
-            "sources": ["https://www.mercedes-benz-arena.de/"],
-        }]
+        changed["claims"] = article["claims"] + [article["claims"][2]]
         result = self.service.propose(changed)
         self.assertEqual(result["result"], "update_draft")
         self.assertIn("+", result["diff"])
@@ -86,7 +83,7 @@ class WikiWorkflowTests(unittest.TestCase):
                              WikiPolicy(auto_publish_enabled=True, authorised_by="test",
                                         allowed_categories=("general",)),
                              reviewer="editor")
-        source = article["claims"][0]["sources"][0]
+        source = "https://www.berlin.de/events/"
         result = self.service.flag_source(source, "rights withdrawn")
         self.assertIn(article["topic_id"], result["topics"])
         page = self.store.get(article["topic_id"])

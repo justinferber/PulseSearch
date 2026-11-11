@@ -50,10 +50,11 @@ def main() -> int:
     staging.close()
     wiki = WikiStore(tmp / "wiki.sqlite")
     WikiService(wiki).propose({
-        "topic_id": "reference-uk-weather-sources", "slug": "demo-wiki-topic",
+        "topic_id": "guide-berlin-concert-tickets", "slug": "demo-wiki-topic",
         "title": "Demo Wiki topic", "summary": "Public evidence only.",
-        "claims": [{"text": "Use BBC Weather and the Met Office for UK forecasts.",
-                    "evidence": ["ev-uk-weather", "ev-metoffice"]}],
+        "claims": [{"text": "Start at the venue's own programme or the Berlin events calendar, then follow the official ticket link shown for that event.",
+                    "fact_id": "fact-66996b79a739",
+                    "evidence": ["ev-berlin-events", "ev-mercedes-arena"]}],
         "verified_at": "2026-11-11"})
     wiki.close()
     server = build_server(
@@ -80,7 +81,8 @@ def main() -> int:
             ("wiki_candidate", "/v1/wiki-candidates", {"article": {
                 "topic_id": "guide-berlin-concert-tickets", "slug": "demo-api-topic",
                 "title": "Demo API topic", "summary": "Draft only.",
-                "claims": [{"text": "Start at the venue programme or the Berlin events calendar.",
+                "claims": [{"text": "Start at the venue's own programme or the Berlin events calendar, then follow the official ticket link shown for that event.",
+                            "fact_id": "fact-66996b79a739",
                             "evidence": ["ev-berlin-events", "ev-mercedes-arena"]}],
                 "verified_at": "2026-11-11"}}, TOKEN),
             ("wiki_scope_denied", "/v1/wiki-candidates", {"article": {

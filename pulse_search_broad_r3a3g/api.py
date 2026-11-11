@@ -24,6 +24,7 @@ from pathlib import Path
 from threading import Lock
 from urllib.parse import quote, urlsplit
 
+from . import privacy
 from .answers import AnswerService, load_pack
 from .search import search_staging
 from .wiki import WikiError, WikiPolicy, WikiService, WikiStore
@@ -255,7 +256,7 @@ class _Handler(BaseHTTPRequestHandler):
             self._json(403, {"status": "FORBIDDEN", "required_scope": exc.required,
                              "request_id": request_id})
             return
-        except (ValueError, WikiError) as exc:
+        except (ValueError, WikiError, privacy.PrivacyError) as exc:
             self._json(422, {"status": "INVALID_REQUEST", "error": str(exc),
                              "request_id": request_id})
             return
@@ -263,13 +264,11 @@ class _Handler(BaseHTTPRequestHandler):
         self._json(200, response)
 
     def _search(self, payload: dict, request_id: str) -> dict:
-        query = str(payload.get("query") or "").strip()
+        clean = privacy.public_search(payload)
+        query = clean["query"].strip()
         if not query or len(query) > MAX_QUERY:
             raise ValueError(f"query must be 1..{MAX_QUERY} characters")
-        try:
-            limit = max(1, min(int(payload.get("limit") or 8), 20))
-        except (TypeError, ValueError) as exc:
-            raise ValueError("limit must be an integer") from exc
+        limit = max(1, min(int(clean["limit"]), 20))
         index = self.server.open_index()
         try:
             result = search_staging(index, query, limit=limit)
@@ -278,12 +277,11 @@ class _Handler(BaseHTTPRequestHandler):
         result.update({"request_id": request_id, "retrieved_at": now_iso(),
                        "source_ids": sorted({r.get("source_id") or "" for r in
                                              result.get("results", []) if r.get("source_id")}),
-                       "result_cards": result.get("results", []),
-                       "consumer_context_received": bool(payload.get("consumer_context"))})
+                       "result_cards": result.get("results", [])})
         return result
 
     def _answer(self, payload: dict, request_id: str) -> dict:
-        question = str(payload.get("question") or "").strip()
+        question = privacy.public_answer(payload)["question"].strip()
         if not question or len(question) > MAX_QUERY:
             raise ValueError(f"question must be 1..{MAX_QUERY} characters")
         index = self.server.open_index()
@@ -304,15 +302,15 @@ class _Handler(BaseHTTPRequestHandler):
                 "citations": citations, "freshness": answer["freshness"],
                 "confidence": answer["confidence"], "limits": answer["limits"],
                 "notices": answer["limits"], "request_id": request_id,
-                "retrieved_at": now_iso(), "context_used": bool(payload.get("context"))}
+                "retrieved_at": now_iso()}
 
     def _wiki(self, payload: dict, request_id: str, consumer: Consumer) -> dict:
         if self.server.wiki is None:
             return {"status": "NOT_AVAILABLE", "request_id": request_id,
                     "notices": ["Wiki candidate workflow is not configured."]}
-        if payload.get("consumer_context") or payload.get("context"):
-            raise ValueError("member/consumer context must not be sent to the Wiki workflow")
-        article = payload.get("article") if isinstance(payload.get("article"), dict) else payload
+        if set(payload) != {"article"}:
+            raise privacy.PrivacyError("wiki request must contain exactly one article object")
+        article = privacy.public_article(payload["article"])
         result = self.server.wiki.propose(article)
         result.update({"status": result.get("result", "draft"), "request_id": request_id,
                        "consumer": consumer.name, "publication": "DRAFT_ONLY",

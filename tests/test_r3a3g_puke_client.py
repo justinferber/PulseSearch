@@ -72,6 +72,16 @@ class ClientTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             client._call("/v1/answer", {"question": "x", "member_context": "secret"})
 
+    def test_nested_member_material_and_pii_are_blocked(self):
+        client = PulseSearchClient(self.base, TOKEN)
+        with self.assertRaises(ValueError):
+            client._call("/v1/answer", {"question": {"member_context": "secret"}})
+        with self.assertRaises(ValueError):
+            client.wiki_candidate({
+                "topic_id": "x", "title": "x", "summary": "x", "verified_at": "2026-11-11",
+                "claims": [{"text": "Contact person@example.com", "evidence": ["ev-x"],
+                            "fact_id": "fact-x"}]})
+
     def test_bad_token_is_reported(self):
         client = PulseSearchClient(self.base, "wrong")
         with self.assertRaises(PulseSearchError) as context:

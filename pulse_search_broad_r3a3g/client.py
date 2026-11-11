@@ -13,6 +13,8 @@ import urllib.parse
 import urllib.request
 from dataclasses import dataclass
 
+from . import privacy
+
 
 class PulseSearchError(RuntimeError):
     def __init__(self, message: str, status: int = 0, body: dict | None = None):
@@ -60,8 +62,7 @@ class PulseSearchClient:
         headers = {"Authorization": f"Bearer {self._token}",
                    "Accept": "application/json", "User-Agent": "PUKE-PulseSearchClient/1.1"}
         if payload is not None:
-            if any(k in payload for k in ("member_context", "user_context", "email")):
-                raise ValueError("member context must never be sent to Pulse Search")
+            privacy.assert_public_value(payload, "payload")
             data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
             method = "POST"
             headers["Content-Type"] = "application/json"
@@ -91,10 +92,10 @@ class PulseSearchClient:
         return self._call("/v1/capabilities")
 
     def search(self, query: str, limit: int = 8) -> dict:
-        return self._call("/v1/search", {"query": query, "limit": limit})
+        return self._call("/v1/search", privacy.public_search({"query": query, "limit": limit}))
 
     def answer(self, question: str) -> QueryResult:
-        body = self._call("/v1/answer", {"question": question})
+        body = self._call("/v1/answer", privacy.public_answer({"question": question}))
         citations = tuple(body.get("citations") or ())
         links = tuple(body.get("links") or body.get("result_cards") or ())
         return QueryResult(
@@ -109,9 +110,8 @@ class PulseSearchClient:
         return self.answer(question)
 
     def wiki_candidate(self, article: dict) -> dict:
-        if any(k in article for k in ("member_context", "user_context", "email")):
-            raise ValueError("member context must never be sent to the Wiki workflow")
-        body = self._call("/v1/wiki-candidates", {"article": article})
+        body = self._call("/v1/wiki-candidates",
+                          {"article": privacy.public_article(article)})
         if body.get("publication") != "DRAFT_ONLY":
             raise PulseSearchError("Wiki candidate response was not marked DRAFT_ONLY",
                                    body=body)

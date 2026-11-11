@@ -1,13 +1,13 @@
 {
   "kind": "R3A3G_PUKE_CLIENT_DEMO",
-  "generated_at": "2026-11-11T14:36:30+00:00",
+  "generated_at": "2026-11-11T15:41:23+00:00",
   "mode": "SEPARATE_LOOPBACK_CLIENT",
   "health": {
     "status": "OK",
     "service": "pulse-search",
     "api_version": "1.1",
-    "request_id": "de32c42da5a649fe88ca2514d96f7291",
-    "time_utc": "2026-11-11T14:46:32+00:00",
+    "request_id": "0c66e91e63684203a2d70666be228bef",
+    "time_utc": "2026-11-11T15:43:18+00:00",
     "consumer": "puke"
   },
   "cases": [
@@ -19,7 +19,7 @@
       "links": 0,
       "citations": 2,
       "claim_evidence": 4,
-      "request_id": "e3f71d71cdf6432a9c0594420b8f340c",
+      "request_id": "d805a48e615540b19e4a3e8baf1bfadc",
       "has_evidence": true,
       "search_status": "official_links",
       "search_results": [
@@ -43,7 +43,7 @@
       "links": 0,
       "citations": 0,
       "claim_evidence": 2,
-      "request_id": "0fd1634734ac4e6ea8cb37f2a06f0773",
+      "request_id": "2d402c9a06494ee9a3d3fda194269c77",
       "has_evidence": false,
       "search_status": "staging_results",
       "search_results": [
@@ -53,13 +53,13 @@
           "source_kind": "permissioned_staging_document"
         },
         {
-          "title": "Events & Culture in Berlin – Berlin.de",
-          "url": "https://www.berlin.de/en/events/",
+          "title": "Berlin's official travel website - visitBerlin.de",
+          "url": "https://www.visitberlin.de/en",
           "source_kind": "permissioned_staging_document"
         },
         {
-          "title": "Willkommen in Berlin | S-Bahn Berlin GmbH",
-          "url": "https://www.s-bahn-berlin.de/",
+          "title": "Christmas markets in Berlin | visitBerlin.de",
+          "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
           "source_kind": "permissioned_staging_document"
         }
       ]
@@ -72,18 +72,18 @@
       "links": 0,
       "citations": 1,
       "claim_evidence": 2,
-      "request_id": "8221079a1e4b412e8e74555f7dd727ca",
+      "request_id": "edd6da01ab2340e6b6acf53b34badb1e",
       "has_evidence": true,
       "search_status": "staging_results",
       "search_results": [
         {
-          "title": "Glastonbury Festival - Home",
-          "url": "https://www.glastonburyfestivals.co.uk/",
+          "title": "First Glastonbury 2027 tickets sell out in under 30 minutes - BBC News",
+          "url": "https://www.bbc.co.uk/news/articles/cv62kp9enz08o",
           "source_kind": "permissioned_staging_document"
         },
         {
-          "title": "LONDON PARADE 2027 Location & Timing - London Parade",
-          "url": "https://londonparade.com/parade-location-timing/",
+          "title": "Glastonbury Festival - Home",
+          "url": "https://www.glastonburyfestivals.co.uk/",
           "source_kind": "permissioned_staging_document"
         }
       ]
@@ -96,18 +96,13 @@
       "links": 0,
       "citations": 0,
       "claim_evidence": 2,
-      "request_id": "c1505d820baf4d59b78e8c2e898c26b0",
+      "request_id": "76fd0f9bd6074843a72dcc63fa97f130",
       "has_evidence": false,
       "search_status": "staging_results",
       "search_results": [
         {
           "title": "Keeping London moving - Transport for London",
           "url": "https://tfl.gov.uk/",
-          "source_kind": "permissioned_staging_document"
-        },
-        {
-          "title": "LONDON PARADE 2027 Location & Timing - London Parade",
-          "url": "https://londonparade.com/parade-location-timing/",
           "source_kind": "permissioned_staging_document"
         }
       ]
@@ -120,7 +115,7 @@
       "links": 0,
       "citations": 0,
       "claim_evidence": 2,
-      "request_id": "d1f1f5097e094f40991f2cc77ea84817",
+      "request_id": "b504e42fd1ee4128a90f6d210c5c7d88",
       "has_evidence": false,
       "search_status": "staging_results",
       "search_results": [
@@ -139,20 +134,38 @@
       "links": 0,
       "citations": 0,
       "claim_evidence": 2,
-      "request_id": "0a23a019d8234899a572ccc9ade7f513",
+      "request_id": "aa2f59bd719a405d89a2192eeabc5cf9",
       "has_evidence": false,
-      "search_status": "staging_results",
+      "search_status": "official_links",
       "search_results": [
         {
-          "title": "LONDON PARADE 2027 Location & Timing - London Parade",
-          "url": "https://londonparade.com/parade-location-timing/",
-          "source_kind": "permissioned_staging_document"
+          "title": "Berlin.de events calendar",
+          "url": "https://www.berlin.de/events/",
+          "source_kind": "official_directory"
+        },
+        {
+          "title": "CSD Berlin",
+          "url": "https://www.csd-berlin.de/",
+          "source_kind": "official_directory"
+        },
+        {
+          "title": "visitBerlin Christmas markets",
+          "url": "https://www.visitberlin.de/en/christmas-markets-berlin",
+          "source_kind": "official_directory"
         }
       ]
     }
   ],
+  "chain": {
+    "query": "How do I book concert tickets in Berlin?",
+    "search_status": "staging_results",
+    "search_top": "https://www.visitberlin.de/en",
+    "answer_status": "NO_EVIDENCE",
+    "answer_citations": 0,
+    "claim_evidence": 2
+  },
   "wiki_candidate": {
-    "status": "update_draft",
+    "status": "draft_created",
     "publication": "DRAFT_ONLY"
   },
   "member_context_blocked_client_side": true,

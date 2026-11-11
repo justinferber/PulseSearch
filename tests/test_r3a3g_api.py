@@ -20,6 +20,7 @@ from pulse_search_crawler_r3a3f.staging import StagingIndex  # noqa: E402
 from pulse_search_broad_r3a3g.wiki import WikiService, WikiStore  # noqa: E402
 
 TOKEN = "test-token-not-a-secret"
+ARTICLES = json.loads((ROOT / "config/wiki_articles.json").read_text(encoding="utf-8"))["articles"]
 
 
 class ApiTests(unittest.TestCase):
@@ -37,13 +38,7 @@ class ApiTests(unittest.TestCase):
         }, [], index_allowed=True)
         staging.close()
         wiki = WikiStore(cls.tmp / "wiki.sqlite")
-        WikiService(wiki).propose({
-            "topic_id": "reference-uk-weather-sources", "slug": "api-draft-topic",
-            "title": "API draft topic", "summary": "Summary",
-            "claims": [{"text": "Use BBC Weather and the Met Office for UK forecasts.",
-                         "evidence": ["ev-uk-weather", "ev-metoffice"]}],
-            "verified_at": "2026-11-11",
-        })
+        WikiService(wiki).propose(ARTICLES[0])
         wiki.close()
         cls.search_token = "search-only-token"
         cls.server = build_server(
@@ -107,16 +102,22 @@ class ApiTests(unittest.TestCase):
         self.assertNotIn("°C", body["answer"])
 
     def test_wiki_candidates_are_draft_only(self):
-        article = {"topic_id": "guide-berlin-concert-tickets",
-                   "slug": "api-berlin-concert-guide", "title": "API Berlin concert guide",
-                   "summary": "A sourced draft.",
-                   "claims": [{"text": "Start at the venue programme or the Berlin events calendar.",
-                               "evidence": ["ev-berlin-events", "ev-mercedes-arena"]}],
-                   "verified_at": "2026-11-11"}
-        status, body, _ = self.request("/v1/wiki-candidates", {"article": article})
+        status, body, _ = self.request("/v1/wiki-candidates", {"article": ARTICLES[0]})
         self.assertEqual(status, 200)
-        self.assertIn(body["status"], ("draft_created", "duplicate"))
+        self.assertIn(body["status"], ("draft_created", "duplicate", "update_draft"))
         self.assertEqual(body["publication"], "DRAFT_ONLY")
+
+    def test_nested_member_context_is_rejected_at_service_boundary(self):
+        article = dict(ARTICLES[0])
+        article["claims"] = [dict(claim) for claim in article["claims"]]
+        article["claims"][0]["member_context"] = "private"
+        status, body, _ = self.request("/v1/wiki-candidates", {"article": article})
+        self.assertEqual(status, 422)
+        self.assertNotIn("secret", json.dumps(body))
+
+    def test_unknown_search_fields_are_rejected(self):
+        status, _, _ = self.request("/v1/search", {"query": "Berlin", "context": {"user": "x"}})
+        self.assertEqual(status, 422)
 
     def test_invalid_queries_and_bodies_are_rejected(self):
         status, _, _ = self.request("/v1/search", {"query": ""})

@@ -79,6 +79,18 @@ class PublisherConflict(WikiError):
     pass
 
 
+class InvalidAcknowledgement(PublisherRejected):
+    """The adapter returned a receipt that cannot prove the intended write.
+
+    A malformed receipt may still mean the external side committed, so it must
+    not be retried blindly. An explicit ``ok=false`` is a safe rejection.
+    """
+
+    def __init__(self, message: str, *, potentially_committed: bool = True):
+        super().__init__(message)
+        self.potentially_committed = potentially_committed
+
+
 def slugify(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", str(text).lower()).strip("-")[:80]
 
@@ -376,23 +388,28 @@ class WikiService:
                 raise WikiError("each claim must be an object")
             text = str(claim.get("text") or "").strip()
             refs = claim.get("evidence") or claim.get("sources") or []
+            fact_id = str(claim.get("fact_id") or "").strip()
             if not text or not isinstance(refs, list) or not refs:
-                raise WikiError("each claim needs text and an admitted evidence reference")
+                raise WikiError("each claim needs text, evidence ids and a fact_id")
+            if not fact_id:
+                raise WikiError("each claim needs a registered fact_id; URLs alone are not evidence")
+            if "sources" in claim or "source_urls" in claim:
+                raise WikiError("caller-supplied source URLs are not accepted; use fact_id")
             if PII_RE.search(text):
                 raise WikiError("claim contains personal data")
             if TRANSIENT_RE.search(text):
                 raise WikiError("transient price/stock/observation text is not publishable")
-            claim_evidence: list[dict] = []
-            for ref in refs:
-                try:
-                    ev = self.evidence.get(str(ref), topic_id=topic_id, claim=text)
-                except EvidenceError as exc:
-                    raise WikiError(str(exc)) from exc
+            try:
+                _fact, fact_evidence = self.evidence.get_fact(
+                    fact_id, topic_id=topic_id, claim=text)
+            except EvidenceError as exc:
+                raise WikiError(str(exc)) from exc
+            claim_evidence: list[str] = []
+            for ev in fact_evidence:
+                if ev.evidence_id not in refs:
+                    raise WikiError(f"fact {fact_id} is not bound to requested evidence {ev.evidence_id}")
                 if ev.url in revoked:
                     raise WikiError(f"evidence is revoked: {ev.evidence_id}")
-                if ev.rights not in ("public_guidance", "official_reference",
-                                     "event_announcement"):
-                    raise WikiError(f"evidence rights are not publishable: {ev.evidence_id}")
                 accepted.append(ev)
                 claim_evidence.append(ev.evidence_id)
                 if not any(s["url"] == ev.url for s in resolved):
@@ -402,7 +419,8 @@ class WikiService:
                         "rights": ev.rights, "verified_at": ev.verified_at,
                         "excerpt": ev.excerpt,
                     })
-            clean_claims.append({"text": text, "evidence": claim_evidence})
+            clean_claims.append({"text": text, "evidence": claim_evidence,
+                                 "fact_id": fact_id})
             body_lines.append(f"- {text}")
         try:
             self.evidence.require_independent(accepted, minimum=2)
@@ -563,13 +581,25 @@ class WikiService:
                 self._commit_publication(page, revision, receipt, reviewer, policy)
                 return {"result": "published_after_retry", "topic_id": topic_id,
                         "publisher": receipt, "status": "published"}
+            if attempt and attempt["state"] in ("needs_reconciliation", "invalid_acknowledgement"):
+                raise WikiError(
+                    "publisher acknowledgement is unverified; reconcile the external "
+                    "revision before retrying (no blind resubmission)")
             if attempt and attempt["state"] == "running":
                 raise WikiError("a publication attempt for this revision is already running")
             self.store.begin_attempt(key, topic_id, revision.version)
             try:
                 receipt = self.publisher.publish(revision)
+                self._validate_receipt(receipt, revision)
             except PublisherConflict:
                 self.store.finish_attempt(key, "conflict", error="external revision conflict")
+                raise
+            except InvalidAcknowledgement as exc:
+                state = "needs_reconciliation" if exc.potentially_committed else "rejected"
+                self.store.finish_attempt(key, state, receipt=receipt, error=str(exc))
+                with self.store.transaction() as conn:
+                    conn.execute("UPDATE wiki_pages SET last_publish_error=? WHERE topic_id=?",
+                                 (str(exc), topic_id))
                 raise
             except Exception as exc:
                 self.store.finish_attempt(key, "failed", error=str(exc))
@@ -577,7 +607,6 @@ class WikiService:
                     conn.execute("UPDATE wiki_pages SET last_publish_error=? WHERE topic_id=?",
                                  (str(exc), topic_id))
                 raise PublisherRejected(f"publisher rejected the revision: {exc}") from exc
-            self._validate_receipt(receipt, revision)
             try:
                 self._commit_publication(page, revision, receipt, reviewer, policy)
             except Exception as exc:
@@ -623,27 +652,24 @@ class WikiService:
             raise WikiError("revision version must be positive")
         revoked = self.store.revoked_evidence()
         evidence: list[Evidence] = []
-        for source in revision.sources:
-            url = str(source.get("url") or "")
-            if url in revoked:
-                raise WikiError(f"evidence was revoked: {url}")
-            evidence_id = str(source.get("evidence_id") or "")
-            if not evidence_id:
-                raise WikiError("source has no admitted evidence id")
-            matched = None
-            for claim in revision.claims:
-                if evidence_id in (claim.get("evidence") or []):
-                    try:
-                        matched = self.evidence.get(evidence_id, topic_id=revision.topic_id,
-                                                     claim=str(claim.get("text") or ""))
-                    except EvidenceError as exc:
-                        raise WikiError(str(exc)) from exc
-                    break
-            if matched is None:
-                raise WikiError(f"evidence {evidence_id} is not bound to a claim")
-            if matched.url != url:
-                raise WikiError(f"evidence {evidence_id} URL does not match the source")
-            evidence.append(matched)
+        for claim in revision.claims:
+            text = str(claim.get("text") or "")
+            fact_id = str(claim.get("fact_id") or "")
+            if not fact_id:
+                raise WikiError("revision claim has no registered fact_id")
+            try:
+                _fact, matched_records = self.evidence.get_fact(
+                    fact_id, topic_id=revision.topic_id, claim=text)
+            except EvidenceError as exc:
+                raise WikiError(str(exc)) from exc
+            for matched in matched_records:
+                if matched.url in revoked:
+                    raise WikiError(f"evidence was revoked: {matched.url}")
+                evidence.append(matched)
+        source_urls = {str(source.get("url") or "") for source in revision.sources}
+        accepted_urls = {item.url for item in evidence}
+        if not accepted_urls or not accepted_urls.issubset(source_urls):
+            raise WikiError("revision sources do not match its admitted facts")
         try:
             self.evidence.require_independent(
                 evidence, minimum=policy.min_independent_publishers)
@@ -651,16 +677,21 @@ class WikiService:
             raise WikiError(str(exc)) from exc
 
     def _validate_receipt(self, receipt: dict, revision: WikiRevision) -> None:
-        if not isinstance(receipt, dict) or receipt.get("ok") is not True:
-            raise PublisherRejected("publisher did not return ok=true")
+        if not isinstance(receipt, dict):
+            raise InvalidAcknowledgement("publisher returned no receipt object")
+        if receipt.get("ok") is not True:
+            raise InvalidAcknowledgement("publisher did not return ok=true",
+                                         potentially_committed=False)
         if str(receipt.get("target") or "") != self.publisher.target:
-            raise PublisherRejected("publisher acknowledgement target does not match the adapter")
+            raise InvalidAcknowledgement("publisher acknowledgement target does not match")
         if not str(receipt.get("external_id") or "").strip():
-            raise PublisherRejected("publisher acknowledgement has no external id")
+            raise InvalidAcknowledgement("publisher acknowledgement has no external id")
         if str(receipt.get("revision") or "") != str(revision.version):
-            raise PublisherRejected("publisher acknowledged a different revision")
-        if receipt.get("checksum") and receipt["checksum"] != revision.checksum:
-            raise PublisherRejected("publisher acknowledged different content")
+            raise InvalidAcknowledgement("publisher acknowledged a different revision")
+        if not str(receipt.get("checksum") or "").strip():
+            raise InvalidAcknowledgement("publisher acknowledgement has no checksum")
+        if receipt.get("checksum") != revision.checksum:
+            raise InvalidAcknowledgement("publisher acknowledged different content")
 
     def _commit_publication(self, page: WikiPage, revision: WikiRevision, receipt: dict,
                             reviewer: str | None, policy: WikiPolicy) -> None:

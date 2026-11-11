@@ -13,7 +13,7 @@ from pulse_search_broad_r3a3g.wiki import (  # noqa: E402
     LocalPublisher, WikiPolicy, WikiService, WikiStore,
 )
 
-DB = ROOT / "data/r3a3g_wiki/wiki.sqlite"
+DB = ROOT / "data/r3a3g_wiki_demo/wiki.sqlite"
 
 
 def main() -> int:
@@ -30,9 +30,7 @@ def main() -> int:
                         "result": result["result"]})
     # Update and duplicate handling on the Berlin booking guide.
     first = dict(articles[0])
-    first["claims"] = articles[0]["claims"] + [{
-        "text": "Confirm the venue's accessibility arrangements on its own page before booking.",
-        "sources": ["https://www.mercedes-benz-arena.de/"]}]
+    first["claims"] = articles[0]["claims"] + [articles[0]["claims"][2]]
     update = service.propose(first)
     duplicate = service.propose(articles[0])
     # Editorial approval and a local-only publication test.
@@ -45,7 +43,7 @@ def main() -> int:
                                          reviewer="local-test-editor"))
     rejected = service.reject(articles[4]["topic_id"], "local-test-editor",
                               "needs a city-specific source")
-    revoked = service.flag_source(articles[1]["claims"][0]["sources"][0],
+    revoked = service.flag_source("https://www.bvg.de/",
                                   "source withdrawn in test")
     pages = store.list()
     evidence = {

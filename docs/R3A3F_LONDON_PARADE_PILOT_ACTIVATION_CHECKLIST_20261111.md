@@ -3,19 +3,17 @@
 **Status:** prepared, **not activated** · `REAL_SOURCES_ADMITTED=0` · `THIRD_PARTY_CRAWLER_REQUESTS=0` ·
 F3 = HOLD · Production HOLD · PR #10 draft.
 
-Everything on this page is offline unless the owner signs the last two items. Destination Events
-approval is **already attested**; the remaining work is recording its technical scope, not obtaining
-new partnership approval.
+Everything here is offline until a distinct live-run decision. The owner confirms Destination Events approval for Mine Media to use London Parade text and imagery, including the proposed internal Pulse Search metadata/snippet test. No further organiser permission request, signed contract or document reference is required solely to repeat that answer.
 
 ## A. Scope and authorisation
 
 | # | Item | Status | Evidence |
 | --- | --- | --- | --- |
 | A1 | Owner attestation of existing Destination Events approval and official Mine Media partnership | **RECORDED** | `docs/FB2_R3A3F_LONDON_PARADE_EXISTING_APPROVAL_20261111.md`; `owner_attestation` in the register |
-| A2 | Existing-authorisation scope record completed from the agreement (reference, signer, dates, audience, snippet/redisplay rights, feed availability) | **PENDING** | `docs/R3A3F_LONDON_PARADE_DATA_USE_SCOPE_20261111.md` §1 |
-| A3 | Canonical host and `www` redirect chain confirmed with the organiser | **PENDING** | scope record §1 |
-| A4 | Reviewed seed list and permitted paths signed off | **PREPARED** | `/about/`, `/parade-location-timing/`, `/londonparade-participants/`, `/news-archive`, `/festivals/concerts/` |
-| A5 | Admission record written with a distinct `owner_authorisation` reference | **PENDING** | store/CLI reject approval without it |
+| A2 | Owner confirms use of London Parade text and imagery, including internal titles/dates/URLs/categories/≤320-char excerpts; no new organiser permission request | **CONFIRMED BY OWNER** | `docs/R3A3F_LONDON_PARADE_DATA_USE_SCOPE_20261111.md` §1 |
+| A3 | Narrow P1 uses apex `https://londonparade.com` only; `www` excluded rather than requiring redirects to be admitted | **APEX-ONLY SCOPE PREPARED** | scope record §1 |
+| A4 | Reviewed seed list and permitted paths prepared for activation decision | **PREPARED** | `/about/`, `/parade-location-timing/`, `/londonparade-participants/`, `/news-archive`, `/festivals/concerts/` |
+| A5 | Admission action with distinct live-pilot owner decision reference, recorded at activation rather than by unreviewed import | **PENDING LIVE GO/NO-GO** | store/CLI reject approval without it |
 | A6 | Separate explicit **first-live-request** authorisation | **PENDING** | this checklist, item D2 |
 
 ## B. Technical readiness (verified offline)
@@ -48,11 +46,9 @@ new partnership approval.
 
 ## D. Go / no-go
 
-**D1 — owner signs the scope.** Confirm A2–A4 against the existing agreement, including whether the
-index is internal-only. If the agreement is silent on snippet/redisplay, approve the narrow default
-(metadata + ≤320-character excerpt, internal review, attribution and link-back) explicitly.
+**D1 — content use confirmed.** The owner has confirmed that Mine Media is authorised by Destination Events to use London Parade text and imagery, and answered yes to the internal Pulse Search metadata/snippet test. Treat rights as **CONFIRMED BY OWNER**, not a pending new agreement. P1 remains an internal review with ≤320-character excerpts, zero body storage and zero media copying by conservative engineering choice. No further rights paperwork is required to reiterate this confirmation.
 
-**D2 — owner authorises the first live request.** Only then: record the admission with
+**D2 — owner authorises the first live request.** This operational action is the only remaining direct owner go/no-go. Only then: record the admission with
 `owner_authorisation` (a distinct reference, not a repeated status string), enable the source, and run
 one bounded P1 session. `approved=true` in a JSON file alone does not authorise anything: the store
 and preflight reject approval without the documented reference.
@@ -69,7 +65,7 @@ depth-4 request, any body storage attempt, any cap reached, or the owner's kill 
 
 ## E. Fallbacks
 
-- **City Hall `/events`** remains the alternative if London Parade's scope record cannot be completed;
+- **City Hall `/events`** remains the alternative if the proposed London Parade pilot cannot run safely;
   it still needs its terms basis, contact and written admission.
 - **Lord Mayor's Show** remains `RIGHTS_HOLD`; its terms permit linking only to the home page and
   forbid deep links.

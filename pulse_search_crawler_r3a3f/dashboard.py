@@ -20,6 +20,7 @@ from .staging import StagingIndex
 from .store import Store
 
 from pulse_search_broad_r3a3g.search import search_staging
+from pulse_search_broad_r3a3g.source_discovery import rank_external_candidates
 
 CSS = """
 :root{--bg:#0b1020;--panel:#141b2d;--line:#26304a;--ink:#e8ecf7;--muted:#95a2bd;
@@ -86,6 +87,14 @@ def render_html(report: dict, staging: StagingIndex, query: str = "", category: 
     broad_status = html.escape(str((broad or {}).get("status", "NO_QUERY")))
     broad_intent = html.escape(str(((broad or {}).get("intent") or {}).get("kind", "n/a")))
     broad_note = html.escape(str((broad or {}).get("note", "Enter a search query above.")))
+    useful_leads = report.get("broad_source_candidates", [])
+    useful_lead_rows = "".join(
+        f"<tr><td>{html.escape(str(c['origin']))}</td>"
+        f"<td>{html.escape(', '.join(c.get('source_families', [])))}</td>"
+        f"<td>{c.get('observed_referrer_count', 0)}</td>"
+        f"<td>{c.get('review_priority', 0)}</td><td>NOT ADMITTED</td></tr>"
+        for c in useful_leads[:25]
+    )
     run = report.get("run") or {}
     counters = {}
     if run.get("counters"):
@@ -314,6 +323,15 @@ synthetic fixtures named in the register, never from the real hosts.</div>
 
 {parade_section}
 
+<section><h2>Useful new-source candidates — R3-A3G</h2>
+<div class="sub">Ranked from out-of-domain links already observed by permitted sources.
+These are potential event, ticketing-help, venue, transport and general-information
+sources for manual review. Listing here does not permit crawling, indexing or copying.</div>
+<table><tr><th>Candidate origin</th><th>Likely topic</th><th>Referrers</th>
+<th>Review priority</th><th>Permission</th></tr>
+{useful_lead_rows or "<tr><td colspan='5'>No external source leads yet — this is not evidence of universal search coverage.</td></tr>"}
+</table></section>
+
 <section><h2>Sources and rights</h2>
 <div class="sub">{html.escape(novelty_line)}</div><table>
 <tr><th>Source</th><th>Origin</th><th>Rights basis</th><th>Docs</th><th>Index allowed</th></tr>
@@ -394,6 +412,8 @@ class _Handler(BaseHTTPRequestHandler):
                               historical_index=self.server.historical_index,
                               expected_index_sha256=self.server.index_sha256,
                               registry=self.server.registry)
+        report["broad_source_candidates"] = rank_external_candidates(
+            report.get("external_candidates", []), limit=100)
         if parsed.path == "/api/report.json":
             self._send(200, json.dumps(report, indent=2).encode("utf-8"), "application/json")
             return

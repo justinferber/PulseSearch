@@ -177,3 +177,24 @@ Closeout evidence: **123 tests**, six-origin demo 28/28, three-source demo 30/30
 13/14/13 per source), archived matrix 25/25 modules and 419 tests, pinned index and frozen replay
 unchanged. See `docs/R3A3F_PILOT_READINESS_20261111.md` for the per-source readiness report and the
 London Parade permission checklist.
+
+## London Parade scope record (owner correction, 11 November 2026)
+
+The owner confirmed that Destination Events' approval already exists and that Mine Media is the
+official London Parade partner, so no new organiser approval is requested. Instead the existing
+authorisation's technical scope is recorded: `docs/evidence/r3a3f_london_parade_scope.json` and
+`docs/R3A3F_LONDON_PARADE_DATA_USE_SCOPE_20261111.md`, with an owner-facing activation checklist in
+`docs/R3A3F_LONDON_PARADE_PILOT_ACTIVATION_CHECKLIST_20261111.md`. The source stays
+`approved=false`, `index_allowed=false`, `owner_authorisation=null`, `state=robots_reviewed`.
+
+Prepared scope: five reviewed paths, two reviewed seeds, depth 3, zero probes, 20 accepted documents
+and 300 network attempts and 30 minutes per UTC day, metadata plus a ≤320-character excerpt, no body
+storage, and the published **10-second Crawl-delay preserved as a per-source floor**
+(`crawl_delay_floor_s`), independent of a future robots change. Exclusions are unchanged: shop,
+application form, account, contact form, administrative/login routes, Ticketmaster and every other
+host.
+
+The narrowly outstanding review item is also closed: a same-origin `robots.txt` redirect to an
+administrative path is now refused as `administrative_path`, alongside the off-origin, pacing and
+budget checks. Evidence: 129 tests, six-origin demo 28/28, three-source demo 30/30, archived matrix
+25/25 modules and 419 tests, pinned index and frozen replay unchanged.

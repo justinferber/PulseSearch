@@ -119,7 +119,7 @@
           "https://londonparade.com/parade-location-timing/",
           "https://londonparade.com/about/"
         ],
-        "rights_status": "PENDING_ORGANISER_AND_TERMS_REVIEW",
+        "rights_status": "OWNER_ATTESTED_ORGANISER_APPROVAL_SCOPE_TO_RECORD",
         "approved": false,
         "index_allowed": false,
         "store_body": false,
@@ -129,7 +129,7 @@
       },
       "pending": [
         "Confirm canonical host, redirects and current page path tree; internet lookup of www host was unavailable, and robots status could not be verified via tool",
-        "Obtain written organiser-authorised crawling and metadata/snippet indexing agreement (Destination Events Ltd) despite commercial partnership",
+        "Record the existing Destination Events approval's data-use scope and document reference; do not request redundant approval",
         "Review robots.txt, site terms, allowed child paths and form/login exclusions; never harvest participant form submissions or personal information",
         "Agree seed URLs, max-depth=3, category facets and independent host budget",
         "Record reviewer, approval date, permission evidence and takedown contact before changing flags"

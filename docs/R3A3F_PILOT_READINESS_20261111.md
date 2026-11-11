@@ -36,10 +36,10 @@ admin exclusions, pinned novelty, per-source dashboard and JSON export.
 a 10s Crawl-delay that is already respected, and no competing rights claim beyond the organiser's.
 **Owner correction (11 Nov):** The project owner confirms that Destination Events has already granted approval and Mine Media is the official London Parade partner. Do not ask for redundant new organiser permission. Record the existing approval's actual data-use scope, source reference and signed owner admission before activating the crawler. The site carries an “All Rights Reserved” notice; do not presume unrestricted snippet rights without checking the existing arrangement.
 
-### 3.1 The exact permissions to obtain (written, signatory, dated)
+### 3.1 Scope items to record from the existing approval (no new permission request)
 
-1. **Crawl permission** for `https://londonparade.com` (state the canonical host and how `www`
-   redirects), for the user agent `PulseSearchFB2/0.1 (+contact)`.
+1. **Crawl scope** for `https://londonparade.com` under the existing approval (state the canonical
+   host and how `www` redirects), for the user agent `PulseSearchFB2/0.1 (+contact)`.
 2. **Path scope**: `/about/`, `/parade-location-timing/`, `/londonparade-participants/`,
    `/news-archive`, `/festivals/concerts/`, and the public 2027 edition and news pages linked from
    them; depth ≤3; explicitly **excluding** `/shop/`, `/takepart/`, `/account/`, `/contact/`,
@@ -57,8 +57,13 @@ a 10s Crawl-delay that is already respected, and no competing rights claim beyon
 7. **Edition accuracy**: agreement that the index may state “2027 edition, 1 January 2027” only as
    announced by the organiser, must label 2026 and earlier as past editions, and must not infer a
    future date from a previous year.
-8. **Duration and scope of the permission**: start date, review date, whether it covers future
-   editions, and whether it extends to an eventual public search product.
+8. **Duration and scope of the existing authorisation**: start date, review date, whether it covers
+   future editions, and whether it extends to an eventual public search product.
+
+Recorded so far: owner attestation, the reviewed paths and seeds, the 10s crawl-delay floor, the
+metadata/snippet proposal and the exclusions (`docs/R3A3F_LONDON_PARADE_DATA_USE_SCOPE_20261111.md`).
+Still to record from the agreement: document reference, signer, effective/review dates, whether
+snippets may be displayed publicly, and feed availability.
 
 ### 3.2 Authorised structured-data feed — the preferred alternative
 

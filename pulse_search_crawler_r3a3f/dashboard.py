@@ -132,6 +132,42 @@ def render_html(report: dict, staging: StagingIndex, query: str = "", category: 
         f"<td>{html.escape(str((c.get('novelty') or {}).get('novel_documents', '—')))}</td></tr>"
         for c in candidates
     ) or "<tr><td colspan='9'>No candidate register supplied.</td></tr>"
+    parade = next((c for c in candidates
+                   if (c.get("pilot_plan") or {}).get("reviewed_paths")), None)
+    parade_section = ""
+    if parade:
+        plan = parade["pilot_plan"]
+        attestation = parade.get("owner_attestation") or {}
+        plan_checks = "".join(
+            f"<tr><td>{html.escape(str(item.get('id', '')))}</td>"
+            f"<td>{html.escape(str(item.get('item', '')))}</td>"
+            f"<td><span class='pill {'good' if item.get('status') in ('PASS', 'RECORDED', 'PREPARED') else 'warn'}'>"
+            f"{html.escape(str(item.get('status', '')))}</span></td></tr>"
+            for item in plan.get("checklist", [])
+        )
+        parade_section = f"""<section><h2>London Parade — first pilot readiness</h2>
+<div class="sub">Existing Destination Events approval is <b>confirmed by owner attestation</b>
+({html.escape(str(attestation.get('date', 'n/a')))}), not a newly requested permission.
+State: <code>{html.escape(str(plan.get('state', 'n/a')))}</code> ·
+real source admitted: <b>{'yes' if parade['approved'] else 'no'}</b> ·
+canonical host: <code>{html.escape(str(plan.get('canonical_host', '')))}</code> ·
+Crawl-delay: <b>{plan.get('crawl_delay_s', 0)}s</b> (floor {plan.get('min_interval_s', 0)}s).</div>
+<table><tr><th>Scope item</th><th>Value</th></tr>
+<tr><td>Reviewed paths</td><td>{html.escape(', '.join(plan.get('reviewed_paths', [])))}</td></tr>
+<tr><td>Reviewed seeds</td><td>{html.escape(', '.join(plan.get('reviewed_seeds', [])))}</td></tr>
+<tr><td>Limits</td><td>{plan.get('accepted_documents_per_day', 0)} accepted/day ·
+{plan.get('network_attempts_per_day', 0)} attempts/day · {plan.get('run_minutes_max', 0)} min/day ·
+depth {plan.get('max_depth', 0)} · {len(plan.get('probe_policy', []))} probes</td></tr>
+<tr><td>Storage</td><td>title, URL, dates, category, ≤{plan.get('snippet_chars_max', 0)}-char excerpt ·
+body stored: {'yes' if plan.get('store_body') else 'no'}</td></tr>
+<tr><td>Canonical host check</td><td>{html.escape(str(plan.get('canonical_host_status', 'n/a')))}</td></tr>
+<tr><td>Scope record</td><td>{html.escape(str(plan.get('scope_record', '')))}</td></tr>
+<tr><td>Activation checklist</td><td>{html.escape(str(plan.get('activation_checklist', '')))}</td></tr>
+</table>
+<table style="margin-top:12px"><tr><th>#</th><th>Gate</th><th>Status</th></tr>
+{plan_checks}</table></section>
+
+"""
     novelty_line = (
         "Novelty versus the pinned index: "
         f"{novelty.get('novel_documents')} new of {novelty.get('staged_documents')} staged · "
@@ -259,6 +295,8 @@ synthetic fixtures named in the register, never from the real hosts.</div>
 <table><tr><th>Candidate</th><th>State</th><th>Approved / index</th><th>Rights basis</th>
 <th>Proposed paths</th><th>Docs / categories</th><th>Links / depth</th><th>Duplicates</th><th>Novel</th></tr>
 {candidate_rows}</table></section>
+
+{parade_section}
 
 <section><h2>Sources and rights</h2>
 <div class="sub">{html.escape(novelty_line)}</div><table>

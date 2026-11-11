@@ -146,6 +146,7 @@ def cmd_sources(args: argparse.Namespace) -> int:
                 approved=source["approved"],
                 probe_policy=source.get("probe_policy", []),
                 probe_budget_per_run=int(source.get("probe_budget_per_run", 0)),
+                crawl_delay_floor_s=float(source.get("crawl_delay_floor_s", 0.0)),
             )
         admitted_seeds = 0
         for source_id, urls in seeds.items():

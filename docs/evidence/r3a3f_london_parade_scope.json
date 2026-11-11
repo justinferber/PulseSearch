@@ -1,0 +1,122 @@
+{
+  "kind": "R3A3F_LONDON_PARADE_DATA_USE_SCOPE",
+  "schema": "pulse-search-r3a3f-parade-scope/v1",
+  "generated_at": "2026-11-11",
+  "status": "OWNER_ATTESTED_EXISTING_APPROVAL_SCOPE_TO_RECORD",
+  "no_new_permission_request": true,
+  "real_sources_admitted": 0,
+  "third_party_crawler_requests": 0,
+  "production": "HOLD",
+  "f3": "HOLD",
+  "organiser": "Destination Events Ltd",
+  "authorised_partner": "Mine Media",
+  "partnership": "official London Parade partner",
+  "owner_attestation": {
+    "date": "2026-11-11",
+    "source": "project owner direct confirmation",
+    "quote": "I do have Destination Events' approval for London Parade Mine Media is the official partner.",
+    "documentation_reference": null,
+    "scope_expressly_stated": false
+  },
+  "document_reference": null,
+  "effective_date": null,
+  "review_date": null,
+  "audience": "INTERNAL_REVIEW_BY_DEFAULT_PUBLIC_DISPLAY_UNCONFIRMED",
+  "machine_readable_feed": {
+    "availability": "UNKNOWN",
+    "question": "Does the existing arrangement include an authorised JSON/CSV/API feed of public event metadata?",
+    "if_available": "separate publisher-supplied connector with its own provenance and data-use policy, not a crawler depth shortcut"
+  },
+  "source": {
+    "source_id": "london-parade-official",
+    "origin": "https://londonparade.com",
+    "canonical_host_status": "APEX_CONFIRMED_BY_INTERNAL_LINKS; www served the same home page in a read-only check; redirect chain to confirm",
+    "reviewed_paths": [
+      "/about/",
+      "/parade-location-timing/",
+      "/londonparade-participants/",
+      "/news-archive",
+      "/festivals/concerts/"
+    ],
+    "reviewed_seeds": [
+      "https://londonparade.com/parade-location-timing/",
+      "https://londonparade.com/about/"
+    ],
+    "max_depth": 3,
+    "probe_policy": [],
+    "crawl_delay_s": 10,
+    "crawl_delay_floor_enforced": true,
+    "accepted_documents_per_day": 20,
+    "network_attempts_per_day": 300,
+    "run_minutes_max": 30,
+    "snippet_chars_max": 320,
+    "store_body": false
+  },
+  "metadata_coverage": {
+    "title": "PROPOSED_CONFIRM_AGAINST_AGREEMENT",
+    "canonical_url_and_link_back": "PROPOSED_CONFIRM_AGAINST_AGREEMENT",
+    "edition_date_and_year": "PROPOSED_CONFIRM_AGAINST_AGREEMENT",
+    "route_and_landmarks": "PROPOSED_CONFIRM_AGAINST_AGREEMENT",
+    "category": "PROPOSED_CONFIRM_AGAINST_AGREEMENT",
+    "short_excerpt": "PROPOSED_MAX_320_CHARS_CONFIRM_SNIPPET_RIGHT",
+    "page_body": "NOT_STORED",
+    "images_video_audio": "NOT_CLAIMED"
+  },
+  "exclusions": [
+    "/shop/",
+    "/takepart/",
+    "/account/",
+    "/contact/",
+    "/admin/",
+    "/login",
+    "https://www.ticketmaster.co.uk/*",
+    "participant personal information",
+    "any other host"
+  ],
+  "edition_rules": [
+    "2027 edition only as announced by the organiser",
+    "2026 and earlier labelled past editions",
+    "cancelled editions recorded as history",
+    "no future date inferred from an older page"
+  ],
+  "recheck": {
+    "conditional_revalidation_hours": 24,
+    "listing_404_recheck_hours": 168,
+    "max_rechecks": 2
+  },
+  "takedown": {
+    "contact": "contact@londonparade.com",
+    "named_contact": "TO_CONFIRM",
+    "response_time": "TO_CONFIRM",
+    "prospective_withdrawal": "TO_CONFIRM"
+  },
+  "admission": {
+    "approved": false,
+    "index_allowed": false,
+    "owner_authorisation": null,
+    "reason": "scope record and first-live authorisation not yet signed"
+  },
+  "checklist": [
+    {"id": "A1", "item": "owner attestation recorded", "status": "RECORDED"},
+    {"id": "A2", "item": "scope record completed from agreement", "status": "PENDING"},
+    {"id": "A3", "item": "canonical host and www redirects confirmed", "status": "PENDING"},
+    {"id": "A4", "item": "seeds and permitted paths signed off", "status": "PREPARED"},
+    {"id": "A5", "item": "admission with owner_authorisation", "status": "PENDING"},
+    {"id": "A6", "item": "first-live-request authorisation", "status": "PENDING"},
+    {"id": "B1", "item": "10s crawl delay floor enforced", "status": "PASS"},
+    {"id": "B2", "item": "pacing and Retry-After", "status": "PASS"},
+    {"id": "B3", "item": "persisted daily caps", "status": "PASS"},
+    {"id": "B4", "item": "depth 3 and zero probes", "status": "PASS"},
+    {"id": "B5", "item": "excluded forms, commerce and admin routes", "status": "PASS"},
+    {"id": "B6", "item": "robots redirects gated (host, pacing, budget, admin)", "status": "PASS"},
+    {"id": "B7", "item": "metadata and snippet only", "status": "PASS"},
+    {"id": "B8", "item": "edition separation and no invented dates", "status": "PASS"},
+    {"id": "B9", "item": "dashboard and JSON evidence", "status": "PASS"}
+  ],
+  "evidence": [
+    "docs/R3A3F_LONDON_PARADE_DATA_USE_SCOPE_20261111.md",
+    "docs/R3A3F_LONDON_PARADE_PILOT_ACTIVATION_CHECKLIST_20261111.md",
+    "docs/evidence/r3a3f_three_source_admission.json",
+    "docs/evidence/r3a3f_three_source_offline.json"
+  ]
+}

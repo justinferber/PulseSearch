@@ -128,6 +128,26 @@ class RobotsRedirectTests(unittest.TestCase):
         finally:
             env.close()
 
+    def test_robots_redirect_to_an_administrative_page_is_blocked(self):
+        origin = RouteServer().start()
+        origin.set("/robots.txt", Route(
+            status=302, headers={"Location": "/admin/robots.txt"}))
+        origin.set("/admin/robots.txt", Route(
+            body=b"User-agent: *\nAllow: /\n", mime="text/plain; charset=utf-8"))
+        origin.set("/", Route(body=page_html("Venue", TEXT)))
+        env = Env([origin])
+        try:
+            env.admit(origin)
+            env.run(budget=4)
+            self.assertEqual(origin.hits_for("/admin/"), 0)
+            self.assertNotIn("/", origin.hits)
+            blocked = env.rows(
+                "SELECT * FROM redirect_log WHERE decision='blocked'")
+            self.assertTrue(blocked)
+            self.assertEqual(blocked[0]["reason"], "administrative_path")
+        finally:
+            env.close()
+
     def test_robots_redirect_destination_respects_the_daily_attempt_cap(self):
         origin = RouteServer().start()
         origin.set("/robots.txt", Route(

@@ -14,7 +14,7 @@ scope, not permission. Every record below keeps `approved=false`, `index_allowed
 | # | Candidate | Origin & proposed scope | Controller | Robots (11 Nov 2026) | Rights state | Owner state |
 | --- | --- | --- | --- | --- | --- | --- |
 | A | **London City Hall** | `https://www.london.gov.uk`, `/events` only | GLA | 200; allows `/events`; no Crawl-delay; sitemap present | `PENDING_TERMS_REVIEW` | `robots_reviewed` |
-| B | **London Parade** | `https://londonparade.com`, no path admitted; 5 pages proposed | Destination Events Ltd | 200; `Allow: /`, **Crawl-delay 10**, search yes / AI-train no, no sitemap | `PENDING_ORGANISER_AND_TERMS_REVIEW` | `robots_reviewed` |
+| B | **London Parade** | `https://londonparade.com`, no path admitted; 5 pages reviewed | Destination Events Ltd — **approval confirmed by owner; scope to record** | 200; `Allow: /`, **Crawl-delay 10**, search yes / AI-train no, no sitemap | `OWNER_ATTESTED_ORGANISER_APPROVAL_SCOPE_TO_RECORD` | `robots_reviewed` |
 | C | **Lord Mayor's Show** | `https://www.lordmayorsshow.london`, no path admitted | Show organisers (to confirm) | **404 — no robots.txt** | `PENDING_RESTRICTIVE_TERMS_AND_PERMISSION` | `rights_hold` |
 
 `/whats-on` stays excluded from A. Cross-links to `cityoflondon.gov.uk`, `procession.`/`api.`
@@ -46,18 +46,21 @@ subdomains, `lnydp.com` and Ticketmaster convey no admission.
 | `allowed_paths` | `[]` — **nothing admitted**; review candidates only |
 | `proposed_seeds` (review) | `/parade-location-timing/`, `/about/` |
 | Further review candidates | `/londonparade-participants/`, `/news-archive`, `/festivals/concerts/` |
-| `rights_status` | `PENDING_ORGANISER_AND_TERMS_REVIEW` |
+| `rights_status` | `OWNER_ATTESTED_ORGANISER_APPROVAL_SCOPE_TO_RECORD` |
 | `approved` / `index_allowed` | `false` / `false` |
 | `probe_policy` / budget | `[]` / `0` |
 | Robots snapshot | 200; `Allow: /`; `Crawl-delay: 10`; `Content-Signal search=yes, ai-train=no, use=reference`; no sitemap |
-| Contact | `contact@londonparade.com`; organiser permission contact to confirm |
+| Contact | `contact@londonparade.com`; named scope and takedown contact to confirm |
 | Event basis | 2027 edition, 1 January 2027, 1pm |
 | Excluded | `/shop/`, `/takepart/`, `/account/`, `/contact/`, Ticketmaster |
-| Pending | **written Destination Events permission** for crawling, snippets/indexing, link retention, recrawling and takedown; canonical host; 2027 path architecture; possible licensed feed |
+| Pending | **record the existing Destination Events approval's data-use scope and document reference** (no new organiser request); canonical host and `www` redirects; 2027 path architecture; feed availability |
 
-The commercial relationship with Destination Events Ltd is recorded **as a relationship, not a
-licence**. If a structured public feed can be licensed it becomes a separate input connector with its
-own provenance, not a crawler depth shortcut.
+Destination Events' approval and Mine Media's official partnership are **confirmed by owner
+attestation**, and are not to be re-requested. The precise technical scope — crawl, snippet storage,
+redisplay, retention, dates and reference — is recorded in
+`docs/R3A3F_LONDON_PARADE_DATA_USE_SCOPE_20261111.md` and remains **unconfirmed from paperwork**
+until the owner supplies it. If a structured public feed is available it becomes a separate input
+connector with its own provenance, not a crawler depth shortcut.
 
 ## 4. Source C — Lord Mayor's Show (proposed record, not applied)
 
@@ -121,8 +124,8 @@ owner kill switch.
 ## 9. F3 decision
 
 **F3 = HOLD.** Recommended first live source: **City Hall `/events`**, provided its terms/re-use basis
-is recorded and `/events` is confirmed as the listing. London Parade is the alternative if written
-Destination Events permission (or a licensed feed) arrives first. The Lord Mayor's Show stays
+is recorded and `/events` is confirmed as the listing. London Parade is the alternative once the existing
+Destination Events approval's data-use scope is recorded (or a licensed feed is confirmed). The Lord Mayor's Show stays
 `RIGHTS_HOLD` until its restrictive terms are addressed.
 
 The first external GET, the merge of PR #10 and any production promotion each require separate owner

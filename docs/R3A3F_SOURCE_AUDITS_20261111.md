@@ -28,17 +28,17 @@ sources, all `approved=false`, `index_allowed=false`, `owner_authorisation=null`
 | --- | --- |
 | Proposed scope | **none yet** — `allowed_paths=[]` until permission exists |
 | Proposed seeds (review only) | `https://londonparade.com/parade-location-timing/`, `https://londonparade.com/about/` |
-| Controller / organiser | Destination Events Ltd |
+| Controller / organiser | Destination Events Ltd — **approval already confirmed by owner; Mine Media is official partner** |
 | Relationship | Mine Media works commercially with the event. **Commercial representation is not a crawler, indexing, link-retention or snippet licence.** |
 | Robots | HTTP 200 on 11 Nov 2026, Cloudflare-managed plus site rules: `User-agent: *` `Allow: /`, `Content-Signal: search=yes, ai-train=no, use=reference`, **`Crawl-delay: 10`**, no `Sitemap:`; a long list of AI/training bots is disallowed. Crawl-delay 10 would override the 3s floor for this host. |
-| Terms | No dedicated terms-of-use page found; footer reads “Londonparade.com 2025 \| All Rights Reserved” and links a privacy policy on `lnydp.com`. No snippet or recrawl licence. |
+| Terms | No dedicated terms-of-use page found; footer reads “Londonparade.com 2025 \| All Rights Reserved”. The owner attests an existing Destination Events approval, so the footer is not treated as overriding it; the approval's technical scope (crawl, snippet, redisplay, retention) is not yet documented. |
 | Contact | `contact@londonparade.com` (general); organiser permission contact to confirm |
 | Event basis | 2027 edition on 1 January 2027, 1pm; 2026 was the 40th edition |
 | Verified public pages worth proposing | `/about/`, `/parade-location-timing/`, `/londonparade-participants/`, `/news-archive`, `/festivals/concerts/` |
 | Excluded | `/shop/`, `/takepart/` (application form), `/account/`, `/contact/` (forms), Ticketmaster (third-party host) |
 | State | `robots_reviewed` (rights pending) |
-| Unresolved | written organiser permission for crawling, indexing/snippets, link retention, recrawling and takedown; canonical host (apex vs `www`) and redirect behaviour; current path architecture for 2027; whether an authorised structured public feed can replace page extraction |
-| Preference | An organiser-supplied JSON/CSV feed, with negotiated rights, is a **different connector** with its own provenance — not a crawler depth shortcut |
+| Unresolved | record the existing approval's data-use scope and document reference (do **not** request redundant approval); canonical host (apex vs `www`) and redirect behaviour; current path architecture for 2027; whether an authorised structured public feed is available |
+| Preference | An existing or newly supplied organiser JSON/CSV feed is a **different connector** with its own provenance — not a crawler depth shortcut. Availability under the existing approval is unconfirmed. |
 
 ## C — Lord Mayor's Show (`www.lordmayorsshow.london`)
 
@@ -58,7 +58,7 @@ sources, all `approved=false`, `index_allowed=false`, `owner_authorisation=null`
 
 ## What this audit does **not** claim
 
-- It does not establish permission for any host, path or snippet.
+- It does not establish permission for any host, path or snippet. For London Parade it records an owner-attested approval whose technical scope is not yet documented.
 - It does not verify live crawl behaviour, response times or rate limits.
 - It does not admit `cityoflondon.gov.uk`, `lnydp.com`, `ticketmaster.co.uk`, `procession.lordmayorsshow.london` or `api.lordmayorsshow.london` through a cross-link.
 - The robots observations are a dated snapshot that must be re-read at the moment of admission.

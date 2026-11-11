@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS sources(
   index_allowed INTEGER NOT NULL DEFAULT 0, store_body INTEGER NOT NULL DEFAULT 0,
   contact TEXT, owner_authorisation TEXT, notes TEXT, approved INTEGER NOT NULL DEFAULT 0,
   probe_policy TEXT NOT NULL DEFAULT '[]', probe_budget_per_run INTEGER NOT NULL DEFAULT 0,
+  crawl_delay_floor_s REAL NOT NULL DEFAULT 0,
   enabled INTEGER NOT NULL DEFAULT 1, admitted_at TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS seeds(
   seed_id TEXT PRIMARY KEY, source_id TEXT NOT NULL, url TEXT NOT NULL UNIQUE,
@@ -114,7 +115,8 @@ class Store:
                 self.conn.execute(f"ALTER TABLE frontier ADD COLUMN {name} {ddl}")
         for name, ddl in (("probe_policy", "TEXT NOT NULL DEFAULT '[]'"),
                           ("probe_budget_per_run", "INTEGER NOT NULL DEFAULT 0"),
-                          ("owner_authorisation", "TEXT")):
+                          ("owner_authorisation", "TEXT"),
+                          ("crawl_delay_floor_s", "REAL NOT NULL DEFAULT 0")):
             if name not in columns("sources"):
                 self.conn.execute(f"ALTER TABLE sources ADD COLUMN {name} {ddl}")
 
@@ -143,6 +145,7 @@ class Store:
         owner_authorisation: str = "",
         probe_policy: list[str] | None = None,
         probe_budget_per_run: int = 0,
+        crawl_delay_floor_s: float = 0.0,
     ) -> dict:
         """Register a source. Defaults are fail-closed: no fetch, no indexing.
 
@@ -155,6 +158,9 @@ class Store:
         if urlsplit(origin).path not in ("", "/"):
             raise ValueError("source origin must be a root origin")
         paths = sorted(set(allowed_paths or []))
+        floor = float(crawl_delay_floor_s or 0.0)
+        if floor < 0:
+            raise ValueError("crawl_delay_floor_s cannot be negative")
         if approved and not paths:
             raise ValueError("an admitted source needs at least one reviewed path")
         # A distinct written authorisation is required for a real host. A
@@ -192,19 +198,20 @@ class Store:
         self.conn.execute(
             """INSERT INTO sources(source_id,origin,host,allowed_paths,rights_status,
                  index_allowed,store_body,contact,owner_authorisation,notes,approved,
-                 probe_policy,probe_budget_per_run,enabled,admitted_at)
-               VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,1,?)
+                 probe_policy,probe_budget_per_run,crawl_delay_floor_s,enabled,admitted_at)
+               VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,1,?)
                ON CONFLICT(source_id) DO UPDATE SET
                  allowed_paths=excluded.allowed_paths, rights_status=excluded.rights_status,
                  index_allowed=excluded.index_allowed, store_body=excluded.store_body,
                  contact=excluded.contact, owner_authorisation=excluded.owner_authorisation,
                  notes=excluded.notes, approved=excluded.approved,
                  probe_policy=excluded.probe_policy,
-                 probe_budget_per_run=excluded.probe_budget_per_run""",
+                 probe_budget_per_run=excluded.probe_budget_per_run,
+                 crawl_delay_floor_s=excluded.crawl_delay_floor_s""",
             (source_id, origin, host_port(origin + "/"), json.dumps(paths),
              rights_status, int(index_allowed), int(store_body), contact, authorisation,
              notes, int(approved), json.dumps(sorted(set(probe_policy or []))),
-             int(probe_budget_per_run), utc_now()),
+             int(probe_budget_per_run), floor, utc_now()),
         )
         self.conn.commit()
         return dict(self.conn.execute("SELECT * FROM sources WHERE source_id=?", (source_id,)).fetchone())

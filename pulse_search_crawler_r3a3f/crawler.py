@@ -29,7 +29,8 @@ from .robots import MAX_ROBOTS_BYTES, RobotsCache, RobotsRules, decision_for_sta
 from .safe_fetch import Fetcher
 from .store import Store, utc_now
 from .staging import StagingIndex
-from .urls import UrlError, canonicalize, host_port, in_scope, origin_of
+from .urls import (UrlError, canonicalize, host_port, in_scope, is_administrative_path,
+                   origin_of)
 
 
 def _iso_in(hours: float) -> str:
@@ -250,7 +251,7 @@ class Crawler:
             self._reject(row, "robots_denied", rules.source)
             self.staging.revoke(url, "robots_now_disallowed")
             return
-        interval = HostPacer.interval_for(self.config.min_interval_s, rules.crawl_delay)
+        interval = self._interval(rules)
         self.pacer.wait(host, interval)
         conditional = self._conditional_headers(url)
         result = self.fetcher.fetch(url, extra_headers=conditional,
@@ -524,6 +525,18 @@ class Crawler:
                 headers["If-Modified-Since"] = prior["last_modified"]
         return headers
 
+    def _crawl_floor(self) -> float:
+        """The source's own minimum spacing, which robots can only tighten."""
+        source = self._active_source or {}
+        try:
+            return max(0.0, float(source.get("crawl_delay_floor_s") or 0.0))
+        except (TypeError, ValueError):
+            return 0.0
+
+    def _interval(self, rules) -> float:
+        return max(HostPacer.interval_for(self.config.min_interval_s, rules.crawl_delay),
+                   self._crawl_floor())
+
     def _attempt_gate(self) -> str | None:
         """Count one network attempt, or refuse it at the persisted ceiling.
 
@@ -582,7 +595,7 @@ class Crawler:
             path = f"{path}?{urlsplit(canonical).query}"
         if not rules.can_fetch(path):
             return "robots_denied"
-        interval = HostPacer.interval_for(self.config.min_interval_s, rules.crawl_delay)
+        interval = self._interval(rules)
         self.pacer.wait(host, interval)
         self.pacer.record(host, interval)
         self.counters["redirect_hops"] += 1
@@ -622,11 +635,16 @@ class Crawler:
             return "bad_url"
         if origin_of(canonical) != source["origin"]:
             return "off_origin"
+        if is_administrative_path(canonical):
+            # A robots redirect is not a way around the administrative-route
+            # exclusion: /admin, login and account paths stay unreachable.
+            return "administrative_path"
         if self.fetcher.requests >= self._request_ceiling:
             return "request_budget_exhausted"
         host = host_port(canonical)
-        self.pacer.wait(host, self.config.min_interval_s)
-        self.pacer.record(host, self.config.min_interval_s)
+        interval = max(self.config.min_interval_s, self._crawl_floor())
+        self.pacer.wait(host, interval)
+        self.pacer.record(host, interval)
         self.counters["robots_redirect_hops"] += 1
         return None
 
@@ -634,11 +652,12 @@ class Crawler:
         """Fetch robots through the same host schedule as content."""
         def loader(origin_url: str):
             robots_url = origin_url.rstrip("/") + "/robots.txt"
-            self.pacer.wait(host, self.config.min_interval_s)
+            robots_interval = max(self.config.min_interval_s, self._crawl_floor())
+            self.pacer.wait(host, robots_interval)
             # Record the request that is about to be issued *before* it is
             # sent. Otherwise a redirect hop inside this fetch would see no
             # previous request and could be issued with no pacing gap.
-            self.pacer.record(host, self.config.min_interval_s)
+            self.pacer.record(host, robots_interval)
             result = self.fetcher.fetch(robots_url, max_bytes=MAX_ROBOTS_BYTES,
                                         redirect_gate=self._robots_redirect_gate)
             self._log_redirect_hops(self._active_source["source_id"], 0, result.hops)
@@ -646,7 +665,8 @@ class Crawler:
                 rules = RobotsRules(deny_all=True, source=f"error:{result.error}")
             else:
                 rules = decision_for_status(result.status, result.body, self.config.user_agent)
-            interval = HostPacer.interval_for(self.config.min_interval_s, rules.crawl_delay)
+            interval = max(HostPacer.interval_for(self.config.min_interval_s, rules.crawl_delay),
+                           self._crawl_floor())
             self.pacer.record(host, interval,
                               retry_after_s=(result.retry_after_s
                                              if result.status in (429, 503) else None))

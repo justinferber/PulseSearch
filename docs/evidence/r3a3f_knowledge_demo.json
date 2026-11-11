@@ -1,0 +1,304 @@
+{
+  "kind": "R3A3F_KNOWLEDGE_DEMO",
+  "generated_at": "2026-11-11T12:00:00+00:00",
+  "mode": "OFFLINE_FIXTURE",
+  "note": "Weather uses a fixture observation; no live provider was called by this demo.",
+  "pack_version": 1,
+  "questions": [
+    {
+      "provider": "none",
+      "answer": {
+        "status": "ANSWERED",
+        "intent": "event_date",
+        "question": "When is Glastonbury on next year?",
+        "answer": "Glastonbury Festival is scheduled for Wednesday 23 June 2027 to Sunday 27 June 2027 (5 days) at Worthy Farm, Pilton, Somerset, England. 2026 was a fallow year; the festival returns for 2027.",
+        "citations": [
+          {
+            "title": "Glastonbury 2027 ticket information confirmed",
+            "url": "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed",
+            "publisher": "Glastonbury Festivals",
+            "retrieved_at": "2026-11-11",
+            "kind": "source"
+          }
+        ],
+        "confidence": 0.95,
+        "freshness": "2026-11-11T00:00:00+00:00",
+        "limits": [],
+        "followups": [
+          "Where is Glastonbury Festival?",
+          "Are tickets for Glastonbury Festival available?"
+        ],
+        "gates": {
+          "trusted_hosts_only": true,
+          "live_fares": false,
+          "generated_text": false,
+          "untrusted_hits_blocked": 0
+        },
+        "pack_version": "1"
+      }
+    },
+    {
+      "provider": "none",
+      "answer": {
+        "status": "LIVE_SOURCE_REQUIRED",
+        "intent": "weather",
+        "question": "What is the weather in London or Berlin today?",
+        "answer": "I can't answer live weather without a provider connection, and I won't guess. This build has the weather connector switched off. Enable it with --live-weather (keyless Open-Meteo adapter) or connect your own provider.",
+        "citations": [],
+        "confidence": 0.0,
+        "freshness": "",
+        "limits": [
+          "Live weather is an external data dependency, not an indexed fact."
+        ],
+        "followups": [],
+        "gates": {
+          "trusted_hosts_only": true,
+          "live_fares": false,
+          "generated_text": false,
+          "untrusted_hits_blocked": 0
+        },
+        "pack_version": "1"
+      }
+    },
+    {
+      "provider": "fixture",
+      "answer": {
+        "status": "ANSWERED",
+        "intent": "weather",
+        "question": "What is the weather in London or Berlin today?",
+        "answer": "As of 11:56 UTC on 11 Nov 2026: London: 9.6 \u00b0C (feels like 7.2 \u00b0C), overcast, wind 11.2 km/h. Berlin: 5.2 \u00b0C (feels like 1.9 \u00b0C), overcast, wind 9.5 km/h. Source: Open-Meteo fixture (CC BY 4.0).",
+        "citations": [
+          {
+            "title": "Open-Meteo fixture (CC BY 4.0)",
+            "url": "https://open-meteo.com/",
+            "publisher": "Open-Meteo fixture (CC BY 4.0)",
+            "retrieved_at": "2026-11-11T11:56:00+00:00",
+            "kind": "live_weather"
+          }
+        ],
+        "confidence": 0.9,
+        "freshness": "2026-11-11T11:56:00+00:00",
+        "limits": [
+          "Current observation, not a forecast.",
+          "Live data is not stored in the index."
+        ],
+        "followups": [
+          "What is the weather in Berlin today?"
+        ],
+        "gates": {
+          "trusted_hosts_only": true,
+          "live_fares": false,
+          "generated_text": false,
+          "untrusted_hits_blocked": 0
+        },
+        "pack_version": "1"
+      }
+    },
+    {
+      "provider": "none",
+      "answer": {
+        "status": "ANSWERED",
+        "intent": "buy_flights",
+        "question": "Can you name place to buy flight tickets?",
+        "answer": "There is no single best place to buy flight tickets. Buy directly from the airline or a licensed agent so the fare rules, baggage and changes are clear.\n- British Airways (direct): https://www.britishairways.com/\n- Lufthansa (direct): https://www.lufthansa.com/\n- easyJet (direct): https://www.easyjet.com/\n- Ryanair (direct): https://www.ryanair.com/\n- Heathrow Airport: https://www.heathrow.com/\n- Gatwick Airport: https://www.gatwickairport.com/\n- Berlin Brandenburg Airport: https://www.berlin-airport.de/\n- UK Civil Aviation Authority (ATOL checks): https://www.caa.co.uk/\n- ABTA (agent membership checks): https://www.abta.com/\nCheck who the seller is, whether the booking is ATOL/ABTA protected, and the fare rules before paying. Pulse Unity is not a travel agent and these are not affiliate links.\nI can't quote or rank live fares, and I won't invent prices.",
+        "citations": [
+          {
+            "title": "British Airways (direct)",
+            "url": "https://www.britishairways.com/",
+            "publisher": "",
+            "retrieved_at": "",
+            "kind": "official_channel"
+          },
+          {
+            "title": "Lufthansa (direct)",
+            "url": "https://www.lufthansa.com/",
+            "publisher": "",
+            "retrieved_at": "",
+            "kind": "official_channel"
+          },
+          {
+            "title": "easyJet (direct)",
+            "url": "https://www.easyjet.com/",
+            "publisher": "",
+            "retrieved_at": "",
+            "kind": "official_channel"
+          },
+          {
+            "title": "Ryanair (direct)",
+            "url": "https://www.ryanair.com/",
+            "publisher": "",
+            "retrieved_at": "",
+            "kind": "official_channel"
+          },
+          {
+            "title": "Heathrow Airport",
+            "url": "https://www.heathrow.com/",
+            "publisher": "",
+            "retrieved_at": "",
+            "kind": "official_channel"
+          },
+          {
+            "title": "Gatwick Airport",
+            "url": "https://www.gatwickairport.com/",
+            "publisher": "",
+            "retrieved_at": "",
+            "kind": "official_channel"
+          },
+          {
+            "title": "Berlin Brandenburg Airport",
+            "url": "https://www.berlin-airport.de/",
+            "publisher": "",
+            "retrieved_at": "",
+            "kind": "official_channel"
+          },
+          {
+            "title": "UK Civil Aviation Authority (ATOL checks)",
+            "url": "https://www.caa.co.uk/",
+            "publisher": "",
+            "retrieved_at": "",
+            "kind": "official_channel"
+          },
+          {
+            "title": "ABTA (agent membership checks)",
+            "url": "https://www.abta.com/",
+            "publisher": "",
+            "retrieved_at": "",
+            "kind": "official_channel"
+          }
+        ],
+        "confidence": 0.85,
+        "freshness": "",
+        "limits": [
+          "No live fares or availability.",
+          "No affiliate or referral links."
+        ],
+        "followups": [],
+        "gates": {
+          "trusted_hosts_only": true,
+          "live_fares": false,
+          "generated_text": false,
+          "untrusted_hits_blocked": 0
+        },
+        "pack_version": "1"
+      }
+    },
+    {
+      "provider": "none",
+      "answer": {
+        "status": "NO_EVIDENCE",
+        "intent": "index_lookup",
+        "question": "When is the Moon Parade on next year?",
+        "answer": "The index has no accepted page that answers this. Try a more specific question, or add a curated fact with a source to the knowledge pack.",
+        "citations": [],
+        "confidence": 0.0,
+        "freshness": "",
+        "limits": [],
+        "followups": [],
+        "gates": {
+          "trusted_hosts_only": true,
+          "live_fares": false,
+          "generated_text": false,
+          "untrusted_hits_blocked": 0
+        },
+        "pack_version": "1"
+      }
+    },
+    {
+      "provider": "none",
+      "answer": {
+        "status": "ANSWERED",
+        "intent": "index_lookup",
+        "question": "What is the Pulse UNITY Knowledge Engine?",
+        "answer": "From the indexed page \u201cAbout the Pulse UNITY Knowledge Engine\u201d: The Knowledge Engine answers member questions from curated sources and links to the original page.",
+        "citations": [
+          {
+            "title": "About the Pulse UNITY Knowledge Engine",
+            "url": "https://pulseunity.co/about-knowledge",
+            "publisher": "pulseunity.co",
+            "retrieved_at": "2026-11-11T12:00:00+00:00",
+            "kind": "indexed_page"
+          }
+        ],
+        "confidence": 0.6,
+        "freshness": "2026-11-11T12:00:00+00:00",
+        "limits": [
+          "Quoted from an indexed page; not independently verified.",
+          "Only the accepted title and short snippet are stored."
+        ],
+        "followups": [],
+        "gates": {
+          "trusted_hosts_only": true,
+          "live_fares": false,
+          "generated_text": false,
+          "untrusted_hits_blocked": 0
+        },
+        "pack_version": "1"
+      }
+    },
+    {
+      "provider": "none",
+      "answer": {
+        "status": "NO_EVIDENCE",
+        "intent": "index_lookup",
+        "question": "refund policy",
+        "answer": "I found pages, but none are on the trusted-source list, so I won't cite them. Try a more specific question, or add a curated fact with a source to the knowledge pack.",
+        "citations": [],
+        "confidence": 0.0,
+        "freshness": "",
+        "limits": [],
+        "followups": [],
+        "gates": {
+          "trusted_hosts_only": true,
+          "live_fares": false,
+          "generated_text": false,
+          "untrusted_hits_blocked": 1
+        },
+        "pack_version": "1"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "check": "Glastonbury date answered",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "Glastonbury cites the organiser",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "weather refuses without a provider",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "weather answers with a fresh observation",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "flights list official channels without fares",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "unknown event refused",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "wiki answer quotes a trusted page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "untrusted injection page never cited",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "checks_passed": 8,
+  "checks_total": 8
+}

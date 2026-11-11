@@ -1,0 +1,50 @@
+{
+  "probe_total": 54,
+  "r3a2_status": "READ_ONLY_TRUE_BGE_COMPARISON_NOT_DEPLOYED",
+  "model_id": "BAAI/bge-small-en-v1.5",
+  "model_kind": "REAL_LOCAL_PINNED_BGE_384D_SENTENCE_EMBEDDINGS",
+  "model_manifest_sha256": "3955a9a2ca390314555ddb6a11b2ed16210657b689cab1b8e708653d3c63c437",
+  "model_verified_files": 12,
+  "pass_retrieval": {
+    "baseline": 19,
+    "bge": 27
+  },
+  "pass_safety": {
+    "baseline": 10,
+    "bge": 10
+  },
+  "abstain_fact": {
+    "baseline": 10,
+    "bge": 10
+  },
+  "recoveries": [
+    "new_patient_doctor",
+    "learner_motorist",
+    "exclude_eid",
+    "exclude_games",
+    "x01",
+    "x04",
+    "x10",
+    "x12"
+  ],
+  "recoveries_count": 8,
+  "regressions": [],
+  "provisional_grade_counts": {
+    "BLANK": 11,
+    "1": 3,
+    "2": 8,
+    "3": 32
+  },
+  "factual_answers_verified": 0,
+  "human_signed_off": 0,
+  "gate_status": {
+    "R3-A2 automated comparison": "COMPLETED",
+    "R3-A3 metadata title grading": "PRELIMINARY",
+    "source-page verification": "PENDING",
+    "complete ranking/filter trace": "PENDING",
+    "independent human relevance labels": "PENDING",
+    "latency/CPU/memory benchmarking": "PENDING",
+    "production promotion": "HOLD"
+  },
+  "production_integration": "HOLD_INDEPENDENT_GRADING_AND_FACT_EVIDENCE"
+}

@@ -1,0 +1,10 @@
+*.sqlite
+*.sqlite3
+*.db
+*.safetensors
+*.bin
+*.pt
+*.whl
+.venv/
+__pycache__/
+.env

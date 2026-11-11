@@ -1,0 +1,55 @@
+probe_id,question,kind,baseline_verdict,bge_verdict,provisional_grade,preliminary_assessment,top_result,source_url
+new_patient_doctor,Where can a new NHS patient sign up to see a doctor?,top,FAIL_WRONG_TOP1,PASS_RETRIEVAL,3,PROVISIONAL_TOP1_RELEVANT,Register with a GP surgery - NHS,https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/
+learner_motorist,What should a UK learner motorist apply for?,top,FAIL_WRONG_TOP1,PASS_RETRIEVAL,3,PROVISIONAL_TOP1_RELEVANT,Apply for your first provisional driving licence - GOV.UK,https://www.gov.uk/apply-first-provisional-driving-licence
+registration,Where can I register to vote?,top,PASS_RETRIEVAL,PASS_RETRIEVAL,3,PROVISIONAL_TOP1_RELEVANT,Register to vote - GOV.UK,https://www.gov.uk/register-to-vote
+blood_screening,How do I arrange laboratory blood screening?,top,PASS_RETRIEVAL,PASS_RETRIEVAL,3,PROVISIONAL_TOP1_RELEVANT,Blood tests - NHS,https://www.nhs.uk/tests-and-treatments/blood-tests/
+javascript,What is JavaScript programming?,top,PASS_RETRIEVAL,PASS_RETRIEVAL,3,PROVISIONAL_TOP1_RELEVANT,What is JavaScript? - Learn web development | MDN,https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript
+http,Explain HTTP protocol,top,PASS_RETRIEVAL,PASS_RETRIEVAL,3,PROVISIONAL_TOP1_RELEVANT,HTTP: Hypertext Transfer Protocol | MDN,https://developer.mozilla.org/en-US/docs/Web/HTTP
+event_year,Armed Forces Day 2027,top,PASS_RETRIEVAL,PASS_RETRIEVAL,3,PROVISIONAL_TOP1_RELEVANT,Armed Forces Day 2027 | London City Hall,https://www.london.gov.uk/events/armed-forces-day-2027
+event_precise,Eid on the Square 2027,top,PASS_RETRIEVAL,PASS_RETRIEVAL,3,PROVISIONAL_TOP1_RELEVANT,Eid on the Square 2027 | London City Hall,https://www.london.gov.uk/events/eid
+event_precise_2025,Diwali on the Square 2025,top,PASS_RETRIEVAL,PASS_RETRIEVAL,3,PROVISIONAL_TOP1_RELEVANT,Diwali on the Square 2025 | London City Hall,https://www.london.gov.uk/events/diwali-square-2025
+event_series_2,What are the 2024 and 2025 London Open House editions?,all,FAIL_MISSING_EDITION,FAIL_MISSING_EDITION,1,INCOMPLETE_EDITION_COVERAGE,London Open House 2025 | London City Hall,https://www.london.gov.uk/events/london-open-house-2025
+event_series_3,"London Open House editions from 2023, 2024 and 2025",all,FAIL_MISSING_EDITION,FAIL_MISSING_EDITION,1,INCOMPLETE_EDITION_COVERAGE,London Open House 2025 | London City Hall,https://www.london.gov.uk/events/london-open-house-2025
+series_specific,City Hall Open House 2026,top,PASS_RETRIEVAL,PASS_RETRIEVAL,3,PROVISIONAL_TOP1_RELEVANT,City Hall Open House 2026 | London City Hall,https://www.london.gov.uk/events/city-hall-open-house-2026
+exclude_eid,London events 2027 excluding Eid,exclude_nonempty,FAIL_EMPTY_DISCOVERY,PASS_RETRIEVAL,3,PROVISIONAL_EXCLUSION_PASS,St Patrick’s Festival 2027 | London City Hall,https://www.london.gov.uk/events/st-patricks-day
+exclude_patrick,London festivals in 2026 excluding St Patrick's Festival,exclude_nonempty,PASS_RETRIEVAL,PASS_RETRIEVAL,3,PROVISIONAL_EXCLUSION_PASS,London Games Festival 2026 | London City Hall,https://www.london.gov.uk/events/london-games-festival-2026
+exclude_games,London festival events 2026 without London Games Festival,exclude_nonempty,FAIL_EMPTY_DISCOVERY,PASS_RETRIEVAL,2,EXCLUSION_PASS_WITH_NOISE,London New Year's Eve 2026 | London City Hall,https://www.london.gov.uk/events/london-new-years-eve-2026
+exclude_diwali,Find London events in 2025 other than Diwali on the Square,exclude_nonempty,FAIL_EXCLUSION_LEAK,FAIL_EXCLUSION_LEAK,2,CONFLICT_WITH_ENGINE_VERDICT,Eid on the Square 2025 | London City Hall,https://www.london.gov.uk/events/eid-square-2025
+catalog_2027,Find London events planned for 2027,year_many,PASS_RETRIEVAL,PASS_RETRIEVAL,2,PROVISIONAL_YEAR_MATCH,Armed Forces Day 2027 | London City Hall,https://www.london.gov.uk/events/armed-forces-day-2027
+catalog_2025,Find London celebrations from 2025,year_many,PASS_RETRIEVAL,PASS_RETRIEVAL,2,PROVISIONAL_YEAR_MATCH,St George's Day 2025 | London City Hall,https://www.london.gov.uk/events/st-georges-day-2025
+catalog_history,Historical editions of London Open House,series_many,FAIL_SERIES_RECALL,FAIL_SERIES_RECALL,2,SERIES_BOUNDARY_REVIEW,London Open House 2023 | London City Hall,https://www.london.gov.uk/events/london-open-house-2023
+negative_future,Diwali on the Square 2040,no_result,PASS_SAFETY,PASS_SAFETY,3,PROVISIONAL_SAFETY_PASS,,
+negative_geography,Which Paris festivals were on in 2027?,no_result,PASS_SAFETY,PASS_SAFETY,3,PROVISIONAL_SAFETY_PASS,,
+negative_conflict,London events 2027 only in Edinburgh,no_result,PASS_SAFETY,PASS_SAFETY,3,PROVISIONAL_SAFETY_PASS,,
+negative_weather,Will it rain in Oxford tomorrow?,no_result,PASS_SAFETY,PASS_SAFETY,3,PROVISIONAL_SAFETY_PASS,,
+negative_stock,Which new laptop is in stock today?,no_result,PASS_SAFETY,PASS_SAFETY,3,PROVISIONAL_SAFETY_PASS,,
+negative_contradiction,Eid on the Square 2027 excluding Eid,no_result,PASS_SAFETY,PASS_SAFETY,3,PROVISIONAL_SAFETY_PASS,,
+fact_fee,How much is adult UK passport renewal today?,fact_unverified,ABSTAIN_FACT_UNVERIFIED,ABSTAIN_FACT_UNVERIFIED,,FACT_EVIDENCE_REQUIRED,Renew or replace your adult passport: Renew - GOV.UK,https://www.gov.uk/renew-adult-passport/renew
+fact_start,What time does Eid on the Square 2027 start?,fact_unverified,ABSTAIN_FACT_UNVERIFIED,ABSTAIN_FACT_UNVERIFIED,,FACT_EVIDENCE_REQUIRED,Eid on the Square 2027 | London City Hall,https://www.london.gov.uk/events/eid
+fact_access,Is the entrance wheelchair accessible for Black on the Square 2027?,fact_unverified,ABSTAIN_FACT_UNVERIFIED,ABSTAIN_FACT_UNVERIFIED,,FACT_EVIDENCE_REQUIRED,Black On The Square 2027 | London City Hall,https://www.london.gov.uk/events/black-square-2027
+fact_ticket,Are London New Year's Eve 2026 tickets sold out?,fact_unverified,ABSTAIN_FACT_UNVERIFIED,ABSTAIN_FACT_UNVERIFIED,,FACT_EVIDENCE_REQUIRED,London New Year's Eve 2026 | London City Hall,https://www.london.gov.uk/events/london-new-years-eve-2026
+fact_cancellation,Was Armed Forces Day 2027 cancelled?,fact_unverified,ABSTAIN_FACT_UNVERIFIED,ABSTAIN_FACT_UNVERIFIED,,FACT_EVIDENCE_REQUIRED,Armed Forces Day 2027 | London City Hall,https://www.london.gov.uk/events/armed-forces-day-2027
+x01,How do I join a family physician practice?,top,FAIL_WRONG_TOP1,PASS_RETRIEVAL,3,PROVISIONAL_TOP1_RELEVANT,Register with a GP surgery - NHS,https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/
+x02,Where do you apply for a learner motorists licence?,top,PASS_RETRIEVAL,PASS_RETRIEVAL,3,PROVISIONAL_TOP1_RELEVANT,Apply for your first provisional driving licence - GOV.UK,https://www.gov.uk/apply-first-provisional-driving-licence
+x03,How do I join the electoral register?,top,PASS_RETRIEVAL,PASS_RETRIEVAL,3,PROVISIONAL_TOP1_RELEVANT,Register to vote - GOV.UK,https://www.gov.uk/register-to-vote
+x04,Rules for checking the local property rates valuation band,top,FAIL_WRONG_TOP1,PASS_RETRIEVAL,3,PROVISIONAL_TOP1_RELEVANT,Check your Council Tax band - GOV.UK,https://www.gov.uk/council-tax-bands
+x05,Explain the basics of JS scripting,top,PASS_RETRIEVAL,PASS_RETRIEVAL,3,PROVISIONAL_TOP1_RELEVANT,What is JavaScript? - Learn web development | MDN,https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript
+x06,Tutorial about the HTTP protocol,top,PASS_RETRIEVAL,PASS_RETRIEVAL,3,PROVISIONAL_TOP1_RELEVANT,HTTP: Hypertext Transfer Protocol | MDN,https://developer.mozilla.org/en-US/docs/Web/HTTP
+x07,Online steps to replace a British passport,top,PASS_RETRIEVAL,PASS_RETRIEVAL,3,PROVISIONAL_TOP1_RELEVANT,Renew or replace your adult passport: Renew - GOV.UK,https://www.gov.uk/renew-adult-passport/renew
+x08,Where do I arrange an NHS blood sample test?,top,PASS_RETRIEVAL,PASS_RETRIEVAL,3,PROVISIONAL_TOP1_RELEVANT,Blood tests - NHS,https://www.nhs.uk/tests-and-treatments/blood-tests/
+x09,London Open House 2024 and London Open House 2025,all,FAIL_MISSING_EDITION,FAIL_MISSING_EDITION,1,INCOMPLETE_EDITION_COVERAGE,London Open House 2025 | London City Hall,https://www.london.gov.uk/events/london-open-house-2025
+x10,London 2027 public events excluding Eid,exclude_nonempty,FAIL_EMPTY_DISCOVERY,PASS_RETRIEVAL,3,PROVISIONAL_EXCLUSION_PASS,St Patrick’s Festival 2027 | London City Hall,https://www.london.gov.uk/events/st-patricks-day
+x11,London festivals 2026 except St Patrick’s Festival,exclude_nonempty,PASS_RETRIEVAL,PASS_RETRIEVAL,3,PROVISIONAL_EXCLUSION_PASS,London Games Festival 2026 | London City Hall,https://www.london.gov.uk/events/london-games-festival-2026
+x12,London festivals 2026 excluding London Games Festival,exclude_nonempty,FAIL_EMPTY_DISCOVERY,PASS_RETRIEVAL,2,EXCLUSION_PASS_WITH_NOISE,London New Year's Eve 2026 | London City Hall,https://www.london.gov.uk/events/london-new-years-eve-2026
+x13,Events listed for London in 2027,year_many,PASS_RETRIEVAL,PASS_RETRIEVAL,2,PROVISIONAL_YEAR_MATCH,Black On The Square 2027 | London City Hall,https://www.london.gov.uk/events/black-square-2027
+x14,Past editions of London Open House,series_many,FAIL_SERIES_RECALL,FAIL_SERIES_RECALL,2,SERIES_BOUNDARY_REVIEW,London Open House 2023 | London City Hall,https://www.london.gov.uk/events/london-open-house-2023
+x15,Diwali on the Square 2038,no_result,PASS_SAFETY,PASS_SAFETY,3,PROVISIONAL_SAFETY_PASS,,
+x16,Which 2027 Edinburgh concerts were announced?,no_result,PASS_SAFETY,PASS_SAFETY,3,PROVISIONAL_SAFETY_PASS,,
+x17,London Pride events 2025 but only in Manchester,no_result,PASS_SAFETY,PASS_SAFETY,3,PROVISIONAL_SAFETY_PASS,,
+x18,Show the weather in Newbury tomorrow,no_result,PASS_SAFETY,PASS_SAFETY,3,PROVISIONAL_SAFETY_PASS,,
+x19,What time does Eid on the Square 2027 open?,fact_unverified,ABSTAIN_FACT_UNVERIFIED,ABSTAIN_FACT_UNVERIFIED,,FACT_EVIDENCE_REQUIRED,Eid on the Square 2027 | London City Hall,https://www.london.gov.uk/events/eid
+x20,Are tickets for New Year’s Eve 2026 sold out?,fact_unverified,ABSTAIN_FACT_UNVERIFIED,ABSTAIN_FACT_UNVERIFIED,,FACT_EVIDENCE_REQUIRED,London New Year's Eve 2026 | London City Hall,https://www.london.gov.uk/events/london-new-years-eve-2026
+x21,Which 2027 London festivals are free?,fact_unverified,FAIL_FACT_STATUS,FAIL_FACT_STATUS,,FACT_EVIDENCE_REQUIRED,St Patrick’s Festival 2027 | London City Hall,https://www.london.gov.uk/events/st-patricks-day
+x22,Does Black on the Square 2027 have wheelchair accessibility?,fact_unverified,ABSTAIN_FACT_UNVERIFIED,ABSTAIN_FACT_UNVERIFIED,,FACT_EVIDENCE_REQUIRED,Black On The Square 2027 | London City Hall,https://www.london.gov.uk/events/black-square-2027
+x23,What is the cost of a new UK passport now?,fact_unverified,ABSTAIN_FACT_UNVERIFIED,ABSTAIN_FACT_UNVERIFIED,,FACT_EVIDENCE_REQUIRED,Renew or replace your adult passport: Renew - GOV.UK,https://www.gov.uk/renew-adult-passport/renew
+x24,Which London festivals in 2026 were cancelled?,fact_unverified,ABSTAIN_FACT_UNVERIFIED,ABSTAIN_FACT_UNVERIFIED,,FACT_EVIDENCE_REQUIRED,London Games Festival 2026 | London City Hall,https://www.london.gov.uk/events/london-games-festival-2026

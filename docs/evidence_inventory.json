@@ -1,0 +1,2373 @@
+{
+  "generated_utc": "2026-11-11T00:59:10Z",
+  "scope": "newest authoritative R3-A2 and R3-A3 local artefacts",
+  "file_count": 338,
+  "files": {
+    "Pulse_Search_R3A1_20261026/accepted_R2P35.zip": {
+      "path": "Pulse_Search_R3A1_20261026/accepted_R2P35.zip",
+      "bytes": 291098,
+      "sha256": "de461cfb31b5913eb754cb7705e523da20405edaae1ed7c8bb88f6831da0e4c4",
+      "mtime_utc": "2026-10-26T00:45:09Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A1_20261026/MANIFEST.sha256": {
+      "path": "Pulse_Search_R3A1_20261026/MANIFEST.sha256",
+      "bytes": 732,
+      "sha256": "55a5320ab7147c6f676061815c809b1c5767bc126e185f10933c2116ea276c59",
+      "mtime_utc": "2026-10-26T00:45:09Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A1_20261026/OnePass.sh": {
+      "path": "Pulse_Search_R3A1_20261026/OnePass.sh",
+      "bytes": 4370,
+      "sha256": "a7f9c7afe2a9c38a1472829655c6366df97ddda9883481dca212fa557b173dfb",
+      "mtime_utc": "2026-10-26T00:45:09Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A1_20261026/owner_R2P35_report.json": {
+      "path": "Pulse_Search_R3A1_20261026/owner_R2P35_report.json",
+      "bytes": 105994,
+      "sha256": "ca056b51a7af76d095d9b4b76f0b3b082cdf92209a45e02aa190ee083f2d5fc1",
+      "mtime_utc": "2026-10-26T00:45:09Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A1_20261026/R3_MAJOR_ROUTE.md": {
+      "path": "Pulse_Search_R3A1_20261026/R3_MAJOR_ROUTE.md",
+      "bytes": 3873,
+      "sha256": "72911195651aedce3da114718dd9fe5208dbbd552d297cc2e216697c747b6d1b",
+      "mtime_utc": "2026-10-26T00:45:09Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A1_20261026/r3a_cases.py": {
+      "path": "Pulse_Search_R3A1_20261026/r3a_cases.py",
+      "bytes": 3068,
+      "sha256": "cf4a853350a03d5f21e0c9ecc80eff1fb18685059b37d9b3aca887ff09c967c5",
+      "mtime_utc": "2026-10-26T00:45:09Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A1_20261026/r3a_eval.py": {
+      "path": "Pulse_Search_R3A1_20261026/r3a_eval.py",
+      "bytes": 9330,
+      "sha256": "4d84227cea11fa8bad2b9652e1fe28063f6bb61ea8061f2ae7977dab446e86e4",
+      "mtime_utc": "2026-10-26T00:45:09Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A1_20261026/r3a_local_model.py": {
+      "path": "Pulse_Search_R3A1_20261026/r3a_local_model.py",
+      "bytes": 2932,
+      "sha256": "a4cfe169db66d9cfcd7332c29eab421de23261c07c09cd8a7d67859f27bf4357",
+      "mtime_utc": "2026-10-26T00:45:09Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A1_20261026/README.md": {
+      "path": "Pulse_Search_R3A1_20261026/README.md",
+      "bytes": 2474,
+      "sha256": "86cc9bcb433df49c730ba93891d9274000cb8a618e63ac1ed7242de4f31330ea",
+      "mtime_utc": "2026-10-26T00:45:09Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A1_20261026/test_r3a.py": {
+      "path": "Pulse_Search_R3A1_20261026/test_r3a.py",
+      "bytes": 3558,
+      "sha256": "a622ea89a73424f8d1808d1d999c7acd215c020294091f585fb47fcee3272c37",
+      "mtime_utc": "2026-10-26T00:45:09Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_20261026/accepted_hybrid/hybrid_core.py": {
+      "path": "Pulse_Search_R3A2_20261026/accepted_hybrid/hybrid_core.py",
+      "bytes": 13337,
+      "sha256": "32db0765d5542bd3ece7aa92516acec904c7beadf67f02ae2df0c3c6b915e192",
+      "mtime_utc": "2026-10-26T01:20:50Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_20261026/accepted_hybrid/offline_encoder.py": {
+      "path": "Pulse_Search_R3A2_20261026/accepted_hybrid/offline_encoder.py",
+      "bytes": 2036,
+      "sha256": "513939aa8a3420b866634cd0b130f20bd1978ce8d395bc41b583b6c4b31b1971",
+      "mtime_utc": "2026-10-26T01:20:50Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_20261026/accepted_hybrid/semantic_context.py": {
+      "path": "Pulse_Search_R3A2_20261026/accepted_hybrid/semantic_context.py",
+      "bytes": 2148,
+      "sha256": "05ef8e19e2ab0fd040acf07a9773fdd5e017283aa8fb69da343c1f2f90a43dbf",
+      "mtime_utc": "2026-10-26T01:20:50Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_20261026/accepted_loader/r3a_cases.py": {
+      "path": "Pulse_Search_R3A2_20261026/accepted_loader/r3a_cases.py",
+      "bytes": 3068,
+      "sha256": "cf4a853350a03d5f21e0c9ecc80eff1fb18685059b37d9b3aca887ff09c967c5",
+      "mtime_utc": "2026-10-26T01:20:50Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_20261026/accepted_loader/r3a_eval.py": {
+      "path": "Pulse_Search_R3A2_20261026/accepted_loader/r3a_eval.py",
+      "bytes": 9330,
+      "sha256": "4d84227cea11fa8bad2b9652e1fe28063f6bb61ea8061f2ae7977dab446e86e4",
+      "mtime_utc": "2026-10-26T01:20:50Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_20261026/accepted_loader/r3a_local_model.py": {
+      "path": "Pulse_Search_R3A2_20261026/accepted_loader/r3a_local_model.py",
+      "bytes": 2932,
+      "sha256": "a4cfe169db66d9cfcd7332c29eab421de23261c07c09cd8a7d67859f27bf4357",
+      "mtime_utc": "2026-10-26T01:20:50Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_20261026/accepted_R3A1.zip": {
+      "path": "Pulse_Search_R3A2_20261026/accepted_R3A1.zip",
+      "bytes": 313049,
+      "sha256": "1fb591e8dc20e881314daef053c689bdad59a6bda82a190af6655abb1b16ccf8",
+      "mtime_utc": "2026-10-26T01:20:50Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_20261026/MANIFEST.sha256": {
+      "path": "Pulse_Search_R3A2_20261026/MANIFEST.sha256",
+      "bytes": 1675,
+      "sha256": "ef0187cf49b3bd5ae58a01066be4323681e71c9642a87145b7cc91ea5df1d657",
+      "mtime_utc": "2026-10-26T01:20:50Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_20261026/Offline_Evaluate.sh": {
+      "path": "Pulse_Search_R3A2_20261026/Offline_Evaluate.sh",
+      "bytes": 4582,
+      "sha256": "dd28757a4482fed6a8ecc02839ea387d8a5f0600fd0904b1ff8b3d2c090c5759",
+      "mtime_utc": "2026-10-26T01:20:50Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_20261026/offline_integrity.py": {
+      "path": "Pulse_Search_R3A2_20261026/offline_integrity.py",
+      "bytes": 1401,
+      "sha256": "7609a806ca86fbd82980d949ec1acb4c7ff264d7df95814a0cf9fee399ac1a17",
+      "mtime_utc": "2026-10-26T01:20:50Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_20261026/OnePass.sh": {
+      "path": "Pulse_Search_R3A2_20261026/OnePass.sh",
+      "bytes": 1578,
+      "sha256": "ca0004e5d274b9131d6ed75a7cc6961c5288716283538a261c4c084686516f05",
+      "mtime_utc": "2026-10-26T01:20:50Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_20261026/preflight.py": {
+      "path": "Pulse_Search_R3A2_20261026/preflight.py",
+      "bytes": 430,
+      "sha256": "2537a3953ef69e80c42a4a58aa095e4441600b8b406f961bf2c5af157ff7f7b7",
+      "mtime_utc": "2026-10-26T01:20:50Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_20261026/provision.py": {
+      "path": "Pulse_Search_R3A2_20261026/provision.py",
+      "bytes": 10490,
+      "sha256": "41b15549d773629d29bc750702c6f982dbf58cc11d57468244a27ffcc14a8e05",
+      "mtime_utc": "2026-10-26T01:20:50Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_20261026/r3a2_eval.py": {
+      "path": "Pulse_Search_R3A2_20261026/r3a2_eval.py",
+      "bytes": 8229,
+      "sha256": "e323837b4cdb9432979d77c183b3f2bd98f7923ec7be700cbff9c68cd611c567",
+      "mtime_utc": "2026-10-26T01:20:50Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_20261026/r3a2_extra_cases.py": {
+      "path": "Pulse_Search_R3A2_20261026/r3a2_extra_cases.py",
+      "bytes": 2248,
+      "sha256": "9c1fa0749e5ee8adee30e63750f2a60e42635d09fd09cd26d542dfb4ba59b223",
+      "mtime_utc": "2026-10-26T01:20:50Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_20261026/R3A2_LICENSE_AND_SUPPLY_CHAIN.md": {
+      "path": "Pulse_Search_R3A2_20261026/R3A2_LICENSE_AND_SUPPLY_CHAIN.md",
+      "bytes": 3857,
+      "sha256": "92d8a2e214c42c41de2f0ef71f8bd12846b633e25d453e6c027f42ab87ee36ca",
+      "mtime_utc": "2026-10-26T01:20:50Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_20261026/README.md": {
+      "path": "Pulse_Search_R3A2_20261026/README.md",
+      "bytes": 4031,
+      "sha256": "5f722c3c8a4ac2941e2d00f6cc910db1bc06f97337d02af92c197751803fe888",
+      "mtime_utc": "2026-10-26T01:20:50Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_20261026/semantic_ranker.py": {
+      "path": "Pulse_Search_R3A2_20261026/semantic_ranker.py",
+      "bytes": 2738,
+      "sha256": "05d0f43104cfe0b310c74df31c719e7f584dd5538a0c83c0e9cc9ecc4a7ac09e",
+      "mtime_utc": "2026-10-26T01:20:50Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_20261026/test_r3a2.py": {
+      "path": "Pulse_Search_R3A2_20261026/test_r3a2.py",
+      "bytes": 3781,
+      "sha256": "56d161073700645d34b4b31e6b0f44ad2d1fd63b6da2a5e5483c984aacf56971",
+      "mtime_utc": "2026-10-26T01:20:50Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_20261026/verify_source_chain.py": {
+      "path": "Pulse_Search_R3A2_20261026/verify_source_chain.py",
+      "bytes": 832,
+      "sha256": "4897db940cac82a41da0739b1b0e3c65da03d7e9c4631bcd0978c9b2c133056f",
+      "mtime_utc": "2026-10-26T01:20:50Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R1_20261026/accepted_hybrid/hybrid_core.py": {
+      "path": "Pulse_Search_R3A2R1_20261026/accepted_hybrid/hybrid_core.py",
+      "bytes": 13337,
+      "sha256": "32db0765d5542bd3ece7aa92516acec904c7beadf67f02ae2df0c3c6b915e192",
+      "mtime_utc": "2026-10-26T01:27:21Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R1_20261026/accepted_hybrid/offline_encoder.py": {
+      "path": "Pulse_Search_R3A2R1_20261026/accepted_hybrid/offline_encoder.py",
+      "bytes": 2036,
+      "sha256": "513939aa8a3420b866634cd0b130f20bd1978ce8d395bc41b583b6c4b31b1971",
+      "mtime_utc": "2026-10-26T01:27:21Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R1_20261026/accepted_hybrid/semantic_context.py": {
+      "path": "Pulse_Search_R3A2R1_20261026/accepted_hybrid/semantic_context.py",
+      "bytes": 2148,
+      "sha256": "05ef8e19e2ab0fd040acf07a9773fdd5e017283aa8fb69da343c1f2f90a43dbf",
+      "mtime_utc": "2026-10-26T01:27:21Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R1_20261026/accepted_loader/r3a_cases.py": {
+      "path": "Pulse_Search_R3A2R1_20261026/accepted_loader/r3a_cases.py",
+      "bytes": 3068,
+      "sha256": "cf4a853350a03d5f21e0c9ecc80eff1fb18685059b37d9b3aca887ff09c967c5",
+      "mtime_utc": "2026-10-26T01:27:21Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R1_20261026/accepted_loader/r3a_eval.py": {
+      "path": "Pulse_Search_R3A2R1_20261026/accepted_loader/r3a_eval.py",
+      "bytes": 9330,
+      "sha256": "4d84227cea11fa8bad2b9652e1fe28063f6bb61ea8061f2ae7977dab446e86e4",
+      "mtime_utc": "2026-10-26T01:27:21Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R1_20261026/accepted_loader/r3a_local_model.py": {
+      "path": "Pulse_Search_R3A2R1_20261026/accepted_loader/r3a_local_model.py",
+      "bytes": 2932,
+      "sha256": "a4cfe169db66d9cfcd7332c29eab421de23261c07c09cd8a7d67859f27bf4357",
+      "mtime_utc": "2026-10-26T01:27:21Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R1_20261026/accepted_R3A1.zip": {
+      "path": "Pulse_Search_R3A2R1_20261026/accepted_R3A1.zip",
+      "bytes": 313049,
+      "sha256": "1fb591e8dc20e881314daef053c689bdad59a6bda82a190af6655abb1b16ccf8",
+      "mtime_utc": "2026-10-26T01:27:21Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R1_20261026/MANIFEST.sha256": {
+      "path": "Pulse_Search_R3A2R1_20261026/MANIFEST.sha256",
+      "bytes": 1756,
+      "sha256": "a33012e54d498c6fe13a21f17ab31b998244de14083535c606cfc55e28cb508e",
+      "mtime_utc": "2026-10-26T01:27:21Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R1_20261026/Offline_Evaluate.sh": {
+      "path": "Pulse_Search_R3A2R1_20261026/Offline_Evaluate.sh",
+      "bytes": 4582,
+      "sha256": "dd28757a4482fed6a8ecc02839ea387d8a5f0600fd0904b1ff8b3d2c090c5759",
+      "mtime_utc": "2026-10-26T01:27:21Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R1_20261026/offline_integrity.py": {
+      "path": "Pulse_Search_R3A2R1_20261026/offline_integrity.py",
+      "bytes": 1401,
+      "sha256": "7609a806ca86fbd82980d949ec1acb4c7ff264d7df95814a0cf9fee399ac1a17",
+      "mtime_utc": "2026-10-26T01:27:21Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R1_20261026/OnePass.sh": {
+      "path": "Pulse_Search_R3A2R1_20261026/OnePass.sh",
+      "bytes": 1905,
+      "sha256": "d382fbc8711cdb483c862fddf71a3668d45454a1fca79e9529f6754feb8038a7",
+      "mtime_utc": "2026-10-26T01:27:21Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R1_20261026/preflight.py": {
+      "path": "Pulse_Search_R3A2R1_20261026/preflight.py",
+      "bytes": 430,
+      "sha256": "2537a3953ef69e80c42a4a58aa095e4441600b8b406f961bf2c5af157ff7f7b7",
+      "mtime_utc": "2026-10-26T01:27:21Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R1_20261026/provision.py": {
+      "path": "Pulse_Search_R3A2R1_20261026/provision.py",
+      "bytes": 10490,
+      "sha256": "41b15549d773629d29bc750702c6f982dbf58cc11d57468244a27ffcc14a8e05",
+      "mtime_utc": "2026-10-26T01:27:21Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R1_20261026/r3a2_eval.py": {
+      "path": "Pulse_Search_R3A2R1_20261026/r3a2_eval.py",
+      "bytes": 8229,
+      "sha256": "e323837b4cdb9432979d77c183b3f2bd98f7923ec7be700cbff9c68cd611c567",
+      "mtime_utc": "2026-10-26T01:27:21Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R1_20261026/r3a2_extra_cases.py": {
+      "path": "Pulse_Search_R3A2R1_20261026/r3a2_extra_cases.py",
+      "bytes": 2248,
+      "sha256": "9c1fa0749e5ee8adee30e63750f2a60e42635d09fd09cd26d542dfb4ba59b223",
+      "mtime_utc": "2026-10-26T01:27:21Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R1_20261026/R3A2_LICENSE_AND_SUPPLY_CHAIN.md": {
+      "path": "Pulse_Search_R3A2R1_20261026/R3A2_LICENSE_AND_SUPPLY_CHAIN.md",
+      "bytes": 3857,
+      "sha256": "92d8a2e214c42c41de2f0ef71f8bd12846b633e25d453e6c027f42ab87ee36ca",
+      "mtime_utc": "2026-10-26T01:27:21Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R1_20261026/README.md": {
+      "path": "Pulse_Search_R3A2R1_20261026/README.md",
+      "bytes": 5103,
+      "sha256": "1b5fb4b371436dd0186679a4ed6ea4d2c0ce8563189e8fc1e44f0dd84659d518",
+      "mtime_utc": "2026-10-26T01:27:21Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R1_20261026/semantic_ranker.py": {
+      "path": "Pulse_Search_R3A2R1_20261026/semantic_ranker.py",
+      "bytes": 2738,
+      "sha256": "05d0f43104cfe0b310c74df31c719e7f584dd5538a0c83c0e9cc9ecc4a7ac09e",
+      "mtime_utc": "2026-10-26T01:27:21Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R1_20261026/test_r3a2.py": {
+      "path": "Pulse_Search_R3A2R1_20261026/test_r3a2.py",
+      "bytes": 3781,
+      "sha256": "56d161073700645d34b4b31e6b0f44ad2d1fd63b6da2a5e5483c984aacf56971",
+      "mtime_utc": "2026-10-26T01:27:21Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R1_20261026/test_r3a2r1.py": {
+      "path": "Pulse_Search_R3A2R1_20261026/test_r3a2r1.py",
+      "bytes": 1933,
+      "sha256": "713ee87ede8e326d429199637f8e7239f6bae89d6da398689412a2f7ac6694e7",
+      "mtime_utc": "2026-10-26T01:27:21Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R1_20261026/verify_source_chain.py": {
+      "path": "Pulse_Search_R3A2R1_20261026/verify_source_chain.py",
+      "bytes": 832,
+      "sha256": "4897db940cac82a41da0739b1b0e3c65da03d7e9c4631bcd0978c9b2c133056f",
+      "mtime_utc": "2026-10-26T01:27:21Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R2_20261026/accepted_hybrid/hybrid_core.py": {
+      "path": "Pulse_Search_R3A2R2_20261026/accepted_hybrid/hybrid_core.py",
+      "bytes": 13337,
+      "sha256": "32db0765d5542bd3ece7aa92516acec904c7beadf67f02ae2df0c3c6b915e192",
+      "mtime_utc": "2026-10-26T01:38:13Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R2_20261026/accepted_hybrid/offline_encoder.py": {
+      "path": "Pulse_Search_R3A2R2_20261026/accepted_hybrid/offline_encoder.py",
+      "bytes": 2036,
+      "sha256": "513939aa8a3420b866634cd0b130f20bd1978ce8d395bc41b583b6c4b31b1971",
+      "mtime_utc": "2026-10-26T01:38:13Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R2_20261026/accepted_hybrid/semantic_context.py": {
+      "path": "Pulse_Search_R3A2R2_20261026/accepted_hybrid/semantic_context.py",
+      "bytes": 2148,
+      "sha256": "05ef8e19e2ab0fd040acf07a9773fdd5e017283aa8fb69da343c1f2f90a43dbf",
+      "mtime_utc": "2026-10-26T01:38:13Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R2_20261026/accepted_loader/r3a_cases.py": {
+      "path": "Pulse_Search_R3A2R2_20261026/accepted_loader/r3a_cases.py",
+      "bytes": 3068,
+      "sha256": "cf4a853350a03d5f21e0c9ecc80eff1fb18685059b37d9b3aca887ff09c967c5",
+      "mtime_utc": "2026-10-26T01:38:13Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R2_20261026/accepted_loader/r3a_eval.py": {
+      "path": "Pulse_Search_R3A2R2_20261026/accepted_loader/r3a_eval.py",
+      "bytes": 9330,
+      "sha256": "4d84227cea11fa8bad2b9652e1fe28063f6bb61ea8061f2ae7977dab446e86e4",
+      "mtime_utc": "2026-10-26T01:38:13Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R2_20261026/accepted_loader/r3a_local_model.py": {
+      "path": "Pulse_Search_R3A2R2_20261026/accepted_loader/r3a_local_model.py",
+      "bytes": 2932,
+      "sha256": "a4cfe169db66d9cfcd7332c29eab421de23261c07c09cd8a7d67859f27bf4357",
+      "mtime_utc": "2026-10-26T01:38:13Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R2_20261026/accepted_R3A1.zip": {
+      "path": "Pulse_Search_R3A2R2_20261026/accepted_R3A1.zip",
+      "bytes": 313049,
+      "sha256": "1fb591e8dc20e881314daef053c689bdad59a6bda82a190af6655abb1b16ccf8",
+      "mtime_utc": "2026-10-26T01:38:13Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R2_20261026/MANIFEST.sha256": {
+      "path": "Pulse_Search_R3A2R2_20261026/MANIFEST.sha256",
+      "bytes": 1964,
+      "sha256": "737607da7ac5988998c9101b2b867f4d5e5cd09913b7bd9c24a4673ed4a28383",
+      "mtime_utc": "2026-10-26T01:38:13Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R2_20261026/Offline_Evaluate.sh": {
+      "path": "Pulse_Search_R3A2R2_20261026/Offline_Evaluate.sh",
+      "bytes": 4582,
+      "sha256": "dd28757a4482fed6a8ecc02839ea387d8a5f0600fd0904b1ff8b3d2c090c5759",
+      "mtime_utc": "2026-10-26T01:38:13Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R2_20261026/Offline_Evaluate_SQLiteCompat_R3.sh": {
+      "path": "Pulse_Search_R3A2R2_20261026/Offline_Evaluate_SQLiteCompat_R3.sh",
+      "bytes": 5479,
+      "sha256": "25204ea4733c294e34096716dbe08e2feec1702eef16c41a7e120353751a3b3a",
+      "mtime_utc": "2026-10-26T01:55:18Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R2_20261026/offline_integrity.py": {
+      "path": "Pulse_Search_R3A2R2_20261026/offline_integrity.py",
+      "bytes": 1401,
+      "sha256": "7609a806ca86fbd82980d949ec1acb4c7ff264d7df95814a0cf9fee399ac1a17",
+      "mtime_utc": "2026-10-26T01:38:13Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R2_20261026/OnePass.sh": {
+      "path": "Pulse_Search_R3A2R2_20261026/OnePass.sh",
+      "bytes": 1962,
+      "sha256": "2032520a0e89150517efceca7ea1b5f9cc744c5031b518bf9a098cf15edc92b9",
+      "mtime_utc": "2026-10-26T01:38:13Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R2_20261026/preflight.py": {
+      "path": "Pulse_Search_R3A2R2_20261026/preflight.py",
+      "bytes": 430,
+      "sha256": "2537a3953ef69e80c42a4a58aa095e4441600b8b406f961bf2c5af157ff7f7b7",
+      "mtime_utc": "2026-10-26T01:38:13Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R2_20261026/provision.py": {
+      "path": "Pulse_Search_R3A2R2_20261026/provision.py",
+      "bytes": 10709,
+      "sha256": "1885c2e98d3ea59852ff64a319c1839e344f61ce945b7a951919978956e2405b",
+      "mtime_utc": "2026-10-26T01:38:13Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R2_20261026/r3a2_eval.py": {
+      "path": "Pulse_Search_R3A2R2_20261026/r3a2_eval.py",
+      "bytes": 8229,
+      "sha256": "e323837b4cdb9432979d77c183b3f2bd98f7923ec7be700cbff9c68cd611c567",
+      "mtime_utc": "2026-10-26T01:38:13Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R2_20261026/r3a2_extra_cases.py": {
+      "path": "Pulse_Search_R3A2R2_20261026/r3a2_extra_cases.py",
+      "bytes": 2248,
+      "sha256": "9c1fa0749e5ee8adee30e63750f2a60e42635d09fd09cd26d542dfb4ba59b223",
+      "mtime_utc": "2026-10-26T01:38:13Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R2_20261026/R3A2_LICENSE_AND_SUPPLY_CHAIN.md": {
+      "path": "Pulse_Search_R3A2R2_20261026/R3A2_LICENSE_AND_SUPPLY_CHAIN.md",
+      "bytes": 3857,
+      "sha256": "92d8a2e214c42c41de2f0ef71f8bd12846b633e25d453e6c027f42ab87ee36ca",
+      "mtime_utc": "2026-10-26T01:38:13Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R2_20261026/README.md": {
+      "path": "Pulse_Search_R3A2R2_20261026/README.md",
+      "bytes": 7102,
+      "sha256": "1b6679a4219f6a4105ad8bca81c7bcaf0e13ed9abde91063b5a5c353ece2edab",
+      "mtime_utc": "2026-10-26T01:38:13Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R2_20261026/select_python.py": {
+      "path": "Pulse_Search_R3A2R2_20261026/select_python.py",
+      "bytes": 3387,
+      "sha256": "4e1faa926df6279cef9ce6075fca93c00191ab086223c21fad6ff482315b4e44",
+      "mtime_utc": "2026-10-26T01:38:13Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R2_20261026/semantic_ranker.py": {
+      "path": "Pulse_Search_R3A2R2_20261026/semantic_ranker.py",
+      "bytes": 2738,
+      "sha256": "05d0f43104cfe0b310c74df31c719e7f584dd5538a0c83c0e9cc9ecc4a7ac09e",
+      "mtime_utc": "2026-10-26T01:38:13Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R2_20261026/test_r3a2.py": {
+      "path": "Pulse_Search_R3A2R2_20261026/test_r3a2.py",
+      "bytes": 3781,
+      "sha256": "56d161073700645d34b4b31e6b0f44ad2d1fd63b6da2a5e5483c984aacf56971",
+      "mtime_utc": "2026-10-26T01:38:13Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R2_20261026/test_r3a2r1.py": {
+      "path": "Pulse_Search_R3A2R2_20261026/test_r3a2r1.py",
+      "bytes": 1933,
+      "sha256": "713ee87ede8e326d429199637f8e7239f6bae89d6da398689412a2f7ac6694e7",
+      "mtime_utc": "2026-10-26T01:38:13Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R2_20261026/test_r3a2r2.py": {
+      "path": "Pulse_Search_R3A2R2_20261026/test_r3a2r2.py",
+      "bytes": 2774,
+      "sha256": "b482af77072b59a351b1dd28402e677ba46f76a0422fae185c3c1bde72e479c8",
+      "mtime_utc": "2026-10-26T01:38:13Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2R2_20261026/verify_source_chain.py": {
+      "path": "Pulse_Search_R3A2R2_20261026/verify_source_chain.py",
+      "bytes": 832,
+      "sha256": "4897db940cac82a41da0739b1b0e3c65da03d7e9c4631bcd0978c9b2c133056f",
+      "mtime_utc": "2026-10-26T01:38:13Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/shadow/r3a2_bge_comparison_report.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/shadow/r3a2_bge_comparison_report.json",
+      "bytes": 79158,
+      "sha256": "47d33d6765dcd87e9f24a8b601365b0c52d8aa1861ee980c928114e7ddb65964",
+      "mtime_utc": "2026-10-26T01:55:42Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/shadow/r3a2_bge_comparison_review.html": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/shadow/r3a2_bge_comparison_review.html",
+      "bytes": 14943,
+      "sha256": "4f8bcc13cf99972fe786b288d5c2b7784bcf0031e5b3a8c3779a84747a2724ef",
+      "mtime_utc": "2026-10-26T01:55:42Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/shadow/r3a2_independent_review.csv": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/shadow/r3a2_independent_review.csv",
+      "bytes": 7327,
+      "sha256": "255d83ccf8f9a9c71b9cf8aa9dde6c8b64882c80a5c16145888c1ca2b0ce33cd",
+      "mtime_utc": "2026-10-26T01:55:42Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/ACCEPTANCE.md": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/ACCEPTANCE.md",
+      "bytes": 1058,
+      "sha256": "5344e9767050024b1a30f19508c7bd29cb54b5eadecf08b848207cccd9ba0792",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/ACCEPTANCE_R2P14B.md": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/ACCEPTANCE_R2P14B.md",
+      "bytes": 791,
+      "sha256": "a80d51cc71e12ef2ac7eabbaaeaf34cd7b54b326e526415c2b8aabb7581ab3ba",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/ACCEPTANCE_R2P15.md": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/ACCEPTANCE_R2P15.md",
+      "bytes": 864,
+      "sha256": "2f36cca826330f995c0c20532e0618c20958a4d4d9e0525533ca509728e154ae",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/ACCEPTANCE_R2P16.md": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/ACCEPTANCE_R2P16.md",
+      "bytes": 1332,
+      "sha256": "f1e18fe389d13d762ea9b73d2654e883d07ada5065dbc9a7612dcabb9b72dd4f",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/ACCEPTANCE_R2P17.md": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/ACCEPTANCE_R2P17.md",
+      "bytes": 1117,
+      "sha256": "49225b8fb17f9dae3bc3415cfd144e0a82ef8e56264983a941be8743f3418b3a",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/ACCEPTANCE_R2P19.md": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/ACCEPTANCE_R2P19.md",
+      "bytes": 1188,
+      "sha256": "62dfba39c877c6ae52b89ce9b70f730b35a20b4bec75c70ae30ce82f0dd46e85",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/BASELINE_PS_B1.md": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/BASELINE_PS_B1.md",
+      "bytes": 946,
+      "sha256": "200bfd7ddaf46cba0c5e6a6538eb5e59e03ad5dedb4b81d22a4f482c2cf71e75",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/examples/approved_seeds.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/examples/approved_seeds.json",
+      "bytes": 548,
+      "sha256": "5c433af443d67c854bc0f3153ce2591a8f27380f002685987848602ffb35bdc0",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/examples/p14_london_source.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/examples/p14_london_source.json",
+      "bytes": 477,
+      "sha256": "fc166038af8eadcc53fde57f1bf96e0c45418332fca0e0206707d6d1c7025ad2",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/examples/p16_promote_cityhall.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/examples/p16_promote_cityhall.json",
+      "bytes": 400,
+      "sha256": "5311e63f87001ae4cf2bc91d3e9828a4d17cc2428a4f2bd67dcfc576037491a0",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/examples/pilot_seeds.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/examples/pilot_seeds.json",
+      "bytes": 766,
+      "sha256": "4ccca1294b13f72fde8225c1f274e5f1cfd312274657de45805d783cd40f61d3",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/examples/pilot_sources.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/examples/pilot_sources.json",
+      "bytes": 3148,
+      "sha256": "22780c489a854757371d4306b7cc2f1375e3f3c1e828214220fc38b649f525e2",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/examples/questions.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/examples/questions.json",
+      "bytes": 2584,
+      "sha256": "6d05ced2cdb4ec8f88832972ccb14b5a355f5cedd0849394331e25b50cf24af4",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/examples/real_world_questions.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/examples/real_world_questions.json",
+      "bytes": 2240,
+      "sha256": "ce054c436794195b9dc8ceb79cc8017eaa3a8d5754e98151f9f984eef6885aed",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/examples/reviewed_sources.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/examples/reviewed_sources.json",
+      "bytes": 3182,
+      "sha256": "0d2353f60458deb957353c62c55596c028787b6e9a7c9e606ab6f3da1023a4b3",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/MANIFEST.sha256": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/MANIFEST.sha256",
+      "bytes": 4894,
+      "sha256": "81f1bc998e56a479b7883be13e6f2b724ac84f4579b7536bf288c2d95eb4ad0d",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/owner_review_original.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/owner_review_original.json",
+      "bytes": 5973,
+      "sha256": "ac1b1d1b229c7be254321f57a4fbb87704507e1bf2ba60d0829d1ebe19c03dc9",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/owner_review_r2p12.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/owner_review_r2p12.json",
+      "bytes": 6142,
+      "sha256": "42a8a67a67c41db762ac42e9971bf450a7d6cc552bdc2784c26893eaaa66d2e7",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/owner_review_r2p18.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/owner_review_r2p18.json",
+      "bytes": 4104,
+      "sha256": "832ffd9fee092245155054c038bac93ca272b14a6402d67fb57b47b3a2fb94ca",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/owner_review_r2p20.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/owner_review_r2p20.json",
+      "bytes": 3065,
+      "sha256": "e046bef682aa3e5f55ba1fdae79613e6a798d5c16cab4e6ead783c1af1ac51a6",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_engine.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_engine.py",
+      "bytes": 37244,
+      "sha256": "edc7d8e91a232cd0676174a17ac0226085a6acb41bf88fb9e2c29729fd31cf86",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_p10.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_p10.py",
+      "bytes": 11120,
+      "sha256": "cad7e997288191ace428aa4085fa66c4637ccb9525cc538e24bae529d8bbc312",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_p11.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_p11.py",
+      "bytes": 8708,
+      "sha256": "9263cd45393db645c713d18967026ffd48245aa5c5a50698ea0496a09739b93a",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_p12.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_p12.py",
+      "bytes": 14832,
+      "sha256": "3e8375f4ebe0cd130f2c1f7c3f8ed625ff6224dc3b6637ca4680a4bbcdedcca4",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_p14.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_p14.py",
+      "bytes": 18818,
+      "sha256": "3c5008d99c552604aa47ad5d4f632e160aedd143099a6e7e315c02c75a363e7d",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_p15.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_p15.py",
+      "bytes": 9320,
+      "sha256": "af96b8d9b2bc8f7733dfe6932dcaf764f2fd89b5ad144c1c97ca0bb0f5cf3e7f",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_p16.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_p16.py",
+      "bytes": 10685,
+      "sha256": "766ad6ae83c16c7628d3a7093fbee830b8d322d8d959a209b027c7c0da34777e",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_p17.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_p17.py",
+      "bytes": 14792,
+      "sha256": "479fe81ab39357848ee51236948859ef43cc54100afeb09df89ddb380ed8f5aa",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_p18.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_p18.py",
+      "bytes": 15063,
+      "sha256": "55a30006c956f153a502c3c0a87b479f676d1835676c46f7afd933b70e8acbcb",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_p19.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_p19.py",
+      "bytes": 11677,
+      "sha256": "1f93d53f1c4325f66a30e0c9345274151b60d1f14783ad76e0cb1f5879f4915d",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_p21.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_p21.py",
+      "bytes": 12186,
+      "sha256": "4fa026c39c25a25b97d95d0864d38f783663dff3140d0105fbb471e483dbf3bc",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_quality.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_quality.py",
+      "bytes": 10281,
+      "sha256": "0362887ea324c4a10c7d08f8a3d9ce9b1c9f3472498c654302a0ff52a4ed432b",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_real_questions.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_real_questions.py",
+      "bytes": 16404,
+      "sha256": "f4188e22de3916ae5a7a21c4a5fb9ef567a4ba219440c29e6c9de6cccce3b687",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_scheduler.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/pulse_search_scheduler.py",
+      "bytes": 16185,
+      "sha256": "03aea6b12697e2a75e331d6f8e064b88c16df26d45e10d6ca497ebaf1f3d0404",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/questions.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/questions.json",
+      "bytes": 278,
+      "sha256": "6ff27c172a5c0e326cc2a347b4016b7072c3ed5f0557545dd0b0e191ac544103",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/README.md": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/README.md",
+      "bytes": 4684,
+      "sha256": "9b1e617a7e3921c254fa3bdee1cbba745570df779ed70259b483cf06eed4f902",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/README_R2P14B.md": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/README_R2P14B.md",
+      "bytes": 2755,
+      "sha256": "7d302f706b7f15a2e951f8672647ce0881d3927161c043333eaa2f7393a701fa",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/README_R2P15.md": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/README_R2P15.md",
+      "bytes": 2913,
+      "sha256": "ba4a2d78ce65002ac39f7290b1edd75eebe7c6e612d0724126a4a457b619b3f6",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/README_R2P16.md": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/README_R2P16.md",
+      "bytes": 3303,
+      "sha256": "08b583be0e2756a2a3a60904caff514b060f9c3b000399e1a90b3545c20b2282",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/README_R2P17.md": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/README_R2P17.md",
+      "bytes": 3252,
+      "sha256": "27e8b9e27b16d3daf4d7eee7b0034c1ec10e5381d0af8baa4f3657d2b2bae267",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/README_R2P19.md": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/README_R2P19.md",
+      "bytes": 3015,
+      "sha256": "35820cbb90ac7fee0be4aa7ad11d937c270d34683fc213e2bea80c808a6d9f65",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/README_R2P21.md": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/README_R2P21.md",
+      "bytes": 4723,
+      "sha256": "b9f480d87b6f962401407b6f29904edd2ed903fbe49ab39a12d38e9a4344b76b",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_engine.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_engine.py",
+      "bytes": 21587,
+      "sha256": "574400860b0e3299517a255bf45693bfb0fffc9a66f6e6f01507327f7cceb40e",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_p10.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_p10.py",
+      "bytes": 4138,
+      "sha256": "4a49adf577d898f8979ae3e96295fce4149002c996b5957c2238e8040be6c4ad",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_p11.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_p11.py",
+      "bytes": 3993,
+      "sha256": "465c68904ac7851efee2aa130af8be802d92ed9f7a2b8af6f12904113e917654",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_p11_extra.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_p11_extra.py",
+      "bytes": 2564,
+      "sha256": "184298f2db3fcdf8a199d139d1ba8677a24c3119306aa118b32aa662aa967eb5",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_p12.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_p12.py",
+      "bytes": 6422,
+      "sha256": "b577aefce4adbc8dc78761885ab7c2f4da300468870f384a666edda681c4caea",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_p14.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_p14.py",
+      "bytes": 15107,
+      "sha256": "9c35e81c941aba9a3b00ad3bb7f7ce2823cd606481691f5c9bb08b44f9252dd0",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_p15.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_p15.py",
+      "bytes": 4633,
+      "sha256": "cfbd15dbc7f1d5d5affc5c5b259e8d9936f301430225f67f31f539729d0bfb0b",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_p16.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_p16.py",
+      "bytes": 8790,
+      "sha256": "a23efe26f8b94e526b3043822af28588abdfe3e04c95e5942d04c199b0f53250",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_p17.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_p17.py",
+      "bytes": 8648,
+      "sha256": "29fe01dbf2e547940a0ab76a2319f43c49c053521fe438ecc17f94f30b8819c9",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_p18.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_p18.py",
+      "bytes": 8413,
+      "sha256": "3833abd8c71acaf43da30e4e6496cac52d97e8ee92feb63972cc5b53a1848b65",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_p19.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_p19.py",
+      "bytes": 7353,
+      "sha256": "6bcb410d927867f74101cf85f73147080939cfb87e7bf0b0de77d0c23ec7d038",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_p21.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_p21.py",
+      "bytes": 8362,
+      "sha256": "d6c83c0d7a62e68d45ece694c4cd1362f28dfcd5565cde25b024a8c55af07323",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_quality.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_quality.py",
+      "bytes": 5367,
+      "sha256": "c6a1854651b20ea0a5f6813d41cb3957f9de8aaf5fac26e148bf50cffb7f504d",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_real_questions.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_real_questions.py",
+      "bytes": 4611,
+      "sha256": "a1b7da2eafddb3b74599086e39c311890725cd9180e79e64331433b120d9e3c3",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_scheduler.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests/test_scheduler.py",
+      "bytes": 9908,
+      "sha256": "aafff15cfa46203a7fdaaecb115bc689c1e93f0c7539049a1c1870f11c486751",
+      "mtime_utc": "2026-10-26T01:55:25Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p29/Pulse_Search_R2P29_20261025/live_100_report.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p29/Pulse_Search_R2P29_20261025/live_100_report.json",
+      "bytes": 31526,
+      "sha256": "5b343dc1710663e248a958f486f293a1af67702ebe8980aa7b31641ad05e6787",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p29/Pulse_Search_R2P29_20261025/MANIFEST.sha256": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p29/Pulse_Search_R2P29_20261025/MANIFEST.sha256",
+      "bytes": 622,
+      "sha256": "07249590789310ce39bde894401c7def65ff1535fdafd39f42645e5f4b4e86a8",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p29/Pulse_Search_R2P29_20261025/OnePass.sh": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p29/Pulse_Search_R2P29_20261025/OnePass.sh",
+      "bytes": 1743,
+      "sha256": "57a3359dd2f044aef55dfa38d331bd1289c879f66112d93518ace94f9bab2bff",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p29/Pulse_Search_R2P29_20261025/Pulse_Search_R2P21_Engine_Accepted.zip": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p29/Pulse_Search_R2P29_20261025/Pulse_Search_R2P21_Engine_Accepted.zip",
+      "bytes": 141872,
+      "sha256": "984fd5126cd229f756ee7cc32153e6e50f979634047044d046181825f5b809e5",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p29/Pulse_Search_R2P29_20261025/Pulse_Search_R2P23_Corrected_Reviewed.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p29/Pulse_Search_R2P29_20261025/Pulse_Search_R2P23_Corrected_Reviewed.json",
+      "bytes": 7572,
+      "sha256": "c398c2ea78bbb27c1899d4544e70bbb7805258cfda1e0c84937e02990fdc5ba2",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p29/Pulse_Search_R2P29_20261025/pulse_search_r2p29.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p29/Pulse_Search_R2P29_20261025/pulse_search_r2p29.py",
+      "bytes": 19479,
+      "sha256": "3a4999f2a836f32df73ffc9ebd04b314a050fe796598848bd40689bd3f469834",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p29/Pulse_Search_R2P29_20261025/README.md": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p29/Pulse_Search_R2P29_20261025/README.md",
+      "bytes": 3807,
+      "sha256": "47dfb22bd90e628b280ceacc0fb05a36da7bba8bf1ac5cf57687167cdb7fbbbd",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p29/Pulse_Search_R2P29_20261025/test_r2p29.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p29/Pulse_Search_R2P29_20261025/test_r2p29.py",
+      "bytes": 6897,
+      "sha256": "d809e27f8eefe9514859e0b16181999a78581f3fd154076adbe2563ad30b9d30",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/live_100_report.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/live_100_report.json",
+      "bytes": 31526,
+      "sha256": "5b343dc1710663e248a958f486f293a1af67702ebe8980aa7b31641ad05e6787",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/LOCAL_ACCEPTANCE.md": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/LOCAL_ACCEPTANCE.md",
+      "bytes": 1791,
+      "sha256": "7962719ca32dfc48a7b59f1a7858a87a80c26f6c947dbf6d4d09647df1d51408",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/MANIFEST.sha256": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/MANIFEST.sha256",
+      "bytes": 1079,
+      "sha256": "5da0ade1f18327c3693b2aca890c5147028f129b3f4117c50f697662c8ea12ba",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/metadata_proxy.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/metadata_proxy.json",
+      "bytes": 17934,
+      "sha256": "beb12dee230d359a635f87b3c84c5fd0a4b1f9613b2202933cafab4233f2517c",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/OnePass.sh": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/OnePass.sh",
+      "bytes": 2908,
+      "sha256": "dfd3397ed0012e89168316d688313adcd2cd5e0f15ac7aace1eaa46c8e738cac",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/Pulse_Search_R2P29_ReadOnly_Ranking_20261025.zip": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/Pulse_Search_R2P29_ReadOnly_Ranking_20261025.zip",
+      "bytes": 158865,
+      "sha256": "459670257dcfef8cab4fb46c101990c9aeb59d4dffb02da6c72e5b2891b70e88",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/pulse_search_r2p31.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/pulse_search_r2p31.py",
+      "bytes": 15916,
+      "sha256": "d74faef62667905fe4eb7a75b8bee8efcea122a490f7b62be217cf20df3517bb",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/r2p29_shadow_report.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/r2p29_shadow_report.json",
+      "bytes": 15978,
+      "sha256": "328f3129f190f1d50905a37fd8ccd829104c9418808c79be161b5b02dfb32d5c",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/r2p30_recall_report.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/r2p30_recall_report.json",
+      "bytes": 27005,
+      "sha256": "3cd67802d2dcedb00a0e9c9097e98f682a17d83df92381076d9e860087b08514",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/R2P31_Metadata_Proxy_Preview.html": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/R2P31_Metadata_Proxy_Preview.html",
+      "bytes": 11569,
+      "sha256": "9616ddc29ee91c8b9623ba1405e0b699a492e2ac69c6d88d661bd6acd9ae7883",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/R2P31_Metadata_Proxy_Scorecard.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/R2P31_Metadata_Proxy_Scorecard.json",
+      "bytes": 8943,
+      "sha256": "e34dc6be6ea27d8bd7ba8db13626236cd681c1793a11fa97feb25069377ddae3",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/README.md": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/README.md",
+      "bytes": 3044,
+      "sha256": "2dab0785aab93f15f8c27931a6acdc93f81cbe4a00ee69723cb5d6311255daca",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/test_r2p31.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025/test_r2p31.py",
+      "bytes": 5798,
+      "sha256": "53695777fc30ba035c2c1996b117d1b974ee514f0ece195d22a7b1599a5c1d3a",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p32/Pulse_Search_R2P32_20261025/accepted_R2P31.zip": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p32/Pulse_Search_R2P32_20261025/accepted_R2P31.zip",
+      "bytes": 190024,
+      "sha256": "bc37c270c9ac10d16c82e0f162554324f9069380ddc8d11f58f3f1675156d4fa",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p32/Pulse_Search_R2P32_20261025/MANIFEST.sha256": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p32/Pulse_Search_R2P32_20261025/MANIFEST.sha256",
+      "bytes": 663,
+      "sha256": "f6ceecc9b331332b0d69eeadfc967949b633c3bd7985999593cf3e8487bc815c",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p32/Pulse_Search_R2P32_20261025/metadata_proxy.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p32/Pulse_Search_R2P32_20261025/metadata_proxy.json",
+      "bytes": 17934,
+      "sha256": "beb12dee230d359a635f87b3c84c5fd0a4b1f9613b2202933cafab4233f2517c",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p32/Pulse_Search_R2P32_20261025/OnePass.sh": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p32/Pulse_Search_R2P32_20261025/OnePass.sh",
+      "bytes": 3068,
+      "sha256": "86371caac2c43cc0d3d8ff4831be77acdf7ce1830f74929cb82c84d937de87d6",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p32/Pulse_Search_R2P32_20261025/owner_R2P31_report.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p32/Pulse_Search_R2P32_20261025/owner_R2P31_report.json",
+      "bytes": 22343,
+      "sha256": "3d86e678fb1208d63b3021f04680304f25354c39b5c7f3248b25c2933104e625",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p32/Pulse_Search_R2P32_20261025/r2p32_candidate.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p32/Pulse_Search_R2P32_20261025/r2p32_candidate.py",
+      "bytes": 2925,
+      "sha256": "a52ef923e7b77361bed51cf80d78afbee86baaee4bc04006120274685765e37e",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p32/Pulse_Search_R2P32_20261025/r2p32_evidence.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p32/Pulse_Search_R2P32_20261025/r2p32_evidence.py",
+      "bytes": 19144,
+      "sha256": "7758223393c87b6b0082ea5497f2a6e4c125ed7a72dbbc74bee9e490151896b1",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p32/Pulse_Search_R2P32_20261025/README.md": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p32/Pulse_Search_R2P32_20261025/README.md",
+      "bytes": 2570,
+      "sha256": "3cb06f0b69a3a7ce6ec7cf4d7bff70f23c6a8567b6be4985bb816101b45c5196",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p32/Pulse_Search_R2P32_20261025/test_r2p32.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p32/Pulse_Search_R2P32_20261025/test_r2p32.py",
+      "bytes": 4315,
+      "sha256": "322496d537c3e8bf32fb7b007f6eb713b360bf825182e7434962960fd6a7a569",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p33/Pulse_Search_R2P33_20261025/accepted_R2P32.zip": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p33/Pulse_Search_R2P33_20261025/accepted_R2P32.zip",
+      "bytes": 209073,
+      "sha256": "f05a6cf68ca572765e15ca0781cc3b36af2b896c7ab80eeec73a459faadaff7d",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p33/Pulse_Search_R2P33_20261025/MANIFEST.sha256": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p33/Pulse_Search_R2P33_20261025/MANIFEST.sha256",
+      "bytes": 750,
+      "sha256": "705a4bd570a66d5d57bbd9c99b6c8cf9c3bd65c2cfdabc99696392d7a31d664a",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p33/Pulse_Search_R2P33_20261025/metadata_proxy.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p33/Pulse_Search_R2P33_20261025/metadata_proxy.json",
+      "bytes": 17934,
+      "sha256": "beb12dee230d359a635f87b3c84c5fd0a4b1f9613b2202933cafab4233f2517c",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p33/Pulse_Search_R2P33_20261025/OnePass.sh": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p33/Pulse_Search_R2P33_20261025/OnePass.sh",
+      "bytes": 3697,
+      "sha256": "db1d461c7893bc093e6bc6decd8a9485d8a522d2ee4b0796c00c1dee2f2f8ea6",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p33/Pulse_Search_R2P33_20261025/owner_R2P31_report.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p33/Pulse_Search_R2P33_20261025/owner_R2P31_report.json",
+      "bytes": 22343,
+      "sha256": "3d86e678fb1208d63b3021f04680304f25354c39b5c7f3248b25c2933104e625",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p33/Pulse_Search_R2P33_20261025/owner_R2P32_report.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p33/Pulse_Search_R2P33_20261025/owner_R2P32_report.json",
+      "bytes": 145239,
+      "sha256": "2414d557213283c47df297d30e242111cf27b5690de0b2c3290c456e0043414f",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p33/Pulse_Search_R2P33_20261025/r2p33_audit.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p33/Pulse_Search_R2P33_20261025/r2p33_audit.py",
+      "bytes": 12137,
+      "sha256": "a95ed9e1f308ef05575032a729d41e9955f7a891074c59fab7a2738849e97d30",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p33/Pulse_Search_R2P33_20261025/r2p33_candidate.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p33/Pulse_Search_R2P33_20261025/r2p33_candidate.py",
+      "bytes": 1899,
+      "sha256": "ab1616fc23791c731ab2a4e38dfba8b22bcb0087c63b523bcc15253405500405",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p33/Pulse_Search_R2P33_20261025/README.md": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p33/Pulse_Search_R2P33_20261025/README.md",
+      "bytes": 2590,
+      "sha256": "6c8a3923c51be06570dd4049136b64fc726f3ead4054c9298fca20ca699c3834",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p33/Pulse_Search_R2P33_20261025/test_r2p33.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p33/Pulse_Search_R2P33_20261025/test_r2p33.py",
+      "bytes": 4874,
+      "sha256": "d856e2cad361539e253d3516d19beeb853dce92dc4a51e8e0e4199170052bee2",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p34/Pulse_Search_R2P34_20261025/accepted_R2P33.zip": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p34/Pulse_Search_R2P34_20261025/accepted_R2P33.zip",
+      "bytes": 235044,
+      "sha256": "f078f5277d9c2e160ef28630c3408a04108196a7bced743ebca079aa24c484f8",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p34/Pulse_Search_R2P34_20261025/MANIFEST.sha256": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p34/Pulse_Search_R2P34_20261025/MANIFEST.sha256",
+      "bytes": 750,
+      "sha256": "a40d21c8b5fc431419b667be327ba728118efa4525e0750a0eda019cd1eb391b",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p34/Pulse_Search_R2P34_20261025/metadata_proxy.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p34/Pulse_Search_R2P34_20261025/metadata_proxy.json",
+      "bytes": 17934,
+      "sha256": "beb12dee230d359a635f87b3c84c5fd0a4b1f9613b2202933cafab4233f2517c",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p34/Pulse_Search_R2P34_20261025/OnePass.sh": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p34/Pulse_Search_R2P34_20261025/OnePass.sh",
+      "bytes": 4109,
+      "sha256": "e40c14bdf4f8f6411636d52e2efe28d84bd3a6e37438e82697573e52c36eff29",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p34/Pulse_Search_R2P34_20261025/owner_R2P31_report.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p34/Pulse_Search_R2P34_20261025/owner_R2P31_report.json",
+      "bytes": 22343,
+      "sha256": "3d86e678fb1208d63b3021f04680304f25354c39b5c7f3248b25c2933104e625",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p34/Pulse_Search_R2P34_20261025/owner_R2P32_report.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p34/Pulse_Search_R2P34_20261025/owner_R2P32_report.json",
+      "bytes": 145239,
+      "sha256": "2414d557213283c47df297d30e242111cf27b5690de0b2c3290c456e0043414f",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p34/Pulse_Search_R2P34_20261025/r2p34_audit.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p34/Pulse_Search_R2P34_20261025/r2p34_audit.py",
+      "bytes": 11093,
+      "sha256": "7f11491b066d7d53be307a0b3eec9b21b69535a6366d45e9b56413a201810b38",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p34/Pulse_Search_R2P34_20261025/r2p34_candidate.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p34/Pulse_Search_R2P34_20261025/r2p34_candidate.py",
+      "bytes": 3170,
+      "sha256": "f8a6ea36cf9fec2b6ca02edc2e9ffdf99672cb639db6c964d6b4bcb647ef2bbc",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p34/Pulse_Search_R2P34_20261025/README.md": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p34/Pulse_Search_R2P34_20261025/README.md",
+      "bytes": 3201,
+      "sha256": "ecb903310e1cec5edf938f7ca4e3f43ec3c781bea72fb26899df3f50178c74de",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_p34/Pulse_Search_R2P34_20261025/test_r2p34.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_p34/Pulse_Search_R2P34_20261025/test_r2p34.py",
+      "bytes": 4942,
+      "sha256": "17ba9c8f328f00e73798055c1be5c43a16504d21fe32d61f6dbefc830cd836cc",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025/accepted_R2P34.zip": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025/accepted_R2P34.zip",
+      "bytes": 261195,
+      "sha256": "5159cc45926135253a7676b0b2dd878e6ab66a24156da07d81fd4c7753013db3",
+      "mtime_utc": "2026-10-26T01:55:23Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025/evidence_gate.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025/evidence_gate.py",
+      "bytes": 2047,
+      "sha256": "bd5ce11be06a7aefca86c45dc2dc9224dfc70d8091cdbf224b97632cc703a0c4",
+      "mtime_utc": "2026-10-26T01:55:23Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025/hybrid_core.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025/hybrid_core.py",
+      "bytes": 13337,
+      "sha256": "32db0765d5542bd3ece7aa92516acec904c7beadf67f02ae2df0c3c6b915e192",
+      "mtime_utc": "2026-10-26T01:55:23Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025/MANIFEST.sha256": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025/MANIFEST.sha256",
+      "bytes": 910,
+      "sha256": "f331ad48072dac938233d487422f87953eee39c34fd15da71fd0fa44d7dc023c",
+      "mtime_utc": "2026-10-26T01:55:23Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025/offline_encoder.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025/offline_encoder.py",
+      "bytes": 2036,
+      "sha256": "513939aa8a3420b866634cd0b130f20bd1978ce8d395bc41b583b6c4b31b1971",
+      "mtime_utc": "2026-10-26T01:55:23Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025/OnePass.sh": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025/OnePass.sh",
+      "bytes": 3689,
+      "sha256": "0863788c5fc0740ff6508283084dcbfe41deeb8256a8c3a2b2594b37f92b3502",
+      "mtime_utc": "2026-10-26T01:55:23Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025/owner_R2P34_report.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025/owner_R2P34_report.json",
+      "bytes": 119913,
+      "sha256": "c15eaba6344394dffc387ecc0599a05c6f924f770ab0de87010d1e27ad02e4ce",
+      "mtime_utc": "2026-10-26T01:55:23Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025/r2p35_audit.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025/r2p35_audit.py",
+      "bytes": 10417,
+      "sha256": "c659e0a1524d65c5781110274adb465f042024eb3377add79c116d61d9c6833f",
+      "mtime_utc": "2026-10-26T01:55:23Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025/R3_RELEASE_ROUTE.md": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025/R3_RELEASE_ROUTE.md",
+      "bytes": 5650,
+      "sha256": "3ab6d5f0e83d34b9d8552633d352300be5e6e7c1f1a7e2573113d6bc2fe62945",
+      "mtime_utc": "2026-10-26T01:55:23Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025/README.md": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025/README.md",
+      "bytes": 5159,
+      "sha256": "a9dc3499b91d5ed8abe0f4eab7db16e85d3ad411a6ece06161958f14e71884d6",
+      "mtime_utc": "2026-10-26T01:55:23Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025/semantic_context.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025/semantic_context.py",
+      "bytes": 2148,
+      "sha256": "05ef8e19e2ab0fd040acf07a9773fdd5e017283aa8fb69da343c1f2f90a43dbf",
+      "mtime_utc": "2026-10-26T01:55:23Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025/test_r2p35.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025/test_r2p35.py",
+      "bytes": 4322,
+      "sha256": "5d25ebdd62bc034e5f8d9776591740891860a7720bbf1afd00f827a447a1f015",
+      "mtime_utc": "2026-10-26T01:55:24Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_r3a1/Pulse_Search_R3A1_20261026/accepted_R2P35.zip": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_r3a1/Pulse_Search_R3A1_20261026/accepted_R2P35.zip",
+      "bytes": 291098,
+      "sha256": "de461cfb31b5913eb754cb7705e523da20405edaae1ed7c8bb88f6831da0e4c4",
+      "mtime_utc": "2026-10-26T01:55:23Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_r3a1/Pulse_Search_R3A1_20261026/MANIFEST.sha256": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_r3a1/Pulse_Search_R3A1_20261026/MANIFEST.sha256",
+      "bytes": 732,
+      "sha256": "55a5320ab7147c6f676061815c809b1c5767bc126e185f10933c2116ea276c59",
+      "mtime_utc": "2026-10-26T01:55:23Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_r3a1/Pulse_Search_R3A1_20261026/OnePass.sh": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_r3a1/Pulse_Search_R3A1_20261026/OnePass.sh",
+      "bytes": 4370,
+      "sha256": "a7f9c7afe2a9c38a1472829655c6366df97ddda9883481dca212fa557b173dfb",
+      "mtime_utc": "2026-10-26T01:55:23Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_r3a1/Pulse_Search_R3A1_20261026/owner_R2P35_report.json": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_r3a1/Pulse_Search_R3A1_20261026/owner_R2P35_report.json",
+      "bytes": 105994,
+      "sha256": "ca056b51a7af76d095d9b4b76f0b3b082cdf92209a45e02aa190ee083f2d5fc1",
+      "mtime_utc": "2026-10-26T01:55:23Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_r3a1/Pulse_Search_R3A1_20261026/R3_MAJOR_ROUTE.md": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_r3a1/Pulse_Search_R3A1_20261026/R3_MAJOR_ROUTE.md",
+      "bytes": 3873,
+      "sha256": "72911195651aedce3da114718dd9fe5208dbbd552d297cc2e216697c747b6d1b",
+      "mtime_utc": "2026-10-26T01:55:23Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_r3a1/Pulse_Search_R3A1_20261026/r3a_cases.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_r3a1/Pulse_Search_R3A1_20261026/r3a_cases.py",
+      "bytes": 3068,
+      "sha256": "cf4a853350a03d5f21e0c9ecc80eff1fb18685059b37d9b3aca887ff09c967c5",
+      "mtime_utc": "2026-10-26T01:55:23Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_r3a1/Pulse_Search_R3A1_20261026/r3a_eval.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_r3a1/Pulse_Search_R3A1_20261026/r3a_eval.py",
+      "bytes": 9330,
+      "sha256": "4d84227cea11fa8bad2b9652e1fe28063f6bb61ea8061f2ae7977dab446e86e4",
+      "mtime_utc": "2026-10-26T01:55:23Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_r3a1/Pulse_Search_R3A1_20261026/r3a_local_model.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_r3a1/Pulse_Search_R3A1_20261026/r3a_local_model.py",
+      "bytes": 2932,
+      "sha256": "a4cfe169db66d9cfcd7332c29eab421de23261c07c09cd8a7d67859f27bf4357",
+      "mtime_utc": "2026-10-26T01:55:23Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_r3a1/Pulse_Search_R3A1_20261026/README.md": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_r3a1/Pulse_Search_R3A1_20261026/README.md",
+      "bytes": 2474,
+      "sha256": "86cc9bcb433df49c730ba93891d9274000cb8a618e63ac1ed7242de4f31330ea",
+      "mtime_utc": "2026-10-26T01:55:23Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_1psnjrhX/source_r3a1/Pulse_Search_R3A1_20261026/test_r3a.py": {
+      "path": "Pulse_Search_R3A2_Run_1psnjrhX/source_r3a1/Pulse_Search_R3A1_20261026/test_r3a.py",
+      "bytes": 3558,
+      "sha256": "a622ea89a73424f8d1808d1d999c7acd215c020294091f585fb47fcee3272c37",
+      "mtime_utc": "2026-10-26T01:55:23Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/ACCEPTANCE.md": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/ACCEPTANCE.md",
+      "bytes": 1058,
+      "sha256": "5344e9767050024b1a30f19508c7bd29cb54b5eadecf08b848207cccd9ba0792",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/ACCEPTANCE_R2P14B.md": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/ACCEPTANCE_R2P14B.md",
+      "bytes": 791,
+      "sha256": "a80d51cc71e12ef2ac7eabbaaeaf34cd7b54b326e526415c2b8aabb7581ab3ba",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/ACCEPTANCE_R2P15.md": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/ACCEPTANCE_R2P15.md",
+      "bytes": 864,
+      "sha256": "2f36cca826330f995c0c20532e0618c20958a4d4d9e0525533ca509728e154ae",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/ACCEPTANCE_R2P16.md": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/ACCEPTANCE_R2P16.md",
+      "bytes": 1332,
+      "sha256": "f1e18fe389d13d762ea9b73d2654e883d07ada5065dbc9a7612dcabb9b72dd4f",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/ACCEPTANCE_R2P17.md": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/ACCEPTANCE_R2P17.md",
+      "bytes": 1117,
+      "sha256": "49225b8fb17f9dae3bc3415cfd144e0a82ef8e56264983a941be8743f3418b3a",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/ACCEPTANCE_R2P19.md": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/ACCEPTANCE_R2P19.md",
+      "bytes": 1188,
+      "sha256": "62dfba39c877c6ae52b89ce9b70f730b35a20b4bec75c70ae30ce82f0dd46e85",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/BASELINE_PS_B1.md": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/BASELINE_PS_B1.md",
+      "bytes": 946,
+      "sha256": "200bfd7ddaf46cba0c5e6a6538eb5e59e03ad5dedb4b81d22a4f482c2cf71e75",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/examples/approved_seeds.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/examples/approved_seeds.json",
+      "bytes": 548,
+      "sha256": "5c433af443d67c854bc0f3153ce2591a8f27380f002685987848602ffb35bdc0",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/examples/p14_london_source.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/examples/p14_london_source.json",
+      "bytes": 477,
+      "sha256": "fc166038af8eadcc53fde57f1bf96e0c45418332fca0e0206707d6d1c7025ad2",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/examples/p16_promote_cityhall.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/examples/p16_promote_cityhall.json",
+      "bytes": 400,
+      "sha256": "5311e63f87001ae4cf2bc91d3e9828a4d17cc2428a4f2bd67dcfc576037491a0",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/examples/pilot_seeds.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/examples/pilot_seeds.json",
+      "bytes": 766,
+      "sha256": "4ccca1294b13f72fde8225c1f274e5f1cfd312274657de45805d783cd40f61d3",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/examples/pilot_sources.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/examples/pilot_sources.json",
+      "bytes": 3148,
+      "sha256": "22780c489a854757371d4306b7cc2f1375e3f3c1e828214220fc38b649f525e2",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/examples/questions.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/examples/questions.json",
+      "bytes": 2584,
+      "sha256": "6d05ced2cdb4ec8f88832972ccb14b5a355f5cedd0849394331e25b50cf24af4",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/examples/real_world_questions.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/examples/real_world_questions.json",
+      "bytes": 2240,
+      "sha256": "ce054c436794195b9dc8ceb79cc8017eaa3a8d5754e98151f9f984eef6885aed",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/examples/reviewed_sources.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/examples/reviewed_sources.json",
+      "bytes": 3182,
+      "sha256": "0d2353f60458deb957353c62c55596c028787b6e9a7c9e606ab6f3da1023a4b3",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/MANIFEST.sha256": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/MANIFEST.sha256",
+      "bytes": 4894,
+      "sha256": "81f1bc998e56a479b7883be13e6f2b724ac84f4579b7536bf288c2d95eb4ad0d",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/owner_review_original.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/owner_review_original.json",
+      "bytes": 5973,
+      "sha256": "ac1b1d1b229c7be254321f57a4fbb87704507e1bf2ba60d0829d1ebe19c03dc9",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/owner_review_r2p12.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/owner_review_r2p12.json",
+      "bytes": 6142,
+      "sha256": "42a8a67a67c41db762ac42e9971bf450a7d6cc552bdc2784c26893eaaa66d2e7",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/owner_review_r2p18.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/owner_review_r2p18.json",
+      "bytes": 4104,
+      "sha256": "832ffd9fee092245155054c038bac93ca272b14a6402d67fb57b47b3a2fb94ca",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/owner_review_r2p20.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/owner_review_r2p20.json",
+      "bytes": 3065,
+      "sha256": "e046bef682aa3e5f55ba1fdae79613e6a798d5c16cab4e6ead783c1af1ac51a6",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_engine.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_engine.py",
+      "bytes": 37244,
+      "sha256": "edc7d8e91a232cd0676174a17ac0226085a6acb41bf88fb9e2c29729fd31cf86",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_p10.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_p10.py",
+      "bytes": 11120,
+      "sha256": "cad7e997288191ace428aa4085fa66c4637ccb9525cc538e24bae529d8bbc312",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_p11.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_p11.py",
+      "bytes": 8708,
+      "sha256": "9263cd45393db645c713d18967026ffd48245aa5c5a50698ea0496a09739b93a",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_p12.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_p12.py",
+      "bytes": 14832,
+      "sha256": "3e8375f4ebe0cd130f2c1f7c3f8ed625ff6224dc3b6637ca4680a4bbcdedcca4",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_p14.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_p14.py",
+      "bytes": 18818,
+      "sha256": "3c5008d99c552604aa47ad5d4f632e160aedd143099a6e7e315c02c75a363e7d",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_p15.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_p15.py",
+      "bytes": 9320,
+      "sha256": "af96b8d9b2bc8f7733dfe6932dcaf764f2fd89b5ad144c1c97ca0bb0f5cf3e7f",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_p16.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_p16.py",
+      "bytes": 10685,
+      "sha256": "766ad6ae83c16c7628d3a7093fbee830b8d322d8d959a209b027c7c0da34777e",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_p17.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_p17.py",
+      "bytes": 14792,
+      "sha256": "479fe81ab39357848ee51236948859ef43cc54100afeb09df89ddb380ed8f5aa",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_p18.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_p18.py",
+      "bytes": 15063,
+      "sha256": "55a30006c956f153a502c3c0a87b479f676d1835676c46f7afd933b70e8acbcb",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_p19.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_p19.py",
+      "bytes": 11677,
+      "sha256": "1f93d53f1c4325f66a30e0c9345274151b60d1f14783ad76e0cb1f5879f4915d",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_p21.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_p21.py",
+      "bytes": 12186,
+      "sha256": "4fa026c39c25a25b97d95d0864d38f783663dff3140d0105fbb471e483dbf3bc",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_quality.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_quality.py",
+      "bytes": 10281,
+      "sha256": "0362887ea324c4a10c7d08f8a3d9ce9b1c9f3472498c654302a0ff52a4ed432b",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_real_questions.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_real_questions.py",
+      "bytes": 16404,
+      "sha256": "f4188e22de3916ae5a7a21c4a5fb9ef567a4ba219440c29e6c9de6cccce3b687",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_scheduler.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/pulse_search_scheduler.py",
+      "bytes": 16185,
+      "sha256": "03aea6b12697e2a75e331d6f8e064b88c16df26d45e10d6ca497ebaf1f3d0404",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/questions.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/questions.json",
+      "bytes": 278,
+      "sha256": "6ff27c172a5c0e326cc2a347b4016b7072c3ed5f0557545dd0b0e191ac544103",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/README.md": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/README.md",
+      "bytes": 4684,
+      "sha256": "9b1e617a7e3921c254fa3bdee1cbba745570df779ed70259b483cf06eed4f902",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/README_R2P14B.md": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/README_R2P14B.md",
+      "bytes": 2755,
+      "sha256": "7d302f706b7f15a2e951f8672647ce0881d3927161c043333eaa2f7393a701fa",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/README_R2P15.md": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/README_R2P15.md",
+      "bytes": 2913,
+      "sha256": "ba4a2d78ce65002ac39f7290b1edd75eebe7c6e612d0724126a4a457b619b3f6",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/README_R2P16.md": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/README_R2P16.md",
+      "bytes": 3303,
+      "sha256": "08b583be0e2756a2a3a60904caff514b060f9c3b000399e1a90b3545c20b2282",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/README_R2P17.md": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/README_R2P17.md",
+      "bytes": 3252,
+      "sha256": "27e8b9e27b16d3daf4d7eee7b0034c1ec10e5381d0af8baa4f3657d2b2bae267",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/README_R2P19.md": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/README_R2P19.md",
+      "bytes": 3015,
+      "sha256": "35820cbb90ac7fee0be4aa7ad11d937c270d34683fc213e2bea80c808a6d9f65",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/README_R2P21.md": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/README_R2P21.md",
+      "bytes": 4723,
+      "sha256": "b9f480d87b6f962401407b6f29904edd2ed903fbe49ab39a12d38e9a4344b76b",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_engine.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_engine.py",
+      "bytes": 21587,
+      "sha256": "574400860b0e3299517a255bf45693bfb0fffc9a66f6e6f01507327f7cceb40e",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_p10.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_p10.py",
+      "bytes": 4138,
+      "sha256": "4a49adf577d898f8979ae3e96295fce4149002c996b5957c2238e8040be6c4ad",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_p11.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_p11.py",
+      "bytes": 3993,
+      "sha256": "465c68904ac7851efee2aa130af8be802d92ed9f7a2b8af6f12904113e917654",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_p11_extra.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_p11_extra.py",
+      "bytes": 2564,
+      "sha256": "184298f2db3fcdf8a199d139d1ba8677a24c3119306aa118b32aa662aa967eb5",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_p12.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_p12.py",
+      "bytes": 6422,
+      "sha256": "b577aefce4adbc8dc78761885ab7c2f4da300468870f384a666edda681c4caea",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_p14.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_p14.py",
+      "bytes": 15107,
+      "sha256": "9c35e81c941aba9a3b00ad3bb7f7ce2823cd606481691f5c9bb08b44f9252dd0",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_p15.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_p15.py",
+      "bytes": 4633,
+      "sha256": "cfbd15dbc7f1d5d5affc5c5b259e8d9936f301430225f67f31f539729d0bfb0b",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_p16.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_p16.py",
+      "bytes": 8790,
+      "sha256": "a23efe26f8b94e526b3043822af28588abdfe3e04c95e5942d04c199b0f53250",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_p17.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_p17.py",
+      "bytes": 8594,
+      "sha256": "4f5cfd92177c65227b9ba2c80dcfbc06de07854094cee7bde885eade723a3ec5",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_p18.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_p18.py",
+      "bytes": 8413,
+      "sha256": "3833abd8c71acaf43da30e4e6496cac52d97e8ee92feb63972cc5b53a1848b65",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_p19.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_p19.py",
+      "bytes": 7353,
+      "sha256": "6bcb410d927867f74101cf85f73147080939cfb87e7bf0b0de77d0c23ec7d038",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_p21.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_p21.py",
+      "bytes": 8362,
+      "sha256": "d6c83c0d7a62e68d45ece694c4cd1362f28dfcd5565cde25b024a8c55af07323",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_quality.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_quality.py",
+      "bytes": 5367,
+      "sha256": "c6a1854651b20ea0a5f6813d41cb3957f9de8aaf5fac26e148bf50cffb7f504d",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_real_questions.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_real_questions.py",
+      "bytes": 4611,
+      "sha256": "a1b7da2eafddb3b74599086e39c311890725cd9180e79e64331433b120d9e3c3",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_scheduler.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_engine/tests/test_scheduler.py",
+      "bytes": 9908,
+      "sha256": "aafff15cfa46203a7fdaaecb115bc689c1e93f0c7539049a1c1870f11c486751",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p29/Pulse_Search_R2P29_20261025/live_100_report.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p29/Pulse_Search_R2P29_20261025/live_100_report.json",
+      "bytes": 31526,
+      "sha256": "5b343dc1710663e248a958f486f293a1af67702ebe8980aa7b31641ad05e6787",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p29/Pulse_Search_R2P29_20261025/MANIFEST.sha256": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p29/Pulse_Search_R2P29_20261025/MANIFEST.sha256",
+      "bytes": 622,
+      "sha256": "07249590789310ce39bde894401c7def65ff1535fdafd39f42645e5f4b4e86a8",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p29/Pulse_Search_R2P29_20261025/OnePass.sh": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p29/Pulse_Search_R2P29_20261025/OnePass.sh",
+      "bytes": 1743,
+      "sha256": "57a3359dd2f044aef55dfa38d331bd1289c879f66112d93518ace94f9bab2bff",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p29/Pulse_Search_R2P29_20261025/Pulse_Search_R2P21_Engine_Accepted.zip": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p29/Pulse_Search_R2P29_20261025/Pulse_Search_R2P21_Engine_Accepted.zip",
+      "bytes": 141872,
+      "sha256": "984fd5126cd229f756ee7cc32153e6e50f979634047044d046181825f5b809e5",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p29/Pulse_Search_R2P29_20261025/Pulse_Search_R2P23_Corrected_Reviewed.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p29/Pulse_Search_R2P29_20261025/Pulse_Search_R2P23_Corrected_Reviewed.json",
+      "bytes": 7572,
+      "sha256": "c398c2ea78bbb27c1899d4544e70bbb7805258cfda1e0c84937e02990fdc5ba2",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p29/Pulse_Search_R2P29_20261025/pulse_search_r2p29.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p29/Pulse_Search_R2P29_20261025/pulse_search_r2p29.py",
+      "bytes": 19479,
+      "sha256": "3a4999f2a836f32df73ffc9ebd04b314a050fe796598848bd40689bd3f469834",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p29/Pulse_Search_R2P29_20261025/README.md": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p29/Pulse_Search_R2P29_20261025/README.md",
+      "bytes": 3807,
+      "sha256": "47dfb22bd90e628b280ceacc0fb05a36da7bba8bf1ac5cf57687167cdb7fbbbd",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p29/Pulse_Search_R2P29_20261025/test_r2p29.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p29/Pulse_Search_R2P29_20261025/test_r2p29.py",
+      "bytes": 6897,
+      "sha256": "d809e27f8eefe9514859e0b16181999a78581f3fd154076adbe2563ad30b9d30",
+      "mtime_utc": "2026-10-26T01:48:59Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/live_100_report.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/live_100_report.json",
+      "bytes": 31526,
+      "sha256": "5b343dc1710663e248a958f486f293a1af67702ebe8980aa7b31641ad05e6787",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/LOCAL_ACCEPTANCE.md": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/LOCAL_ACCEPTANCE.md",
+      "bytes": 1791,
+      "sha256": "7962719ca32dfc48a7b59f1a7858a87a80c26f6c947dbf6d4d09647df1d51408",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/MANIFEST.sha256": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/MANIFEST.sha256",
+      "bytes": 1079,
+      "sha256": "5da0ade1f18327c3693b2aca890c5147028f129b3f4117c50f697662c8ea12ba",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/metadata_proxy.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/metadata_proxy.json",
+      "bytes": 17934,
+      "sha256": "beb12dee230d359a635f87b3c84c5fd0a4b1f9613b2202933cafab4233f2517c",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/OnePass.sh": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/OnePass.sh",
+      "bytes": 2908,
+      "sha256": "dfd3397ed0012e89168316d688313adcd2cd5e0f15ac7aace1eaa46c8e738cac",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/Pulse_Search_R2P29_ReadOnly_Ranking_20261025.zip": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/Pulse_Search_R2P29_ReadOnly_Ranking_20261025.zip",
+      "bytes": 158865,
+      "sha256": "459670257dcfef8cab4fb46c101990c9aeb59d4dffb02da6c72e5b2891b70e88",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/pulse_search_r2p31.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/pulse_search_r2p31.py",
+      "bytes": 15916,
+      "sha256": "d74faef62667905fe4eb7a75b8bee8efcea122a490f7b62be217cf20df3517bb",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/r2p29_shadow_report.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/r2p29_shadow_report.json",
+      "bytes": 15978,
+      "sha256": "328f3129f190f1d50905a37fd8ccd829104c9418808c79be161b5b02dfb32d5c",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/r2p30_recall_report.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/r2p30_recall_report.json",
+      "bytes": 27005,
+      "sha256": "3cd67802d2dcedb00a0e9c9097e98f682a17d83df92381076d9e860087b08514",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/R2P31_Metadata_Proxy_Preview.html": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/R2P31_Metadata_Proxy_Preview.html",
+      "bytes": 11569,
+      "sha256": "9616ddc29ee91c8b9623ba1405e0b699a492e2ac69c6d88d661bd6acd9ae7883",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/R2P31_Metadata_Proxy_Scorecard.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/R2P31_Metadata_Proxy_Scorecard.json",
+      "bytes": 8943,
+      "sha256": "e34dc6be6ea27d8bd7ba8db13626236cd681c1793a11fa97feb25069377ddae3",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/README.md": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/README.md",
+      "bytes": 3044,
+      "sha256": "2dab0785aab93f15f8c27931a6acdc93f81cbe4a00ee69723cb5d6311255daca",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/test_r2p31.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p31/Pulse_Search_R2P31_20261025/test_r2p31.py",
+      "bytes": 5798,
+      "sha256": "53695777fc30ba035c2c1996b117d1b974ee514f0ece195d22a7b1599a5c1d3a",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p32/Pulse_Search_R2P32_20261025/accepted_R2P31.zip": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p32/Pulse_Search_R2P32_20261025/accepted_R2P31.zip",
+      "bytes": 190024,
+      "sha256": "bc37c270c9ac10d16c82e0f162554324f9069380ddc8d11f58f3f1675156d4fa",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p32/Pulse_Search_R2P32_20261025/MANIFEST.sha256": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p32/Pulse_Search_R2P32_20261025/MANIFEST.sha256",
+      "bytes": 663,
+      "sha256": "f6ceecc9b331332b0d69eeadfc967949b633c3bd7985999593cf3e8487bc815c",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p32/Pulse_Search_R2P32_20261025/metadata_proxy.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p32/Pulse_Search_R2P32_20261025/metadata_proxy.json",
+      "bytes": 17934,
+      "sha256": "beb12dee230d359a635f87b3c84c5fd0a4b1f9613b2202933cafab4233f2517c",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p32/Pulse_Search_R2P32_20261025/OnePass.sh": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p32/Pulse_Search_R2P32_20261025/OnePass.sh",
+      "bytes": 3068,
+      "sha256": "86371caac2c43cc0d3d8ff4831be77acdf7ce1830f74929cb82c84d937de87d6",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p32/Pulse_Search_R2P32_20261025/owner_R2P31_report.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p32/Pulse_Search_R2P32_20261025/owner_R2P31_report.json",
+      "bytes": 22343,
+      "sha256": "3d86e678fb1208d63b3021f04680304f25354c39b5c7f3248b25c2933104e625",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p32/Pulse_Search_R2P32_20261025/r2p32_candidate.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p32/Pulse_Search_R2P32_20261025/r2p32_candidate.py",
+      "bytes": 2925,
+      "sha256": "a52ef923e7b77361bed51cf80d78afbee86baaee4bc04006120274685765e37e",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p32/Pulse_Search_R2P32_20261025/r2p32_evidence.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p32/Pulse_Search_R2P32_20261025/r2p32_evidence.py",
+      "bytes": 19144,
+      "sha256": "7758223393c87b6b0082ea5497f2a6e4c125ed7a72dbbc74bee9e490151896b1",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p32/Pulse_Search_R2P32_20261025/README.md": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p32/Pulse_Search_R2P32_20261025/README.md",
+      "bytes": 2570,
+      "sha256": "3cb06f0b69a3a7ce6ec7cf4d7bff70f23c6a8567b6be4985bb816101b45c5196",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p32/Pulse_Search_R2P32_20261025/test_r2p32.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p32/Pulse_Search_R2P32_20261025/test_r2p32.py",
+      "bytes": 4315,
+      "sha256": "322496d537c3e8bf32fb7b007f6eb713b360bf825182e7434962960fd6a7a569",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p33/Pulse_Search_R2P33_20261025/accepted_R2P32.zip": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p33/Pulse_Search_R2P33_20261025/accepted_R2P32.zip",
+      "bytes": 209073,
+      "sha256": "f05a6cf68ca572765e15ca0781cc3b36af2b896c7ab80eeec73a459faadaff7d",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p33/Pulse_Search_R2P33_20261025/MANIFEST.sha256": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p33/Pulse_Search_R2P33_20261025/MANIFEST.sha256",
+      "bytes": 750,
+      "sha256": "705a4bd570a66d5d57bbd9c99b6c8cf9c3bd65c2cfdabc99696392d7a31d664a",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p33/Pulse_Search_R2P33_20261025/metadata_proxy.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p33/Pulse_Search_R2P33_20261025/metadata_proxy.json",
+      "bytes": 17934,
+      "sha256": "beb12dee230d359a635f87b3c84c5fd0a4b1f9613b2202933cafab4233f2517c",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p33/Pulse_Search_R2P33_20261025/OnePass.sh": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p33/Pulse_Search_R2P33_20261025/OnePass.sh",
+      "bytes": 3697,
+      "sha256": "db1d461c7893bc093e6bc6decd8a9485d8a522d2ee4b0796c00c1dee2f2f8ea6",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p33/Pulse_Search_R2P33_20261025/owner_R2P31_report.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p33/Pulse_Search_R2P33_20261025/owner_R2P31_report.json",
+      "bytes": 22343,
+      "sha256": "3d86e678fb1208d63b3021f04680304f25354c39b5c7f3248b25c2933104e625",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p33/Pulse_Search_R2P33_20261025/owner_R2P32_report.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p33/Pulse_Search_R2P33_20261025/owner_R2P32_report.json",
+      "bytes": 145239,
+      "sha256": "2414d557213283c47df297d30e242111cf27b5690de0b2c3290c456e0043414f",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p33/Pulse_Search_R2P33_20261025/r2p33_audit.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p33/Pulse_Search_R2P33_20261025/r2p33_audit.py",
+      "bytes": 12137,
+      "sha256": "a95ed9e1f308ef05575032a729d41e9955f7a891074c59fab7a2738849e97d30",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p33/Pulse_Search_R2P33_20261025/r2p33_candidate.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p33/Pulse_Search_R2P33_20261025/r2p33_candidate.py",
+      "bytes": 1899,
+      "sha256": "ab1616fc23791c731ab2a4e38dfba8b22bcb0087c63b523bcc15253405500405",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p33/Pulse_Search_R2P33_20261025/README.md": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p33/Pulse_Search_R2P33_20261025/README.md",
+      "bytes": 2590,
+      "sha256": "6c8a3923c51be06570dd4049136b64fc726f3ead4054c9298fca20ca699c3834",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p33/Pulse_Search_R2P33_20261025/test_r2p33.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p33/Pulse_Search_R2P33_20261025/test_r2p33.py",
+      "bytes": 4874,
+      "sha256": "d856e2cad361539e253d3516d19beeb853dce92dc4a51e8e0e4199170052bee2",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p34/Pulse_Search_R2P34_20261025/accepted_R2P33.zip": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p34/Pulse_Search_R2P34_20261025/accepted_R2P33.zip",
+      "bytes": 235044,
+      "sha256": "f078f5277d9c2e160ef28630c3408a04108196a7bced743ebca079aa24c484f8",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p34/Pulse_Search_R2P34_20261025/MANIFEST.sha256": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p34/Pulse_Search_R2P34_20261025/MANIFEST.sha256",
+      "bytes": 750,
+      "sha256": "a40d21c8b5fc431419b667be327ba728118efa4525e0750a0eda019cd1eb391b",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p34/Pulse_Search_R2P34_20261025/metadata_proxy.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p34/Pulse_Search_R2P34_20261025/metadata_proxy.json",
+      "bytes": 17934,
+      "sha256": "beb12dee230d359a635f87b3c84c5fd0a4b1f9613b2202933cafab4233f2517c",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p34/Pulse_Search_R2P34_20261025/OnePass.sh": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p34/Pulse_Search_R2P34_20261025/OnePass.sh",
+      "bytes": 4109,
+      "sha256": "e40c14bdf4f8f6411636d52e2efe28d84bd3a6e37438e82697573e52c36eff29",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p34/Pulse_Search_R2P34_20261025/owner_R2P31_report.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p34/Pulse_Search_R2P34_20261025/owner_R2P31_report.json",
+      "bytes": 22343,
+      "sha256": "3d86e678fb1208d63b3021f04680304f25354c39b5c7f3248b25c2933104e625",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p34/Pulse_Search_R2P34_20261025/owner_R2P32_report.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p34/Pulse_Search_R2P34_20261025/owner_R2P32_report.json",
+      "bytes": 145239,
+      "sha256": "2414d557213283c47df297d30e242111cf27b5690de0b2c3290c456e0043414f",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p34/Pulse_Search_R2P34_20261025/r2p34_audit.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p34/Pulse_Search_R2P34_20261025/r2p34_audit.py",
+      "bytes": 11093,
+      "sha256": "7f11491b066d7d53be307a0b3eec9b21b69535a6366d45e9b56413a201810b38",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p34/Pulse_Search_R2P34_20261025/r2p34_candidate.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p34/Pulse_Search_R2P34_20261025/r2p34_candidate.py",
+      "bytes": 3170,
+      "sha256": "f8a6ea36cf9fec2b6ca02edc2e9ffdf99672cb639db6c964d6b4bcb647ef2bbc",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p34/Pulse_Search_R2P34_20261025/README.md": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p34/Pulse_Search_R2P34_20261025/README.md",
+      "bytes": 3201,
+      "sha256": "ecb903310e1cec5edf938f7ca4e3f43ec3c781bea72fb26899df3f50178c74de",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_p34/Pulse_Search_R2P34_20261025/test_r2p34.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_p34/Pulse_Search_R2P34_20261025/test_r2p34.py",
+      "bytes": 4942,
+      "sha256": "17ba9c8f328f00e73798055c1be5c43a16504d21fe32d61f6dbefc830cd836cc",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_r2p35/Pulse_Search_R2P35_20261025/accepted_R2P34.zip": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_r2p35/Pulse_Search_R2P35_20261025/accepted_R2P34.zip",
+      "bytes": 261195,
+      "sha256": "5159cc45926135253a7676b0b2dd878e6ab66a24156da07d81fd4c7753013db3",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_r2p35/Pulse_Search_R2P35_20261025/evidence_gate.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_r2p35/Pulse_Search_R2P35_20261025/evidence_gate.py",
+      "bytes": 2047,
+      "sha256": "bd5ce11be06a7aefca86c45dc2dc9224dfc70d8091cdbf224b97632cc703a0c4",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_r2p35/Pulse_Search_R2P35_20261025/hybrid_core.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_r2p35/Pulse_Search_R2P35_20261025/hybrid_core.py",
+      "bytes": 13337,
+      "sha256": "32db0765d5542bd3ece7aa92516acec904c7beadf67f02ae2df0c3c6b915e192",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_r2p35/Pulse_Search_R2P35_20261025/MANIFEST.sha256": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_r2p35/Pulse_Search_R2P35_20261025/MANIFEST.sha256",
+      "bytes": 910,
+      "sha256": "f331ad48072dac938233d487422f87953eee39c34fd15da71fd0fa44d7dc023c",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_r2p35/Pulse_Search_R2P35_20261025/offline_encoder.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_r2p35/Pulse_Search_R2P35_20261025/offline_encoder.py",
+      "bytes": 2036,
+      "sha256": "513939aa8a3420b866634cd0b130f20bd1978ce8d395bc41b583b6c4b31b1971",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_r2p35/Pulse_Search_R2P35_20261025/OnePass.sh": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_r2p35/Pulse_Search_R2P35_20261025/OnePass.sh",
+      "bytes": 3689,
+      "sha256": "0863788c5fc0740ff6508283084dcbfe41deeb8256a8c3a2b2594b37f92b3502",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_r2p35/Pulse_Search_R2P35_20261025/owner_R2P34_report.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_r2p35/Pulse_Search_R2P35_20261025/owner_R2P34_report.json",
+      "bytes": 119913,
+      "sha256": "c15eaba6344394dffc387ecc0599a05c6f924f770ab0de87010d1e27ad02e4ce",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_r2p35/Pulse_Search_R2P35_20261025/r2p35_audit.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_r2p35/Pulse_Search_R2P35_20261025/r2p35_audit.py",
+      "bytes": 10417,
+      "sha256": "c659e0a1524d65c5781110274adb465f042024eb3377add79c116d61d9c6833f",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_r2p35/Pulse_Search_R2P35_20261025/R3_RELEASE_ROUTE.md": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_r2p35/Pulse_Search_R2P35_20261025/R3_RELEASE_ROUTE.md",
+      "bytes": 5650,
+      "sha256": "3ab6d5f0e83d34b9d8552633d352300be5e6e7c1f1a7e2573113d6bc2fe62945",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_r2p35/Pulse_Search_R2P35_20261025/README.md": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_r2p35/Pulse_Search_R2P35_20261025/README.md",
+      "bytes": 5159,
+      "sha256": "a9dc3499b91d5ed8abe0f4eab7db16e85d3ad411a6ece06161958f14e71884d6",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_r2p35/Pulse_Search_R2P35_20261025/semantic_context.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_r2p35/Pulse_Search_R2P35_20261025/semantic_context.py",
+      "bytes": 2148,
+      "sha256": "05ef8e19e2ab0fd040acf07a9773fdd5e017283aa8fb69da343c1f2f90a43dbf",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_r2p35/Pulse_Search_R2P35_20261025/test_r2p35.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_r2p35/Pulse_Search_R2P35_20261025/test_r2p35.py",
+      "bytes": 4322,
+      "sha256": "5d25ebdd62bc034e5f8d9776591740891860a7720bbf1afd00f827a447a1f015",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_r3a1/Pulse_Search_R3A1_20261026/accepted_R2P35.zip": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_r3a1/Pulse_Search_R3A1_20261026/accepted_R2P35.zip",
+      "bytes": 291098,
+      "sha256": "de461cfb31b5913eb754cb7705e523da20405edaae1ed7c8bb88f6831da0e4c4",
+      "mtime_utc": "2026-10-26T01:48:57Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_r3a1/Pulse_Search_R3A1_20261026/MANIFEST.sha256": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_r3a1/Pulse_Search_R3A1_20261026/MANIFEST.sha256",
+      "bytes": 732,
+      "sha256": "55a5320ab7147c6f676061815c809b1c5767bc126e185f10933c2116ea276c59",
+      "mtime_utc": "2026-10-26T01:48:57Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_r3a1/Pulse_Search_R3A1_20261026/OnePass.sh": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_r3a1/Pulse_Search_R3A1_20261026/OnePass.sh",
+      "bytes": 4370,
+      "sha256": "a7f9c7afe2a9c38a1472829655c6366df97ddda9883481dca212fa557b173dfb",
+      "mtime_utc": "2026-10-26T01:48:57Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_r3a1/Pulse_Search_R3A1_20261026/owner_R2P35_report.json": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_r3a1/Pulse_Search_R3A1_20261026/owner_R2P35_report.json",
+      "bytes": 105994,
+      "sha256": "ca056b51a7af76d095d9b4b76f0b3b082cdf92209a45e02aa190ee083f2d5fc1",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_r3a1/Pulse_Search_R3A1_20261026/R3_MAJOR_ROUTE.md": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_r3a1/Pulse_Search_R3A1_20261026/R3_MAJOR_ROUTE.md",
+      "bytes": 3873,
+      "sha256": "72911195651aedce3da114718dd9fe5208dbbd552d297cc2e216697c747b6d1b",
+      "mtime_utc": "2026-10-26T01:48:57Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_r3a1/Pulse_Search_R3A1_20261026/r3a_cases.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_r3a1/Pulse_Search_R3A1_20261026/r3a_cases.py",
+      "bytes": 3068,
+      "sha256": "cf4a853350a03d5f21e0c9ecc80eff1fb18685059b37d9b3aca887ff09c967c5",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_r3a1/Pulse_Search_R3A1_20261026/r3a_eval.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_r3a1/Pulse_Search_R3A1_20261026/r3a_eval.py",
+      "bytes": 9330,
+      "sha256": "4d84227cea11fa8bad2b9652e1fe28063f6bb61ea8061f2ae7977dab446e86e4",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_r3a1/Pulse_Search_R3A1_20261026/r3a_local_model.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_r3a1/Pulse_Search_R3A1_20261026/r3a_local_model.py",
+      "bytes": 2932,
+      "sha256": "a4cfe169db66d9cfcd7332c29eab421de23261c07c09cd8a7d67859f27bf4357",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_r3a1/Pulse_Search_R3A1_20261026/README.md": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_r3a1/Pulse_Search_R3A1_20261026/README.md",
+      "bytes": 2474,
+      "sha256": "86cc9bcb433df49c730ba93891d9274000cb8a618e63ac1ed7242de4f31330ea",
+      "mtime_utc": "2026-10-26T01:48:57Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_Run_F9zS4WJf/source_r3a1/Pulse_Search_R3A1_20261026/test_r3a.py": {
+      "path": "Pulse_Search_R3A2_Run_F9zS4WJf/source_r3a1/Pulse_Search_R3A1_20261026/test_r3a.py",
+      "bytes": 3558,
+      "sha256": "a622ea89a73424f8d1808d1d999c7acd215c020294091f585fb47fcee3272c37",
+      "mtime_utc": "2026-10-26T01:48:58Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A2_SQLite_Test_Compatibility_20261026/test_p17.py": {
+      "path": "Pulse_Search_R3A2_SQLite_Test_Compatibility_20261026/test_p17.py",
+      "bytes": 8648,
+      "sha256": "29fe01dbf2e547940a0ab76a2319f43c49c053521fe438ecc17f94f30b8819c9",
+      "mtime_utc": "2026-10-26T01:53:46Z",
+      "publish": true
+    },
+    "Pulse_Search_R3A3_Owner_Review_20261026.xlsx": {
+      "path": "Pulse_Search_R3A3_Owner_Review_20261026.xlsx",
+      "bytes": 19133,
+      "sha256": "867b6818a8893c16be401e0aa242cc0ad83104922e05cdf6d03f6ede49c0d118",
+      "mtime_utc": "2026-10-26T14:24:33Z",
+      "publish": true
+    }
+  }
+}

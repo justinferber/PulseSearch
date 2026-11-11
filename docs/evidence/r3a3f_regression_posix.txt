@@ -1,0 +1,26 @@
+Python 3.12.15
+MATRIX|test_r3a2|PASS|17|/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/PulseSearch_FB2_R3A3F_20261111/historical/local_snapshot/Pulse_Search_R3A2R2_20261026
+MATRIX|test_r3a2r1|PASS|3|/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/PulseSearch_FB2_R3A3F_20261111/historical/local_snapshot/Pulse_Search_R3A2R2_20261026
+MATRIX|test_r3a2r2|PASS|8|/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/PulseSearch_FB2_R3A3F_20261111/historical/local_snapshot/Pulse_Search_R3A2R2_20261026
+MATRIX|test_engine|PASS|54|/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/PulseSearch_FB2_R3A3F_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests
+MATRIX|test_p10|PASS|6|/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/PulseSearch_FB2_R3A3F_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests
+MATRIX|test_p11|PASS|6|/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/PulseSearch_FB2_R3A3F_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests
+MATRIX|test_p11_extra|PASS|1|/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/PulseSearch_FB2_R3A3F_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests
+MATRIX|test_p12|PASS|15|/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/PulseSearch_FB2_R3A3F_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests
+MATRIX|test_p14|PASS|32|/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/PulseSearch_FB2_R3A3F_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests
+MATRIX|test_p15|PASS|18|/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/PulseSearch_FB2_R3A3F_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests
+MATRIX|test_p16|PASS|21|/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/PulseSearch_FB2_R3A3F_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests
+MATRIX|test_p17|PASS|16|/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/PulseSearch_FB2_R3A3F_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests
+MATRIX|test_p18|PASS|16|/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/PulseSearch_FB2_R3A3F_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests
+MATRIX|test_p19|PASS|24|/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/PulseSearch_FB2_R3A3F_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests
+MATRIX|test_p21|PASS|16|/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/PulseSearch_FB2_R3A3F_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests
+MATRIX|test_quality|PASS|20|/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/PulseSearch_FB2_R3A3F_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests
+MATRIX|test_real_questions|PASS|12|/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/PulseSearch_FB2_R3A3F_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests
+MATRIX|test_scheduler|PASS|28|/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/PulseSearch_FB2_R3A3F_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_engine/tests
+MATRIX|test_r2p29|PASS|20|/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/PulseSearch_FB2_R3A3F_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_p29/Pulse_Search_R2P29_20261025
+MATRIX|test_r2p31|PASS|10|/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/PulseSearch_FB2_R3A3F_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_p31/Pulse_Search_R2P31_20261025
+MATRIX|test_r2p32|PASS|12|/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/PulseSearch_FB2_R3A3F_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_p32/Pulse_Search_R2P32_20261025
+MATRIX|test_r2p33|PASS|15|/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/PulseSearch_FB2_R3A3F_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_p33/Pulse_Search_R2P33_20261025
+MATRIX|test_r2p34|PASS|14|/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/PulseSearch_FB2_R3A3F_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_p34/Pulse_Search_R2P34_20261025
+MATRIX|test_r2p35|PASS|20|/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/PulseSearch_FB2_R3A3F_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_r2p35/Pulse_Search_R2P35_20261025
+MATRIX|test_r3a|PASS|15|/mnt/c/Users/justi/Desktop/pulseunity/ChatGPTCode/PulseSearch_FB2_R3A3F_20261111/historical/local_snapshot/Pulse_Search_R3A2_Run_1psnjrhX/source_r3a1/Pulse_Search_R3A1_20261026

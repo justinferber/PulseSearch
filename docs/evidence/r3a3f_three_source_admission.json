@@ -63,7 +63,7 @@
       "host": "londonparade.com",
       "origin": "https://londonparade.com",
       "role": "candidate_B_london_parade",
-      "state": "owner_approval_attested_scope_pending",
+      "state": "robots_reviewed",
       "approved": false,
       "index_allowed": false,
       "rights_status": "OWNER_ATTESTED_ORGANISER_APPROVAL_SCOPE_TO_DOCUMENT",
@@ -132,7 +132,8 @@
         "documentation_reference": null,
         "scope_expressly_stated": false,
         "interpretation": "Acknowledge existing approval; do not demand a new organiser permission request. Record what the prior authorisation covers before enabling public-site crawling or indexing."
-      }
+      },
+      "organiser_approval_status": "OWNER_ATTESTED_EXISTING_APPROVAL_SCOPE_PENDING_RECORD"
     },
     {
       "source_id": "lord-mayors-show-official",

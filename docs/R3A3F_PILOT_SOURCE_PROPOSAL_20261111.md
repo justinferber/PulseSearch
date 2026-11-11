@@ -46,7 +46,7 @@ subdomains, `lnydp.com` and Ticketmaster convey no admission.
 | `allowed_paths` | `[]` — **nothing admitted**; review candidates only |
 | `proposed_seeds` (review) | `/parade-location-timing/`, `/about/` |
 | Further review candidates | `/londonparade-participants/`, `/news-archive`, `/festivals/concerts/` |
-| `rights_status` | `OWNER_ATTESTED_ORGANISER_APPROVAL_SCOPE_TO_RECORD` |
+| `rights_status` | `OWNER_CONFIRMED_DESTINATION_EVENTS_TEXT_AND_IMAGERY` |
 | `approved` / `index_allowed` | `false` / `false` |
 | `probe_policy` / budget | `[]` / `0` |
 | Robots snapshot | 200; `Allow: /`; `Crawl-delay: 10`; `Content-Signal search=yes, ai-train=no, use=reference`; no sitemap |
@@ -56,7 +56,7 @@ subdomains, `lnydp.com` and Ticketmaster convey no admission.
 | Outstanding | Content-use rights confirmed by owner. First-live-run go/no-go and owner-authorised source admission remain pending. Apex host only; no need to admit `www`. Feed availability optional. |
 
 Destination Events' approval, Mine Media's official partnership and London Parade **text and imagery use rights** are **confirmed by owner**, including the proposed internal Pulse Search metadata and short-snippet test. Do not ask for another organiser permission. The pilot stays technically narrow; no public production switch is implied.
-redisplay, retention, dates and reference — is recorded in
+
 The confirmed scope is recorded in `docs/R3A3F_LONDON_PARADE_DATA_USE_SCOPE_20261111.md`. The first live crawler run still needs a distinct operational owner decision. If a structured public feed is available it becomes a separate input
 connector with its own provenance, not a crawler depth shortcut.
 

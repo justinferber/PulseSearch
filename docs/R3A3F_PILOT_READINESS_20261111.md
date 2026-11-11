@@ -20,11 +20,11 @@ still missing before the first external GET.
 | Gate | City Hall | London Parade | Lord Mayor's Show |
 | --- | --- | --- | --- |
 | Robots reviewed (dated) | ✅ 200, allows `/events`, no Crawl-delay | ✅ 200, `Crawl-delay: 10`, search signalled yes / AI-train no | ⚠️ 404 — no robots.txt |
-| Terms reviewed | ⚠️ re-use basis not recorded | ✅ Existing Destination Events approval confirmed by owner; exact data-use scope to document | ❌ terms forbid deep links and reserve all rights |
+| Terms reviewed | ⚠️ re-use basis not recorded | ✅ Destination Events' London Parade text and imagery use rights, including internal search snippets, owner-confirmed | ❌ terms forbid deep links and reserve all rights |
 | Proposed path scope | `/events` only | none admitted; 5 review paths | none admitted; `RIGHTS_HOLD` |
-| Owner authorisation | ❌ not recorded | ⚠️ owner attestation received; specific crawler/indexer scope not recorded | ❌ not recorded |
+| Owner authorisation | ❌ not recorded | ✅ internal search content-use scope confirmed; live-run authorisation not yet recorded | ❌ not recorded |
 | Technical gates (offline) | ✅ | ✅ | ✅ |
-| Ready for a first GET | **No** — needs rights basis + written admission | **No** — existing approval's precise crawl/indexing scope and explicit pilot admission to be recorded | **No** — needs licence or link-only arrangement |
+| Ready for a first GET | **No** — needs rights basis + written admission | **No** — awaiting only separate first-live-run owner decision / source admission | **No** — needs licence or link-only arrangement |
 
 Technical gates are shared and already demonstrated offline: depth 3, zero probes, one in-flight,
 persisted 300 attempts / 20 accepted / 30 minutes per day, per-hop redirect authority, robots and
@@ -32,9 +32,9 @@ admin exclusions, pinned novelty, per-source dashboard and JSON export.
 
 ## 3. Priority — London Parade (Destination Events Ltd)
 
-**Why first if permission arrives:** the highest event value of the three, a public 2027 edition,
+**Why first after the owner's live-run go/no-go:** the highest event value of the three, a public 2027 edition,
 a 10s Crawl-delay that is already respected, and no competing rights claim beyond the organiser's.
-**Owner correction (11 Nov):** The project owner confirms that Destination Events has already granted approval and Mine Media is the official London Parade partner. Do not ask for redundant new organiser permission. Record the existing approval's actual data-use scope, source reference and signed owner admission before activating the crawler. The site carries an “All Rights Reserved” notice; do not presume unrestricted snippet rights without checking the existing arrangement.
+**Updated owner confirmation (11 Nov):** Mine Media is the official Destination Events partner and the owner confirms permission to use London Parade **text and imagery**. This covers the previously proposed internal Pulse Search metadata and short-snippet test. Do not request another organiser agreement or make contract paperwork a repeating gate. Record the owner's direct attestation as the content-use rights reference and retain a separate, explicit first-live-run authorisation.
 
 ### 3.1 Scope items to record from the existing approval (no new permission request)
 
@@ -93,7 +93,7 @@ organiser-supplied rather than independently discovered.
 and takedown recipient; write the owner admission with `owner_authorisation`. The 107-page baseline
 is expected overlap and must not be reported as novelty.
 
-**London Parade** — the owner has confirmed existing Destination Events approval and Mine Media's official partnership. Capture the scope of this existing authorisation against items 1–8 above (plus canonical host and 2027 paths), or identify a licensed organiser feed covered by it. Do not treat the owner as lacking organiser approval. Until a documented crawl/index scope and a separate pilot go/no-go are recorded, `approved=false`, `index_allowed=false`.
+**London Parade** — owner confirms content-use permission for text and imagery, including internal metadata and short excerpts. No further Destination Events permission request is necessary for the bounded P1 test. Source admission and first-live-run go/no-go are pending independently; `approved=false`, `index_allowed=false` until then.
 
 **Lord Mayor's Show** — the published terms permit linking only to the home page and forbid deep
 links, framing and links from non-owned sites, and no robots.txt exists. Either obtain explicit
@@ -120,3 +120,7 @@ a recorded `owner_authorisation`, and a separate explicit authorisation to start
 ## 7. Owner correction — Destination Events approval confirmed (11 November 2026)
 
 The project owner personally confirms **existing Destination Events approval for London Parade** and that **Mine Media is the official event partner**. That is an owner attestation of an existing approval, not a newly requested licence. The project should NOT repeatedly require the owner to seek approval from Destination Events as if it did not exist. The current conversation does not itself specify whether the previous approval explicitly covers automated website crawling, storing and publicly displaying excerpts, or the permitted paths/retention terms; these items must be recorded from the existing agreement or confirmed through a clear owner scope statement. This is an evidence-recording step, not a demand for redundant consent. See `docs/FB2_R3A3F_LONDON_PARADE_EXISTING_APPROVAL_20261111.md` and the updated three-source admission register. No flags were switched and no live crawler was started.
+
+## 8. Final rights clarification — London Parade (11 November 2026)
+
+The owner has confirmed: **“London Parade is just One of 100s of Mine Media clients. Yes we are approved to use any text or imagery we want.”** This confirms Destination Events' existing text and imagery permissions for London Parade and answers yes to the internal Pulse Search metadata/snippet test asked immediately before that statement. Do not ask for a new permission or signer/contract solely to re-prove these rights. The P1 technical plan remains: apex host only, reviewed public pages, 10-second host delay, max three hops, zero probes, 20 accepted/day, 300 attempts/day, 30 minutes/day, internal index, ≤320-character excerpt, no body or media downloading. The broader owner-attested image rights need not be exercised in P1. `F3=HOLD` solely pending the owner's separate explicit live-run decision and a logged source admission action. City Hall and the Lord Mayor's Show remain independent permission reviews.

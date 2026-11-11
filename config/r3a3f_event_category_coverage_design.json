@@ -1,0 +1,182 @@
+{
+  "schema": "pulse-search-category-coverage-r3a3f/v1",
+  "status": "DESIGN_ONLY_NOT_DEPLOYED",
+  "taxonomy_basis": "UNA Events 18 primary categories last owner-confirmed 2026-10-26; re-check current admin taxonomy before synchronisation",
+  "scope": "Standalone Pulse Search retrieval discovery only; no writing to UNA/Events Engine or publication queue",
+  "category_assignment": "one primary + zero or more supplementary categories; multi-label independent search facets",
+  "primary_categories": [
+    {
+      "legacy_primary_id": 1,
+      "name": "Conference",
+      "seed_query_examples": [
+        "congress",
+        "summit",
+        "convention",
+        "industry gathering"
+      ]
+    },
+    {
+      "legacy_primary_id": 2,
+      "name": "Festival",
+      "seed_query_examples": [
+        "festival",
+        "Diwali celebration",
+        "public holiday celebration"
+      ]
+    },
+    {
+      "legacy_primary_id": 3,
+      "name": "Fundraiser",
+      "seed_query_examples": [
+        "charity benefit",
+        "fundraising gala",
+        "community fundraiser"
+      ]
+    },
+    {
+      "legacy_primary_id": 4,
+      "name": "Lecture",
+      "seed_query_examples": [
+        "talk",
+        "public lecture",
+        "speaker session"
+      ]
+    },
+    {
+      "legacy_primary_id": 5,
+      "name": "Market",
+      "seed_query_examples": [
+        "craft market",
+        "farmers market",
+        "seasonal market"
+      ]
+    },
+    {
+      "legacy_primary_id": 6,
+      "name": "Meal",
+      "seed_query_examples": [
+        "community dinner",
+        "food tasting",
+        "banquet"
+      ]
+    },
+    {
+      "legacy_primary_id": 7,
+      "name": "Social Mixer",
+      "seed_query_examples": [
+        "networking mixer",
+        "community meetup",
+        "social gathering"
+      ]
+    },
+    {
+      "legacy_primary_id": 8,
+      "name": "Tour",
+      "seed_query_examples": [
+        "guided tour",
+        "heritage walking tour",
+        "open day tour"
+      ]
+    },
+    {
+      "legacy_primary_id": 9,
+      "name": "Volunteering",
+      "seed_query_examples": [
+        "volunteer day",
+        "community service",
+        "conservation volunteering"
+      ]
+    },
+    {
+      "legacy_primary_id": 10,
+      "name": "Workshop",
+      "seed_query_examples": [
+        "hands-on workshop",
+        "training class",
+        "craft workshop"
+      ]
+    },
+    {
+      "legacy_primary_id": 11,
+      "name": "Other",
+      "seed_query_examples": [
+        "uncategorized event",
+        "event with uncertain primary category"
+      ]
+    },
+    {
+      "legacy_primary_id": 12,
+      "name": "Horticulture & Flower Shows",
+      "seed_query_examples": [
+        "garden show",
+        "flower show",
+        "plant exhibition"
+      ]
+    },
+    {
+      "legacy_primary_id": 13,
+      "name": "Music & Performance",
+      "seed_query_examples": [
+        "concert",
+        "live theatre",
+        "dance performance"
+      ]
+    },
+    {
+      "legacy_primary_id": 14,
+      "name": "Sport & Fitness",
+      "seed_query_examples": [
+        "sports event",
+        "fitness class",
+        "marathon"
+      ]
+    },
+    {
+      "legacy_primary_id": 15,
+      "name": "Parades & Processions",
+      "seed_query_examples": [
+        "parade",
+        "street procession",
+        "carnival procession"
+      ]
+    },
+    {
+      "legacy_primary_id": 16,
+      "name": "Pride & Community",
+      "seed_query_examples": [
+        "Pride event",
+        "CSD Berlin",
+        "Stadtfest Berlin",
+        "LGBTQ+ community festival"
+      ]
+    },
+    {
+      "legacy_primary_id": 17,
+      "name": "Exhibitions & Trade Shows",
+      "seed_query_examples": [
+        "trade fair",
+        "industry exhibition",
+        "expo"
+      ]
+    },
+    {
+      "legacy_primary_id": 18,
+      "name": "Arts & Culture",
+      "seed_query_examples": [
+        "art exhibition",
+        "cultural festival",
+        "gallery event"
+      ]
+    }
+  ],
+  "supplementary_facets": [
+    "Outdoor Events",
+    "Family Events",
+    "Christmas & Winter",
+    "Seasonal",
+    "Free Admission",
+    "Accessible Event"
+  ],
+  "prohibited_policy": "Never permanently exclude Pride, LGBTQ+ community, Diwali, religion or any other legitimate event category; negation only per user-requested query",
+  "seed_source_approval": "No URLs approved by this file. Reconstruct existing source registry, inspect robots/rights individually; newly linked domains require separate source admission."
+}
